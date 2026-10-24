@@ -1,0 +1,144 @@
+{
+  "canonical_name": "API-Bank",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, API-Bank is most commonly treated as a benchmark or dialogue-style dataset for evaluating tool calls by LLMs in conversational or tool-augmented settings. Definitions vary in scope: some emphasize single- and multi-turn scenarios, one describes calling predefined local Python tools from user requirements, and others frame it as evaluating planning, retrieval, and API calling. Several papers distinguish two retrieval-call variants, either Call versus Retrieve + Call or L-1, invoking a known API, versus L-2, retrieving and calling from multiple candidates; reported contents also differ, from 314 tool-use dialogues and 753 API calls to 2,138 distinct APIs, 1,888 dialogues, and 4,149 API calls, with another description emphasizing general-purpose tools across 1,000 domains.\n\nWhat it is claimed to measure. Papers link API-Bank to one behavioral indicator and two constructs. The prevailing usage is to measure Tool use and Tool use ability: papers describe it as evaluating tool use, tool-utilization capabilities, or tool-calling capability, including planning, retrieval, and API-calling proficiency. A smaller line of work uses it to measure Generalization, specifically as an OOD tool-use benchmark for testing generality.\n\nSpace of uses. Papers often use API-Bank alongside other benchmarks, including BFCL, MultiWOZ 2.4, ToolBench, APIBench, and ToolTalk. In these benchmark suites, it is positioned as one of several evaluations for language agents, as an OOD check, as one of the datasets used to validate tool-calling or retrieval performance, and as a benchmark whose loss is monitored during pre-training to track agent capabilities. One study also states that its instances are adapted to tool selection.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "API-Bank"
+  ],
+  "papers": [
+    "Can a Single Model Master Both Multi-turn Conversations and Tool Use? CoALM: A Unified Conversational Agentic Language Model",
+    "ToolCoder: A Systematic Code-Empowered Tool Learning Framework for Large Language Models",
+    "PORTS: Preference-Optimized Retrievers for Tool Selection with Large Language Models",
+    "iTool: Reinforced Fine-Tuning with Dynamic Deficiency Calibration for Advanced Tool Use",
+    "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models",
+    "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+    "Robust Function-Calling for On-Device Language Model via Function Masking",
+    "ToolACE: Winning the Points of LLM Function Calling",
+    "Hephaestus: Improving Fundamental Agent Capabilities of Large Language Models through Continual Pre-Training",
+    "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis",
+    "GameTraversalBenchmark: Evaluating Planning Abilities Of Large Language Models Through Traversing 2D Game Maps"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark for evaluating the ability of LLMs to make tool calls, covering single- and multi-turn scenarios.",
+      "paper": "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models",
+      "original_name": "API-Bank"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Tool use",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+      "evidence": "In particular, when looking at the tool use evaluation sets (BFCL and API Bank), it is evident that the ability to use tools can be acquired effectively by adding \u2206\u0398 to the base model...",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost"
+        ],
+        "emnlp25": [
+          "PORTS: Preference-Optimized Retrievers for Tool Selection with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Tool use ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Robust Function-Calling for On-Device Language Model via Function Masking",
+      "evidence": "API-Bank (Li et al., 2023) provides a comprehensive dataset featuring 2,138 distinct APIs and 1,888 dialogues with 4,149 API calls. This dataset is designed to evaluate LLMs\u2019 tool-utilization capabilities, including planning, retrieval, and API-calling proficiency. (Section 2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust Function-Calling for On-Device Language Model via Function Masking"
+        ],
+        "naacl25": [
+          "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models",
+      "evidence": "To evaluate the generality of MTU-LLaMA, we measure its performance on the OOD test split of MTU-Bench and two other OOD tool-use benchmarks, i.e., API-Bank (Li et al., 2023) and ToolTalk (Farn & Shin, 2023). (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, API-Bank is most commonly treated as a benchmark or dialogue-style dataset for evaluating tool calls by LLMs in conversational or tool-augmented settings. Definitions vary in scope: some emphasize single- and multi-turn scenarios, one describes calling predefined local Python tools from user requirements, and others frame it as evaluating planning, retrieval, and API calling. Several papers distinguish two retrieval-call variants, either Call versus Retrieve + Call or L-1, invoking a known API, versus L-2, retrieving and calling from multiple candidates; reported contents also differ, from 314 tool-use dialogues and 753 API calls to 2,138 distinct APIs, 1,888 dialogues, and 4,149 API calls, with another description emphasizing general-purpose tools across 1,000 domains."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link API-Bank to one behavioral indicator and two constructs. The prevailing usage is to measure Tool use and Tool use ability: papers describe it as evaluating tool use, tool-utilization capabilities, or tool-calling capability, including planning, retrieval, and API-calling proficiency. A smaller line of work uses it to measure Generalization, specifically as an OOD tool-use benchmark for testing generality."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers often use API-Bank alongside other benchmarks, including BFCL, MultiWOZ 2.4, ToolBench, APIBench, and ToolTalk. In these benchmark suites, it is positioned as one of several evaluations for language agents, as an OOD check, as one of the datasets used to validate tool-calling or retrieval performance, and as a benchmark whose loss is monitored during pre-training to track agent capabilities. One study also states that its instances are adapted to tool selection."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, API-Bank is most commonly treated as a benchmark or dialogue-style dataset for evaluating tool calls by LLMs in conversational or tool-augmented settings. Definitions vary in scope: some emphasize single- and multi-turn scenarios, one describes calling predefined local Python tools from user requirements, and others frame it as evaluating planning, retrieval, and API calling. Several papers distinguish two retrieval-call variants, either Call versus Retrieve + Call or L-1, invoking a known API, versus L-2, retrieving and calling from multiple candidates; reported contents also differ, from 314 tool-use dialogues and 753 API calls to 2,138 distinct APIs, 1,888 dialogues, and 4,149 API calls, with another description emphasizing general-purpose tools across 1,000 domains.\n\nWhat it is claimed to measure. Papers link API-Bank to one behavioral indicator and two constructs. The prevailing usage is to measure Tool use and Tool use ability: papers describe it as evaluating tool use, tool-utilization capabilities, or tool-calling capability, including planning, retrieval, and API-calling proficiency. A smaller line of work uses it to measure Generalization, specifically as an OOD tool-use benchmark for testing generality.\n\nSpace of uses. Papers often use API-Bank alongside other benchmarks, including BFCL, MultiWOZ 2.4, ToolBench, APIBench, and ToolTalk. In these benchmark suites, it is positioned as one of several evaluations for language agents, as an OOD check, as one of the datasets used to validate tool-calling or retrieval performance, and as a benchmark whose loss is monitored during pre-training to track agent capabilities. One study also states that its instances are adapted to tool selection.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Can a Single Model Master Both Multi-turn Conversations and Tool Use? CoALM: A Unified Conversational Agentic Language Model",
+      "ToolCoder: A Systematic Code-Empowered Tool Learning Framework for Large Language Models"
+    ],
+    "emnlp25": [
+      "PORTS: Preference-Optimized Retrievers for Tool Selection with Large Language Models",
+      "iTool: Reinforced Fine-Tuning with Dynamic Deficiency Calibration for Advanced Tool Use"
+    ],
+    "iclr25": [
+      "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models",
+      "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+      "Robust Function-Calling for On-Device Language Model via Function Masking",
+      "ToolACE: Winning the Points of LLM Function Calling"
+    ],
+    "naacl25": [
+      "Hephaestus: Improving Fundamental Agent Capabilities of Large Language Models through Continual Pre-Training",
+      "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis"
+    ],
+    "neurips24": [
+      "GameTraversalBenchmark: Evaluating Planning Abilities Of Large Language Models Through Traversing 2D Game Maps"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 2,
+    "iclr25": 4,
+    "naacl25": 2,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

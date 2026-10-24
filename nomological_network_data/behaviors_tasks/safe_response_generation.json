@@ -1,0 +1,217 @@
+{
+  "canonical_name": "Safe response generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats this behavior as answering harmful, dangerous, or sensitive prompts with non-toxic, ethical, and harmless content, most often by refusing the request, rejecting its premise, or redirecting to a constructive alternative. Several papers also require the answer to remain polite, helpful, appropriate, or relevant rather than stopping at a bare refusal. In Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions, the pattern is stated directly: \"A majority of these responses were rejections to the posed red teaming queries.\" A smaller framing appears in work on negative-mood interactions, where safe generation is described as providing encouragement and comfort.\n\nVariants. Papers use several nearby names for the behavior, most commonly harmless response generation, and also response detoxification, harm-free generation, safe content generation, and safe answer generation. The task is studied on harmful instructions, dangerous prompts, red-teaming queries, adversarial or jailbreak prompts, sensitive or malicious queries, and multimodal settings; one line of work further expects a natural-language explanation of identified risks alongside a harmless answer. A smaller line of work frames it as modifying an output to make it safe, and one paper explicitly relates it to Refusal while noting the possibility of \"excessive conservatism by refusing to follow most user instructions.\"\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Even so, papers describe several ways of eliciting or judging the behavior: manual review \"to confirm their safety and appropriateness,\" reward-model or GPT-4 judgments of whether outputs avoid violence, illegal acts, or other harmful behavior, and constrained guidance at inference time to steer harmless content. Another paper uses Anthropic's Helpful and Harmless data for the harm-free generation task.\n\nWhat it is taken as evidence of. Papers connect this behavior to three constructs, but not in a single agreed way. One line of work reports it as related to Harmlessness, another records a causal relationship from Safe response generation to Safety through response detoxification, and another records a causal relationship from Safety alignment to Safe response generation, expecting an aligned model to produce a harmless response to a harmful instruction. The only linked behavioral indicator is Refusal, which is treated as related rather than equivalent.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Safe response generation",
+    "Response detoxification",
+    "Harmless response generation",
+    "Harm-free generation",
+    "Safe content generation",
+    "Safe answer generation"
+  ],
+  "papers": [
+    "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+    "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+    "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+    "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+    "SAFENUDGE: Safeguarding Large Language Models in Real-time with Tunable Safety-Performance Trade-offs",
+    "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+    "Gaining Wisdom from Setbacks: Aligning Large Language Models via Mistake Analysis",
+    "RLCD: Reinforcement Learning from Contrastive Distillation for LM Alignment",
+    "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+    "Universal Jailbreak Backdoors from Poisoned Human Feedback",
+    "RAIN: Your Language Models Can Align Themselves without Finetuning",
+    "Can a Large Language Model be a Gaslighter?",
+    "Controllable Safety Alignment: Inference-Time Adaptation to Diverse Safety Requirements",
+    "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+    "Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models",
+    "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+    "Bounded Rationality for LLMs: Satisficing Alignment at Inference-Time",
+    "MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment",
+    "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+    "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+    "Instantly Learning Preference Alignment via In-context DPO",
+    "PaCE: Parsimonious Concept Engineering for Large Language Models"
+  ],
+  "paper_count": 22,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing non-toxic, ethically appropriate responses to harmful prompts by rejecting the premise or offering constructive alternatives.",
+      "paper": "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+      "original_name": "Safe response generation"
+    },
+    {
+      "text": "Producing outputs that avoid promoting violence, illegal acts, or harmful behavior, as judged by reward models or GPT-4 evaluation.",
+      "paper": "Bounded Rationality for LLMs: Satisficing Alignment at Inference-Time",
+      "original_name": "Harmless response generation"
+    },
+    {
+      "text": "The task of modifying a model's output to be harmless and safe, especially when given a malicious or toxic input prompt.",
+      "paper": "PaCE: Parsimonious Concept Engineering for Large Language Models",
+      "original_name": "Response detoxification"
+    },
+    {
+      "text": "The task of producing a response to a user query, particularly a sensitive one, that does not contain harmful, unethical, or offensive content.",
+      "paper": "RAIN: Your Language Models Can Align Themselves without Finetuning",
+      "original_name": "Harm-free generation"
+    },
+    {
+      "text": "The observable behavior of producing outputs that are aligned with human values and free from harmful or unethical content.",
+      "paper": "Instantly Learning Preference Alignment via In-context DPO",
+      "original_name": "Safe content generation"
+    },
+    {
+      "text": "The model produces a response that is safe, harmless, ethical, and inoffensive, based on prior analysis and guidance.",
+      "paper": "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+      "original_name": "Safe answer generation"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "RLCD: Reinforcement Learning from Contrastive Distillation for LM Alignment",
+      "evidence": "\u201cWe evaluate RLCD through both human and automatic evaluations on three tasks, aiming to improve the ability of LLaMA-7B ... to generate harmless outputs\u201d (Introduction).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "RLCD: Reinforcement Learning from Contrastive Distillation for LM Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "PaCE: Parsimonious Concept Engineering for Large Language Models",
+      "evidence": "Improving Safety by Response Detoxification (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "PaCE: Parsimonious Concept Engineering for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models",
+      "evidence": "A perfectly aligned LLM is expected to generate harmless response given a harmful instruction x",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Refusal",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+      "evidence": "I am sorry, but I cannot fulfill your request\u2026 is used as a safe response under the good bot goal, indicating refusal to generate harmful content. (Figure 1 and Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats this behavior as answering harmful, dangerous, or sensitive prompts with non-toxic, ethical, and harmless content, most often by refusing the request, rejecting its premise, or redirecting to a constructive alternative. Several papers also require the answer to remain polite, helpful, appropriate, or relevant rather than stopping at a bare refusal. In Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions, the pattern is stated directly: \"A majority of these responses were rejections to the posed red teaming queries.\" A smaller framing appears in work on negative-mood interactions, where safe generation is described as providing encouragement and comfort."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby names for the behavior, most commonly harmless response generation, and also response detoxification, harm-free generation, safe content generation, and safe answer generation. The task is studied on harmful instructions, dangerous prompts, red-teaming queries, adversarial or jailbreak prompts, sensitive or malicious queries, and multimodal settings; one line of work further expects a natural-language explanation of identified risks alongside a harmless answer. A smaller line of work frames it as modifying an output to make it safe, and one paper explicitly relates it to Refusal while noting the possibility of \"excessive conservatism by refusing to follow most user instructions.\""
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Even so, papers describe several ways of eliciting or judging the behavior: manual review \"to confirm their safety and appropriateness,\" reward-model or GPT-4 judgments of whether outputs avoid violence, illegal acts, or other harmful behavior, and constrained guidance at inference time to steer harmless content. Another paper uses Anthropic's Helpful and Harmless data for the harm-free generation task."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect this behavior to three constructs, but not in a single agreed way. One line of work reports it as related to Harmlessness, another records a causal relationship from Safe response generation to Safety through response detoxification, and another records a causal relationship from Safety alignment to Safe response generation, expecting an aligned model to produce a harmless response to a harmful instruction. The only linked behavioral indicator is Refusal, which is treated as related rather than equivalent."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats this behavior as answering harmful, dangerous, or sensitive prompts with non-toxic, ethical, and harmless content, most often by refusing the request, rejecting its premise, or redirecting to a constructive alternative. Several papers also require the answer to remain polite, helpful, appropriate, or relevant rather than stopping at a bare refusal. In Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions, the pattern is stated directly: \"A majority of these responses were rejections to the posed red teaming queries.\" A smaller framing appears in work on negative-mood interactions, where safe generation is described as providing encouragement and comfort.\n\nVariants. Papers use several nearby names for the behavior, most commonly harmless response generation, and also response detoxification, harm-free generation, safe content generation, and safe answer generation. The task is studied on harmful instructions, dangerous prompts, red-teaming queries, adversarial or jailbreak prompts, sensitive or malicious queries, and multimodal settings; one line of work further expects a natural-language explanation of identified risks alongside a harmless answer. A smaller line of work frames it as modifying an output to make it safe, and one paper explicitly relates it to Refusal while noting the possibility of \"excessive conservatism by refusing to follow most user instructions.\"\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Even so, papers describe several ways of eliciting or judging the behavior: manual review \"to confirm their safety and appropriateness,\" reward-model or GPT-4 judgments of whether outputs avoid violence, illegal acts, or other harmful behavior, and constrained guidance at inference time to steer harmless content. Another paper uses Anthropic's Helpful and Harmless data for the harm-free generation task.\n\nWhat it is taken as evidence of. Papers connect this behavior to three constructs, but not in a single agreed way. One line of work reports it as related to Harmlessness, another records a causal relationship from Safe response generation to Safety through response detoxification, and another records a causal relationship from Safety alignment to Safe response generation, expecting an aligned model to produce a harmless response to a harmful instruction. The only linked behavioral indicator is Refusal, which is treated as related rather than equivalent.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+      "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+      "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+      "SAFENUDGE: Safeguarding Large Language Models in Real-time with Tunable Safety-Performance Trade-offs",
+      "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models"
+    ],
+    "iclr24": [
+      "Gaining Wisdom from Setbacks: Aligning Large Language Models via Mistake Analysis",
+      "RLCD: Reinforcement Learning from Contrastive Distillation for LM Alignment",
+      "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+      "Universal Jailbreak Backdoors from Poisoned Human Feedback",
+      "RAIN: Your Language Models Can Align Themselves without Finetuning"
+    ],
+    "iclr25": [
+      "Can a Large Language Model be a Gaslighter?",
+      "Controllable Safety Alignment: Inference-Time Adaptation to Diverse Safety Requirements",
+      "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+      "Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models",
+      "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs"
+    ],
+    "icml25": [
+      "Bounded Rationality for LLMs: Satisficing Alignment at Inference-Time",
+      "MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment"
+    ],
+    "naacl25": [
+      "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+      "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+      "Instantly Learning Preference Alignment via In-context DPO"
+    ],
+    "neurips24": [
+      "PaCE: Parsimonious Concept Engineering for Large Language Models"
+    ],
+    "acl25": [
+      "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "iclr24": 5,
+    "iclr25": 5,
+    "icml25": 2,
+    "naacl25": 3,
+    "neurips24": 1,
+    "acl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

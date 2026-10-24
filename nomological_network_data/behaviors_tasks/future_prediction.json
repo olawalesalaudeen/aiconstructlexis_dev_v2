@@ -1,0 +1,138 @@
+{
+  "canonical_name": "Future prediction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the common framing treats future prediction as producing the next observation or state from current context, usually a current observation or state together with an action. Definitions differ mainly in output form: some papers ask the model to choose among candidate next observations, others ask it to predict the next observation at each time point in a stochastic sequence, and others frame it as autoregressively predicting the next state and reward. A smaller line of work casts it as either a probabilistic forecast over unknown state values given context or a text description of the next observation after a single-step action.\n\nVariants. Papers study several closely related variants under the names observation prediction, next-state prediction, state transition prediction, state forecasting, and future prediction. The settings range from sequential decision making with candidate observations, to stochastic processes such as random walks on a graph, to autoregressive state-and-reward prediction, to uncertainty settings where the output is a probability distribution over state values, and to robot learning where the output is a textual next-observation description.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it directly through task prompts, including selecting between candidate next observations, predicting the next observation at each time point, autoregressively predicting the next state and reward, producing probabilistic forecasts for states, and generating a text description of the next observation.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. The recorded construct links are only related links: one paper relates state forecasting to Calibration by evaluating \"the calibration of its state forecasting approach,\" and another relates predicting the next observation to World modeling by describing a world model that helps an agent \"foresee the potential outcome\" of its action.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Next-state prediction",
+    "Observation prediction",
+    "State transition prediction",
+    "State forecasting",
+    "Future prediction"
+  ],
+  "papers": [
+    "DeLLMa: Decision Making Under Uncertainty with Large Language Models",
+    "LLaRA: Supercharging Robot Learning Data for Vision-Language Policy",
+    "On the Modeling Capabilities of Large Language Models for Sequential Decision Making",
+    "Sparse Autoencoders Reveal Temporal Difference Learning in Large Language Models",
+    "Zero-shot Model-based Reinforcement Learning using Large Language Models"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior where the model selects candidate next observations given current state and action.",
+      "paper": "On the Modeling Capabilities of Large Language Models for Sequential Decision Making",
+      "original_name": "Observation prediction"
+    },
+    {
+      "text": "The task of predicting the next observation in a sequence generated from a stochastic process, such as a random walk on a graph.",
+      "paper": "Sparse Autoencoders Reveal Temporal Difference Learning in Large Language Models",
+      "original_name": "Next-state prediction"
+    },
+    {
+      "text": "Autoregressively predicting the next state and reward given the current state and action.",
+      "paper": "Zero-shot Model-based Reinforcement Learning using Large Language Models",
+      "original_name": "State transition prediction"
+    },
+    {
+      "text": "The observable task of producing a probabilistic forecast for the values of unknown variables (states) based on provided contextual information.",
+      "paper": "DeLLMa: Decision Making Under Uncertainty with Large Language Models",
+      "original_name": "State forecasting"
+    },
+    {
+      "text": "The task of generating a textual description of the next observation, given a current observation and a single-step action.",
+      "paper": "LLaRA: Supercharging Robot Learning Data for Vision-Language Policy",
+      "original_name": "Future prediction"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Transformers Represent Belief State Geometry in their Residual Stream",
+      "evidence": "to perform as well as possible on next-token prediction requires that all information about the past necessary to predict the entire future as well as possible must be present across the layers of each context window position\u2019s residual stream. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Transformers Represent Belief State Geometry in their Residual Stream"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Calibration",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "DeLLMa: Decision Making Under Uncertainty with Large Language Models",
+      "evidence": "We evaluate components of DeLLMa, including the calibration of its state forecasting approach and a human agreement study to assess its utility elicitation method. (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DeLLMa: Decision Making Under Uncertainty with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "World modeling",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Web Agents with World Models: Learning and Leveraging Environment Dynamics in Web Navigation",
+      "evidence": "this LLM learns the environment dynamics, working as a world model that helps the web agent to foresee the potential outcome (i.e., predict the next observation) of its action. (Section 4.1.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Web Agents with World Models: Learning and Leveraging Environment Dynamics in Web Navigation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the common framing treats future prediction as producing the next observation or state from current context, usually a current observation or state together with an action. Definitions differ mainly in output form: some papers ask the model to choose among candidate next observations, others ask it to predict the next observation at each time point in a stochastic sequence, and others frame it as autoregressively predicting the next state and reward. A smaller line of work casts it as either a probabilistic forecast over unknown state values given context or a text description of the next observation after a single-step action."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several closely related variants under the names observation prediction, next-state prediction, state transition prediction, state forecasting, and future prediction. The settings range from sequential decision making with candidate observations, to stochastic processes such as random walks on a graph, to autoregressive state-and-reward prediction, to uncertainty settings where the output is a probability distribution over state values, and to robot learning where the output is a textual next-observation description."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers operationalize it directly through task prompts, including selecting between candidate next observations, predicting the next observation at each time point, autoregressively predicting the next state and reward, producing probabilistic forecasts for states, and generating a text description of the next observation."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not converge on a single construct that this behavior reflects. The recorded construct links are only related links: one paper relates state forecasting to Calibration by evaluating \"the calibration of its state forecasting approach,\" and another relates predicting the next observation to World modeling by describing a world model that helps an agent \"foresee the potential outcome\" of its action."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the common framing treats future prediction as producing the next observation or state from current context, usually a current observation or state together with an action. Definitions differ mainly in output form: some papers ask the model to choose among candidate next observations, others ask it to predict the next observation at each time point in a stochastic sequence, and others frame it as autoregressively predicting the next state and reward. A smaller line of work casts it as either a probabilistic forecast over unknown state values given context or a text description of the next observation after a single-step action.\n\nVariants. Papers study several closely related variants under the names observation prediction, next-state prediction, state transition prediction, state forecasting, and future prediction. The settings range from sequential decision making with candidate observations, to stochastic processes such as random walks on a graph, to autoregressive state-and-reward prediction, to uncertainty settings where the output is a probability distribution over state values, and to robot learning where the output is a textual next-observation description.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it directly through task prompts, including selecting between candidate next observations, predicting the next observation at each time point, autoregressively predicting the next state and reward, producing probabilistic forecasts for states, and generating a text description of the next observation.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. The recorded construct links are only related links: one paper relates state forecasting to Calibration by evaluating \"the calibration of its state forecasting approach,\" and another relates predicting the next observation to World modeling by describing a world model that helps an agent \"foresee the potential outcome\" of its action.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "DeLLMa: Decision Making Under Uncertainty with Large Language Models",
+      "LLaRA: Supercharging Robot Learning Data for Vision-Language Policy",
+      "On the Modeling Capabilities of Large Language Models for Sequential Decision Making",
+      "Sparse Autoencoders Reveal Temporal Difference Learning in Large Language Models",
+      "Zero-shot Model-based Reinforcement Learning using Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 5
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

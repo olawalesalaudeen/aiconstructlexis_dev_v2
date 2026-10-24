@@ -1,0 +1,120 @@
+{
+  "canonical_name": "Response harmfulness classification",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage is a binary judgment over a model response, asking whether the response is safe or unsafe. One paper frames it for moderation as \"predicting whether a response is safe or not,\" while another treats it as self-checking, where \"the LLM checks if the response is safe or not\" and outputs a binary indicator. In the more specific self-checking formulation, the safe label is described as a response that \"does not contain any sensitive factors.\"\n\nVariants. Papers use two closely related names for this behavior, response classification and safety checking. The main variation is in setting rather than outcome: one line treats it as moderation of a response, and another has the model evaluate its own generated response for sensitive or harmful content. Both formulations keep the task as a binary safe versus unsafe rating.\n\nSpace of elicitation and scores. Papers link this behavior to three measurement instruments: BeaverTails, HarmBench, and WildGuardMix. The measurement setup is described in benchmark and test-dataset terms, with papers saying they \"consider ... as benchmarks\" for response classification and also \"utilize datasets containing\" response-classification test sets.\n\nWhat it is taken as evidence of. No paper links this behavior to a construct, so the papers do not specify what broader construct it is taken to indicate.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Response classification",
+    "Safety checking"
+  ],
+  "papers": [
+    "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+    "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Determining whether a model response is safe or unsafe for moderation purposes.",
+      "paper": "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "original_name": "Response classification"
+    },
+    {
+      "text": "The model evaluates its own generated response to determine whether it contains any sensitive or harmful content, outputting a binary safety rating.",
+      "paper": "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+      "original_name": "Safety checking"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WildGuardMix",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "evidence": "For the response classification, we utilize datasets containing BeaverTails Test (Ji et al., 2024), SafeRLHF Test (Dai et al., 2023), Harmbench Response (Mazeika et al., 2024), and WildGuardMix Test Response (Han et al., 2024).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "evidence": "\"For response classification, we consider Beaver-tails (Ji et al., 2024), Safe-RLHF (Dai et al., 2024), WildGuardTestResponse (Han et al., 2024), and HarmBench (Mazeika et al.) as benchmarks\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BingoGuard: LLM Content Moderation Tools with Risk Levels"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BeaverTails",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "evidence": "\"For response classification, we consider Beaver-tails (Ji et al., 2024), Safe-RLHF (Dai et al., 2024), WildGuardTestResponse (Han et al., 2024), and HarmBench (Mazeika et al.) as benchmarks\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BingoGuard: LLM Content Moderation Tools with Risk Levels"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage is a binary judgment over a model response, asking whether the response is safe or unsafe. One paper frames it for moderation as \"predicting whether a response is safe or not,\" while another treats it as self-checking, where \"the LLM checks if the response is safe or not\" and outputs a binary indicator. In the more specific self-checking formulation, the safe label is described as a response that \"does not contain any sensitive factors.\""
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use two closely related names for this behavior, response classification and safety checking. The main variation is in setting rather than outcome: one line treats it as moderation of a response, and another has the model evaluate its own generated response for sensitive or harmful content. Both formulations keep the task as a binary safe versus unsafe rating."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to three measurement instruments: BeaverTails, HarmBench, and WildGuardMix. The measurement setup is described in benchmark and test-dataset terms, with papers saying they \"consider ... as benchmarks\" for response classification and also \"utilize datasets containing\" response-classification test sets."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No paper links this behavior to a construct, so the papers do not specify what broader construct it is taken to indicate."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage is a binary judgment over a model response, asking whether the response is safe or unsafe. One paper frames it for moderation as \"predicting whether a response is safe or not,\" while another treats it as self-checking, where \"the LLM checks if the response is safe or not\" and outputs a binary indicator. In the more specific self-checking formulation, the safe label is described as a response that \"does not contain any sensitive factors.\"\n\nVariants. Papers use two closely related names for this behavior, response classification and safety checking. The main variation is in setting rather than outcome: one line treats it as moderation of a response, and another has the model evaluate its own generated response for sensitive or harmful content. Both formulations keep the task as a binary safe versus unsafe rating.\n\nSpace of elicitation and scores. Papers link this behavior to three measurement instruments: BeaverTails, HarmBench, and WildGuardMix. The measurement setup is described in benchmark and test-dataset terms, with papers saying they \"consider ... as benchmarks\" for response classification and also \"utilize datasets containing\" response-classification test sets.\n\nWhat it is taken as evidence of. No paper links this behavior to a construct, so the papers do not specify what broader construct it is taken to indicate.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+    ],
+    "acl25": [
+      "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "acl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr25"
+  ]
+}

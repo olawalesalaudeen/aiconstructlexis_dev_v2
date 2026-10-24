@@ -1,0 +1,100 @@
+{
+  "canonical_name": "HumanEvalPack",
+  "type": "measurement",
+  "canonical_definition": "What it is. Papers most commonly describe HumanEvalPack as a code benchmark used to supply prompts for code-domain evaluation. In RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style, authors state that prompts for the code domain are sourced from HumanEvalPack. Some authors discuss the HumanEvalSynthesize variant instead, describing it as adapted for instruction-following models, where the task is framed as a natural language instruction to generate a complete program.\n\nWhat it is claimed to measure. Papers use it to measure 1 behavioral indicator, Code generation, and link it to no constructs. The reported measurement claims converge on code generation, including a setup where, given a natural language docstring or comment describing the desired code, the model is tasked to synthesize the correct code.\n\nSpace of uses. Papers relate it to 1 other instrument, RM-Bench, where it is used as a source of prompts for the code domain or code split. Generative Representational Instruction Tuning uses the HumanEvalSynthesize variant and describes that choice as more adequate for instruction-following models.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "HumanEvalPack",
+    "HumanEvalSynthesize"
+  ],
+  "papers": [
+    "Generative Representational Instruction Tuning",
+    "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+    "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "HumanEvalPack is a code benchmark used here as a source of prompts for the code split.",
+      "paper": "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+      "original_name": "HumanEvalPack"
+    },
+    {
+      "text": "A variant of the HumanEval benchmark adapted for instruction-following models, where the task is framed as a natural language instruction to generate a complete program.",
+      "paper": "Generative Representational Instruction Tuning",
+      "original_name": "HumanEvalSynthesize"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "OctoPack: Instruction Tuning Code Large Language Models",
+      "evidence": "HUMANEVALSYNTHESIZE (NL!C) Given a natural language docstring or comment describing the desired code, the model is tasked to synthesize the correct code. (Section 3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "OctoPack: Instruction Tuning Code Large Language Models"
+        ],
+        "emnlp25": [
+          "From Understanding to Generation: An Efficient Shortcut for Evaluating Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RM-Bench",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+      "evidence": "Prompts for the code domain are sourced from HumanEvalPack (Muennighoff et al., 2023), while math prompts are drawn from the MATH benchmark (Hendrycks et al., 2021).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Papers most commonly describe HumanEvalPack as a code benchmark used to supply prompts for code-domain evaluation. In RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style, authors state that prompts for the code domain are sourced from HumanEvalPack. Some authors discuss the HumanEvalSynthesize variant instead, describing it as adapted for instruction-following models, where the task is framed as a natural language instruction to generate a complete program."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use it to measure 1 behavioral indicator, Code generation, and link it to no constructs. The reported measurement claims converge on code generation, including a setup where, given a natural language docstring or comment describing the desired code, the model is tasked to synthesize the correct code."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers relate it to 1 other instrument, RM-Bench, where it is used as a source of prompts for the code domain or code split. Generative Representational Instruction Tuning uses the HumanEvalSynthesize variant and describes that choice as more adequate for instruction-following models."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Papers most commonly describe HumanEvalPack as a code benchmark used to supply prompts for code-domain evaluation. In RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style, authors state that prompts for the code domain are sourced from HumanEvalPack. Some authors discuss the HumanEvalSynthesize variant instead, describing it as adapted for instruction-following models, where the task is framed as a natural language instruction to generate a complete program.\n\nWhat it is claimed to measure. Papers use it to measure 1 behavioral indicator, Code generation, and link it to no constructs. The reported measurement claims converge on code generation, including a setup where, given a natural language docstring or comment describing the desired code, the model is tasked to synthesize the correct code.\n\nSpace of uses. Papers relate it to 1 other instrument, RM-Bench, where it is used as a source of prompts for the code domain or code split. Generative Representational Instruction Tuning uses the HumanEvalSynthesize variant and describes that choice as more adequate for instruction-following models.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Generative Representational Instruction Tuning",
+      "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

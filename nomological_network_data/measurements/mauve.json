@@ -1,0 +1,127 @@
+{
+  "canonical_name": "MAUVE",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, MAUVE is consistently used as an automatic metric to evaluate text generation by comparing the distribution of machine-generated text to that of human-written or reference text. The most prevalent definition describes it as a non-parametric method that compares embedding distributions using a mixture of forward and reverse KL divergences. A few papers provide a more specific mechanism, stating that it calculates the \"area under the KL divergence curve\" to measure this similarity. The primary application of MAUVE is to assess the \"distributional similarity\" between generated and ground-truth text, which is often framed as a measure of overall generation quality. The relationships data confirms its use for evaluating both general \"Text generation\" and \"Conditional text generation\". In addition to this general use, some studies employ MAUVE to quantify more specific attributes, such as \"fluency\" or \"style consistency\" between training data and model outputs.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "metric",
+  "names": [
+    "MAUVE",
+    "Mauve"
+  ],
+  "papers": [
+    "Conditional [MASK] Discrete Diffusion Language Model",
+    "Controlled Generation for Private Synthetic Text",
+    "SMART: Simulated Students Aligned with Item Response Theory for Question Difficulty Prediction",
+    "Closing the Curious Case of Neural Text Degeneration",
+    "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+    "Language Model Decoding as Direct Metrics Optimization",
+    "SequenceMatch: Imitation Learning for Autoregressive Sequence Modelling with Backtracking",
+    "Latent Thought Models with Variational Bayes Inference-Time Computation",
+    "Measuring Diversity in Synthetic Datasets",
+    "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+    "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A non-parametric method for evaluating generative models by comparing the embedding distributions of generated and real text using a mixture of forward and reverse KL divergences.",
+      "paper": "Closing the Curious Case of Neural Text Degeneration",
+      "original_name": "MAUVE"
+    },
+    {
+      "text": "Mauve is a metric that compares generated text to human text by computing the area under the curve of KL divergences between the two distributions, used to assess distributional similarity in open-ended text generation.",
+      "paper": "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+      "original_name": "Mauve"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+      "evidence": "\"Mauve ... has seen wide usage in open-ended text generation\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Conditional text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time",
+      "evidence": "We evaluate conditional generation using the MAUVE score (Pillutla et al., 2021).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+      "evidence": "\"we use the MAUVE metric ... to measure the quality of generated text against the real text\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, MAUVE is consistently used as an automatic metric to evaluate text generation by comparing the distribution of machine-generated text to that of human-written or reference text. The most prevalent definition describes it as a non-parametric method that compares embedding distributions using a mixture of forward and reverse KL divergences. A few papers provide a more specific mechanism, stating that it calculates the \"area under the KL divergence curve\" to measure this similarity. The primary application of MAUVE is to assess the \"distributional similarity\" between generated and ground-truth text, which is often framed as a measure of overall generation quality. The relationships data confirms its use for evaluating both general \"Text generation\" and \"Conditional text generation\". In addition to this general use, some studies employ MAUVE to quantify more specific attributes, such as \"fluency\" or \"style consistency\" between training data and model outputs.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Conditional [MASK] Discrete Diffusion Language Model",
+      "Controlled Generation for Private Synthetic Text",
+      "SMART: Simulated Students Aligned with Item Response Theory for Question Difficulty Prediction"
+    ],
+    "iclr24": [
+      "Closing the Curious Case of Neural Text Degeneration",
+      "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+      "Language Model Decoding as Direct Metrics Optimization",
+      "SequenceMatch: Imitation Learning for Autoregressive Sequence Modelling with Backtracking"
+    ],
+    "icml25": [
+      "Latent Thought Models with Variational Bayes Inference-Time Computation",
+      "Measuring Diversity in Synthetic Datasets"
+    ],
+    "naacl25": [
+      "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+      "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr24": 4,
+    "icml25": 2,
+    "naacl25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "icml25",
+    "naacl25"
+  ]
+}

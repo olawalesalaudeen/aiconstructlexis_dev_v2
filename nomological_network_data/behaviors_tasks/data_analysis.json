@@ -1,0 +1,265 @@
+{
+  "canonical_name": "Data analysis",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across definitions, the prevailing usage treats data analysis as answering questions or producing findings from data by inspecting, transforming, modeling, and interpreting it with statistical and logical reasoning. Most descriptions emphasize deriving insights from a database or processing data to answer specific questions, while some benchmark-oriented formulations cast it as multiple-choice, fill-in-the-blank, or other analysis questions; one paper further says a system should return \"findings and suggestions based on the database\" (DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation).\n\nVariants. Papers study both broad analysis-question settings and narrower tabular tasks. The broader framing includes database or CSV inputs, financial analysis questions, and multi-level easy, medium, and hard prompts, while a smaller line of work narrows the behavior to \"three practical tasks in which the LLM assists in data analysis or data science\": table reformatting, predicting which columns can be used to join two tables, and predicting the correct column type annotation (LiveBench: A Challenging, Contamination-Limited LLM Benchmark). One paper also relates complex analysis queries to Question decomposition, and another claims a causal relationship from Code generation to Data analysis by describing LLMs enhanced by code generation as automatically generating high-quality data analysis.\n\nSpace of elicitation and scores. Papers link data analysis to 4 measurement instruments, most often InfiAgent-DABench, LiveBench, TableEval, and WildBench. These instruments elicit it through CSV-based analysis challenges, benchmark categories labeled data analysis, collections of tasks users expect LLMs to perform, and task settings drawn from diverse real-world industrial scenarios. At the task level, papers also measure the category through Data transformation, Schema matching, and Column type annotation.\n\nWhat it is taken as evidence of. The linked construct picture includes 3 constructs, Logical reasoning, Mathematical reasoning, and Strategic reasoning. In the recorded relationships, papers describe data analysis as related to all three reasoning skills in specific application scenarios, rather than singling out only one construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Data analysis"
+  ],
+  "papers": [
+    "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+    "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+    "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+    "Personality Matters: User Traits Predict LLM Preferences in Multi-Turn Collaborative Tasks",
+    "TableEval: A Real-World Benchmark for Complex, Multilingual, and Multi-Structured Table Question Answering",
+    "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?",
+    "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+    "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+    "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The process of systematically applying statistical and logical reasoning to comprehend data and derive insights from a database.",
+      "paper": "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "original_name": "Data analysis"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "evidence": "the need for data analysis typically arises from specific application scenarios, and requires diverse reasoning skills including mathematical reasoning, logical reasoning, and strategic reasoning. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Logical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "evidence": "the need for data analysis typically arises from specific application scenarios, and requires diverse reasoning skills including mathematical reasoning, logical reasoning, and strategic reasoning. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Strategic reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "evidence": "the need for data analysis typically arises from specific application scenarios, and requires diverse reasoning skills including mathematical reasoning, logical reasoning, and strategic reasoning. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "evidence": "we use large language models (LLMs) enhanced by code generation to automatically generate high-quality data analysis, which will later be refined by human annotators. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Question decomposition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "evidence": "most existing table QA datasets focus on obtaining specific information, our data analysis queries can be complex and requires query decomposition and reasoning. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WildBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "This dataset is particularly suited for conversion into an evaluation benchmark because it contains a diverse array of tasks that users expect LLMs to perform, such as writing assistance, coding, mathematics, data analysis, role playing, and planning. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LiveBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling LLM Inference Efficiently with Optimized Sample Compute Allocation",
+      "evidence": "LiveBench (White et al., 2024) contains 6 problem categories: data analysis, language, reasoning, math, instruction following, and coding. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Scaling LLM Inference Efficiently with Optimized Sample Compute Allocation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "InfiAgent-DABench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+      "evidence": "(1) Data Analysis: InfiAgent-DABench (Hu et al., 2024b) contains 257 challenges with CSV inputs and multi-level (easy/medium/hard) analysis questions. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TableEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "TableEval: A Real-World Benchmark for Complex, Multilingual, and Multi-Structured Table Question Answering",
+      "evidence": "This approach accommodates various task types within diverse real-world industrial scenarios, including information retrieval, numerical analysis, table reasoning, data analysis, multi-turn dialogue, and understanding of table structures. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "TableEval: A Real-World Benchmark for Complex, Multilingual, and Multi-Structured Table Question Answering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Column type annotation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "\u201cData Analysis: three tasks using recent datasets from Kaggle and Socrata, specifically, ... and predicting the correct column type annotation\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Schema matching",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "\u201cData Analysis: three tasks using recent datasets from Kaggle and Socrata, specifically, ... predicting which columns can be used to join two tables\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Data transformation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "\u201cData Analysis: three tasks using recent datasets from Kaggle and Socrata, specifically, table reformatting ...\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 12,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 10,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across definitions, the prevailing usage treats data analysis as answering questions or producing findings from data by inspecting, transforming, modeling, and interpreting it with statistical and logical reasoning. Most descriptions emphasize deriving insights from a database or processing data to answer specific questions, while some benchmark-oriented formulations cast it as multiple-choice, fill-in-the-blank, or other analysis questions; one paper further says a system should return \"findings and suggestions based on the database\" (DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation)."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study both broad analysis-question settings and narrower tabular tasks. The broader framing includes database or CSV inputs, financial analysis questions, and multi-level easy, medium, and hard prompts, while a smaller line of work narrows the behavior to \"three practical tasks in which the LLM assists in data analysis or data science\": table reformatting, predicting which columns can be used to join two tables, and predicting the correct column type annotation (LiveBench: A Challenging, Contamination-Limited LLM Benchmark). One paper also relates complex analysis queries to Question decomposition, and another claims a causal relationship from Code generation to Data analysis by describing LLMs enhanced by code generation as automatically generating high-quality data analysis."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link data analysis to 4 measurement instruments, most often InfiAgent-DABench, LiveBench, TableEval, and WildBench. These instruments elicit it through CSV-based analysis challenges, benchmark categories labeled data analysis, collections of tasks users expect LLMs to perform, and task settings drawn from diverse real-world industrial scenarios. At the task level, papers also measure the category through Data transformation, Schema matching, and Column type annotation."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "The linked construct picture includes 3 constructs, Logical reasoning, Mathematical reasoning, and Strategic reasoning. In the recorded relationships, papers describe data analysis as related to all three reasoning skills in specific application scenarios, rather than singling out only one construct."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across definitions, the prevailing usage treats data analysis as answering questions or producing findings from data by inspecting, transforming, modeling, and interpreting it with statistical and logical reasoning. Most descriptions emphasize deriving insights from a database or processing data to answer specific questions, while some benchmark-oriented formulations cast it as multiple-choice, fill-in-the-blank, or other analysis questions; one paper further says a system should return \"findings and suggestions based on the database\" (DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation).\n\nVariants. Papers study both broad analysis-question settings and narrower tabular tasks. The broader framing includes database or CSV inputs, financial analysis questions, and multi-level easy, medium, and hard prompts, while a smaller line of work narrows the behavior to \"three practical tasks in which the LLM assists in data analysis or data science\": table reformatting, predicting which columns can be used to join two tables, and predicting the correct column type annotation (LiveBench: A Challenging, Contamination-Limited LLM Benchmark). One paper also relates complex analysis queries to Question decomposition, and another claims a causal relationship from Code generation to Data analysis by describing LLMs enhanced by code generation as automatically generating high-quality data analysis.\n\nSpace of elicitation and scores. Papers link data analysis to 4 measurement instruments, most often InfiAgent-DABench, LiveBench, TableEval, and WildBench. These instruments elicit it through CSV-based analysis challenges, benchmark categories labeled data analysis, collections of tasks users expect LLMs to perform, and task settings drawn from diverse real-world industrial scenarios. At the task level, papers also measure the category through Data transformation, Schema matching, and Column type annotation.\n\nWhat it is taken as evidence of. The linked construct picture includes 3 constructs, Logical reasoning, Mathematical reasoning, and Strategic reasoning. In the recorded relationships, papers describe data analysis as related to all three reasoning skills in specific application scenarios, rather than singling out only one construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+      "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+      "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "Personality Matters: User Traits Predict LLM Preferences in Multi-Turn Collaborative Tasks",
+      "TableEval: A Real-World Benchmark for Complex, Multilingual, and Multi-Structured Table Question Answering"
+    ],
+    "iclr25": [
+      "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?",
+      "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+    ],
+    "neurips24": [
+      "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "iclr25": 3,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "neurips24"
+  ]
+}

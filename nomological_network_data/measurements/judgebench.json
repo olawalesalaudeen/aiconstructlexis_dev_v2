@@ -1,0 +1,193 @@
+{
+  "canonical_name": "JudgeBench",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing usage is as a benchmark for challenging evaluation cases, most often for evaluating LLM-based judges on difficult response pairs or questions. Definitions repeatedly emphasize advanced reasoning demands, including coverage of knowledge, reasoning, math, and coding, and one description speaks more broadly of harder questions for various reasoning tasks rather than judge evaluation alone. A smaller usage frames it as an additional case study for judge behavior and agreement under uncertainty, and another describes it as testing the robustness and accuracy of LLM-as-a-Judge systems.\n\nWhat it is claimed to measure. Across papers, JudgeBench is linked to 3 constructs and no behavioral indicators. The most frequently linked constructs are Factuality, Mathematical reasoning, and Reasoning: papers say it focuses on \"the factual and logical correctness of complex responses to challenging questions,\" use it because it includes response pairs involving factual correctness, and describe it as evaluating difficult response pairs that require advanced reasoning abilities or span knowledge, reasoning, math, and coding. The reported measurement links therefore cover several constructs rather than only one.\n\nSpace of uses. JudgeBench is related to 4 other measurement instruments, most frequently LiveBench, LiveCodeBench, MMLU-Pro, and RewardBench. In one use, papers draw on MMLU-Pro for the Knowledge category, the corresponding LiveBench datasets for the Reasoning and Mathematics categories, and LiveCodeBench for the Coding category; another paper positions JudgeBench as a complement to RewardBench for evaluating difficult tasks requiring reasoning. Elsewhere, papers include it as one benchmark within larger evaluation setups, and one definition treats it as an additional case study.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "JudgeBench"
+  ],
+  "papers": [
+    "Agentic Reward Modeling: Integrating Human Preferences with Verifiable Correctness Signals for Reliable Reward Systems",
+    "Crowd Comparative Reasoning: Unlocking Comprehensive Evaluations for LLM-as-a-Judge",
+    "Praetor: A Fine-Grained Generative LLM Evaluator with Instance-Level Customizable Evaluation Criteria",
+    "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+    "Beyond correlation: The impact of human uncertainty in measuring the effectiveness of automatic evaluation and LLM-as-a-judge",
+    "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+    "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+    "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+    "Teaching Language Models to Critique via Reinforcement Learning"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark referenced as an additional case study for evaluating judge behavior and agreement under uncertainty.",
+      "paper": "Beyond correlation: The impact of human uncertainty in measuring the effectiveness of automatic evaluation and LLM-as-a-judge",
+      "original_name": "JudgeBench"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "the focus of JudgeBench is on evaluating the factual and logical correctness of complex responses to challenging questions. (Figure 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ],
+        "acl25": [
+          "Agentic Reward Modeling: Integrating Human Preferences with Verifiable Correctness Signals for Reliable Reward Systems"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "we introduce JudgeBench, a benchmark designed to evaluate LLM-based judges on difficult response pairs that require advanced reasoning abilities. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU-Pro",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "We use MMLU-Pro for the Knowledge category. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LiveBench",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "For the Reasoning and Mathematics categories, we use the corresponding LiveBench datasets. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LiveCodeBench",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "LiveCodeBench is a contamination-free dataset for coding tasks, containing over 300 challenging questions sourced from coding contests like LeetCode, AtCoder, and Codeforces. We select this dataset for the Coding category. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RewardBench",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "Thus, JudgeBench offers a valuable complement to RewardBench for evaluating reward models on difficult tasks requiring reasoning. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Evaluation ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+      "evidence": "JudgeBench is a recent benchmark that evaluates LLM-based judges on challenging response pairs spanning knowledge, reasoning, math, and coding. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing usage is as a benchmark for challenging evaluation cases, most often for evaluating LLM-based judges on difficult response pairs or questions. Definitions repeatedly emphasize advanced reasoning demands, including coverage of knowledge, reasoning, math, and coding, and one description speaks more broadly of harder questions for various reasoning tasks rather than judge evaluation alone. A smaller usage frames it as an additional case study for judge behavior and agreement under uncertainty, and another describes it as testing the robustness and accuracy of LLM-as-a-Judge systems."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across papers, JudgeBench is linked to 3 constructs and no behavioral indicators. The most frequently linked constructs are Factuality, Mathematical reasoning, and Reasoning: papers say it focuses on \"the factual and logical correctness of complex responses to challenging questions,\" use it because it includes response pairs involving factual correctness, and describe it as evaluating difficult response pairs that require advanced reasoning abilities or span knowledge, reasoning, math, and coding. The reported measurement links therefore cover several constructs rather than only one."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "JudgeBench is related to 4 other measurement instruments, most frequently LiveBench, LiveCodeBench, MMLU-Pro, and RewardBench. In one use, papers draw on MMLU-Pro for the Knowledge category, the corresponding LiveBench datasets for the Reasoning and Mathematics categories, and LiveCodeBench for the Coding category; another paper positions JudgeBench as a complement to RewardBench for evaluating difficult tasks requiring reasoning. Elsewhere, papers include it as one benchmark within larger evaluation setups, and one definition treats it as an additional case study."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing usage is as a benchmark for challenging evaluation cases, most often for evaluating LLM-based judges on difficult response pairs or questions. Definitions repeatedly emphasize advanced reasoning demands, including coverage of knowledge, reasoning, math, and coding, and one description speaks more broadly of harder questions for various reasoning tasks rather than judge evaluation alone. A smaller usage frames it as an additional case study for judge behavior and agreement under uncertainty, and another describes it as testing the robustness and accuracy of LLM-as-a-Judge systems.\n\nWhat it is claimed to measure. Across papers, JudgeBench is linked to 3 constructs and no behavioral indicators. The most frequently linked constructs are Factuality, Mathematical reasoning, and Reasoning: papers say it focuses on \"the factual and logical correctness of complex responses to challenging questions,\" use it because it includes response pairs involving factual correctness, and describe it as evaluating difficult response pairs that require advanced reasoning abilities or span knowledge, reasoning, math, and coding. The reported measurement links therefore cover several constructs rather than only one.\n\nSpace of uses. JudgeBench is related to 4 other measurement instruments, most frequently LiveBench, LiveCodeBench, MMLU-Pro, and RewardBench. In one use, papers draw on MMLU-Pro for the Knowledge category, the corresponding LiveBench datasets for the Reasoning and Mathematics categories, and LiveCodeBench for the Coding category; another paper positions JudgeBench as a complement to RewardBench for evaluating difficult tasks requiring reasoning. Elsewhere, papers include it as one benchmark within larger evaluation setups, and one definition treats it as an additional case study.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Agentic Reward Modeling: Integrating Human Preferences with Verifiable Correctness Signals for Reliable Reward Systems",
+      "Crowd Comparative Reasoning: Unlocking Comprehensive Evaluations for LLM-as-a-Judge",
+      "Praetor: A Fine-Grained Generative LLM Evaluator with Instance-Level Customizable Evaluation Criteria"
+    ],
+    "iclr25": [
+      "Beyond correlation: The impact of human uncertainty in measuring the effectiveness of automatic evaluation and LLM-as-a-judge",
+      "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References"
+    ],
+    "icml25": [
+      "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+      "Teaching Language Models to Critique via Reinforcement Learning"
+    ],
+    "emnlp25": [
+      "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 3,
+    "icml25": 2,
+    "emnlp25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

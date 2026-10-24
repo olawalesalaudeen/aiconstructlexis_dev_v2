@@ -1,0 +1,246 @@
+{
+  "canonical_name": "Stability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Most definitions frame stability as consistency or robustness under change, but papers disagree on what should remain stable and under which variation. Some define it as a latent property of prediction robustness at a given input, with high local neighborhood confidence and low variability in embedding space, while others define it as consistent performance near an optimal retrieval depth, or as consistent high-quality generations for the same input, quantified by variance in reward scores. A smaller line of work uses stability for controlled training dynamics that avoid collapse, for decoding algorithms whose output probabilities change only in bounded ways under logit perturbations, for performance retained across training rounds and languages, for robustness of concepts or explanations to input or concept-set perturbations, and for preserving knowledge or overall capabilities during self-training or knowledge editing.\n\nSpace of facets. Papers introduce named subtypes such as local stability, inference stability, and training stability. Beyond these labels, the concept is applied to several levels: predictions at a single input, model performance over retrieval windows or training rounds, decoding behavior under perturbed logits, concepts and explanations under perturbations, and preservation of old knowledge or overall capabilities under continued training or sequential edits. Stability is also discussed in balance language with plasticity, and one line explicitly frames its local version as quantifying prediction consistency over equally well performing fine-tuned models, while another paper juxtaposes instability with lack of coherence.\n\nSpace of measurement. Operationalizations vary across papers. Papers link stability to 2 measurement instruments, BIG-bench and MMLU, both used as benchmarks in one study, and no behavioral indicator is linked to it. Elsewhere, authors operationalize it through analyses that match their local definitions: local neighborhood confidence and variability in embedding space, performance fluctuation within a small retrieval window around optimal depth, standard deviation of reward model scores across sampled generations, bounded changes in output token probabilities under small logit perturbations, and signs of training collapse or preservation of old knowledge. In each case, the operationalization follows the paper's own definition of what should remain stable.\n\nLinks. Several papers relate stability to plasticity, often in terms of maintaining a balance between the two. Single papers also report it as related to coherence and one other construct. Separate papers claim causal relationships from stability to faithfulness, generation diversity, and instruction following ability, and no correlational link is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Local stability",
+    "Stability",
+    "Inference stability"
+  ],
+  "papers": [
+    "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs",
+    "Quantifying Prediction Consistency Under Fine-tuning Multiplicity in Tabular LLMs",
+    "RAGGED: Towards Informed Design of Scalable and Stable RAG Systems",
+    "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A latent property reflecting the robustness of a model's prediction at a given input, determined by the average confidence and variability of predictions in its local neighborhood in the embedding space.",
+      "paper": "Quantifying Prediction Consistency Under Fine-tuning Multiplicity in Tabular LLMs",
+      "original_name": "Local stability"
+    },
+    {
+      "text": "The consistency of model performance around its optimal retrieval depth, indicating resilience to small variations in the number of retrieved passages.",
+      "paper": "RAGGED: Towards Informed Design of Scalable and Stable RAG Systems",
+      "original_name": "Stability"
+    },
+    {
+      "text": "The degree to which a model consistently produces high-quality outputs for a given input, measured by the variance in reward scores across multiple generations.",
+      "paper": "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+      "original_name": "Inference stability"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Plasticity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "evidence": "This technique demonstrates a negligible reduction in the FP metric, signifying a well-maintained balance between plasticity and stability. (Section 6)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ],
+        "icml25": [
+          "Large Continual Instruction Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Faithful Vision-Language Interpretation via Concept Bottleneck Models",
+      "evidence": "Therefore, stability plays a pivotal role in ensuring explanation faithfulness.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Faithful Vision-Language Interpretation via Concept Bottleneck Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Automating Dataset Updates Towards Reliable and Timely Evaluation of Large Language Models",
+      "evidence": "\"Extensive experiments on updated MMLU and BIG-Bench demonstrate the stability of the proposed strategies\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Automating Dataset Updates Towards Reliable and Timely Evaluation of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Automating Dataset Updates Towards Reliable and Timely Evaluation of Large Language Models",
+      "evidence": "\"Extensive experiments on updated MMLU and BIG-Bench demonstrate the stability of the proposed strategies\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Automating Dataset Updates Towards Reliable and Timely Evaluation of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Coherence",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Analyzing and Improving Coherence of Large Language Models in Question Answering",
+      "evidence": "These models, however, often suffer from instability or lack of coherence, that is the ability of the models to generate semantically equivalent outputs when receiving diverse yet semantically equivalent input variations. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Analyzing and Improving Coherence of Large Language Models in Question Answering"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Efficient Domain Continual pretraining by Mitigating the Stability Gap",
+      "evidence": "This suggests that the top layers\u2019 weights indeed lack sufficient stability gradient to maintain instruction-following ability initially. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Efficient Domain Continual pretraining by Mitigating the Stability Gap"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What Makes In-context Learning Effective for Mathematical Reasoning",
+      "evidence": "We prove that the reasoning efficacy (measured by empirical prediction loss) can be bounded by an LLM-oriented semantic similarity and an inference stability of demonstrations, which is general for both one-shot and few-shot scenarios. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "What Makes In-context Learning Effective for Mathematical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs",
+      "evidence": "Furthermore, stability implies an intuitive notion of diversity, suggesting that tokens with similar logits should have comparable probabilities of being selected.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Self-improvement",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Contextual Experience Replay for Self-Improvement of Language Agents",
+      "evidence": "We conducted further analysis to investigate the improvements of CER with various metrics, such as cross-template success rate, stability (preservation of old knowledge), and plasticity (acquisition of new knowledge) (Grossberg, 1982; Rolnick et al., 2019) (\u00a75.2, \u00a75.3), demonstrating its generalizability and effectiveness as a self-improvement system.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Contextual Experience Replay for Self-Improvement of Language Agents"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Consistency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Quantifying Prediction Consistency Under Fine-tuning Multiplicity in Tabular LLMs",
+      "evidence": "Our objective is to define a measure, denoted as S(x, f), for an input x and a given fine-tuned model f, that would preemptively quantify the consistency of the prediction \u02c6f(x) over a broad class of equally-well-performing fine-tuned models. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Quantifying Prediction Consistency Under Fine-tuning Multiplicity in Tabular LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 10,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most definitions frame stability as consistency or robustness under change, but papers disagree on what should remain stable and under which variation. Some define it as a latent property of prediction robustness at a given input, with high local neighborhood confidence and low variability in embedding space, while others define it as consistent performance near an optimal retrieval depth, or as consistent high-quality generations for the same input, quantified by variance in reward scores. A smaller line of work uses stability for controlled training dynamics that avoid collapse, for decoding algorithms whose output probabilities change only in bounded ways under logit perturbations, for performance retained across training rounds and languages, for robustness of concepts or explanations to input or concept-set perturbations, and for preserving knowledge or overall capabilities during self-training or knowledge editing."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers introduce named subtypes such as local stability, inference stability, and training stability. Beyond these labels, the concept is applied to several levels: predictions at a single input, model performance over retrieval windows or training rounds, decoding behavior under perturbed logits, concepts and explanations under perturbations, and preservation of old knowledge or overall capabilities under continued training or sequential edits. Stability is also discussed in balance language with plasticity, and one line explicitly frames its local version as quantifying prediction consistency over equally well performing fine-tuned models, while another paper juxtaposes instability with lack of coherence."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalizations vary across papers. Papers link stability to 2 measurement instruments, BIG-bench and MMLU, both used as benchmarks in one study, and no behavioral indicator is linked to it. Elsewhere, authors operationalize it through analyses that match their local definitions: local neighborhood confidence and variability in embedding space, performance fluctuation within a small retrieval window around optimal depth, standard deviation of reward model scores across sampled generations, bounded changes in output token probabilities under small logit perturbations, and signs of training collapse or preservation of old knowledge. In each case, the operationalization follows the paper's own definition of what should remain stable."
+    },
+    {
+      "label": "Links.",
+      "text": "Several papers relate stability to plasticity, often in terms of maintaining a balance between the two. Single papers also report it as related to coherence and one other construct. Separate papers claim causal relationships from stability to faithfulness, generation diversity, and instruction following ability, and no correlational link is reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "conflicting",
+    "reason": "The papers use \"stability\" for several different phenomena rather than one shared property. A few define it as robustness or consistency of predictions or outputs under perturbations or repeated sampling, but many others use it for controlled training dynamics and numerical behavior, consistency across retrieval depth or rounds and languages, or retaining capabilities under self-training and knowledge updates, so papers using these definitions would often not be studying the same thing.",
+    "papers_with_definition": 10,
+    "runs": [
+      "conflicting",
+      "conflicting",
+      "conflicting"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Most definitions frame stability as consistency or robustness under change, but papers disagree on what should remain stable and under which variation. Some define it as a latent property of prediction robustness at a given input, with high local neighborhood confidence and low variability in embedding space, while others define it as consistent performance near an optimal retrieval depth, or as consistent high-quality generations for the same input, quantified by variance in reward scores. A smaller line of work uses stability for controlled training dynamics that avoid collapse, for decoding algorithms whose output probabilities change only in bounded ways under logit perturbations, for performance retained across training rounds and languages, for robustness of concepts or explanations to input or concept-set perturbations, and for preserving knowledge or overall capabilities during self-training or knowledge editing.\n\nSpace of facets. Papers introduce named subtypes such as local stability, inference stability, and training stability. Beyond these labels, the concept is applied to several levels: predictions at a single input, model performance over retrieval windows or training rounds, decoding behavior under perturbed logits, concepts and explanations under perturbations, and preservation of old knowledge or overall capabilities under continued training or sequential edits. Stability is also discussed in balance language with plasticity, and one line explicitly frames its local version as quantifying prediction consistency over equally well performing fine-tuned models, while another paper juxtaposes instability with lack of coherence.\n\nSpace of measurement. Operationalizations vary across papers. Papers link stability to 2 measurement instruments, BIG-bench and MMLU, both used as benchmarks in one study, and no behavioral indicator is linked to it. Elsewhere, authors operationalize it through analyses that match their local definitions: local neighborhood confidence and variability in embedding space, performance fluctuation within a small retrieval window around optimal depth, standard deviation of reward model scores across sampled generations, bounded changes in output token probabilities under small logit perturbations, and signs of training collapse or preservation of old knowledge. In each case, the operationalization follows the paper's own definition of what should remain stable.\n\nLinks. Several papers relate stability to plasticity, often in terms of maintaining a balance between the two. Single papers also report it as related to coherence and one other construct. Separate papers claim causal relationships from stability to faithfulness, generation diversity, and instruction following ability, and no correlational link is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "icml25": [
+      "Quantifying Prediction Consistency Under Fine-tuning Multiplicity in Tabular LLMs",
+      "RAGGED: Towards Informed Design of Scalable and Stable RAG Systems",
+      "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback"
+    ],
+    "iclr25": [
+      "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "icml25": 3,
+    "iclr25": 1
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

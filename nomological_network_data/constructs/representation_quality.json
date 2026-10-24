@@ -1,0 +1,181 @@
+{
+  "canonical_name": "Representation quality",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats representation quality as a latent ability of a model's internal representations, features, or embeddings to encode task-relevant information in a usable feature space for downstream tasks. Several definitions stress preserving useful information while discarding noise, or producing embeddings that support retrieval, clustering, semantic similarity, binding prediction, or the distinction of tasks and knowledge domains. A smaller line of work narrows the construct to specific representational objects: task vector quality is the distinctness and decodability of a task representation for triggering correct in-context learning behavior, while visual feature quality is the preservation of semantic, structural, and pixel-level image details for multimodal alignment and reasoning. The main disagreement is over scope and reference standard, broad hidden-state or embedding quality versus task-specific or modality-specific representations, assessed by downstream usefulness, decodability, or detail preservation.\n\nSpace of facets. Papers organize the construct through several facets rather than one common breakdown. One paper explicitly frames it through information theory, geometry, and invariance to input perturbations, and further states that compression (entropy), geometry (curvature and rank), and invariance are all facets of how the Gram matrix distributes variance. Across papers, nearby labels such as feature representation capability, representational capability, task vector quality, and visual feature quality are used for overlapping but not identical objects: some refer to general hidden representations or text embeddings, others to task encodings, visual encoder outputs, or antibody-sequence embeddings.\n\nSpace of measurement. Operationalization is explicit but narrow in the recorded links: the construct is linked to 1 measurement instrument, MTEB, and papers use it for embedding performance and text-embedding tasks. It is also linked to 2 behavioral indicators, Image reconstruction and Protein understanding, but the recorded relationships treat them as a cause and a related concept rather than as direct measures. Beyond the named instrument, papers operationalize the construct through task decodability, downstream-task benchmarks for binding prediction, and analyses based on compression, geometry, and invariance. These operationalizations partly match definitions centered on downstream usefulness, while others target structural properties of representations or preservation of image detail.\n\nLinks. In the relationship claims, one paper reports a causal relationship from representation quality to multimodal alignment. One paper also reports a causal relationship from image reconstruction to representation quality, describing reconstruction of input images through a diffusion model conditioned on visual encoder outputs as establishing a path from pixel space to visual features. A separate paper treats protein understanding as related to representation quality in the context of binding-prediction benchmarks, and no correlational link is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Representation quality",
+    "Task vector quality",
+    "Visual feature quality",
+    "Feature representation capability",
+    "Representational capability",
+    "Representation capabilities"
+  ],
+  "papers": [
+    "Generative Representational Instruction Tuning",
+    "KaSA: Knowledge-Aware Singular-Value Adaptation of Large Language Models",
+    "DS-VLM: Diffusion Supervision Vision Language Model",
+    "Emergence and Effectiveness of Task Vectors in In-Context Learning: An Encoder Decoder Perspective",
+    "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+    "Layer by Layer: Uncovering Hidden Representations in Language Models",
+    "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The inherent ability of a pre-trained model to encode data into a feature space that can be used to distinguish and categorize different tasks and knowledge domains.",
+      "paper": "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+      "original_name": "Feature representation capability"
+    },
+    {
+      "text": "The degree to which a model's internal representation of a task is distinct and decodable, determining the effectiveness of triggering correct in-context learning behavior.",
+      "paper": "Emergence and Effectiveness of Task Vectors in In-Context Learning: An Encoder Decoder Perspective",
+      "original_name": "Task vector quality"
+    },
+    {
+      "text": "The latent property of a model's internal representations that determines their effectiveness in preserving task-relevant information while discarding noise, as reflected in downstream performance and structural properties like compression, geometry, and invariance.",
+      "paper": "Layer by Layer: Uncovering Hidden Representations in Language Models",
+      "original_name": "Representation quality"
+    },
+    {
+      "text": "The degree to which visual encoder outputs preserve semantic, structural, and pixel-level details from the input image, enabling accurate multimodal alignment and reasoning.",
+      "paper": "DS-VLM: Diffusion Supervision Vision Language Model",
+      "original_name": "Visual feature quality"
+    },
+    {
+      "text": "The latent ability of a model to produce high-quality numerical vector representations (embeddings) of text for tasks like retrieval, clustering, and semantic similarity.",
+      "paper": "Generative Representational Instruction Tuning",
+      "original_name": "Representational capability"
+    },
+    {
+      "text": "The degree to which a model's learned embeddings of antibody sequences effectively capture the biological information necessary for downstream tasks like binding prediction.",
+      "paper": "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models",
+      "original_name": "Representation capabilities"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MTEB",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Generative Representational Instruction Tuning",
+      "evidence": "For embedding performance we evaluate using the 56 main datasets from MTEB (Muennighoff et al., 2023c). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generative Representational Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Protein understanding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models",
+      "evidence": "These results con\ufb01rm that AVIDa-SARS-CoV-2 provides valuable benchmarks for assessing the representation capabilities of antibody language models for binding prediction, thereby facilitating the development of AI-driven antibody discovery.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multimodal alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "DS-VLM: Diffusion Supervision Vision Language Model",
+      "evidence": "The improvement on MMStar, which emphasizes fine-grained multimodal alignment and reasoning under instruction-following settings, demonstrates DS-VLM\u2019s ability to preserve semantic coherence across modalities through enhanced visual feature quality. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "DS-VLM: Diffusion Supervision Vision Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Image reconstruction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "DS-VLM: Diffusion Supervision Vision Language Model",
+      "evidence": "This approach simultaneously preserves high-level semantic alignment through conventional text supervision while enhancing visual feature quality via pixel-level reconstruction constraints. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "DS-VLM: Diffusion Supervision Vision Language Model"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats representation quality as a latent ability of a model's internal representations, features, or embeddings to encode task-relevant information in a usable feature space for downstream tasks. Several definitions stress preserving useful information while discarding noise, or producing embeddings that support retrieval, clustering, semantic similarity, binding prediction, or the distinction of tasks and knowledge domains. A smaller line of work narrows the construct to specific representational objects: task vector quality is the distinctness and decodability of a task representation for triggering correct in-context learning behavior, while visual feature quality is the preservation of semantic, structural, and pixel-level image details for multimodal alignment and reasoning. The main disagreement is over scope and reference standard, broad hidden-state or embedding quality versus task-specific or modality-specific representations, assessed by downstream usefulness, decodability, or detail preservation."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers organize the construct through several facets rather than one common breakdown. One paper explicitly frames it through information theory, geometry, and invariance to input perturbations, and further states that compression (entropy), geometry (curvature and rank), and invariance are all facets of how the Gram matrix distributes variance. Across papers, nearby labels such as feature representation capability, representational capability, task vector quality, and visual feature quality are used for overlapping but not identical objects: some refer to general hidden representations or text embeddings, others to task encodings, visual encoder outputs, or antibody-sequence embeddings."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is explicit but narrow in the recorded links: the construct is linked to 1 measurement instrument, MTEB, and papers use it for embedding performance and text-embedding tasks. It is also linked to 2 behavioral indicators, Image reconstruction and Protein understanding, but the recorded relationships treat them as a cause and a related concept rather than as direct measures. Beyond the named instrument, papers operationalize the construct through task decodability, downstream-task benchmarks for binding prediction, and analyses based on compression, geometry, and invariance. These operationalizations partly match definitions centered on downstream usefulness, while others target structural properties of representations or preservation of image detail."
+    },
+    {
+      "label": "Links.",
+      "text": "In the relationship claims, one paper reports a causal relationship from representation quality to multimodal alignment. One paper also reports a causal relationship from image reconstruction to representation quality, describing reconstruction of input images through a diffusion model conditioned on visual encoder outputs as establishing a path from pixel space to visual features. A separate paper treats protein understanding as related to representation quality in the context of binding-prediction benchmarks, and no correlational link is reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers use representation quality for the quality of a model's internal representations or embeddings in capturing information that is useful for downstream tasks, such as task-relevant, semantic, or biological information. A few papers foreground different facets of that same representational phenomenon, such as separability and decodability of task representations or preservation of image details, so the definitions differ in emphasis and scope but can be combined without contradiction.",
+    "papers_with_definition": 6,
+    "runs": [
+      "complementary",
+      "complementary",
+      "complementary"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats representation quality as a latent ability of a model's internal representations, features, or embeddings to encode task-relevant information in a usable feature space for downstream tasks. Several definitions stress preserving useful information while discarding noise, or producing embeddings that support retrieval, clustering, semantic similarity, binding prediction, or the distinction of tasks and knowledge domains. A smaller line of work narrows the construct to specific representational objects: task vector quality is the distinctness and decodability of a task representation for triggering correct in-context learning behavior, while visual feature quality is the preservation of semantic, structural, and pixel-level image details for multimodal alignment and reasoning. The main disagreement is over scope and reference standard, broad hidden-state or embedding quality versus task-specific or modality-specific representations, assessed by downstream usefulness, decodability, or detail preservation.\n\nSpace of facets. Papers organize the construct through several facets rather than one common breakdown. One paper explicitly frames it through information theory, geometry, and invariance to input perturbations, and further states that compression (entropy), geometry (curvature and rank), and invariance are all facets of how the Gram matrix distributes variance. Across papers, nearby labels such as feature representation capability, representational capability, task vector quality, and visual feature quality are used for overlapping but not identical objects: some refer to general hidden representations or text embeddings, others to task encodings, visual encoder outputs, or antibody-sequence embeddings.\n\nSpace of measurement. Operationalization is explicit but narrow in the recorded links: the construct is linked to 1 measurement instrument, MTEB, and papers use it for embedding performance and text-embedding tasks. It is also linked to 2 behavioral indicators, Image reconstruction and Protein understanding, but the recorded relationships treat them as a cause and a related concept rather than as direct measures. Beyond the named instrument, papers operationalize the construct through task decodability, downstream-task benchmarks for binding prediction, and analyses based on compression, geometry, and invariance. These operationalizations partly match definitions centered on downstream usefulness, while others target structural properties of representations or preservation of image detail.\n\nLinks. In the relationship claims, one paper reports a causal relationship from representation quality to multimodal alignment. One paper also reports a causal relationship from image reconstruction to representation quality, describing reconstruction of input images through a diffusion model conditioned on visual encoder outputs as establishing a path from pixel space to visual features. A separate paper treats protein understanding as related to representation quality in the context of binding-prediction benchmarks, and no correlational link is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Generative Representational Instruction Tuning",
+      "KaSA: Knowledge-Aware Singular-Value Adaptation of Large Language Models"
+    ],
+    "icml25": [
+      "DS-VLM: Diffusion Supervision Vision Language Model",
+      "Emergence and Effectiveness of Task Vectors in In-Context Learning: An Encoder Decoder Perspective",
+      "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+      "Layer by Layer: Uncovering Hidden Representations in Language Models"
+    ],
+    "neurips24": [
+      "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "icml25": 4,
+    "neurips24": 1
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

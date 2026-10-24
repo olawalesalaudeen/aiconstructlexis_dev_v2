@@ -1,0 +1,168 @@
+{
+  "canonical_name": "Reward model",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, a reward model is most commonly defined as a learned scoring procedure used to assess how well a response aligns with a query, often for the purpose of filtering or ranking candidate responses. Its primary function is to compute a score that, as one paper states, \"reflects how well the response Y aligns with given query X\" (\"Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment\"). The provided papers use this instrument to measure constructs such as `Human preference alignment`, `Faithfulness`, and `Proactivity`. The development of these models is frequently based on human preferences, and is shown to be related to both `LLM-as-a-judge` and `Human evaluation` methodologies. Specific implementations mentioned in the data include the \"Open-Assistant model (DeBERTa-v3)\", \"RM-Gemma-2B\", and \"RM-Mistral-7B\". A less common framing appears in one paper, which introduces a \"process reward model (PRM)\" designed to evaluate the quality of intermediate reasoning steps, or \"thoughts,\" rather than only the final output. Other documented applications include its use as a \"model-based reference-less metric\" and for evaluating the solvability of sub-tasks in planning frameworks.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Reward model",
+    "Process reward model"
+  ],
+  "papers": [
+    "Achieving Human Parity in Content-Grounded Datasets Generation",
+    "Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment",
+    "Agent-Oriented Planning in Multi-Agent Systems",
+    "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents",
+    "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance",
+    "Accelerating Large Language Model Reasoning via Speculative Search",
+    "Diving into Self-Evolving Training for Multimodal Reasoning",
+    "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric",
+    "Preference learning made easy: Everything should be understood through win rate",
+    "Progressively Label Enhancement for Large Language Model Alignment",
+    "STAIR: Improving Safety Alignment with Introspective Reasoning"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A learned scoring procedure used to assess how well a response aligns with a query and to filter or rank candidate responses.",
+      "paper": "Achieving Human Parity in Content-Grounded Datasets Generation",
+      "original_name": "Reward model"
+    },
+    {
+      "text": "A model that assigns a reward score to each reasoning thought, used to evaluate the quality of intermediate reasoning steps in tree-search-based reasoning frameworks.",
+      "paper": "Accelerating Large Language Model Reasoning via Speculative Search",
+      "original_name": "Process reward model"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Achieving Human Parity in Content-Grounded Datasets Generation",
+      "evidence": "\"For each such aspect, we implement a scoring function and filter low-scoring pairs.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Achieving Human Parity in Content-Grounded Datasets Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Proactivity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance",
+      "evidence": "The labeled data is used to train a reward model that simulates human judgment and serves as an automatic evaluator of the proactiveness of LLM agents. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents",
+      "evidence": "\u201cTo develop the reward model, we initially employ GPT-4 to assess various MRPAs across all test samples.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents",
+      "evidence": "\u201cwe engage four human evaluators to compare responses from two MRPAs on each metric for every question in the validation set.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Human preference alignment",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric",
+      "evidence": "The evaluation metric is the reward model (OpenAssistant, 2023) trained on human feedback, measuring the the quality of summaries and alignment with human preference.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Accelerating Large Language Model Reasoning via Speculative Search",
+      "evidence": "\u201cFor example, a process reward model (PRM) can be employed to assign a reward score to each thought, offering an accurate evaluation of its quality.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Accelerating Large Language Model Reasoning via Speculative Search"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, a reward model is most commonly defined as a learned scoring procedure used to assess how well a response aligns with a query, often for the purpose of filtering or ranking candidate responses. Its primary function is to compute a score that, as one paper states, \"reflects how well the response Y aligns with given query X\" (\"Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment\"). The provided papers use this instrument to measure constructs such as `Human preference alignment`, `Faithfulness`, and `Proactivity`. The development of these models is frequently based on human preferences, and is shown to be related to both `LLM-as-a-judge` and `Human evaluation` methodologies. Specific implementations mentioned in the data include the \"Open-Assistant model (DeBERTa-v3)\", \"RM-Gemma-2B\", and \"RM-Mistral-7B\". A less common framing appears in one paper, which introduces a \"process reward model (PRM)\" designed to evaluate the quality of intermediate reasoning steps, or \"thoughts,\" rather than only the final output. Other documented applications include its use as a \"model-based reference-less metric\" and for evaluating the solvability of sub-tasks in planning frameworks.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Achieving Human Parity in Content-Grounded Datasets Generation",
+      "Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment"
+    ],
+    "iclr25": [
+      "Agent-Oriented Planning in Multi-Agent Systems",
+      "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents",
+      "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance"
+    ],
+    "icml25": [
+      "Accelerating Large Language Model Reasoning via Speculative Search",
+      "Diving into Self-Evolving Training for Multimodal Reasoning",
+      "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric",
+      "Preference learning made easy: Everything should be understood through win rate",
+      "Progressively Label Enhancement for Large Language Model Alignment",
+      "STAIR: Improving Safety Alignment with Introspective Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 2,
+    "iclr25": 3,
+    "icml25": 6
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

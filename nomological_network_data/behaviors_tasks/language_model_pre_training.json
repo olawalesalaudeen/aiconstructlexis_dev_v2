@@ -1,0 +1,296 @@
+{
+  "canonical_name": "Language model pre-training",
+  "type": "behavior",
+  "canonical_definition": "Across the surveyed literature, language model pre-training is most commonly defined as the task of training a large language model \"from scratch\" on a large corpus of text. The stated purpose of this process is to learn general language representations or to minimize training loss. A less frequent, more abstract framing describes the task as \"Estimating a probability distribution over strings from observed text samples\" (The Foundations of Tokenization: Statistical and Computational Concerns). A distinct line of work discusses \"continual\" or \"continued\" pre-training, which involves further training an already pretrained model on new or task-specific data, starting from existing parameters rather than random initialization. This behavior is operationalized in studies by training models on various large text corpora, with C4 being a frequently cited dataset, alongside others like OpenWebText, The Pile, and WikiText-103. The performance of models after pre-training is sometimes assessed using downstream benchmarks, including ARC, HellaSwag, COPA, and SciQ. Language model pre-training is also studied in relation to concepts such as training efficiency, catastrophic forgetting, and faithfulness.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Pre-training",
+    "Language model estimation",
+    "Continual pretraining",
+    "Pretraining",
+    "Continued pretraining",
+    "Language model pretraining",
+    "Language model pre-training"
+  ],
+  "papers": [
+    "AdaRankGrad: Adaptive Gradient Rank and Moments for Memory-Efficient LLMs Training and Fine-Tuning",
+    "Adam-mini: Use Fewer Learning Rates To Gain More",
+    "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+    "Cut Your Losses in Large-Vocabulary Language Models",
+    "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+    "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+    "SOAP: Improving and Stabilizing Shampoo using Adam for Language Modeling",
+    "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+    "Task-Adaptive Pretrained Language Models via Clustered-Importance Sampling",
+    "The Foundations of Tokenization: Statistical and Computational Concerns",
+    "Understanding Warmup-Stable-Decay Learning Rates: A River Valley Loss Landscape View"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Training a language model from scratch on large text corpora to minimize training loss over many tokens.",
+      "paper": "Adam-mini: Use Fewer Learning Rates To Gain More",
+      "original_name": "Pre-training"
+    },
+    {
+      "text": "The initial, large-scale training phase of a language model on a general text corpus, used here as an experimental setting to evaluate the impact of the proposed loss function on model convergence and validation perplexity.",
+      "paper": "Cut Your Losses in Large-Vocabulary Language Models",
+      "original_name": "Pretraining"
+    },
+    {
+      "text": "Estimating a probability distribution over strings from observed text samples.",
+      "paper": "The Foundations of Tokenization: Statistical and Computational Concerns",
+      "original_name": "Language model estimation"
+    },
+    {
+      "text": "The observable process of further training an already pretrained model on a new dataset, typically a mixture of the original pretraining data and data from a new target domain.",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "original_name": "Continual pretraining"
+    },
+    {
+      "text": "Training a model further on task-dependent data after a generic pretraining phase.",
+      "paper": "Task-Adaptive Pretrained Language Models via Clustered-Importance Sampling",
+      "original_name": "Continued pretraining"
+    },
+    {
+      "text": "The task of training a large language model from scratch on a large corpus of text data.",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "original_name": "Language model pretraining"
+    },
+    {
+      "text": "The task of training a large language model from scratch on a large corpus of text to learn general language representations.",
+      "paper": "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+      "original_name": "Language model pre-training"
+    }
+  ],
+  "definition_count": 7,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "C4",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM pertaining, we report the perplexity on Wikitext 103 (Merity et al., 2016), C4 (Raffel et al., 2020), and Pile (Gao et al., 2020) (Section 6.1)",
+      "paper_count": 8,
+      "paper_weight": 8.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+          "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+          "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+          "AdaRankGrad: Adaptive Gradient Rank and Moments for Memory-Efficient LLMs Training and Fine-Tuning",
+          "Adam-mini: Use Fewer Learning Rates To Gain More"
+        ],
+        "acl25": [
+          "Taming LLMs with Gradient Grouping"
+        ],
+        "icml25": [
+          "FRUGAL: Memory-Efficient Optimization by Reducing State Overhead for Scalable Training"
+        ],
+        "emnlp25": [
+          "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OpenWebText",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Adam-mini: Use Fewer Learning Rates To Gain More",
+      "evidence": "\u201cWe train GPT-2 (Radford et al., 2019) series (125M to 1.5B) on Openwebtext (Gokaslan et al., 2019).\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Adam-mini: Use Fewer Learning Rates To Gain More"
+        ],
+        "icml25": [
+          "MARS: Unleashing the Power of Variance Reduction for Training Large Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiText-103",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM pertaining, we report the perplexity on Wikitext 103 (Merity et al., 2016), C4 (Raffel et al., 2020), and Pile (Gao et al., 2020) (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "The Pile",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM pertaining, we report the perplexity on Wikitext 103 (Merity et al., 2016), C4 (Raffel et al., 2020), and Pile (Gao et al., 2020) (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "COPA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM pertaining, we report the perplexity on Wikitext 103..., and the accuracy on COPA (Gordon et al., 2012), ARC (Clark et al., 2018), SciQ (Welbl et al., 2017), and HellaSwag (Zellers et al., 2019). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM pertaining, we report the perplexity on Wikitext 103..., and the accuracy on COPA (Gordon et al., 2012), ARC (Clark et al., 2018), SciQ (Welbl et al., 2017), and HellaSwag (Zellers et al., 2019). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SciQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM pertaining, we report the perplexity on Wikitext 103..., and the accuracy on COPA (Gordon et al., 2012), ARC (Clark et al., 2018), SciQ (Welbl et al., 2017), and HellaSwag (Zellers et al., 2019). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM pertaining, we report the perplexity on Wikitext 103..., and the accuracy on COPA (Gordon et al., 2012), ARC (Clark et al., 2018), SciQ (Welbl et al., 2017), and HellaSwag (Zellers et al., 2019). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "evidence": "applying our data mixing laws to continual pretraining can accurately find the proportion that avoids catastrophic forgetting (Section 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "evidence": "A representative mixture optimization target is to maintain the general-purpose ability (losses on the Pile) unchanged (Section 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SlimPajama",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "evidence": "Experiments were conducted on two datasets: the well-known C4 dataset (Raffel et al., 2020) and a cleaner high-quality dataset, SlimPajama (Soboleva et al., 2023).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Training efficiency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "How Does Critical Batch Size Scale in Pre-training?",
+      "evidence": "\u201cEfficient optimization is critical in pre-training large models (LMs) at scale\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "How Does Critical Batch Size Scale in Pre-training?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 12,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 10,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, language model pre-training is most commonly defined as the task of training a large language model \"from scratch\" on a large corpus of text. The stated purpose of this process is to learn general language representations or to minimize training loss. A less frequent, more abstract framing describes the task as \"Estimating a probability distribution over strings from observed text samples\" (The Foundations of Tokenization: Statistical and Computational Concerns). A distinct line of work discusses \"continual\" or \"continued\" pre-training, which involves further training an already pretrained model on new or task-specific data, starting from existing parameters rather than random initialization. This behavior is operationalized in studies by training models on various large text corpora, with C4 being a frequently cited dataset, alongside others like OpenWebText, The Pile, and WikiText-103. The performance of models after pre-training is sometimes assessed using downstream benchmarks, including ARC, HellaSwag, COPA, and SciQ. Language model pre-training is also studied in relation to concepts such as training efficiency, catastrophic forgetting, and faithfulness.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "AdaRankGrad: Adaptive Gradient Rank and Moments for Memory-Efficient LLMs Training and Fine-Tuning",
+      "Adam-mini: Use Fewer Learning Rates To Gain More",
+      "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "Cut Your Losses in Large-Vocabulary Language Models",
+      "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+      "SOAP: Improving and Stabilizing Shampoo using Adam for Language Modeling",
+      "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "Task-Adaptive Pretrained Language Models via Clustered-Importance Sampling",
+      "The Foundations of Tokenization: Statistical and Computational Concerns",
+      "Understanding Warmup-Stable-Decay Learning Rates: A River Valley Loss Landscape View"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 11
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

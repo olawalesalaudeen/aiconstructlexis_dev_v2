@@ -1,0 +1,433 @@
+{
+  "canonical_name": "Data contamination",
+  "type": "construct",
+  "canonical_definition": "Across the provided literature, \"Data contamination\" is most commonly defined as the presence of evaluation or test data within a model's pre-training corpus. The prevailing concern, as expressed in papers like \"Time Travel in LLMs,\" is that this overlap invalidates evaluations by artificially inflating performance metrics, leading to models succeeding through recall rather than demonstrating true capability. This phenomenon is frequently studied alongside `Memorization`, which is often treated as the mechanism or evidence of contamination, and its presence is seen as undermining the assessment of a model's `Generalization` ability. To operationalize and measure this construct, researchers employ several methods, including longitudinal analyses using benchmarks like `Codeforces` and `Project Euler` against model training cutoffs, quantifying overlap percentages from dataset collections like `PromptSource`, and using `Human evaluation` to identify exact matches. While most definitions focus on direct textual overlap, a smaller line of work introduces more nuanced forms, such as `Semantic contamination` (conceptual similarity), `Entity contamination` (memorized entity knowledge), and `Fact contamination` (memorized factual events). A few papers also discuss related concepts, with one framing \"training on the test task\" more neutrally as a set of practices utilizing knowledge of evaluation tasks. Finally, some work characterizes the inverse of this problem, using terms like `Contamination resistance` or `Robustness to data leakage` to describe a model's stability despite exposure to test data.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "data property / engineering \u2014 not a construct of LLM ability",
+  "names": [
+    "Benchmark contamination",
+    "Contamination",
+    "Data contamination",
+    "Test set contamination",
+    "Dataset contamination",
+    "Contamination resilience",
+    "Train-test overlap",
+    "Entity contamination",
+    "Fact contamination",
+    "Semantic contamination",
+    "Training data pollution",
+    "Robustness to data leakage",
+    "Training on the test task",
+    "Data contamination susceptibility"
+  ],
+  "papers": [
+    "CoreEval: Automatically Building Contamination-Resilient Datasets with Real-World Knowledge toward Reliable LLM Evaluation",
+    "Exposing the Achilles' Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning",
+    "TripleFact: Defending Data Contamination in the Evaluation of LLM-driven Fake News Detection",
+    "DyePack: Provably Flagging Test Set Contamination in LLMs Using Backdoors",
+    "In Benchmarks We Trust ... Or Not?",
+    "Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index",
+    "SSA: Semantic Contamination of LLM-Driven Fake News Detection",
+    "Speculating LLMs' Chinese Training Data Pollution from Their Tokens",
+    "Proving Test Set Contamination in Black-Box Language Models",
+    "Time Travel in LLMs: Tracing Data Contamination in Large Language Models",
+    "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+    "What's In My Big Data?",
+    "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+    "CofCA: A STEP-WISE Counterfactual Multi-hop QA benchmark",
+    "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+    "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering",
+    "Training on the Test Task Confounds Evaluation and Emergence",
+    "How Contaminated Is Your Benchmark? Measuring Dataset Leakage in Large Language Models with Kernel Divergence",
+    "Position: Language model developers should report train-test overlap",
+    "Unbiased Evaluation of Large Language Models from a Causal Perspective",
+    "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+    "Learning vs Retrieval: The Role of In-Context Examples in Regression with Large Language Models",
+    "A Careful Examination of Large Language Model Performance on Grade School Arithmetic",
+    "MixEval: Deriving Wisdom of the Crowd from LLM Benchmark Mixtures"
+  ],
+  "paper_count": 24,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which evaluation datasets are present in pretraining corpora, potentially invalidating model evaluations due to data leakage.",
+      "paper": "What's In My Big Data?",
+      "original_name": "Benchmark contamination"
+    },
+    {
+      "text": "The latent exposure of an LLM to training data that overlaps with evaluation benchmarks, leading to inflated performance estimates due to prior exposure rather than general capability.",
+      "paper": "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+      "original_name": "Contamination"
+    },
+    {
+      "text": "The latent presence of benchmark datasets in a model's training data, inferred from statistically significant deviations in log probabilities between canonical and shuffled dataset orderings.",
+      "paper": "Proving Test Set Contamination in Black-Box Language Models",
+      "original_name": "Test set contamination"
+    },
+    {
+      "text": "The presence of test data from downstream evaluation tasks within the pre-training data of a large language model, which can inflate performance metrics.",
+      "paper": "Time Travel in LLMs: Tracing Data Contamination in Large Language Models",
+      "original_name": "Data contamination"
+    },
+    {
+      "text": "A latent condition where a model's training data includes examples from a benchmark's evaluation set, which can artificially inflate performance and undermine true capability assessment.",
+      "paper": "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "original_name": "Dataset contamination"
+    },
+    {
+      "text": "The degree to which a model's performance remains stable and reliable despite exposure to benchmark data during pre-training, reflecting its ability to generalize rather than memorize.",
+      "paper": "TripleFact: Defending Data Contamination in the Evaluation of LLM-driven Fake News Detection",
+      "original_name": "Contamination resistance"
+    },
+    {
+      "text": "The degree to which a model's evaluation performance remains stable and avoids artificial inflation when potentially exposed to test data during its training phase.",
+      "paper": "CoreEval: Automatically Building Contamination-Resilient Datasets with Real-World Knowledge toward Reliable LLM Evaluation",
+      "original_name": "Contamination resilience"
+    },
+    {
+      "text": "The latent extent to which a language model's training data includes content from its evaluation test sets, influencing performance validity and generalization assessment.",
+      "paper": "Position: Language model developers should report train-test overlap",
+      "original_name": "Train-test overlap"
+    },
+    {
+      "text": "The degree to which a model has encoded prior knowledge about specific entities appearing in evaluation items, causing its predictions to depend on entity-specific memorization or bias.",
+      "paper": "SSA: Semantic Contamination of LLM-Driven Fake News Detection",
+      "original_name": "Entity contamination"
+    },
+    {
+      "text": "The degree to which a model has memorized factual events, contexts, or details from the evaluation content during training, affecting predictions through recall rather than inference.",
+      "paper": "SSA: Semantic Contamination of LLM-Driven Fake News Detection",
+      "original_name": "Fact contamination"
+    },
+    {
+      "text": "A form of benchmark data contamination where a model's performance is influenced by subtle conceptual similarities between its training data and evaluation data, rather than direct text overlap.",
+      "paper": "SSA: Semantic Contamination of LLM-Driven Fake News Detection",
+      "original_name": "Semantic contamination"
+    },
+    {
+      "text": "The latent presence of undesirable, uncommon, or useless content in the pre-training dataset of an LLM, which manifests through the formation of polluted tokens during tokenization.",
+      "paper": "Speculating LLMs' Chinese Training Data Pollution from Their Tokens",
+      "original_name": "Training data pollution"
+    },
+    {
+      "text": "The degree to which model performance remains stable when benchmark data is exposed during large-scale pre-training, indicating resistance to contamination.",
+      "paper": "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+      "original_name": "Robustness to data leakage"
+    },
+    {
+      "text": "The extent to which a model has been exposed during training to knowledge, formats, or data patterns that are relevant to downstream evaluation tasks.",
+      "paper": "Training on the Test Task Confounds Evaluation and Emergence",
+      "original_name": "Training on the test task"
+    },
+    {
+      "text": "The degree to which a model's performance on a benchmark is inflated due to the presence of test data or highly similar data in its pre-training corpus.",
+      "paper": "CofCA: A STEP-WISE Counterfactual Multi-hop QA benchmark",
+      "original_name": "Data contamination susceptibility"
+    }
+  ],
+  "definition_count": 15,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Memorization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "SSA: Semantic Contamination of LLM-Driven Fake News Detection",
+      "evidence": "prior exposure to semantic BDC lets a model \"remember\" the answer instead of reasoning.",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SSA: Semantic Contamination of LLM-Driven Fake News Detection"
+        ],
+        "iclr24": [
+          "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+          "Proving Test Set Contamination in Black-Box Language Models"
+        ],
+        "icml25": [
+          "How Contaminated Is Your Benchmark? Measuring Dataset Leakage in Large Language Models with Kernel Divergence",
+          "Position: Language model developers should report train-test overlap"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "evidence": "A growing concern for accurate evaluation of LLMs\u2019 generalization capabilities is the prospect of dataset contamination, which is when evaluation benchmark data has already appeared in LLM training sets. (Section 4.3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models"
+        ],
+        "icml25": [
+          "Position: Language model developers should report train-test overlap"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PromptSource",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "What's In My Big Data?",
+      "evidence": "Using Search , we provide a contamination analysis of 82 datasets for four popular corpora: The Pile, C4, RedPajama, and OSCAR. We consider all datasets from PromptSource (Bach et al., 2022)... (Section 4.4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "What's In My Big Data?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Time Travel in LLMs: Tracing Data Contamination in Large Language Models",
+      "evidence": "We undertake a human evaluation, led by two domain experts, to characterize contamination by identifying both exact matches and near-exact matches of individual instances. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Time Travel in LLMs: Tracing Data Contamination in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Codeforces",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+      "evidence": "we consider two code/mathematical problem-solving datasets, Codeforces and Project Euler, and we find statistically significant trends among LLM pass rate vs. GitHub popularity and release date that provide strong evidence of contamination. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Project Euler",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+      "evidence": "we consider two code/mathematical problem-solving datasets, Codeforces and Project Euler, and we find statistically significant trends among LLM pass rate vs. GitHub popularity and release date that provide strong evidence of contamination. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Overfitting",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "A Careful Examination of Large Language Model Performance on Grade School Arithmetic",
+      "evidence": "A priori, a natural hypothesis is that the primary cause for over\ufb01tting is data contamination, e.g. that the test set was leaked in the pre-training or instruction \ufb01ne-tuning part of the model creation. (Section 5.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "A Careful Examination of Large Language Model Performance on Grade School Arithmetic"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BRIGHT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+      "evidence": "Moreover, our results demonstrate the robustness of BRIGHT against potential data leakage during large-scale pre-training...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Pre-training data detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "evidence": "pretraining data detection attacks are becoming increasingly important as they can reveal whether a model has been trained on potentially sensitive data and prevent evaluation data contamination (Jiang et al., 2024; Yang et al., 2023).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GPQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "evidence": "we consider a benchmark dataset, Google-proof QA or GPQA (Rein et al., 2023), where questions were written by domain-experts in biology, physics, and chemistry. The dataset was released in 2023\u2014 beyond the knowledge cutoff of the target models in this study. The combination of novel written text and the release date of the benchmark leads to our decision to consider GPQA as unlikely to be contaminated for these models. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CommonsenseQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "evidence": "We then apply this method on two other datasets (CommonsenseQA (Talmor et al., 2019) and ARC- Challenge (Clark et al., 2018)) to probe for evidence of contamination across our three target models (Table 5). (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Challenge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "evidence": "We then apply this method on two other datasets (CommonsenseQA (Talmor et al., 2019) and ARC- Challenge (Clark et al., 2018)) to probe for evidence of contamination across our three target models (Table 5). (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Exposing the Achilles' Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning",
+      "evidence": "In our analysis of LLMs\u2019 mathematical reasoning performance, we identify data contamination and memorization as key challenges affecting their effectiveness.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Exposing the Achilles' Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SSA: Semantic Contamination of LLM-Driven Fake News Detection",
+      "evidence": "prior exposure to semantic BDC lets a model \"remember\" the answer instead of reasoning.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SSA: Semantic Contamination of LLM-Driven Fake News Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Exploration ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What's In My Big Data?",
+      "evidence": "\u201cUsing Search , we provide a contamination analysis of 82 datasets for four popular corpora\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "What's In My Big Data?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 15,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 14,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, \"Data contamination\" is most commonly defined as the presence of evaluation or test data within a model's pre-training corpus. The prevailing concern, as expressed in papers like \"Time Travel in LLMs,\" is that this overlap invalidates evaluations by artificially inflating performance metrics, leading to models succeeding through recall rather than demonstrating true capability. This phenomenon is frequently studied alongside `Memorization`, which is often treated as the mechanism or evidence of contamination, and its presence is seen as undermining the assessment of a model's `Generalization` ability. To operationalize and measure this construct, researchers employ several methods, including longitudinal analyses using benchmarks like `Codeforces` and `Project Euler` against model training cutoffs, quantifying overlap percentages from dataset collections like `PromptSource`, and using `Human evaluation` to identify exact matches. While most definitions focus on direct textual overlap, a smaller line of work introduces more nuanced forms, such as `Semantic contamination` (conceptual similarity), `Entity contamination` (memorized entity knowledge), and `Fact contamination` (memorized factual events). A few papers also discuss related concepts, with one framing \"training on the test task\" more neutrally as a set of practices utilizing knowledge of evaluation tasks. Finally, some work characterizes the inverse of this problem, using terms like `Contamination resistance` or `Robustness to data leakage` to describe a model's stability despite exposure to test data.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CoreEval: Automatically Building Contamination-Resilient Datasets with Real-World Knowledge toward Reliable LLM Evaluation",
+      "Exposing the Achilles' Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning",
+      "TripleFact: Defending Data Contamination in the Evaluation of LLM-driven Fake News Detection"
+    ],
+    "emnlp25": [
+      "DyePack: Provably Flagging Test Set Contamination in LLMs Using Backdoors",
+      "In Benchmarks We Trust ... Or Not?",
+      "Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index",
+      "SSA: Semantic Contamination of LLM-Driven Fake News Detection",
+      "Speculating LLMs' Chinese Training Data Pollution from Their Tokens"
+    ],
+    "iclr24": [
+      "Proving Test Set Contamination in Black-Box Language Models",
+      "Time Travel in LLMs: Tracing Data Contamination in Large Language Models",
+      "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+      "What's In My Big Data?"
+    ],
+    "iclr25": [
+      "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+      "CofCA: A STEP-WISE Counterfactual Multi-hop QA benchmark",
+      "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering",
+      "Training on the Test Task Confounds Evaluation and Emergence"
+    ],
+    "icml25": [
+      "How Contaminated Is Your Benchmark? Measuring Dataset Leakage in Large Language Models with Kernel Divergence",
+      "Position: Language model developers should report train-test overlap",
+      "Unbiased Evaluation of Large Language Models from a Causal Perspective"
+    ],
+    "naacl25": [
+      "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "Learning vs Retrieval: The Role of In-Context Examples in Regression with Large Language Models"
+    ],
+    "neurips24": [
+      "A Careful Examination of Large Language Model Performance on Grade School Arithmetic",
+      "MixEval: Deriving Wisdom of the Crowd from LLM Benchmark Mixtures"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 5,
+    "iclr24": 4,
+    "iclr25": 5,
+    "icml25": 3,
+    "naacl25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

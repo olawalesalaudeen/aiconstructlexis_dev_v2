@@ -1,0 +1,108 @@
+{
+  "canonical_name": "Copy-paste attack",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the dominant framing is a watermark-robustness test built around mixing texts. Most definitions describe inserting a watermarked or machine-generated span into a larger human-written or hand-written document, while one definition instead describes inserting copied original text before generated text. Reported setups vary, including embedding watermarked fragments in a surrounding un-watermarked document, inserting 600 tokens from the origin text before generated text, or inserting a 200-token watermarked span into a 1000-token human-written passage.\n\nWhat it is claimed to measure. Papers use it to measure Robustness, the only linked construct, and no behavioral indicators are linked to it. One paper explicitly assesses the robustness of different watermarking methods under various attacks, including the copy-paste attack, so the available claims converge on robustness rather than spreading across multiple targets.\n\nSpace of uses. Papers use it as a scenario-based attack within broader watermark evaluations, and some describe the same setup as text mixing or a Copy-Paste scenario where watermarked text appears inside a larger hand-written passage. One paper places it alongside paraphrasing using GPT-3.5 and two configurations of the DIPPER attack when assessing robustness, and no other measurement instruments are linked to it.\n\nConcerns raised. A recurring concern in these descriptions is that watermarks can be difficult to detect when hidden in human-written text. Related snippets describe this setting as watermarked text mixed into a longer hand-written or human-written document.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Copy-Paste Attack",
+    "Copy-paste attack",
+    "Text mixing"
+  ],
+  "papers": [
+    "A Semantic Invariant Robust Watermark for Large Language Models",
+    "Towards Codable Watermarking for Injecting Multi-Bits Information to LLMs",
+    "On the Reliability of Watermarks for Large Language Models"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An attack procedure that inserts copied original text into generated text to test watermark robustness.",
+      "paper": "A Semantic Invariant Robust Watermark for Large Language Models",
+      "original_name": "Copy-paste attack"
+    },
+    {
+      "text": "An evaluation procedure to test watermark robustness where a segment of watermarked text is inserted into a larger body of human-written text.",
+      "paper": "Towards Codable Watermarking for Injecting Multi-Bits Information to LLMs",
+      "original_name": "Copy-Paste Attack"
+    },
+    {
+      "text": "The observable behavior of embedding spans of machine-generated text within a larger, human-written document, also referred to as a 'Copy-Paste' scenario.",
+      "paper": "On the Reliability of Watermarks for Large Language Models",
+      "original_name": "Text mixing"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Watermark robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "A Semantic Invariant Robust Watermark for Large Language Models",
+      "evidence": "Tests involved watermark detection accuracy under no attack, GPT3.5 rewrite attacks, two DIPPER (Krishna et al., 2023) settings, the copy-paste attack as well as the emoj attack (Appendix G). (Table 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "A Semantic Invariant Robust Watermark for Large Language Models",
+          "Towards Codable Watermarking for Injecting Multi-Bits Information to LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Watermarking Large Language Models: An Unbiased and Low-risk Method",
+      "evidence": "We assess the robustness of different watermarking methods under various attacks, including the copy-paste attack (Kirchenbauer et al., 2023a), paraphrasing using GPT-3.5, and two configurations of the DIPPER attack (Krishna et al., 2024). (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Watermarking Large Language Models: An Unbiased and Low-risk Method"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the dominant framing is a watermark-robustness test built around mixing texts. Most definitions describe inserting a watermarked or machine-generated span into a larger human-written or hand-written document, while one definition instead describes inserting copied original text before generated text. Reported setups vary, including embedding watermarked fragments in a surrounding un-watermarked document, inserting 600 tokens from the origin text before generated text, or inserting a 200-token watermarked span into a 1000-token human-written passage."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use it to measure Robustness, the only linked construct, and no behavioral indicators are linked to it. One paper explicitly assesses the robustness of different watermarking methods under various attacks, including the copy-paste attack, so the available claims converge on robustness rather than spreading across multiple targets."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers use it as a scenario-based attack within broader watermark evaluations, and some describe the same setup as text mixing or a Copy-Paste scenario where watermarked text appears inside a larger hand-written passage. One paper places it alongside paraphrasing using GPT-3.5 and two configurations of the DIPPER attack when assessing robustness, and no other measurement instruments are linked to it."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "A recurring concern in these descriptions is that watermarks can be difficult to detect when hidden in human-written text. Related snippets describe this setting as watermarked text mixed into a longer hand-written or human-written document."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the dominant framing is a watermark-robustness test built around mixing texts. Most definitions describe inserting a watermarked or machine-generated span into a larger human-written or hand-written document, while one definition instead describes inserting copied original text before generated text. Reported setups vary, including embedding watermarked fragments in a surrounding un-watermarked document, inserting 600 tokens from the origin text before generated text, or inserting a 200-token watermarked span into a 1000-token human-written passage.\n\nWhat it is claimed to measure. Papers use it to measure Robustness, the only linked construct, and no behavioral indicators are linked to it. One paper explicitly assesses the robustness of different watermarking methods under various attacks, including the copy-paste attack, so the available claims converge on robustness rather than spreading across multiple targets.\n\nSpace of uses. Papers use it as a scenario-based attack within broader watermark evaluations, and some describe the same setup as text mixing or a Copy-Paste scenario where watermarked text appears inside a larger hand-written passage. One paper places it alongside paraphrasing using GPT-3.5 and two configurations of the DIPPER attack when assessing robustness, and no other measurement instruments are linked to it.\n\nConcerns raised. A recurring concern in these descriptions is that watermarks can be difficult to detect when hidden in human-written text. Related snippets describe this setting as watermarked text mixed into a longer hand-written or human-written document.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "A Semantic Invariant Robust Watermark for Large Language Models",
+      "Towards Codable Watermarking for Injecting Multi-Bits Information to LLMs",
+      "On the Reliability of Watermarks for Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 3
+  },
+  "conferences": [
+    "iclr24"
+  ]
+}

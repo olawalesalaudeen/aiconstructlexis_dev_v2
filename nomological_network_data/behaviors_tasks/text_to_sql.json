@@ -1,0 +1,560 @@
+{
+  "canonical_name": "Text-to-SQL",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is translating a natural-language question, instruction, or prompt into a SQL query, usually with a database schema and sometimes table content, dialogue history, or auxiliary documentation available. Most definitions treat success as producing correct, functionally correct, or executable SQL that retrieves the desired information from the database, and some papers use SQL as an intermediate program for answering questions over tables. A smaller line of work extends the behavior beyond retrieval to database manipulation, including SQL UPDATE statements and SQL TRIGGER scripts generated from natural-language instructions and schema information.\n\nVariants. Papers use several near-synonymous labels, most often SQL generation, text-to-SQL generation, NL2SQL, text-to-SQL parsing, and database querying. The common setting is generating a single query over one or more relational tables, though some work studies multi-turn or dialogue-conditioned generation, open-domain or large-table settings, and stepwise incremental generation that decomposes complex queries into sub-syntax trees. Smaller variants include generating multiple SQL programs with ascending complexity, combining SQL with Python, producing dialect-specific SQL, and specialized outputs such as SQL UPDATE or SQL TRIGGER generation.\n\nSpace of elicitation and scores. Papers measure this behavior with 7 instruments. Spider is the prevailing instrument, followed by BIRD; AgentBench, CoSQL, and Spider-DK appear less often, and 2 other instruments are also linked. These are mostly described as text-to-SQL datasets or benchmarks, while AgentBench is used for broader database-task evaluation.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. One paper uses text-to-SQL to measure table reasoning, while other papers report that text-to-SQL is related to generalization and natural language understanding. Separate papers claim causal relationships from in-context learning to text-to-SQL and from reasoning to text-to-SQL, and 3 other constructs appear only in isolated claims.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "SQL generation",
+    "Text-to-SQL generation",
+    "SQL query generation",
+    "Text-to-SQL conversion",
+    "NL2SQL",
+    "Database query generation",
+    "Incremental SQL generation",
+    "Text-to-SQL parsing",
+    "Text-to-SQL",
+    "SQL UPDATE generation",
+    "SQL trigger generation",
+    "Database querying"
+  ],
+  "papers": [
+    "DCG-SQL: Enhancing In-Context Learning for Text-to-SQL with Deep Contextual Schema Link Graph",
+    "SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL",
+    "STaR-SQL: Self-Taught Reasoner for Text-to-SQL",
+    "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data",
+    "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning",
+    "Uncovering the Impact of Chain-of-Thought Reasoning for Direct Preference Optimization: Lessons from Text-to-SQL",
+    "Calibrating LLMs for Text-to-SQL Parsing by Leveraging Sub-clause Frequencies",
+    "Castle: Causal Cascade Updates in Relational Databases with Large Language Models",
+    "Dialect-SQL: An Adaptive Framework for Bridging the Dialect Gap in Text-to-SQL",
+    "GRIT: Guided Relational Integration for Efficient Multi-Table Understanding",
+    "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+    "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL",
+    "SAFE-SQL: Self-Augmented In-Context Learning with Fine-grained Example Selection for Text-to-SQL",
+    "SQLWOZ: A Realistic Task-Oriented Dialogue Dataset with SQL-Based Dialogue State Representation for Complex User Requirements",
+    "SQUAB: Evaluating LLM robustness to Ambiguous and Unanswerable Questions in Semantic Parsing",
+    "STARE at the Structure: Steering ICL Exemplar Selection with Structural Alignment",
+    "STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases",
+    "Skeletons Matter: Dynamic Data Augmentation for Text-to-Query",
+    "Speculative Streaming: Efficient and Scalable Speculative Decoding with Multi-Stream Attention",
+    "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering",
+    "SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation",
+    "TinySQL: A Progressive Text-to-SQL Dataset for Mechanistic Interpretability Research",
+    "Weaver: Interweaving SQL and LLM for Table Reasoning",
+    "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+    "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+    "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners",
+    "Teaching Large Language Models to Self-Debug",
+    "Lemur: Harmonizing Natural Language and Code for Language Agents",
+    "Agent Skill Acquisition for Large Language Models via CycleQD",
+    "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+    "CHASE-SQL: Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL",
+    "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation",
+    "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking",
+    "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+    "MMQA: Evaluating LLMs with Multi-Table Multi-Hop Complex Questions",
+    "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+    "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows",
+    "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+    "Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search",
+    "An Efficient Private GPT Never Autoregressively Decodes",
+    "Parameter-Efficient Fine-Tuning of State Space Models",
+    "Structure-Guided Large Language Models for Text-to-SQL Generation",
+    "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models",
+    "ALTER: Augmentation for Large-Table-Based Reasoning",
+    "An LLM-Based Approach for Insight Generation in Data Analysis",
+    "FLEX: Expert-level False-Less EXecution Metric for Text-to-SQL Benchmark",
+    "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation",
+    "Mastering the Craft of Data Synthesis for CodeLLMs",
+    "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+    "Track-SQL: Enhancing Generative Language Models with Dual-Extractive Modules for Schema and Context Tracking in Multi-turn Text-to-SQL",
+    "You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL",
+    "AGILE: A Novel Reinforcement Learning Framework of LLM Agents",
+    "AMBROSIA: A Benchmark for Parsing Ambiguous Questions into Database Queries",
+    "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+    "EHRCon: Dataset for Checking Consistency between Unstructured Notes and Structured Tables in Electronic Health Records",
+    "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents"
+  ],
+  "paper_count": 56,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior of an LLM producing a structured query language (SQL) program in response to a natural language query and a table schema.",
+      "paper": "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+      "original_name": "SQL generation"
+    },
+    {
+      "text": "The task of converting a natural language question into a structured SQL query that can be executed against a database.",
+      "paper": "Parameter-Efficient Fine-Tuning of State Space Models",
+      "original_name": "Text-to-SQL generation"
+    },
+    {
+      "text": "The task of creating a structured query language (SQL) query based on information extracted from natural language text to retrieve data from a database.",
+      "paper": "EHRCon: Dataset for Checking Consistency between Unstructured Notes and Structured Tables in Electronic Health Records",
+      "original_name": "SQL query generation"
+    },
+    {
+      "text": "The task of generating correct SQL code from a user's natural language query about a database.",
+      "paper": "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents",
+      "original_name": "Text-to-SQL conversion"
+    },
+    {
+      "text": "The task of translating a natural language question into a corresponding SQL query, given a specific database schema and content.",
+      "paper": "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "original_name": "NL2SQL"
+    },
+    {
+      "text": "The task of generating correct database queries (e.g., SQL) to retrieve or manipulate data based on a natural language request.",
+      "paper": "Agent Skill Acquisition for Large Language Models via CycleQD",
+      "original_name": "Database query generation"
+    },
+    {
+      "text": "The process of generating a complex SQL query step-by-step, often by decomposing the problem into smaller sub-tasks or syntax components.",
+      "paper": "Structure-Guided Large Language Models for Text-to-SQL Generation",
+      "original_name": "Incremental SQL generation"
+    },
+    {
+      "text": "The task of converting a natural language question into a formal SQL query that can be executed against a relational database.",
+      "paper": "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering",
+      "original_name": "Text-to-SQL parsing"
+    },
+    {
+      "text": "Generating SQL queries from natural language prompts.",
+      "paper": "SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation",
+      "original_name": "Text-to-SQL"
+    },
+    {
+      "text": "Producing SQL UPDATE statements from natural language instructions and schema information.",
+      "paper": "Castle: Causal Cascade Updates in Relational Databases with Large Language Models",
+      "original_name": "SQL UPDATE generation"
+    },
+    {
+      "text": "The task of automatically creating SQL TRIGGER scripts that maintain data consistency for derived or aggregate metrics in response to data modification events.",
+      "paper": "Castle: Causal Cascade Updates in Relational Databases with Large Language Models",
+      "original_name": "SQL trigger generation"
+    },
+    {
+      "text": "The task of generating structured query language (SQL) statements to retrieve information from a database based on a natural language question.",
+      "paper": "Lemur: Harmonizing Natural Language and Code for Language Agents",
+      "original_name": "Database querying"
+    }
+  ],
+  "definition_count": 12,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spider",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Teaching Large Language Models to Self-Debug",
+      "evidence": "SELF-DEBUGGING achieves the state-of-the-art performance on several code generation benchmarks, including Spider for text-to-SQL generation, TransCoder for C++-to-Python translation, and MBPP for text-to-Python generation.",
+      "paper_count": 14,
+      "paper_weight": 14.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Teaching Large Language Models to Self-Debug"
+        ],
+        "neurips24": [
+          "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents"
+        ],
+        "iclr25": [
+          "MMQA: Evaluating LLMs with Multi-Table Multi-Hop Complex Questions",
+          "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+          "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+          "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+          "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking"
+        ],
+        "naacl25": [
+          "You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL"
+        ],
+        "acl25": [
+          "Uncovering the Impact of Chain-of-Thought Reasoning for Direct Preference Optimization: Lessons from Text-to-SQL",
+          "DCG-SQL: Enhancing In-Context Learning for Text-to-SQL with Deep Contextual Schema Link Graph"
+        ],
+        "icml25": [
+          "Parameter-Efficient Fine-Tuning of State Space Models",
+          "An Efficient Private GPT Never Autoregressively Decodes"
+        ],
+        "emnlp25": [
+          "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering",
+          "Skeletons Matter: Dynamic Data Augmentation for Text-to-Query"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIRD",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents",
+      "evidence": "For text-to-SQL tasks, the agent has to convert users\u2019 natural language queries into SQL code to meet their data requirements. StreamBench integrates three prominent datasets: Spider [17], CoSQL [18], and BIRD [19]. (Section 3.2)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents"
+        ],
+        "iclr25": [
+          "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation"
+        ],
+        "naacl25": [
+          "You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL",
+          "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation"
+        ],
+        "acl25": [
+          "Uncovering the Impact of Chain-of-Thought Reasoning for Direct Preference Optimization: Lessons from Text-to-SQL"
+        ],
+        "emnlp25": [
+          "Skeletons Matter: Dynamic Data Augmentation for Text-to-Query"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Schema linking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+      "evidence": "ideal schema linking can effectively achieve accurate SQL generation, which shows that schema linking is still an effective means to solve Text2SQL at this stage and in the future. (Section 4.3)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL"
+        ],
+        "naacl25": [
+          "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation"
+        ],
+        "emnlp25": [
+          "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CoSQL",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents",
+      "evidence": "For text-to-SQL tasks, the agent has to convert users\u2019 natural language queries into SQL code to meet their data requirements. StreamBench integrates three prominent datasets: Spider [17], CoSQL [18], and BIRD [19]. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AgentBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Agent Skill Acquisition for Large Language Models via CycleQD",
+      "evidence": "Empirical results from AgentBench indicate that applying CycleQD to LLAMA3-8B-INSTRUCT based models not only enables them to surpass traditional fine-tuning methods in coding, operating systems, and database tasks, but also achieves performance on par with GPT-3.5-TURBO (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Agent Skill Acquisition for Large Language Models via CycleQD"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spider-DK",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "evidence": "In this paper, we evaluate TNT on the task of NL2SQL. We adopt three prevalant datasets, SPIDER (Yu et al., 2018), SPIDER-DK (Gan et al., 2021a), and SPIDER-Realistic (Deng et al., 2021) (Section 6.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spider-Realistic",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "evidence": "In this paper, we evaluate TNT on the task of NL2SQL. We adopt three prevalant datasets, SPIDER (Yu et al., 2018), SPIDER-DK (Gan et al., 2021a), and SPIDER-Realistic (Deng et al., 2021) (Section 6.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+      "evidence": "Additionally, training LLMs on a single SQL generation task poses a substantial risk of diminishing performance in understanding instructions... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt engineering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "An LLM-Based Approach for Insight Generation in Data Analysis",
+      "evidence": "The Query Agent QAgent generates a SQL query qij and resulting tables Rij (qij(D) = Rij) to answer the subquestions using the database information and schema: QAgent(sij, Dinfo, Dschema) \u2192 qij (Section 4.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "An LLM-Based Approach for Insight Generation in Data Analysis"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "DCG-SQL: Enhancing In-Context Learning for Text-to-SQL with Deep Contextual Schema Link Graph",
+      "evidence": "With the demonstrations, our method fully leverages in-context learning capability and generate the target SQL correctly. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "DCG-SQL: Enhancing In-Context Learning for Text-to-SQL with Deep Contextual Schema Link Graph"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search",
+      "evidence": "In the zero-shot setting, the key challenge is to construct a mapping function f without task-specific labeled data. This requires the model to generalize across unseen SQL queries and databases, relying solely on pre-trained knowledge and the provided database schema. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Structural understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search",
+      "evidence": "\u201cThis limitation makes it difficult for the model to handle the complex mapping between natural language queries and diverse database schemas, impeding its ability to accurately interpret schema relationships, construct complex SQL queries\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiSQL",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering",
+      "evidence": "\"early benchmarks such as WikiSQL (Yavuz et al., 2018) and Spider (Yu et al., 2018) focus on Text-to-SQL parsing over one or more relational tables\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Natural language understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "TinySQL: A Progressive Text-to-SQL Dataset for Mechanistic Interpretability Research",
+      "evidence": "Text-to-SQL generation provides an ideal middle ground, as SQL\u2019s formal structure makes it more tractable than general language generation while still requiring natural language understanding. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "TinySQL: A Progressive Text-to-SQL Dataset for Mechanistic Interpretability Research"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Table reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "evidence": "To investigate this, we focus on NL2SQL, a pivotal task in table understanding where LLMs translate natural language queries into SQL, given a specific database (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question decomposition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "An LLM-Based Approach for Insight Generation in Data Analysis",
+      "evidence": "The Query Agent QAgent generates a SQL query qij and resulting tables Rij (qij(D) = Rij) to answer the subquestions using the database information and schema (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "An LLM-Based Approach for Insight Generation in Data Analysis"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Syntactic correctness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Structure-Guided Large Language Models for Text-to-SQL Generation",
+      "evidence": "This ensures that the generated queries maintain both semantic accuracy (correctly capturing user intentions) and syntactic correctness (following proper SQL structure). (Section 1. Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Structure-Guided Large Language Models for Text-to-SQL Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 17,
+  "incoming_relationship_count": 9,
+  "outgoing_relationship_count": 8,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is translating a natural-language question, instruction, or prompt into a SQL query, usually with a database schema and sometimes table content, dialogue history, or auxiliary documentation available. Most definitions treat success as producing correct, functionally correct, or executable SQL that retrieves the desired information from the database, and some papers use SQL as an intermediate program for answering questions over tables. A smaller line of work extends the behavior beyond retrieval to database manipulation, including SQL UPDATE statements and SQL TRIGGER scripts generated from natural-language instructions and schema information."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-synonymous labels, most often SQL generation, text-to-SQL generation, NL2SQL, text-to-SQL parsing, and database querying. The common setting is generating a single query over one or more relational tables, though some work studies multi-turn or dialogue-conditioned generation, open-domain or large-table settings, and stepwise incremental generation that decomposes complex queries into sub-syntax trees. Smaller variants include generating multiple SQL programs with ascending complexity, combining SQL with Python, producing dialect-specific SQL, and specialized outputs such as SQL UPDATE or SQL TRIGGER generation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure this behavior with 7 instruments. Spider is the prevailing instrument, followed by BIRD; AgentBench, CoSQL, and Spider-DK appear less often, and 2 other instruments are also linked. These are mostly described as text-to-SQL datasets or benchmarks, while AgentBench is used for broader database-task evaluation."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not converge on a single construct that this behavior reflects. One paper uses text-to-SQL to measure table reasoning, while other papers report that text-to-SQL is related to generalization and natural language understanding. Separate papers claim causal relationships from in-context learning to text-to-SQL and from reasoning to text-to-SQL, and 3 other constructs appear only in isolated claims."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is translating a natural-language question, instruction, or prompt into a SQL query, usually with a database schema and sometimes table content, dialogue history, or auxiliary documentation available. Most definitions treat success as producing correct, functionally correct, or executable SQL that retrieves the desired information from the database, and some papers use SQL as an intermediate program for answering questions over tables. A smaller line of work extends the behavior beyond retrieval to database manipulation, including SQL UPDATE statements and SQL TRIGGER scripts generated from natural-language instructions and schema information.\n\nVariants. Papers use several near-synonymous labels, most often SQL generation, text-to-SQL generation, NL2SQL, text-to-SQL parsing, and database querying. The common setting is generating a single query over one or more relational tables, though some work studies multi-turn or dialogue-conditioned generation, open-domain or large-table settings, and stepwise incremental generation that decomposes complex queries into sub-syntax trees. Smaller variants include generating multiple SQL programs with ascending complexity, combining SQL with Python, producing dialect-specific SQL, and specialized outputs such as SQL UPDATE or SQL TRIGGER generation.\n\nSpace of elicitation and scores. Papers measure this behavior with 7 instruments. Spider is the prevailing instrument, followed by BIRD; AgentBench, CoSQL, and Spider-DK appear less often, and 2 other instruments are also linked. These are mostly described as text-to-SQL datasets or benchmarks, while AgentBench is used for broader database-task evaluation.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. One paper uses text-to-SQL to measure table reasoning, while other papers report that text-to-SQL is related to generalization and natural language understanding. Separate papers claim causal relationships from in-context learning to text-to-SQL and from reasoning to text-to-SQL, and 3 other constructs appear only in isolated claims.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "DCG-SQL: Enhancing In-Context Learning for Text-to-SQL with Deep Contextual Schema Link Graph",
+      "SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL",
+      "STaR-SQL: Self-Taught Reasoner for Text-to-SQL",
+      "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data",
+      "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning",
+      "Uncovering the Impact of Chain-of-Thought Reasoning for Direct Preference Optimization: Lessons from Text-to-SQL"
+    ],
+    "emnlp25": [
+      "Calibrating LLMs for Text-to-SQL Parsing by Leveraging Sub-clause Frequencies",
+      "Castle: Causal Cascade Updates in Relational Databases with Large Language Models",
+      "Dialect-SQL: An Adaptive Framework for Bridging the Dialect Gap in Text-to-SQL",
+      "GRIT: Guided Relational Integration for Efficient Multi-Table Understanding",
+      "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+      "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL",
+      "SAFE-SQL: Self-Augmented In-Context Learning with Fine-grained Example Selection for Text-to-SQL",
+      "SQLWOZ: A Realistic Task-Oriented Dialogue Dataset with SQL-Based Dialogue State Representation for Complex User Requirements",
+      "SQUAB: Evaluating LLM robustness to Ambiguous and Unanswerable Questions in Semantic Parsing",
+      "STARE at the Structure: Steering ICL Exemplar Selection with Structural Alignment",
+      "STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases",
+      "Skeletons Matter: Dynamic Data Augmentation for Text-to-Query",
+      "Speculative Streaming: Efficient and Scalable Speculative Decoding with Multi-Stream Attention",
+      "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering",
+      "SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation",
+      "TinySQL: A Progressive Text-to-SQL Dataset for Mechanistic Interpretability Research",
+      "Weaver: Interweaving SQL and LLM for Table Reasoning"
+    ],
+    "iclr24": [
+      "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+      "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+      "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners",
+      "Teaching Large Language Models to Self-Debug",
+      "Lemur: Harmonizing Natural Language and Code for Language Agents"
+    ],
+    "iclr25": [
+      "Agent Skill Acquisition for Large Language Models via CycleQD",
+      "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "CHASE-SQL: Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL",
+      "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation",
+      "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking",
+      "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+      "MMQA: Evaluating LLMs with Multi-Table Multi-Hop Complex Questions",
+      "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+      "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows",
+      "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo"
+    ],
+    "icml25": [
+      "Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search",
+      "An Efficient Private GPT Never Autoregressively Decodes",
+      "Parameter-Efficient Fine-Tuning of State Space Models",
+      "Structure-Guided Large Language Models for Text-to-SQL Generation",
+      "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models"
+    ],
+    "naacl25": [
+      "ALTER: Augmentation for Large-Table-Based Reasoning",
+      "An LLM-Based Approach for Insight Generation in Data Analysis",
+      "FLEX: Expert-level False-Less EXecution Metric for Text-to-SQL Benchmark",
+      "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation",
+      "Mastering the Craft of Data Synthesis for CodeLLMs",
+      "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+      "Track-SQL: Enhancing Generative Language Models with Dual-Extractive Modules for Schema and Context Tracking in Multi-turn Text-to-SQL",
+      "You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL"
+    ],
+    "neurips24": [
+      "AGILE: A Novel Reinforcement Learning Framework of LLM Agents",
+      "AMBROSIA: A Benchmark for Parsing Ambiguous Questions into Database Queries",
+      "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "EHRCon: Dataset for Checking Consistency between Unstructured Notes and Structured Tables in Electronic Health Records",
+      "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 6,
+    "emnlp25": 17,
+    "iclr24": 5,
+    "iclr25": 10,
+    "icml25": 5,
+    "naacl25": 8,
+    "neurips24": 5
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

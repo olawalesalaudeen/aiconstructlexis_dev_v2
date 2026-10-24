@@ -1,0 +1,340 @@
+{
+  "canonical_name": "Training data regurgitation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is exact, word-for-word reproduction of training data, or exact substrings and passages from it, in model outputs. Most formulations elicit the behavior with a prefix or related context from the same material and treat success as generating the original continuation, target, or sensitive string; some broaden it to near-verbatim copying, or to private or copyrighted content being exposed or inferred through outputs or internal signals. Most papers therefore treat exact reproduction as the main success criterion, though a smaller line also accepts high overlap or resemblance to the source text.\n\nVariants. Papers use several nearby labels, most often verbatim regurgitation or reproduction, training-data extraction, recitation, and quoting. The behavior is studied in code or configuration text, quotations and copyrighted passages, highly duplicated sequences, and sensitive strings such as PII, secrets, or inserted canaries; some tasks ask for exact continuation from a preceding sequence, while others ask for full verbatim recall.\n\nSpace of elicitation and scores. Papers link it to 2 measurement instruments, AUXDATASET and the Harry Potter dataset. These are used as a proxy corpus for unknown training data and as copyrighted forget data, respectively. Beyond those named instruments, elicitation usually relies on prompting with a prefix or related context, and assessment often centers on exact continuation or substring reproduction, BLEU and ROUGE-L comparisons to source text, and character-level 25-gram membership inference.\n\nWhat it is taken as evidence of. Among linked constructs, the prevailing connection is to Memorization. Several papers claim a causal relationship from Memorization to training data regurgitation, for example by describing verbatim reproduction as stemming from memorization during training, and others treat Memorization as related more broadly to whether a model can regurgitate an example from its training data. Alignment appears less often: one paper claims a causal relationship from Alignment to training data regurgitation, and one linked behavioral indicator, Repetitive generation, is also claimed to have a causal relationship to it.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Training data leakage",
+    "Verbatim regurgitation",
+    "Verbatim Reproduction",
+    "Training data regurgitation",
+    "Code reproduction",
+    "Quotation reproduction",
+    "Text reproduction",
+    "Literal copying",
+    "Secret canary recovery",
+    "Exact sequence reproduction",
+    "Verbatim recall",
+    "Recitation",
+    "Copyrighted text generation",
+    "Training data extraction",
+    "Verbatim memorization",
+    "Secret extraction",
+    "Verbatim quoting",
+    "Text regurgitation",
+    "Secret regurgitation"
+  ],
+  "papers": [
+    "Private Memorization Editing: Turning Memorization into a Defense to Strengthen Data Privacy in Large Language Models",
+    "Certified Mitigation of Worst-Case LLM Copyright Infringement",
+    "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+    "Retracing the Past: LLMs Emit Training Data When They Get Lost",
+    "Shared Path: Unraveling Memorization in Multilingual LLMs through Language Similarities",
+    "Teach LLMs to Phish: Stealing Private Information from Language Models",
+    "Proving Test Set Contamination in Black-Box Language Models",
+    "A Statistical Approach for Controlled Training Data Detection",
+    "Copyright-Protected Language Generation via Adaptive Model Fusion",
+    "LLM Unlearning via Loss Adjustment with Only Forget Data",
+    "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models",
+    "Measuring memorization in RLHF for code completion",
+    "Mitigating Memorization in Language Models",
+    "Recite, Reconstruct, Recollect: Memorization in LMs as a Multifaceted Phenomenon",
+    "Scalable Extraction of Training Data from Aligned, Production Language Models",
+    "Interpreting the Repeated Token Phenomenon in Large Language Models",
+    "Minerva: A Programmable Memory Test Benchmark for Language Models",
+    "Position: Iterative Online-Offline Joint Optimization is Needed to Manage Complex LLM Copyright Risks",
+    "The Canary\u2019s Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text",
+    "Trustworthy Machine Learning through Data-Specific Indistinguishability",
+    "Empirical Privacy Variance",
+    "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+    "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+    "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+    "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+    "Unlearning as multi-task optimization: A normalized gradient difference approach with an adaptive learning rate",
+    "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data"
+  ],
+  "paper_count": 27,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The risk or phenomenon where private or copyrighted content from the training corpus is exposed or inferred through the model's outputs or internal signals.",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "original_name": "Training data leakage"
+    },
+    {
+      "text": "The observable act of a language model generating text that is an exact, word-for-word copy of a sequence from its training data.",
+      "paper": "Mitigating Memorization in Language Models",
+      "original_name": "Verbatim regurgitation"
+    },
+    {
+      "text": "Generating exact substrings present in the training data, indicating potential copyright infringement.",
+      "paper": "Copyright-Protected Language Generation via Adaptive Model Fusion",
+      "original_name": "Verbatim Reproduction"
+    },
+    {
+      "text": "Reproducing training examples or their targets in model outputs when prompted with related context.",
+      "paper": "Measuring memorization in RLHF for code completion",
+      "original_name": "Training data regurgitation"
+    },
+    {
+      "text": "Generating code or configuration text that matches existing online code snippets.",
+      "paper": "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models",
+      "original_name": "Code reproduction"
+    },
+    {
+      "text": "The act of generating verbatim quotations from sources like interviews or movies, sometimes with incorrect or missing attribution.",
+      "paper": "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models",
+      "original_name": "Quotation reproduction"
+    },
+    {
+      "text": "Producing output that contains verbatim substrings found in existing web text or training-data proxies.",
+      "paper": "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models",
+      "original_name": "Text reproduction"
+    },
+    {
+      "text": "The act of a model generating content that is a verbatim or near-verbatim copy of copyrighted material.",
+      "paper": "Position: Iterative Online-Offline Joint Optimization is Needed to Manage Complex LLM Copyright Risks",
+      "original_name": "Literal copying"
+    },
+    {
+      "text": "The task of a model generating specific secret digits (a 'canary') that were inserted into the training data, when prompted with the prefix of the secret phrase.",
+      "paper": "Trustworthy Machine Learning through Data-Specific Indistinguishability",
+      "original_name": "Secret canary recovery"
+    },
+    {
+      "text": "The task of a model exactly generating a specific number of subsequent tokens from a training example when prompted with a preceding sequence of tokens from that same example.",
+      "paper": "Trustworthy Machine Learning through Data-Specific Indistinguishability",
+      "original_name": "Exact sequence reproduction"
+    },
+    {
+      "text": "Reproducing the entire memory content as a verbatim copy.",
+      "paper": "Minerva: A Programmable Memory Test Benchmark for Language Models",
+      "original_name": "Verbatim recall"
+    },
+    {
+      "text": "A type of memorization characterized by the verbatim reproduction of sequences that are highly duplicated in the training corpus.",
+      "paper": "Recite, Reconstruct, Recollect: Memorization in LMs as a Multifaceted Phenomenon",
+      "original_name": "Recitation"
+    },
+    {
+      "text": "Generating passages that overlap with or resemble copyrighted source text given a prefix from that text.",
+      "paper": "LLM Unlearning via Loss Adjustment with Only Forget Data",
+      "original_name": "Copyrighted text generation"
+    },
+    {
+      "text": "The observable act of a model generating verbatim sequences of text from its training data in response to user prompts.",
+      "paper": "Scalable Extraction of Training Data from Aligned, Production Language Models",
+      "original_name": "Training data extraction"
+    },
+    {
+      "text": "The observable behavior of a language model generating text that is an exact, word-for-word copy of examples present in its training data.",
+      "paper": "Private Memorization Editing: Turning Memorization into a Defense to Strengthen Data Privacy in Large Language Models",
+      "original_name": "Verbatim memorization"
+    },
+    {
+      "text": "The observable generation of a sensitive string (e.g., credit card number) by the model when prompted with a prefix, indicating successful retrieval of memorized private information.",
+      "paper": "Teach LLMs to Phish: Stealing Private Information from Language Models",
+      "original_name": "Secret extraction"
+    },
+    {
+      "text": "The observable generation of exact text segments from a model's pre-training data, particularly from high-quality sources like Wikipedia, identifiable through n-gram matching.",
+      "paper": "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+      "original_name": "Verbatim quoting"
+    },
+    {
+      "text": "The observable act of the model reproducing content it has previously seen, particularly from its training data.",
+      "paper": "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+      "original_name": "Text regurgitation"
+    },
+    {
+      "text": "The observable act of a model generating sensitive information (secrets) from its training data in response to a prompt.",
+      "paper": "Empirical Privacy Variance",
+      "original_name": "Secret regurgitation"
+    }
+  ],
+  "definition_count": 19,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Memorization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Copyright-Protected Language Generation via Adaptive Model Fusion",
+      "evidence": "Since verbatim reproduction often stems from memorization during training",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Copyright-Protected Language Generation via Adaptive Model Fusion",
+          "Scalable Extraction of Training Data from Aligned, Production Language Models",
+          "A Statistical Approach for Controlled Training Data Detection",
+          "Measuring memorization in RLHF for code completion"
+        ],
+        "naacl25": [
+          "Measuring memorization in language models via probabilistic extraction"
+        ],
+        "icml25": [
+          "The Canary\u2019s Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Scalable Extraction of Training Data from Aligned, Production Language Models",
+      "evidence": "Model alignment is a guardrail to prevent unwarranted behaviors, including \u201cinadvertent memorization and [...] regurgitation in model outputs.\u201d (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scalable Extraction of Training Data from Aligned, Production Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AUXDATASET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scalable Extraction of Training Data from Aligned, Production Language Models",
+      "evidence": "To verify the success of our attack, we construct a 9 terabyte dataset (AUXDATASET), combining many sources of Internet text, to serve as a proxy for the unknown training datasets for these production models. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scalable Extraction of Training Data from Aligned, Production Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt optimization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "evidence": "We propose a black-box prompt optimization method where an attacker LLM agent uncovers higher levels of memorization in a victim agent, surpassing traditional approaches that prompt the model directly with training data.",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "naacl25": [
+          "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Prompt optimization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "evidence": "\"We propose a black-box prompt optimization method where an attacker LLM agent uncovers higher levels of memorization in a victim agent\"",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "naacl25": [
+          "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Repetitive generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Interpreting the Repeated Token Phenomenon in Large Language Models",
+      "evidence": "Nasr et al. (2023) first observed that repeated tokens could confuse models, creating a vulnerability exploitable for training data leakage attacks. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Interpreting the Repeated Token Phenomenon in Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is exact, word-for-word reproduction of training data, or exact substrings and passages from it, in model outputs. Most formulations elicit the behavior with a prefix or related context from the same material and treat success as generating the original continuation, target, or sensitive string; some broaden it to near-verbatim copying, or to private or copyrighted content being exposed or inferred through outputs or internal signals. Most papers therefore treat exact reproduction as the main success criterion, though a smaller line also accepts high overlap or resemblance to the source text."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby labels, most often verbatim regurgitation or reproduction, training-data extraction, recitation, and quoting. The behavior is studied in code or configuration text, quotations and copyrighted passages, highly duplicated sequences, and sensitive strings such as PII, secrets, or inserted canaries; some tasks ask for exact continuation from a preceding sequence, while others ask for full verbatim recall."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to 2 measurement instruments, AUXDATASET and the Harry Potter dataset. These are used as a proxy corpus for unknown training data and as copyrighted forget data, respectively. Beyond those named instruments, elicitation usually relies on prompting with a prefix or related context, and assessment often centers on exact continuation or substring reproduction, BLEU and ROUGE-L comparisons to source text, and character-level 25-gram membership inference."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Among linked constructs, the prevailing connection is to Memorization. Several papers claim a causal relationship from Memorization to training data regurgitation, for example by describing verbatim reproduction as stemming from memorization during training, and others treat Memorization as related more broadly to whether a model can regurgitate an example from its training data. Alignment appears less often: one paper claims a causal relationship from Alignment to training data regurgitation, and one linked behavioral indicator, Repetitive generation, is also claimed to have a causal relationship to it."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is exact, word-for-word reproduction of training data, or exact substrings and passages from it, in model outputs. Most formulations elicit the behavior with a prefix or related context from the same material and treat success as generating the original continuation, target, or sensitive string; some broaden it to near-verbatim copying, or to private or copyrighted content being exposed or inferred through outputs or internal signals. Most papers therefore treat exact reproduction as the main success criterion, though a smaller line also accepts high overlap or resemblance to the source text.\n\nVariants. Papers use several nearby labels, most often verbatim regurgitation or reproduction, training-data extraction, recitation, and quoting. The behavior is studied in code or configuration text, quotations and copyrighted passages, highly duplicated sequences, and sensitive strings such as PII, secrets, or inserted canaries; some tasks ask for exact continuation from a preceding sequence, while others ask for full verbatim recall.\n\nSpace of elicitation and scores. Papers link it to 2 measurement instruments, AUXDATASET and the Harry Potter dataset. These are used as a proxy corpus for unknown training data and as copyrighted forget data, respectively. Beyond those named instruments, elicitation usually relies on prompting with a prefix or related context, and assessment often centers on exact continuation or substring reproduction, BLEU and ROUGE-L comparisons to source text, and character-level 25-gram membership inference.\n\nWhat it is taken as evidence of. Among linked constructs, the prevailing connection is to Memorization. Several papers claim a causal relationship from Memorization to training data regurgitation, for example by describing verbatim reproduction as stemming from memorization during training, and others treat Memorization as related more broadly to whether a model can regurgitate an example from its training data. Alignment appears less often: one paper claims a causal relationship from Alignment to training data regurgitation, and one linked behavioral indicator, Repetitive generation, is also claimed to have a causal relationship to it.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Certified Mitigation of Worst-Case LLM Copyright Infringement",
+      "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "Retracing the Past: LLMs Emit Training Data When They Get Lost",
+      "Shared Path: Unraveling Memorization in Multilingual LLMs through Language Similarities"
+    ],
+    "iclr24": [
+      "Teach LLMs to Phish: Stealing Private Information from Language Models",
+      "Proving Test Set Contamination in Black-Box Language Models"
+    ],
+    "iclr25": [
+      "A Statistical Approach for Controlled Training Data Detection",
+      "Copyright-Protected Language Generation via Adaptive Model Fusion",
+      "LLM Unlearning via Loss Adjustment with Only Forget Data",
+      "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models",
+      "Measuring memorization in RLHF for code completion",
+      "Mitigating Memorization in Language Models",
+      "Recite, Reconstruct, Recollect: Memorization in LMs as a Multifaceted Phenomenon",
+      "Scalable Extraction of Training Data from Aligned, Production Language Models"
+    ],
+    "icml25": [
+      "Interpreting the Repeated Token Phenomenon in Large Language Models",
+      "Minerva: A Programmable Memory Test Benchmark for Language Models",
+      "Position: Iterative Online-Offline Joint Optimization is Needed to Manage Complex LLM Copyright Risks",
+      "The Canary\u2019s Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text",
+      "Trustworthy Machine Learning through Data-Specific Indistinguishability",
+      "Empirical Privacy Variance"
+    ],
+    "naacl25": [
+      "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+      "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "Unlearning as multi-task optimization: A normalized gradient difference approach with an adaptive learning rate",
+      "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data"
+    ],
+    "acl25": [
+      "Private Memorization Editing: Turning Memorization into a Defense to Strengthen Data Privacy in Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 4,
+    "iclr24": 2,
+    "iclr25": 8,
+    "icml25": 6,
+    "naacl25": 6,
+    "acl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

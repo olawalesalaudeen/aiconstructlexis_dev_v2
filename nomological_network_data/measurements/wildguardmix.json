@@ -1,0 +1,140 @@
+{
+  "canonical_name": "WildGuardMix",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the dominant framing treats WildGuardMix as a benchmark dataset for safety guard models, especially for instruction-response pair classification and response classification for content safety. Papers also refer to WildGuardMix Test Response and WildGuardTest: the former is described as a public benchmark for response classification, while the latter is presented as an evaluation dataset or prompt safety benchmark. Definitions of WildGuardTest differ, with one paper describing 1725 prompts, 863 harmful persuasion and 862 safe, and another describing 960 vanilla and 796 adversarial prompts. A smaller line of work instead uses WildGuardMix as a preference dataset for synthesized judge training data, or as a dataset containing a broad spectrum of jailbroken prompts and responses.\n\nWhat it is claimed to measure. Papers link WildGuardMix to three behavioral indicators and no constructs. The reported measurement use is spread across Content moderation, Harmful content detection, and Response harmfulness classification, rather than centered on a linked construct. In these uses, papers present it as evaluating safety guard or content safety classification performance, including harmfulness F1 scores on WILDGUARDTEST.\n\nSpace of uses. Papers use WildGuardMix in both training and evaluation. They place it alongside other safety benchmarks such as OpenAI Moderation, ToxicChat, HarmBench, BeaverTails Test, and SafeRLHF Test, and one paper explicitly uses its train split for training and its test split for evaluation. Smaller usages treat it as a source dataset for synthesized judge training data, or as harmful data for training defensive models.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "WildGuardMix Test Response",
+    "WildGuardMix",
+    "WildGuardTest"
+  ],
+  "papers": [
+    "Representation Bending for Large Language Model Safety",
+    "Improve LLM-as-a-Judge Ability as a General Ability",
+    "Improving Large Language Model Safety with Contrastive Representation Learning",
+    "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+    "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+    "SafetyAnalyst: Interpretable, Transparent, and Steerable Safety Moderation for AI Behavior"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A public benchmark dataset used to evaluate the performance of response classification for content safety.",
+      "paper": "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "original_name": "WildGuardMix Test Response"
+    },
+    {
+      "text": "A benchmark dataset used for both training and testing safety guard models on the task of instruction-response pair classification.",
+      "paper": "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "original_name": "WildGuardMix"
+    },
+    {
+      "text": "An evaluation dataset consisting of 1725 prompts, with 863 harmful persuasion prompts and 862 safe prompts.",
+      "paper": "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+      "original_name": "WildGuardTest"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Response harmfulness classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "evidence": "For the response classification, we utilize datasets containing BeaverTails Test (Ji et al., 2024), SafeRLHF Test (Dai et al., 2023), Harmbench Response (Mazeika et al., 2024), and WildGuardMix Test Response (Han et al., 2024).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "evidence": "We evaluate the safety guard models on four public benchmark datasets: OpenAI Moderation (OAI; Markov et al., 2023), ToxicChat (Lin et al., 2023), HarmBench (Mazeika et al., 2024), and the test split of WildGuardMix.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Content moderation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+      "evidence": "Additionally, it performs on par with WILDGUARD (Han et al., 2024) in terms of average harmfulness F1 scores across WILDGUARDTEST (Han et al., 2024), XSTest (R\u00f6ttger et al., 2023; Han et al., 2024), and the OpenAI Moderation Dataset (Markov et al., 2023). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the dominant framing treats WildGuardMix as a benchmark dataset for safety guard models, especially for instruction-response pair classification and response classification for content safety. Papers also refer to WildGuardMix Test Response and WildGuardTest: the former is described as a public benchmark for response classification, while the latter is presented as an evaluation dataset or prompt safety benchmark. Definitions of WildGuardTest differ, with one paper describing 1725 prompts, 863 harmful persuasion and 862 safe, and another describing 960 vanilla and 796 adversarial prompts. A smaller line of work instead uses WildGuardMix as a preference dataset for synthesized judge training data, or as a dataset containing a broad spectrum of jailbroken prompts and responses."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link WildGuardMix to three behavioral indicators and no constructs. The reported measurement use is spread across Content moderation, Harmful content detection, and Response harmfulness classification, rather than centered on a linked construct. In these uses, papers present it as evaluating safety guard or content safety classification performance, including harmfulness F1 scores on WILDGUARDTEST."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers use WildGuardMix in both training and evaluation. They place it alongside other safety benchmarks such as OpenAI Moderation, ToxicChat, HarmBench, BeaverTails Test, and SafeRLHF Test, and one paper explicitly uses its train split for training and its test split for evaluation. Smaller usages treat it as a source dataset for synthesized judge training data, or as harmful data for training defensive models."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the dominant framing treats WildGuardMix as a benchmark dataset for safety guard models, especially for instruction-response pair classification and response classification for content safety. Papers also refer to WildGuardMix Test Response and WildGuardTest: the former is described as a public benchmark for response classification, while the latter is presented as an evaluation dataset or prompt safety benchmark. Definitions of WildGuardTest differ, with one paper describing 1725 prompts, 863 harmful persuasion and 862 safe, and another describing 960 vanilla and 796 adversarial prompts. A smaller line of work instead uses WildGuardMix as a preference dataset for synthesized judge training data, or as a dataset containing a broad spectrum of jailbroken prompts and responses.\n\nWhat it is claimed to measure. Papers link WildGuardMix to three behavioral indicators and no constructs. The reported measurement use is spread across Content moderation, Harmful content detection, and Response harmfulness classification, rather than centered on a linked construct. In these uses, papers present it as evaluating safety guard or content safety classification performance, including harmfulness F1 scores on WILDGUARDTEST.\n\nSpace of uses. Papers use WildGuardMix in both training and evaluation. They place it alongside other safety benchmarks such as OpenAI Moderation, ToxicChat, HarmBench, BeaverTails Test, and SafeRLHF Test, and one paper explicitly uses its train split for training and its test split for evaluation. Smaller usages treat it as a source dataset for synthesized judge training data, or as harmful data for training defensive models.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Representation Bending for Large Language Model Safety"
+    ],
+    "iclr25": [
+      "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+      "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+    ],
+    "icml25": [
+      "SafetyAnalyst: Interpretable, Transparent, and Steerable Safety Moderation for AI Behavior"
+    ],
+    "emnlp25": [
+      "Improve LLM-as-a-Judge Ability as a General Ability",
+      "Improving Large Language Model Safety with Contrastive Representation Learning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "iclr25": 4,
+    "icml25": 1,
+    "emnlp25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "canonical_name": "Object recognition",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is an image-level task of identifying and naming specific objects present in a visual input. Success is usually cast as correct naming or categorization, but some definitions narrow it to deciding whether a specified object is present or absent, and some fold in localization, for example asking \"What type of mushroom is it in the image?\" or to \"give the approximate coordinates of the spoon tail.\" A smaller line broadens the target to listing visible entities, and some papers describe it as a latent recognition ability rather than only a discrete question-answering task.\n\nVariants. Papers study several variants across modalities and domains. In still images, they separate object presence detection from object identification, including everyday-object naming and broader entity-recognition prompts over objects, people, and environmental features. In video settings, the behavior appears both as identifying objects mentioned in captions and as surrogate tasks that localize objects on frames or keyframes, while biomedical work recasts it as structure identification for anatomies in the brain, heart, lung, abdomen, or spine; another strand studies free-form object name generation without a fixed vocabulary. One benchmark also situates object recognition as one of the tasks used inside hallucination scenarios.\n\nSpace of elicitation and scores. Papers link this behavior to 3 measurement instruments: CUB-200-2011, used for object identification focused on bird species, ImageNet-1k, used as an image-recognition benchmark, and POPE, described as querying the presence of specific objects with simple yes/no questions. A smaller operationalization measures it through visual question answering, using curated images and object questions such as \"What is on the bed?\" and comparing the next generated token after prefilling the response with \"It is a\". Scoring can also be ratio-based, with one entity-recognition setup calculating recognition as the ratio of recognized entities to annotated entities.\n\nWhat it is taken as evidence of. Across linked constructs, papers connect object recognition to 3 constructs rather than using a single shared construct label. One paper claims a causal relationship from object recognition to Grounding, describing object recognition as one of the low-level surrogate tasks used to ground a model to scene information. Another paper reports it as related to Visual perception, and a separate paper claims a causal relationship from Multimodal alignment to object recognition by linking alignment limitations to lower accuracy in object name generation. These links point in different directions, so papers do not use one consistent construct framing.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Object recognition",
+    "Object presence detection",
+    "Object identification",
+    "Structure identification",
+    "Object existence determination",
+    "Object name generation",
+    "Entity recognition"
+  ],
+  "papers": [
+    "Look, Remember and Reason: Grounded Reasoning in Videos with Language Models",
+    "ViLMA: A Zero-Shot Benchmark for Linguistic and Temporal Grounding in Video-Language Models",
+    "Dysca: A Dynamic and Scalable Benchmark for Evaluating Perception Ability of LVLMs",
+    "Eagle: Exploring The Design Space for Multimodal LLMs with Mixture of Encoders",
+    "Fine-Grained Verifiers: Preference Modeling as Next-token Prediction in Vision-Language Alignment",
+    "Have the VLMs Lost Confidence? A Study of Sycophancy in VLMs",
+    "Interpretable Bilingual Multimodal Large Language Model for Diverse Biomedical Tasks",
+    "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+    "See It from My Perspective: How Language Affects Cultural Bias in Image Understanding",
+    "Teaching Human Behavior Improves Content Understanding Abilities Of VLMs",
+    "Towards Interpreting Visual Information Processing in Vision-Language Models",
+    "ZooProbe: A Data Engine for Evaluating, Exploring, and Evolving Large-scale Training Data for Multimodal LLMs",
+    "Open-Det: An Efficient Learning Framework for Open-Ended Detection",
+    "SECOND: Mitigating Perceptual Hallucination in Vision-Language Models via Selective and Contrastive Decoding",
+    "A Cognitive Evaluation Benchmark of Image Reasoning and Description for Large Vision-Language Models",
+    "MLLM-Bench: Evaluating Multimodal LLMs with Per-sample Criteria",
+    "Evaluating and Mitigating Object Hallucination in Large Vision-Language Models: Can They Still See Removed Objects?",
+    "Animal-Bench: Benchmarking Multimodal Video Models for Animal-centric Video Understanding",
+    "Architect: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting",
+    "CogVLM: Visual Expert for Pretrained Language Models",
+    "MMBench-Video: A Long-Form Multi-Shot Benchmark for Holistic Video Understanding",
+    "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+    "Task Me Anything",
+    "Training-Free Open-Ended Object Detection and Segmentation via Attention as Prompts",
+    "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+    "VisMin: Visual Minimal-Change Understanding",
+    "Why are Visually-Grounded Language Models Bad at Image Classification?",
+    "WildVision: Evaluating Vision-Language Models in the Wild with Human Preferences"
+  ],
+  "paper_count": 28,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Identifying specific objects present in the image.",
+      "paper": "WildVision: Evaluating Vision-Language Models in the Wild with Human Preferences",
+      "original_name": "Object recognition"
+    },
+    {
+      "text": "The task of determining whether a specific object exists within an image.",
+      "paper": "Have the VLMs Lost Confidence? A Study of Sycophancy in VLMs",
+      "original_name": "Object presence detection"
+    },
+    {
+      "text": "The task of correctly naming an everyday object depicted in an image.",
+      "paper": "See It from My Perspective: How Language Affects Cultural Bias in Image Understanding",
+      "original_name": "Object identification"
+    },
+    {
+      "text": "The specific task of identifying and naming anatomical structures, such as organs, within a specified region of a medical scan.",
+      "paper": "Interpretable Bilingual Multimodal Large Language Model for Diverse Biomedical Tasks",
+      "original_name": "Structure identification"
+    },
+    {
+      "text": "The model's latent capability to correctly identify whether a specified object is present or absent in a given image.",
+      "paper": "Evaluating and Mitigating Object Hallucination in Large Vision-Language Models: Can They Still See Removed Objects?",
+      "original_name": "Object existence determination"
+    },
+    {
+      "text": "The model produces free-form textual names for detected objects without relying on a fixed vocabulary.",
+      "paper": "Open-Det: An Efficient Learning Framework for Open-Ended Detection",
+      "original_name": "Object name generation"
+    },
+    {
+      "text": "Identifying and naming visible objects, people, and environmental features in an image.",
+      "paper": "A Cognitive Evaluation Benchmark of Image Reasoning and Description for Large Vision-Language Models",
+      "original_name": "Entity recognition"
+    }
+  ],
+  "definition_count": 7,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Grounding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Look, Remember and Reason: Grounded Reasoning in Videos with Language Models",
+      "evidence": "Our multi-modal LRR model is grounded to relevant low-level visual information in the scene by stochastically introducing low-level surrogate tasks during training, including object recognition, re-identification, and tracking (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Look, Remember and Reason: Grounded Reasoning in Videos with Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CUB-200-2011",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning",
+      "evidence": "Caltech\u2019s CUB Dataset on Birds [82] is a well-known resource for evaluating algorithms on the task of object identification, specifically focused on bird species. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ImageNet-1k",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+      "evidence": "\"ImageNet, often considered a cornerstone in the field of computer vision, has been widely used as a benchmark to evaluate the performance of image recognition models.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual perception",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MLLM-Bench: Evaluating Multimodal LLMs with Per-sample Criteria",
+      "evidence": "Perception MLLMs retrieve information from multimodal inputs, using skills like object recognition and OCR. (Table 3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "MLLM-Bench: Evaluating Multimodal LLMs with Per-sample Criteria"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is an image-level task of identifying and naming specific objects present in a visual input. Success is usually cast as correct naming or categorization, but some definitions narrow it to deciding whether a specified object is present or absent, and some fold in localization, for example asking \"What type of mushroom is it in the image?\" or to \"give the approximate coordinates of the spoon tail.\" A smaller line broadens the target to listing visible entities, and some papers describe it as a latent recognition ability rather than only a discrete question-answering task."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several variants across modalities and domains. In still images, they separate object presence detection from object identification, including everyday-object naming and broader entity-recognition prompts over objects, people, and environmental features. In video settings, the behavior appears both as identifying objects mentioned in captions and as surrogate tasks that localize objects on frames or keyframes, while biomedical work recasts it as structure identification for anatomies in the brain, heart, lung, abdomen, or spine; another strand studies free-form object name generation without a fixed vocabulary. One benchmark also situates object recognition as one of the tasks used inside hallucination scenarios."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 3 measurement instruments: CUB-200-2011, used for object identification focused on bird species, ImageNet-1k, used as an image-recognition benchmark, and POPE, described as querying the presence of specific objects with simple yes/no questions. A smaller operationalization measures it through visual question answering, using curated images and object questions such as \"What is on the bed?\" and comparing the next generated token after prefilling the response with \"It is a\". Scoring can also be ratio-based, with one entity-recognition setup calculating recognition as the ratio of recognized entities to annotated entities."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Across linked constructs, papers connect object recognition to 3 constructs rather than using a single shared construct label. One paper claims a causal relationship from object recognition to Grounding, describing object recognition as one of the low-level surrogate tasks used to ground a model to scene information. Another paper reports it as related to Visual perception, and a separate paper claims a causal relationship from Multimodal alignment to object recognition by linking alignment limitations to lower accuracy in object name generation. These links point in different directions, so papers do not use one consistent construct framing."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is an image-level task of identifying and naming specific objects present in a visual input. Success is usually cast as correct naming or categorization, but some definitions narrow it to deciding whether a specified object is present or absent, and some fold in localization, for example asking \"What type of mushroom is it in the image?\" or to \"give the approximate coordinates of the spoon tail.\" A smaller line broadens the target to listing visible entities, and some papers describe it as a latent recognition ability rather than only a discrete question-answering task.\n\nVariants. Papers study several variants across modalities and domains. In still images, they separate object presence detection from object identification, including everyday-object naming and broader entity-recognition prompts over objects, people, and environmental features. In video settings, the behavior appears both as identifying objects mentioned in captions and as surrogate tasks that localize objects on frames or keyframes, while biomedical work recasts it as structure identification for anatomies in the brain, heart, lung, abdomen, or spine; another strand studies free-form object name generation without a fixed vocabulary. One benchmark also situates object recognition as one of the tasks used inside hallucination scenarios.\n\nSpace of elicitation and scores. Papers link this behavior to 3 measurement instruments: CUB-200-2011, used for object identification focused on bird species, ImageNet-1k, used as an image-recognition benchmark, and POPE, described as querying the presence of specific objects with simple yes/no questions. A smaller operationalization measures it through visual question answering, using curated images and object questions such as \"What is on the bed?\" and comparing the next generated token after prefilling the response with \"It is a\". Scoring can also be ratio-based, with one entity-recognition setup calculating recognition as the ratio of recognized entities to annotated entities.\n\nWhat it is taken as evidence of. Across linked constructs, papers connect object recognition to 3 constructs rather than using a single shared construct label. One paper claims a causal relationship from object recognition to Grounding, describing object recognition as one of the low-level surrogate tasks used to ground a model to scene information. Another paper reports it as related to Visual perception, and a separate paper claims a causal relationship from Multimodal alignment to object recognition by linking alignment limitations to lower accuracy in object name generation. These links point in different directions, so papers do not use one consistent construct framing.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Dysca: A Dynamic and Scalable Benchmark for Evaluating Perception Ability of LVLMs",
+      "Eagle: Exploring The Design Space for Multimodal LLMs with Mixture of Encoders",
+      "Fine-Grained Verifiers: Preference Modeling as Next-token Prediction in Vision-Language Alignment",
+      "Have the VLMs Lost Confidence? A Study of Sycophancy in VLMs",
+      "Interpretable Bilingual Multimodal Large Language Model for Diverse Biomedical Tasks",
+      "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+      "See It from My Perspective: How Language Affects Cultural Bias in Image Understanding",
+      "Teaching Human Behavior Improves Content Understanding Abilities Of VLMs",
+      "Towards Interpreting Visual Information Processing in Vision-Language Models",
+      "ZooProbe: A Data Engine for Evaluating, Exploring, and Evolving Large-scale Training Data for Multimodal LLMs"
+    ],
+    "icml25": [
+      "Open-Det: An Efficient Learning Framework for Open-Ended Detection",
+      "SECOND: Mitigating Perceptual Hallucination in Vision-Language Models via Selective and Contrastive Decoding"
+    ],
+    "neurips24": [
+      "Animal-Bench: Benchmarking Multimodal Video Models for Animal-centric Video Understanding",
+      "Architect: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting",
+      "CogVLM: Visual Expert for Pretrained Language Models",
+      "MMBench-Video: A Long-Form Multi-Shot Benchmark for Holistic Video Understanding",
+      "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+      "Task Me Anything",
+      "Training-Free Open-Ended Object Detection and Segmentation via Attention as Prompts",
+      "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+      "VisMin: Visual Minimal-Change Understanding",
+      "Why are Visually-Grounded Language Models Bad at Image Classification?",
+      "WildVision: Evaluating Vision-Language Models in the Wild with Human Preferences"
+    ],
+    "iclr24": [
+      "Look, Remember and Reason: Grounded Reasoning in Videos with Language Models",
+      "ViLMA: A Zero-Shot Benchmark for Linguistic and Temporal Grounding in Video-Language Models"
+    ],
+    "naacl25": [
+      "A Cognitive Evaluation Benchmark of Image Reasoning and Description for Large Vision-Language Models",
+      "MLLM-Bench: Evaluating Multimodal LLMs with Per-sample Criteria",
+      "Evaluating and Mitigating Object Hallucination in Large Vision-Language Models: Can They Still See Removed Objects?"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 10,
+    "icml25": 2,
+    "neurips24": 11,
+    "iclr24": 2,
+    "naacl25": 3
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "canonical_name": "Expert specialization",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats expert specialization as division of labor within a mixture, where individual experts, adapters, or models develop focused capabilities for particular tasks, data patterns, inputs, domains, or parts of the data distribution. Papers describe this as experts becoming adept at a certain type of task or data pattern, learning different skills, or showing distinct task preferences rather than redundant functions. A smaller line of work defines the same term differently, as an expert being specialized when it is mainly co-activated with a small, specific group of other experts, so the main disagreement is whether specialization is about task or input focus or about collaboration structure.\n\nSpace of facets. Most papers use closely related labels such as fine-grained specialization, routing specialization, and task-wise specialization for the same general idea that different experts take different roles. Within that usage, papers distinguish specialization by what is separated across experts, including tasks, domains, inputs, parts of the data distribution, and task-specific residuals, often contrasting it with redundant or overlapping functionality; one adapter paper also contrasts specialized residuals with shared knowledge handled by the backbone. One paper instead organizes specialization by collaboration pattern, calling an expert specialized when it is co-activated mainly with a small, specific subset of peers.\n\nSpace of measurement. No measurement instrument is linked to it, and no behavioral indicator is linked to it. Papers instead operationalize it through internal routing and weight patterns: experts being weighted differently depending on the task, distinct task preferences in expert-weight distributions, specialization appearing on trained and untrained tasks, and lower Pi values being interpreted as collaboration with a specific subset of experts and thus higher specialization. These operationalizations mostly match the dominant definitions, though the co-activation based Pi framing tracks collaboration structure rather than task or input focus.\n\nLinks. Papers connect expert specialization most often to Generalization. One paper reports it is related to Generalization, stating that the specialized nature of individual experts can bring heightened sensitivity to noise and limited generalization on unseen data, while another paper claims a causal relationship from Expert specialization to Generalization and describes it as enhancing generalization capability. Separate papers relate it to Multilingual ability, where fine-grained specialization under English-only instruction tuning is said to narrow multilingual capacity, and to Knowledge transfer, framed as a trade-off between short-term cost savings from knowledge transfer and long-term convergence efficiency through expert specialization.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Expert specialization"
+  ],
+  "papers": [
+    "HMoE: Heterogeneous Mixture of Experts for Language Modeling",
+    "MixLoRA-DSI: Dynamically Expandable Mixture-of-LoRA Experts for Rehearsal-Free Generative Retrieval over Dynamic Corpora",
+    "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning",
+    "SliceMoE: Routing Embedding Slices Instead of Tokens for Fine-Grained and Balanced Transformer Scaling",
+    "Understanding and Leveraging the Expert Specialization of Context Faithfulness in Mixture-of-Experts LLMs",
+    "Mixture-of-Experts Meets Instruction Tuning: A Winning Combination for Large Language Models",
+    "Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning",
+    "Drop-Upcycling: Training Sparse Mixture of Experts with Partial Re-initialization",
+    "Efficient Dictionary Learning with Switch Sparse Autoencoders",
+    "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+    "No Need to Talk: Asynchronous Mixture of Language Models",
+    "Tight Clusters Make Specialized Experts",
+    "AdvancingMoEEfficiency: A Collaboration-Constrained Routing (C2R) Strategy for Better Expert Parallelism Design",
+    "Dynamic Data Mixing Maximizes Instruction Tuning for Mixture-of-Experts",
+    "Sparser Mixture-of-Adapters with Cross-Layer Generalization"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which individual experts in an MoE model develop focused capabilities for specific types of tasks or data patterns, contributing to overall model adaptability through division of labor.",
+      "paper": "Mixture-of-Experts Meets Instruction Tuning: A Winning Combination for Large Language Models",
+      "original_name": "Expert specialization"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning",
+      "evidence": "\"improving expert specialization to enhance performance and generalization remains a challenge for MoE\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning"
+        ],
+        "iclr24": [
+          "Mixture-of-Experts Meets Instruction Tuning: A Winning Combination for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multilingual ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Mixture-of-Experts Meets Instruction Tuning: A Winning Combination for Large Language Models",
+      "evidence": "The \ufb01ne-grained specialization of FLAN-MOE models, particularly when \ufb01ne-tuned on English-only instructions, can inadvertently lead to a narrowing of the model\u2019s capacity to effectively process and generate content in multiple languages. (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Mixture-of-Experts Meets Instruction Tuning: A Winning Combination for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge transfer",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Drop-Upcycling: Training Sparse Mixture of Experts with Partial Re-initialization",
+      "evidence": "Thus, there exists a trade-off between the short-term cost savings from knowledge transfer and the long-term convergence efficiency through expert specialization. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Drop-Upcycling: Training Sparse Mixture of Experts with Partial Re-initialization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Load balancing",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "evidence": "\"To address these issues, we propose a novel auxiliary loss function that not only ensures balanced expert selection but also promotes greater certainty in routing results, thereby encouraging more effective specialization of experts across all layers.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats expert specialization as division of labor within a mixture, where individual experts, adapters, or models develop focused capabilities for particular tasks, data patterns, inputs, domains, or parts of the data distribution. Papers describe this as experts becoming adept at a certain type of task or data pattern, learning different skills, or showing distinct task preferences rather than redundant functions. A smaller line of work defines the same term differently, as an expert being specialized when it is mainly co-activated with a small, specific group of other experts, so the main disagreement is whether specialization is about task or input focus or about collaboration structure."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Most papers use closely related labels such as fine-grained specialization, routing specialization, and task-wise specialization for the same general idea that different experts take different roles. Within that usage, papers distinguish specialization by what is separated across experts, including tasks, domains, inputs, parts of the data distribution, and task-specific residuals, often contrasting it with redundant or overlapping functionality; one adapter paper also contrasts specialized residuals with shared knowledge handled by the backbone. One paper instead organizes specialization by collaboration pattern, calling an expert specialized when it is co-activated mainly with a small, specific subset of peers."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to it, and no behavioral indicator is linked to it. Papers instead operationalize it through internal routing and weight patterns: experts being weighted differently depending on the task, distinct task preferences in expert-weight distributions, specialization appearing on trained and untrained tasks, and lower Pi values being interpreted as collaboration with a specific subset of experts and thus higher specialization. These operationalizations mostly match the dominant definitions, though the co-activation based Pi framing tracks collaboration structure rather than task or input focus."
+    },
+    {
+      "label": "Links.",
+      "text": "Papers connect expert specialization most often to Generalization. One paper reports it is related to Generalization, stating that the specialized nature of individual experts can bring heightened sensitivity to noise and limited generalization on unseen data, while another paper claims a causal relationship from Expert specialization to Generalization and describes it as enhancing generalization capability. Separate papers relate it to Multilingual ability, where fine-grained specialization under English-only instruction tuning is said to narrow multilingual capacity, and to Knowledge transfer, framed as a trade-off between short-term cost savings from knowledge transfer and long-term convergence efficiency through expert specialization."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define expert specialization as individual experts in a mixture-of-experts model developing distinct capabilities for particular tasks, inputs, or regions of the data distribution, with an emphasis on division of labor and reduced redundancy. One paper instead describes it in terms of an expert being co-activated with a small, specific group of other experts, but that appears to be an outlier rather than a substantial alternative definition.",
+    "papers_with_definition": 7,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats expert specialization as division of labor within a mixture, where individual experts, adapters, or models develop focused capabilities for particular tasks, data patterns, inputs, domains, or parts of the data distribution. Papers describe this as experts becoming adept at a certain type of task or data pattern, learning different skills, or showing distinct task preferences rather than redundant functions. A smaller line of work defines the same term differently, as an expert being specialized when it is mainly co-activated with a small, specific group of other experts, so the main disagreement is whether specialization is about task or input focus or about collaboration structure.\n\nSpace of facets. Most papers use closely related labels such as fine-grained specialization, routing specialization, and task-wise specialization for the same general idea that different experts take different roles. Within that usage, papers distinguish specialization by what is separated across experts, including tasks, domains, inputs, parts of the data distribution, and task-specific residuals, often contrasting it with redundant or overlapping functionality; one adapter paper also contrasts specialized residuals with shared knowledge handled by the backbone. One paper instead organizes specialization by collaboration pattern, calling an expert specialized when it is co-activated mainly with a small, specific subset of peers.\n\nSpace of measurement. No measurement instrument is linked to it, and no behavioral indicator is linked to it. Papers instead operationalize it through internal routing and weight patterns: experts being weighted differently depending on the task, distinct task preferences in expert-weight distributions, specialization appearing on trained and untrained tasks, and lower Pi values being interpreted as collaboration with a specific subset of experts and thus higher specialization. These operationalizations mostly match the dominant definitions, though the co-activation based Pi framing tracks collaboration structure rather than task or input focus.\n\nLinks. Papers connect expert specialization most often to Generalization. One paper reports it is related to Generalization, stating that the specialized nature of individual experts can bring heightened sensitivity to noise and limited generalization on unseen data, while another paper claims a causal relationship from Expert specialization to Generalization and describes it as enhancing generalization capability. Separate papers relate it to Multilingual ability, where fine-grained specialization under English-only instruction tuning is said to narrow multilingual capacity, and to Knowledge transfer, framed as a trade-off between short-term cost savings from knowledge transfer and long-term convergence efficiency through expert specialization.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "HMoE: Heterogeneous Mixture of Experts for Language Modeling",
+      "MixLoRA-DSI: Dynamically Expandable Mixture-of-LoRA Experts for Rehearsal-Free Generative Retrieval over Dynamic Corpora",
+      "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning",
+      "SliceMoE: Routing Embedding Slices Instead of Tokens for Fine-Grained and Balanced Transformer Scaling",
+      "Understanding and Leveraging the Expert Specialization of Context Faithfulness in Mixture-of-Experts LLMs"
+    ],
+    "iclr24": [
+      "Mixture-of-Experts Meets Instruction Tuning: A Winning Combination for Large Language Models",
+      "Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning"
+    ],
+    "iclr25": [
+      "Drop-Upcycling: Training Sparse Mixture of Experts with Partial Re-initialization",
+      "Efficient Dictionary Learning with Switch Sparse Autoencoders",
+      "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "No Need to Talk: Asynchronous Mixture of Language Models",
+      "Tight Clusters Make Specialized Experts"
+    ],
+    "naacl25": [
+      "AdvancingMoEEfficiency: A Collaboration-Constrained Routing (C2R) Strategy for Better Expert Parallelism Design",
+      "Dynamic Data Mixing Maximizes Instruction Tuning for Mixture-of-Experts",
+      "Sparser Mixture-of-Adapters with Cross-Layer Generalization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "iclr24": 2,
+    "iclr25": 5,
+    "naacl25": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "naacl25"
+  ]
+}

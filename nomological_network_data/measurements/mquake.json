@@ -1,0 +1,152 @@
+{
+  "canonical_name": "MQuAKE",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, MQuAKE is most commonly described as a benchmark or dataset for evaluating model or knowledge editing through multi-hop knowledge questions. Definitions converge on question answering over edited facts: some emphasize reasoning over edited knowledge, while others emphasize whether edited knowledge propagates to related facts or supports knowledge editing generalization through multi-hop questions; one paper describes each case as a multi-hop question built from a chain of single-hop subquestions. A smaller line of description adds versions that vary in hop count and temporal knowledge, and one source snippet specifies questions with 2 to 4 hops and different positions of the knowledge used in the questions.\n\nWhat it is claimed to measure. Papers link MQuAKE to 4 constructs and 1 behavioral indicator. The prevailing usage is to measure Multi-hop reasoning and Multi-hop question answering: papers describe it as evaluating multi-hop reasoning over edited knowledge, and one relationship states that Multi-hop Accuracy on MQuAKE measures the accuracy of multi-hop question answering. Smaller lines of work use it to measure Counterfactual reasoning, Context faithfulness, and Portability, so the reported measurement claims extend beyond one construct even though multi-hop evaluation is the dominant framing.\n\nSpace of uses. Papers position MQuAKE in two recurring ways: as a main multi-hop reasoning knowledge editing dataset, and as an auxiliary dataset for additional experiments. It appears alongside Counterfact, LongformEvaluation, and KnowEdit in some studies, while work that spells out the protocol reports Multi-hop Accuracy and Hop-wise Answering Accuracy. Papers do not describe it as being linked to another measurement instrument.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MQUAKE",
+    "MQuAKE"
+  ],
+  "papers": [
+    "A Good Plan is Hard to Find: Aligning Models with Preferences is Misaligned with What Helps Users",
+    "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+    "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+    "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing",
+    "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+    "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+    "MQuAKE-Remastered: Multi-Hop Knowledge Editing Can Only Be Advanced with Reliable Evaluations",
+    "LoFiT: Localized Fine-tuning on LLM Representations",
+    "Reasons and Solutions for the Decline in Model Performance after Editing",
+    "VLKEB: A Large Vision-Language Model Knowledge Editing Benchmark"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark for evaluating model editing on multi-hop knowledge questions.",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "original_name": "MQUAKE"
+    },
+    {
+      "text": "Multi-hop knowledge editing benchmark that evaluates models on question-answering tasks requiring reasoning over edited facts, with versions varying in hop count and temporal knowledge.",
+      "paper": "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "original_name": "MQuAKE"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multi-hop question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "MQuAKE-Remastered: Multi-Hop Knowledge Editing Can Only Be Advanced with Reliable Evaluations",
+      "evidence": "MQUAKE (Multi-hop Question Answering for Knowledge Editing) is a knowledge editing dataset focusing on the abovementioned multi-hop question answering tasks proposed in Zhong et al. (2023), where every case of MQUAKE is a multi-hop question made by a chain of single-hop subquestions. (Section 2.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MQuAKE-Remastered: Multi-Hop Knowledge Editing Can Only Be Advanced with Reliable Evaluations"
+        ],
+        "emnlp25": [
+          "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multi-hop reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "evidence": "experiments show that CaKE enables more accurate and consistent use of edited knowledge across related reasoning tasks, achieving an average improvement of 20% in multi-hop reasoning accuracy on the MQuAKE dataset (Abstract).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Context faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+      "evidence": "\"We use LLAMA2-7B-CHAT and LLAMA2-13B-CHAT as baseline models to conduct experiments on MQUAKE ... This verifies whether knowledge has been properly edited and effectively demonstrates LLMs\u2019 context-faithfulness.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Portability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing",
+      "evidence": "MQuAKE (Zhong et al., 2023) is a multi-hop benchmark... Portability evaluates the robustness of the generalization of the edit, evaluating whether the modified knowledge can be applied effectively to related content (e.g. Multi-Hop Reasoning).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, MQuAKE is most commonly described as a benchmark or dataset for evaluating model or knowledge editing through multi-hop knowledge questions. Definitions converge on question answering over edited facts: some emphasize reasoning over edited knowledge, while others emphasize whether edited knowledge propagates to related facts or supports knowledge editing generalization through multi-hop questions; one paper describes each case as a multi-hop question built from a chain of single-hop subquestions. A smaller line of description adds versions that vary in hop count and temporal knowledge, and one source snippet specifies questions with 2 to 4 hops and different positions of the knowledge used in the questions."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link MQuAKE to 4 constructs and 1 behavioral indicator. The prevailing usage is to measure Multi-hop reasoning and Multi-hop question answering: papers describe it as evaluating multi-hop reasoning over edited knowledge, and one relationship states that Multi-hop Accuracy on MQuAKE measures the accuracy of multi-hop question answering. Smaller lines of work use it to measure Counterfactual reasoning, Context faithfulness, and Portability, so the reported measurement claims extend beyond one construct even though multi-hop evaluation is the dominant framing."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers position MQuAKE in two recurring ways: as a main multi-hop reasoning knowledge editing dataset, and as an auxiliary dataset for additional experiments. It appears alongside Counterfact, LongformEvaluation, and KnowEdit in some studies, while work that spells out the protocol reports Multi-hop Accuracy and Hop-wise Answering Accuracy. Papers do not describe it as being linked to another measurement instrument."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, MQuAKE is most commonly described as a benchmark or dataset for evaluating model or knowledge editing through multi-hop knowledge questions. Definitions converge on question answering over edited facts: some emphasize reasoning over edited knowledge, while others emphasize whether edited knowledge propagates to related facts or supports knowledge editing generalization through multi-hop questions; one paper describes each case as a multi-hop question built from a chain of single-hop subquestions. A smaller line of description adds versions that vary in hop count and temporal knowledge, and one source snippet specifies questions with 2 to 4 hops and different positions of the knowledge used in the questions.\n\nWhat it is claimed to measure. Papers link MQuAKE to 4 constructs and 1 behavioral indicator. The prevailing usage is to measure Multi-hop reasoning and Multi-hop question answering: papers describe it as evaluating multi-hop reasoning over edited knowledge, and one relationship states that Multi-hop Accuracy on MQuAKE measures the accuracy of multi-hop question answering. Smaller lines of work use it to measure Counterfactual reasoning, Context faithfulness, and Portability, so the reported measurement claims extend beyond one construct even though multi-hop evaluation is the dominant framing.\n\nSpace of uses. Papers position MQuAKE in two recurring ways: as a main multi-hop reasoning knowledge editing dataset, and as an auxiliary dataset for additional experiments. It appears alongside Counterfact, LongformEvaluation, and KnowEdit in some studies, while work that spells out the protocol reports Multi-hop Accuracy and Hop-wise Answering Accuracy. Papers do not describe it as being linked to another measurement instrument.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "A Good Plan is Hard to Find: Aligning Models with Preferences is Misaligned with What Helps Users",
+      "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+      "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing"
+    ],
+    "iclr25": [
+      "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+      "MQuAKE-Remastered: Multi-Hop Knowledge Editing Can Only Be Advanced with Reliable Evaluations"
+    ],
+    "neurips24": [
+      "LoFiT: Localized Fine-tuning on LLM Representations",
+      "Reasons and Solutions for the Decline in Model Performance after Editing",
+      "VLKEB: A Large Vision-Language Model Knowledge Editing Benchmark"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 4,
+    "iclr25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "neurips24"
+  ]
+}

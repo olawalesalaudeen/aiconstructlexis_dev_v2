@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Interactive Network · AI Construct Lexis</title>
+    <meta name="description" content="A map of how LLM papers relate constructs, behavioral indicators, and measurement instruments.">
+    <script>
+        // Apply the saved theme before first paint (no flash). Light unless the reader chose dark.
+        try { if (localStorage.getItem('lexis-theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (_) { }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="view_network_theme.css?v=2026-10-24w">
+    <link rel="stylesheet" href="network_graph.css?v=2026-10-24w">
+    <link rel="stylesheet" href="theme_modern_academic.css?v=2026-10-24w">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+    <!-- Pinned: graphology 0.26.0 and sigma 3.0.3 (its UMD build bundles the node-border program). -->
+    <script src="https://cdn.jsdelivr.net/npm/graphology@0.26.0/dist/graphology.umd.min.js"
+        integrity="sha384-YdXPUVLFDJ3oITK7LFAPRyzkOcDK06bb7KRaE8GiQyGLsrvHaLS9Ej/lELMC7aCE" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@3.0.3/dist/sigma.min.js"
+        integrity="sha384-2BM4IWUXdUSofkFc94Y1PY8U+cZYLJjB+EqQAoA2vfFGBvZK8aVaxEhICqCY4rlq" crossorigin="anonymous" defer></script>
+    <script src="network_graph.js?v=2026-10-24w" defer></script>
+</head>
+
+<body class="ng2">
+    <div class="ng2-app">
+        <header class="site-header ng2-site-header" id="siteHeader" data-active="network"></header>
+
+        <main class="ng2-stage" id="stage">
+            <div class="ng2-canvas" id="sigma" role="application"
+                aria-label="Network map. Use the search box to find an entity; arrow keys pan, plus and minus zoom."
+                tabindex="0"></div>
+            <div class="ng2-regions" id="regions" aria-hidden="true"></div>
+
+            <!-- Controls: title, search, filters, legend -->
+            <aside class="ng2-controls" id="controls" aria-label="Network controls">
+                <div class="ng2-controls-head">
+                    <div class="ng2-title-row">
+                        <h2 class="ng2-title">Interactive Network</h2>
+                        <!-- Phones: opens the filters. Desktop: hides or shows the panel body so the graph
+                             can use the full width. network_graph.js sets the label and icon. -->
+                        <button type="button" class="ng2-icon-btn ng2-filters-toggle" id="filtersToggle"
+                            aria-expanded="true" aria-controls="controlsBody">
+                            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"></svg>
+                            <span></span>
+                        </button>
+                    </div>
+                    <div class="ng2-search" role="combobox" aria-haspopup="listbox" aria-owns="searchResults"
+                        aria-expanded="false" id="searchBox">
+                        <svg class="ng2-search-icon" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <input id="searchInput" type="search" placeholder="Search entities or aliases" autocomplete="off"
+                            spellcheck="false" aria-autocomplete="list" aria-controls="searchResults"
+                            aria-label="Search entities">
+                        <kbd class="ng2-kbd" aria-hidden="true">/</kbd>
+                        <ul class="ng2-search-results" id="searchResults" role="listbox" hidden></ul>
+                    </div>
+                </div>
+
+                <div class="ng2-controls-body" id="controlsBody">
+                    <div class="ng2-segmented" role="group" aria-label="How many entities to show" id="levelControl">
+                        <button type="button" data-level="50" aria-pressed="true">50 most cited</button>
+                        <button type="button" data-level="150" aria-pressed="false">150</button>
+                        <button type="button" data-level="all" aria-pressed="false">All</button>
+                    </div>
+                    <p class="ng2-stats" id="stats" aria-live="polite">Loading…</p>
+
+                    <section class="ng2-group" aria-labelledby="lblEntities">
+                        <h3 class="ng2-label" id="lblEntities">Entities</h3>
+                        <div class="ng2-toggles" id="entityToggles"></div>
+                    </section>
+
+                    <section class="ng2-group" aria-labelledby="lblRelations">
+                        <h3 class="ng2-label" id="lblRelations">Relationships</h3>
+                        <p class="ng2-hint">Colored when you hover or select an entity. Select one, then click a colored
+                            line to see the papers behind it.</p>
+                        <div class="ng2-toggles" id="edgeToggles"></div>
+                        <div class="ng2-papers-row">
+                            <label for="minPapers">Reported in at least</label>
+                            <input type="number" id="minPapers" min="2" step="1" value="2" inputmode="numeric"
+                                autocomplete="off" aria-describedby="minPapersMsg">
+                            <span id="minPapersUnit">papers</span>
+                        </div>
+                        <p class="ng2-field-msg" id="minPapersMsg" role="alert" hidden></p>
+                    </section>
+
+                    <details class="ng2-more" id="moreOptions">
+                        <summary>More options</summary>
+                        <label class="ng2-check"><input type="checkbox" id="showUnlinked"> <span>Show entities with no
+                                visible relationships <span class="ng2-muted" id="unlinkedCount"></span></span></label>
+                        <label class="ng2-check"><input type="checkbox" id="showRegions" checked> <span>Region
+                                labels</span></label>
+                    </details>
+
+                    <p class="ng2-note">
+                        Lines are relationships that papers <em>claim</em>, not validated ones; thicker lines mean more
+                        papers. Regions are communities in this graph, named after their most-cited concepts. Please
+                        read <a href="view_network.html#disclaimers">Scope and Interpretation</a>.
+                    </p>
+                    <p class="ng2-note ng2-stale" id="staleNote" hidden></p>
+                    <ul class="ng2-note ng2-help">
+                        <li><b>Click</b> entities to select them and see only their connections; <b>click again</b> to deselect</li>
+                        <li><b>Drag</b> an entity to move it</li>
+                        <li>Or tick them in the search list; <b>Clear all</b> deselects everything</li>
+                        <li><b>Double-click</b> for its neighborhood view</li>
+                        <li><b>/</b> searches; <b>F</b> or the corner button makes the graph full page; <b>Esc</b> leaves the neighborhood view or full page</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Selection details -->
+            <aside class="ng2-panel" id="panel" hidden aria-live="polite" aria-label="Selected entity">
+                <div class="ng2-panel-scroll">
+                    <div class="ng2-panel-head">
+                        <div class="ng2-panel-kicker" id="panelKicker"></div>
+                        <button type="button" class="ng2-icon-btn ng2-close" id="panelClose"
+                            aria-label="Deselect" title="Deselect">
+                            <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                        </button>
+                    </div>
+                    <div id="entityView">
+                        <h2 class="ng2-panel-title" id="panelTitle"></h2>
+                        <div class="ng2-panel-meta" id="panelMeta"></div>
+                        <div class="ng2-selection-chips" id="selectionChips" hidden></div>
+                        <div class="ng2-panel-actions">
+                            <a class="ng2-btn ng2-btn-primary" id="entityLink" href="#">Open entity page</a>
+                            <button type="button" class="ng2-btn" id="focusBtn" aria-pressed="false">Only selected entities</button>
+                            <button type="button" class="ng2-btn" id="addAnother">Add another entity</button>
+                            <button type="button" class="ng2-btn ng2-btn-ghost" id="copyLink" title="Copy a link to this view">Copy link</button>
+                        </div>
+                        <p class="ng2-add-hint" id="addHint"></p>
+                        <p class="ng2-aliases" id="panelAliases" hidden></p>
+                        <div class="ng2-definition" id="panelDefinition"></div>
+                        <div class="ng2-relations" id="panelRelations"></div>
+                    </div>
+                    <!-- Papers behind one relationship (opened from a line on the map or a row above) -->
+                    <div id="edgeView" hidden></div>
+                </div>
+            </aside>
+
+            <p class="ng2-maphint" id="mapHint">Click entities to select them and see their connections. Click again to deselect.</p>
+
+            <div class="ng2-focusbar" id="focusbar" hidden>
+                <span id="focusLabel"></span>
+                <button type="button" class="ng2-btn ng2-btn-small" id="exitFocus">Clear all</button>
+            </div>
+
+            <div class="ng2-zoom" role="group" aria-label="Zoom and theme">
+                <button type="button" class="ng2-icon-btn" id="zoomIn" aria-label="Zoom in" title="Zoom in (+)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" class="ng2-icon-btn" id="zoomOut" aria-label="Zoom out" title="Zoom out (-)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" class="ng2-icon-btn" id="zoomFit" aria-label="Fit to view" title="Fit to view (0)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" class="ng2-icon-btn" id="fullPage" aria-pressed="false" aria-label="Full page" title="Full page (F)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"></svg>
+                </button>
+                <span class="ng2-zoom-sep" aria-hidden="true"></span>
+                <button type="button" class="ng2-icon-btn" id="themeToggle" aria-label="Theme: auto" title="Theme: auto">
+                    <svg class="ng2-theme-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+                </button>
+            </div>
+
+            <div class="ng2-loading" id="loading" role="status">
+                <span class="ng2-spinner" aria-hidden="true"></span>
+                <span id="loadingText">Loading the network…</span>
+            </div>
+        </main>
+    </div>
+
+    <script src="site_header.js?v=2026-10-24w"></script>
+</body>
+
+</html>

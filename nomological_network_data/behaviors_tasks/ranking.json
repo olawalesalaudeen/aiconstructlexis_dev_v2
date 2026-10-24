@@ -1,0 +1,446 @@
+{
+  "canonical_name": "Ranking",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is reranking in retrieval pipelines: re-evaluating an initial list of retrieved documents, passages, images, code snippets, or other candidates and reordering them by relevance to a query so the most relevant item appears first or the top-ranked set is more precise. Several definitions make the scoring step explicit, describing fine-grained relevance scores, satisfaction scores, or binary relevance judgments before reordering, and one long-context evaluation instructs the model to return the top-10 document IDs ranked by relevance. A smaller line of work uses ranking more broadly for ordering candidate outputs from best to worst, arranging items under instructions, selecting the best generation from several candidates, or ordering regions on maps by legend value.\n\nVariants. Most variants stay close to document and passage reranking, which are the most recurrent labels and are often framed as a second stage after initial retrieval. Papers also study zero-shot reranking, where prompting rather than task-specific fine-tuning is used, and listwise reranking, where a full ranking is produced by considering passages jointly rather than pairwise or pointwise. Beyond text documents and passages, the same behavior is instantiated for images, code, websites, entity candidates, shopping items, map regions, and candidate refinement in schema matching.\n\nSpace of elicitation and scores. Papers operationalize ranking with 5 linked instruments: BEIR, CodeSearchNet, HELMET, MS MARCO, and MTEB. These instruments are used as benchmarks or datasets for retrieval and reranking tasks: HELMET includes passage re-ranking among its task types, MTEB includes reranking alongside retrieval and other text tasks, BEIR is used for re-ranker evaluation, MS MARCO for passage re-ranking, and CodeSearchNet for text-to-code retrieval and reranking.\n\nWhat it is taken as evidence of. Construct links are sparse. Only 1 construct is linked, Generative ability, and papers describe it as related to ranking rather than as something ranking directly measures or correlates with; one paper says reranking through a model's generative capabilities lets it improve on embedding performance. Papers connect ranking more often to other behaviors, 5 linked behavioral indicators, reporting it as related to question answering, information extraction, and schema matching, and claiming causal relationships from ranking to cross-modal retrieval and to language understanding task performance.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Ranking",
+    "Image reranking",
+    "Code reranking",
+    "Website reranking",
+    "Document reranking",
+    "Zero-shot reranking",
+    "Zero-shot re-ranking",
+    "Passage re-ranking",
+    "Document re-ranking",
+    "Listwise reranking",
+    "Passage reranking",
+    "Re-ranking",
+    "Information reranking",
+    "Candidate re-ranking",
+    "Candidate refinement",
+    "Reranking",
+    "Text ranking",
+    "Document ranking",
+    "Item ranking"
+  ],
+  "papers": [
+    "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+    "More is not always better? Enhancing Many-Shot In-Context Learning with Differentiated and Reweighting Objectives",
+    "Gumbel Reranking: Differentiable End-to-End Reranker Optimization",
+    "RankCoT: Refining Knowledge for Retrieval-Augmented Generation through Ranking Chain-of-Thoughts",
+    "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+    "CAFE: Retrieval Head-based Coarse-to-Fine Information Seeking to Enhance Multi-Document QA Capability",
+    "Chat-Driven Text Generation and Interaction for Person Retrieval",
+    "Conan-Embedding-v2: Training an LLM from Scratch for Text Embeddings",
+    "FinMTEB: Finance Massive Text Embedding Benchmark",
+    "GRADA: Graph-based Reranking against Adversarial Documents Attack",
+    "IL-PCSR: Legal Corpus for Prior Case and Statute Retrieval",
+    "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering",
+    "LimRank: Less is More for Reasoning-Intensive Information Reranking",
+    "MS-RAG: Simple and Effective Multi-Semantic Retrieval-Augmented Generation",
+    "MedLinkDE -- MedDRA Entity Linking for German with Guided Chain of Thought Reasoning",
+    "Multi-view-guided Passage Reranking with Large Language Models",
+    "Multilingual vs Crosslingual Retrieval of Fact-Checked Claims: A Tale of Two Approaches",
+    "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking",
+    "REALM: Recursive Relevance Modeling for LLM-based Document Re-Ranking",
+    "REARANK: Reasoning Re-ranking Agent via Reinforcement Learning",
+    "RaDeR: Reasoning-aware Dense Retrieval Models",
+    "The Ranking Blind Spot: Decision Hijacking in LLM-based Text Ranking",
+    "Training LLMs to be Better Text Embedders through Bidirectional Reconstruction",
+    "Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers",
+    "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+    "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+    "Beyond Content Relevance: Evaluating Instruction Following in Retrieval Models",
+    "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+    "Generative Representational Instruction Tuning",
+    "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+    "MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS",
+    "MMSearch: Unveiling the Potential of Large Models as Multi-modal Search Engines",
+    "MMTEB: Massive Multilingual Text Embedding Benchmark",
+    "Making Text Embedders Few-Shot Learners",
+    "NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models",
+    "Provence: efficient and robust context pruning for retrieval-augmented generation",
+    "Repetition Improves Language Model Embeddings",
+    "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching",
+    "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+    "MAPWise: Evaluating Vision-Language Models for Advanced Map Queries",
+    "Multi-Conditional Ranking with Large Language Models",
+    "BERTs are Generative In-Context Learners",
+    "HLM-Cite: Hybrid Language Model Workflow for Text-based Scientific Citation Prediction",
+    "INQUIRE: A Natural World Text-to-Image Retrieval Benchmark",
+    "STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases",
+    "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+    "Shopping MMLU: A Massive Multi-Task Online Shopping Benchmark for Large Language Models"
+  ],
+  "paper_count": 47,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Ranking a list of items according to their relevance to a query, one of the five task types included in Shopping MMLU.",
+      "paper": "Shopping MMLU: A Massive Multi-Task Online Shopping Benchmark for Large Language Models",
+      "original_name": "Ranking"
+    },
+    {
+      "text": "The process of re-evaluating and re-ordering an initial set of retrieved candidates to improve the precision of the top-ranked results.",
+      "paper": "STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases",
+      "original_name": "Reranking"
+    },
+    {
+      "text": "The process of re-ordering an initial set of retrieved images using a more sophisticated model to improve the final ranking's relevance to a query.",
+      "paper": "INQUIRE: A Natural World Text-to-Image Retrieval Benchmark",
+      "original_name": "Image reranking"
+    },
+    {
+      "text": "The process of re-ordering an initial list of retrieved code snippets to improve the relevance of the final ranking.",
+      "paper": "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "original_name": "Code reranking"
+    },
+    {
+      "text": "Selecting the most informative website from retrieved search results for downstream answer extraction.",
+      "paper": "MMSearch: Unveiling the Potential of Large Models as Multi-modal Search Engines",
+      "original_name": "Website reranking"
+    },
+    {
+      "text": "Ranking retrieved documents so that the most relevant document is placed first.",
+      "paper": "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "original_name": "Document reranking"
+    },
+    {
+      "text": "The observable behavior of performing a reranking task using a model that has not been specifically fine-tuned for that task, relying instead on its pre-trained capabilities activated through prompting.",
+      "paper": "MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS",
+      "original_name": "Zero-shot reranking"
+    },
+    {
+      "text": "Ranking a set of retrieved documents by their relevance to a query without task-specific fine-tuning.",
+      "paper": "Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers",
+      "original_name": "Zero-shot re-ranking"
+    },
+    {
+      "text": "Ranking a set of retrieved passages by relevance to a query and outputting an ordered list of document IDs.",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "original_name": "Passage re-ranking"
+    },
+    {
+      "text": "The process of reordering a list of candidate documents based on their estimated relevance to a query, typically following an initial retrieval stage.",
+      "paper": "REALM: Recursive Relevance Modeling for LLM-based Document Re-Ranking",
+      "original_name": "Document re-ranking"
+    },
+    {
+      "text": "The model reorders a list of passages by considering their relative positions and relevance simultaneously, producing a full ranking rather than pairwise or pointwise scores.",
+      "paper": "REARANK: Reasoning Re-ranking Agent via Reinforcement Learning",
+      "original_name": "Listwise reranking"
+    },
+    {
+      "text": "The task of assigning fine-grained relevance scores to a list of candidate passages for a given query to produce a re-ordered, more relevant list.",
+      "paper": "Multi-view-guided Passage Reranking with Large Language Models",
+      "original_name": "Passage reranking"
+    },
+    {
+      "text": "The process of re-ordering an initial list of retrieved candidates based on additional information or a refined query to improve the final ranking.",
+      "paper": "Chat-Driven Text Generation and Interaction for Person Retrieval",
+      "original_name": "Re-ranking"
+    },
+    {
+      "text": "Reordering a list of retrieved documents based on their relevance to a query, particularly in scenarios requiring reasoning beyond surface-level matching.",
+      "paper": "LimRank: Less is More for Reasoning-Intensive Information Reranking",
+      "original_name": "Information reranking"
+    },
+    {
+      "text": "The process of reordering an initial list of candidate entities to place the most accurate or relevant entity at the top.",
+      "paper": "MedLinkDE -- MedDRA Entity Linking for German with Guided Chain of Thought Reasoning",
+      "original_name": "Candidate re-ranking"
+    },
+    {
+      "text": "The process of filtering and prioritizing a list of potential attribute matches to create a smaller, more relevant set for final evaluation.",
+      "paper": "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching",
+      "original_name": "Candidate refinement"
+    },
+    {
+      "text": "The observable behavior of ordering documents or passages by relevance to a given query, as performed by LLMs in information retrieval settings.",
+      "paper": "The Ranking Blind Spot: Decision Hijacking in LLM-based Text Ranking",
+      "original_name": "Text ranking"
+    },
+    {
+      "text": "The task of ordering a large collection of documents in a monotonic order of relevance based on a single query.",
+      "paper": "Multi-Conditional Ranking with Large Language Models",
+      "original_name": "Document ranking"
+    },
+    {
+      "text": "The observable action of arranging a given set of items into a specific order based on one or more instructions.",
+      "paper": "Multi-Conditional Ranking with Large Language Models",
+      "original_name": "Item ranking"
+    }
+  ],
+  "definition_count": 19,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Cross-modal retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS",
+      "evidence": "We find that MLLMs can be used as zero-shot rerankers to further boost retrieval accuracy in challenging tasks that require the understanding of multimodal queries, such as ... composed image retrieval. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MTEB",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Making Text Embedders Few-Shot Learners",
+      "evidence": "It includes data for various tasks including Retrieval, Reranking, Clustering, Classification, and STS. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Making Text Embedders Few-Shot Learners"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generative ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Generative Representational Instruction Tuning",
+      "evidence": "We \ufb01nd that reranking via the generative capabilities of GRITLM 7B allows it to improve on its embedding performance on most retrieval datasets. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generative Representational Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CodeSearchNet",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "evidence": "For evaluation, we employ the CodeSearchNet and AdvTest text-to-code retrieval benchmarks... the top 100 results from our code retriever are passed to the reranker, with evaluation conducted using MRR@100.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MS MARCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "Re-ranking retrieved passages based on their relevance to the query is an important application of LCLMs (Sun et al., 2023). ... We use the MS MARCO dataset (Bajaj et al., 2018)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Retrieval-augmented generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "Naturally, RAG and passage re-ranking moderately correlate due to the shared retrieval component",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers",
+      "evidence": "To leverage the instruction following abilities in modern LLMs, we formulate the re-ranking task into either question answering (QA) or information extraction (IE) tasks, which are more commonly seen by LLMs. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Information extraction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers",
+      "evidence": "To leverage the instruction following abilities in modern LLMs, we formulate the re-ranking task into either question answering (QA) or information extraction (IE) tasks, which are more commonly seen by LLMs. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HELMET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "NExtLong: Toward Effective Long-Context Training without Long Documents",
+      "evidence": "The evaluation spans five task types from the HELMET benchmark: synthetic recall, retrieval-augmented generation (RAG), many-shot in-context learning (ICL), passage re-ranking, and long-document QA, covering a total of 17 sub-tasks. (Section 4.1. Evaluation)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "NExtLong: Toward Effective Long-Context Training without Long Documents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BEIR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking",
+      "evidence": "We further evaluate QRRETRIEVER as a re-ranker on the standard BEIR benchmark (Thakur et al., 2021). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Natural language understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Multi-view-guided Passage Reranking with Large Language Models",
+      "evidence": "Passage reranking aims to assign fine-grained relevance scores to candidate passages \u2013 typically retrieved by a first-stage retriever (Robertson et al., 1994; Karpukhin et al., 2020) \u2013 by harnessing the language understanding capabilities of large language models (LLMs) (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Multi-view-guided Passage Reranking with Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 11,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 7,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is reranking in retrieval pipelines: re-evaluating an initial list of retrieved documents, passages, images, code snippets, or other candidates and reordering them by relevance to a query so the most relevant item appears first or the top-ranked set is more precise. Several definitions make the scoring step explicit, describing fine-grained relevance scores, satisfaction scores, or binary relevance judgments before reordering, and one long-context evaluation instructs the model to return the top-10 document IDs ranked by relevance. A smaller line of work uses ranking more broadly for ordering candidate outputs from best to worst, arranging items under instructions, selecting the best generation from several candidates, or ordering regions on maps by legend value."
+    },
+    {
+      "label": "Variants.",
+      "text": "Most variants stay close to document and passage reranking, which are the most recurrent labels and are often framed as a second stage after initial retrieval. Papers also study zero-shot reranking, where prompting rather than task-specific fine-tuning is used, and listwise reranking, where a full ranking is produced by considering passages jointly rather than pairwise or pointwise. Beyond text documents and passages, the same behavior is instantiated for images, code, websites, entity candidates, shopping items, map regions, and candidate refinement in schema matching."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers operationalize ranking with 5 linked instruments: BEIR, CodeSearchNet, HELMET, MS MARCO, and MTEB. These instruments are used as benchmarks or datasets for retrieval and reranking tasks: HELMET includes passage re-ranking among its task types, MTEB includes reranking alongside retrieval and other text tasks, BEIR is used for re-ranker evaluation, MS MARCO for passage re-ranking, and CodeSearchNet for text-to-code retrieval and reranking."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Construct links are sparse. Only 1 construct is linked, Generative ability, and papers describe it as related to ranking rather than as something ranking directly measures or correlates with; one paper says reranking through a model's generative capabilities lets it improve on embedding performance. Papers connect ranking more often to other behaviors, 5 linked behavioral indicators, reporting it as related to question answering, information extraction, and schema matching, and claiming causal relationships from ranking to cross-modal retrieval and to language understanding task performance."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is reranking in retrieval pipelines: re-evaluating an initial list of retrieved documents, passages, images, code snippets, or other candidates and reordering them by relevance to a query so the most relevant item appears first or the top-ranked set is more precise. Several definitions make the scoring step explicit, describing fine-grained relevance scores, satisfaction scores, or binary relevance judgments before reordering, and one long-context evaluation instructs the model to return the top-10 document IDs ranked by relevance. A smaller line of work uses ranking more broadly for ordering candidate outputs from best to worst, arranging items under instructions, selecting the best generation from several candidates, or ordering regions on maps by legend value.\n\nVariants. Most variants stay close to document and passage reranking, which are the most recurrent labels and are often framed as a second stage after initial retrieval. Papers also study zero-shot reranking, where prompting rather than task-specific fine-tuning is used, and listwise reranking, where a full ranking is produced by considering passages jointly rather than pairwise or pointwise. Beyond text documents and passages, the same behavior is instantiated for images, code, websites, entity candidates, shopping items, map regions, and candidate refinement in schema matching.\n\nSpace of elicitation and scores. Papers operationalize ranking with 5 linked instruments: BEIR, CodeSearchNet, HELMET, MS MARCO, and MTEB. These instruments are used as benchmarks or datasets for retrieval and reranking tasks: HELMET includes passage re-ranking among its task types, MTEB includes reranking alongside retrieval and other text tasks, BEIR is used for re-ranker evaluation, MS MARCO for passage re-ranking, and CodeSearchNet for text-to-code retrieval and reranking.\n\nWhat it is taken as evidence of. Construct links are sparse. Only 1 construct is linked, Generative ability, and papers describe it as related to ranking rather than as something ranking directly measures or correlates with; one paper says reranking through a model's generative capabilities lets it improve on embedding performance. Papers connect ranking more often to other behaviors, 5 linked behavioral indicators, reporting it as related to question answering, information extraction, and schema matching, and claiming causal relationships from ranking to cross-modal retrieval and to language understanding task performance.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+      "More is not always better? Enhancing Many-Shot In-Context Learning with Differentiated and Reweighting Objectives",
+      "Gumbel Reranking: Differentiable End-to-End Reranker Optimization",
+      "RankCoT: Refining Knowledge for Retrieval-Augmented Generation through Ranking Chain-of-Thoughts"
+    ],
+    "emnlp25": [
+      "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+      "CAFE: Retrieval Head-based Coarse-to-Fine Information Seeking to Enhance Multi-Document QA Capability",
+      "Chat-Driven Text Generation and Interaction for Person Retrieval",
+      "Conan-Embedding-v2: Training an LLM from Scratch for Text Embeddings",
+      "FinMTEB: Finance Massive Text Embedding Benchmark",
+      "GRADA: Graph-based Reranking against Adversarial Documents Attack",
+      "IL-PCSR: Legal Corpus for Prior Case and Statute Retrieval",
+      "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering",
+      "LimRank: Less is More for Reasoning-Intensive Information Reranking",
+      "MS-RAG: Simple and Effective Multi-Semantic Retrieval-Augmented Generation",
+      "MedLinkDE -- MedDRA Entity Linking for German with Guided Chain of Thought Reasoning",
+      "Multi-view-guided Passage Reranking with Large Language Models",
+      "Multilingual vs Crosslingual Retrieval of Fact-Checked Claims: A Tale of Two Approaches",
+      "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking",
+      "REALM: Recursive Relevance Modeling for LLM-based Document Re-Ranking",
+      "REARANK: Reasoning Re-ranking Agent via Reinforcement Learning",
+      "RaDeR: Reasoning-aware Dense Retrieval Models",
+      "The Ranking Blind Spot: Decision Hijacking in LLM-based Text Ranking",
+      "Training LLMs to be Better Text Embedders through Bidirectional Reconstruction"
+    ],
+    "iclr25": [
+      "Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers",
+      "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+      "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "Beyond Content Relevance: Evaluating Instruction Following in Retrieval Models",
+      "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "Generative Representational Instruction Tuning",
+      "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS",
+      "MMSearch: Unveiling the Potential of Large Models as Multi-modal Search Engines",
+      "MMTEB: Massive Multilingual Text Embedding Benchmark",
+      "Making Text Embedders Few-Shot Learners",
+      "NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models",
+      "Provence: efficient and robust context pruning for retrieval-augmented generation",
+      "Repetition Improves Language Model Embeddings"
+    ],
+    "icml25": [
+      "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching"
+    ],
+    "neurips24": [
+      "BERTs are Generative In-Context Learners",
+      "HLM-Cite: Hybrid Language Model Workflow for Text-based Scientific Citation Prediction",
+      "INQUIRE: A Natural World Text-to-Image Retrieval Benchmark",
+      "STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases",
+      "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+      "Shopping MMLU: A Massive Multi-Task Online Shopping Benchmark for Large Language Models"
+    ],
+    "naacl25": [
+      "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+      "MAPWise: Evaluating Vision-Language Models for Advanced Map Queries",
+      "Multi-Conditional Ranking with Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 19,
+    "iclr25": 14,
+    "icml25": 1,
+    "neurips24": 6,
+    "naacl25": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

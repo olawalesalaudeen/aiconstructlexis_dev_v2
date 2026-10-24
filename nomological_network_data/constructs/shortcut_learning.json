@@ -1,0 +1,166 @@
+{
+  "canonical_name": "Shortcut learning",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage describes shortcut learning as models relying on spurious or superficial correlations, or other salient but task-irrelevant features, instead of the intended task features, underlying concepts, or deeper task-relevant reasoning. Several definitions make the data-distribution aspect explicit, saying these cues are prevalent in majority training data or can support high in-distribution performance while failing on minority or out-of-distribution cases. A smaller line of work narrows the idea to mini-batch-level spurious pattern capture, and another frames it more broadly as task-specific heuristics, or different laws for each sample, rather than a unified, interpretable world model.\n\nSpace of facets. Papers largely use labels such as shortcut learning, reliance on spurious correlations, and spurious correlation capture for the same family of behavior. One paper also speaks of 'shortcut circuits' that directly influence outputs based on salient features, while another ties the construct to task-specific heuristics, coarsened state representations, and non-parsimonious representations. Across these framings, shortcut learning is contrasted with learning the underlying concept, using intended task features, genuine understanding, deeper reasoning, or building a single universal law or unified world model.\n\nSpace of measurement. No measurement instrument or behavioral indicator is linked to shortcut learning. In the available descriptions, authors point to behaviors such as exploiting shortcuts under empirical risk minimization, showing apparent task proficiency without acquiring the underlying concept, being influenced by names or stereotypes, or encoding batch-local spurious patterns, but no named benchmark, human evaluation, LLM-as-a-judge, probe, or analysis is linked to the construct.\n\nLinks. A few papers claim a causal relationship from shortcut learning to Generalization: the accompanying quotations describe models relying on shortcuts and then failing to generalize to out-of-distribution data, or shortcut learning that 'undermines generalization' in argument mining. One paper also claims a causal relationship from shortcut learning to Robustness, describing spurious associations that lead models to learn shortcuts that can undermine robustness.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Reliance on spurious correlations",
+    "Shortcut learning",
+    "Spurious correlation capture",
+    "Task-specific heuristics"
+  ],
+  "papers": [
+    "Curriculum Debiasing: Toward Robust Parameter-Efficient Fine-Tuning Against Dataset Biases",
+    "Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments",
+    "Mitigating Shortcut Learning with InterpoLated Learning",
+    "PIGuard: Prompt Injection Guardrail via Mitigating Overdefense for Free",
+    "Robust Native Language Identification through Agentic Decomposition",
+    "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning",
+    "Core Knowledge Deficits in Multi-Modal Language Models",
+    "SCISSOR: Mitigating Semantic Bias through Cluster-Aware Siamese Networks for Robust Classification",
+    "Watch Out Your Album! On the Inadvertent Privacy Memorization in Multi-Modal Large Language Models",
+    "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models",
+    "Co-occurrence is not Factual Association in Language Models"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The tendency of models to rely on spurious correlations between input features and labels that are prevalent in majority training data but irrelevant to the actual task, leading to poor generalization on minority or out-of-distribution examples.",
+      "paper": "Mitigating Shortcut Learning with InterpoLated Learning",
+      "original_name": "Shortcut learning"
+    },
+    {
+      "text": "The model's tendency to use superficial or statistically common but causally unrelated patterns in the training data to make predictions, rather than learning the intended underlying task features.",
+      "paper": "Curriculum Debiasing: Toward Robust Parameter-Efficient Fine-Tuning Against Dataset Biases",
+      "original_name": "Reliance on spurious correlations"
+    },
+    {
+      "text": "The model's propensity to learn and encode spurious patterns that appear correlated with the objective within a specific mini-batch, even if they are globally irrelevant.",
+      "paper": "Watch Out Your Album! On the Inadvertent Privacy Memorization in Multi-Modal Large Language Models",
+      "original_name": "Spurious correlation capture"
+    },
+    {
+      "text": "The tendency of a foundation model to develop narrow, non-generalizable strategies for specific tasks rather than learning a unified, interpretable world model, leading to poor extrapolation under distribution shift.",
+      "paper": "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models",
+      "original_name": "Task-specific heuristics"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments",
+      "evidence": "Statistical evidence that shortcut learning undermines generalization in argument mining. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Operationalizing Right to Data Protection",
+      "evidence": "This association can create a spurious correlation between the filmmaker\u2019s names and sentiment, leading LMs to learn shortcuts that can undermine their robustness. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Towards Operationalizing Right to Data Protection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Out-of-distribution generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Operationalizing Right to Data Protection",
+      "evidence": "...the model can rely on these \u2018shortcuts\u2019 and fail to generalize to out-of-distribution data. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Towards Operationalizing Right to Data Protection"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage describes shortcut learning as models relying on spurious or superficial correlations, or other salient but task-irrelevant features, instead of the intended task features, underlying concepts, or deeper task-relevant reasoning. Several definitions make the data-distribution aspect explicit, saying these cues are prevalent in majority training data or can support high in-distribution performance while failing on minority or out-of-distribution cases. A smaller line of work narrows the idea to mini-batch-level spurious pattern capture, and another frames it more broadly as task-specific heuristics, or different laws for each sample, rather than a unified, interpretable world model."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers largely use labels such as shortcut learning, reliance on spurious correlations, and spurious correlation capture for the same family of behavior. One paper also speaks of 'shortcut circuits' that directly influence outputs based on salient features, while another ties the construct to task-specific heuristics, coarsened state representations, and non-parsimonious representations. Across these framings, shortcut learning is contrasted with learning the underlying concept, using intended task features, genuine understanding, deeper reasoning, or building a single universal law or unified world model."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument or behavioral indicator is linked to shortcut learning. In the available descriptions, authors point to behaviors such as exploiting shortcuts under empirical risk minimization, showing apparent task proficiency without acquiring the underlying concept, being influenced by names or stereotypes, or encoding batch-local spurious patterns, but no named benchmark, human evaluation, LLM-as-a-judge, probe, or analysis is linked to the construct."
+    },
+    {
+      "label": "Links.",
+      "text": "A few papers claim a causal relationship from shortcut learning to Generalization: the accompanying quotations describe models relying on shortcuts and then failing to generalize to out-of-distribution data, or shortcut learning that 'undermines generalization' in argument mining. One paper also claims a causal relationship from shortcut learning to Robustness, describing spurious associations that lead models to learn shortcuts that can undermine robustness."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define shortcut learning as a model relying on superficial or spurious correlations or features, rather than the task-relevant, causal, or underlying concept, typically with poor generalization under distribution shift. A few papers narrow this to specific settings such as mini-batch correlations or broaden it to narrow task-specific strategies in foundation models, but these are still scope variations of the same core phenomenon rather than different constructs.",
+    "papers_with_definition": 7,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage describes shortcut learning as models relying on spurious or superficial correlations, or other salient but task-irrelevant features, instead of the intended task features, underlying concepts, or deeper task-relevant reasoning. Several definitions make the data-distribution aspect explicit, saying these cues are prevalent in majority training data or can support high in-distribution performance while failing on minority or out-of-distribution cases. A smaller line of work narrows the idea to mini-batch-level spurious pattern capture, and another frames it more broadly as task-specific heuristics, or different laws for each sample, rather than a unified, interpretable world model.\n\nSpace of facets. Papers largely use labels such as shortcut learning, reliance on spurious correlations, and spurious correlation capture for the same family of behavior. One paper also speaks of 'shortcut circuits' that directly influence outputs based on salient features, while another ties the construct to task-specific heuristics, coarsened state representations, and non-parsimonious representations. Across these framings, shortcut learning is contrasted with learning the underlying concept, using intended task features, genuine understanding, deeper reasoning, or building a single universal law or unified world model.\n\nSpace of measurement. No measurement instrument or behavioral indicator is linked to shortcut learning. In the available descriptions, authors point to behaviors such as exploiting shortcuts under empirical risk minimization, showing apparent task proficiency without acquiring the underlying concept, being influenced by names or stereotypes, or encoding batch-local spurious patterns, but no named benchmark, human evaluation, LLM-as-a-judge, probe, or analysis is linked to the construct.\n\nLinks. A few papers claim a causal relationship from shortcut learning to Generalization: the accompanying quotations describe models relying on shortcuts and then failing to generalize to out-of-distribution data, or shortcut learning that 'undermines generalization' in argument mining. One paper also claims a causal relationship from shortcut learning to Robustness, describing spurious associations that lead models to learn shortcuts that can undermine robustness.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Curriculum Debiasing: Toward Robust Parameter-Efficient Fine-Tuning Against Dataset Biases",
+      "Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments",
+      "Mitigating Shortcut Learning with InterpoLated Learning",
+      "PIGuard: Prompt Injection Guardrail via Mitigating Overdefense for Free"
+    ],
+    "emnlp25": [
+      "Robust Native Language Identification through Agentic Decomposition",
+      "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning"
+    ],
+    "icml25": [
+      "Core Knowledge Deficits in Multi-Modal Language Models",
+      "SCISSOR: Mitigating Semantic Bias through Cluster-Aware Siamese Networks for Robust Classification",
+      "Watch Out Your Album! On the Inadvertent Privacy Memorization in Multi-Modal Large Language Models",
+      "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models"
+    ],
+    "neurips24": [
+      "Co-occurrence is not Factual Association in Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 2,
+    "icml25": 4,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "icml25",
+    "neurips24"
+  ]
+}

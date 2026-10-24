@@ -1,0 +1,191 @@
+{
+  "canonical_name": "HEx-PHI",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed papers, HEx-PHI is most commonly described as a harmful query or safety benchmark: a dataset of 330 harmful instructions or queries spanning 11 harmful categories or use cases. Definitions converge on its use for testing whether models comply with harmful requests, produce unsafe outputs, or generate harmful or privacy-invasive responses, though one description narrows this to privacy-harming and personally harmful instructions. A smaller line of work refers to it as the Policy-Oriented Safety Evaluation Benchmarks or the POSE benchmark, describing its categories as derived from Meta's and OpenAI's usage policies or prohibited use cases.\n\nWhat it is claimed to measure. Papers link it to three constructs and one behavioral indicator. Most often, it is used to measure Harmlessness, followed by Safety and Safety alignment, and the only linked behavioral indicator is Harmful content generation. The recorded relationships keep these claims within safety evaluation, with papers describing the benchmark as assessing harmfulness or evaluating whether a model complies with harmful requests, so its use is spread across three constructs rather than centered on a single one.\n\nSpace of uses. In use, papers usually place HEx-PHI inside multi-benchmark safety evaluations rather than as a standalone test. It is most commonly paired with AdvBench, and also appears alongside HarmBench, DirectHarm4, BeaverTails, and MaliciousInstruct. Across these setups, authors describe it as a harmful query benchmark, or as one of several harmful datasets used to evaluate defense strategies, fine-tuned models, or safety.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "HEX-PHI",
+    "HEx-PHI",
+    "Policy-Oriented Safety Evaluation Benchmarks",
+    "POSE benchmark",
+    "POSE"
+  ],
+  "papers": [
+    "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+    "Root Defense Strategies: Ensuring Safety of LLM at the Decoding Level",
+    "Unintended Harms of Value-Aligned LLMs: Psychological and Empirical Insights",
+    "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment",
+    "Speculative Safety-Aware Decoding",
+    "AIR-BENCH 2024: A Safety Benchmark based on Regulation and Policies Specified Risk Categories",
+    "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+    "SEAL: Safety-enhanced Aligned LLM Fine-tuning via Bilevel Data Selection",
+    "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+    "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+    "Safety Alignment Can Be Not Superficial With Explicit Safety Signals",
+    "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+    "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+    "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset containing 11 categories of harmfulness-inducing instructions, specifically designed to evaluate the safety alignment of a language model.",
+      "paper": "SEAL: Safety-enhanced Aligned LLM Fine-tuning via Bilevel Data Selection",
+      "original_name": "HEX-PHI"
+    },
+    {
+      "text": "HEx-PHI safety benchmark consisting of harmful instructions used to evaluate whether models comply with harmful requests and produce unsafe outputs.",
+      "paper": "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+      "original_name": "HEx-PHI"
+    },
+    {
+      "text": "A benchmark dataset used to assess the harmfulness of LLMs, containing questions across 11 harmful categories derived from Meta's and OpenAI's usage policies.",
+      "paper": "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "original_name": "Policy-Oriented Safety Evaluation Benchmarks"
+    },
+    {
+      "text": "A policy-oriented safety evaluation benchmark built from prohibited use cases in model usage policies.",
+      "paper": "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+      "original_name": "POSE benchmark"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "evidence": "\u201cTo assess the harmfulness of the compromised LLMs, we select the Policy-Oriented Safety Evaluation Benchmarks\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment"
+        ],
+        "iclr25": [
+          "SEAL: Safety-enhanced Aligned LLM Fine-tuning via Bilevel Data Selection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+      "evidence": "To assess the defense performance when a naive attacker directly inputs harmful queries to the language model, we utilize two harmful query benchmark datasets: Advbench (Zou et al., 2023) and HEx-PHI (Qi et al., 2024). (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense"
+        ],
+        "emnlp25": [
+          "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+      "evidence": "For the former, we use three widely recognized safety benchmarks. Specifically, we include all 520 harmful samples from AdvBench (Zou et al., 2023), all 330 samples from HEx-PHI (Qi et al., 2024b), and a randomly selected subset of 1,000 samples from BeaverTails (Ji et al., 2024).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs"
+        ],
+        "icml25": [
+          "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "evidence": "HEx-PHI and SORRY-bench are two dedicated benchmarks for evaluating harmfulness in the HarmfulQA context. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On Evaluating the Durability of Safeguards for Open-Weight LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed papers, HEx-PHI is most commonly described as a harmful query or safety benchmark: a dataset of 330 harmful instructions or queries spanning 11 harmful categories or use cases. Definitions converge on its use for testing whether models comply with harmful requests, produce unsafe outputs, or generate harmful or privacy-invasive responses, though one description narrows this to privacy-harming and personally harmful instructions. A smaller line of work refers to it as the Policy-Oriented Safety Evaluation Benchmarks or the POSE benchmark, describing its categories as derived from Meta's and OpenAI's usage policies or prohibited use cases."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to three constructs and one behavioral indicator. Most often, it is used to measure Harmlessness, followed by Safety and Safety alignment, and the only linked behavioral indicator is Harmful content generation. The recorded relationships keep these claims within safety evaluation, with papers describing the benchmark as assessing harmfulness or evaluating whether a model complies with harmful requests, so its use is spread across three constructs rather than centered on a single one."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "In use, papers usually place HEx-PHI inside multi-benchmark safety evaluations rather than as a standalone test. It is most commonly paired with AdvBench, and also appears alongside HarmBench, DirectHarm4, BeaverTails, and MaliciousInstruct. Across these setups, authors describe it as a harmful query benchmark, or as one of several harmful datasets used to evaluate defense strategies, fine-tuned models, or safety."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed papers, HEx-PHI is most commonly described as a harmful query or safety benchmark: a dataset of 330 harmful instructions or queries spanning 11 harmful categories or use cases. Definitions converge on its use for testing whether models comply with harmful requests, produce unsafe outputs, or generate harmful or privacy-invasive responses, though one description narrows this to privacy-harming and personally harmful instructions. A smaller line of work refers to it as the Policy-Oriented Safety Evaluation Benchmarks or the POSE benchmark, describing its categories as derived from Meta's and OpenAI's usage policies or prohibited use cases.\n\nWhat it is claimed to measure. Papers link it to three constructs and one behavioral indicator. Most often, it is used to measure Harmlessness, followed by Safety and Safety alignment, and the only linked behavioral indicator is Harmful content generation. The recorded relationships keep these claims within safety evaluation, with papers describing the benchmark as assessing harmfulness or evaluating whether a model complies with harmful requests, so its use is spread across three constructs rather than centered on a single one.\n\nSpace of uses. In use, papers usually place HEx-PHI inside multi-benchmark safety evaluations rather than as a standalone test. It is most commonly paired with AdvBench, and also appears alongside HarmBench, DirectHarm4, BeaverTails, and MaliciousInstruct. Across these setups, authors describe it as a harmful query benchmark, or as one of several harmful datasets used to evaluate defense strategies, fine-tuned models, or safety.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+      "Root Defense Strategies: Ensuring Safety of LLM at the Decoding Level",
+      "Unintended Harms of Value-Aligned LLMs: Psychological and Empirical Insights"
+    ],
+    "emnlp25": [
+      "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment",
+      "Speculative Safety-Aware Decoding"
+    ],
+    "iclr25": [
+      "AIR-BENCH 2024: A Safety Benchmark based on Regulation and Policies Specified Risk Categories",
+      "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "SEAL: Safety-enhanced Aligned LLM Fine-tuning via Bilevel Data Selection",
+      "Safety Alignment Should be Made More Than Just a Few Tokens Deep"
+    ],
+    "icml25": [
+      "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+      "Safety Alignment Can Be Not Superficial With Explicit Safety Signals"
+    ],
+    "neurips24": [
+      "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models"
+    ],
+    "naacl25": [
+      "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 2,
+    "iclr25": 4,
+    "icml25": 2,
+    "neurips24": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

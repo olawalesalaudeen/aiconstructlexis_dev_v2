@@ -1,0 +1,168 @@
+{
+  "canonical_name": "MM-SafetyBench",
+  "type": "measurement",
+  "canonical_definition": "What it is. Papers most commonly describe MM-SafetyBench as a multimodal safety benchmark for testing whether vision-language models produce unsafe responses to harmful inputs and for assessing safety in vision-language settings. More specific descriptions present it as a benchmark with 5,040 text-image pairs across 13 scenarios for multimodal jailbreak attacks, or as a dataset of typographical images, stable diffusion-generated images, Typo + SD images, and text-based attack samples. Other papers frame it as a safety-critical evaluation framework against image-based manipulations and visual prompt attacks. Papers also mention an official tiny version with 168 samples, and one paper abbreviates it as MMSafe.\n\nWhat it is claimed to measure. Across papers, MM-SafetyBench is linked as a measurement instrument to three constructs, Safety, Safety alignment, and Safety robustness, and to three behavioral indicators, Harmful content detection, Harmful content generation, and Jailbreak resistance. Papers use it to judge resiliency when models are prompted with harm-inducing instructions, to calculate average attack success rate following MM-SafetyBench, and to evaluate defense capabilities against jailbreak attacks. Other papers report it for cases where an image and a seemingly benign query become harmful in combination, or where image-query-related inputs are used to elicit harmful responses.\n\nSpace of uses. No measurement instrument is linked to it, but papers use it alongside FigStep, SafeBench, SIUO, JailBreaKV, and HADES-Dataset as one component of broader safety or jailbreak evaluations. Some papers use subsets, either the official tiny version with 168 samples or a random selection of 100 harmful and safe images. It is also positioned as a source of unsafe examples and as a reference protocol, with one paper stating, \"Following MM-SafetyBench, we calculate the average attack success rate (ASR).\"",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MM-SafetyBench",
+    "MM-Safetybench",
+    "MM-SafeBench"
+  ],
+  "papers": [
+    "HiddenDetect: Detecting Jailbreak Attacks against Multimodal Large Language Models via Monitoring Hidden States",
+    "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+    "SEA: Low-Resource Safety Alignment for Multimodal Large Language Models via Synthetic Embeddings",
+    "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+    "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+    "TombRaider: Entering the Vault of History to Jailbreak Large Language Models",
+    "VisCRA: A Visual Chain Reasoning Attack for Jailbreaking Multimodal Large Language Models",
+    "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+    "BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks",
+    "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+    "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?",
+    "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+    "VHELM: A Holistic Evaluation of Vision Language Models"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A multimodal safety benchmark used to test whether VLMs produce unsafe responses to harmful inputs.",
+      "paper": "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "original_name": "MM-SafetyBench"
+    },
+    {
+      "text": "A benchmark for assessing the safety of models in multimodal (vision-language) contexts.",
+      "paper": "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?",
+      "original_name": "MM-Safetybench"
+    },
+    {
+      "text": "A benchmark featuring 5,040 text-image pairs across 13 scenarios, designed to assess the safety and robustness of vision-language models against multimodal jailbreak attacks.",
+      "paper": "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+      "original_name": "MM-SafeBench"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "VHELM: A Holistic Evaluation of Vision Language Models",
+      "evidence": "We evaluate the VLMs with MM-Safety-Bench [28] to judge the resiliency of VLMs when they are prompted with harm-inducing instructions. (Section 3.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "VHELM: A Holistic Evaluation of Vision Language Models"
+        ],
+        "iclr25": [
+          "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreak resistance",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+      "evidence": "We adopt five jailbreak attack methods or datasets to comprehensively evaluate the defense capabilities of MLLMs against jailbreak attacks, including SafeBench (Gong et al., 2023), MM-SafetyBench (Liu et al., 2024b), Hades (Li et al., 2024), MML (Wang et al., 2024c), and HIMRD (Teng et al., 2024).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+      "evidence": "...for evaluating jailbreak robustness, we employ MM-SafetyBench (Liu et al., 2024b), FigStep (Gong et al., 2025) and JailBreaKV (Luo et al., 2024) (Section 2.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+      "evidence": "MM-SafetyBench (Liu et al., 2024b), originally proposed as QR Attack, uses image-query-related inputs to elicit harmful responses from models. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Papers most commonly describe MM-SafetyBench as a multimodal safety benchmark for testing whether vision-language models produce unsafe responses to harmful inputs and for assessing safety in vision-language settings. More specific descriptions present it as a benchmark with 5,040 text-image pairs across 13 scenarios for multimodal jailbreak attacks, or as a dataset of typographical images, stable diffusion-generated images, Typo + SD images, and text-based attack samples. Other papers frame it as a safety-critical evaluation framework against image-based manipulations and visual prompt attacks. Papers also mention an official tiny version with 168 samples, and one paper abbreviates it as MMSafe."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across papers, MM-SafetyBench is linked as a measurement instrument to three constructs, Safety, Safety alignment, and Safety robustness, and to three behavioral indicators, Harmful content detection, Harmful content generation, and Jailbreak resistance. Papers use it to judge resiliency when models are prompted with harm-inducing instructions, to calculate average attack success rate following MM-SafetyBench, and to evaluate defense capabilities against jailbreak attacks. Other papers report it for cases where an image and a seemingly benign query become harmful in combination, or where image-query-related inputs are used to elicit harmful responses."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it, but papers use it alongside FigStep, SafeBench, SIUO, JailBreaKV, and HADES-Dataset as one component of broader safety or jailbreak evaluations. Some papers use subsets, either the official tiny version with 168 samples or a random selection of 100 harmful and safe images. It is also positioned as a source of unsafe examples and as a reference protocol, with one paper stating, \"Following MM-SafetyBench, we calculate the average attack success rate (ASR).\""
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Papers most commonly describe MM-SafetyBench as a multimodal safety benchmark for testing whether vision-language models produce unsafe responses to harmful inputs and for assessing safety in vision-language settings. More specific descriptions present it as a benchmark with 5,040 text-image pairs across 13 scenarios for multimodal jailbreak attacks, or as a dataset of typographical images, stable diffusion-generated images, Typo + SD images, and text-based attack samples. Other papers frame it as a safety-critical evaluation framework against image-based manipulations and visual prompt attacks. Papers also mention an official tiny version with 168 samples, and one paper abbreviates it as MMSafe.\n\nWhat it is claimed to measure. Across papers, MM-SafetyBench is linked as a measurement instrument to three constructs, Safety, Safety alignment, and Safety robustness, and to three behavioral indicators, Harmful content detection, Harmful content generation, and Jailbreak resistance. Papers use it to judge resiliency when models are prompted with harm-inducing instructions, to calculate average attack success rate following MM-SafetyBench, and to evaluate defense capabilities against jailbreak attacks. Other papers report it for cases where an image and a seemingly benign query become harmful in combination, or where image-query-related inputs are used to elicit harmful responses.\n\nSpace of uses. No measurement instrument is linked to it, but papers use it alongside FigStep, SafeBench, SIUO, JailBreaKV, and HADES-Dataset as one component of broader safety or jailbreak evaluations. Some papers use subsets, either the official tiny version with 168 samples or a random selection of 100 harmful and safe images. It is also positioned as a source of unsafe examples and as a reference protocol, with one paper stating, \"Following MM-SafetyBench, we calculate the average attack success rate (ASR).\"",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "HiddenDetect: Detecting Jailbreak Attacks against Multimodal Large Language Models via Monitoring Hidden States",
+      "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+      "SEA: Low-Resource Safety Alignment for Multimodal Large Language Models via Synthetic Embeddings"
+    ],
+    "emnlp25": [
+      "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+      "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+      "TombRaider: Entering the Vault of History to Jailbreak Large Language Models",
+      "VisCRA: A Visual Chain Reasoning Attack for Jailbreaking Multimodal Large Language Models",
+      "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection"
+    ],
+    "iclr25": [
+      "BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks",
+      "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?"
+    ],
+    "neurips24": [
+      "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "VHELM: A Holistic Evaluation of Vision Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 5,
+    "iclr25": 3,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "neurips24"
+  ]
+}

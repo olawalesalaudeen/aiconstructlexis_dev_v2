@@ -1,0 +1,189 @@
+{
+  "canonical_name": "Representational stability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats representational stability as the consistency or robustness of internal representations when something is perturbed or varies. Most definitions keep the focus on hidden states, token representations, feature representations, or learned audio-text representations, described as remaining stable under targeted perturbations, small input changes, mild image perturbations, noise, or varying initial conditions. A smaller line of work narrows the concept to invariance after parameter editing, while another broadens it to include performance staying consistent across random initializations or layers. The main disagreement is therefore about both what representation should remain stable and what kind of perturbation or variation is being considered.\n\nSpace of facets. Papers do not present a single shared subtype scheme, but they use several closely related labels for domain-specific versions of the same general idea: hidden representation stability, vision feature stability, performance stability, and representational robustness. These usages preserve a common theme of representation consistency, though one line studies representational instability across seeds and checkpoints, one centers on edited hidden-state distributions remaining invariant, and one extends the term to structured representations persisting across and within layers. The broadest divergence is that some authors restrict the construct to internal states alone, whereas others fold performance consistency into the same label.\n\nSpace of measurement. No measurement instrument is linked to it, while three behavioral indicators are linked: Confidence estimation, Hallucination, and Object hallucination. In use, papers operationalize it through analyses and probes rather than named benchmarks, including probing whether final hidden states stay stable under targeted perturbations, checking whether hidden-state distributions remain invariant after editing, comparing token representations across seeds and training checkpoints with an information-theoretic probing approach, examining whether vision encoder features stay unchanged under mild image perturbations, and using coefficient of variation to quantify performance stability. These operationalizations mostly follow the definitions' emphasis on robustness or consistency under perturbation or variation, although one formulation also treats performance stability itself as part of the construct.\n\nLinks. A few papers connect it to other entities. Confidence estimation is reported to correlate with representational stability, and one paper reports that hallucination and object hallucination correlate with it. One paper also claims a causal relationship from representational stability to knowledge retention, stating that keeping hidden representations invariant after editing alleviates model forgetting.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Representation stability",
+    "Representational stability",
+    "Hidden representation stability",
+    "Vision feature stability",
+    "Performance stability",
+    "Representational robustness"
+  ],
+  "papers": [
+    "CARMA: Enhanced Compositionality in LLMs via Advanced Regularisation and Mutual Information Alignment",
+    "Calibrating LLM Confidence by Probing Perturbed Representation Stability",
+    "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+    "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+    "PolyPythias: Stability and Outliers across Fifty Language Model Pre-Training Runs",
+    "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The robustness of a model's internal hidden state representations against targeted, systematic perturbations.",
+      "paper": "Calibrating LLM Confidence by Probing Perturbed Representation Stability",
+      "original_name": "Representational stability"
+    },
+    {
+      "text": "The degree to which the internal distribution of hidden states remains invariant after parameter editing.",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "original_name": "Hidden representation stability"
+    },
+    {
+      "text": "The property of a vision encoder to produce consistent and unvarying feature representations when the semantic content of an input image remains unchanged despite mild perturbations.",
+      "paper": "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+      "original_name": "Vision feature stability"
+    },
+    {
+      "text": "The degree to which a model's performance and internal representations remain consistent across different random initializations or between layers.",
+      "paper": "CARMA: Enhanced Compositionality in LLMs via Advanced Regularisation and Mutual Information Alignment",
+      "original_name": "Performance stability"
+    },
+    {
+      "text": "The extent to which learned audio-text representations remain reliable under variation and noise in the training or input data.",
+      "paper": "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities",
+      "original_name": "Representational robustness"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+      "evidence": "We comprehensively present and analyze the correlation between vision feature stability and model hallucinations in Section 3. (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Object hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+      "evidence": "We comprehensively present and analyze the correlation between vision feature stability and model hallucinations in Section 3.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "t-SNE visualization",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "\u201cFinally, we used t-SNE (Van der Maaten & Hinton, 2008) to visualize the hidden representation before and after editing.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge retention",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "Our new objective ensures that the distribution of hidden representations within LLMs remains invariant after editing... This invariance enables the post-edited LLM to reduce e1 while keeping e0 close to zero, thereby alleviating the issues of model forgetting",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Confidence estimation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "Calibrating LLM Confidence by Probing Perturbed Representation Stability",
+      "evidence": "We hypothesize that an LLM\u2019s confidence correlates with the robustness of its internal states; specifically, the final hidden states that lead to the tokens of a high-confidence answer should exhibit greater stability when subjected to targeted perturbations. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Calibrating LLM Confidence by Probing Perturbed Representation Stability"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats representational stability as the consistency or robustness of internal representations when something is perturbed or varies. Most definitions keep the focus on hidden states, token representations, feature representations, or learned audio-text representations, described as remaining stable under targeted perturbations, small input changes, mild image perturbations, noise, or varying initial conditions. A smaller line of work narrows the concept to invariance after parameter editing, while another broadens it to include performance staying consistent across random initializations or layers. The main disagreement is therefore about both what representation should remain stable and what kind of perturbation or variation is being considered."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not present a single shared subtype scheme, but they use several closely related labels for domain-specific versions of the same general idea: hidden representation stability, vision feature stability, performance stability, and representational robustness. These usages preserve a common theme of representation consistency, though one line studies representational instability across seeds and checkpoints, one centers on edited hidden-state distributions remaining invariant, and one extends the term to structured representations persisting across and within layers. The broadest divergence is that some authors restrict the construct to internal states alone, whereas others fold performance consistency into the same label."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to it, while three behavioral indicators are linked: Confidence estimation, Hallucination, and Object hallucination. In use, papers operationalize it through analyses and probes rather than named benchmarks, including probing whether final hidden states stay stable under targeted perturbations, checking whether hidden-state distributions remain invariant after editing, comparing token representations across seeds and training checkpoints with an information-theoretic probing approach, examining whether vision encoder features stay unchanged under mild image perturbations, and using coefficient of variation to quantify performance stability. These operationalizations mostly follow the definitions' emphasis on robustness or consistency under perturbation or variation, although one formulation also treats performance stability itself as part of the construct."
+    },
+    {
+      "label": "Links.",
+      "text": "A few papers connect it to other entities. Confidence estimation is reported to correlate with representational stability, and one paper reports that hallucination and object hallucination correlate with it. One paper also claims a causal relationship from representational stability to knowledge retention, stating that keeping hidden representations invariant after editing alleviates model forgetting."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define representational stability as the consistency or invariance of internal representations under some change, such as perturbations, parameter edits, different seeds or checkpoints, or semantically preserving input variation. A few extend the scope to performance or cross-layer comparisons, so the definitions are not identical, but they still describe related aspects of the same broad phenomenon of representations remaining stable under variation.",
+    "papers_with_definition": 6,
+    "runs": [
+      "complementary",
+      "consensus",
+      "complementary"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats representational stability as the consistency or robustness of internal representations when something is perturbed or varies. Most definitions keep the focus on hidden states, token representations, feature representations, or learned audio-text representations, described as remaining stable under targeted perturbations, small input changes, mild image perturbations, noise, or varying initial conditions. A smaller line of work narrows the concept to invariance after parameter editing, while another broadens it to include performance staying consistent across random initializations or layers. The main disagreement is therefore about both what representation should remain stable and what kind of perturbation or variation is being considered.\n\nSpace of facets. Papers do not present a single shared subtype scheme, but they use several closely related labels for domain-specific versions of the same general idea: hidden representation stability, vision feature stability, performance stability, and representational robustness. These usages preserve a common theme of representation consistency, though one line studies representational instability across seeds and checkpoints, one centers on edited hidden-state distributions remaining invariant, and one extends the term to structured representations persisting across and within layers. The broadest divergence is that some authors restrict the construct to internal states alone, whereas others fold performance consistency into the same label.\n\nSpace of measurement. No measurement instrument is linked to it, while three behavioral indicators are linked: Confidence estimation, Hallucination, and Object hallucination. In use, papers operationalize it through analyses and probes rather than named benchmarks, including probing whether final hidden states stay stable under targeted perturbations, checking whether hidden-state distributions remain invariant after editing, comparing token representations across seeds and training checkpoints with an information-theoretic probing approach, examining whether vision encoder features stay unchanged under mild image perturbations, and using coefficient of variation to quantify performance stability. These operationalizations mostly follow the definitions' emphasis on robustness or consistency under perturbation or variation, although one formulation also treats performance stability itself as part of the construct.\n\nLinks. A few papers connect it to other entities. Confidence estimation is reported to correlate with representational stability, and one paper reports that hallucination and object hallucination correlate with it. One paper also claims a causal relationship from representational stability to knowledge retention, stating that keeping hidden representations invariant after editing alleviates model forgetting.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "CARMA: Enhanced Compositionality in LLMs via Advanced Regularisation and Mutual Information Alignment",
+      "Calibrating LLM Confidence by Probing Perturbed Representation Stability"
+    ],
+    "iclr25": [
+      "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+      "PolyPythias: Stability and Outliers across Fifty Language Model Pre-Training Runs"
+    ],
+    "icml25": [
+      "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 3,
+    "icml25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

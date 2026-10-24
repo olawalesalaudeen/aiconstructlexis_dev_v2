@@ -1,0 +1,145 @@
+{
+  "canonical_name": "RedPajama",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing framing is a pretraining or training corpus of web text. Definitions describe it as a multi-domain pretraining corpus used to sample general web data for language modeling perplexity, as an open-source project creating a large, high-quality dataset for training language models, and as a pre-training dataset derived from CommonCrawl; one paper specifically uses the CommonCrawl split. Another paper uses it as a calibration dataset, describing it as a large collection of web text meant to represent typical input distributions.\n\nWhat it is claimed to measure. Papers link RedPajama to one construct and no behavioral indicators. The only reported measurement claim is that it measures Editing locality: in model editing work, locality data is described as the irrelevant data of the editing process. The measurement claims therefore center on a single construct rather than being spread across many targets.\n\nSpace of uses. Papers use RedPajama in several operational roles, and no other measurement instrument is linked to it. It appears as evaluation data for language modeling perplexity on general web data, as part of averaged throughput simulations alongside SlimPajama and PG19, as a source dataset and baseline in data selection work, and as calibration data for post-training quantization; one paper also compares a method with the Redpajama data cleaning pipeline.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "REDPAJAMA",
+    "RedPajama",
+    "Redpajama"
+  ],
+  "papers": [
+    "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+    "Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters",
+    "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+    "Data Selection via Optimal Control for Language Models",
+    "Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA",
+    "STAR: Synthesis of Tailored Architectures",
+    "Theory, Analysis, and Best Practices for Sigmoid Self-Attention",
+    "Domain2Vec: Vectorizing Datasets to Find the Optimal Data Mixture without Training",
+    "GuidedQuant: Large Language Model Quantization via Exploiting End Loss Guidance",
+    "Data Mixture Inference Attack: BPE Tokenizers Reveal Training Data Compositions",
+    "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+    "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A multi-domain pretraining corpus from which samples are used to evaluate language modeling perplexity on general web data.",
+      "paper": "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+      "original_name": "REDPAJAMA"
+    },
+    {
+      "text": "An open-source project to create a large, high-quality dataset for training language models, used here for simulating generation throughput.",
+      "paper": "Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA",
+      "original_name": "RedPajama"
+    },
+    {
+      "text": "A pre-training dataset derived from the CommonCrawl corpus, used as a source and baseline for data selection.",
+      "paper": "Data Selection via Optimal Control for Language Models",
+      "original_name": "Redpajama"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Autoregressive language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Theory, Analysis, and Best Practices for Sigmoid Self-Attention",
+      "evidence": "We train all models using the Llama2 recipe (Touvron et al., 2023) (with ALiBi instead of RoPE) and the RedPajama (Computer, 2023) dataset in JAX... (Sec. 5.5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Theory, Analysis, and Best Practices for Sigmoid Self-Attention",
+          "STAR: Synthesis of Tailored Architectures"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Editing locality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "measure retention of pretraining data (xloc) from the base model: RedPajama",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+      "evidence": "We evaluate language modeling perplexity on data from two domains: (1) general web data sampled from REDPAJAMA (Computer, 2023); (2) scientific paper data sampled from S2ORC (Lo et al., 2020). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing framing is a pretraining or training corpus of web text. Definitions describe it as a multi-domain pretraining corpus used to sample general web data for language modeling perplexity, as an open-source project creating a large, high-quality dataset for training language models, and as a pre-training dataset derived from CommonCrawl; one paper specifically uses the CommonCrawl split. Another paper uses it as a calibration dataset, describing it as a large collection of web text meant to represent typical input distributions."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link RedPajama to one construct and no behavioral indicators. The only reported measurement claim is that it measures Editing locality: in model editing work, locality data is described as the irrelevant data of the editing process. The measurement claims therefore center on a single construct rather than being spread across many targets."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers use RedPajama in several operational roles, and no other measurement instrument is linked to it. It appears as evaluation data for language modeling perplexity on general web data, as part of averaged throughput simulations alongside SlimPajama and PG19, as a source dataset and baseline in data selection work, and as calibration data for post-training quantization; one paper also compares a method with the Redpajama data cleaning pipeline."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing framing is a pretraining or training corpus of web text. Definitions describe it as a multi-domain pretraining corpus used to sample general web data for language modeling perplexity, as an open-source project creating a large, high-quality dataset for training language models, and as a pre-training dataset derived from CommonCrawl; one paper specifically uses the CommonCrawl split. Another paper uses it as a calibration dataset, describing it as a large collection of web text meant to represent typical input distributions.\n\nWhat it is claimed to measure. Papers link RedPajama to one construct and no behavioral indicators. The only reported measurement claim is that it measures Editing locality: in model editing work, locality data is described as the irrelevant data of the editing process. The measurement claims therefore center on a single construct rather than being spread across many targets.\n\nSpace of uses. Papers use RedPajama in several operational roles, and no other measurement instrument is linked to it. It appears as evaluation data for language modeling perplexity on general web data, as part of averaged throughput simulations alongside SlimPajama and PG19, as a source dataset and baseline in data selection work, and as calibration data for post-training quantization; one paper also compares a method with the Redpajama data cleaning pipeline.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+      "Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters",
+      "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "Data Selection via Optimal Control for Language Models",
+      "Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA",
+      "STAR: Synthesis of Tailored Architectures",
+      "Theory, Analysis, and Best Practices for Sigmoid Self-Attention"
+    ],
+    "icml25": [
+      "Domain2Vec: Vectorizing Datasets to Find the Optimal Data Mixture without Training",
+      "GuidedQuant: Large Language Model Quantization via Exploiting End Loss Guidance"
+    ],
+    "neurips24": [
+      "Data Mixture Inference Attack: BPE Tokenizers Reveal Training Data Compositions",
+      "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+      "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 7,
+    "icml25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,685 @@
+/* ============================================================================
+   Interactive Network (network_graph.html)
+   Loaded after view_network_theme.css: reuses its site header and tokens,
+   adds a dark mode, and lays the page out as a full-viewport map with
+   floating panels.
+   Graph colors are read from the --node-*, --edge-*, and --region-* tokens
+   by network_graph.js, so light and dark values live only here.
+   ========================================================================== */
+
+:root {
+    color-scheme: light;
+    /* Page tokens derive from the shared site tokens (view_network_theme.css, or a theme
+       stylesheet loaded later), so a site theme restyles this page too. */
+    --ng-bg: var(--paper);
+    --ng-surface: color-mix(in srgb, var(--surface) 94%, transparent);
+    --ng-surface-solid: var(--surface);
+    --ng-surface-2: var(--paper-shade);
+    --ng-ink: var(--ink);
+    --ng-ink-2: var(--ink-2);
+    --ng-muted: var(--ink-muted);
+    --ng-rule: var(--rule-thin);
+    --ng-rule-strong: var(--rule);
+    --ng-accent: var(--accent);
+    --ng-focus: var(--accent);
+    --ng-shadow: 0 1px 2px rgba(28, 25, 23, 0.06), 0 10px 30px -6px rgba(28, 25, 23, 0.14);
+    --ng-radius: 10px;
+    /* Entity types (keep: constructs green, indicators orange, instruments blue). Node color
+       encodes entity type only; anything else (for example disagreement) would use an outline
+       or hatching, never fill color. Slots 1-3 of the validated categorical palette. */
+    --node-construct: #1baf7a;
+    --node-behavior: #eb6834;
+    --node-measurement: #2a78d6;
+    /* Relationship types (validated); measured_by is the majority, so it stays neutral. */
+    --edge-measured_by: #8a857e;
+    --edge-causes: #d55181;
+    --edge-related: #6250d6;
+    --edge-correlates: #c98500;
+    --edge-alpha: 0.16;
+}
+
+/* Dark (opt-in via the theme toggle; light is the default): own steps of the same hues,
+   chosen for the dark surface. The selector is more specific than :root so a theme
+   stylesheet loaded after this one keeps its light values from leaking into dark mode. */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --node-construct: #199e70;
+    --node-behavior: #d95926;
+    --node-measurement: #3987e5;
+    --edge-measured_by: #8c8a84;
+    --edge-causes: #d55181;
+    --edge-related: #9085e9;
+    --edge-correlates: #c98500;
+    --edge-alpha: 0.11;
+    --ng-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+    /* Shared site tokens; the page tokens above derive from these. */
+    --paper: #1a1a19; --paper-shade: #2c2c29; --surface: #242422;
+    --ink: #f0efec; --ink-2: #d4d2cc; --ink-muted: #a5a39b; --ink-faint: #8a8880;
+    --rule: #4a4843; --rule-thin: #34332f;
+    --accent: #e57b74; --accent-deep: #f19a93; --accent-edge: rgba(229, 123, 116, 0.4);
+}
+
+/* ---- Page frame ------------------------------------------------------------ */
+html, body { height: 100%; }
+body.ng2 {
+    margin: 0;
+    background-color: var(--ng-bg);
+    color: var(--ng-ink);
+    overflow: hidden;
+}
+.ng2 *, .ng2 *::before, .ng2 *::after { box-sizing: border-box; }
+.ng2-app {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+header.ng2-site-header {
+    flex: 0 0 auto;
+    padding: 14px 22px 10px;
+    border-bottom: 1px solid var(--ng-rule-strong);
+    background: var(--ng-bg);
+}
+header.ng2-site-header h1 { font-size: 24px; }
+header.ng2-site-header .disclaimer-line { margin-top: 4px; font-size: 12px; }
+
+.ng2-stage {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--ng-bg);
+}
+.ng2-canvas { position: absolute; inset: 0; outline: none; }
+/* No focus ring on the canvas: it would light up on every shift-click (Shift counts as
+   keyboard use). Keyboard users get arrow-key panning; the canvas has an aria-label. */
+
+/* ---- Region labels (HTML layer, positioned from the camera) ---------------- */
+.ng2-regions {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transition: opacity 0.25s ease;
+}
+.ng2-regions.is-hidden { opacity: 0; }
+.ng2-region {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--ng-ink-2);
+    letter-spacing: 0.005em;
+    text-shadow: 0 0 3px var(--ng-bg), 0 0 6px var(--ng-bg), 0 0 10px var(--ng-bg);
+    white-space: nowrap;
+    will-change: transform;
+}
+.ng2-region.ng2-shelf {
+    max-width: none;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ng-muted);
+}
+.ng2-region.ng2-shelf span { font-weight: 400; }
+
+/* ---- Floating surfaces ----------------------------------------------------- */
+.ng2-controls, .ng2-panel, .ng2-zoom, .ng2-focusbar {
+    position: absolute;
+    z-index: 5;
+    background: var(--ng-surface);
+    border: 1px solid var(--ng-rule);
+    border-radius: var(--ng-radius);
+    box-shadow: var(--ng-shadow);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    backdrop-filter: blur(10px) saturate(1.2);
+    color: var(--ng-ink);
+}
+
+.ng2-controls {
+    top: 14px;
+    left: 14px;
+    width: 304px;
+    max-height: calc(100% - 28px);
+    display: flex;
+    flex-direction: column;
+}
+.ng2-controls-head { padding: 14px 14px 10px; border-bottom: 1px solid var(--ng-rule); }
+.ng2-controls-body { padding: 4px 14px 14px; overflow-y: auto; overscroll-behavior: contain; }
+.ng2-title-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.ng2-title {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ng-ink);
+}
+.ng2-filters-toggle { display: inline-flex; color: var(--ng-muted); }
+/* Desktop, collapsed: one compact row (search and the Filters button) in the corner. */
+@media (min-width: 761px) {
+    .ng2-controls.is-collapsed { width: auto; }
+    .ng2-controls.is-collapsed .ng2-controls-body { display: none; }
+    .ng2-controls.is-collapsed .ng2-controls-head { display: flex; flex-direction: row-reverse; align-items: center; gap: 6px; padding: 8px; border-bottom: 0; }
+    .ng2-controls.is-collapsed .ng2-title-row { margin: 0; }
+    .ng2-controls.is-collapsed .ng2-title { display: none; }
+    .ng2-controls.is-collapsed .ng2-search { width: 250px; }
+}
+
+.ng2-stats { margin: 10px 0 2px; font-size: 12.5px; color: var(--ng-muted); line-height: 1.5; }
+.ng2-stats b { color: var(--ng-ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.ng2-group { margin-top: 14px; }
+.ng2-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 0 6px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ng-ink);
+}
+.ng2-hint { margin: -3px 0 6px; font-size: 11.5px; color: var(--ng-muted); }
+.ng2-label-value { font-size: 12px; color: var(--ng-muted); font-weight: 500; }
+
+/* Toggle rows double as the legend. */
+.ng2-toggles { display: flex; flex-direction: column; gap: 2px; }
+.ng2-toggle {
+    display: grid;
+    grid-template-columns: 26px 1fr auto;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 5px 8px 5px 6px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--ng-ink);
+    font: 500 13px/1.3 var(--font-sans);
+    text-align: left;
+    cursor: pointer;
+}
+.ng2-toggle:hover { background: var(--ng-surface-2); }
+.ng2-toggle:focus-visible { outline: 2px solid var(--ng-focus); outline-offset: 1px; }
+.ng2-toggle[aria-pressed="false"] { color: var(--ng-muted); }
+.ng2-toggle[aria-pressed="false"] .ng2-swatch { opacity: 0.3; filter: grayscale(1); }
+.ng2-toggle[aria-pressed="false"] .ng2-count { text-decoration: line-through; }
+.ng2-toggle .ng2-sub { display: block; font-size: 11px; font-weight: 400; color: var(--ng-muted); }
+.ng2-count { font-size: 12px; color: var(--ng-muted); font-variant-numeric: tabular-nums; }
+.ng2-swatch { display: inline-flex; justify-content: center; align-items: center; width: 26px; height: 18px; }
+.ng2-swatch svg { overflow: visible; }
+
+.ng2-papers-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12.5px; color: var(--ng-ink-2); }
+input#minPapers {
+    width: 72px;
+    height: 30px;
+    padding: 0 4px 0 8px;
+    border: 1px solid var(--ng-rule-strong);
+    border-radius: 6px;
+    background: var(--ng-surface-solid);
+    color: var(--ng-ink);
+    font: 500 13px var(--font-sans);
+    font-variant-numeric: tabular-nums;
+}
+input#minPapers:focus { outline: none; border-color: var(--ng-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ng-focus) 22%, transparent); }
+input#minPapers[aria-invalid="true"] { border-color: var(--danger, #b3261e); box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger, #b3261e) 18%, transparent); }
+.ng2-field-msg { margin: 4px 0 0; font-size: 11.5px; color: var(--danger, #b3261e); }
+
+
+.ng2-segmented { display: flex; padding: 2px; margin-top: 10px; border: 1px solid var(--ng-rule-strong); border-radius: 8px; gap: 2px; }
+.ng2-segmented button {
+    flex: 1 1 auto;
+    padding: 6px 8px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--ng-muted);
+    font: 500 13px var(--font-sans);
+    cursor: pointer;
+    white-space: nowrap;
+}
+.ng2-segmented button[hidden] { display: none; }
+.ng2-segmented button:hover { color: var(--ng-ink); }
+.ng2-segmented button[aria-pressed="true"] { background: var(--ng-ink); color: var(--ng-bg); }
+.ng2-segmented button:focus-visible { outline: 2px solid var(--ng-focus); outline-offset: 1px; }
+.ng2-more[hidden] { display: none; }
+.ng2-check { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 12.5px; color: var(--ng-ink-2); cursor: pointer; line-height: 1.35; }
+.ng2-check input { margin: 2px 0 0; accent-color: var(--ng-accent); }
+.ng2-muted { color: var(--ng-muted); }
+
+.ng2-note { margin: 14px 0 0; font-size: 11.5px; line-height: 1.5; color: var(--ng-muted); }
+.ng2-note a, .ng2-panel a:not(.ng2-btn) { color: var(--ng-accent); text-underline-offset: 2px; }
+.ng2-note b { color: var(--ng-ink-2); font-weight: 600; }
+.ng2-help { padding: 10px 0 0 16px; border-top: 1px solid var(--ng-rule); }
+.ng2-help li { margin: 2px 0; }
+.ng2-more { margin-top: 14px; border-top: 1px solid var(--ng-rule); padding-top: 10px; }
+.ng2-more summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--ng-ink); }
+.ng2-more summary:focus-visible { outline: 2px solid var(--ng-focus); outline-offset: 2px; }
+.ng2-more[open] summary { margin-bottom: 6px; }
+.ng2-stale { color: var(--ng-accent); }
+
+/* ---- Search ------------------------------------------------------------------ */
+.ng2-search { position: relative; }
+.ng2-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--ng-muted); pointer-events: none; }
+.ng2-search input {
+    width: 100%;
+    height: 36px;
+    padding: 0 34px 0 32px;
+    border: 1px solid var(--ng-rule-strong);
+    border-radius: 8px;
+    background: var(--ng-surface-solid);
+    color: var(--ng-ink);
+    font: 400 14px var(--font-sans);
+    -webkit-appearance: none;
+    appearance: none;
+}
+.ng2-search input::placeholder { color: var(--ng-muted); }
+.ng2-search input:focus { outline: none; border-color: var(--ng-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ng-focus) 22%, transparent); }
+.ng2-search input::-webkit-search-cancel-button { display: none; }
+.ng2-kbd {
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1px 6px;
+    border: 1px solid var(--ng-rule-strong);
+    border-radius: 4px;
+    font: 500 11px var(--font-mono);
+    color: var(--ng-muted);
+    background: var(--ng-surface-2);
+}
+.ng2-search input:focus ~ .ng2-kbd { display: none; }
+.ng2-search-results {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    max-height: min(70vh, 540px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0;
+    padding: 4px;
+    list-style: none;
+    background: var(--ng-surface-solid);
+    border: 1px solid var(--ng-rule-strong);
+    border-radius: 8px;
+    box-shadow: var(--ng-shadow);
+}
+.ng2-search-results li {
+    display: grid;
+    grid-template-columns: 18px 14px 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 7px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.ng2-search-results li[aria-selected="true"], .ng2-search-results li:hover { background: var(--ng-surface-2); }
+.ng2-search-results li.ng2-list-top {
+    position: sticky;
+    top: -4px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: -4px -4px 2px;
+    padding: 8px 8px 8px 12px;
+    border-bottom: 1px solid var(--ng-rule);
+    border-radius: 8px 8px 0 0;
+    background: var(--ng-surface-solid);
+    font-size: 11.5px;
+    color: var(--ng-muted);
+    cursor: default;
+}
+.ng2-search-results li.ng2-list-top:hover { background: var(--ng-surface-solid); }
+.ng2-search-results li.ng2-sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 8px 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ng-muted);
+    cursor: default;
+    background: none;
+}
+.ng2-search-results li.ng2-sec + li.ng2-sec, .ng2-search-results li.ng2-sec[data-section="list"]:not(:first-child) { margin-top: 4px; border-top: 1px solid var(--ng-rule); }
+.ng2-search-results li.ng2-sec b { color: var(--ng-ink); font-weight: 600; }
+.ng2-sort { display: inline-flex; gap: 2px; }
+.ng2-sort button { padding: 2px 7px; border: 0; border-radius: 5px; background: transparent; color: var(--ng-muted); font: 500 11.5px var(--font-sans); cursor: pointer; }
+.ng2-sort button[aria-pressed="true"] { background: var(--ng-surface-2); color: var(--ng-ink); }
+.ng2-pick {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--ng-rule-strong);
+    border-radius: 4px;
+    background: var(--ng-surface-solid);
+    cursor: pointer;
+}
+li:hover > .ng2-pick { border-color: var(--ng-accent); }
+li[aria-checked="true"] > .ng2-pick {
+    border-color: var(--ng-accent);
+    background: var(--ng-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+.ng2-search-results li.is-picked .name { font-weight: 600; }
+.ng2-search-results .name { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ng2-search-results .name mark { background: none; color: inherit; font-weight: 700; }
+.ng2-search-results .alias { display: block; font-size: 11px; color: var(--ng-muted); font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ng2-add-hint { margin: 4px 0 0; font-size: 12px; color: var(--ng-muted); }
+.ng2-search-results .papers { font-size: 11.5px; color: var(--ng-muted); font-variant-numeric: tabular-nums; }
+.ng2-search-results .empty { display: block; color: var(--ng-muted); cursor: default; }
+
+/* ---- Selection panel ------------------------------------------------------- */
+.ng2-panel {
+    top: 14px;
+    right: 14px;
+    width: 368px;
+    max-height: calc(100% - 28px);
+    display: flex;
+    flex-direction: column;
+}
+.ng2-panel[hidden] { display: none; }
+.ng2-panel-scroll { padding: 14px 16px 16px; overflow-y: auto; overscroll-behavior: contain; }
+.ng2-panel-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.ng2-panel-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--ng-muted);
+}
+.ng2-panel-title {
+    margin: 6px 0 4px;
+    font-family: var(--font-serif);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ng-ink);
+    overflow-wrap: anywhere;
+}
+.ng2-panel-meta { font-size: 12.5px; color: var(--ng-muted); }
+.ng2-panel-meta b { color: var(--ng-ink); font-weight: 600; }
+.ng2-panel-actions { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 4px; }
+.ng2-aliases { margin: 10px 0 0; font-size: 12.5px; color: var(--ng-ink-2); line-height: 1.5; }
+.ng2-aliases .k { font-weight: 600; color: var(--ng-ink); margin-right: 4px; }
+.ng2-definition { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--ng-rule); font-size: 13.5px; line-height: 1.6; color: var(--ng-ink-2); }
+.ng2-definition .k, .ng2-rel-head { font-family: var(--font-sans); font-size: 13px; font-weight: 600; color: var(--ng-ink); }
+.ng2-definition p { margin: 4px 0 0; }
+.ng2-definition.is-clamped p { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.ng2-linkbtn { border: 0; padding: 0; background: none; color: var(--ng-accent); font: 500 12.5px var(--font-sans); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+.ng2-relations { margin-top: 14px; }
+.ng2-rel-caption { margin: 0; font-size: 11.5px; color: var(--ng-muted); }
+.ng2-rel-caption b { color: var(--ng-ink); font-weight: 600; }
+.ng2-rel-group { margin-top: 12px; }
+.ng2-rel-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.ng2-rel-head .n { margin-left: auto; font-weight: 500; font-size: 12px; color: var(--ng-muted); }
+.ng2-rel-list { list-style: none; margin: 0; padding: 0; }
+.ng2-rel-list li { display: grid; grid-template-columns: 1fr auto; align-items: center; border-radius: 6px; }
+.ng2-rel-list li:hover { background: var(--ng-surface-2); }
+.ng2-rel-list li.is-filtered { color: var(--ng-muted); }
+.ng2-rel-list button {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: 400 13px/1.3 var(--font-sans);
+    text-align: left;
+    cursor: pointer;
+}
+.ng2-rel-list button:focus-visible { outline: 2px solid var(--ng-focus); outline-offset: -2px; border-radius: 6px; }
+.ng2-rel-name { display: grid; grid-template-columns: 14px 1fr; align-items: center; gap: 8px; padding: 5px 6px; min-width: 0; }
+.ng2-rel-name span { overflow-wrap: anywhere; }
+.ng2-rel-papers {
+    padding: 5px 6px;
+    font-size: 11.5px !important;
+    color: var(--ng-muted) !important;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+.ng2-rel-papers:hover { color: var(--ng-accent) !important; text-decoration: underline; text-underline-offset: 2px; }
+.ng2-rel-papers .bar { display: inline-block; height: 4px; margin-right: 6px; border-radius: 2px; vertical-align: 2px; background: currentColor; opacity: 0.45; }
+.ng2-def-links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 4px; font-size: 12.5px; }
+
+/* Papers behind one relationship */
+.ng2-back { margin: 2px 0 4px; }
+.ng2-back::before { content: "\2039\00a0"; text-decoration: none; display: inline-block; }
+.ng2-edge-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: 21px; }
+.ng2-edge-entity {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ng-ink);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.ng2-edge-entity:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ng2-edge-entity svg { flex: 0 0 auto; transform: translateY(-1px); }
+.ng2-edge-verb { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--ng-muted); }
+.ng2-edge-body { margin-top: 8px; }
+.ng2-edge-body .ng2-rel-head { margin: 14px 0 6px; }
+.ng2-quote { margin: 0 0 12px; padding: 0; }
+.ng2-quote blockquote { margin: 0; font-family: var(--font-serif); font-size: 14px; line-height: 1.55; color: var(--ng-ink-2); quotes: "\201C" "\201D"; }
+.ng2-quote blockquote::before { content: open-quote; }
+.ng2-quote blockquote::after { content: close-quote; }
+.ng2-quote figcaption { margin-top: 6px; font-size: 12px; color: var(--ng-muted); }
+.ng2-venue { display: flex; justify-content: space-between; margin: 10px 0 2px; font-size: 12.5px; font-weight: 600; color: var(--ng-ink-2); }
+.ng2-venue span { font-weight: 400; color: var(--ng-muted); }
+.ng2-paper-list { margin: 0; padding: 0 0 0 16px; font-size: 12.5px; line-height: 1.45; color: var(--ng-ink-2); }
+.ng2-paper-list li { margin: 3px 0; overflow-wrap: anywhere; }
+.ng2-quote a, .ng2-paper-list a { color: inherit; text-decoration-color: var(--ng-rule-strong); text-underline-offset: 2px; }
+.ng2-quote a:hover, .ng2-paper-list a:hover { color: var(--ng-accent); }
+
+/* First-visit hint on the map */
+.ng2-maphint {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    z-index: 4;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 7px 14px;
+    border: 1px solid var(--ng-rule);
+    border-radius: 999px;
+    background: var(--ng-surface);
+    box-shadow: var(--ng-shadow);
+    font-size: 13px;
+    color: var(--ng-ink-2);
+    pointer-events: none;
+    white-space: nowrap;
+}
+.ng2-maphint[hidden] { display: none; }
+.ng2-rel-more { margin: 4px 0 0 6px; }
+.ng2-rel-empty { font-size: 12.5px; color: var(--ng-muted); margin: 8px 0 0; }
+
+.ng2-selection-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.ng2-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 100%;
+    padding: 3px 4px 3px 8px;
+    border: 1px solid var(--ng-rule-strong);
+    border-radius: 999px;
+    font-size: 12px;
+    background: var(--ng-surface-solid);
+    color: var(--ng-ink);
+}
+.ng2-chip .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.ng2-chip button { width: 18px; height: 18px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--ng-muted); cursor: pointer; line-height: 1; font-size: 14px; }
+.ng2-chip button:hover { background: var(--ng-surface-2); color: var(--ng-ink); }
+
+/* ---- Buttons --------------------------------------------------------------- */
+.ng2-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--ng-rule-strong);
+    border-radius: 7px;
+    background: var(--ng-surface-solid);
+    color: var(--ng-ink);
+    font: 500 12.5px var(--font-sans);
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.ng2-btn:hover { border-color: var(--ng-muted); }
+.ng2-btn:focus-visible, .ng2-icon-btn:focus-visible { outline: 2px solid var(--ng-focus); outline-offset: 1px; }
+.ng2-btn-primary { background: var(--ng-ink); border-color: var(--ng-ink); color: var(--ng-bg); }
+.ng2-btn-primary:hover { border-color: var(--ng-ink); opacity: 0.9; }
+.ng2-btn[aria-pressed="true"]:not(.ng2-btn-primary) { background: var(--ng-ink); border-color: var(--ng-ink); color: var(--ng-bg); }
+.ng2-btn-primary[aria-pressed="true"] { background: var(--ng-accent); border-color: var(--ng-accent); color: #fff; }
+.ng2-btn-ghost { background: transparent; }
+.ng2-btn-small { height: 28px; padding: 0 10px; font-size: 12px; }
+.ng2-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--ng-ink-2);
+    font: 500 12.5px var(--font-sans);
+    cursor: pointer;
+}
+.ng2-icon-btn:hover { background: var(--ng-surface-2); color: var(--ng-ink); }
+
+/* ---- Zoom, focus bar, loading ---------------------------------------------- */
+.ng2-zoom { right: 14px; bottom: 14px; display: flex; align-items: center; gap: 2px; padding: 3px; }
+/* Full page: the graph takes the whole window (no site header; the left panel folds to a search row). */
+body.ng2-full header.ng2-site-header { display: none; }
+#fullPage[aria-pressed="true"] { background: var(--ng-surface-2); color: var(--ng-ink); }
+.ng2-panel:not([hidden]) ~ .ng2-zoom { right: 396px; }
+.ng2-zoom-sep { width: 1px; height: 20px; margin: 0 3px; background: var(--ng-rule-strong); }
+.ng2-focusbar {
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 6px 6px 14px;
+    font-size: 13px;
+    color: var(--ng-ink-2);
+    max-width: calc(100% - 28px);
+}
+.ng2-focusbar[hidden] { display: none; }
+.ng2-focusbar b { color: var(--ng-ink); }
+.ng2-hidden-note { color: var(--ng-muted); }
+.ng2-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--ng-muted);
+    background: var(--ng-bg);
+    transition: opacity 0.3s ease;
+}
+.ng2-loading.is-done { opacity: 0; pointer-events: none; }
+.ng2-loading.is-error { color: var(--ng-accent); }
+.ng2-spinner { width: 16px; height: 16px; border: 2px solid var(--ng-rule-strong); border-top-color: var(--ng-accent); border-radius: 50%; animation: ng2-spin 0.8s linear infinite; }
+.ng2-loading.is-error .ng2-spinner { display: none; }
+@keyframes ng2-spin { to { transform: rotate(360deg); } }
+
+.ng2-toast {
+    position: absolute;
+    left: 50%;
+    bottom: 64px;
+    z-index: 30;
+    transform: translateX(-50%);
+    padding: 7px 12px;
+    border-radius: 7px;
+    background: var(--ng-ink);
+    color: var(--ng-bg);
+    font-size: 12.5px;
+    box-shadow: var(--ng-shadow);
+}
+
+/* Keep the focus bar clear of the side panels on mid widths. */
+@media (max-width: 1180px) {
+    .ng2-focusbar { top: auto; bottom: 14px; }
+}
+
+/* ---- Phone and narrow tablets: search bar on top, filters and details as sheets. */
+@media (max-width: 760px) {
+    header.ng2-site-header { padding: 10px 14px 6px; }
+    header.ng2-site-header h1 { font-size: 20px; }
+    header.ng2-site-header .site-header-row { gap: 4px; }
+    header.ng2-site-header, header.ng2-site-header .site-header-row { min-width: 0; max-width: 100vw; }
+    header.ng2-site-header .filter-buttons {
+        flex-wrap: nowrap !important;
+        min-width: 0;
+        max-width: calc(100% + 28px);
+        overflow-x: auto;
+        scrollbar-width: none;
+        margin: 0 -14px;
+        padding: 0 8px 2px;
+    }
+    header.ng2-site-header .filter-buttons::-webkit-scrollbar { display: none; }
+    header.ng2-site-header .nav-tab { padding: 6px 9px; font-size: 13px; }
+    header.ng2-site-header .disclaimer-line { display: none; }
+
+    .ng2-controls { top: 8px; left: 8px; right: 8px; width: auto; max-height: calc(100% - 16px); }
+    .ng2-controls-head { padding: 8px 8px 8px 12px; border-bottom: 0; }
+    .ng2-controls.is-open .ng2-controls-head { border-bottom: 1px solid var(--ng-rule); }
+    .ng2-title-row { margin-bottom: 6px; }
+    .ng2-title { font-size: 17px; }
+    .ng2-controls-body { display: none; }
+    .ng2-controls.is-open .ng2-controls-body { display: block; }
+    .ng2-search input { font-size: 16px; } /* stops iOS zoom on focus */
+    .ng2-kbd { display: none; }
+
+    .ng2-panel {
+        top: auto;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        width: auto;
+        max-height: 50%;
+        border-radius: 14px;
+    }
+    .ng2-panel-title { font-size: 21px; }
+    .ng2-zoom, .ng2-panel:not([hidden]) ~ .ng2-zoom { bottom: 8px; right: 8px; flex-direction: column; }
+    .ng2-zoom-sep { width: 20px; height: 1px; margin: 3px 0; }
+    /* With the details sheet open, the zoom buttons move up beside the controls instead of hiding. */
+    .ng2-panel:not([hidden]) ~ .ng2-zoom { bottom: auto; top: 118px; }
+    body.ng2-full .ng2-panel:not([hidden]) ~ .ng2-zoom { top: 118px; }
+    .ng2-focusbar { top: auto; bottom: 8px; left: 8px; transform: none; max-width: calc(100% - 64px); font-size: 12px; }
+    .ng2-maphint { left: 8px; right: 56px; bottom: 8px; transform: none; white-space: normal; text-align: center; border-radius: 12px; }
+    .ng2-panel:not([hidden]) ~ .ng2-focusbar { display: none; }
+    .ng2-region:not(.ng2-shelf) { font-size: 11.5px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ng2-regions, .ng2-loading { transition: none; }
+    .ng2-spinner { animation: none; }
+}

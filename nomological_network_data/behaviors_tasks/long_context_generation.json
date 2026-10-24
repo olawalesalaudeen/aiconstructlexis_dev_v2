@@ -1,0 +1,113 @@
+{
+  "canonical_name": "Long-context generation",
+  "type": "behavior",
+  "canonical_definition": "Generating text while conditioning on very long input contexts, often beyond 100K tokens.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Long-context generation"
+  ],
+  "papers": [
+    "SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation",
+    "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding"
+  ],
+  "paper_count": 2,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating text while conditioning on very long input contexts, often beyond 100K tokens.",
+      "paper": "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding",
+      "original_name": "Long-context generation"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "KVTuner: Sensitivity-Aware Layer-Wise Mixed-Precision KV Cache Quantization for Efficient and Nearly Lossless LLM Inference",
+      "evidence": "Accuracy comparison between offline searched layer-wise KV cache precision using KVTuner in Table 5 and 6 and uniform KV precision settings of the sensitive Qwen2.5-7B-Instruct on 20 LongBench long context generation benchmarks. (Table 7)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "KVTuner: Sensitivity-Aware Layer-Wise Mixed-Precision KV Cache Quantization for Efficient and Nearly Lossless LLM Inference"
+        ],
+        "neurips24": [
+          "MiniCache: KV Cache Compression in Depth Dimension for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Contextual understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "evidence": "These results underscore MoICE's efficacy in enhancing LLMs' ability to understand and generate long contexts, both of which require high context awareness.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "L-Eval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "evidence": "evaluate the enhanced LLM's capability to zero-shot undertake multiple tasks in long context understanding and generation, as detailed in Section 4.2... Following the L-Eval benchmark [1]",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongGenBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation",
+      "evidence": "In this work, we leverage LONGGENBENCH, which focuses on long-input and long-output tasks (Liu et al., 2024c), to optimize KV cache compression in scenarios where the output can be as long as 8K tokens (Section 6).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Generating text while conditioning on very long input contexts, often beyond 100K tokens.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation"
+    ],
+    "icml25": [
+      "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "icml25": 1
+  },
+  "conferences": [
+    "acl25",
+    "icml25"
+  ]
+}

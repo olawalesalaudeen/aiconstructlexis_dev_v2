@@ -1,0 +1,363 @@
+{
+  "canonical_name": "Editing locality",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Most papers describe editing locality as a preservation criterion for knowledge editing: the edit should stay local so that unrelated knowledge, inputs, or outputs remain unchanged. Definitions vary mainly in whether they treat it as a latent property of an editing method or as an observable outcome such as \"unrelated knowledge preservation\", and in scope, from unrelated knowledge alone to untargeted tasks or model capabilities. One paper uses the same term differently, defining locality as a bounded distance between tokens that matter for prediction in work on length generalization.\n\nSpace of facets. Papers usually place locality within a broader evaluation bundle for knowledge editing, alongside efficacy or accuracy, generalization, reliability, and sometimes linguistic quality. Most authors use \"locality\" and \"editing locality\" interchangeably, while \"unrelated knowledge preservation\" names the observable maintenance of performance on knowledge not targeted for editing. A recurring contrast is the continual-editing formulation in which reliability, generalization, and locality form an \"impossible triangle\", and the clearest same-name divergence is the token-distance use of \"locality\" in length-generalization work.\n\nSpace of measurement. Operationalization is mostly benchmark- and task-based. Papers link editing locality to 10 measurement instruments, most frequently CounterFact, Natural Questions, ZsRE, BIG-Bench Hard, and CommonsenseQA, plus 5 others, and to 2 behavioral indicators. These measures largely follow the preservation-based definitions: papers compare pre- and post-edit behavior on unrelated items, use unrelated tuples or locality questions drawn from Natural Questions, report locality or success-rate metrics on CounterFact and ZsRE, and sometimes check whether general benchmark performance stays stable after editing.\n\nLinks. Some papers relate editing locality to knowledge editing, treating it as one of the criteria or aspects considered during editing. One paper claims a causal relationship from knowledge editing to editing locality, stating that direct editing of long-term memory can create conflicts with prior pretraining knowledge and result in poor locality, while another claims a causal relationship from editing locality to reliability, saying poor locality can lead to persistence of irrelevant or inaccurate facts and compromise reliability. Editing locality is also reported as related to reliability and generalization, and one paper reports that it correlates with length generalization.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Locality",
+    "Editing Locality",
+    "Editing locality",
+    "Unrelated knowledge preservation"
+  ],
+  "papers": [
+    "BMIKE-53: Investigating Cross-Lingual Knowledge Editing with In-Context Learning",
+    "CKnowEdit: A New Chinese Knowledge Editing Dataset for Linguistics, Facts, and Logic Error Correction in LLMs",
+    "Knowledge Decoupling via Orthogonal Projection for Lifelong Editing of Large Language Models",
+    "One for All: Update Parameterized Knowledge Across Multiple Models with Once Edit",
+    "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+    "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+    "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+    "Knowledge Editing through Chain-of-Thought",
+    "M2Edit: Locate and Edit Multi-Granularity Knowledge in Multimodal Large Language Model",
+    "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing",
+    "Think and Recall: Layer-Level Prompting for Lifelong Model Editing",
+    "Can Knowledge Editing Really Correct Hallucinations?",
+    "In-Context Editing: Learning Knowledge from Self-Induced Distributions",
+    "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+    "MQuAKE-Remastered: Multi-Hop Knowledge Editing Can Only Be Advanced with Reliable Evaluations",
+    "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+    "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+    "BalancEdit: Dynamically Balancing the Generality-Locality Trade-off in Multi-modal Model Editing",
+    "Mitigating Heterogeneous Token Overfitting in LLM Knowledge Editing",
+    "Resolving Lexical Bias in Model Editing",
+    "The Role of Sparsity for Length Generalization in LLMs",
+    "Towards Global-level Mechanistic Interpretability: A Perspective of Modular Circuits of Large Language Models",
+    "WikiBigEdit: Understanding the Limits of Lifelong Knowledge Editing in LLMs",
+    "Reinforced Lifelong Editing for Language Models",
+    "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+    "VLKEB: A Large Vision-Language Model Knowledge Editing Benchmark",
+    "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+  ],
+  "paper_count": 27,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The extent to which a knowledge edit is localized, ensuring the model's behavior on unrelated inputs remains unchanged.",
+      "paper": "VLKEB: A Large Vision-Language Model Knowledge Editing Benchmark",
+      "original_name": "Locality"
+    },
+    {
+      "text": "The latent property of an editing method to modify targeted knowledge without influencing unrelated knowledge or model capabilities.",
+      "paper": "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+      "original_name": "Editing Locality"
+    },
+    {
+      "text": "The observable maintenance of model performance on knowledge not targeted for editing, indicating minimal interference from editing updates.",
+      "paper": "Reinforced Lifelong Editing for Language Models",
+      "original_name": "Unrelated knowledge preservation"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CounterFact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CoME: An Unlearning-based Approach to Conflict-free Model Editing",
+      "evidence": "In the Counterfact dataset, we evaluate the models on Efficacy, Generality, and Locality, using success rates as metrics. (Section 5.1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "CoME: An Unlearning-based Approach to Conflict-free Model Editing"
+        ],
+        "emnlp25": [
+          "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing"
+        ],
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge editing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "direct editing of long-term memory (ROME, MEMIT, etc.) creates conflicts with prior pretraining knowledge, resulting in poor locality (Section 3.2)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ],
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+          "In-Context Editing: Learning Knowledge from Self-Induced Distributions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Natural Questions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Massive Editing for Large Language Models via Meta Learning",
+      "evidence": "The unrelated tuples (xu i , yu i )m i=1 are sampled from Natural Questions (NQ; Kwiatkowski et al., 2019). (Section 5).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Massive Editing for Large Language Models via Meta Learning"
+        ],
+        "iclr25": [
+          "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reliability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+      "evidence": "\"This limitation results in poor editing locality, which can lead to the persistence of irrelevant or inaccurate facts, ultimately compromising the reliability of LLMs.\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs"
+        ],
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ZsRE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CoME: An Unlearning-based Approach to Conflict-free Model Editing",
+      "evidence": "Since ZsRE does not measure generative capabilities, we evaluate the models based only on accuracy in terms of Efficacy, Generality, and Locality. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "CoME: An Unlearning-based Approach to Conflict-free Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RedPajama",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "measure retention of pretraining data (xloc) from the base model: RedPajama",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiData_recent",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "In-Context Editing: Learning Knowledge from Self-Induced Distributions",
+      "evidence": "WikiDatarecent ... Locality \u2191 (Table 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "In-Context Editing: Learning Knowledge from Self-Induced Distributions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiData_counterfact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "In-Context Editing: Learning Knowledge from Self-Induced Distributions",
+      "evidence": "WikiDatacounterfact ... Locality \u2191 (Table 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "In-Context Editing: Learning Knowledge from Self-Induced Distributions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CommonsenseQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "evidence": "For KE, we also need to consider locality, which ensures edits do not affect unrelated knowledge and abilities. To assess this, we evaluate the model on general benchmarks, including CommonsenseQA (Talmor et al., 2019), BigBench-Hard (Suzgun et al., 2023), MMLU (Hendrycks et al., 2021), and GSM8k (Cobbe et al., 2021) (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-Bench Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "evidence": "For KE, we also need to consider locality, which ensures edits do not affect unrelated knowledge and abilities. To assess this, we evaluate the model on general benchmarks, including CommonsenseQA (Talmor et al., 2019), BigBench-Hard (Suzgun et al., 2023), MMLU (Hendrycks et al., 2021), and GSM8k (Cobbe et al., 2021) (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "evidence": "For KE, we also need to consider locality, which ensures edits do not affect unrelated knowledge and abilities. To assess this, we evaluate the model on general benchmarks, including CommonsenseQA (Talmor et al., 2019), BigBench-Hard (Suzgun et al., 2023), MMLU (Hendrycks et al., 2021), and GSM8k (Cobbe et al., 2021) (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "evidence": "For KE, we also need to consider locality, which ensures edits do not affect unrelated knowledge and abilities. To assess this, we evaluate the model on general benchmarks, including CommonsenseQA (Talmor et al., 2019), BigBench-Hard (Suzgun et al., 2023), MMLU (Hendrycks et al., 2021), and GSM8k (Cobbe et al., 2021) (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "we find that it seems to be an impossible triangle\u2014reliability, generalization, and locality can not be realized at the same time in the continual editing settings. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 13,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 12,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most papers describe editing locality as a preservation criterion for knowledge editing: the edit should stay local so that unrelated knowledge, inputs, or outputs remain unchanged. Definitions vary mainly in whether they treat it as a latent property of an editing method or as an observable outcome such as \"unrelated knowledge preservation\", and in scope, from unrelated knowledge alone to untargeted tasks or model capabilities. One paper uses the same term differently, defining locality as a bounded distance between tokens that matter for prediction in work on length generalization."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers usually place locality within a broader evaluation bundle for knowledge editing, alongside efficacy or accuracy, generalization, reliability, and sometimes linguistic quality. Most authors use \"locality\" and \"editing locality\" interchangeably, while \"unrelated knowledge preservation\" names the observable maintenance of performance on knowledge not targeted for editing. A recurring contrast is the continual-editing formulation in which reliability, generalization, and locality form an \"impossible triangle\", and the clearest same-name divergence is the token-distance use of \"locality\" in length-generalization work."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is mostly benchmark- and task-based. Papers link editing locality to 10 measurement instruments, most frequently CounterFact, Natural Questions, ZsRE, BIG-Bench Hard, and CommonsenseQA, plus 5 others, and to 2 behavioral indicators. These measures largely follow the preservation-based definitions: papers compare pre- and post-edit behavior on unrelated items, use unrelated tuples or locality questions drawn from Natural Questions, report locality or success-rate metrics on CounterFact and ZsRE, and sometimes check whether general benchmark performance stays stable after editing."
+    },
+    {
+      "label": "Links.",
+      "text": "Some papers relate editing locality to knowledge editing, treating it as one of the criteria or aspects considered during editing. One paper claims a causal relationship from knowledge editing to editing locality, stating that direct editing of long-term memory can create conflicts with prior pretraining knowledge and result in poor locality, while another claims a causal relationship from editing locality to reliability, saying poor locality can lead to persistence of irrelevant or inaccurate facts and compromise reliability. Editing locality is also reported as related to reliability and generalization, and one paper reports that it correlates with length generalization."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define editing locality as how confined a knowledge edit is, namely whether changing targeted knowledge leaves unrelated inputs, knowledge, tasks, or capabilities unchanged and avoids side effects. One paper uses the term for a different idea about bounded token distance and length generalization, but that is a lone outlier rather than a substantial competing definition.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Most papers describe editing locality as a preservation criterion for knowledge editing: the edit should stay local so that unrelated knowledge, inputs, or outputs remain unchanged. Definitions vary mainly in whether they treat it as a latent property of an editing method or as an observable outcome such as \"unrelated knowledge preservation\", and in scope, from unrelated knowledge alone to untargeted tasks or model capabilities. One paper uses the same term differently, defining locality as a bounded distance between tokens that matter for prediction in work on length generalization.\n\nSpace of facets. Papers usually place locality within a broader evaluation bundle for knowledge editing, alongside efficacy or accuracy, generalization, reliability, and sometimes linguistic quality. Most authors use \"locality\" and \"editing locality\" interchangeably, while \"unrelated knowledge preservation\" names the observable maintenance of performance on knowledge not targeted for editing. A recurring contrast is the continual-editing formulation in which reliability, generalization, and locality form an \"impossible triangle\", and the clearest same-name divergence is the token-distance use of \"locality\" in length-generalization work.\n\nSpace of measurement. Operationalization is mostly benchmark- and task-based. Papers link editing locality to 10 measurement instruments, most frequently CounterFact, Natural Questions, ZsRE, BIG-Bench Hard, and CommonsenseQA, plus 5 others, and to 2 behavioral indicators. These measures largely follow the preservation-based definitions: papers compare pre- and post-edit behavior on unrelated items, use unrelated tuples or locality questions drawn from Natural Questions, report locality or success-rate metrics on CounterFact and ZsRE, and sometimes check whether general benchmark performance stays stable after editing.\n\nLinks. Some papers relate editing locality to knowledge editing, treating it as one of the criteria or aspects considered during editing. One paper claims a causal relationship from knowledge editing to editing locality, stating that direct editing of long-term memory can create conflicts with prior pretraining knowledge and result in poor locality, while another claims a causal relationship from editing locality to reliability, saying poor locality can lead to persistence of irrelevant or inaccurate facts and compromise reliability. Editing locality is also reported as related to reliability and generalization, and one paper reports that it correlates with length generalization.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "BMIKE-53: Investigating Cross-Lingual Knowledge Editing with In-Context Learning",
+      "CKnowEdit: A New Chinese Knowledge Editing Dataset for Linguistics, Facts, and Logic Error Correction in LLMs",
+      "Knowledge Decoupling via Orthogonal Projection for Lifelong Editing of Large Language Models",
+      "One for All: Update Parameterized Knowledge Across Multiple Models with Once Edit"
+    ],
+    "emnlp25": [
+      "CaKE: Circuit-aware Editing Enables Generalizable Knowledge Learners",
+      "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+      "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+      "Knowledge Editing through Chain-of-Thought",
+      "M2Edit: Locate and Edit Multi-Granularity Knowledge in Multimodal Large Language Model",
+      "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing",
+      "Think and Recall: Layer-Level Prompting for Lifelong Model Editing"
+    ],
+    "iclr25": [
+      "Can Knowledge Editing Really Correct Hallucinations?",
+      "In-Context Editing: Learning Knowledge from Self-Induced Distributions",
+      "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "MQuAKE-Remastered: Multi-Hop Knowledge Editing Can Only Be Advanced with Reliable Evaluations",
+      "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+      "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning"
+    ],
+    "icml25": [
+      "BalancEdit: Dynamically Balancing the Generality-Locality Trade-off in Multi-modal Model Editing",
+      "Mitigating Heterogeneous Token Overfitting in LLM Knowledge Editing",
+      "Resolving Lexical Bias in Model Editing",
+      "The Role of Sparsity for Length Generalization in LLMs",
+      "Towards Global-level Mechanistic Interpretability: A Perspective of Modular Circuits of Large Language Models",
+      "WikiBigEdit: Understanding the Limits of Lifelong Knowledge Editing in LLMs",
+      "Reinforced Lifelong Editing for Language Models"
+    ],
+    "neurips24": [
+      "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+      "VLKEB: A Large Vision-Language Model Knowledge Editing Benchmark",
+      "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 7,
+    "iclr25": 6,
+    "icml25": 7,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

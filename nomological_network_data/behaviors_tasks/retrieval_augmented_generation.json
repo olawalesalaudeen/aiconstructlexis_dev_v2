@@ -1,0 +1,434 @@
+{
+  "canonical_name": "Retrieval-augmented generation",
+  "type": "behavior",
+  "canonical_definition": "Retrieval-augmented generation (RAG) is predominantly described as a two-step behavior where a model first retrieves relevant information from an external knowledge source to augment its context, and then generates a response based on that augmented context. A common specialization of this behavior is retrieval-augmented question answering, with one paper equating open-domain question answering with RAG applications. While most definitions are general, a few papers frame RAG for specific domains, such as retrieving code examples for code generation. A distinct line of work emphasizes the verifiability of the output, defining related behaviors like \"grounded question answering\" and \"source-supported response generation,\" which require the generated text to be \"systematically entailed by\" or \"explicitly backed by\" the provided documents. This focus on attribution is further operationalized through tasks like \"sentence-level\" and \"chunk-level\" citation generation. The behavior, particularly its grounded variant, is measured using benchmarks such as ARC and MedQA, where evaluation centers on a \"Grounding Rate\" of test hypotheses. The external knowledge source itself is variously described as a \"non-parametric datastore,\" a \"knowledge corpus,\" or knowledge chunks modeled as a graph. The emphasis on verifiability also connects the behavior to textual entailment.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique: retrieval-augmented generation is a generation method (retrieve, then condition generation on the retrieved context); the codebook names it explicitly as a method distinct from behaviors",
+  "names": [
+    "Retrieval-augmented generation",
+    "RAG"
+  ],
+  "papers": [
+    "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+    "Attention Entropy is a Key Factor: An Analysis of Parallel Context Encoding with Full-attention-based Pre-trained Language Models",
+    "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+    "Writing Like the Best: Exemplar-Based Expository Text Generation",
+    "How to Protect Yourself from 5G Radiation? Investigating LLM Responses to Implicit Misinformation",
+    "RAG+: Enhancing Retrieval-Augmented Generation with Application-Aware Reasoning",
+    "SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation",
+    "BioBridge: Bridging Biomedical Foundation Models via Knowledge Graphs",
+    "DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines",
+    "APE: Faster and Longer Context-Augmented Generation via Adaptive Parallel Encoding",
+    "Block Verification Accelerates Speculative Decoding",
+    "Controllable Context Sensitivity and the Knob Behind It",
+    "Generative Representational Instruction Tuning",
+    "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+    "Long-Context LLMs Meet RAG: Overcoming Challenges for Long Inputs in RAG",
+    "PICASO: Permutation-Invariant Context Composition with State Space Models",
+    "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+    "SiReRAG: Indexing Similar and Related Information for Multihop Reasoning",
+    "Graph World Model",
+    "NExtLong: Toward Effective Long-Context Training without Long Documents",
+    "polybasic Speculative Decoding Through a Theoretical Perspective",
+    "Amphista: Bi-directional Multi-head Decoding for Accelerating LLM Inference",
+    "Entropy-Based Decoding for Retrieval-Augmented Large Language Models",
+    "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+    "PicPersona-TOD : A Dataset for Personalizing Utterance Style in Task-Oriented Dialogue with Image Persona",
+    "Prompt Compression for Large Language Models: A Survey",
+    "Evaluating Copyright Takedown Methods for Language Models",
+    "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+    "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+    "SGLang: Efficient Execution of Structured Language Model Programs",
+    "Unified Generative and Discriminative Training for Multi-modal Large Language Models",
+    "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token"
+  ],
+  "paper_count": 32,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A generation process where a model first retrieves relevant information from an external knowledge source to augment its context before generating a response.",
+      "paper": "BioBridge: Bridging Biomedical Foundation Models via Knowledge Graphs",
+      "original_name": "Retrieval-augmented generation"
+    },
+    {
+      "text": "Retrieval-Augmented Generation, a method that retrieves relevant code examples from a database to enhance prompt context for code generation tasks.",
+      "paper": "SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation",
+      "original_name": "RAG"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spec-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Block Verification Accelerates Speculative Decoding",
+      "evidence": "The benchmark includes various generation subtasks including... retrieval-augmented generation",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Block Verification Accelerates Speculative Decoding"
+        ],
+        "emnlp25": [
+          "Faster In-Context Learning for LLMs via N-Gram Trie Speculative Decoding",
+          "Speculative Streaming: Efficient and Scalable Speculative Decoding with Multi-Stream Attention"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Natural Questions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Generative Representational Instruction Tuning",
+      "evidence": "We benchmark the caching variants on Natural Questions (Kwiatkowski et al., 2019) using 2,681,468 documents from BEIR NQ (Thakur et al., 2021) as our index. (Section 5, Setup)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generative Representational Instruction Tuning"
+        ],
+        "emnlp25": [
+          "Utility-Focused LLM Annotation for Retrieval and Retrieval-Augmented Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HotpotQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "We use open-domain question answering (ODQA)...as a representation of retrieval-augmented generation (RAG) applications. We utilize ... HotpotQA (Yang et al., 2018)...",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ],
+        "emnlp25": [
+          "Utility-Focused LLM Annotation for Retrieval and Retrieval-Augmented Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HELMET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "NExtLong: Toward Effective Long-Context Training without Long Documents",
+      "evidence": "The evaluation spans five task types from the HELMET benchmark: synthetic recall, retrieval-augmented generation (RAG), many-shot in-context learning (ICL), passage re-ranking, and long-document QA, covering a total of 17 sub-tasks. (Section 4.1. Evaluation)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "NExtLong: Toward Effective Long-Context Training without Long Documents"
+        ],
+        "emnlp25": [
+          "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multimodal question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "BioBridge: Bridging Biomedical Foundation Models via Knowledge Graphs",
+      "evidence": "In this task, BioBRIDGE serves as a cross-modal retriever to enhance the contexts for Galactica\u2019s response to the input question. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "BioBridge: Bridging Biomedical Foundation Models via Knowledge Graphs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Fine-grained Analysis of In-context Linear Estimation: Data, Architecture, and Beyond",
+      "evidence": "Such in-context learning (ICL) offers a novel and effective alternative to traditional fine-tuning techniques and has become an important feature of LLM with its applications spanning retrieval-augmented generation [Lewis et al., 2020]... (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Fine-grained Analysis of In-context Linear Estimation: Data, Architecture, and Beyond"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Generative Representational Instruction Tuning",
+      "evidence": "One such scenario is Retrieval-Augmented Generation (RAG) (Lewis et al., 2021a), where an embedding model retrieves context for a generative model to answer a user query. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generative Representational Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Ranking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "Naturally, RAG and passage re-ranking moderately correlate due to the shared retrieval component",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Information extraction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Inference Scaling for Long-Context Retrieval Augmented Generation",
+      "evidence": "DRAG incorporates extensive retrieved documents within the demonstrations, enabling long-context LLMs to learn to extract relevant information and answer questions using a rich input context. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Inference Scaling for Long-Context Retrieval Augmented Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Document utility",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+      "evidence": "\u201cwe introduce an automatic evaluation method that measures retrieval utility through the lens of information gain within the RAG framework.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Radiology report generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+      "evidence": "\u201cwe introduce a fact-aware multimodal retrieval-augmented pipeline in generating accurate radiology reports (FactMM-RAG).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Entropy-Based Decoding for Retrieval-Augmented Large Language Models",
+      "evidence": "\u201cAugmenting Large Language Models (LLMs) with retrieved external knowledge has proven effective in improving the factual accuracy of generated responses.\u201d",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "naacl25": [
+          "Entropy-Based Decoding for Retrieval-Augmented Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Entropy-Based Decoding for Retrieval-Augmented Large Language Models",
+      "evidence": "Augmenting Large Language Models (LLMs) with retrieved external knowledge has proven effective in improving the factual accuracy of generated responses.",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "naacl25": [
+          "Entropy-Based Decoding for Retrieval-Augmented Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Noise robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Entropy-Based Decoding for Retrieval-Augmented Large Language Models",
+      "evidence": "Despite their success, retrieval-augmented LLMs still face the distractibility issue, where the generated responses are negatively influenced by noise from both external and internal knowledge sources.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Entropy-Based Decoding for Retrieval-Augmented Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench v2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Graph World Model",
+      "evidence": "We utilize LongBench v2 (Bai et al., 2024), a benchmark designed for challenging long-context question-answering (in Appendix A.5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Graph World Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DPR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "polybasic Speculative Decoding Through a Theoretical Perspective",
+      "evidence": "We evaluated our multi-model speculative system in SpecBench(Xia et al., 2024), across multiple tasks including... retrieval-augmented generation, employing the... DPR (Karpukhin et al., 2020).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "polybasic Speculative Decoding Through a Theoretical Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TriviaQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Faster In-Context Learning for LLMs via N-Gram Trie Speculative Decoding",
+      "evidence": "In addition, we make TriviaQA (Joshi et al., 2017) dataset for additional RAG task... (Section 4.1.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Faster In-Context Learning for LLMs via N-Gram Trie Speculative Decoding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GPQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LimRank: Less is More for Reasoning-Intensive Information Reranking",
+      "evidence": "To assess LIMRANK\u2019s practical utility, we further deploy and evaluate it in two real-world-inspired tasks: ... (2) Retrieval-Augmented Generation (RAG) on the GPQA benchmark (Rein et al., 2024). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LimRank: Less is More for Reasoning-Intensive Information Reranking"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering",
+      "evidence": "Retrieval-Augmented Generation (RAG) has emerged as a promising approach to address key limitations of Large Language Models (LLMs), such as hallucination, outdated knowledge, and lacking reference. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 19,
+  "incoming_relationship_count": 7,
+  "outgoing_relationship_count": 12,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Retrieval-augmented generation (RAG) is predominantly described as a two-step behavior where a model first retrieves relevant information from an external knowledge source to augment its context, and then generates a response based on that augmented context. A common specialization of this behavior is retrieval-augmented question answering, with one paper equating open-domain question answering with RAG applications. While most definitions are general, a few papers frame RAG for specific domains, such as retrieving code examples for code generation. A distinct line of work emphasizes the verifiability of the output, defining related behaviors like \"grounded question answering\" and \"source-supported response generation,\" which require the generated text to be \"systematically entailed by\" or \"explicitly backed by\" the provided documents. This focus on attribution is further operationalized through tasks like \"sentence-level\" and \"chunk-level\" citation generation. The behavior, particularly its grounded variant, is measured using benchmarks such as ARC and MedQA, where evaluation centers on a \"Grounding Rate\" of test hypotheses. The external knowledge source itself is variously described as a \"non-parametric datastore,\" a \"knowledge corpus,\" or knowledge chunks modeled as a graph. The emphasis on verifiability also connects the behavior to textual entailment.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+      "Attention Entropy is a Key Factor: An Analysis of Parallel Context Encoding with Full-attention-based Pre-trained Language Models",
+      "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+      "Writing Like the Best: Exemplar-Based Expository Text Generation"
+    ],
+    "emnlp25": [
+      "How to Protect Yourself from 5G Radiation? Investigating LLM Responses to Implicit Misinformation",
+      "RAG+: Enhancing Retrieval-Augmented Generation with Application-Aware Reasoning",
+      "SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation"
+    ],
+    "iclr24": [
+      "BioBridge: Bridging Biomedical Foundation Models via Knowledge Graphs",
+      "DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines"
+    ],
+    "iclr25": [
+      "APE: Faster and Longer Context-Augmented Generation via Adaptive Parallel Encoding",
+      "Block Verification Accelerates Speculative Decoding",
+      "Controllable Context Sensitivity and the Knob Behind It",
+      "Generative Representational Instruction Tuning",
+      "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "Long-Context LLMs Meet RAG: Overcoming Challenges for Long Inputs in RAG",
+      "PICASO: Permutation-Invariant Context Composition with State Space Models",
+      "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+      "SiReRAG: Indexing Similar and Related Information for Multihop Reasoning"
+    ],
+    "icml25": [
+      "Graph World Model",
+      "NExtLong: Toward Effective Long-Context Training without Long Documents",
+      "polybasic Speculative Decoding Through a Theoretical Perspective"
+    ],
+    "naacl25": [
+      "Amphista: Bi-directional Multi-head Decoding for Accelerating LLM Inference",
+      "Entropy-Based Decoding for Retrieval-Augmented Large Language Models",
+      "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+      "PicPersona-TOD : A Dataset for Personalizing Utterance Style in Task-Oriented Dialogue with Image Persona",
+      "Prompt Compression for Large Language Models: A Survey"
+    ],
+    "neurips24": [
+      "Evaluating Copyright Takedown Methods for Language Models",
+      "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+      "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "SGLang: Efficient Execution of Structured Language Model Programs",
+      "Unified Generative and Discriminative Training for Multi-modal Large Language Models",
+      "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 3,
+    "iclr24": 2,
+    "iclr25": 9,
+    "icml25": 3,
+    "naacl25": 5,
+    "neurips24": 6
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

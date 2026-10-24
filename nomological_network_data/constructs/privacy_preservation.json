@@ -1,0 +1,511 @@
+{
+  "canonical_name": "Privacy preservation",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats privacy preservation as limiting the disclosure of sensitive or personal information by the model, its training procedure, or its prompting setup. Many definitions make this concrete as preventing private training examples, prompt exemplars, or user data from being inferred from outputs or parameters, often with formal differential privacy guarantees, for example by requiring similar outputs when in-context exemplars vary or by ensuring no single data point can be identified from the output. A smaller line of work frames it as keeping personally identifiable information away from untrusted components such as remote API models, or as privacy awareness shown by refusing suspicious questions. Other minority formulations shift the construct toward secrecy in social interaction, prompt content that avoids sensitive information, or vulnerability and risk labels such as prompt leakage, datastore leakage, and knowledge file leakage, so the main disagreement is between privacy as a protective property and privacy as an attack surface or observable behavior.\n\nSpace of facets. Papers most often break the area into protection versus leakage, and one benchmark explicitly evaluates privacy in terms of awareness and leakage. Several papers also separate training-stage and inference-stage privacy, or focus on more specific leakage types such as prompt leakage, privacy leakage, information leakage, data leakage, and knowledge file leakage; one study further identifies five leakage vectors: metadata, GPT initialization, retrieval, sandboxed execution environment, and prompts. In broader evaluations, privacy is treated as one dimension of trustworthiness, but the same label is used for different objects across papers: a model property, a training-process guarantee, a prompt characteristic, a social-interaction norm, or a system vulnerability.\n\nSpace of measurement. Operationalizations are mixed: papers link privacy preservation to 4 measurement instruments and 3 behavioral indicators. The linked measures named most often are membership inference attack, privacy leakage, human evaluation, LLM-as-a-judge, and MIMIC-III, spanning attack-based probes, leakage checks in conversations, human judgments of private summaries, judge-model ratings, and dataset-based privacy protection evaluations. Other papers operationalize privacy through whether models refuse suspicious questions or through tasks that ask models to identify personally identifiable information in images. These measures mostly track definitions centered on non-disclosure and attack resistance, though some shift toward proxy behaviors such as refusal or whether prompts themselves contain sensitive information.\n\nLinks. Several papers relate privacy preservation to trustworthiness, and one benchmark discusses privacy through awareness and leakage in that broader framing. One paper claims a causal relationship from in-context learning to privacy preservation, and another reports a related link between in-context learning and privacy risks. Another paper claims a causal relationship from privacy preservation to personalization and generalization, stating that stringent privacy measures can hinder both. Privacy leakage is also used both as a related indicator and as a direct measure during conversations, while several other single-paper claims report causal or related links with additional model or system properties.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Privacy",
+    "Secrecy maintenance",
+    "Information leakage",
+    "Prompt leakage vulnerability",
+    "Privacy leakage",
+    "Data leakage risk",
+    "Privacy risk",
+    "Data leakage vulnerability",
+    "Information leakage risk",
+    "Knowledge file leakage",
+    "Privacy preservation",
+    "Privacy protection",
+    "Privacy vulnerability"
+  ],
+  "papers": [
+    "CENTAUR: Bridging the Impossible Trinity of Privacy, Efficiency, and Performance in Privacy-Preserving Transformer Inference",
+    "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+    "GradOT: Training-free Gradient-preserving Offsite-tuning for Large Language Models",
+    "Mimicking the Familiar: Dynamic Command Generation for Information Theft Attacks in LLM Tool-Learning System",
+    "PrivacyRestore: Privacy-Preserving Inference in Large Language Models via Privacy Removal and Restoration",
+    "The Knowledge Microscope: Features as Better Analytical Lenses than Neurons",
+    "What Makes a Good Natural Language Prompt?",
+    "When GPT Spills the Tea: Comprehensive Assessment of Knowledge File Leakage in GPTs",
+    "Exploiting the Shadows: Unveiling Privacy Leaks through Lower-Ranked Tokens in Large Language Models",
+    "A Fully Probabilistic Perspective on Large Language Model Unlearning: Evaluation and Optimization",
+    "Beyond Text: Unveiling Privacy Vulnerabilities in Multi-modal Retrieval-Augmented Generation",
+    "CBP-Tuning: Efficient Local Customization for Black-box Large Language Models",
+    "Doubling Your Data in Minutes: Ultra-fast Tabular Data Generation via LLM-Induced Dependency Graphs",
+    "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+    "How Private are Language Models in Abstractive Summarization?",
+    "Implicit Values Embedded in How Humans and LLMs Complete Subjective Everyday Tasks",
+    "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+    "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers",
+    "Model-based Large Language Model Customization as Service",
+    "PPC-GPT: Federated Task-Specific Compression of Large Language Models via Pruning and Chain-of-Thought Distillation",
+    "RareSyn: Health Record Synthesis for Rare Disease Diagnosis",
+    "RewardDS: Privacy-Preserving Fine-Tuning for Large Language Models via Reward Driven Data Synthesis",
+    "``I've Decided to Leak'': Probing Internals Behind Prompt Leakage Intents",
+    "Breaking Physical and Linguistic Borders: Multilingual Federated Prompt Tuning for Low-Resource Languages",
+    "DP-OPT: Make Large Language Model Your Privacy-Preserving Prompt Engineer",
+    "Privacy-Preserving In-Context Learning for Large Language Models",
+    "Privacy-Preserving In-Context Learning with Differentially Private Few-Shot Generation",
+    "Privately Aligning Language Models with Reinforcement Learning",
+    "SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents",
+    "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+    "CollabEdit: Towards Non-destructive Collaborative Knowledge Editing",
+    "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models",
+    "Follow My Instruction and Spill the Beans: Scalable Data Extraction from Retrieval-Augmented Generation Systems",
+    "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking",
+    "LLM Unlearning via Loss Adjustment with Only Forget Data",
+    "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+    "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+    "More RLHF, More Trust? On The Impact of Preference Alignment On Trustworthiness",
+    "Privacy Auditing of Large Language Models",
+    "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+    "TDDBench: A Benchmark for Training data detection",
+    "Uncovering Latent Memories in Large Language Models",
+    "Auditing Prompt Caching in Language Model APIs",
+    "Cape: Context-Aware Prompt Perturbation Mechanism with Differential Privacy",
+    "Efficient Personalized Adaptation for Physiological Signal Foundation Model",
+    "Efficient and Privacy-Preserving Soft Prompt Transfer for LLMs",
+    "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+    "Federated In-Context Learning: Iterative Refinement for Improved Answer Quality",
+    "Ferret: Federated Full-Parameter Tuning at Scale for Large Language Models",
+    "GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning",
+    "Position: AI Scaling: From Up to Down and Out",
+    "Scaling Laws for Differentially Private Language Models",
+    "Square$\u03c7$PO: Differentially Private and Robust $\u03c7^2$-Preference Optimization in Offline Direct Alignment",
+    "Synthesizing Privacy-Preserving Text Data via Finetuning *without* Finetuning Billion-Scale LLMs",
+    "Synthetic Text Generation for Training Large Language Models via Gradient Matching",
+    "Textual Unlearning Gives a False Sense of Unlearning",
+    "The Canary\u2019s Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text",
+    "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+    "Differentially Private Learning Needs Better Model Initialization and Self-Distillation",
+    "EmojiPrompt: Generative Prompt Obfuscation for Privacy-Preserving Communication with Cloud-based LLMs",
+    "Ethical Concern Identification in NLP: A Corpus of ACL Anthology Ethics Statements",
+    "FedSpaLLM: Federated Pruning of Large Language Models",
+    "PAPILLON: Privacy Preservation from Internet-based and Local Language Model Ensembles",
+    "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+    "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+    "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+    "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models",
+    "Membership Inference Attacks against Large Vision-Language Models",
+    "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+    "Stepwise Alignment for Constrained Language Model Policy Optimization"
+  ],
+  "paper_count": 70,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which a model's outputs do not reveal sensitive information from its input exemplars, formalized through differential privacy guarantees.",
+      "paper": "Privacy-Preserving In-Context Learning for Large Language Models",
+      "original_name": "Privacy"
+    },
+    {
+      "text": "The ability to protect private information or intentions from being revealed during social interaction, especially when disclosure would reduce strategic advantage.",
+      "paper": "SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents",
+      "original_name": "Secrecy maintenance"
+    },
+    {
+      "text": "The ability of a system to fulfill user requests without revealing personally identifiable information to untrusted components, such as remote API-based models.",
+      "paper": "EmojiPrompt: Generative Prompt Obfuscation for Privacy-Preserving Communication with Cloud-based LLMs",
+      "original_name": "Privacy preservation"
+    },
+    {
+      "text": "The unintended access or reuse of task-specific information (e.g., training data, task identifiers) from previously learned tasks during continual learning, posing privacy risks and enabling unfair performance advantages.",
+      "paper": "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+      "original_name": "Information leakage"
+    },
+    {
+      "text": "The susceptibility of a large language model to being manipulated by adversarial queries into revealing its confidential system prompt.",
+      "paper": "``I've Decided to Leak'': Probing Internals Behind Prompt Leakage Intents",
+      "original_name": "Prompt leakage vulnerability"
+    },
+    {
+      "text": "The tendency to reveal personal or sensitive information when prompted directly or indirectly.",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "original_name": "Privacy leakage"
+    },
+    {
+      "text": "The susceptibility of a model to attacks that can reveal sensitive information about its training data.",
+      "paper": "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models",
+      "original_name": "Privacy vulnerability"
+    },
+    {
+      "text": "The tendency for a model to reveal sensitive or proprietary training information in its outputs, creating privacy and misuse concerns.",
+      "paper": "Uncovering Latent Memories in Large Language Models",
+      "original_name": "Data leakage risk"
+    },
+    {
+      "text": "The potential for a model to reveal sensitive information about its training data, which can be assessed through training data detection.",
+      "paper": "TDDBench: A Benchmark for Training data detection",
+      "original_name": "Privacy risk"
+    },
+    {
+      "text": "The tendency of a RAG system to expose private datastore content through model outputs.",
+      "paper": "Follow My Instruction and Spill the Beans: Scalable Data Extraction from Retrieval-Augmented Generation Systems",
+      "original_name": "Data leakage vulnerability"
+    },
+    {
+      "text": "The latent potential for a tool-learning system to unintentionally disclose sensitive user or tool information to unauthorized parties as a result of its design and behavior.",
+      "paper": "Mimicking the Familiar: Dynamic Command Generation for Information Theft Attacks in LLM Tool-Learning System",
+      "original_name": "Information leakage risk"
+    },
+    {
+      "text": "The latent propensity of an LLM agent to expose protected knowledge file data\u2014such as titles, content, or original files\u2014through various system vectors, even without direct adversarial prompting.",
+      "paper": "When GPT Spills the Tea: Comprehensive Assessment of Knowledge File Leakage in GPTs",
+      "original_name": "Knowledge file leakage"
+    },
+    {
+      "text": "The degree to which the compressed emulator prevents leakage of sensitive information from either the model or data owner, ensuring that the fine-tuned emulator cannot be used to reconstruct the original model or compromise data confidentiality.",
+      "paper": "GradOT: Training-free Gradient-preserving Offsite-tuning for Large Language Models",
+      "original_name": "Privacy protection"
+    }
+  ],
+  "definition_count": 13,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Membership inference attack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+      "evidence": "These fully trained prompts, if not properly protected with privacy mechanism, are vulnerable to MIA which aims to infer if an image sample was used for training or not (Section 3.3).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+          "MUSE: Machine Unlearning Six-Way Evaluation for Language Models"
+        ],
+        "naacl25": [
+          "Differentially Private Learning Needs Better Model Initialization and Self-Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Trustworthiness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "evidence": "We assess the trustworthiness of Med-LVLMs across five dimensions, including trustfulness, fairness, safety, privacy, and robustness. (Abstract)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models"
+        ],
+        "iclr25": [
+          "More RLHF, More Trust? On The Impact of Preference Alignment On Trustworthiness"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Privacy-Preserving In-Context Learning with Differentially Private Few-Shot Generation",
+      "evidence": "We study the problem of in-context learning (ICL) with large language models (LLMs) on private datasets. This scenario poses privacy risks, as LLMs may leak or regurgitate the private examples demonstrated in the prompt. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Privacy-Preserving In-Context Learning with Differentially Private Few-Shot Generation",
+          "Privacy-Preserving In-Context Learning for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Personalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+      "evidence": "stringent privacy measures, such as differential privacy, can hinder both personalization and generalization (Abstract).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models"
+        ],
+        "acl25": [
+          "Personalized Generation In Large Model Era: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Privacy awareness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "evidence": "From the perspectives of consciousness and behaviors [132], we evaluate privacy in terms of awareness and leakage. (Sec. 2.2.5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Privacy leakage",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "evidence": "\"we evaluate privacy in terms of awareness and leakage\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Pre-training data detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "TDDBench: A Benchmark for Training data detection",
+      "evidence": "Training data detection (TDD) is commonly employed to assess privacy risks in machine learning models (Murakonda & Shokri, 2020).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TDDBench: A Benchmark for Training data detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+      "evidence": "stringent privacy measures, such as differential privacy, can hinder both personalization and generalization (Abstract).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Memorization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models",
+      "evidence": "This repeated exposure enhances the likelihood of the model memorizing specific details, thereby increasing the potential for data leakage during privacy attacks. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Utility preservation",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Cape: Context-Aware Prompt Perturbation Mechanism with Differential Privacy",
+      "evidence": "For DP-based solutions, although they yield better efficiency but faces the trade-off between privacy and utility. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Cape: Context-Aware Prompt Perturbation Mechanism with Differential Privacy"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MIMIC-III",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Controlled Generation for Private Synthetic Text",
+      "evidence": "Table 3: Privacy protection performance under the private entity known setting on the MIMIC-III dataset.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Controlled Generation for Private Synthetic Text"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "How Private are Language Models in Abstractive Summarization?",
+      "evidence": "We further evaluate the LMs capability in generating private summaries by conducting a human evaluation. (Section 4.5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "How Private are Language Models in Abstractive Summarization?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "De-identification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Language Models are Advanced Anonymizers",
+      "evidence": "\u201cthe goal of any text anonymization method is to remove all information that could lead to the inference of a set of pre-specified author attributes while maintaining the utility of the original text.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Language Models are Advanced Anonymizers"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 13,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 7,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats privacy preservation as limiting the disclosure of sensitive or personal information by the model, its training procedure, or its prompting setup. Many definitions make this concrete as preventing private training examples, prompt exemplars, or user data from being inferred from outputs or parameters, often with formal differential privacy guarantees, for example by requiring similar outputs when in-context exemplars vary or by ensuring no single data point can be identified from the output. A smaller line of work frames it as keeping personally identifiable information away from untrusted components such as remote API models, or as privacy awareness shown by refusing suspicious questions. Other minority formulations shift the construct toward secrecy in social interaction, prompt content that avoids sensitive information, or vulnerability and risk labels such as prompt leakage, datastore leakage, and knowledge file leakage, so the main disagreement is between privacy as a protective property and privacy as an attack surface or observable behavior."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most often break the area into protection versus leakage, and one benchmark explicitly evaluates privacy in terms of awareness and leakage. Several papers also separate training-stage and inference-stage privacy, or focus on more specific leakage types such as prompt leakage, privacy leakage, information leakage, data leakage, and knowledge file leakage; one study further identifies five leakage vectors: metadata, GPT initialization, retrieval, sandboxed execution environment, and prompts. In broader evaluations, privacy is treated as one dimension of trustworthiness, but the same label is used for different objects across papers: a model property, a training-process guarantee, a prompt characteristic, a social-interaction norm, or a system vulnerability."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalizations are mixed: papers link privacy preservation to 4 measurement instruments and 3 behavioral indicators. The linked measures named most often are membership inference attack, privacy leakage, human evaluation, LLM-as-a-judge, and MIMIC-III, spanning attack-based probes, leakage checks in conversations, human judgments of private summaries, judge-model ratings, and dataset-based privacy protection evaluations. Other papers operationalize privacy through whether models refuse suspicious questions or through tasks that ask models to identify personally identifiable information in images. These measures mostly track definitions centered on non-disclosure and attack resistance, though some shift toward proxy behaviors such as refusal or whether prompts themselves contain sensitive information."
+    },
+    {
+      "label": "Links.",
+      "text": "Several papers relate privacy preservation to trustworthiness, and one benchmark discusses privacy through awareness and leakage in that broader framing. One paper claims a causal relationship from in-context learning to privacy preservation, and another reports a related link between in-context learning and privacy risks. Another paper claims a causal relationship from privacy preservation to personalization and generalization, stating that stringent privacy measures can hinder both. Privacy leakage is also used both as a related indicator and as a direct measure during conversations, while several other single-paper claims report causal or related links with additional model or system properties."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define privacy preservation as resistance to unauthorized disclosure or inference of sensitive information, especially via model outputs or access to parameters, covering training data, user data, prompts, system prompts, or retrieved private content, and several express the same idea through differential privacy guarantees or attack-based tests. A few papers shift the locus to prompts, training or compression procedures, federated sharing, refusal behavior, or strategic interaction, so the scope is not uniform enough for consensus, but these mostly describe different facets and settings of the same leakage-prevention phenomenon rather than incompatible constructs.",
+    "papers_with_definition": 31,
+    "runs": [
+      "complementary",
+      "complementary",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats privacy preservation as limiting the disclosure of sensitive or personal information by the model, its training procedure, or its prompting setup. Many definitions make this concrete as preventing private training examples, prompt exemplars, or user data from being inferred from outputs or parameters, often with formal differential privacy guarantees, for example by requiring similar outputs when in-context exemplars vary or by ensuring no single data point can be identified from the output. A smaller line of work frames it as keeping personally identifiable information away from untrusted components such as remote API models, or as privacy awareness shown by refusing suspicious questions. Other minority formulations shift the construct toward secrecy in social interaction, prompt content that avoids sensitive information, or vulnerability and risk labels such as prompt leakage, datastore leakage, and knowledge file leakage, so the main disagreement is between privacy as a protective property and privacy as an attack surface or observable behavior.\n\nSpace of facets. Papers most often break the area into protection versus leakage, and one benchmark explicitly evaluates privacy in terms of awareness and leakage. Several papers also separate training-stage and inference-stage privacy, or focus on more specific leakage types such as prompt leakage, privacy leakage, information leakage, data leakage, and knowledge file leakage; one study further identifies five leakage vectors: metadata, GPT initialization, retrieval, sandboxed execution environment, and prompts. In broader evaluations, privacy is treated as one dimension of trustworthiness, but the same label is used for different objects across papers: a model property, a training-process guarantee, a prompt characteristic, a social-interaction norm, or a system vulnerability.\n\nSpace of measurement. Operationalizations are mixed: papers link privacy preservation to 4 measurement instruments and 3 behavioral indicators. The linked measures named most often are membership inference attack, privacy leakage, human evaluation, LLM-as-a-judge, and MIMIC-III, spanning attack-based probes, leakage checks in conversations, human judgments of private summaries, judge-model ratings, and dataset-based privacy protection evaluations. Other papers operationalize privacy through whether models refuse suspicious questions or through tasks that ask models to identify personally identifiable information in images. These measures mostly track definitions centered on non-disclosure and attack resistance, though some shift toward proxy behaviors such as refusal or whether prompts themselves contain sensitive information.\n\nLinks. Several papers relate privacy preservation to trustworthiness, and one benchmark discusses privacy through awareness and leakage in that broader framing. One paper claims a causal relationship from in-context learning to privacy preservation, and another reports a related link between in-context learning and privacy risks. Another paper claims a causal relationship from privacy preservation to personalization and generalization, stating that stringent privacy measures can hinder both. Privacy leakage is also used both as a related indicator and as a direct measure during conversations, while several other single-paper claims report causal or related links with additional model or system properties.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CENTAUR: Bridging the Impossible Trinity of Privacy, Efficiency, and Performance in Privacy-Preserving Transformer Inference",
+      "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+      "GradOT: Training-free Gradient-preserving Offsite-tuning for Large Language Models",
+      "Mimicking the Familiar: Dynamic Command Generation for Information Theft Attacks in LLM Tool-Learning System",
+      "PrivacyRestore: Privacy-Preserving Inference in Large Language Models via Privacy Removal and Restoration",
+      "The Knowledge Microscope: Features as Better Analytical Lenses than Neurons",
+      "What Makes a Good Natural Language Prompt?",
+      "When GPT Spills the Tea: Comprehensive Assessment of Knowledge File Leakage in GPTs",
+      "Exploiting the Shadows: Unveiling Privacy Leaks through Lower-Ranked Tokens in Large Language Models"
+    ],
+    "emnlp25": [
+      "A Fully Probabilistic Perspective on Large Language Model Unlearning: Evaluation and Optimization",
+      "Beyond Text: Unveiling Privacy Vulnerabilities in Multi-modal Retrieval-Augmented Generation",
+      "CBP-Tuning: Efficient Local Customization for Black-box Large Language Models",
+      "Doubling Your Data in Minutes: Ultra-fast Tabular Data Generation via LLM-Induced Dependency Graphs",
+      "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+      "How Private are Language Models in Abstractive Summarization?",
+      "Implicit Values Embedded in How Humans and LLMs Complete Subjective Everyday Tasks",
+      "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers",
+      "Model-based Large Language Model Customization as Service",
+      "PPC-GPT: Federated Task-Specific Compression of Large Language Models via Pruning and Chain-of-Thought Distillation",
+      "RareSyn: Health Record Synthesis for Rare Disease Diagnosis",
+      "RewardDS: Privacy-Preserving Fine-Tuning for Large Language Models via Reward Driven Data Synthesis",
+      "``I've Decided to Leak'': Probing Internals Behind Prompt Leakage Intents"
+    ],
+    "iclr24": [
+      "Breaking Physical and Linguistic Borders: Multilingual Federated Prompt Tuning for Low-Resource Languages",
+      "DP-OPT: Make Large Language Model Your Privacy-Preserving Prompt Engineer",
+      "Privacy-Preserving In-Context Learning for Large Language Models",
+      "Privacy-Preserving In-Context Learning with Differentially Private Few-Shot Generation",
+      "Privately Aligning Language Models with Reinforcement Learning",
+      "SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents"
+    ],
+    "iclr25": [
+      "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+      "CollabEdit: Towards Non-destructive Collaborative Knowledge Editing",
+      "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models",
+      "Follow My Instruction and Spill the Beans: Scalable Data Extraction from Retrieval-Augmented Generation Systems",
+      "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking",
+      "LLM Unlearning via Loss Adjustment with Only Forget Data",
+      "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+      "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+      "More RLHF, More Trust? On The Impact of Preference Alignment On Trustworthiness",
+      "Privacy Auditing of Large Language Models",
+      "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+      "TDDBench: A Benchmark for Training data detection",
+      "Uncovering Latent Memories in Large Language Models"
+    ],
+    "icml25": [
+      "Auditing Prompt Caching in Language Model APIs",
+      "Cape: Context-Aware Prompt Perturbation Mechanism with Differential Privacy",
+      "Efficient Personalized Adaptation for Physiological Signal Foundation Model",
+      "Efficient and Privacy-Preserving Soft Prompt Transfer for LLMs",
+      "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+      "Federated In-Context Learning: Iterative Refinement for Improved Answer Quality",
+      "Ferret: Federated Full-Parameter Tuning at Scale for Large Language Models",
+      "GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning",
+      "Position: AI Scaling: From Up to Down and Out",
+      "Scaling Laws for Differentially Private Language Models",
+      "Square$\u03c7$PO: Differentially Private and Robust $\u03c7^2$-Preference Optimization in Offline Direct Alignment",
+      "Synthesizing Privacy-Preserving Text Data via Finetuning *without* Finetuning Billion-Scale LLMs",
+      "Synthetic Text Generation for Training Large Language Models via Gradient Matching",
+      "Textual Unlearning Gives a False Sense of Unlearning",
+      "The Canary\u2019s Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text",
+      "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+    ],
+    "naacl25": [
+      "Differentially Private Learning Needs Better Model Initialization and Self-Distillation",
+      "EmojiPrompt: Generative Prompt Obfuscation for Privacy-Preserving Communication with Cloud-based LLMs",
+      "Ethical Concern Identification in NLP: A Corpus of ACL Anthology Ethics Statements",
+      "FedSpaLLM: Federated Pruning of Large Language Models",
+      "PAPILLON: Privacy Preservation from Internet-based and Local Language Model Ensembles",
+      "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+    ],
+    "neurips24": [
+      "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+      "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models",
+      "Membership Inference Attacks against Large Vision-Language Models",
+      "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "Stepwise Alignment for Constrained Language Model Policy Optimization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 9,
+    "emnlp25": 14,
+    "iclr24": 6,
+    "iclr25": 13,
+    "icml25": 16,
+    "naacl25": 6,
+    "neurips24": 6
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

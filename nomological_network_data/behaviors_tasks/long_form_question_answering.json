@@ -1,0 +1,217 @@
+{
+  "canonical_name": "Long-form question answering",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats long-form question answering as generating extended, paragraph-length or multi-sentence answers to open-ended questions, rather than short or extractive responses. Most definitions add synthesis and contextual coherence, and several retrieval-oriented papers narrow this to answering with supporting context, retrieved evidence, or multiple retrieved documents; others define it over long documents or tables. One paper describes it as aiming to synthesize information from disparate retrieval sources to provide in-depth, paragraph-length responses (Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization).\n\nVariants. Papers use nearby labels such as long-form QA, LFQA, and, less often, long-form answer generation. The behavior is studied in several settings: retrieval-augmented generation with supporting context, question answering over long documents, free-form answers synthesized from tables, financial-domain questions that require comprehensive answers, multilingual and culturally specific QA, and personalized answer generation. Some work contrasts the open-ended form with a multiple-choice counterpart built from the same questions, and other papers treat it as a separate downstream task alongside open-ended generation, factual knowledge, code completion, or summarization.\n\nSpace of elicitation and scores. Papers measure this behavior with 5 instruments, most often ELI5, followed by TruthfulQA, ASQA, FeTaQA, and UNCLE. These instruments are described as datasets or benchmarks: ELI5 is used for long-form question answering and, in one use, includes questions, model-generated answers, and supporting context; TruthfulQA is described as requiring long-form and truthful responses; FeTaQA is used for more complex table-based long-form QA and is scored with ROUGE-1, ROUGE-2, and ROUGE-L; ASQA appears as a dataset for this category in disambiguation work; and UNCLE evaluates uncertainty expression in long- and short-form QA.\n\nWhat it is taken as evidence of. Papers rarely treat long-form question answering as direct evidence of a broader construct. The only construct papers connect to it is Disambiguation ability, and that relationship is recorded as related rather than measured_by or correlates: one survey places long-form answer generation alongside query rewriting and asking clarifying questions as policies in disambiguation work. No other construct relation is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Long-form question answering",
+    "Long-form answer generation"
+  ],
+  "papers": [
+    "CaLMQA: Exploring culturally specific long-form question answering across 23 languages",
+    "From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models",
+    "Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization",
+    "CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models",
+    "Conflict-Aware Soft Prompting for Retrieval-Augmented Generation",
+    "EduVidQA: Generating and Evaluating Long-form Answers to Student Questions based on Lecture Videos",
+    "How Much Do LLMs Hallucinate across Languages? On Realistic Multilingual Estimation of LLM Hallucination",
+    "LaMP-QA: A Benchmark for Personalized Long-form Question Answering",
+    "OmniEval: An Omnidirectional and Automatic RAG Evaluation Benchmark in Financial Domain",
+    "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+    "UNCLE: Benchmarking Uncertainty Expressions in Long-Form Generation",
+    "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation",
+    "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+    "LCIRC: A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs",
+    "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+    "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+    "WaterPool: A Language Model Watermark Mitigating Trade-Offs among Imperceptibility, Efficacy and Robustness",
+    "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating extended, paragraph-length responses to open-ended questions, often requiring synthesis of information and contextual coherence.",
+      "paper": "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+      "original_name": "Long-form question answering"
+    },
+    {
+      "text": "The task of generating comprehensive, detailed answers to questions, rather than short, extractive responses.",
+      "paper": "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation",
+      "original_name": "Long-form answer generation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ELI5",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation",
+      "evidence": "Table 2: Accuracy on various long-form NLP tasks. ... Long-form QA ... ELI5 (Table 2)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation"
+        ],
+        "naacl25": [
+          "WaterPool: A Language Model Watermark Mitigating Trade-Offs among Imperceptibility, Efficacy and Robustness",
+          "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration"
+        ],
+        "emnlp25": [
+          "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TruthfulQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token",
+      "evidence": "one Long-form Question Answering dataset, TruthfulQA [50], that requires the generation of long-form and truthful responses. (Section 4.1).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token"
+        ],
+        "emnlp25": [
+          "Conflict-Aware Soft Prompting for Retrieval-Augmented Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FeTaQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "evidence": "For more complex tasks in FeTaQA, which involve long-form question answering, we evaluate performance using ROUGE-1, ROUGE-2, and ROUGE-L metrics",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Disambiguation ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+      "evidence": "we argue existing disambiguation works fall in three major policies... Query Rewriting, Middle. Long Form Answer Generation, Right. Asking Clarifying Questions. (Section 3, Figure 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ASQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+      "evidence": "\u201cTo the best of our knowledge, ASQA (Stelmakh et al., 2022) is the only dataset that falls into this category. ASQA is a long-form QA dataset derived from a subset of ambiguous questions in the AmbigNQ dataset (Min et al., 2020). Its statistics and corresponding URL are provided in Table 4. The dataset is designed to evaluate how well systems can generate comprehensive answers that cover all valid interpretations.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "UNCLE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UNCLE: Benchmarking Uncertainty Expressions in Long-Form Generation",
+      "evidence": "we first introduce UNCLE, a benchmark designed to evaluate uncertainty expression in both long- and short-form question answering (QA). (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "UNCLE: Benchmarking Uncertainty Expressions in Long-Form Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats long-form question answering as generating extended, paragraph-length or multi-sentence answers to open-ended questions, rather than short or extractive responses. Most definitions add synthesis and contextual coherence, and several retrieval-oriented papers narrow this to answering with supporting context, retrieved evidence, or multiple retrieved documents; others define it over long documents or tables. One paper describes it as aiming to synthesize information from disparate retrieval sources to provide in-depth, paragraph-length responses (Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization)."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use nearby labels such as long-form QA, LFQA, and, less often, long-form answer generation. The behavior is studied in several settings: retrieval-augmented generation with supporting context, question answering over long documents, free-form answers synthesized from tables, financial-domain questions that require comprehensive answers, multilingual and culturally specific QA, and personalized answer generation. Some work contrasts the open-ended form with a multiple-choice counterpart built from the same questions, and other papers treat it as a separate downstream task alongside open-ended generation, factual knowledge, code completion, or summarization."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure this behavior with 5 instruments, most often ELI5, followed by TruthfulQA, ASQA, FeTaQA, and UNCLE. These instruments are described as datasets or benchmarks: ELI5 is used for long-form question answering and, in one use, includes questions, model-generated answers, and supporting context; TruthfulQA is described as requiring long-form and truthful responses; FeTaQA is used for more complex table-based long-form QA and is scored with ROUGE-1, ROUGE-2, and ROUGE-L; ASQA appears as a dataset for this category in disambiguation work; and UNCLE evaluates uncertainty expression in long- and short-form QA."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers rarely treat long-form question answering as direct evidence of a broader construct. The only construct papers connect to it is Disambiguation ability, and that relationship is recorded as related rather than measured_by or correlates: one survey places long-form answer generation alongside query rewriting and asking clarifying questions as policies in disambiguation work. No other construct relation is reported."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats long-form question answering as generating extended, paragraph-length or multi-sentence answers to open-ended questions, rather than short or extractive responses. Most definitions add synthesis and contextual coherence, and several retrieval-oriented papers narrow this to answering with supporting context, retrieved evidence, or multiple retrieved documents; others define it over long documents or tables. One paper describes it as aiming to synthesize information from disparate retrieval sources to provide in-depth, paragraph-length responses (Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization).\n\nVariants. Papers use nearby labels such as long-form QA, LFQA, and, less often, long-form answer generation. The behavior is studied in several settings: retrieval-augmented generation with supporting context, question answering over long documents, free-form answers synthesized from tables, financial-domain questions that require comprehensive answers, multilingual and culturally specific QA, and personalized answer generation. Some work contrasts the open-ended form with a multiple-choice counterpart built from the same questions, and other papers treat it as a separate downstream task alongside open-ended generation, factual knowledge, code completion, or summarization.\n\nSpace of elicitation and scores. Papers measure this behavior with 5 instruments, most often ELI5, followed by TruthfulQA, ASQA, FeTaQA, and UNCLE. These instruments are described as datasets or benchmarks: ELI5 is used for long-form question answering and, in one use, includes questions, model-generated answers, and supporting context; TruthfulQA is described as requiring long-form and truthful responses; FeTaQA is used for more complex table-based long-form QA and is scored with ROUGE-1, ROUGE-2, and ROUGE-L; ASQA appears as a dataset for this category in disambiguation work; and UNCLE evaluates uncertainty expression in long- and short-form QA.\n\nWhat it is taken as evidence of. Papers rarely treat long-form question answering as direct evidence of a broader construct. The only construct papers connect to it is Disambiguation ability, and that relationship is recorded as related rather than measured_by or correlates: one survey places long-form answer generation alongside query rewriting and asking clarifying questions as policies in disambiguation work. No other construct relation is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models",
+      "Conflict-Aware Soft Prompting for Retrieval-Augmented Generation",
+      "EduVidQA: Generating and Evaluating Long-form Answers to Student Questions based on Lecture Videos",
+      "How Much Do LLMs Hallucinate across Languages? On Realistic Multilingual Estimation of LLM Hallucination",
+      "LaMP-QA: A Benchmark for Personalized Long-form Question Answering",
+      "OmniEval: An Omnidirectional and Automatic RAG Evaluation Benchmark in Financial Domain",
+      "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+      "UNCLE: Benchmarking Uncertainty Expressions in Long-Form Generation"
+    ],
+    "naacl25": [
+      "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "LCIRC: A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs",
+      "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+      "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+      "WaterPool: A Language Model Watermark Mitigating Trade-Offs among Imperceptibility, Efficacy and Robustness"
+    ],
+    "neurips24": [
+      "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation"
+    ],
+    "acl25": [
+      "CaLMQA: Exploring culturally specific long-form question answering across 23 languages",
+      "From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models",
+      "Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization"
+    ],
+    "iclr25": [
+      "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 8,
+    "naacl25": 5,
+    "neurips24": 1,
+    "acl25": 3,
+    "iclr25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

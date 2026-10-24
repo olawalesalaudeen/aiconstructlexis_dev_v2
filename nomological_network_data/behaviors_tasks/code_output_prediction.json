@@ -1,0 +1,131 @@
+{
+  "canonical_name": "Code output prediction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the available definitions, the prevailing usage treats it as predicting a program's final output from the program and its inputs. A broader framing calls it execution reasoning, extending the task to inferring inputs from outputs and often asking for step by step simulation; across both framings, the common element is explicit execution simulation, with one paper stating that \"the output prediction requires the LLM to simulate a compiler.\"\n\nVariants. Papers use both the narrower name \"output prediction\" and the broader label \"execution reasoning.\" Studied variants include output prediction, input prediction, and code execution tasks, and some formulations require a verbal trace that explains each line's impact, which lines are executed, how variables change, and what final output is produced.\n\nSpace of elicitation and scores. Papers measure it with 2 instruments, most often CRUXEval and then LiveCodeBench. These are used as benchmark tasks: CRUXEval appears through CruxEval-I for input prediction and CruxEval-O for output prediction, while LiveCodeBench is used through a code execution task.\n\nWhat it is taken as evidence of. Papers link it to 1 construct, Test generation ability. Rather than presenting it as a direct indicator of a construct, one paper claims a causal relationship from code output prediction to Test generation ability, attributing weaker test generation to models \"struggling to reason about execution\" and to frequent assertion errors on complex code paths; no other construct link is recorded.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Output prediction",
+    "Execution reasoning",
+    "Code execution prediction"
+  ],
+  "papers": [
+    "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis",
+    "TestGenEval: A Real World Unit Test Generation and Test Completion Benchmark",
+    "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+    "Can Large Language Models Understand Intermediate Representations in Compilers?",
+    "CodeIO: Condensing Reasoning Patterns via Code Input-Output Prediction",
+    "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+    "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Predicting the final output of a program given the program and its inputs.",
+      "paper": "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+      "original_name": "Output prediction"
+    },
+    {
+      "text": "The observable task of predicting program outputs given inputs or inferring inputs given outputs, often involving step-by-step simulation.",
+      "paper": "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+      "original_name": "Execution reasoning"
+    },
+    {
+      "text": "The observable task of predicting the final output or result of executing a given piece of code.",
+      "paper": "CodeIO: Condensing Reasoning Patterns via Code Input-Output Prediction",
+      "original_name": "Code execution prediction"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CRUXEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "evidence": "two code-understanding tasks\u2014namely, CruxEval-I (input prediction) and CruxEval-O (output prediction) from CruxEval benchmark [6] (Section 4.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+        ],
+        "iclr25": [
+          "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LiveCodeBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+      "evidence": "\"For execution reasoning, we employ CRUXEval [37] and the code execution task in LiveCodeBench (LCB-Exec for short) [18].\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the available definitions, the prevailing usage treats it as predicting a program's final output from the program and its inputs. A broader framing calls it execution reasoning, extending the task to inferring inputs from outputs and often asking for step by step simulation; across both framings, the common element is explicit execution simulation, with one paper stating that \"the output prediction requires the LLM to simulate a compiler.\""
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use both the narrower name \"output prediction\" and the broader label \"execution reasoning.\" Studied variants include output prediction, input prediction, and code execution tasks, and some formulations require a verbal trace that explains each line's impact, which lines are executed, how variables change, and what final output is produced."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure it with 2 instruments, most often CRUXEval and then LiveCodeBench. These are used as benchmark tasks: CRUXEval appears through CruxEval-I for input prediction and CruxEval-O for output prediction, while LiveCodeBench is used through a code execution task."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to 1 construct, Test generation ability. Rather than presenting it as a direct indicator of a construct, one paper claims a causal relationship from code output prediction to Test generation ability, attributing weaker test generation to models \"struggling to reason about execution\" and to frequent assertion errors on complex code paths; no other construct link is recorded."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the available definitions, the prevailing usage treats it as predicting a program's final output from the program and its inputs. A broader framing calls it execution reasoning, extending the task to inferring inputs from outputs and often asking for step by step simulation; across both framings, the common element is explicit execution simulation, with one paper stating that \"the output prediction requires the LLM to simulate a compiler.\"\n\nVariants. Papers use both the narrower name \"output prediction\" and the broader label \"execution reasoning.\" Studied variants include output prediction, input prediction, and code execution tasks, and some formulations require a verbal trace that explains each line's impact, which lines are executed, how variables change, and what final output is produced.\n\nSpace of elicitation and scores. Papers measure it with 2 instruments, most often CRUXEval and then LiveCodeBench. These are used as benchmark tasks: CRUXEval appears through CruxEval-I for input prediction and CruxEval-O for output prediction, while LiveCodeBench is used through a code execution task.\n\nWhat it is taken as evidence of. Papers link it to 1 construct, Test generation ability. Rather than presenting it as a direct indicator of a construct, one paper claims a causal relationship from code output prediction to Test generation ability, attributing weaker test generation to models \"struggling to reason about execution\" and to frequent assertion errors on complex code paths; no other construct link is recorded.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis"
+    ],
+    "iclr25": [
+      "TestGenEval: A Real World Unit Test Generation and Test Completion Benchmark",
+      "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment"
+    ],
+    "icml25": [
+      "Can Large Language Models Understand Intermediate Representations in Compilers?",
+      "CodeIO: Condensing Reasoning Patterns via Code Input-Output Prediction"
+    ],
+    "neurips24": [
+      "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 1,
+    "iclr25": 2,
+    "icml25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

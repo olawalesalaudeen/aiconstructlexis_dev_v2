@@ -1,0 +1,95 @@
+{
+  "canonical_name": "Sampling efficiency",
+  "type": "construct",
+  "canonical_definition": "Based on the provided data, sampling efficiency is defined as the degree to which a model can generate text with fewer denoising steps or less wall-clock time while maintaining quality. This framing, from \"Energy-Based Diffusion Language Models for Text Generation,\" presents the construct as a trade-off between generation speed and output quality. The construct is operationalized by measuring reductions in the number of sampling steps or increases in sampling speed. For instance, one paper cites a \"1.3\u00d7 sampling speedup\" as evidence of improved efficiency. Beyond being a direct target for optimization, sampling efficiency is also positioned as an outcome of other model capabilities. One paper suggests that it is causally influenced by a model's reasoning quality.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Sampling efficiency"
+  ],
+  "papers": [
+    "Energy-Based Diffusion Language Models for Text Generation",
+    "Fragment and Geometry Aware Tokenization of Molecules for Structure-Based Drug Design Using Language Models",
+    "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+    "Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which a model can generate text with fewer denoising steps or less wall-clock time while maintaining quality.",
+      "paper": "Energy-Based Diffusion Language Models for Text Generation",
+      "original_name": "Sampling efficiency"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Token decoding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "evidence": "\u201cParallel decoding essentially reuses the previous network output to reduce the NFE\u201d",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "iclr25": [
+          "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Token decoding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "evidence": "When the network parameterization is independent of the time, the FHS ... can be completely free from the time and become a token-by-token decoding process akin to masked models. ... The FHS demonstrates appealing properties: Tackling the Sampling Inefficiency",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "iclr25": [
+          "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning quality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+      "evidence": "\"RASC enhances sampling efficiency and reasoning faithfulness by dynamically evaluating both outputs and rationales.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Based on the provided data, sampling efficiency is defined as the degree to which a model can generate text with fewer denoising steps or less wall-clock time while maintaining quality. This framing, from \"Energy-Based Diffusion Language Models for Text Generation,\" presents the construct as a trade-off between generation speed and output quality. The construct is operationalized by measuring reductions in the number of sampling steps or increases in sampling speed. For instance, one paper cites a \"1.3\u00d7 sampling speedup\" as evidence of improved efficiency. Beyond being a direct target for optimization, sampling efficiency is also positioned as an outcome of other model capabilities. One paper suggests that it is causally influenced by a model's reasoning quality.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Energy-Based Diffusion Language Models for Text Generation",
+      "Fragment and Geometry Aware Tokenization of Molecules for Structure-Based Drug Design Using Language Models",
+      "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

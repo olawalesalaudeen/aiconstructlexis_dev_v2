@@ -1,0 +1,509 @@
+{
+  "canonical_name": "Downstream task performance",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across definitions, the dominant framing is observable performance on downstream tasks or benchmarks, usually supervised, after pre-training, continual growth, or fine-tuning. Papers describe success as strong, equivalent, or better performance, often stated as task accuracy or as how well outputs solve target evaluation problems; one source says that improvement in validation loss \"transfers to an improvement in downstream task accuracy.\" A smaller line of work casts it more broadly as the overall quality of an ensemble's outputs on a benchmark.\n\nVariants. Authors use several near-synonymous labels, including downstream task performance, downstream task evaluation, downstream task solving, and task performance. The settings range from representative downstream tests after continual growth, to fine-tuned tasks such as sentiment analysis or math, to ensemble benchmarks. Papers also study suites and domains including GLUE, GSM8K, ARC-Easy, and Indonesian benchmarks such as IndoCulture, and one paper refers specifically to arithmetic reasoning when linking this behavior to semantic consistency.\n\nSpace of elicitation and scores. Papers operationalize it with 21 measurement instruments. The most frequently linked are GSM8K, lm-evaluation-harness, AG News, ARC-Easy, and AlpacaEval, while other papers use additional benchmark suites and task datasets. Scoring is commonly reported as downstream task accuracy, finetune accuracy on a testing dataset, or an average score across 0-shot to 5-shot settings.\n\nWhat it is taken as evidence of. Papers link it to 2 constructs, and the links do not use the same relation type or direction. It is reported as related to Generation diversity in work describing gains on the \"Pareto front of task performance and diversity of model generations,\" and one paper claims a causal relationship from Semantic consistency to Downstream task performance, stating that increasing semantic consistency by filtering \"does not degrade performance for arithmetic reasoning.\"",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Downstream task performance",
+    "Downstream task evaluation",
+    "Downstream task solving",
+    "Task performance"
+  ],
+  "papers": [
+    "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages",
+    "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules",
+    "Balancing Act: Diversity and Consistency in Large Language Model Ensembles",
+    "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+    "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+    "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition",
+    "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently",
+    "Polynomial Composition Activations: Unleashing the Dynamics of Large Language Models",
+    "nGPT: Normalized Transformer with Representation Learning on the Hypersphere",
+    "LASER: Attention with Exponential Transformation",
+    "Reinforced Lifelong Editing for Language Models",
+    "The Sharpness Disparity Principle in Transformers for Accelerating Language Model Pre-Training",
+    "Imitating Language via Scalable Inverse Reinforcement Learning"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing outputs that support strong performance on supervised language tasks after pre-training or continual growth.",
+      "paper": "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently",
+      "original_name": "Downstream task performance"
+    },
+    {
+      "text": "The observable performance of a pre-trained model on a suite of specific, often supervised, tasks to assess its acquired capabilities.",
+      "paper": "The Sharpness Disparity Principle in Transformers for Accelerating Language Model Pre-Training",
+      "original_name": "Downstream task evaluation"
+    },
+    {
+      "text": "The observable performance of the model on specific tasks like sentiment analysis or math after fine-tuning.",
+      "paper": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "original_name": "Downstream task solving"
+    },
+    {
+      "text": "The overall quality of an ensemble's outputs on a downstream benchmark or task, as reflected by how well it solves the target evaluation problems.",
+      "paper": "Balancing Act: Diversity and Consistency in Large Language Model Ensembles",
+      "original_name": "Task performance"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Imitating Language via Scalable Inverse Reinforcement Learning",
+      "evidence": "We assess their impact on task performance, diversity of model generations, and computational requirements. Concretely, we compare MLE-based next token prediction and different IRL methods for fine-tuning LLMs on common benchmarks. ... We use the following datasets and subsets for ablation in the following sections: XSUM, GSM8k, TLDR, and WMT22.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Imitating Language via Scalable Inverse Reinforcement Learning"
+        ],
+        "iclr25": [
+          "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation"
+        ],
+        "icml25": [
+          "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "lm-evaluation-harness",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Training-Free Activation Sparsity in Large Language Models",
+      "evidence": "...and on an aggregate of six downstream tasks using the EleutherAI LM Harness (Gao et al., 2023)... (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Training-Free Activation Sparsity in Large Language Models"
+        ],
+        "icml25": [
+          "Domain2Vec: Vectorizing Datasets to Find the Optimal Data Mixture without Training",
+          "The Sharpness Disparity Principle in Transformers for Accelerating Language Model Pre-Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently",
+      "evidence": "\u201cIn Table 6, we list the performance on downstream tasks of GLUE and SAQuAD according to LIGO(Wang et al., 2023).\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently"
+        ],
+        "icml25": [
+          "Reinforced Lifelong Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SST-2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "evidence": "\u201cFor fine-tuning task, we consider SST2(Socher et al., 2013), AGNEWS(Zhang et al., 2015), GSM8K(Cobbe et al., 2021) and AlpacaEval (Li et al., 2023a) as the user fine-tuning task.\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation"
+        ],
+        "icml25": [
+          "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AG News",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "evidence": "\u201cFor fine-tuning task, we consider SST2(Socher et al., 2013), AGNEWS(Zhang et al., 2015), GSM8K(Cobbe et al., 2021) and AlpacaEval (Li et al., 2023a) as the user fine-tuning task.\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation"
+        ],
+        "icml25": [
+          "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlpacaEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "evidence": "\u201cFor fine-tuning task, we consider SST2(Socher et al., 2013), AGNEWS(Zhang et al., 2015), GSM8K(Cobbe et al., 2021) and AlpacaEval (Li et al., 2023a) as the user fine-tuning task.\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation"
+        ],
+        "icml25": [
+          "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Easy",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "nGPT: Normalized Transformer with Representation Learning on the Hypersphere",
+      "evidence": "Figure 3: Models trained with 4k context length. Final performance (y-axis) on a set of downstream tasks... 4K context: arc easy",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "nGPT: Normalized Transformer with Representation Learning on the Hypersphere"
+        ],
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "nGPT: Normalized Transformer with Representation Learning on the Hypersphere",
+      "evidence": "Figure 3: Models trained with 4k context length. Final performance (y-axis) on a set of downstream tasks... hellaswag",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "nGPT: Normalized Transformer with Representation Learning on the Hypersphere"
+        ],
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WinoGrande",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "nGPT: Normalized Transformer with Representation Learning on the Hypersphere",
+      "evidence": "Figure 3: Models trained with 4k context length. Final performance (y-axis) on a set of downstream tasks... winogrande",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "nGPT: Normalized Transformer with Representation Learning on the Hypersphere"
+        ],
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LAMBADA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "nGPT: Normalized Transformer with Representation Learning on the Hypersphere",
+      "evidence": "Figure 3: Models trained with 4k context length. Final performance (y-axis) on a set of downstream tasks... lambada",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "nGPT: Normalized Transformer with Representation Learning on the Hypersphere"
+        ],
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Imitating Language via Scalable Inverse Reinforcement Learning",
+      "evidence": "\u201cOur experiments demonstrate particularly strong gains for IRL on the Pareto front of task performance and diversity of model generations.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Imitating Language via Scalable Inverse Reinforcement Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Imitating Language via Scalable Inverse Reinforcement Learning",
+      "evidence": "We assess their impact on task performance, diversity of model generations, and computational requirements. Concretely, we compare MLE-based next token prediction and different IRL methods for fine-tuning LLMs on common benchmarks. ... We use the following datasets and subsets for ablation in the following sections: XSUM, GSM8k, TLDR, and WMT22.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Imitating Language via Scalable Inverse Reinforcement Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "Language models scale reliably with over-training and on downstream tasks",
+      "evidence": "To connect loss scaling and downstream error prediction, we observe that average top-1 error decreases exponentially as a function of validation loss, which we formalize as a novel scaling law (Section 2.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Language models scale reliably with over-training and on downstream tasks"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SQuAD v1.1",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently",
+      "evidence": "\u201cIn Table 6, we list the performance on downstream tasks of GLUE and SAQuAD according to LIGO(Wang et al., 2023).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Challenge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Inference-Efficient Language Models",
+      "evidence": "We evaluate the downstream task accuracy of models derived from the methodology outlined in \u00a72.3 using the following datasets: ARC-Easy (Clark et al., 2018), ARC-Challenge (Clark et al., 2018), BoolQ (Clark et al., 2019), COPA (Roemmele et al., 2011), HellaSwag (Zellers et al., 2019), LAMBADA (Paperno et al., 2016), PIQA (Bisk et al., 2020), WinoGrande (Sakaguchi et al., 2021), MMLU (Hendrycks et al., 2020), Jeopardy (Jeo, 2022), and Winograd (Levesque et al., 2012). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BoolQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Inference-Efficient Language Models",
+      "evidence": "We evaluate the downstream task accuracy of models derived from the methodology outlined in \u00a72.3 using the following datasets: ARC-Easy (Clark et al., 2018), ARC-Challenge (Clark et al., 2018), BoolQ (Clark et al., 2019), COPA (Roemmele et al., 2011), HellaSwag (Zellers et al., 2019), LAMBADA (Paperno et al., 2016), PIQA (Bisk et al., 2020), WinoGrande (Sakaguchi et al., 2021), MMLU (Hendrycks et al., 2020), Jeopardy (Jeo, 2022), and Winograd (Levesque et al., 2012). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "COPA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Inference-Efficient Language Models",
+      "evidence": "We evaluate the downstream task accuracy of models derived from the methodology outlined in \u00a72.3 using the following datasets: ARC-Easy (Clark et al., 2018), ARC-Challenge (Clark et al., 2018), BoolQ (Clark et al., 2019), COPA (Roemmele et al., 2011), HellaSwag (Zellers et al., 2019), LAMBADA (Paperno et al., 2016), PIQA (Bisk et al., 2020), WinoGrande (Sakaguchi et al., 2021), MMLU (Hendrycks et al., 2020), Jeopardy (Jeo, 2022), and Winograd (Levesque et al., 2012). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Inference-Efficient Language Models",
+      "evidence": "We evaluate the downstream task accuracy of models derived from the methodology outlined in \u00a72.3 using the following datasets: ARC-Easy (Clark et al., 2018), ARC-Challenge (Clark et al., 2018), BoolQ (Clark et al., 2019), COPA (Roemmele et al., 2011), HellaSwag (Zellers et al., 2019), LAMBADA (Paperno et al., 2016), PIQA (Bisk et al., 2020), WinoGrande (Sakaguchi et al., 2021), MMLU (Hendrycks et al., 2020), Jeopardy (Jeo, 2022), and Winograd (Levesque et al., 2012). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Inference-Efficient Language Models",
+      "evidence": "We evaluate the downstream task accuracy of models derived from the methodology outlined in \u00a72.3 using the following datasets: ARC-Easy (Clark et al., 2018), ARC-Challenge (Clark et al., 2018), BoolQ (Clark et al., 2019), COPA (Roemmele et al., 2011), HellaSwag (Zellers et al., 2019), LAMBADA (Paperno et al., 2016), PIQA (Bisk et al., 2020), WinoGrande (Sakaguchi et al., 2021), MMLU (Hendrycks et al., 2020), Jeopardy (Jeo, 2022), and Winograd (Levesque et al., 2012). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WSC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Inference-Efficient Language Models",
+      "evidence": "We evaluate the downstream task accuracy of models derived from the methodology outlined in \u00a72.3 using the following datasets: ARC-Easy (Clark et al., 2018), ARC-Challenge (Clark et al., 2018), BoolQ (Clark et al., 2019), COPA (Roemmele et al., 2011), HellaSwag (Zellers et al., 2019), LAMBADA (Paperno et al., 2016), PIQA (Bisk et al., 2020), WinoGrande (Sakaguchi et al., 2021), MMLU (Hendrycks et al., 2020), Jeopardy (Jeo, 2022), and Winograd (Levesque et al., 2012). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Scaling Inference-Efficient Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "IndoCulture",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages",
+      "evidence": "To assess the broader impact of safety fine-tuning on downstream performance, we also evaluated the fine-tuned models on a range of Indonesian benchmarks, including IndoMMLU (Koto et al., 2023), IndoCareer (Koto, 2025), IndoCulture (Koto et al., 2024), MAPS (Liu et al., 2024), COPAL-ID (Wibowo et al., 2024), and IndoCloze (Koto et al., 2022).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "COPAL-ID",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages",
+      "evidence": "To assess the broader impact of safety fine-tuning on downstream performance, we also evaluated the fine-tuned models on a range of Indonesian benchmarks, including IndoMMLU (Koto et al., 2023), IndoCareer (Koto, 2025), IndoCulture (Koto et al., 2024), MAPS (Liu et al., 2024), COPAL-ID (Wibowo et al., 2024), and IndoCloze (Koto et al., 2022).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reward hacking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+      "evidence": "One of the challenges of the alignment step is possible degradation of performance on downstream tasks, which can be attributed to reward hacking (Xu et al., 2024b). (Section 6.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Pile-CC",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Domain2Vec: Vectorizing Datasets to Find the Optimal Data Mixture without Training",
+      "evidence": "Fortunately, Liu et al. (2024) finds that validation loss on Pile-CC correlates most strongly with downstream performance across their evaluations. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Domain2Vec: Vectorizing Datasets to Find the Optimal Data Mixture without Training"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 24,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 23,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across definitions, the dominant framing is observable performance on downstream tasks or benchmarks, usually supervised, after pre-training, continual growth, or fine-tuning. Papers describe success as strong, equivalent, or better performance, often stated as task accuracy or as how well outputs solve target evaluation problems; one source says that improvement in validation loss \"transfers to an improvement in downstream task accuracy.\" A smaller line of work casts it more broadly as the overall quality of an ensemble's outputs on a benchmark."
+    },
+    {
+      "label": "Variants.",
+      "text": "Authors use several near-synonymous labels, including downstream task performance, downstream task evaluation, downstream task solving, and task performance. The settings range from representative downstream tests after continual growth, to fine-tuned tasks such as sentiment analysis or math, to ensemble benchmarks. Papers also study suites and domains including GLUE, GSM8K, ARC-Easy, and Indonesian benchmarks such as IndoCulture, and one paper refers specifically to arithmetic reasoning when linking this behavior to semantic consistency."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers operationalize it with 21 measurement instruments. The most frequently linked are GSM8K, lm-evaluation-harness, AG News, ARC-Easy, and AlpacaEval, while other papers use additional benchmark suites and task datasets. Scoring is commonly reported as downstream task accuracy, finetune accuracy on a testing dataset, or an average score across 0-shot to 5-shot settings."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to 2 constructs, and the links do not use the same relation type or direction. It is reported as related to Generation diversity in work describing gains on the \"Pareto front of task performance and diversity of model generations,\" and one paper claims a causal relationship from Semantic consistency to Downstream task performance, stating that increasing semantic consistency by filtering \"does not degrade performance for arithmetic reasoning.\""
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across definitions, the dominant framing is observable performance on downstream tasks or benchmarks, usually supervised, after pre-training, continual growth, or fine-tuning. Papers describe success as strong, equivalent, or better performance, often stated as task accuracy or as how well outputs solve target evaluation problems; one source says that improvement in validation loss \"transfers to an improvement in downstream task accuracy.\" A smaller line of work casts it more broadly as the overall quality of an ensemble's outputs on a benchmark.\n\nVariants. Authors use several near-synonymous labels, including downstream task performance, downstream task evaluation, downstream task solving, and task performance. The settings range from representative downstream tests after continual growth, to fine-tuned tasks such as sentiment analysis or math, to ensemble benchmarks. Papers also study suites and domains including GLUE, GSM8K, ARC-Easy, and Indonesian benchmarks such as IndoCulture, and one paper refers specifically to arithmetic reasoning when linking this behavior to semantic consistency.\n\nSpace of elicitation and scores. Papers operationalize it with 21 measurement instruments. The most frequently linked are GSM8K, lm-evaluation-harness, AG News, ARC-Easy, and AlpacaEval, while other papers use additional benchmark suites and task datasets. Scoring is commonly reported as downstream task accuracy, finetune accuracy on a testing dataset, or an average score across 0-shot to 5-shot settings.\n\nWhat it is taken as evidence of. Papers link it to 2 constructs, and the links do not use the same relation type or direction. It is reported as related to Generation diversity in work describing gains on the \"Pareto front of task performance and diversity of model generations,\" and one paper claims a causal relationship from Semantic consistency to Downstream task performance, stating that increasing semantic consistency by filtering \"does not degrade performance for arithmetic reasoning.\"",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages"
+    ],
+    "iclr25": [
+      "A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules",
+      "Balancing Act: Diversity and Consistency in Large Language Model Ensembles",
+      "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+      "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition",
+      "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently",
+      "Polynomial Composition Activations: Unleashing the Dynamics of Large Language Models",
+      "nGPT: Normalized Transformer with Representation Learning on the Hypersphere"
+    ],
+    "icml25": [
+      "LASER: Attention with Exponential Transformation",
+      "Reinforced Lifelong Editing for Language Models",
+      "The Sharpness Disparity Principle in Transformers for Accelerating Language Model Pre-Training"
+    ],
+    "neurips24": [
+      "Imitating Language via Scalable Inverse Reinforcement Learning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 1,
+    "iclr25": 8,
+    "icml25": 3,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

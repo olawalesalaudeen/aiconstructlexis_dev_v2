@@ -1,0 +1,300 @@
+{
+  "canonical_name": "Overconfidence",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats overconfidence as a tendency, latent property, or trait in which a model's stated or predicted confidence exceeds its actual accuracy or correctness. This shared framing appears in work on posterior probabilities, verbalized confidence, assertive answers beyond the model's knowledge, and predictions on incorrect, unfamiliar, ambiguous, or out-of-distribution inputs; several papers also say it is heightened after fine-tuning or instruction-tuning, and one says auto-regressive decoding and exposure bias exacerbate it. A smaller line of work narrows the term to overconfident generation, especially self-consistent hallucinations, and one paper uses the same label for a different game-theoretic behavior, overlooking risks in pursuit of greater rewards.\n\nSpace of facets. The papers specialize the construct by context and manifestation rather than through a shared taxonomy. Some frame it at the level of confidence estimates or calibration, others at the level of output distributions as overly peaked probabilities, and others at the level of generation, such as self-consistent hallucinations or assertive answers on unfamiliar topics; ambiguous inputs and out-of-distribution inputs are also named settings where it appears. The clearest disagreement is whether the term names a calibration mismatch between confidence and accuracy, which is the prevalent usage, or a strategic risk-taking pattern in game play, which appears as a minority usage.\n\nSpace of measurement. Operationalization is mostly direct rather than instrument-based: no measurement instrument is linked to overconfidence, while papers link it to three behavioral indicators, Hallucination, Confidence correction, and Confidence estimation, and to five constructs, most often Calibration. Papers operationalize it through confidence-correctness gaps, such as accuracy in confidence bins falling below stated confidence, posterior probabilities concentrated at very high confidence with high ECE, or output distributions kept from becoming overly peaked with a maximum-entropy term; temperature scaling and label smoothing are also described as ways to reduce or penalize it. One paper also uses an overconfidence quantity to measure Knowledge boundary awareness, defined as the fraction of incorrect answers where a method was confident about self-knowledge.\n\nLinks. Several papers place overconfidence in a network around calibration and hallucination. A few papers claim a causal relationship from Overconfidence to Hallucination, including hallucinated answers to unanswerable questions, and one paper claims a causal relationship from Overconfidence to Context faithfulness; one paper also claims a causal relationship from Overconfidence to Calibration, stating that it often manifests as poor calibration. In the other direction, papers claim causal relationships from Factuality, World knowledge, and Calibration to Overconfidence, report that Calibration correlates with Overconfidence and is related to it, and relate Confidence estimation and Confidence correction to Overconfidence.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Over-confidence",
+    "Overconfidence",
+    "Overconfident generation"
+  ],
+  "papers": [
+    "Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering",
+    "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+    "Do not Abstain! Identify and Solve the Uncertainty",
+    "GRACE: A Granular Benchmark for Evaluating Model Calibration against Human Calibration",
+    "Knowledge Boundary of Large Language Models: A Survey",
+    "Towards Fully Exploiting LLM Internal States to Enhance Knowledge Boundary Perception",
+    "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?",
+    "Alignment for Efficient Tool Calling of Large Language Models",
+    "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+    "Identifying and Answering Questions with False Assumptions: An Interpretable Approach",
+    "RAcQUEt: Unveiling the Dangers of Overlooked Referential Ambiguity in Visual LLMs",
+    "Reasoning under Uncertainty: Efficient LLM Inference via Unsupervised Confidence Dilution and Convergent Adaptive Sampling",
+    "When Annotators Disagree, Topology Explains: Mapper, a Topological Tool for Exploring Text Embedding Geometry and Ambiguity",
+    "Bayesian Low-rank Adaptation for Large Language Models",
+    "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs",
+    "Energy-based Automated Model Evaluation",
+    "INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection",
+    "It's Never Too Late: Fusing Acoustic Information into Large Language Models for Automatic Speech Recognition",
+    "Out-of-Distribution Detection by Leveraging Between-Layer Transformation Smoothness",
+    "CREAM: Consistency Regularized Self-Rewarding Language Models",
+    "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+    "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+    "Not All LLM-Generated Data Are Equal: Rethinking Data Weighting in Text Classification",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+    "Steering Large Language Models between Code Execution and Textual Reasoning",
+    "Taming Overconfidence in LLMs: Reward Calibration in RLHF",
+    "Weak to Strong Generalization for Large Language Models with Multi-capabilities",
+    "Calibrated Language Models and How to Find Them with Label Smoothing",
+    "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction",
+    "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+    "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+    "GTBench: Uncovering the Strategic Reasoning Capabilities of LLMs via Game-Theoretic Evaluations",
+    "LACIE: Listener-Aware Finetuning for Calibration in Large Language Models",
+    "Perception of Knowledge Boundary for Large Language Models through Semi-open-ended Question Answering"
+  ],
+  "paper_count": 34,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A latent property where the model's confidence in its predictions exceeds its actual accuracy, particularly exacerbated during auto-regressive decoding due to exposure bias.",
+      "paper": "It's Never Too Late: Fusing Acoustic Information into Large Language Models for Automatic Speech Recognition",
+      "original_name": "Over-confidence"
+    },
+    {
+      "text": "A dispositional trait where a model's predicted confidence is systematically higher than its actual accuracy, particularly after fine-tuning.",
+      "paper": "Bayesian Low-rank Adaptation for Large Language Models",
+      "original_name": "Overconfidence"
+    },
+    {
+      "text": "A latent tendency of a model to produce highly confident but incorrect outputs, particularly in cases where multiple consistent hallucinations are generated, evading standard consistency checks.",
+      "paper": "INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection",
+      "original_name": "Overconfident generation"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Calibration",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "evidence": "Fine-tuned large language models (LLMs) often exhibit overconfidence, particularly when trained on small datasets, resulting in poor calibration and inaccurate uncertainty estimates.",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+          "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+        ],
+        "icml25": [
+          "Calibrated Language Models and How to Find Them with Label Smoothing",
+          "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach"
+        ],
+        "emnlp25": [
+          "Reasoning under Uncertainty: Efficient LLM Inference via Unsupervised Confidence Dilution and Convergent Adaptive Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering",
+      "evidence": "tuning LLMs on data containing unseen knowledge can encourage models to be overconfident, leading to hallucinations (Section 2).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering"
+        ],
+        "emnlp25": [
+          "Identifying and Answering Questions with False Assumptions: An Interpretable Approach"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Confidence estimation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "evidence": "The performance of Med-LVLMs in uncertainty estimation is unsatisfactory, revealing a poor understanding of their medical knowledge limits. Additionally, these models tend to exhibit overconfidence, thereby increasing the risk of misdiagnoses. (Sec 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+      "evidence": "factuality enhancement can lead LLMs to become overly confident in their parametric knowledge (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Context faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+      "evidence": "overconfidence, resulting in a substantial setback for the context-faithfulness of LLMs. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "World knowledge",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?",
+      "evidence": "Specifically, data aligned with LLMs\u2019 prior knowledge would induce overconfidence, while new knowledge improves calibration. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Confidence correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Calibration Across Layers: Understanding Calibration Evolution in LLMs",
+      "evidence": "This suggests that even after the model has become sufficiently accurate, it undergoes a phase of overconfidence before recalibrating its predictions. We refer to this as a \u201cconfidence correction phase\u201d in the final layers.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Calibration Across Layers: Understanding Calibration Evolution in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge boundary awareness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Adaptive Retrieval Without Self-Knowledge? Bringing Uncertainty Back Home",
+      "evidence": "Overconfidence is a fraction of incorrect answers where the method was confident about self-knowledge reflecting how often the method incorrectly assumes that the model possesses the required knowledge when it does not.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Adaptive Retrieval Without Self-Knowledge? Bringing Uncertainty Back Home"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 8,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats overconfidence as a tendency, latent property, or trait in which a model's stated or predicted confidence exceeds its actual accuracy or correctness. This shared framing appears in work on posterior probabilities, verbalized confidence, assertive answers beyond the model's knowledge, and predictions on incorrect, unfamiliar, ambiguous, or out-of-distribution inputs; several papers also say it is heightened after fine-tuning or instruction-tuning, and one says auto-regressive decoding and exposure bias exacerbate it. A smaller line of work narrows the term to overconfident generation, especially self-consistent hallucinations, and one paper uses the same label for a different game-theoretic behavior, overlooking risks in pursuit of greater rewards."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "The papers specialize the construct by context and manifestation rather than through a shared taxonomy. Some frame it at the level of confidence estimates or calibration, others at the level of output distributions as overly peaked probabilities, and others at the level of generation, such as self-consistent hallucinations or assertive answers on unfamiliar topics; ambiguous inputs and out-of-distribution inputs are also named settings where it appears. The clearest disagreement is whether the term names a calibration mismatch between confidence and accuracy, which is the prevalent usage, or a strategic risk-taking pattern in game play, which appears as a minority usage."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is mostly direct rather than instrument-based: no measurement instrument is linked to overconfidence, while papers link it to three behavioral indicators, Hallucination, Confidence correction, and Confidence estimation, and to five constructs, most often Calibration. Papers operationalize it through confidence-correctness gaps, such as accuracy in confidence bins falling below stated confidence, posterior probabilities concentrated at very high confidence with high ECE, or output distributions kept from becoming overly peaked with a maximum-entropy term; temperature scaling and label smoothing are also described as ways to reduce or penalize it. One paper also uses an overconfidence quantity to measure Knowledge boundary awareness, defined as the fraction of incorrect answers where a method was confident about self-knowledge."
+    },
+    {
+      "label": "Links.",
+      "text": "Several papers place overconfidence in a network around calibration and hallucination. A few papers claim a causal relationship from Overconfidence to Hallucination, including hallucinated answers to unanswerable questions, and one paper claims a causal relationship from Overconfidence to Context faithfulness; one paper also claims a causal relationship from Overconfidence to Calibration, stating that it often manifests as poor calibration. In the other direction, papers claim causal relationships from Factuality, World knowledge, and Calibration to Overconfidence, report that Calibration correlates with Overconfidence and is related to it, and relate Confidence estimation and Confidence correction to Overconfidence."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define overconfidence as a model property where stated confidence or predictive probability is too high relative to actual correctness or accuracy, often described as confident wrong predictions, poor calibration, or overly peaked probabilities on OOD or uncertain cases. One paper instead uses overconfidence for a strategic tendency to underestimate risks or an opponent, but that is a clear outlier rather than a substantial alternative usage.",
+    "papers_with_definition": 11,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats overconfidence as a tendency, latent property, or trait in which a model's stated or predicted confidence exceeds its actual accuracy or correctness. This shared framing appears in work on posterior probabilities, verbalized confidence, assertive answers beyond the model's knowledge, and predictions on incorrect, unfamiliar, ambiguous, or out-of-distribution inputs; several papers also say it is heightened after fine-tuning or instruction-tuning, and one says auto-regressive decoding and exposure bias exacerbate it. A smaller line of work narrows the term to overconfident generation, especially self-consistent hallucinations, and one paper uses the same label for a different game-theoretic behavior, overlooking risks in pursuit of greater rewards.\n\nSpace of facets. The papers specialize the construct by context and manifestation rather than through a shared taxonomy. Some frame it at the level of confidence estimates or calibration, others at the level of output distributions as overly peaked probabilities, and others at the level of generation, such as self-consistent hallucinations or assertive answers on unfamiliar topics; ambiguous inputs and out-of-distribution inputs are also named settings where it appears. The clearest disagreement is whether the term names a calibration mismatch between confidence and accuracy, which is the prevalent usage, or a strategic risk-taking pattern in game play, which appears as a minority usage.\n\nSpace of measurement. Operationalization is mostly direct rather than instrument-based: no measurement instrument is linked to overconfidence, while papers link it to three behavioral indicators, Hallucination, Confidence correction, and Confidence estimation, and to five constructs, most often Calibration. Papers operationalize it through confidence-correctness gaps, such as accuracy in confidence bins falling below stated confidence, posterior probabilities concentrated at very high confidence with high ECE, or output distributions kept from becoming overly peaked with a maximum-entropy term; temperature scaling and label smoothing are also described as ways to reduce or penalize it. One paper also uses an overconfidence quantity to measure Knowledge boundary awareness, defined as the fraction of incorrect answers where a method was confident about self-knowledge.\n\nLinks. Several papers place overconfidence in a network around calibration and hallucination. A few papers claim a causal relationship from Overconfidence to Hallucination, including hallucinated answers to unanswerable questions, and one paper claims a causal relationship from Overconfidence to Context faithfulness; one paper also claims a causal relationship from Overconfidence to Calibration, stating that it often manifests as poor calibration. In the other direction, papers claim causal relationships from Factuality, World knowledge, and Calibration to Overconfidence, report that Calibration correlates with Overconfidence and is related to it, and relate Confidence estimation and Confidence correction to Overconfidence.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering",
+      "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+      "Do not Abstain! Identify and Solve the Uncertainty",
+      "GRACE: A Granular Benchmark for Evaluating Model Calibration against Human Calibration",
+      "Knowledge Boundary of Large Language Models: A Survey",
+      "Towards Fully Exploiting LLM Internal States to Enhance Knowledge Boundary Perception",
+      "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?"
+    ],
+    "emnlp25": [
+      "Alignment for Efficient Tool Calling of Large Language Models",
+      "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+      "Identifying and Answering Questions with False Assumptions: An Interpretable Approach",
+      "RAcQUEt: Unveiling the Dangers of Overlooked Referential Ambiguity in Visual LLMs",
+      "Reasoning under Uncertainty: Efficient LLM Inference via Unsupervised Confidence Dilution and Convergent Adaptive Sampling",
+      "When Annotators Disagree, Topology Explains: Mapper, a Topological Tool for Exploring Text Embedding Geometry and Ambiguity"
+    ],
+    "iclr24": [
+      "Bayesian Low-rank Adaptation for Large Language Models",
+      "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs",
+      "Energy-based Automated Model Evaluation",
+      "INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection",
+      "It's Never Too Late: Fusing Acoustic Information into Large Language Models for Automatic Speech Recognition",
+      "Out-of-Distribution Detection by Leveraging Between-Layer Transformation Smoothness"
+    ],
+    "iclr25": [
+      "CREAM: Consistency Regularized Self-Rewarding Language Models",
+      "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+      "Not All LLM-Generated Data Are Equal: Rethinking Data Weighting in Text Classification",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "Steering Large Language Models between Code Execution and Textual Reasoning",
+      "Taming Overconfidence in LLMs: Reward Calibration in RLHF",
+      "Weak to Strong Generalization for Large Language Models with Multi-capabilities"
+    ],
+    "icml25": [
+      "Calibrated Language Models and How to Find Them with Label Smoothing",
+      "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction",
+      "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach"
+    ],
+    "neurips24": [
+      "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "GTBench: Uncovering the Strategic Reasoning Capabilities of LLMs via Game-Theoretic Evaluations",
+      "LACIE: Listener-Aware Finetuning for Calibration in Large Language Models",
+      "Perception of Knowledge Boundary for Large Language Models through Semi-open-ended Question Answering"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 7,
+    "emnlp25": 6,
+    "iclr24": 6,
+    "iclr25": 8,
+    "icml25": 3,
+    "neurips24": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

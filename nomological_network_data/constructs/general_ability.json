@@ -1,0 +1,2113 @@
+{
+  "canonical_name": "General ability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats general ability as broad overall capability, performance, or utility across many tasks and domains, rather than success on a single narrow task. Many papers define it in preservation terms: the broader competence, knowledge, reasoning, question answering, summarization, coding, or instruction-following that should remain intact after editing, unlearning, alignment, steering, continual training, pruning, or quantization. A smaller line of work shifts the construct along two axes, from observable benchmark performance to latent underlying ability, using notions such as a unidimensional trait, a first principal component over benchmark scores, or a capabilities set, and from a model property to the usefulness or correctness of its outputs on legitimate tasks; one paper also uses general abilities for newly enhanced downstream competencies rather than pre-existing broad competence.\n\nSpace of facets. Papers use many neighboring labels for this broad construct, including general capabilities, general performance, downstream performance, model capability, model utility, foundational capabilities, all-round capability, and generalist abilities. Within that family, some authors reserve narrower variants such as benign capabilities or benign utility for legitimate non-malicious tasks, and foundational or pre-existing capabilities for skills that should survive specialized tuning, while others tie the construct to facets like reasoning, knowledge, comprehension, common sense, chat, mathematics, coding, and instruction following. A smaller group systematizes it more abstractly as a single common factor over benchmarks, a weighted average of metrics, a scope-defining capabilities set, or capability neurons that can be localized.\n\nSpace of measurement. Operationalization is expansive: papers link general ability to 74 measurement instruments and 4 behavioral indicators. The most frequent instruments are MMLU, GSM8K, HellaSwag, MT-Bench, and lm-evaluation-harness, where the first four are benchmarks and the fifth is an evaluation framework; the rest are mostly other benchmarks, with some evaluation platforms, multimodal test suites, LLM-as-a-judge setups, and perplexity-based checks. In practice, papers operationalize the construct as accuracy, win rate, solve rate, rank, aggregated retain-set performance, or perplexity on general-purpose chat, knowledge, reasoning, math, language understanding, code, long-context, and vision-language evaluations, usually to test whether broader capability is preserved after an intervention; a smaller line instead estimates it through IRT or pairwise ranking models.\n\nLinks. Papers link general ability to 10 constructs and 4 behavioral indicators. The most recurrent named links are to forget quality, generation diversity, reasoning, adversarial robustness, and commonsense knowledge: forget quality is reported to correlate with it in one paper and is also described as a related trade-off, a small number of papers claim a causal relationship from generation diversity to general ability, reasoning and commonsense knowledge are treated as related to it, and one paper records a causal relationship from general ability to adversarial robustness using the language of emergent vulnerabilities. Other links, each appearing in a small number of papers, connect general ability to safety-oriented constructs and refusal, to understanding and composability, and to causal claims about loss after fine-tuning, instruction data, evaluation ability, and image classification.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "General capabilities",
+    "Downstream Performance",
+    "Downstream performance",
+    "General abilities",
+    "General ability",
+    "General capability",
+    "General performance",
+    "Generic performance",
+    "Model Capability",
+    "Model capability",
+    "Model performance",
+    "General purpose performance",
+    "General-purpose ability",
+    "General-purpose capabilities",
+    "Model utility",
+    "Model Utility",
+    "Model competence",
+    "Effectiveness",
+    "General task performance",
+    "Downstream benchmark performance",
+    "Foundational capabilities",
+    "LLM capability",
+    "Benign capabilities",
+    "Generalist abilities",
+    "General problem-solving",
+    "Capability",
+    "General model utility",
+    "Utility",
+    "Skill",
+    "Ability",
+    "Latent abilities",
+    "General language model capability",
+    "General model capability",
+    "Capabilities set",
+    "Capabilities",
+    "All-round capability",
+    "Intrinsic capacity",
+    "Policy performance",
+    "Relative performance",
+    "Benign utility",
+    "Competence",
+    "Model usefulness",
+    "Downstream task performance",
+    "General utility",
+    "General task-solving ability",
+    "Predictive quality",
+    "Model quality",
+    "Task solving ability",
+    "Performance"
+  ],
+  "papers": [
+    "An Empirical Study of Many-to-Many Summarization with Large Language Models",
+    "HFT: Half Fine-Tuning for Large Language Models",
+    "Improve Safety Training of Large Language Models with Safety-Critical Singular Vectors Localization",
+    "Literature Meets Data: A Synergistic Approach to Hypothesis Generation",
+    "Representation Bending for Large Language Model Safety",
+    "Safety Alignment via Constrained Knowledge Unlearning",
+    "SudoLM: Learning Access Control of Parametric Knowledge with Authorization Alignment",
+    "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models",
+    "Towards Effective and Efficient Continual Pre-training of Large Language Models",
+    "Towards Reward Fairness in RLHF: From a Resource Allocation Perspective",
+    "YuLan-Mini: Pushing the Limits of Open Data-efficient Language Model",
+    "AIP: Subverting Retrieval-Augmented Generation via Adversarial Instructional Prompt",
+    "Are Language Models Consequentialist or Deontological Moral Reasoners?",
+    "Continuously Steering LLMs Sensitivity to Contextual Knowledge with Proxy Models",
+    "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+    "Evaluating Large Language Models for Detecting Antisemitism",
+    "Improve LLM-as-a-Judge Ability as a General Ability",
+    "Jailbreak-Tuning: Models Efficiently Learn Jailbreak Susceptibility",
+    "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers",
+    "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+    "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps",
+    "Quantifying Language Disparities in Multilingual Large Language Models",
+    "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+    "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+    "Speculative Safety-Aware Decoding",
+    "Targeted Distillation for Sentiment Analysis",
+    "Towards a Unified Paradigm of Concept Editing in Large Language Models",
+    "Why and How LLMs Benefit from Knowledge Introspection in Commonsense Reasoning",
+    "Your RAG is Unfair: Exposing Fairness Vulnerabilities in Retrieval-Augmented Generation via Backdoor Attacks",
+    "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models",
+    "Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment",
+    "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs",
+    "A Closer Look at Machine Unlearning for Large Language Models",
+    "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+    "AI Sandbagging: Language Models can Strategically Underperform on Evaluations",
+    "Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters",
+    "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents",
+    "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+    "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset",
+    "Can Generative AI Solve Your In-Context Learning Problem?  A Martingale Perspective",
+    "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?",
+    "Capability Localization: Capabilities Can be Localized rather than Individual Knowledge",
+    "Catastrophic Failure of LLM Unlearning via Quantization",
+    "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+    "Composable Interventions for Language Models",
+    "Controlling Language and Diffusion Models by Transporting Activations",
+    "Copyright-Protected Language Generation via Adaptive Model Fusion",
+    "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+    "Data Selection via Optimal Control for Language Models",
+    "Determine-Then-Ensemble: Necessity of Top-k Union for Large Language Model Ensembling",
+    "Diverse Preference Learning for Capabilities and Alignment",
+    "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+    "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+    "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+    "Endless Jailbreaks with Bijection Learning",
+    "Everything is Editable: Extend Knowledge Editing to Unstructured Data in Large Language Models",
+    "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+    "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+    "Improving Pretraining Data Using Perplexity Correlations",
+    "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+    "LLM Unlearning via Loss Adjustment with Only Forget Data",
+    "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid",
+    "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+    "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+    "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+    "Monet: Mixture of Monosemantic Experts for Transformers",
+    "Optimized Multi-Token Joint Decoding With Auxiliary Model for LLM Inference",
+    "Perturbation-Restrained Sequential Model Editing",
+    "PiCO: Peer Review in LLMs based on Consistency Optimization",
+    "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+    "Proactive Privacy Amnesia for Large Language Models: Safeguarding PII with Negligible Impact on Model Utility",
+    "REEF: Representation Encoding Fingerprints for Large Language Models",
+    "Re-evaluating Open-ended Evaluation of Large Language Models",
+    "RegMix: Data Mixture as Regression for Language Model Pre-training",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "SLoPe: Double-Pruned Sparse Plus Lazy Low-Rank Adapter Pretraining of LLMs",
+    "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+    "STAR: Synthesis of Tailored Architectures",
+    "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+    "Scaling Laws for Downstream Task Performance in Machine Translation",
+    "Scaling Long Context Training Data by Long-Distance Referrals",
+    "Self-Introspective Decoding: Alleviating Hallucinations for Large Vision-Language Models",
+    "Self-Play Preference Optimization for Language Model Alignment",
+    "StringLLM: Understanding the String Processing Capability of Large Language Models",
+    "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+    "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice",
+    "Tamper-Resistant Safeguards for Open-Weight LLMs",
+    "Understanding and Enhancing Safety Mechanisms of LLMs via Safety-Specific Neuron",
+    "Unearthing Skill-level Insights for Understanding Trade-offs of Foundation Models",
+    "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization",
+    "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+    "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models",
+    "Activation Space Interventions Can Be Transferred Between Large Language Models",
+    "Adversaries Can Misuse Combinations of Safe Models",
+    "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models",
+    "AutoEval Done Right: Using Synthetic Data for Model Evaluation",
+    "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+    "Cape: Context-Aware Prompt Perturbation Mechanism with Differential Privacy",
+    "Free Process Rewards without Process Labels",
+    "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+    "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+    "Low-Rank Adapting Models for Sparse Autoencoders",
+    "MAGELLAN: Metacognitive predictions of learning progress guide autotelic LLM agents in large goal spaces",
+    "MERGE$^3$: Efficient Evolutionary Merging on Consumer-grade GPUs",
+    "Position: AI Evaluation Should Learn from How We Test Humans",
+    "Position: Don\u2019t Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints",
+    "Position: Political Neutrality in AI Is Impossible \u2014 But Here Is How to Approximate It",
+    "Position: Scaling LLM Agents Requires Asymptotic Analysis with LLM Primitives",
+    "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+    "Reliable and Efficient Amortized Model-based Evaluation",
+    "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+    "Scaling Laws for Differentially Private Language Models",
+    "The Jailbreak Tax: How Useful are Your Jailbreak Outputs?",
+    "The Ripple Effect: On Unforeseen Complications of Backdoor Attacks",
+    "Token Cleaning: Fine-Grained Data Selection for LLM Supervised Fine-Tuning",
+    "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+    "Upweighting Easy Samples in Fine-Tuning Mitigates Forgetting",
+    "When Bad Data Leads to Good Models",
+    "Balancing Forget Quality and Model Utility: A Reverse KL-Divergence Knowledge Distillation Approach for Better Unlearning in LLMs",
+    "FedSpaLLM: Federated Pruning of Large Language Models",
+    "Improving Model Evaluation using SMART Filtering of Benchmark Datasets",
+    "Instantly Learning Preference Alignment via In-context DPO",
+    "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+    "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+    "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench",
+    "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+    "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+    "Self-calibration for Language Model Quantization and Pruning",
+    "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis",
+    "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+    "Unlearning as multi-task optimization: A normalized gradient difference approach with an adaptive learning rate",
+    "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+    "A StrongREJECT for Empty Jailbreaks",
+    "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+    "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+    "Exploiting LLM Quantization",
+    "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+    "Fractal Patterns May Illuminate the Success of Next-Token Prediction",
+    "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+    "MemoryFormer : Minimize Transformer Computation by Removing Fully-Connected Layers",
+    "MixEval: Deriving Wisdom of the Crowd from LLM Benchmark Mixtures",
+    "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+    "Observational Scaling Laws and the Predictability of Langauge Model Performance",
+    "Private Attribute Inference from Images with Vision-Language Models",
+    "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+    "Should We Really Edit Language Models? On the Evaluation of Edited Language Models",
+    "The Art of Saying No: Contextual Noncompliance in Language Models",
+    "UltraMedical: Building Specialized Generalists in Biomedicine",
+    "Why are Visually-Grounded Language Models Bad at Image Classification?"
+  ],
+  "paper_count": 149,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A model's overall proficiency and performance across a wide range of tasks, which is shown to correlate with its performance on specific, potentially harmful tasks like private attribute inference.",
+      "paper": "Private Attribute Inference from Images with Vision-Language Models",
+      "original_name": "General capabilities"
+    },
+    {
+      "text": "The model's broader performance on unrelated tasks or knowledge after editing, reflecting whether edits degrade overall capability.",
+      "paper": "Everything is Editable: Extend Knowledge Editing to Unstructured Data in Large Language Models",
+      "original_name": "General ability"
+    },
+    {
+      "text": "The model's overall performance on a wide range of standard, non-adversarial tasks, such as question answering and instruction following.",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "original_name": "General capability"
+    },
+    {
+      "text": "The overall downstream effectiveness of a pre-trained LLM across diverse evaluation tasks rather than a single target domain.",
+      "paper": "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+      "original_name": "Generic performance"
+    },
+    {
+      "text": "The broad set of capabilities of a large language model, such as reasoning and summarization, that are not directly targeted by a specific model edit but can be negatively affected by it.",
+      "paper": "Perturbation-Restrained Sequential Model Editing",
+      "original_name": "General abilities"
+    },
+    {
+      "text": "The overall capability of a model across a wide range of tasks and domains, as opposed to performance on a specific, narrow task.",
+      "paper": "Monet: Mixture of Monosemantic Experts for Transformers",
+      "original_name": "General performance"
+    },
+    {
+      "text": "Broad task competence of an LLM across heterogeneous chat and reasoning tasks rather than a single narrow domain.",
+      "paper": "Diverse Preference Learning for Capabilities and Alignment",
+      "original_name": "General-purpose capabilities"
+    },
+    {
+      "text": "The latent capability of the model to successfully complete tasks, inferred from accuracy or scores on benchmarks.",
+      "paper": "Optimized Multi-Token Joint Decoding With Auxiliary Model for LLM Inference",
+      "original_name": "Downstream Performance"
+    },
+    {
+      "text": "The overall capability of a pre-trained model to perform effectively on a wide range of evaluation tasks it was not explicitly trained on.",
+      "paper": "RegMix: Data Mixture as Regression for Language Model Pre-training",
+      "original_name": "Downstream performance"
+    },
+    {
+      "text": "The overall performance and general knowledge of a model on tasks and data that are unaffected by the unlearning process.",
+      "paper": "LLM Unlearning via Loss Adjustment with Only Forget Data",
+      "original_name": "Model utility"
+    },
+    {
+      "text": "The general ability of the model to perform desired tasks, such as language modeling or question answering, without degradation.",
+      "paper": "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "original_name": "Model Capability"
+    },
+    {
+      "text": "The overall level of a model's general cognitive abilities, such as reasoning and knowledge, which often correlates with its scale and performance on standard benchmarks.",
+      "paper": "Endless Jailbreaks with Bijection Learning",
+      "original_name": "Model capability"
+    },
+    {
+      "text": "A model's broad capability across a wide range of tasks and domains, as opposed to specialized performance on a narrow domain.",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "original_name": "General-purpose ability"
+    },
+    {
+      "text": "The latent general capability of a model to perform diverse tasks effectively without degradation from interventions.",
+      "paper": "Controlling Language and Diffusion Models by Transporting Activations",
+      "original_name": "Model Utility"
+    },
+    {
+      "text": "The overall effectiveness of a model on a given set of tasks, which is a key determinant for successful ensembling.",
+      "paper": "Determine-Then-Ensemble: Necessity of Top-k Union for Large Language Model Ensembling",
+      "original_name": "Model performance"
+    },
+    {
+      "text": "The overall capability of a model across a wide range of domains and tasks, as opposed to specialized performance in a narrow domain.",
+      "paper": "Scaling Long Context Training Data by Long-Distance Referrals",
+      "original_name": "General purpose performance"
+    },
+    {
+      "text": "The overall capability of the model to perform standard NLP tasks without regression when optimized for specific constraints like long context.",
+      "paper": "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+      "original_name": "General task performance"
+    },
+    {
+      "text": "The overall quality or performance of the model in achieving its objectives, as measured by accuracy on evaluation benchmarks, distinct from its computational cost.",
+      "paper": "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice",
+      "original_name": "Effectiveness"
+    },
+    {
+      "text": "The overall capability and effectiveness of a language model that results from its pretraining regimen, which is crucially impacted by data mixture proportions.",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "original_name": "Model competence"
+    },
+    {
+      "text": "The latent capability of a language model that enables it to score highly on a diverse set of evaluation benchmarks.",
+      "paper": "Improving Pretraining Data Using Perplexity Correlations",
+      "original_name": "Downstream benchmark performance"
+    },
+    {
+      "text": "The overall latent ability level of a language model across evaluation tasks, inferred from how well it performs and is ranked relative to other models.",
+      "paper": "PiCO: Peer Review in LLMs based on Consistency Optimization",
+      "original_name": "LLM capability"
+    },
+    {
+      "text": "The general, pre-existing knowledge and skills of a large language model, which are evaluated to ensure they are not degraded by specialized fine-tuning.",
+      "paper": "StringLLM: Understanding the String Processing Capability of Large Language Models",
+      "original_name": "Foundational capabilities"
+    },
+    {
+      "text": "A broad capability to handle a variety of tasks and input formats, acquired through training on a diverse multi-task dataset.",
+      "paper": "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "original_name": "General problem-solving"
+    },
+    {
+      "text": "The model's capacity to perform well across a wide and diverse range of tasks and domains without task-specific fine-tuning.",
+      "paper": "Self-Play Preference Optimization for Language Model Alignment",
+      "original_name": "Generalist abilities"
+    },
+    {
+      "text": "The extent to which a safeguarded model retains general-purpose performance on non-target tasks after safety training and tampering.",
+      "paper": "Tamper-Resistant Safeguards for Open-Weight LLMs",
+      "original_name": "Benign capabilities"
+    },
+    {
+      "text": "A general, transferable ability of a model, reflected as a commonality across a dataset, that can be localized to a specific set of neurons and enhances performance on related tasks.",
+      "paper": "Capability Localization: Capabilities Can be Localized rather than Individual Knowledge",
+      "original_name": "Capability"
+    },
+    {
+      "text": "The model's broad task performance across general-purpose evaluations, used here as an overall indicator of whether interventions preserve usefulness.",
+      "paper": "Composable Interventions for Language Models",
+      "original_name": "General model utility"
+    },
+    {
+      "text": "The overall quality and usefulness of the model's generated output for a given task, considered as a trade-off against safety measures.",
+      "paper": "Copyright-Protected Language Generation via Adaptive Model Fusion",
+      "original_name": "Utility"
+    },
+    {
+      "text": "A latent underlying competency that a model must apply to solve an evaluation instance, often spanning multiple benchmarks and surfacing only through solution steps.",
+      "paper": "Unearthing Skill-level Insights for Understanding Trade-offs of Foundation Models",
+      "original_name": "Skill"
+    },
+    {
+      "text": "The overall proficiency of a model across a wide range of standard language understanding and generation benchmarks.",
+      "paper": "Low-Rank Adapting Models for Sparse Autoencoders",
+      "original_name": "General language model capability"
+    },
+    {
+      "text": "The overall performance and competence of a model across a wide range of standard tasks, distinct from its specialized safety behaviors.",
+      "paper": "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+      "original_name": "General model capability"
+    },
+    {
+      "text": "The underlying ability of an agent to successfully achieve a given goal, often operationalized as the probability of success.",
+      "paper": "MAGELLAN: Metacognitive predictions of learning progress guide autotelic LLM agents in large goal spaces",
+      "original_name": "Competence"
+    },
+    {
+      "text": "The underlying, unobservable capabilities of a model, such as problem-solving or linguistic skills, which are estimated using statistical methods rather than being directly measured.",
+      "paper": "MERGE$^3$: Efficient Evolutionary Merging on Consumer-grade GPUs",
+      "original_name": "Latent abilities"
+    },
+    {
+      "text": "The unobservable, unidimensional latent trait of a language model that determines its probability of correctly answering a question, independent of the question's difficulty.",
+      "paper": "Reliable and Efficient Amortized Model-based Evaluation",
+      "original_name": "Ability"
+    },
+    {
+      "text": "The latent trait representing the scope of tasks an LLM can reliably perform, which determines its suitability for specific agent roles within a system.",
+      "paper": "Position: Scaling LLM Agents Requires Asymptotic Analysis with LLM Primitives",
+      "original_name": "Capabilities set"
+    },
+    {
+      "text": "The general ability of a model to perform tasks correctly and generate high-quality, useful, and coherent information.",
+      "paper": "A StrongREJECT for Empty Jailbreaks",
+      "original_name": "Capabilities"
+    },
+    {
+      "text": "Broad general task competence across diverse benchmark types, including knowledge and reasoning tasks.",
+      "paper": "MemoryFormer : Minimize Transformer Computation by Removing Fully-Connected Layers",
+      "original_name": "All-round capability"
+    },
+    {
+      "text": "The underlying, general-purpose capabilities of a base model, independent of specific fine-tuning or prompting techniques, which influences its performance on downstream tasks.",
+      "paper": "Instantly Learning Preference Alignment via In-context DPO",
+      "original_name": "Intrinsic capacity"
+    },
+    {
+      "text": "A model's capability or quality assessed through direct comparison with other models, rather than against an absolute standard.",
+      "paper": "AutoEval Done Right: Using Synthetic Data for Model Evaluation",
+      "original_name": "Relative performance"
+    },
+    {
+      "text": "The ability of the model to directly solve downstream tasks when used as a policy model rather than as a reward model.",
+      "paper": "Free Process Rewards without Process Labels",
+      "original_name": "Policy performance"
+    },
+    {
+      "text": "The model's ability to maintain its performance and helpfulness on legitimate, non-malicious tasks and prompts.",
+      "paper": "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "original_name": "Benign utility"
+    },
+    {
+      "text": "The latent capacity of a model to maintain general language understanding and generation quality during and after unlearning procedures.",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "original_name": "Model usefulness"
+    },
+    {
+      "text": "The ability of a language model to maintain its effectiveness on a range of evaluation tasks after undergoing compression techniques like quantization or pruning.",
+      "paper": "Self-calibration for Language Model Quantization and Pruning",
+      "original_name": "Downstream task performance"
+    },
+    {
+      "text": "The model's ability to maintain high performance on general tasks and benchmarks regardless of the presence or activation of the SUDO key.",
+      "paper": "SudoLM: Learning Access Control of Parametric Knowledge with Authorization Alignment",
+      "original_name": "General utility"
+    },
+    {
+      "text": "The model's preserved competence across diverse domains and tasks beyond the specific one it has been fine-tuned on, reflecting robustness and transferability.",
+      "paper": "An Empirical Study of Many-to-Many Summarization with Large Language Models",
+      "original_name": "General task-solving ability"
+    },
+    {
+      "text": "The latent tendency of a language model to produce better next-token predictions and downstream task performance across evaluation settings.",
+      "paper": "STAR: Synthesis of Tailored Architectures",
+      "original_name": "Predictive quality"
+    },
+    {
+      "text": "The overall performance and effectiveness of a language model, inferred from its accuracy on various downstream tasks and its ability to maintain the output distribution of the original, unquantized model.",
+      "paper": "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models",
+      "original_name": "Model quality"
+    },
+    {
+      "text": "The general capacity of a large language model to successfully complete a wide range of instructed tasks.",
+      "paper": "Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment",
+      "original_name": "Task solving ability"
+    },
+    {
+      "text": "The abstract capability of a language model on a given task, which is measured and represented by numerical scores.",
+      "paper": "Quantifying Language Disparities in Multilingual Large Language Models",
+      "original_name": "Performance"
+    }
+  ],
+  "definition_count": 49,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+      "evidence": "General Ability (Gen): We use MMLU [20], which consists of multiple-choice questions from various branches of knowledge. (Section 3.3.2)",
+      "paper_count": 40,
+      "paper_weight": 40.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+          "UltraMedical: Building Specialized Generalists in Biomedicine",
+          "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+          "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+          "Evaluating Copyright Takedown Methods for Language Models",
+          "A StrongREJECT for Empty Jailbreaks"
+        ],
+        "iclr25": [
+          "Understanding and Enhancing Safety Mechanisms of LLMs via Safety-Specific Neuron",
+          "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+          "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+          "A Closer Look at Machine Unlearning for Large Language Models",
+          "Composable Interventions for Language Models",
+          "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+          "Everything is Editable: Extend Knowledge Editing to Unstructured Data in Large Language Models",
+          "Robust LLM safeguarding via refusal feature adversarial training",
+          "Tamper-Resistant Safeguards for Open-Weight LLMs",
+          "StringLLM: Understanding the String Processing Capability of Large Language Models",
+          "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+          "AI Sandbagging: Language Models can Strategically Underperform on Evaluations",
+          "Catastrophic Failure of LLM Unlearning via Quantization",
+          "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+          "PiCO: Peer Review in LLMs based on Consistency Optimization",
+          "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+          "Controlling Language and Diffusion Models by Transporting Activations"
+        ],
+        "naacl25": [
+          "Instantly Learning Preference Alignment via In-context DPO",
+          "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+          "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis",
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+          "Fine-Tuning Large Language Models with Sequential Instructions",
+          "Hephaestus: Improving Fundamental Agent Capabilities of Large Language Models through Continual Pre-Training"
+        ],
+        "acl25": [
+          "An Empirical Study of Many-to-Many Summarization with Large Language Models",
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ],
+        "icml25": [
+          "Low-Rank Adapting Models for Sparse Autoencoders",
+          "When Bad Data Leads to Good Models",
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ],
+        "emnlp25": [
+          "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+          "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+          "Continuously Steering LLMs Sensitivity to Contextual Knowledge with Proxy Models",
+          "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UltraMedical: Building Specialized Generalists in Biomedicine",
+      "evidence": "We evaluated the general capabilities of the models on benchmarks related to general-domain chat (MT-Bench [83] and Alpaca-Eval [37]), general MCQs (MMLU [34] and GPQA [54]), and mathematical tasks (MATH [22] and GSM8k [12]). (Section 4.1)",
+      "paper_count": 11,
+      "paper_weight": 11.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "UltraMedical: Building Specialized Generalists in Biomedicine",
+          "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons"
+        ],
+        "iclr25": [
+          "Understanding and Enhancing Safety Mechanisms of LLMs via Safety-Specific Neuron",
+          "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+          "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+          "Perturbation-Restrained Sequential Model Editing",
+          "PiCO: Peer Review in LLMs based on Consistency Optimization"
+        ],
+        "naacl25": [
+          "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture"
+        ],
+        "emnlp25": [
+          "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+      "evidence": "To investigate whether up-weighting context-aware neurons impairs the model\u2019s general abilities, we conducted evaluations of IRCAN on six widely-used benchmarks... including ARC [6], HellaSwag [47], MMLU [15], Winogrande [34], GSM8K [7], and TruthfulQA [24]. (Section 5.4)",
+      "paper_count": 8,
+      "paper_weight": 8.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons"
+        ],
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+          "StringLLM: Understanding the String Processing Capability of Large Language Models",
+          "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data"
+        ],
+        "naacl25": [
+          "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data"
+        ],
+        "acl25": [
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ],
+        "icml25": [
+          "Low-Rank Adapting Models for Sparse Autoencoders",
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UltraMedical: Building Specialized Generalists in Biomedicine",
+      "evidence": "We evaluated the general capabilities of the models on benchmarks related to general-domain chat (MT-Bench [83] and Alpaca-Eval [37]), general MCQs (MMLU [34] and GPQA [54]), and mathematical tasks (MATH [22] and GSM8k [12]). (Section 4.1)",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "UltraMedical: Building Specialized Generalists in Biomedicine",
+          "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+          "Evaluating Copyright Takedown Methods for Language Models"
+        ],
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training",
+          "Self-Play Preference Optimization for Language Model Alignment"
+        ],
+        "naacl25": [
+          "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis"
+        ],
+        "emnlp25": [
+          "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-Bench Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Fractal Patterns May Illuminate the Success of Next-Token Prediction",
+      "evidence": "\u201cwe evaluate the 12 models in Table 2 on challenging downstream zero- and few-shot benchmarks focusing on language understanding and reasoning. We include results for 0-shot (0S) and 3-shot (3S) evaluation for BIG-Bench Hard tasks [63, 64]\u201d",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Fractal Patterns May Illuminate the Success of Next-Token Prediction"
+        ],
+        "naacl25": [
+          "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+          "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis",
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ],
+        "emnlp25": [
+          "Improve LLM-as-a-Judge Ability as a General Ability"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "lm-evaluation-harness",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+      "evidence": "the LLM\u2019s generic performance A as the evaluation across different tasks using the Harness framework. (Section 2.1)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+          "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+          "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity"
+        ],
+        "emnlp25": [
+          "Breaking Bad Tokens: Detoxification of LLMs Using Sparse Autoencoders"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Challenge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Understanding and Enhancing Safety Mechanisms of LLMs via Safety-Specific Neuron",
+      "evidence": "Concurrently, we assess the models\u2019 general capabilities using representative NLP tasks including MMLU (Hendrycks et al., 2020), ARC-Challenge (Clark et al., 2018), and GSM8K (Cobbe et al., 2021), ensuring that safety improvements do not come at the cost of overall performance.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Understanding and Enhancing Safety Mechanisms of LLMs via Safety-Specific Neuron",
+          "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WinoGrande",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+      "evidence": "To investigate whether up-weighting context-aware neurons impairs the model\u2019s general abilities, we conducted evaluations of IRCAN on six widely-used benchmarks... including ARC [6], HellaSwag [47], MMLU [15], Winogrande [34], GSM8K [7], and TruthfulQA [24]. (Section 5.4)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons"
+        ],
+        "iclr25": [
+          "STAR: Synthesis of Tailored Architectures"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiText",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+      "evidence": "We adopt the Evaluation Harness framework (Gao et al., 2023) for general capability evaluation, including MMLU (5-shot, Hendrycks et al., 2020), ARC-C (Clark et al., 2018) and WIKITEXT (Merity et al., 2016) (Section 4).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation"
+        ],
+        "naacl25": [
+          "Balancing Forget Quality and Model Utility: A Reverse KL-Divergence Knowledge Distillation Approach for Better Unlearning in LLMs",
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+      "evidence": "To investigate whether up-weighting context-aware neurons impairs the model\u2019s general abilities, we conducted evaluations of IRCAN on six widely-used benchmarks... including ARC [6], HellaSwag [47], MMLU [15], Winogrande [34], GSM8K [7], and TruthfulQA [24]. (Section 5.4)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons"
+        ],
+        "iclr25": [
+          "StringLLM: Understanding the String Processing Capability of Large Language Models"
+        ],
+        "naacl25": [
+          "Fine-Tuning Large Language Models with Sequential Instructions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "C-Eval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+      "evidence": "For the general domain evaluation benchmarks, we select MATH, MBPP, MMLU, and CEVAL from the aforementioned experimental settings. (Section 3.3).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment"
+        ],
+        "acl25": [
+          "Towards Effective and Efficient Continual Pre-training of Large Language Models"
+        ],
+        "emnlp25": [
+          "Improve LLM-as-a-Judge Ability as a General Ability"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RTE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "we perform General Capability Tests using six natural language tasks... Specifically, the evaluation tasks include: ... 4. RTE (Recognizing Textual Entailment) (Section 4.3).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+          "Perturbation-Restrained Sequential Model Editing"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Arena-Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Self-Play Preference Optimization for Language Model Alignment",
+      "evidence": "Additionally, SPPO exhibits strong generalist abilities across different tasks, including MT-Bench, the Open LLM Leaderboard, and the more recent, more challenging benchmark, Arena-Hard.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Self-Play Preference Optimization for Language Model Alignment",
+          "Diverse Preference Learning for Capabilities and Alignment"
+        ],
+        "acl25": [
+          "Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GPQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UltraMedical: Building Specialized Generalists in Biomedicine",
+      "evidence": "We evaluated the general capabilities of the models on benchmarks related to general-domain chat (MT-Bench [83] and Alpaca-Eval [37]), general MCQs (MMLU [34] and GPQA [54]), and mathematical tasks (MATH [22] and GSM8k [12]). (Section 4.1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "UltraMedical: Building Specialized Generalists in Biomedicine"
+        ],
+        "acl25": [
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ],
+        "emnlp25": [
+          "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "evidence": "we selected several common comprehensive benchmarks and VQA datasets, such as ... MMBench ... to evaluate the general capabilities of VLMs (Section 5.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+          "Self-Introspective Decoding: Alleviating Hallucinations for Large Vision-Language Models",
+          "PerturboLLaVA: Reducing Multimodal Hallucinations with Perturbative Visual Training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+      "evidence": "Furthermore, after fine-tuning the downstream tasks, the LLM may lose the general capability, due to catastrophic forgetting. (Section 1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture"
+        ],
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ],
+        "emnlp25": [
+          "Mitigating Catastrophic Forgetting in Large Language Models with Forgetting-aware Pruning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+      "evidence": "The fine-tuned models under MDS are evaluated on the general tasks including MMLU (Hendrycks et al., 2021), GSM8K (Cobbe et al., 2021), and PIQA (Bisk et al., 2020) to measure the catastrophic forgetting of the PEFT approaches.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RegMix: Data Mixture as Regression for Language Model Pre-training",
+      "evidence": "Ultimately, we select the following benchmarks as our downstream tasks: Social IQA (Sap et al., 2019), HellaSwag (Zellers et al., 2019), PiQA (Bisk et al., 2020), OpenBookQA (Mihaylov et al., 2018), Lambada (Paperno et al., 2016), SciQ (Welbl et al., 2017), ARC Easy (Clark et al., 2018), COPA (Sarlin et al., 2020), RACE (Lai et al., 2017), LogiQA (Liu et al., 2020), QQP (Wang et al., 2018), WinoGrande (Sakaguchi et al., 2021), and MultiRC (Khashabi et al., 2018). (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RegMix: Data Mixture as Regression for Language Model Pre-training"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CommonsenseQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "evidence": "We set N g = 4 general evaluation tasks, covering Hellaswag (Zellers et al., 2019), CommonsenseQA (Talmor et al., 2018), Alpaca (Hendrycks et al., 2020), and BBH-Object-Count (Srivastava et al., 2022) (Section 3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+          "AI Sandbagging: Language Models can Strategically Underperform on Evaluations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OpenBookQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models",
+      "evidence": "To evaluate LLMs\u2019 general capabilities, we select several widely used benchmark, i.e., HellaSwag (Zellers et al., 2019), Race (Lai et al., 2017), MMLU (Hendrycks et al., 2021), GPQA (Rein et al., 2024), OpenBookQA (Mihaylov et al., 2018), BoolQ (Clark et al., 2019), AG News (Zhang et al., 2015), IMDB (Maas et al., 2011), and Perplexity (Chen et al., 1998). (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+      "evidence": "LongBench (Bai et al., 2024): Focused on medium-context tasks (10K tokens), it assesses summarization, QA, and fact-checking across multiple domains, offering a measure of general capabilities.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation"
+        ],
+        "emnlp25": [
+          "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Easy",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "STAR: Synthesis of Tailored Architectures",
+      "evidence": "\u201cThese models are trained further and evaluated on downstream tasks: ... ARC-e (Clark et al., 2018)\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "STAR: Synthesis of Tailored Architectures"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MATH",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UltraMedical: Building Specialized Generalists in Biomedicine",
+      "evidence": "We evaluated the general capabilities of the models on benchmarks related to general-domain chat (MT-Bench [83] and Alpaca-Eval [37]), general MCQs (MMLU [34] and GPQA [54]), and mathematical tasks (MATH [22] and GSM8k [12]). (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "UltraMedical: Building Specialized Generalists in Biomedicine"
+        ],
+        "iclr25": [
+          "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TruthfulQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+      "evidence": "To investigate whether up-weighting context-aware neurons impairs the model\u2019s general abilities, we conducted evaluations of IRCAN on six widely-used benchmarks... including ARC [6], HellaSwag [47], MMLU [15], Winogrande [34], GSM8K [7], and TruthfulQA [24]. (Section 5.4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons"
+        ],
+        "icml25": [
+          "Low-Rank Adapting Models for Sparse Autoencoders"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TextVQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Why are Visually-Grounded Language Models Bad at Image Classification?",
+      "evidence": "we further evaluated the performance of our fine-tuned visually-grounded language model (VLM) on additional benchmarks to ensure its robustness across a variety of tasks. In particular, we tested the model on TextVQA [42], POPE [29], and MMVet [51]. (Appendix C.3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Why are Visually-Grounded Language Models Bad at Image Classification?"
+        ],
+        "iclr25": [
+          "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OpenCompass",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+      "evidence": "We evaluate seven distinctive capabilities of LLMs in a total of 17 representative NLP datasets based on the OpenCompass platform (Contributors, 2023). (Section 3.1).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment"
+        ],
+        "emnlp25": [
+          "TurboRAG: Accelerating Retrieval-Augmented Generation with Precomputed KV Caches for Chunked Text"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlpacaEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+      "evidence": "To evaluate the LLM\u2019s general performance in short-text tasks, we measure its WinRate against the text-davinci-003 model using 100 queries from AlpacaEval and 80 queries from VicunaEval. (Section 5.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+          "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MME",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "evidence": "we selected several common comprehensive benchmarks and VQA datasets, such as ... MME ... to evaluate the general capabilities of VLMs (Section 5.1).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+          "Self-Introspective Decoding: Alleviating Hallucinations for Large Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Open LLM Leaderboard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Self-Play Preference Optimization for Language Model Alignment",
+      "evidence": "Additionally, SPPO exhibits strong generalist abilities across different tasks, including MT-Bench, the Open LLM Leaderboard, and the more recent, more challenging benchmark, Arena-Hard.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Self-Play Preference Optimization for Language Model Alignment"
+        ],
+        "emnlp25": [
+          "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models",
+      "evidence": "Finally, the identification of a single common factor underlying all benchmark scores suggests that a general ability for reasoning and knowledge can be effectively measured through a consolidated, sparse benchmark. (Section 4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models"
+        ],
+        "naacl25": [
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "\u201cTo further evaluate the intrinsic knowledge of post-edited LLMs, we perform General Capability Tests using six natural language tasks from the General Language Understanding Evaluation (GLUE) benchmark (Wang et al., 2019).\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ],
+        "emnlp25": [
+          "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SciQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "STAR: Synthesis of Tailored Architectures",
+      "evidence": "\u201cThese models are trained further and evaluated on downstream tasks: ... SciQ (Welbl et al., 2017)\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "STAR: Synthesis of Tailored Architectures"
+        ],
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CMMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Towards Effective and Efficient Continual Pre-training of Large Language Models",
+      "evidence": "our approach can largely improve the performance of Llama-3 (8B), including both the general abilities (+8.81 on C-Eval and +6.31 on CMMLU)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Towards Effective and Efficient Continual Pre-training of Large Language Models"
+        ],
+        "emnlp25": [
+          "Improve LLM-as-a-Judge Ability as a General Ability"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TOFU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Balancing Forget Quality and Model Utility: A Reverse KL-Divergence Knowledge Distillation Approach for Better Unlearning in LLMs",
+      "evidence": "Model utility is assessed using three datasets from the TOFU benchmark related to different types of knowledge. (Section 4.2.3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Balancing Forget Quality and Model Utility: A Reverse KL-Divergence Knowledge Distillation Approach for Better Unlearning in LLMs"
+        ],
+        "iclr25": [
+          "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LAMBADA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+      "evidence": "\"We evaluate the pre-trained base models on 17 tasks across different general domains which include: MMLU (Hendrycks et al., 2020), Arc-Easy, Arc-Challenge (Clark et al., 2018), HellaSwag (Zellers et al., 2019), PIQA (Bisk et al., 2020), SIQA (Sap et al., 2019), SciQ (Welbl et al., 2017), RTE (Dagan et al., 2005), BBH (Suzgun et al., 2022), LAMBADA\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "evidence": "As shown in Appendix E.2, we assessed each iteration\u2019s performance on general benchmarks, including GSM8k (Cobbe et al., 2021), TriviaQA (Joshi et al., 2017), MMLU (Hendrycks et al., 2020), and HumanEval (Chen et al., 2021). (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Diverse Preference Learning for Capabilities and Alignment",
+      "evidence": "Diversity loss can harm both capabilities and representation. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Diverse Preference Learning for Capabilities and Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiText-2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "evidence": "\"To ensure the desired model capabilities are not impacted by editing, we measure the perplexity of the model on the dev split of WikiText-2\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BLEURT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MBR and QE Finetuning: Training-time Distillation of the Best and Most Expensive Decoding Methods",
+      "evidence": "We evaluate our models on six automatic metrics: BLEURT (Sellam et al., 2020), MetricX-XXL (Freitag et al., 2022b), MetricX-23-c (which resembles MetricX-XXL but uses a PaLM-2 backbone; Juraska et al. (2023)), chrF (Popovi\u00b4c, 2015), Comet20 (Rei et al., 2020), and Comet22 (Rei et al., 2022). (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "MBR and QE Finetuning: Training-time Distillation of the Best and Most Expensive Decoding Methods"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+      "evidence": "The shape of the LLM capability landscape is drastically different from the one in the LLM safety landscape; these landscapes do not exhibit the same trend, further confirming that the basin shape is indeed unique to the safety of LLM.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Image classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Why are Visually-Grounded Language Models Bad at Image Classification?",
+      "evidence": "enhanced classification performance of the VLM transfers to its general capabilities",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Why are Visually-Grounded Language Models Bad at Image Classification?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "POPE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Why are Visually-Grounded Language Models Bad at Image Classification?",
+      "evidence": "we further evaluated the performance of our fine-tuned visually-grounded language model (VLM) on additional benchmarks to ensure its robustness across a variety of tasks. In particular, we tested the model on TextVQA [42], POPE [29], and MMVet [51]. (Appendix C.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Why are Visually-Grounded Language Models Bad at Image Classification?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MM-Vet",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Why are Visually-Grounded Language Models Bad at Image Classification?",
+      "evidence": "we further evaluated the performance of our fine-tuned visually-grounded language model (VLM) on additional benchmarks to ensure its robustness across a variety of tasks. In particular, we tested the model on TextVQA [42], POPE [29], and MMVet [51]. (Appendix C.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Why are Visually-Grounded Language Models Bad at Image Classification?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "StrongREJECT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A StrongREJECT for Empty Jailbreaks",
+      "evidence": "\"Therefore, the StrongREJECT evaluator measures both of these dimensions: willingness and capabilities.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "A StrongREJECT for Empty Jailbreaks"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MBPP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+      "evidence": "For the general domain evaluation benchmarks, we select MATH, MBPP, MMLU, and CEVAL from the aforementioned experimental settings. (Section 3.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Language model pre-training",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "evidence": "A representative mixture optimization target is to maintain the general-purpose ability (losses on the Pile) unchanged (Section 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Alpaca instruction dataset",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "evidence": "We set N g = 4 general evaluation tasks, covering Hellaswag (Zellers et al., 2019), CommonsenseQA (Talmor et al., 2018), Alpaca (Hendrycks et al., 2020), and BBH-Object-Count (Srivastava et al., 2022) (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BBH Object Counting",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "evidence": "We set N g = 4 general evaluation tasks, covering Hellaswag (Zellers et al., 2019), CommonsenseQA (Talmor et al., 2018), Alpaca (Hendrycks et al., 2020), and BBH-Object-Count (Srivastava et al., 2022) (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Composability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Composable Interventions for Language Models",
+      "evidence": "The disparity between overall utility and composability metrics underscores the need for more nuanced evaluations explicitly targeting composability as a design criterion. (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Composable Interventions for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TriviaQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "evidence": "As shown in Appendix E.2, we assessed each iteration\u2019s performance on general benchmarks, including GSM8k (Cobbe et al., 2021), TriviaQA (Joshi et al., 2017), MMLU (Hendrycks et al., 2020), and HumanEval (Chen et al., 2021). (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SST",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "we perform General Capability Tests using six natural language tasks... Specifically, the evaluation tasks include: 1. SST (The Stanford Sentiment Treebank) (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MRPC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "we perform General Capability Tests using six natural language tasks... Specifically, the evaluation tasks include: ... 2. MRPC (Microsoft Research Paraphrase Corpus) (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Vicuna-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+      "evidence": "To evaluate the LLM\u2019s general performance in short-text tasks, we measure its WinRate against the text-davinci-003 model using 100 queries from AlpacaEval and 80 queries from VicunaEval. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "VQA-v2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "evidence": "we selected several common comprehensive benchmarks and VQA datasets, such as ... VQAv2 ... to evaluate the general capabilities of VLMs (Section 5.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMMU-Pro",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "evidence": "we selected several common comprehensive benchmarks and VQA datasets, such as ... MMMU-Pro to evaluate the general capabilities of VLMs (Section 5.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Elo rating system",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization",
+      "evidence": "Feng et al. (2024); Wu & Aji (2023) apply the classical Elo rating system (Elo & Sloan, 1978) (see the Appendix B.1 for detailed introduction) by treating the evaluation process as a sequence of model battles in order to derive model scores. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Bradley-Terry model",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization",
+      "evidence": "Fageot et al. (2024); Chiang et al. (2024) employ the Bradley-Terry model (Bradley & Terry, 1952) (see Appendix B.2 for detailed introduction) to estimate model scores by maximizing the likelihood of the comparison results between models. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models",
+      "evidence": "Finally, the identification of a single common factor underlying all benchmark scores suggests that a general ability for reasoning and knowledge can be effectively measured through a consolidated, sparse benchmark. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MixEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+      "evidence": "To evaluate the general capabilities of the self-play fine-tuned models, we employ MixEval (Ni et al., 2024) and Open LLM Leaderboard v2 (Fourrier et al., 2024) for benchmark evaluation. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Open LLM Leaderboard v2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+      "evidence": "To evaluate the general capabilities of the self-play fine-tuned models, we employ MixEval (Ni et al., 2024) and Open LLM Leaderboard v2 (Fourrier et al., 2024) for benchmark evaluation. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Adversarial robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Endless Jailbreaks with Bijection Learning",
+      "evidence": "increased model capabilities give rise to distinct emergent model vulnerabilities. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Endless Jailbreaks with Bijection Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spider",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Optimized Multi-Token Joint Decoding With Auxiliary Model for LLM Inference",
+      "evidence": "To validate that MTJD indeed betters output quality, we test MTJD (k=4) and standard multinomial sampling on Spider, MTBench, and HumanEval using the Llama-3 series models. ... For this process, the higher the scores, the better the downstream performance. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Optimized Multi-Token Joint Decoding With Auxiliary Model for LLM Inference"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SAMSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Perturbation-Restrained Sequential Model Editing",
+      "evidence": "To explore the side effects of sequential model editing on the general abilities of LLMs, four representative tasks with corresponding datasets were adopted for assessment... including: ... Summarization on the SAMSum (Gliwa et al., 2019)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Perturbation-Restrained Sequential Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "The Pile",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "evidence": "maintain the general-purpose ability (losses on the Pile) unchanged.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Unlearning efficacy",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench",
+      "evidence": "this exceptional unlearning performance comes at the cost of a significant decline in retain set accuracy (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TyDi QA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+      "evidence": "To evaluate the general capabilities, we utilized GSM8K (EM) (Cobbe et al., 2021), BBH (EM) (Cobbe et al., 2021), MMLU (EM) (Hendrycks et al., 2020), TydiQA (F1) (Clark et al., 2020), and WikiText (ppl) (Merity et al., 2016), following Ivison et al. (2023). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+      "evidence": "degradation in foundational LLM capabilities such as comprehension, reasoning, and common sense \u2014 an effect known as alignment tax (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Commonsense knowledge",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+      "evidence": "degradation in foundational LLM capabilities such as comprehension, reasoning, and common sense \u2014 an effect known as alignment tax (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Unlearning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "evidence": "...the recent unlearning benchmark MUSE (Shi et al., 2024) highlights a major drawback in current methods: applying unlearning to larger corpora leads to a decline in general language usefulness. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MAUVE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+      "evidence": "\"we use the MAUVE metric ... to measure the quality of generated text against the real text\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlpacaEval 2.0",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation",
+      "evidence": "Remarkably, on AlpacaEval 2 (Li et al., 2023c) and Arena-Hard (Li et al., 2024b), two LLM general problem-solving ability benchmarks, the model trained on 20K our synthetic instruction-response pairs, consistently outperforms models trained on significantly larger datasets... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RACE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models",
+      "evidence": "To evaluate LLMs\u2019 general capabilities, we select several widely used benchmark, i.e., HellaSwag (Zellers et al., 2019), Race (Lai et al., 2017), MMLU (Hendrycks et al., 2021), GPQA (Rein et al., 2024), OpenBookQA (Mihaylov et al., 2018), BoolQ (Clark et al., 2019), AG News (Zhang et al., 2015), IMDB (Maas et al., 2011), and Perplexity (Chen et al., 1998). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BoolQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models",
+      "evidence": "To evaluate LLMs\u2019 general capabilities, we select several widely used benchmark, i.e., HellaSwag (Zellers et al., 2019), Race (Lai et al., 2017), MMLU (Hendrycks et al., 2021), GPQA (Rein et al., 2024), OpenBookQA (Mihaylov et al., 2018), BoolQ (Clark et al., 2019), AG News (Zhang et al., 2015), IMDB (Maas et al., 2011), and Perplexity (Chen et al., 1998). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AG News",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models",
+      "evidence": "To evaluate LLMs\u2019 general capabilities, we select several widely used benchmark, i.e., HellaSwag (Zellers et al., 2019), Race (Lai et al., 2017), MMLU (Hendrycks et al., 2021), GPQA (Rein et al., 2024), OpenBookQA (Mihaylov et al., 2018), BoolQ (Clark et al., 2019), AG News (Zhang et al., 2015), IMDB (Maas et al., 2011), and Perplexity (Chen et al., 1998). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "IMDb",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models",
+      "evidence": "To evaluate LLMs\u2019 general capabilities, we select several widely used benchmark, i.e., HellaSwag (Zellers et al., 2019), Race (Lai et al., 2017), MMLU (Hendrycks et al., 2021), GPQA (Rein et al., 2024), OpenBookQA (Mihaylov et al., 2018), BoolQ (Clark et al., 2019), AG News (Zhang et al., 2015), IMDB (Maas et al., 2011), and Perplexity (Chen et al., 1998). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MultiRC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+      "evidence": "\"We evaluate the pre-trained base models on 17 tasks across different general domains which include: MMLU (Hendrycks et al., 2020), Arc-Easy, Arc-Challenge (Clark et al., 2018), HellaSwag (Zellers et al., 2019), PIQA (Bisk et al., 2020), SIQA (Sap et al., 2019), SciQ (Welbl et al., 2017), RTE (Dagan et al., 2005), BBH (Suzgun et al., 2022), LAMBADA (Paperno et al., 2016), OpenBookQA (Mihaylov et al., 2018), RACE-Middle, RACE-High (Lai et al., 2017), MultiRC\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Predictive Data Selection: The Data That Predicts Is the Data That Teaches"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Evaluation ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Improve LLM-as-a-Judge Ability as a General Ability",
+      "evidence": "Furthermore, our training method enhances the general capabilities of the model by constructing complicated judge task... (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Improve LLM-as-a-Judge Ability as a General Ability"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adaptability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Splitting with Importance-aware Updating for Heterogeneous Federated Learning with Large Language Models",
+      "evidence": "How can we preserve and transfer the general capabilities of LLMs while enabling them to adapt to domain-specific knowledge? (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Splitting with Importance-aware Updating for Heterogeneous Federated Learning with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CoLA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "we perform General Capability Tests using six natural language tasks... Specifically, the evaluation tasks include: ... 5. CoLA (Corpus of Linguistic Acceptability) (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Natural language inference",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "we perform General Capability Tests using six natural language tasks... Specifically, the evaluation tasks include: ... 6. NLI (Natural Language Inference) (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CCBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "PerturboLLaVA: Reducing Multimodal Hallucinations with Perturbative Visual Training",
+      "evidence": "We assess the models\u2019 general ability on three widely used benchmarks: MMBench (Liu et al., 2023c), CCBench (Liu et al., 2023c), and SEEDImage (Li et al., 2023a), to verify that our model\u2019s general capabilities. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "PerturboLLaVA: Reducing Multimodal Hallucinations with Perturbative Visual Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMStar",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Towards Rationale-Answer Alignment of LVLMs via Self-Rationale Calibration",
+      "evidence": "\u201cWe adopt MMStar (Chen et al., 2024c), an advanced benchmark of evaluation the comprehensive capabilities of LVLMs, as the primary evaluation metric.\u201d (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Towards Rationale-Answer Alignment of LVLMs via Self-Rationale Calibration"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 82,
+  "incoming_relationship_count": 8,
+  "outgoing_relationship_count": 74,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats general ability as broad overall capability, performance, or utility across many tasks and domains, rather than success on a single narrow task. Many papers define it in preservation terms: the broader competence, knowledge, reasoning, question answering, summarization, coding, or instruction-following that should remain intact after editing, unlearning, alignment, steering, continual training, pruning, or quantization. A smaller line of work shifts the construct along two axes, from observable benchmark performance to latent underlying ability, using notions such as a unidimensional trait, a first principal component over benchmark scores, or a capabilities set, and from a model property to the usefulness or correctness of its outputs on legitimate tasks; one paper also uses general abilities for newly enhanced downstream competencies rather than pre-existing broad competence."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use many neighboring labels for this broad construct, including general capabilities, general performance, downstream performance, model capability, model utility, foundational capabilities, all-round capability, and generalist abilities. Within that family, some authors reserve narrower variants such as benign capabilities or benign utility for legitimate non-malicious tasks, and foundational or pre-existing capabilities for skills that should survive specialized tuning, while others tie the construct to facets like reasoning, knowledge, comprehension, common sense, chat, mathematics, coding, and instruction following. A smaller group systematizes it more abstractly as a single common factor over benchmarks, a weighted average of metrics, a scope-defining capabilities set, or capability neurons that can be localized."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is expansive: papers link general ability to 74 measurement instruments and 4 behavioral indicators. The most frequent instruments are MMLU, GSM8K, HellaSwag, MT-Bench, and lm-evaluation-harness, where the first four are benchmarks and the fifth is an evaluation framework; the rest are mostly other benchmarks, with some evaluation platforms, multimodal test suites, LLM-as-a-judge setups, and perplexity-based checks. In practice, papers operationalize the construct as accuracy, win rate, solve rate, rank, aggregated retain-set performance, or perplexity on general-purpose chat, knowledge, reasoning, math, language understanding, code, long-context, and vision-language evaluations, usually to test whether broader capability is preserved after an intervention; a smaller line instead estimates it through IRT or pairwise ranking models."
+    },
+    {
+      "label": "Links.",
+      "text": "Papers link general ability to 10 constructs and 4 behavioral indicators. The most recurrent named links are to forget quality, generation diversity, reasoning, adversarial robustness, and commonsense knowledge: forget quality is reported to correlate with it in one paper and is also described as a related trade-off, a small number of papers claim a causal relationship from generation diversity to general ability, reasoning and commonsense knowledge are treated as related to it, and one paper records a causal relationship from general ability to adversarial robustness using the language of emergent vulnerabilities. Other links, each appearing in a small number of papers, connect general ability to safety-oriented constructs and refusal, to understanding and composability, and to causal claims about loss after fine-tuning, instruction data, evaluation ability, and image classification."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers use \"general ability\" for a model's broad overall capability or proficiency across many standard, non-target tasks or domains, often treating it as a latent trait inferred from benchmark performance and checking whether interventions preserve it. A few papers give narrower or unusual versions, such as ability on a given task or the usefulness of data or hypotheses, but these are clear outliers relative to the dominant shared definition.",
+    "papers_with_definition": 89,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats general ability as broad overall capability, performance, or utility across many tasks and domains, rather than success on a single narrow task. Many papers define it in preservation terms: the broader competence, knowledge, reasoning, question answering, summarization, coding, or instruction-following that should remain intact after editing, unlearning, alignment, steering, continual training, pruning, or quantization. A smaller line of work shifts the construct along two axes, from observable benchmark performance to latent underlying ability, using notions such as a unidimensional trait, a first principal component over benchmark scores, or a capabilities set, and from a model property to the usefulness or correctness of its outputs on legitimate tasks; one paper also uses general abilities for newly enhanced downstream competencies rather than pre-existing broad competence.\n\nSpace of facets. Papers use many neighboring labels for this broad construct, including general capabilities, general performance, downstream performance, model capability, model utility, foundational capabilities, all-round capability, and generalist abilities. Within that family, some authors reserve narrower variants such as benign capabilities or benign utility for legitimate non-malicious tasks, and foundational or pre-existing capabilities for skills that should survive specialized tuning, while others tie the construct to facets like reasoning, knowledge, comprehension, common sense, chat, mathematics, coding, and instruction following. A smaller group systematizes it more abstractly as a single common factor over benchmarks, a weighted average of metrics, a scope-defining capabilities set, or capability neurons that can be localized.\n\nSpace of measurement. Operationalization is expansive: papers link general ability to 74 measurement instruments and 4 behavioral indicators. The most frequent instruments are MMLU, GSM8K, HellaSwag, MT-Bench, and lm-evaluation-harness, where the first four are benchmarks and the fifth is an evaluation framework; the rest are mostly other benchmarks, with some evaluation platforms, multimodal test suites, LLM-as-a-judge setups, and perplexity-based checks. In practice, papers operationalize the construct as accuracy, win rate, solve rate, rank, aggregated retain-set performance, or perplexity on general-purpose chat, knowledge, reasoning, math, language understanding, code, long-context, and vision-language evaluations, usually to test whether broader capability is preserved after an intervention; a smaller line instead estimates it through IRT or pairwise ranking models.\n\nLinks. Papers link general ability to 10 constructs and 4 behavioral indicators. The most recurrent named links are to forget quality, generation diversity, reasoning, adversarial robustness, and commonsense knowledge: forget quality is reported to correlate with it in one paper and is also described as a related trade-off, a small number of papers claim a causal relationship from generation diversity to general ability, reasoning and commonsense knowledge are treated as related to it, and one paper records a causal relationship from general ability to adversarial robustness using the language of emergent vulnerabilities. Other links, each appearing in a small number of papers, connect general ability to safety-oriented constructs and refusal, to understanding and composability, and to causal claims about loss after fine-tuning, instruction data, evaluation ability, and image classification.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "An Empirical Study of Many-to-Many Summarization with Large Language Models",
+      "HFT: Half Fine-Tuning for Large Language Models",
+      "Improve Safety Training of Large Language Models with Safety-Critical Singular Vectors Localization",
+      "Literature Meets Data: A Synergistic Approach to Hypothesis Generation",
+      "Representation Bending for Large Language Model Safety",
+      "Safety Alignment via Constrained Knowledge Unlearning",
+      "SudoLM: Learning Access Control of Parametric Knowledge with Authorization Alignment",
+      "The Tug of War Within: Mitigating the Fairness-Privacy Conflicts in Large Language Models",
+      "Towards Effective and Efficient Continual Pre-training of Large Language Models",
+      "Towards Reward Fairness in RLHF: From a Resource Allocation Perspective",
+      "YuLan-Mini: Pushing the Limits of Open Data-efficient Language Model"
+    ],
+    "emnlp25": [
+      "AIP: Subverting Retrieval-Augmented Generation via Adversarial Instructional Prompt",
+      "Are Language Models Consequentialist or Deontological Moral Reasoners?",
+      "Continuously Steering LLMs Sensitivity to Contextual Knowledge with Proxy Models",
+      "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+      "Evaluating Large Language Models for Detecting Antisemitism",
+      "Improve LLM-as-a-Judge Ability as a General Ability",
+      "Jailbreak-Tuning: Models Efficiently Learn Jailbreak Susceptibility",
+      "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers",
+      "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+      "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps",
+      "Quantifying Language Disparities in Multilingual Large Language Models",
+      "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+      "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+      "Speculative Safety-Aware Decoding",
+      "Targeted Distillation for Sentiment Analysis",
+      "Towards a Unified Paradigm of Concept Editing in Large Language Models",
+      "Why and How LLMs Benefit from Knowledge Introspection in Commonsense Reasoning",
+      "Your RAG is Unfair: Exposing Fairness Vulnerabilities in Retrieval-Augmented Generation via Backdoor Attacks",
+      "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models"
+    ],
+    "iclr24": [
+      "Beyond Imitation: Leveraging Fine-grained Quality Signals for Alignment",
+      "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs"
+    ],
+    "iclr25": [
+      "A Closer Look at Machine Unlearning for Large Language Models",
+      "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+      "AI Sandbagging: Language Models can Strategically Underperform on Evaluations",
+      "Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters",
+      "Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents",
+      "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset",
+      "Can Generative AI Solve Your In-Context Learning Problem?  A Martingale Perspective",
+      "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?",
+      "Capability Localization: Capabilities Can be Localized rather than Individual Knowledge",
+      "Catastrophic Failure of LLM Unlearning via Quantization",
+      "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+      "Composable Interventions for Language Models",
+      "Controlling Language and Diffusion Models by Transporting Activations",
+      "Copyright-Protected Language Generation via Adaptive Model Fusion",
+      "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "Data Selection via Optimal Control for Language Models",
+      "Determine-Then-Ensemble: Necessity of Top-k Union for Large Language Model Ensembling",
+      "Diverse Preference Learning for Capabilities and Alignment",
+      "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+      "Endless Jailbreaks with Bijection Learning",
+      "Everything is Editable: Extend Knowledge Editing to Unstructured Data in Large Language Models",
+      "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+      "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "Improving Pretraining Data Using Perplexity Correlations",
+      "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+      "LLM Unlearning via Loss Adjustment with Only Forget Data",
+      "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid",
+      "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+      "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+      "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "Monet: Mixture of Monosemantic Experts for Transformers",
+      "Optimized Multi-Token Joint Decoding With Auxiliary Model for LLM Inference",
+      "Perturbation-Restrained Sequential Model Editing",
+      "PiCO: Peer Review in LLMs based on Consistency Optimization",
+      "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+      "Proactive Privacy Amnesia for Large Language Models: Safeguarding PII with Negligible Impact on Model Utility",
+      "REEF: Representation Encoding Fingerprints for Large Language Models",
+      "Re-evaluating Open-ended Evaluation of Large Language Models",
+      "RegMix: Data Mixture as Regression for Language Model Pre-training",
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "SLoPe: Double-Pruned Sparse Plus Lazy Low-Rank Adapter Pretraining of LLMs",
+      "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "STAR: Synthesis of Tailored Architectures",
+      "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+      "Scaling Laws for Downstream Task Performance in Machine Translation",
+      "Scaling Long Context Training Data by Long-Distance Referrals",
+      "Self-Introspective Decoding: Alleviating Hallucinations for Large Vision-Language Models",
+      "Self-Play Preference Optimization for Language Model Alignment",
+      "StringLLM: Understanding the String Processing Capability of Large Language Models",
+      "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+      "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice",
+      "Tamper-Resistant Safeguards for Open-Weight LLMs",
+      "Understanding and Enhancing Safety Mechanisms of LLMs via Safety-Specific Neuron",
+      "Unearthing Skill-level Insights for Understanding Trade-offs of Foundation Models",
+      "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization",
+      "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models"
+    ],
+    "icml25": [
+      "Activation Space Interventions Can Be Transferred Between Large Language Models",
+      "Adversaries Can Misuse Combinations of Safe Models",
+      "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models",
+      "AutoEval Done Right: Using Synthetic Data for Model Evaluation",
+      "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+      "Cape: Context-Aware Prompt Perturbation Mechanism with Differential Privacy",
+      "Free Process Rewards without Process Labels",
+      "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+      "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "Low-Rank Adapting Models for Sparse Autoencoders",
+      "MAGELLAN: Metacognitive predictions of learning progress guide autotelic LLM agents in large goal spaces",
+      "MERGE$^3$: Efficient Evolutionary Merging on Consumer-grade GPUs",
+      "Position: AI Evaluation Should Learn from How We Test Humans",
+      "Position: Don\u2019t Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints",
+      "Position: Political Neutrality in AI Is Impossible \u2014 But Here Is How to Approximate It",
+      "Position: Scaling LLM Agents Requires Asymptotic Analysis with LLM Primitives",
+      "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+      "Reliable and Efficient Amortized Model-based Evaluation",
+      "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+      "Scaling Laws for Differentially Private Language Models",
+      "The Jailbreak Tax: How Useful are Your Jailbreak Outputs?",
+      "The Ripple Effect: On Unforeseen Complications of Backdoor Attacks",
+      "Token Cleaning: Fine-Grained Data Selection for LLM Supervised Fine-Tuning",
+      "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+      "Upweighting Easy Samples in Fine-Tuning Mitigates Forgetting",
+      "When Bad Data Leads to Good Models"
+    ],
+    "naacl25": [
+      "Balancing Forget Quality and Model Utility: A Reverse KL-Divergence Knowledge Distillation Approach for Better Unlearning in LLMs",
+      "FedSpaLLM: Federated Pruning of Large Language Models",
+      "Improving Model Evaluation using SMART Filtering of Benchmark Datasets",
+      "Instantly Learning Preference Alignment via In-context DPO",
+      "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+      "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+      "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench",
+      "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+      "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+      "Self-calibration for Language Model Quantization and Pruning",
+      "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis",
+      "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "Unlearning as multi-task optimization: A normalized gradient difference approach with an adaptive learning rate",
+      "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data"
+    ],
+    "neurips24": [
+      "A StrongREJECT for Empty Jailbreaks",
+      "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "Exploiting LLM Quantization",
+      "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "Fractal Patterns May Illuminate the Success of Next-Token Prediction",
+      "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+      "MemoryFormer : Minimize Transformer Computation by Removing Fully-Connected Layers",
+      "MixEval: Deriving Wisdom of the Crowd from LLM Benchmark Mixtures",
+      "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+      "Observational Scaling Laws and the Predictability of Langauge Model Performance",
+      "Private Attribute Inference from Images with Vision-Language Models",
+      "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+      "Should We Really Edit Language Models? On the Evaluation of Edited Language Models",
+      "The Art of Saying No: Contextual Noncompliance in Language Models",
+      "UltraMedical: Building Specialized Generalists in Biomedicine",
+      "Why are Visually-Grounded Language Models Bad at Image Classification?"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 11,
+    "emnlp25": 19,
+    "iclr24": 2,
+    "iclr25": 60,
+    "icml25": 26,
+    "naacl25": 14,
+    "neurips24": 17
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

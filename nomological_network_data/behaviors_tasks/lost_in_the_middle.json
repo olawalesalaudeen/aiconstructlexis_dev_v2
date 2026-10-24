@@ -1,0 +1,163 @@
+{
+  "canonical_name": "Lost-in-the-middle",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is a position-sensitive drop in performance when relevant information falls in the middle of an input rather than near the beginning or end. Most definitions describe this in retrieval terms, as degraded retrieval accuracy or lower recall for mid-positioned content, and one paper reports a U-shaped pattern over answer position, with the beginning slightly better than the end. Some authors instead describe the behavior through output errors, calling it token shifting when incorrect tokens at critical positions trigger retrieval failure, while another paper uses the label serial position effect for higher answer accuracy near the start and very end of a list than in the middle.\n\nVariants. Papers study the behavior in long-input retrieval, long-context evaluation, and list-based response settings. One line of work focuses on recall for queries linked to chunks in the middle of the input, with a sharper drop at the leaf level, while another focuses on critical output positions where an erroneous token replaces the correct one and retrieval fails. The recorded names vary, including lost-in-the-middle phenomenon, lost-in-the-middle effect, token shifting, and serial position effect.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, one paper reports that long-context understanding is measured by Lost-in-the-middle, used alongside LongChat-Lines, but no separate elicitation or scoring instrument is recorded as linked to the behavior.\n\nWhat it is taken as evidence of. Three constructs are linked to it, and the prevailing construct connection is to Long-context understanding. Papers relate Lost-in-the-middle to long-context capability, one paper reports that long-context understanding is measured by it, and another claims a causal relationship from Lost-in-the-middle to Long-context understanding, stating that the phenomenon degrades performance with increasing context length. The other construct links are recorded as related: Positional bias is linked through papers that describe lost-in-the-middle as a pathology or manifestation of position bias, and Context utilization is linked through claims that models unevenly use lengthy inputs and tend to overlook the middle portion.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Lost-in-the-middle phenomenon",
+    "Lost-in-the-middle effect",
+    "Token shifting",
+    "Serial position effect"
+  ],
+  "papers": [
+    "How Persuasive Is Your Context?",
+    "POSITION BIAS MITIGATES POSITION BIAS: Mitigate Position Bias Through Inter-Position Knowledge Distillation",
+    "Towards a Holistic and Automated Evaluation Framework for Multi-Level Comprehension of LLMs in Book-Length Contexts",
+    "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+    "Long-Context LLMs Meet RAG: Overcoming Challenges for Long Inputs in RAG",
+    "Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark",
+    "On the Emergence of Position Bias in Transformers",
+    "Position: Principles of Animal Cognition to Improve LLM Evaluations",
+    "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+    "Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable degradation in a model's performance, particularly in retrieval tasks, when relevant information is located in the middle of the input context compared to the beginning or end.",
+      "paper": "On the Emergence of Position Bias in Transformers",
+      "original_name": "Lost-in-the-middle phenomenon"
+    },
+    {
+      "text": "A failure mode where models underperform on information located in the middle portion of long inputs, leading to lower recall for mid-positioned content.",
+      "paper": "Towards a Holistic and Automated Evaluation Framework for Multi-Level Comprehension of LLMs in Book-Length Contexts",
+      "original_name": "Lost-in-the-middle effect"
+    },
+    {
+      "text": "The observable phenomenon where a model generates incorrect tokens at critical positions in the output sequence due to the position of the relevant input information, leading to retrieval failure.",
+      "paper": "POSITION BIAS MITIGATES POSITION BIAS: Mitigate Position Bias Through Inter-Position Knowledge Distillation",
+      "original_name": "Token shifting"
+    },
+    {
+      "text": "A pattern of performance in which a model is more accurate when responding to items at the beginning or end of a sequence compared to those in the middle, mirroring a well-documented cognitive bias in humans and animals.",
+      "paper": "Position: Principles of Animal Cognition to Improve LLM Evaluations",
+      "original_name": "Serial position effect"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "CoMemo: LVLMs Need Image Context with Image Memory",
+      "evidence": "the \u201clost in the middle\u201d (Liu et al., 2024c; Song et al., 2024) phenomenon degrades performance with increasing context length (Section 1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "icml25": [
+          "CoMemo: LVLMs Need Image Context with Image Memory"
+        ],
+        "iclr24": [
+          "Retrieval meets Long Context Large Language Models"
+        ],
+        "neurips24": [
+          "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark",
+      "evidence": "\u201cWe observed significant positional bias in LMMs, reminiscent of the \u2018lost-in-the-middle\u2019 pathology found in NLP tasks\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark"
+        ],
+        "icml25": [
+          "On the Emergence of Position Bias in Transformers"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Context utilization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding",
+      "evidence": "Despite the extended context window, LLMs still face a significant challenge in long-context inference due to the uneven utilization of lengthy inputs. [15] conducted a pivotal investigation, revealing that LLMs tend to overlook the middle portion of the input. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is a position-sensitive drop in performance when relevant information falls in the middle of an input rather than near the beginning or end. Most definitions describe this in retrieval terms, as degraded retrieval accuracy or lower recall for mid-positioned content, and one paper reports a U-shaped pattern over answer position, with the beginning slightly better than the end. Some authors instead describe the behavior through output errors, calling it token shifting when incorrect tokens at critical positions trigger retrieval failure, while another paper uses the label serial position effect for higher answer accuracy near the start and very end of a list than in the middle."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study the behavior in long-input retrieval, long-context evaluation, and list-based response settings. One line of work focuses on recall for queries linked to chunks in the middle of the input, with a sharper drop at the leaf level, while another focuses on critical output positions where an erroneous token replaces the correct one and retrieval fails. The recorded names vary, including lost-in-the-middle phenomenon, lost-in-the-middle effect, token shifting, and serial position effect."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, one paper reports that long-context understanding is measured by Lost-in-the-middle, used alongside LongChat-Lines, but no separate elicitation or scoring instrument is recorded as linked to the behavior."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Three constructs are linked to it, and the prevailing construct connection is to Long-context understanding. Papers relate Lost-in-the-middle to long-context capability, one paper reports that long-context understanding is measured by it, and another claims a causal relationship from Lost-in-the-middle to Long-context understanding, stating that the phenomenon degrades performance with increasing context length. The other construct links are recorded as related: Positional bias is linked through papers that describe lost-in-the-middle as a pathology or manifestation of position bias, and Context utilization is linked through claims that models unevenly use lengthy inputs and tend to overlook the middle portion."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is a position-sensitive drop in performance when relevant information falls in the middle of an input rather than near the beginning or end. Most definitions describe this in retrieval terms, as degraded retrieval accuracy or lower recall for mid-positioned content, and one paper reports a U-shaped pattern over answer position, with the beginning slightly better than the end. Some authors instead describe the behavior through output errors, calling it token shifting when incorrect tokens at critical positions trigger retrieval failure, while another paper uses the label serial position effect for higher answer accuracy near the start and very end of a list than in the middle.\n\nVariants. Papers study the behavior in long-input retrieval, long-context evaluation, and list-based response settings. One line of work focuses on recall for queries linked to chunks in the middle of the input, with a sharper drop at the leaf level, while another focuses on critical output positions where an erroneous token replaces the correct one and retrieval fails. The recorded names vary, including lost-in-the-middle phenomenon, lost-in-the-middle effect, token shifting, and serial position effect.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, one paper reports that long-context understanding is measured by Lost-in-the-middle, used alongside LongChat-Lines, but no separate elicitation or scoring instrument is recorded as linked to the behavior.\n\nWhat it is taken as evidence of. Three constructs are linked to it, and the prevailing construct connection is to Long-context understanding. Papers relate Lost-in-the-middle to long-context capability, one paper reports that long-context understanding is measured by it, and another claims a causal relationship from Lost-in-the-middle to Long-context understanding, stating that the phenomenon degrades performance with increasing context length. The other construct links are recorded as related: Positional bias is linked through papers that describe lost-in-the-middle as a pathology or manifestation of position bias, and Context utilization is linked through claims that models unevenly use lengthy inputs and tend to overlook the middle portion.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "How Persuasive Is Your Context?",
+      "POSITION BIAS MITIGATES POSITION BIAS: Mitigate Position Bias Through Inter-Position Knowledge Distillation",
+      "Towards a Holistic and Automated Evaluation Framework for Multi-Level Comprehension of LLMs in Book-Length Contexts"
+    ],
+    "iclr25": [
+      "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+      "Long-Context LLMs Meet RAG: Overcoming Challenges for Long Inputs in RAG",
+      "Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark"
+    ],
+    "icml25": [
+      "On the Emergence of Position Bias in Transformers",
+      "Position: Principles of Animal Cognition to Improve LLM Evaluations"
+    ],
+    "neurips24": [
+      "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+      "Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 3,
+    "icml25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

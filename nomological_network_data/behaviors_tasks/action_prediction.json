@@ -1,0 +1,223 @@
+{
+  "canonical_name": "Action prediction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage is predicting the next appropriate action in a sequence, most often by identifying a target element and the operation to perform, such as click, type, or select, to accomplish a larger goal on a webpage or UI. A smaller line of work frames it as next-user-action prediction from a screen plus previous action history, or as outputting the optimal action for a current state from contextual transitions or offline RL trajectories. Success is usually described as matching the ground-truth next action, though some papers require the full predicted action sequence to align with human trajectories, and one paper treats the behavior as choosing a legal chess move, including a checkmating move.\n\nVariants. Papers use several names for closely related variants, with Action prediction and Next-action prediction the most common labels. The dominant settings are web and UI interaction, where the model predicts interactions like clicking, typing, selecting, or dragging from the current screen or webpage and prior actions. Other variants include Action sequence prediction, where the whole sequence must align with a human trajectory, state-conditioned action prediction from past transitions or return-to-go trajectories, text-based navigation logs checked against a test-time ground truth, and Chess move selection.\n\nSpace of elicitation and scores. Papers link it to 1 measurement instrument, Mind2Web. In that usage, Mind2Web is described as providing action prediction tasks that measure generalization across tasks, websites, and domains, and as a real-world setting for action prediction. No other measurement instrument is linked to it.\n\nWhat it is taken as evidence of. Among linked constructs, papers connect it to 3 constructs, but only one is treated as something the behavior measures: Moral reasoning is measured by action prediction in one formulation. The other construct links use different relation types, with papers claiming causal relationships from GUI understanding to Action prediction and from Spatiotemporal reasoning to Action prediction. Accordingly, the linked construct uses are mixed rather than uniform.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Action prediction",
+    "Next-action prediction",
+    "Action sequence prediction",
+    "Chess move selection"
+  ],
+  "papers": [
+    "AdaptAgent: Adapting Multimodal Web Agents with Few-Shot Learning from Human Demonstrations",
+    "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+    "Multimodal Web Navigation with Instruction-Finetuned Foundation Models",
+    "Vision-Language Foundation Models as Effective Robot Imitators",
+    "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+    "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+    "LLaRA: Supercharging Robot Learning Data for Vision-Language Policy",
+    "Learn-by-interact: A Data-Centric Framework For Self-Adaptive Agents in Realistic Environments",
+    "Learning to Contextualize Web Pages for Enhanced Decision Making by LLM Agents",
+    "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+    "On the Modeling Capabilities of Large Language Models for Sequential Decision Making",
+    "Sparse Autoencoders Reveal Temporal Difference Learning in Large Language Models",
+    "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies",
+    "In-Context Reinforcement Learning From Suboptimal Historical Data",
+    "Position: Theory of Mind Benchmarks are Broken for Large Language Models",
+    "Follow the Beaten Path: The Role of Route Patterns on Vision-Language Navigation Agents Generalization Abilities",
+    "Latent Factor Models Meets Instructions: Goal-conditioned Latent Factor Discovery without Task Supervision",
+    "Animal-Bench: Benchmarking Multimodal Video Models for Animal-centric Video Understanding",
+    "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization",
+    "MARPLE: A Benchmark for Long-Horizon Inference",
+    "MaVEn: An Effective Multi-granularity Hybrid Visual Encoding Framework for Multimodal Large Language Model",
+    "PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation",
+    "Policy Improvement using Language Feedback Models",
+    "Reflective Multi-Agent Collaboration based on Large Language Models",
+    "TOPA: Extending Large Language Models for Video Understanding via Text-Only Pre-Alignment"
+  ],
+  "paper_count": 25,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of determining and generating the next appropriate action (e.g., which element to click, what text to type) in a sequence to accomplish a larger goal.",
+      "paper": "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+      "original_name": "Action prediction"
+    },
+    {
+      "text": "The task of predicting the next user action on a UI, given the screen and a history of previous actions.",
+      "paper": "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+      "original_name": "Next-action prediction"
+    },
+    {
+      "text": "Generating a correct sequence of actions (element selection and operation) that aligns with the ground-truth human trajectory to achieve task success.",
+      "paper": "AdaptAgent: Adapting Multimodal Web Agents with Few-Shot Learning from Human Demonstrations",
+      "original_name": "Action sequence prediction"
+    },
+    {
+      "text": "Choosing a legal chess move that best advances the position, including identifying a checkmating move.",
+      "paper": "Reflective Multi-Agent Collaboration based on Large Language Models",
+      "original_name": "Chess move selection"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Mind2Web",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+      "evidence": "It provides action prediction tasks that measure the generalization of LLMs across the tasks, websites, and their domains (e.g. travel, shopping) (Section 4.2).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+          "Multimodal Web Navigation with Instruction-Finetuned Foundation Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+      "evidence": "Our benchmark encompasses six novel hallucination scenarios ... each covering \ufb01ve different tasks, i.e. object recognition, counting, attribute recognition, spatial reasoning, and action prediction.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Spatiotemporal reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies",
+      "evidence": "we introduce visual trace prompting, a simple yet effective approach to facilitate VLA models\u2019 spatial-temporal awareness for action prediction by encoding state-action trajectories visually. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "GUI understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction",
+      "evidence": "Action Prediction builds on these skills, testing whether agents can execute interactions like clicking, dragging, and typing based on their UI understanding",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Moral reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Are Rules Meant to be Broken? Understanding Multilingual Moral Reasoning as a Computational Pipeline with UniMoral",
+      "evidence": "While numerous tasks can be accomplished using UNIMORAL, we focus on four core concepts of moral reasoning: [I] Action Prediction (AP)... (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Are Rules Meant to be Broken? Understanding Multilingual Moral Reasoning as a Computational Pipeline with UniMoral"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage is predicting the next appropriate action in a sequence, most often by identifying a target element and the operation to perform, such as click, type, or select, to accomplish a larger goal on a webpage or UI. A smaller line of work frames it as next-user-action prediction from a screen plus previous action history, or as outputting the optimal action for a current state from contextual transitions or offline RL trajectories. Success is usually described as matching the ground-truth next action, though some papers require the full predicted action sequence to align with human trajectories, and one paper treats the behavior as choosing a legal chess move, including a checkmating move."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several names for closely related variants, with Action prediction and Next-action prediction the most common labels. The dominant settings are web and UI interaction, where the model predicts interactions like clicking, typing, selecting, or dragging from the current screen or webpage and prior actions. Other variants include Action sequence prediction, where the whole sequence must align with a human trajectory, state-conditioned action prediction from past transitions or return-to-go trajectories, text-based navigation logs checked against a test-time ground truth, and Chess move selection."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to 1 measurement instrument, Mind2Web. In that usage, Mind2Web is described as providing action prediction tasks that measure generalization across tasks, websites, and domains, and as a real-world setting for action prediction. No other measurement instrument is linked to it."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Among linked constructs, papers connect it to 3 constructs, but only one is treated as something the behavior measures: Moral reasoning is measured by action prediction in one formulation. The other construct links use different relation types, with papers claiming causal relationships from GUI understanding to Action prediction and from Spatiotemporal reasoning to Action prediction. Accordingly, the linked construct uses are mixed rather than uniform."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage is predicting the next appropriate action in a sequence, most often by identifying a target element and the operation to perform, such as click, type, or select, to accomplish a larger goal on a webpage or UI. A smaller line of work frames it as next-user-action prediction from a screen plus previous action history, or as outputting the optimal action for a current state from contextual transitions or offline RL trajectories. Success is usually described as matching the ground-truth next action, though some papers require the full predicted action sequence to align with human trajectories, and one paper treats the behavior as choosing a legal chess move, including a checkmating move.\n\nVariants. Papers use several names for closely related variants, with Action prediction and Next-action prediction the most common labels. The dominant settings are web and UI interaction, where the model predicts interactions like clicking, typing, selecting, or dragging from the current screen or webpage and prior actions. Other variants include Action sequence prediction, where the whole sequence must align with a human trajectory, state-conditioned action prediction from past transitions or return-to-go trajectories, text-based navigation logs checked against a test-time ground truth, and Chess move selection.\n\nSpace of elicitation and scores. Papers link it to 1 measurement instrument, Mind2Web. In that usage, Mind2Web is described as providing action prediction tasks that measure generalization across tasks, websites, and domains, and as a real-world setting for action prediction. No other measurement instrument is linked to it.\n\nWhat it is taken as evidence of. Among linked constructs, papers connect it to 3 constructs, but only one is treated as something the behavior measures: Moral reasoning is measured by action prediction in one formulation. The other construct links use different relation types, with papers claiming causal relationships from GUI understanding to Action prediction and from Spatiotemporal reasoning to Action prediction. Accordingly, the linked construct uses are mixed rather than uniform.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "AdaptAgent: Adapting Multimodal Web Agents with Few-Shot Learning from Human Demonstrations"
+    ],
+    "iclr24": [
+      "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+      "Multimodal Web Navigation with Instruction-Finetuned Foundation Models",
+      "Vision-Language Foundation Models as Effective Robot Imitators"
+    ],
+    "iclr25": [
+      "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+      "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "LLaRA: Supercharging Robot Learning Data for Vision-Language Policy",
+      "Learn-by-interact: A Data-Centric Framework For Self-Adaptive Agents in Realistic Environments",
+      "Learning to Contextualize Web Pages for Enhanced Decision Making by LLM Agents",
+      "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+      "On the Modeling Capabilities of Large Language Models for Sequential Decision Making",
+      "Sparse Autoencoders Reveal Temporal Difference Learning in Large Language Models",
+      "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies"
+    ],
+    "icml25": [
+      "In-Context Reinforcement Learning From Suboptimal Historical Data",
+      "Position: Theory of Mind Benchmarks are Broken for Large Language Models"
+    ],
+    "naacl25": [
+      "Follow the Beaten Path: The Role of Route Patterns on Vision-Language Navigation Agents Generalization Abilities",
+      "Latent Factor Models Meets Instructions: Goal-conditioned Latent Factor Discovery without Task Supervision"
+    ],
+    "neurips24": [
+      "Animal-Bench: Benchmarking Multimodal Video Models for Animal-centric Video Understanding",
+      "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization",
+      "MARPLE: A Benchmark for Long-Horizon Inference",
+      "MaVEn: An Effective Multi-granularity Hybrid Visual Encoding Framework for Multimodal Large Language Model",
+      "PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation",
+      "Policy Improvement using Language Feedback Models",
+      "Reflective Multi-Agent Collaboration based on Large Language Models",
+      "TOPA: Extending Large Language Models for Video Understanding via Text-Only Pre-Alignment"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "iclr24": 3,
+    "iclr25": 9,
+    "icml25": 2,
+    "naacl25": 2,
+    "neurips24": 8
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "canonical_name": "Code retrieval",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage treats code retrieval as searching a codebase or repository for relevant code snippets in response to a query, often framed as semantic search. Queries are most commonly natural language or code, and success is described as returning semantically relevant code; some papers narrow this to retrieving a specific function described in natural language without being named, or exact code snippets from very large repositories, while repository-level work focuses on selecting the most relevant snippet from other files for next-line prediction. A smaller framing, under the name code search, treats the task as a classification task that checks whether an incomplete code snippet is semantically consistent with a given text.\n\nVariants. Papers distinguish text-to-code retrieval, also called NL2Code semantic search, from code-to-code retrieval, also called Code2Code semantic search. Other variants move to repository-level settings, including retrieving a function from a natural-language behavior description, retrieving exact snippets from very large repositories, and selecting relevant code knowledge from a repository knowledge base given an incomplete code query or in-file context. One paper also groups code-to-text and hybrid code retrieval under the same family.\n\nSpace of elicitation and scores. Papers link code retrieval to one measurement instrument only: CodeSearchNet. The recorded link says code retrieval is measured by this benchmark for function-level text-to-code retrieval, where natural language queries are used to retrieve relevant code snippets.\n\nWhat it is taken as evidence of. The papers do not link code retrieval to any construct, so they do not state that it serves as evidence of a named construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Code retrieval",
+    "Code-to-code retrieval",
+    "Text-to-code retrieval",
+    "Code search"
+  ],
+  "papers": [
+    "LEANCODE: Understanding Models Better for Code Simplification of Pre-trained Large Language Models",
+    "PRISM: Efficient Long-Range Reasoning With Short-Context LLMs",
+    "CODE REPRESENTATION LEARNING AT SCALE",
+    "RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems",
+    "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+    "MMTEB: Massive Multilingual Text Embedding Benchmark"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of searching for and retrieving relevant code snippets from a large codebase based on a query.",
+      "paper": "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "original_name": "Code retrieval"
+    },
+    {
+      "text": "A semantic search task where natural language queries are used to retrieve relevant code snippets.",
+      "paper": "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "original_name": "Text-to-code retrieval"
+    },
+    {
+      "text": "The task of retrieving relevant code snippets based on another code snippet as a query.",
+      "paper": "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "original_name": "Code-to-code retrieval"
+    },
+    {
+      "text": "Retrieving relevant code snippets from a codebase given a natural language query, treated as a classification task where models determine semantic consistency between text and code.",
+      "paper": "LEANCODE: Understanding Models Better for Code Simplification of Pre-trained Large Language Models",
+      "original_name": "Code search"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CodeSearchNet",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "evidence": "First, we consider CodeSearchNet (CSN) (Husain et al., 2019) and AdvTest (Lu et al., 2021) as benchmarks for function-level text-to-code retrieval, a semantic search task where natural language queries are used to retrieve relevant code snippets. (Section 4.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BM25",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SelfRACG: Enabling LLMs to Self-Express and Retrieve for Code Generation",
+      "evidence": "\"Traditional RACG methods rely on retrievers like BM25 ... to fetch contextually relevant code snippets from repositories.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SelfRACG: Enabling LLMs to Self-Express and Retrieve for Code Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage treats code retrieval as searching a codebase or repository for relevant code snippets in response to a query, often framed as semantic search. Queries are most commonly natural language or code, and success is described as returning semantically relevant code; some papers narrow this to retrieving a specific function described in natural language without being named, or exact code snippets from very large repositories, while repository-level work focuses on selecting the most relevant snippet from other files for next-line prediction. A smaller framing, under the name code search, treats the task as a classification task that checks whether an incomplete code snippet is semantically consistent with a given text."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers distinguish text-to-code retrieval, also called NL2Code semantic search, from code-to-code retrieval, also called Code2Code semantic search. Other variants move to repository-level settings, including retrieving a function from a natural-language behavior description, retrieving exact snippets from very large repositories, and selecting relevant code knowledge from a repository knowledge base given an incomplete code query or in-file context. One paper also groups code-to-text and hybrid code retrieval under the same family."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link code retrieval to one measurement instrument only: CodeSearchNet. The recorded link says code retrieval is measured by this benchmark for function-level text-to-code retrieval, where natural language queries are used to retrieve relevant code snippets."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "The papers do not link code retrieval to any construct, so they do not state that it serves as evidence of a named construct."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage treats code retrieval as searching a codebase or repository for relevant code snippets in response to a query, often framed as semantic search. Queries are most commonly natural language or code, and success is described as returning semantically relevant code; some papers narrow this to retrieving a specific function described in natural language without being named, or exact code snippets from very large repositories, while repository-level work focuses on selecting the most relevant snippet from other files for next-line prediction. A smaller framing, under the name code search, treats the task as a classification task that checks whether an incomplete code snippet is semantically consistent with a given text.\n\nVariants. Papers distinguish text-to-code retrieval, also called NL2Code semantic search, from code-to-code retrieval, also called Code2Code semantic search. Other variants move to repository-level settings, including retrieving a function from a natural-language behavior description, retrieving exact snippets from very large repositories, and selecting relevant code knowledge from a repository knowledge base given an incomplete code query or in-file context. One paper also groups code-to-text and hybrid code retrieval under the same family.\n\nSpace of elicitation and scores. Papers link code retrieval to one measurement instrument only: CodeSearchNet. The recorded link says code retrieval is measured by this benchmark for function-level text-to-code retrieval, where natural language queries are used to retrieve relevant code snippets.\n\nWhat it is taken as evidence of. The papers do not link code retrieval to any construct, so they do not state that it serves as evidence of a named construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "MMTEB: Massive Multilingual Text Embedding Benchmark"
+    ],
+    "acl25": [
+      "LEANCODE: Understanding Models Better for Code Simplification of Pre-trained Large Language Models"
+    ],
+    "iclr24": [
+      "CODE REPRESENTATION LEARNING AT SCALE",
+      "RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems"
+    ],
+    "emnlp25": [
+      "PRISM: Efficient Long-Range Reasoning With Short-Context LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "acl25": 1,
+    "iclr24": 2,
+    "emnlp25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25"
+  ]
+}

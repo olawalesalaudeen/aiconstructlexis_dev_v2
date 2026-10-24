@@ -1,0 +1,100 @@
+{
+  "canonical_name": "TRUE",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, the prevailing description treats TRUE as a fine-tuned T5-11B Natural Language Inference model used as an evaluator inside broader evaluation frameworks. Definitions consistently describe it as judging whether a source passage or premise entails a generated claim or hypothesis, and one paper makes this explicit by using it as an evaluator whose output is 1 for entailment and 0 otherwise; another describes it as fine-tuned on a collection of NLI datasets.\n\nWhat it is claimed to measure. Papers link TRUE to two constructs, most commonly Citation quality and also Faithfulness, and to no behavioral indicators. The measurement claims are concentrated around entailment-based evaluation: papers use it to measure Citation quality by judging entailment in citations or verifying whether a claim is fully supported by cited documents, and they report it as measuring Faithfulness through factual consistency evaluation in context.\n\nSpace of uses. Papers do not link TRUE to any other measurement instrument. They generally position it as an NLI component or evaluator within larger evaluation pipelines, including citation rewrite and citation quality evaluation, and one paper uses it alongside GPT-4o as another NLI model for factual consistency evaluation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "TRUE"
+  ],
+  "papers": [
+    "Are LLMs Better than Reported? Detecting Label Errors and Mitigating Their Effect on Model Performance",
+    "Large Language Models for Automated Literature Review: An Evaluation of Reference Generation, Abstract Writing, and Review Composition",
+    "TracSum: A New Benchmark for Aspect-Based Summarization with Sentence-Level Traceability in Medical Domain",
+    "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+    "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A fine-tuned T5-11B model used as the Natural Language Inference (NLI) component within evaluation frameworks to judge the entailment between a source passage and a generated claim.",
+      "paper": "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization",
+      "original_name": "TRUE"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Citation quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+      "evidence": "We use TRUE3, a fine-tuned T5-11B (Raffel et al., 2020) model as the NLI model for the judgement of entailment in citation quality. (Section 4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+          "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models for Automated Literature Review: An Evaluation of Reference Generation, Abstract Writing, and Review Composition",
+      "evidence": "for the Abstract Writing task, we employ TRUE (Honovich et al., 2022), along with GPT-4o as NLI models for evaluating factual consistency in context",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Large Language Models for Automated Literature Review: An Evaluation of Reference Generation, Abstract Writing, and Review Composition"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, the prevailing description treats TRUE as a fine-tuned T5-11B Natural Language Inference model used as an evaluator inside broader evaluation frameworks. Definitions consistently describe it as judging whether a source passage or premise entails a generated claim or hypothesis, and one paper makes this explicit by using it as an evaluator whose output is 1 for entailment and 0 otherwise; another describes it as fine-tuned on a collection of NLI datasets."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link TRUE to two constructs, most commonly Citation quality and also Faithfulness, and to no behavioral indicators. The measurement claims are concentrated around entailment-based evaluation: papers use it to measure Citation quality by judging entailment in citations or verifying whether a claim is fully supported by cited documents, and they report it as measuring Faithfulness through factual consistency evaluation in context."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers do not link TRUE to any other measurement instrument. They generally position it as an NLI component or evaluator within larger evaluation pipelines, including citation rewrite and citation quality evaluation, and one paper uses it alongside GPT-4o as another NLI model for factual consistency evaluation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, the prevailing description treats TRUE as a fine-tuned T5-11B Natural Language Inference model used as an evaluator inside broader evaluation frameworks. Definitions consistently describe it as judging whether a source passage or premise entails a generated claim or hypothesis, and one paper makes this explicit by using it as an evaluator whose output is 1 for entailment and 0 otherwise; another describes it as fine-tuned on a collection of NLI datasets.\n\nWhat it is claimed to measure. Papers link TRUE to two constructs, most commonly Citation quality and also Faithfulness, and to no behavioral indicators. The measurement claims are concentrated around entailment-based evaluation: papers use it to measure Citation quality by judging entailment in citations or verifying whether a claim is fully supported by cited documents, and they report it as measuring Faithfulness through factual consistency evaluation in context.\n\nSpace of uses. Papers do not link TRUE to any other measurement instrument. They generally position it as an NLI component or evaluator within larger evaluation pipelines, including citation rewrite and citation quality evaluation, and one paper uses it alongside GPT-4o as another NLI model for factual consistency evaluation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Are LLMs Better than Reported? Detecting Label Errors and Mitigating Their Effect on Model Performance",
+      "Large Language Models for Automated Literature Review: An Evaluation of Reference Generation, Abstract Writing, and Review Composition",
+      "TracSum: A New Benchmark for Aspect-Based Summarization with Sentence-Level Traceability in Medical Domain"
+    ],
+    "naacl25": [
+      "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+      "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "naacl25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "naacl25"
+  ]
+}

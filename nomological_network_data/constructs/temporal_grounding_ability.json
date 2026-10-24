@@ -1,0 +1,136 @@
+{
+  "canonical_name": "Temporal grounding ability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed papers, the prevailing usage treats temporal grounding ability as a query-conditioned video localization capability: models are described as associating a textual query, question, or instruction with the specific time segment, timestamp, or part of a video where the relevant event occurs. A closely aligned framing calls this \"referring,\" defined as comprehending time information from user inputs and identifying which part of a video the user is referring to. A smaller line of work uses a narrower temporal localization framing, centered on \"finding the sub-action frames where the differences might occur, and aligning those frames between the two videos,\" which shifts the scope from general event grounding to cross-video sub-action alignment.\n\nSpace of facets. Papers use several nearby labels for overlapping phenomena, most often \"temporal grounding\" or \"video temporal grounding,\" and less often \"referring\" or \"temporal localization.\" The first two are used for the general ability to localize events in time from language, while \"referring\" is presented as a capability in a task taxonomy and \"temporal localization\" is used for the more specific case of localizing relevant sub-actions across two videos. One paper also places video temporal grounding as the base of downstream tasks such as moment retrieval, dense video caption, video highlight detection, and video summarization.\n\nSpace of measurement. Recorded operationalization is sparse. No measurement instrument is linked to this construct, and no constructs are linked to it; papers instead connect it to two behavioral indicators, most often Temporal grounding and also Dense video captioning, but these links are recorded as causal or related rather than as measurements. Where evaluation language is explicit, papers describe assessing \"temporal grounding ability on Next-GQA\" and report \"precise temporal grounding\" for specific questions, which matches the dominant definition of locating relevant video time spans from language, while the temporal localization variant targets sub-action frames and cross-video alignment.\n\nLinks. Only a few links are recorded. One paper claims a causal relationship from Temporal grounding to Temporal grounding ability, citing fine-tuning on dense video captioning and temporal grounding tasks to enhance temporal localization abilities, and the same paper also records a causal relationship in the reverse direction, from Temporal grounding ability to Temporal grounding, in the context of further training to refine capabilities. Another paper reports that Temporal grounding is related to Temporal grounding ability and that Dense video captioning is related to Temporal grounding ability; no correlational links are recorded.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Temporal grounding",
+    "Video temporal grounding",
+    "Temporal localization",
+    "Referring"
+  ],
+  "papers": [
+    "CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding",
+    "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+    "Video Action Differencing",
+    "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+    "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+    "Streaming Long Video Understanding with Large Language Models"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability to accurately associate a textual query or question with the specific time segment in a video where the relevant event occurs.",
+      "paper": "Streaming Long Video Understanding with Large Language Models",
+      "original_name": "Temporal grounding"
+    },
+    {
+      "text": "The model's ability to precisely identify and localize the timestamps of specific events within a video based on a textual query or instruction.",
+      "paper": "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "original_name": "Video temporal grounding"
+    },
+    {
+      "text": "The ability to identify the specific sub-action frames where a relevant difference occurs and align those frames across videos.",
+      "paper": "Video Action Differencing",
+      "original_name": "Temporal localization"
+    },
+    {
+      "text": "The ability to comprehend time information from user inputs and identify which part of a video the user is referring to.",
+      "paper": "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "original_name": "Referring"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Temporal grounding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+      "evidence": "We present a novel training strategy specifically designed to enhance the temporal localization abilities of Vid-LLMs... we fine-tune our Vid-LLM in the second stage on dense video captioning and temporal grounding tasks.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM"
+        ],
+        "iclr25": [
+          "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Dense video captioning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "evidence": "Video Temporal Grounding (VTG) is an important ability for video understanding models (Lin et al., 2023b), and has becoming the base of a series of downstream tasks like moment retrieval (Fabian Caba Heilbron & Niebles, 2015; Gao et al., 2017; Oncescu et al., 2021), dense video caption (Zhou et al., 2018; Tang et al., 2019), video highlight detection (Lei et al.; Liu et al., 2022), and video summarization (Song et al., 2015; Gygli et al., 2014).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed papers, the prevailing usage treats temporal grounding ability as a query-conditioned video localization capability: models are described as associating a textual query, question, or instruction with the specific time segment, timestamp, or part of a video where the relevant event occurs. A closely aligned framing calls this \"referring,\" defined as comprehending time information from user inputs and identifying which part of a video the user is referring to. A smaller line of work uses a narrower temporal localization framing, centered on \"finding the sub-action frames where the differences might occur, and aligning those frames between the two videos,\" which shifts the scope from general event grounding to cross-video sub-action alignment."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use several nearby labels for overlapping phenomena, most often \"temporal grounding\" or \"video temporal grounding,\" and less often \"referring\" or \"temporal localization.\" The first two are used for the general ability to localize events in time from language, while \"referring\" is presented as a capability in a task taxonomy and \"temporal localization\" is used for the more specific case of localizing relevant sub-actions across two videos. One paper also places video temporal grounding as the base of downstream tasks such as moment retrieval, dense video caption, video highlight detection, and video summarization."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Recorded operationalization is sparse. No measurement instrument is linked to this construct, and no constructs are linked to it; papers instead connect it to two behavioral indicators, most often Temporal grounding and also Dense video captioning, but these links are recorded as causal or related rather than as measurements. Where evaluation language is explicit, papers describe assessing \"temporal grounding ability on Next-GQA\" and report \"precise temporal grounding\" for specific questions, which matches the dominant definition of locating relevant video time spans from language, while the temporal localization variant targets sub-action frames and cross-video alignment."
+    },
+    {
+      "label": "Links.",
+      "text": "Only a few links are recorded. One paper claims a causal relationship from Temporal grounding to Temporal grounding ability, citing fine-tuning on dense video captioning and temporal grounding tasks to enhance temporal localization abilities, and the same paper also records a causal relationship in the reverse direction, from Temporal grounding ability to Temporal grounding, in the context of further training to refine capabilities. Another paper reports that Temporal grounding is related to Temporal grounding ability and that Dense video captioning is related to Temporal grounding ability; no correlational links are recorded."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define temporal grounding ability as understanding a textual or user query and localizing the corresponding event, timestamps, or segment in a video. One paper instead focuses on identifying and aligning relevant sub-action frames across videos, but this appears to be an outlier, so the overall pattern is that papers are studying the same core temporal localization ability.",
+    "papers_with_definition": 4,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed papers, the prevailing usage treats temporal grounding ability as a query-conditioned video localization capability: models are described as associating a textual query, question, or instruction with the specific time segment, timestamp, or part of a video where the relevant event occurs. A closely aligned framing calls this \"referring,\" defined as comprehending time information from user inputs and identifying which part of a video the user is referring to. A smaller line of work uses a narrower temporal localization framing, centered on \"finding the sub-action frames where the differences might occur, and aligning those frames between the two videos,\" which shifts the scope from general event grounding to cross-video sub-action alignment.\n\nSpace of facets. Papers use several nearby labels for overlapping phenomena, most often \"temporal grounding\" or \"video temporal grounding,\" and less often \"referring\" or \"temporal localization.\" The first two are used for the general ability to localize events in time from language, while \"referring\" is presented as a capability in a task taxonomy and \"temporal localization\" is used for the more specific case of localizing relevant sub-actions across two videos. One paper also places video temporal grounding as the base of downstream tasks such as moment retrieval, dense video caption, video highlight detection, and video summarization.\n\nSpace of measurement. Recorded operationalization is sparse. No measurement instrument is linked to this construct, and no constructs are linked to it; papers instead connect it to two behavioral indicators, most often Temporal grounding and also Dense video captioning, but these links are recorded as causal or related rather than as measurements. Where evaluation language is explicit, papers describe assessing \"temporal grounding ability on Next-GQA\" and report \"precise temporal grounding\" for specific questions, which matches the dominant definition of locating relevant video time spans from language, while the temporal localization variant targets sub-action frames and cross-video alignment.\n\nLinks. Only a few links are recorded. One paper claims a causal relationship from Temporal grounding to Temporal grounding ability, citing fine-tuning on dense video captioning and temporal grounding tasks to enhance temporal localization abilities, and the same paper also records a causal relationship in the reverse direction, from Temporal grounding ability to Temporal grounding, in the context of further training to refine capabilities. Another paper reports that Temporal grounding is related to Temporal grounding ability and that Dense video captioning is related to Temporal grounding ability; no correlational links are recorded.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding",
+      "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "Video Action Differencing"
+    ],
+    "neurips24": [
+      "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+      "Streaming Long Video Understanding with Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "iclr25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "canonical_name": "Evaluation ability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats evaluation ability as a latent model capacity to accurately assess the quality or correctness of model-generated outputs, responses, or intermediate steps. Most definitions keep this core framing while shifting the evaluation target, including instruction-following responses, coding solutions, text along multiple specified dimensions, and multimodal visual outputs. A smaller line of work narrows the construct to fine-grained evaluation, where judgments are made with user-defined score rubrics and reference materials rather than only coarse preferences, or to checking whether a response satisfies instruction constraints.\n\nSpace of facets. Papers use several near-synonymous labels for closely related capacities, including evaluation capability, judging ability, judgment capability, text evaluation ability, judge ability, and LLM-as-a-judge ability. The clearest subtype is fine-grained evaluation capability, defined around detailed rubrics and reference answers, and one paper groups reranking, beam search, and refinement under a shared fundamental judging capability. A smaller framing treats judge ability as a general ability of LLMs, while other papers apply these labels to text quality, instruction adherence, coding-task judging, or intermediate-step evaluation.\n\nSpace of measurement. The construct is linked to 6 measurement instruments and no behavioral indicators. Operationalizations are mostly benchmark or dataset based: CommonGen is used to compare generation and evaluation abilities, LLMBar is described as measuring assessment ability in instruction-following, RewardBench is used to evaluate judgment capability, and MT-Bench, Feedback Bench, and one other linked benchmark are used with customized score rubrics to measure correlation with GPT-4. Other papers operationalize it as agreement with human judgments or human voting, and one coding study uses a curated human-annotated dataset. These operationalizations target accurate judging of outputs, though they are often instantiated in task-specific settings such as instruction following, coding, or rubric-based text scoring.\n\nLinks. Beyond measurement, one paper reports that evaluation ability is related to generative ability, stating that it is simpler for language models to evaluate a sentence than to generate it, even for small language models. One paper also claims a causal relationship from evaluation ability to general ability, reporting that a training method built around judge tasks enhances the model's general capabilities.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Evaluation capability",
+    "Fine-grained evaluation capability",
+    "Judging ability",
+    "Text evaluation ability",
+    "Judgment capability",
+    "Judge ability",
+    "LLM-as-a-judge ability"
+  ],
+  "papers": [
+    "Beyond the Surface: Measuring Self-Preference in LLM Judgments",
+    "Improve LLM-as-a-Judge Ability as a General Ability",
+    "Language Model Self-improvement by Reinforcement Learning Contemplation",
+    "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models",
+    "Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates",
+    "Non-myopic Generation of Language Models for Reasoning and Planning",
+    "RocketEval: Efficient automated LLM evaluation via grading checklist",
+    "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+    "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+    "ReIFE: Re-evaluating Instruction-Following Evaluation",
+    "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+    "GenAI Arena: An Open Evaluation Platform for Generative Models",
+    "StackEval: Benchmarking LLMs in Coding Assistance"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The model's latent ability to accurately assess the quality or correctness of a generated trajectory or its intermediate steps.",
+      "paper": "Non-myopic Generation of Language Models for Reasoning and Planning",
+      "original_name": "Evaluation capability"
+    },
+    {
+      "text": "The ability to judge text quality using detailed, user-defined criteria rather than only coarse or generic preferences.",
+      "paper": "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models",
+      "original_name": "Fine-grained evaluation capability"
+    },
+    {
+      "text": "The latent capacity of an LLM to accurately assess the quality of model-generated responses, particularly in guiding test-time computation through reranking, beam search, or refinement.",
+      "paper": "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+      "original_name": "Judging ability"
+    },
+    {
+      "text": "The latent capability of an LLM to accurately assess and score text along multiple specified dimensions.",
+      "paper": "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+      "original_name": "Text evaluation ability"
+    },
+    {
+      "text": "The latent ability of a model to assess whether a given response accurately adheres to the constraints of an instruction.",
+      "paper": "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "original_name": "Judgment capability"
+    },
+    {
+      "text": "The latent capability of a large language model to evaluate responses, provide accurate preference signals, and render critical judgments.",
+      "paper": "Improve LLM-as-a-Judge Ability as a General Ability",
+      "original_name": "Judge ability"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLMBar",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "evidence": "For assessing the refiner\u2019s judgment capability, we turn to LLMBar (Zeng et al., 2023), a dataset designed to measure the assessment ability of LLMs in the context of instruction-following tasks. (Section 3.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models"
+        ],
+        "iclr24": [
+          "Evaluating Large Language Models at Evaluating Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generative ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Language Model Self-improvement by Reinforcement Learning Contemplation",
+      "evidence": "We disclose that it is simpler for language models to evaluate a sentence than to generate it, even for small language models. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Language Model Self-improvement by Reinforcement Learning Contemplation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CommonGen",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Language Model Self-improvement by Reinforcement Learning Contemplation",
+      "evidence": "We conduct experiments to compare the text generation and evaluation abilities of LLMs using the CommonGen (Lin et al., 2020) task... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Language Model Self-improvement by Reinforcement Learning Contemplation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models",
+      "evidence": "Furthermore, measuring correlation with GPT-4 with 1222 customized score rubrics across four benchmarks (MT Bench, Vicuna Bench, Feedback Bench, Flask Eval) shows similar trends, bolstering PROMETHEUS\u2019s capability as an evaluator LLM. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Vicuna-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models",
+      "evidence": "Furthermore, measuring correlation with GPT-4 with 1222 customized score rubrics across four benchmarks (MT Bench, Vicuna Bench, Feedback Bench, Flask Eval) shows similar trends, bolstering PROMETHEUS\u2019s capability as an evaluator LLM. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Feedback Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models",
+      "evidence": "Furthermore, measuring correlation with GPT-4 with 1222 customized score rubrics across four benchmarks (MT Bench, Vicuna Bench, Feedback Bench, Flask Eval) shows similar trends, bolstering PROMETHEUS\u2019s capability as an evaluator LLM. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Improve LLM-as-a-Judge Ability as a General Ability",
+      "evidence": "Furthermore, our training method enhances the general capabilities of the model by constructing complicated judge task... (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Improve LLM-as-a-Judge Ability as a General Ability"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RewardBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Improve LLM-as-a-Judge Ability as a General Ability",
+      "evidence": "To evaluate the judgment capabilities of our model, we conduct experiments on RewardBench (Lambert et al., 2024). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Improve LLM-as-a-Judge Ability as a General Ability"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "JudgeBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+      "evidence": "JudgeBench is a recent benchmark that evaluates LLM-based judges on challenging response pairs spanning knowledge, reasoning, math, and coding. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 9,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 9,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats evaluation ability as a latent model capacity to accurately assess the quality or correctness of model-generated outputs, responses, or intermediate steps. Most definitions keep this core framing while shifting the evaluation target, including instruction-following responses, coding solutions, text along multiple specified dimensions, and multimodal visual outputs. A smaller line of work narrows the construct to fine-grained evaluation, where judgments are made with user-defined score rubrics and reference materials rather than only coarse preferences, or to checking whether a response satisfies instruction constraints."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use several near-synonymous labels for closely related capacities, including evaluation capability, judging ability, judgment capability, text evaluation ability, judge ability, and LLM-as-a-judge ability. The clearest subtype is fine-grained evaluation capability, defined around detailed rubrics and reference answers, and one paper groups reranking, beam search, and refinement under a shared fundamental judging capability. A smaller framing treats judge ability as a general ability of LLMs, while other papers apply these labels to text quality, instruction adherence, coding-task judging, or intermediate-step evaluation."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "The construct is linked to 6 measurement instruments and no behavioral indicators. Operationalizations are mostly benchmark or dataset based: CommonGen is used to compare generation and evaluation abilities, LLMBar is described as measuring assessment ability in instruction-following, RewardBench is used to evaluate judgment capability, and MT-Bench, Feedback Bench, and one other linked benchmark are used with customized score rubrics to measure correlation with GPT-4. Other papers operationalize it as agreement with human judgments or human voting, and one coding study uses a curated human-annotated dataset. These operationalizations target accurate judging of outputs, though they are often instantiated in task-specific settings such as instruction following, coding, or rubric-based text scoring."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, one paper reports that evaluation ability is related to generative ability, stating that it is simpler for language models to evaluate a sentence than to generate it, even for small language models. One paper also claims a causal relationship from evaluation ability to general ability, reporting that a training method built around judge tasks enhances the model's general capabilities."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define evaluation ability as a model's latent capacity to judge the quality or correctness of generated outputs, trajectories, or solutions, often in a way that matches human judgments, preferences, or explicit criteria. A few papers narrow this to particular settings such as instruction adherence, coding, multimodal outputs, or multi-dimensional scoring, but these are applications of the same core judging ability rather than different constructs.",
+    "papers_with_definition": 9,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats evaluation ability as a latent model capacity to accurately assess the quality or correctness of model-generated outputs, responses, or intermediate steps. Most definitions keep this core framing while shifting the evaluation target, including instruction-following responses, coding solutions, text along multiple specified dimensions, and multimodal visual outputs. A smaller line of work narrows the construct to fine-grained evaluation, where judgments are made with user-defined score rubrics and reference materials rather than only coarse preferences, or to checking whether a response satisfies instruction constraints.\n\nSpace of facets. Papers use several near-synonymous labels for closely related capacities, including evaluation capability, judging ability, judgment capability, text evaluation ability, judge ability, and LLM-as-a-judge ability. The clearest subtype is fine-grained evaluation capability, defined around detailed rubrics and reference answers, and one paper groups reranking, beam search, and refinement under a shared fundamental judging capability. A smaller framing treats judge ability as a general ability of LLMs, while other papers apply these labels to text quality, instruction adherence, coding-task judging, or intermediate-step evaluation.\n\nSpace of measurement. The construct is linked to 6 measurement instruments and no behavioral indicators. Operationalizations are mostly benchmark or dataset based: CommonGen is used to compare generation and evaluation abilities, LLMBar is described as measuring assessment ability in instruction-following, RewardBench is used to evaluate judgment capability, and MT-Bench, Feedback Bench, and one other linked benchmark are used with customized score rubrics to measure correlation with GPT-4. Other papers operationalize it as agreement with human judgments or human voting, and one coding study uses a curated human-annotated dataset. These operationalizations target accurate judging of outputs, though they are often instantiated in task-specific settings such as instruction following, coding, or rubric-based text scoring.\n\nLinks. Beyond measurement, one paper reports that evaluation ability is related to generative ability, stating that it is simpler for language models to evaluate a sentence than to generate it, even for small language models. One paper also claims a causal relationship from evaluation ability to general ability, reporting that a training method built around judge tasks enhances the model's general capabilities.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Beyond the Surface: Measuring Self-Preference in LLM Judgments",
+      "Improve LLM-as-a-Judge Ability as a General Ability"
+    ],
+    "iclr24": [
+      "Language Model Self-improvement by Reinforcement Learning Contemplation",
+      "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models"
+    ],
+    "iclr25": [
+      "Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates",
+      "Non-myopic Generation of Language Models for Reasoning and Planning",
+      "RocketEval: Efficient automated LLM evaluation via grading checklist",
+      "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models"
+    ],
+    "icml25": [
+      "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators"
+    ],
+    "naacl25": [
+      "ReIFE: Re-evaluating Instruction-Following Evaluation"
+    ],
+    "neurips24": [
+      "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+      "GenAI Arena: An Open Evaluation Platform for Generative Models",
+      "StackEval: Benchmarking LLMs in Coding Assistance"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 2,
+    "iclr25": 4,
+    "icml25": 1,
+    "naacl25": 1,
+    "neurips24": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

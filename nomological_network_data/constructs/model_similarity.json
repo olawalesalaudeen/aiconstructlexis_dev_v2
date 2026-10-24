@@ -1,0 +1,155 @@
+{
+  "canonical_name": "Model similarity",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats model similarity as correspondence between two models' outputs: papers define it as statistical resemblance between output distributions, statistically similar or confusable outputs, or closeness between a fine-tuned or draft model and a reference model at the token or output-space level. In that framing, the comparison is often stated to be independent of architecture or size, and one paper notes that models from the same family output more similar distributions than models of similar size. Smaller lines of work use nearby labels for different objects: one defines representation alignment as consistency in hidden-state encoding across layers and tasks during merging, and another uses model alignment to mean adherence to safety constraints and avoidance of harmful outputs.\n\nSpace of facets. Papers do not present a single shared taxonomy, but they repeatedly distinguish the notion by what is being aligned and in what setting. The main variants are similarity between arbitrary models' output distributions, token-level alignment between draft and target models in speculative decoding, output-space alignment between fine-tuned and pre-trained models to retain pre-training knowledge, and layer-wise hidden-representation alignment for hierarchical model merging over clustered typical samples. At the naming level, model similarity, model alignment, and representation alignment are often used for related cross-model correspondence, though one paper uses model alignment for a different object, a continuum from strong to weak safety alignment.\n\nSpace of measurement. Papers do not link this construct to any measurement instrument or behavioral indicator. Instead, they operationalize it through analyses such as pairwise distances between output distributions, misclassification patterns for inferring similarities between proprietary and open-weight models, layer-wise hidden-representation similarity over clustered typical samples, and output-space alignment between paired models. One speculative-decoding paper also states that the acceptance rate of draft-generated tokens is directly tied to alignment between draft and target token distributions, so efficiency is discussed alongside the similarity notion even though no named instrument is attached to it.\n\nLinks. Papers only claim causal links for this construct. One paper claims a causal relationship from model similarity to knowledge retention, describing alignment between fine-tuned and pre-trained models as ensuring retention of knowledge from large-scale data, and another claims a causal relationship from model similarity to multilingual ability by aligning the internal forward process of non-dominant languages with that of a dominant language to boost performance. Separately, one paper claims a causal relationship from knowledge transfer to model similarity, in a discussion that cites aligning white-box and target models and the transferability of adversarial prompts.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Model similarity",
+    "Representation alignment",
+    "Model alignment"
+  ],
+  "papers": [
+    "ShifCon: Enhancing Non-Dominant Language Capabilities with a Shift-based Multilingual Contrastive Framework",
+    "RECALL: REpresentation-aligned Catastrophic-forgetting ALLeviation via Hierarchical Model Merging",
+    "Representation Potentials of Foundation Models for Multimodal Alignment: A Survey",
+    "DistillSpec: Improving Speculative Decoding via Knowledge Distillation",
+    "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+    "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+    "Model Equality Testing: Which Model is this API Serving?",
+    "Idiosyncrasies in Large Language Models",
+    "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+    "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree of statistical resemblance between the output distributions of two different language models, independent of their architecture or size.",
+      "paper": "Model Equality Testing: Which Model is this API Serving?",
+      "original_name": "Model similarity"
+    },
+    {
+      "text": "The internal consistency of how models encode inputs across layers and tasks, serving as a proxy for semantic and syntactic knowledge preservation during merging.",
+      "paper": "RECALL: REpresentation-aligned Catastrophic-forgetting ALLeviation via Hierarchical Model Merging",
+      "original_name": "Representation alignment"
+    },
+    {
+      "text": "The degree to which the token-level output distributions of a smaller draft model and a larger target model correspond, which is a critical factor for the efficiency of speculative decoding.",
+      "paper": "DistillSpec: Improving Speculative Decoding via Knowledge Distillation",
+      "original_name": "Model alignment"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge retention",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization",
+      "evidence": "aligning the fine-tuned model with the pre-trained one is crucial, as it ensures retention of knowledge obtained from large-scale data (Section 3.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Attack transferability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+      "evidence": "\u201cBuilding on previous work suggesting that aligning white-box and target models in the safety domain can improve the transferability of adversarial prompts\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats model similarity as correspondence between two models' outputs: papers define it as statistical resemblance between output distributions, statistically similar or confusable outputs, or closeness between a fine-tuned or draft model and a reference model at the token or output-space level. In that framing, the comparison is often stated to be independent of architecture or size, and one paper notes that models from the same family output more similar distributions than models of similar size. Smaller lines of work use nearby labels for different objects: one defines representation alignment as consistency in hidden-state encoding across layers and tasks during merging, and another uses model alignment to mean adherence to safety constraints and avoidance of harmful outputs."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not present a single shared taxonomy, but they repeatedly distinguish the notion by what is being aligned and in what setting. The main variants are similarity between arbitrary models' output distributions, token-level alignment between draft and target models in speculative decoding, output-space alignment between fine-tuned and pre-trained models to retain pre-training knowledge, and layer-wise hidden-representation alignment for hierarchical model merging over clustered typical samples. At the naming level, model similarity, model alignment, and representation alignment are often used for related cross-model correspondence, though one paper uses model alignment for a different object, a continuum from strong to weak safety alignment."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers do not link this construct to any measurement instrument or behavioral indicator. Instead, they operationalize it through analyses such as pairwise distances between output distributions, misclassification patterns for inferring similarities between proprietary and open-weight models, layer-wise hidden-representation similarity over clustered typical samples, and output-space alignment between paired models. One speculative-decoding paper also states that the acceptance rate of draft-generated tokens is directly tied to alignment between draft and target token distributions, so efficiency is discussed alongside the similarity notion even though no named instrument is attached to it."
+    },
+    {
+      "label": "Links.",
+      "text": "Papers only claim causal links for this construct. One paper claims a causal relationship from model similarity to knowledge retention, describing alignment between fine-tuned and pre-trained models as ensuring retention of knowledge from large-scale data, and another claims a causal relationship from model similarity to multilingual ability by aligning the internal forward process of non-dominant languages with that of a dominant language to boost performance. Separately, one paper claims a causal relationship from knowledge transfer to model similarity, in a discussion that cites aligning white-box and target models and the transferability of adversarial prompts."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "conflicting",
+    "reason": "Most papers define model similarity as similarity between two models' outputs or output distributions on the same inputs, sometimes at the token level or via confusability. But a notable minority use the term for internal representation consistency across layers and tasks, or for adherence to safety constraints, which are different phenomena applied to different things, so papers using these definitions would not be studying the same construct.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "conflicting",
+      "conflicting"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats model similarity as correspondence between two models' outputs: papers define it as statistical resemblance between output distributions, statistically similar or confusable outputs, or closeness between a fine-tuned or draft model and a reference model at the token or output-space level. In that framing, the comparison is often stated to be independent of architecture or size, and one paper notes that models from the same family output more similar distributions than models of similar size. Smaller lines of work use nearby labels for different objects: one defines representation alignment as consistency in hidden-state encoding across layers and tasks during merging, and another uses model alignment to mean adherence to safety constraints and avoidance of harmful outputs.\n\nSpace of facets. Papers do not present a single shared taxonomy, but they repeatedly distinguish the notion by what is being aligned and in what setting. The main variants are similarity between arbitrary models' output distributions, token-level alignment between draft and target models in speculative decoding, output-space alignment between fine-tuned and pre-trained models to retain pre-training knowledge, and layer-wise hidden-representation alignment for hierarchical model merging over clustered typical samples. At the naming level, model similarity, model alignment, and representation alignment are often used for related cross-model correspondence, though one paper uses model alignment for a different object, a continuum from strong to weak safety alignment.\n\nSpace of measurement. Papers do not link this construct to any measurement instrument or behavioral indicator. Instead, they operationalize it through analyses such as pairwise distances between output distributions, misclassification patterns for inferring similarities between proprietary and open-weight models, layer-wise hidden-representation similarity over clustered typical samples, and output-space alignment between paired models. One speculative-decoding paper also states that the acceptance rate of draft-generated tokens is directly tied to alignment between draft and target token distributions, so efficiency is discussed alongside the similarity notion even though no named instrument is attached to it.\n\nLinks. Papers only claim causal links for this construct. One paper claims a causal relationship from model similarity to knowledge retention, describing alignment between fine-tuned and pre-trained models as ensuring retention of knowledge from large-scale data, and another claims a causal relationship from model similarity to multilingual ability by aligning the internal forward process of non-dominant languages with that of a dominant language to boost performance. Separately, one paper claims a causal relationship from knowledge transfer to model similarity, in a discussion that cites aligning white-box and target models and the transferability of adversarial prompts.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "ShifCon: Enhancing Non-Dominant Language Capabilities with a Shift-based Multilingual Contrastive Framework"
+    ],
+    "emnlp25": [
+      "RECALL: REpresentation-aligned Catastrophic-forgetting ALLeviation via Hierarchical Model Merging",
+      "Representation Potentials of Foundation Models for Multimodal Alignment: A Survey"
+    ],
+    "iclr24": [
+      "DistillSpec: Improving Speculative Decoding via Knowledge Distillation"
+    ],
+    "iclr25": [
+      "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+      "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+      "Model Equality Testing: Which Model is this API Serving?"
+    ],
+    "icml25": [
+      "Idiosyncrasies in Large Language Models"
+    ],
+    "naacl25": [
+      "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring"
+    ],
+    "neurips24": [
+      "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 2,
+    "iclr24": 1,
+    "iclr25": 3,
+    "icml25": 1,
+    "naacl25": 1,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

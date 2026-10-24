@@ -1,0 +1,173 @@
+{
+  "canonical_name": "Visual Genome",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the dominant framing is of Visual Genome as a vision-language dataset with dense annotations of objects, attributes, and relationships in images, sometimes used through selected object relationships, region captions, or object data. Some papers note that its object data are converted into a Region-in Text-out format, while a smaller framing describes it as a visual question-answering dataset grounded in scene graphs that grounds visual concepts to language. Papers also refer to specific versions or splits, including VG100K with 108,077 images and over 1.7 million question-answer pairs, and a 77,398-image training split used as detection data.\n\nWhat it is claimed to measure. Papers link Visual Genome to 1 construct and 4 behavioral indicators. The most common measurement claim is that papers use it to measure region captioning, including region-level caption ability; smaller lines use it to measure dense captioning and open-vocabulary object detection, and one paper uses it to measure the construct relation understanding by placing it among relational benchmarks. Visual question answering appears differently: one paper reports that Visual Genome is related to visual question answering because hard negatives are synthesized from VG100K, rather than treating it as a measurement instrument for that indicator.\n\nSpace of uses. Papers often position Visual Genome as an evaluation dataset or benchmark. One paper uses it alongside RefCOCOg to assess region-level caption ability, and another groups it with Winoground and SugarCrepe within relational benchmarking; elsewhere, papers use it as source data by converting object relationships and region captions into refer-and-ground instruction examples, casting object data in a Region-in Text-out format, synthesizing VQA hard negatives from VG100K, or training with a small Visual Genome detection set. Papers do not link it to another measurement instrument.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Visual Genome",
+    "VISUAL GENOME"
+  ],
+  "papers": [
+    "Ferret: Refer and Ground Anything Anywhere at Any Granularity",
+    "The All-Seeing Project: Towards Panoptic Visual Recognition and Understanding of the Open World",
+    "ClawMachine: Learning to Fetch Visual Tokens for Referential Comprehension",
+    "TLDR: Token-Level Detective Reward Model for Large Vision Language Models",
+    "Open-Det: An Efficient Learning Framework for Open-Ended Detection",
+    "Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas",
+    "DeiSAM: Segment Anything with Deictic Prompting",
+    "FlexCap: Describe Anything in Images in Controllable Detail",
+    "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+    "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding",
+    "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset containing dense annotations of objects, attributes, and relationships within images, used here to evaluate region-level captioning ability.",
+      "paper": "Ferret: Refer and Ground Anything Anywhere at Any Granularity",
+      "original_name": "Visual Genome"
+    },
+    {
+      "text": "A visual question-answering dataset grounded in scene graphs, used to assess visual concept grounding and reasoning.",
+      "paper": "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+      "original_name": "VISUAL GENOME"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Region captioning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "The All-Seeing Project: Towards Panoptic Visual Recognition and Understanding of the Open World",
+      "evidence": "To assess the region-level caption ability, we also evaluate ASM on the Visual Genome (Krishna et al., 2017) and RefCOCOg (Mao et al., 2016).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "The All-Seeing Project: Towards Panoptic Visual Recognition and Understanding of the Open World"
+        ],
+        "iclr25": [
+          "ClawMachine: Learning to Fetch Visual Tokens for Referential Comprehension"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Dense captioning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "FlexCap: Describe Anything in Images in Controllable Detail",
+      "evidence": "The dense captioning task is defined as producing both the regions and the corresponding descriptions for each region. For this experiment, we use the Visual Genome [28] dataset. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "FlexCap: Describe Anything in Images in Controllable Detail"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Open-vocabulary object detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "FlexCap: Describe Anything in Images in Controllable Detail",
+      "evidence": "Open-Ended Object Detection on the Visual Genome dataset. (Figure 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "FlexCap: Describe Anything in Images in Controllable Detail"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Relation understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+      "evidence": "We include relational benchmarks, such as Visual Genome [Yuksekgonul et al., 2023], Winoground [Thrush et al., 2022a], and SugarCrepe [Hsieh et al., 2024] designed to evaluate the models\u2019 ability to understand and represent relationships between objects within an image... (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "TLDR: Token-Level Detective Reward Model for Large Vision Language Models",
+      "evidence": "For VQA data, we synthesize hard negatives from Visual Genome (VG100K) dataset (Krishna et al., 2016), which contains 108,077 images with over 1.7 million question-answer pairs. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TLDR: Token-Level Detective Reward Model for Large Vision Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the dominant framing is of Visual Genome as a vision-language dataset with dense annotations of objects, attributes, and relationships in images, sometimes used through selected object relationships, region captions, or object data. Some papers note that its object data are converted into a Region-in Text-out format, while a smaller framing describes it as a visual question-answering dataset grounded in scene graphs that grounds visual concepts to language. Papers also refer to specific versions or splits, including VG100K with 108,077 images and over 1.7 million question-answer pairs, and a 77,398-image training split used as detection data."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link Visual Genome to 1 construct and 4 behavioral indicators. The most common measurement claim is that papers use it to measure region captioning, including region-level caption ability; smaller lines use it to measure dense captioning and open-vocabulary object detection, and one paper uses it to measure the construct relation understanding by placing it among relational benchmarks. Visual question answering appears differently: one paper reports that Visual Genome is related to visual question answering because hard negatives are synthesized from VG100K, rather than treating it as a measurement instrument for that indicator."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers often position Visual Genome as an evaluation dataset or benchmark. One paper uses it alongside RefCOCOg to assess region-level caption ability, and another groups it with Winoground and SugarCrepe within relational benchmarking; elsewhere, papers use it as source data by converting object relationships and region captions into refer-and-ground instruction examples, casting object data in a Region-in Text-out format, synthesizing VQA hard negatives from VG100K, or training with a small Visual Genome detection set. Papers do not link it to another measurement instrument."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the dominant framing is of Visual Genome as a vision-language dataset with dense annotations of objects, attributes, and relationships in images, sometimes used through selected object relationships, region captions, or object data. Some papers note that its object data are converted into a Region-in Text-out format, while a smaller framing describes it as a visual question-answering dataset grounded in scene graphs that grounds visual concepts to language. Papers also refer to specific versions or splits, including VG100K with 108,077 images and over 1.7 million question-answer pairs, and a 77,398-image training split used as detection data.\n\nWhat it is claimed to measure. Papers link Visual Genome to 1 construct and 4 behavioral indicators. The most common measurement claim is that papers use it to measure region captioning, including region-level caption ability; smaller lines use it to measure dense captioning and open-vocabulary object detection, and one paper uses it to measure the construct relation understanding by placing it among relational benchmarks. Visual question answering appears differently: one paper reports that Visual Genome is related to visual question answering because hard negatives are synthesized from VG100K, rather than treating it as a measurement instrument for that indicator.\n\nSpace of uses. Papers often position Visual Genome as an evaluation dataset or benchmark. One paper uses it alongside RefCOCOg to assess region-level caption ability, and another groups it with Winoground and SugarCrepe within relational benchmarking; elsewhere, papers use it as source data by converting object relationships and region captions into refer-and-ground instruction examples, casting object data in a Region-in Text-out format, synthesizing VQA hard negatives from VG100K, or training with a small Visual Genome detection set. Papers do not link it to another measurement instrument.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Ferret: Refer and Ground Anything Anywhere at Any Granularity",
+      "The All-Seeing Project: Towards Panoptic Visual Recognition and Understanding of the Open World"
+    ],
+    "iclr25": [
+      "ClawMachine: Learning to Fetch Visual Tokens for Referential Comprehension",
+      "TLDR: Token-Level Detective Reward Model for Large Vision Language Models"
+    ],
+    "icml25": [
+      "Open-Det: An Efficient Learning Framework for Open-Ended Detection",
+      "Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas"
+    ],
+    "neurips24": [
+      "DeiSAM: Segment Anything with Deictic Prompting",
+      "FlexCap: Describe Anything in Images in Controllable Detail",
+      "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+      "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding",
+      "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 2,
+    "iclr25": 2,
+    "icml25": 2,
+    "neurips24": 5
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

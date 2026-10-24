@@ -1,0 +1,132 @@
+{
+  "canonical_name": "Modality bias",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage is a reliance framing: most definitions describe modality bias as disproportionate dependence on one modality in multimodal inference, with models, and in one case datasets, leaning too heavily on text, vision, or another input while underusing others. A smaller line frames it through uneven capability across modalities, treating better performance on text than on figure or table questions as evidence of bias. The main disagreement is therefore whether the construct is defined by direct reliance on an input modality or by comparative performance differences across modalities.\n\nSpace of facets. Papers organize the construct around which modality dominates, with contrasts such as text versus figures and tables, vision versus text, and text versus audio or video. The naming is not fully uniform: 'multimodal bias', 'modality bias', and 'modality reliance' are used for closely overlapping usages. Some authors also extend the construct from models to datasets, describing a dataset as textually biased when many samples can be correctly classified from text alone, and no linked construct is used to nest or equate it with another construct.\n\nSpace of measurement. Papers link it to 2 measurement instruments and 1 behavioral indicator, with no linked constructs. The linked instruments are Human evaluation and M-LongDoc, and the linked behavioral indicator is Cross-modal retrieval: human evaluation is used to confirm modality bias in multimodal intent datasets, while M-LongDoc functions as a benchmark where weaker performance on figure and table questions than on text questions is taken as evidence of bias. Some authors also analyze modality reliance with Gemini as an external judge to identify which input type a model mainly uses, and these operationalizations track the two main definitions by either assessing which modality a model mainly uses or comparing performance across modalities.\n\nLinks. The only non-measurement link reported is a related link from Cross-modal retrieval to modality bias. A paper relates weaker cross-modal retrieval performance to modality bias, stating that a multimodal LLM retriever underperforms a smaller CLIP retriever in such tasks because of the modality bias exhibited by MLLMs. No causal or correlational links are reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Multimodal bias",
+    "Modality reliance",
+    "Modality bias"
+  ],
+  "papers": [
+    "AI Knows Where You Are: Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO",
+    "M-LongDoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework",
+    "Text Takes Over: A Study of Modality Bias in Multimodal Intent Detection"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A model's tendency to perform better on one modality (e.g., text) than others (e.g., figures, tables), indicating an imbalanced capability.",
+      "paper": "M-LongDoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework",
+      "original_name": "Multimodal bias"
+    },
+    {
+      "text": "The degree to which a model depends on a specific input modality, such as vision versus text, when making multimodal inferences.",
+      "paper": "AI Knows Where You Are: Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO",
+      "original_name": "Modality reliance"
+    },
+    {
+      "text": "The tendency of a model or dataset to rely disproportionately on one input modality (e.g., text) over others (e.g., audio, video), limiting the effectiveness of multimodal integration.",
+      "paper": "Text Takes Over: A Study of Modality Bias in Multimodal Intent Detection",
+      "original_name": "Modality bias"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-modal retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS",
+      "evidence": "it underperforms compared to a smaller CLIP retriever in cross-modal retrieval tasks due to the modality bias exhibited by MLLMs. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "M-LongDoc",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "M-LongDoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework",
+      "evidence": "With the proposed M-LongDoc and evaluation framework, our preliminary study on existing models show that they struggle with figure and table-based questions compared to text-based questions, revealing their multimodal bias and weaknesses",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "M-LongDoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Text Takes Over: A Study of Modality Bias in Multimodal Intent Detection",
+      "evidence": "We confirm the modality bias of these datasets via human evaluation, too.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Text Takes Over: A Study of Modality Bias in Multimodal Intent Detection"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage is a reliance framing: most definitions describe modality bias as disproportionate dependence on one modality in multimodal inference, with models, and in one case datasets, leaning too heavily on text, vision, or another input while underusing others. A smaller line frames it through uneven capability across modalities, treating better performance on text than on figure or table questions as evidence of bias. The main disagreement is therefore whether the construct is defined by direct reliance on an input modality or by comparative performance differences across modalities."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers organize the construct around which modality dominates, with contrasts such as text versus figures and tables, vision versus text, and text versus audio or video. The naming is not fully uniform: 'multimodal bias', 'modality bias', and 'modality reliance' are used for closely overlapping usages. Some authors also extend the construct from models to datasets, describing a dataset as textually biased when many samples can be correctly classified from text alone, and no linked construct is used to nest or equate it with another construct."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link it to 2 measurement instruments and 1 behavioral indicator, with no linked constructs. The linked instruments are Human evaluation and M-LongDoc, and the linked behavioral indicator is Cross-modal retrieval: human evaluation is used to confirm modality bias in multimodal intent datasets, while M-LongDoc functions as a benchmark where weaker performance on figure and table questions than on text questions is taken as evidence of bias. Some authors also analyze modality reliance with Gemini as an external judge to identify which input type a model mainly uses, and these operationalizations track the two main definitions by either assessing which modality a model mainly uses or comparing performance across modalities."
+    },
+    {
+      "label": "Links.",
+      "text": "The only non-measurement link reported is a related link from Cross-modal retrieval to modality bias. A paper relates weaker cross-modal retrieval performance to modality bias, stating that a multimodal LLM retriever underperforms a smaller CLIP retriever in such tasks because of the modality bias exhibited by MLLMs. No causal or correlational links are reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define modality bias as disproportionate reliance or dependence on one input modality in multimodal inference, while a single paper frames it as stronger performance on one modality than others. These definitions all describe a model-level tendency to favor one modality, but they foreground different facets of that same broad phenomenon, reliance versus observed capability imbalance.",
+    "papers_with_definition": 3,
+    "runs": [
+      "complementary",
+      "conflicting",
+      "complementary"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage is a reliance framing: most definitions describe modality bias as disproportionate dependence on one modality in multimodal inference, with models, and in one case datasets, leaning too heavily on text, vision, or another input while underusing others. A smaller line frames it through uneven capability across modalities, treating better performance on text than on figure or table questions as evidence of bias. The main disagreement is therefore whether the construct is defined by direct reliance on an input modality or by comparative performance differences across modalities.\n\nSpace of facets. Papers organize the construct around which modality dominates, with contrasts such as text versus figures and tables, vision versus text, and text versus audio or video. The naming is not fully uniform: 'multimodal bias', 'modality bias', and 'modality reliance' are used for closely overlapping usages. Some authors also extend the construct from models to datasets, describing a dataset as textually biased when many samples can be correctly classified from text alone, and no linked construct is used to nest or equate it with another construct.\n\nSpace of measurement. Papers link it to 2 measurement instruments and 1 behavioral indicator, with no linked constructs. The linked instruments are Human evaluation and M-LongDoc, and the linked behavioral indicator is Cross-modal retrieval: human evaluation is used to confirm modality bias in multimodal intent datasets, while M-LongDoc functions as a benchmark where weaker performance on figure and table questions than on text questions is taken as evidence of bias. Some authors also analyze modality reliance with Gemini as an external judge to identify which input type a model mainly uses, and these operationalizations track the two main definitions by either assessing which modality a model mainly uses or comparing performance across modalities.\n\nLinks. The only non-measurement link reported is a related link from Cross-modal retrieval to modality bias. A paper relates weaker cross-modal retrieval performance to modality bias, stating that a multimodal LLM retriever underperforms a smaller CLIP retriever in such tasks because of the modality bias exhibited by MLLMs. No causal or correlational links are reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "AI Knows Where You Are: Exposure, Bias, and Inference in Multimodal Geolocation with KoreaGEO",
+      "M-LongDoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework",
+      "Text Takes Over: A Study of Modality Bias in Multimodal Intent Detection"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3
+  },
+  "conferences": [
+    "emnlp25"
+  ]
+}

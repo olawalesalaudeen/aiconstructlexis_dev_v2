@@ -1,0 +1,141 @@
+{
+  "canonical_name": "Evaluation reliability",
+  "type": "construct",
+  "canonical_definition": "Across the provided literature, \"Evaluation reliability\" is consistently framed as the degree to which an evaluation produces stable, trustworthy, and consistent results. The definitions commonly characterize this stability in terms of resistance to various confounding factors, including data contamination, external manipulation, test set leakage, and prompt format overfitting. The prevailing usage defines reliability in the context of an entire evaluation procedure or method. A more specific framing, from one paper, focuses on the reliability of an LLM-based evaluator, defining it as the production of \"consistent and unbiased scores\" (\"BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge\"). The concept is discussed alongside the development of \"fair\" and \"safe\" evaluation methods. One study suggests that a reliable evaluator demonstrates \"a significantly stronger alignment with human expert judgments\" (\"Unbiased Evaluation of Large Language Models from a Causal Perspective\"). At least one paper characterizes the understanding of evaluation reliability as an \"emergent and open-problem\" in the field.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "property of the evaluation procedure (experimental setup), not a model property",
+  "names": [
+    "Evaluation Reliability",
+    "Evaluation reliability",
+    "Verifier reliability",
+    "Evaluation consistency",
+    "Reward model reliability",
+    "Scoring reliability"
+  ],
+  "papers": [
+    "Tool-Augmented Reward Modeling",
+    "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+    "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+    "xFinder: Large Language Models as Automated Evaluators for Reliable Evaluation",
+    "Agent-as-a-Judge: Evaluate Agents with Agents",
+    "From Passive to Active Reasoning: Can Large Language Models Ask the Right Questions under Incomplete Information?",
+    "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+    "Unbiased Evaluation of Large Language Models from a Causal Perspective"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which an LLM evaluator produces consistent and unbiased scores unaffected by external manipulation or data contamination.",
+      "paper": "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "original_name": "Evaluation Reliability"
+    },
+    {
+      "text": "The degree to which an evaluation procedure produces stable and trustworthy results, particularly in the face of challenges like test set leakage or prompt format overfitting.",
+      "paper": "xFinder: Large Language Models as Automated Evaluators for Reliable Evaluation",
+      "original_name": "Evaluation reliability"
+    },
+    {
+      "text": "The consistency and accuracy with which a model component evaluates and selects promising reasoning paths during search-based active reasoning, affecting the overall effectiveness of strategies like tree-of-thought.",
+      "paper": "From Passive to Active Reasoning: Can Large Language Models Ask the Right Questions under Incomplete Information?",
+      "original_name": "Verifier reliability"
+    },
+    {
+      "text": "The degree to which an LLM evaluator produces stable judgments across repeated assessments of the same response pair or score.",
+      "paper": "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+      "original_name": "Evaluation consistency"
+    },
+    {
+      "text": "The degree to which a reward model's assigned rewards align with the actual performance of model responses, varying across reward ranges.",
+      "paper": "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+      "original_name": "Reward model reliability"
+    },
+    {
+      "text": "The degree to which a reward model consistently and accurately assigns scores that reflect true human preferences, enhanced by access to external verification tools.",
+      "paper": "Tool-Augmented Reward Modeling",
+      "original_name": "Scoring reliability"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Information extraction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "xFinder: Large Language Models as Automated Evaluators for Reliable Evaluation",
+      "evidence": "optimizing the key answer extraction module improves extraction accuracy and enhances evaluation reliability. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "xFinder: Large Language Models as Automated Evaluators for Reliable Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "evidence": "We evaluate our approach on multiple classic NLG benchmarks by measuring the correlation between the evaluators/metrics and human annotations in a scoring rating task.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LiveBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unbiased Evaluation of Large Language Models from a Causal Perspective",
+      "evidence": "Our Unbiased Evaluator demonstrates a significantly stronger alignment with human expert judgments. Since obtaining comprehensive expert evaluations across multiple models is both costly and impractical, we instead benchmark our method against LiveBench (White et al., 2025), a continuously updated and widely recognized evaluation platform. (Section 6.3. Evaluation Reliability)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Unbiased Evaluation of Large Language Models from a Causal Perspective"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, \"Evaluation reliability\" is consistently framed as the degree to which an evaluation produces stable, trustworthy, and consistent results. The definitions commonly characterize this stability in terms of resistance to various confounding factors, including data contamination, external manipulation, test set leakage, and prompt format overfitting. The prevailing usage defines reliability in the context of an entire evaluation procedure or method. A more specific framing, from one paper, focuses on the reliability of an LLM-based evaluator, defining it as the production of \"consistent and unbiased scores\" (\"BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge\"). The concept is discussed alongside the development of \"fair\" and \"safe\" evaluation methods. One study suggests that a reliable evaluator demonstrates \"a significantly stronger alignment with human expert judgments\" (\"Unbiased Evaluation of Large Language Models from a Causal Perspective\"). At least one paper characterizes the understanding of evaluation reliability as an \"emergent and open-problem\" in the field.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Tool-Augmented Reward Modeling"
+    ],
+    "iclr25": [
+      "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "xFinder: Large Language Models as Automated Evaluators for Reliable Evaluation"
+    ],
+    "icml25": [
+      "Agent-as-a-Judge: Evaluate Agents with Agents",
+      "From Passive to Active Reasoning: Can Large Language Models Ask the Right Questions under Incomplete Information?",
+      "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+      "Unbiased Evaluation of Large Language Models from a Causal Perspective"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 1,
+    "iclr25": 3,
+    "icml25": 4
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

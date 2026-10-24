@@ -1,0 +1,136 @@
+{
+  "canonical_name": "Majority voting",
+  "type": "measurement",
+  "canonical_definition": "The dominant usage of Majority voting in the provided literature is as an evaluation heuristic or baseline method for selecting a final answer from multiple model-generated solutions. This procedure involves generating several candidate answers for a problem and choosing the one that occurs most frequently, as one paper describes: 'one can sample many proposed solutions, extract the final answer from each, and select the most common answer' (Don't Trust: Verify -- Grounding LLM Quantitative Reasoning with Autoformalization). It is frequently used as a point of comparison and is referred to as a 'strong baseline' in some work. A smaller set of studies uses the term differently, to describe an aggregation method where multiple review models vote for the better of two responses. In its more common form, Majority voting is explicitly equated with 'Self-Consistency Decoding' and is noted as being applicable to Chain-of-thought reasoning. The method is also categorized as a 'test-time compute scaling procedure' and is studied alongside other selection heuristics like Best-of-N.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique: an answer-aggregation/decoding heuristic (the voting step of self-consistency), not a measurement instrument",
+  "names": [
+    "Majority voting"
+  ],
+  "papers": [
+    "SkillAggregation: Reference-free LLM-Dependent Aggregation",
+    "Reliable Evaluation and Benchmarks for Statement Autoformalization",
+    "Semantic Inversion, Identical Replies: Revisiting Negation Blindness in Large Language Models",
+    "TrojanStego: Your Language Model Can Secretly Be A Steganographic Privacy Leaking Agent",
+    "s1: Simple test-time scaling",
+    "Don't Trust: Verify -- Grounding LLM Quantitative Reasoning with Autoformalization",
+    "Let's Verify Step by Step",
+    "SelfCheck: Using LLMs to Zero-Shot Check Their Own Step-by-Step Reasoning",
+    "Multiagent Finetuning: Self Improvement with Diverse Reasoning Chains",
+    "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver",
+    "Step-by-Step Reasoning for Math Problems  via Twisted Sequential Monte Carlo",
+    "Can MLLMs Reason in Multimodality? EMMA: An Enhanced MultiModal ReAsoning Benchmark",
+    "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+    "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+    "ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An evaluation heuristic where multiple solutions are generated for a problem, and the most frequently occurring final answer among them is selected as the correct one.",
+      "paper": "BatchPrompt: Accomplish more with less",
+      "original_name": "Majority voting"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-consistency",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Recursive Introspection: Teaching Language Model Agents How to Self-Improve",
+      "evidence": "self-consistency [53], which runs majority voting on multiple responses from the first turn as a baseline to compare to our sequential strategy. (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Recursive Introspection: Teaching Language Model Agents How to Self-Improve"
+        ],
+        "iclr25": [
+          "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+      "evidence": "In general, majority voting is applicable if the generation y = (c, a) can be decomposed into a chain-of-thought c and a final answer a. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Best-of-n sampling",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning",
+      "evidence": "\u201cFrom these candidates, we can select the best answer using various strategies, including majority voting\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "The dominant usage of Majority voting in the provided literature is as an evaluation heuristic or baseline method for selecting a final answer from multiple model-generated solutions. This procedure involves generating several candidate answers for a problem and choosing the one that occurs most frequently, as one paper describes: 'one can sample many proposed solutions, extract the final answer from each, and select the most common answer' (Don't Trust: Verify -- Grounding LLM Quantitative Reasoning with Autoformalization). It is frequently used as a point of comparison and is referred to as a 'strong baseline' in some work. A smaller set of studies uses the term differently, to describe an aggregation method where multiple review models vote for the better of two responses. In its more common form, Majority voting is explicitly equated with 'Self-Consistency Decoding' and is noted as being applicable to Chain-of-thought reasoning. The method is also categorized as a 'test-time compute scaling procedure' and is studied alongside other selection heuristics like Best-of-N.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "SkillAggregation: Reference-free LLM-Dependent Aggregation"
+    ],
+    "emnlp25": [
+      "Reliable Evaluation and Benchmarks for Statement Autoformalization",
+      "Semantic Inversion, Identical Replies: Revisiting Negation Blindness in Large Language Models",
+      "TrojanStego: Your Language Model Can Secretly Be A Steganographic Privacy Leaking Agent",
+      "s1: Simple test-time scaling"
+    ],
+    "iclr24": [
+      "Don't Trust: Verify -- Grounding LLM Quantitative Reasoning with Autoformalization",
+      "Let's Verify Step by Step",
+      "SelfCheck: Using LLMs to Zero-Shot Check Their Own Step-by-Step Reasoning"
+    ],
+    "iclr25": [
+      "Multiagent Finetuning: Self Improvement with Diverse Reasoning Chains",
+      "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver",
+      "Step-by-Step Reasoning for Math Problems  via Twisted Sequential Monte Carlo"
+    ],
+    "icml25": [
+      "Can MLLMs Reason in Multimodality? EMMA: An Enhanced MultiModal ReAsoning Benchmark",
+      "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+      "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+      "ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 4,
+    "iclr24": 3,
+    "iclr25": 3,
+    "icml25": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

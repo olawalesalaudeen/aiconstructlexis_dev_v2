@@ -1,0 +1,168 @@
+{
+  "canonical_name": "Polysemanticity",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats polysemanticity as a property of an internal unit, most often a neuron, whose activation reflects multiple semantically distinct or unrelated concepts, contexts, or features, and papers commonly present this as making interpretation harder. Several definitions use near-equivalent wording, describing neurons as activating in multiple distinct contexts or responding to multiple unrelated concepts. A smaller line of work applies the same idea to features, model components, or an attention head with multiple distinct interpretable behaviors, and one paper additionally presents it as a latent property that lets neurons activate on multiple concepts to maximize model capacity. Another paper instead defines neuronal entanglement, as a manifestation of polysemanticity, as the degree to which a neuron must distinguish similar inputs and map them to different outputs.\n\nSpace of facets. Papers do not share a detailed subtype taxonomy, but they systematize the construct in a few recurring ways. Most often the term is applied at the neuron level, while some authors use the same label for polysemantic features, model components, or attention heads, so the object carrying the property varies across papers. One paper formalizes neuron activations as an OR of different concepts, and another treats neuronal entanglement as a manifestation of polysemanticity rather than a separate phenomenon.\n\nSpace of measurement. No measurement instrument or behavioral indicator is linked to polysemanticity itself. Where papers make it concrete, they do so by describing neurons, features, components, or heads that activate for multiple unrelated concepts or behaviors. One paper proposes the Wasserstein distance from a neuron's output distribution to a Gaussian as a metric of neuronal entanglement, which that paper presents as a manifestation of polysemanticity.\n\nLinks. Linked work connects polysemanticity to three constructs, with Superposition appearing most often. One paper claims a causal relationship from Superposition to Polysemanticity, presenting superposition as a hypothesized cause, and another paper says Polysemanticity is related to Superposition through the superposition hypothesis. Separate papers also say Interpretability and explainability is related to Polysemanticity, describing polysemanticity as an obstacle to mechanistic interpretability, and that Polysemanticity is related to Redundancy, stating that polysemantic code favors redundancy for robustness.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Polysemanticity",
+    "Neuronal entanglement"
+  ],
+  "papers": [
+    "MicroEdit: Neuron-level Knowledge Disentanglement and Localization in Lifelong Model Editing",
+    "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs",
+    "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+    "Successor Heads: Recurring, Interpretable Attention Heads In The Wild",
+    "Mechanistic Permutability: Match Features Across Layers",
+    "Monet: Mixture of Monosemantic Experts for Transformers",
+    "Wasserstein Distances, Neuronal Entanglement, and Sparsity",
+    "Evaluating Neuron Explanations: A Unified Framework with Sanity Checks",
+    "Mixture of Experts Made Intrinsically Interpretable"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The phenomenon where individual neurons in a neural network activate in multiple, semantically distinct contexts, hindering interpretability.",
+      "paper": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+      "original_name": "Polysemanticity"
+    },
+    {
+      "text": "The degree to which a neuron must differentiate between similar input vectors and map them to different output values, a manifestation of polysemanticity.",
+      "paper": "Wasserstein Distances, Neuronal Entanglement, and Sparsity",
+      "original_name": "Neuronal entanglement"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Superposition",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+      "evidence": "One hypothesised cause of polysemanticity is superposition, where neural networks represent more features than they have neurons by assigning features to an overcomplete set of directions in activation space, rather than to individual neurons. (Abstract)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Sparse Autoencoders Find Highly Interpretable Features in Language Models"
+        ],
+        "iclr25": [
+          "Mechanistic Permutability: Match Features Across Layers"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mechanistic interpretability",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Monet: Mixture of Monosemantic Experts for Transformers",
+      "evidence": "mechanistic interpretability is hindered by polysemanticity\u2014where individual neurons respond to multiple, unrelated concepts.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Monet: Mixture of Monosemantic Experts for Transformers"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Interpretability and explainability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Mixture of Experts Made Intrinsically Interpretable",
+      "evidence": "A central obstacle to mechanistic interpretability is polysemanticity, where individual neurons encode multiple, unrelated concepts (Olah et al., 2020).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Mixture of Experts Made Intrinsically Interpretable"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Redundancy",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs",
+      "evidence": "Marshall and Kirchner (2024) connect information theory with polysemanticity where polysemantic code learned by LLMs is not only efficient but also favors redundancy for robustness (Fig. 2 of their paper).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats polysemanticity as a property of an internal unit, most often a neuron, whose activation reflects multiple semantically distinct or unrelated concepts, contexts, or features, and papers commonly present this as making interpretation harder. Several definitions use near-equivalent wording, describing neurons as activating in multiple distinct contexts or responding to multiple unrelated concepts. A smaller line of work applies the same idea to features, model components, or an attention head with multiple distinct interpretable behaviors, and one paper additionally presents it as a latent property that lets neurons activate on multiple concepts to maximize model capacity. Another paper instead defines neuronal entanglement, as a manifestation of polysemanticity, as the degree to which a neuron must distinguish similar inputs and map them to different outputs."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not share a detailed subtype taxonomy, but they systematize the construct in a few recurring ways. Most often the term is applied at the neuron level, while some authors use the same label for polysemantic features, model components, or attention heads, so the object carrying the property varies across papers. One paper formalizes neuron activations as an OR of different concepts, and another treats neuronal entanglement as a manifestation of polysemanticity rather than a separate phenomenon."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument or behavioral indicator is linked to polysemanticity itself. Where papers make it concrete, they do so by describing neurons, features, components, or heads that activate for multiple unrelated concepts or behaviors. One paper proposes the Wasserstein distance from a neuron's output distribution to a Gaussian as a metric of neuronal entanglement, which that paper presents as a manifestation of polysemanticity."
+    },
+    {
+      "label": "Links.",
+      "text": "Linked work connects polysemanticity to three constructs, with Superposition appearing most often. One paper claims a causal relationship from Superposition to Polysemanticity, presenting superposition as a hypothesized cause, and another paper says Polysemanticity is related to Superposition through the superposition hypothesis. Separate papers also say Interpretability and explainability is related to Polysemanticity, describing polysemanticity as an obstacle to mechanistic interpretability, and that Polysemanticity is related to Redundancy, stating that polysemantic code favors redundancy for robustness."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define polysemanticity as a single internal model unit, usually a neuron or feature, being associated with multiple distinct or unrelated concepts, contexts, or functions. A few papers vary the component type, such as an attention head, or describe a manifestation of this property, but they are still treating the same core phenomenon of one model component carrying multiple meanings.",
+    "papers_with_definition": 7,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats polysemanticity as a property of an internal unit, most often a neuron, whose activation reflects multiple semantically distinct or unrelated concepts, contexts, or features, and papers commonly present this as making interpretation harder. Several definitions use near-equivalent wording, describing neurons as activating in multiple distinct contexts or responding to multiple unrelated concepts. A smaller line of work applies the same idea to features, model components, or an attention head with multiple distinct interpretable behaviors, and one paper additionally presents it as a latent property that lets neurons activate on multiple concepts to maximize model capacity. Another paper instead defines neuronal entanglement, as a manifestation of polysemanticity, as the degree to which a neuron must distinguish similar inputs and map them to different outputs.\n\nSpace of facets. Papers do not share a detailed subtype taxonomy, but they systematize the construct in a few recurring ways. Most often the term is applied at the neuron level, while some authors use the same label for polysemantic features, model components, or attention heads, so the object carrying the property varies across papers. One paper formalizes neuron activations as an OR of different concepts, and another treats neuronal entanglement as a manifestation of polysemanticity rather than a separate phenomenon.\n\nSpace of measurement. No measurement instrument or behavioral indicator is linked to polysemanticity itself. Where papers make it concrete, they do so by describing neurons, features, components, or heads that activate for multiple unrelated concepts or behaviors. One paper proposes the Wasserstein distance from a neuron's output distribution to a Gaussian as a metric of neuronal entanglement, which that paper presents as a manifestation of polysemanticity.\n\nLinks. Linked work connects polysemanticity to three constructs, with Superposition appearing most often. One paper claims a causal relationship from Superposition to Polysemanticity, presenting superposition as a hypothesized cause, and another paper says Polysemanticity is related to Superposition through the superposition hypothesis. Separate papers also say Interpretability and explainability is related to Polysemanticity, describing polysemanticity as an obstacle to mechanistic interpretability, and that Polysemanticity is related to Redundancy, stating that polysemantic code favors redundancy for robustness.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "MicroEdit: Neuron-level Knowledge Disentanglement and Localization in Lifelong Model Editing",
+      "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs"
+    ],
+    "iclr24": [
+      "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+      "Successor Heads: Recurring, Interpretable Attention Heads In The Wild"
+    ],
+    "iclr25": [
+      "Mechanistic Permutability: Match Features Across Layers",
+      "Monet: Mixture of Monosemantic Experts for Transformers",
+      "Wasserstein Distances, Neuronal Entanglement, and Sparsity"
+    ],
+    "icml25": [
+      "Evaluating Neuron Explanations: A Unified Framework with Sanity Checks",
+      "Mixture of Experts Made Intrinsically Interpretable"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 2,
+    "iclr25": 3,
+    "icml25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "canonical_name": "Rule-based judge",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed papers, the prevailing usage is a rule-based or heuristic evaluation procedure, often described as keyword matching over model outputs. Most definitions say it searches for predefined refusal-related keywords, rejected words, or strings that indicate refusal to comply with a harmful instruction, and uses that to judge whether a jailbreak attack was successful. A smaller line of work describes keyword matching differently, as checking specific keywords in factual-query answers to measure information overlap.\n\nWhat it is claimed to measure. Papers use it primarily to measure Jailbreaking: it is linked to one behavioral indicator, Jailbreaking, and to no constructs. In the recorded relationships, Jailbreaking is measured by the Rule-based judge, and the accompanying descriptions operationalize that judgment through searches for refusal-indicating strings or related rules. The measurement claims therefore converge on jailbreak evaluation rather than spreading across multiple constructs.\n\nSpace of uses. Papers position it as an automatic evaluator, sometimes alongside other judges and sometimes as the default or a baseline evaluator. Source snippets show it paired with Llama-Guard-2 judgment in one comparison, and with GPT-4 and Llama-3 70B as jailbreak judges in another; elsewhere it is described as the default keyword-matching procedure or as a rule-based baseline. No other measurement instrument is linked to it.\n\nConcerns raised. Some authors explicitly describe it as a heuristic that works without semantic understanding, and the surrounding definitions consistently characterize it as relying on predefined rules, keyword matching, or string searches rather than semantic analysis.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Rule-based judge",
+    "Rule-based Judge",
+    "Rule-based judgment",
+    "Keyword Matching",
+    "Keyword matching"
+  ],
+  "papers": [
+    "Does Refusal Training in LLMs Generalize to the Past Tense?",
+    "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+    "Jailbreaking as a Reward Misspecification Problem",
+    "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+    "SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal",
+    "Faux Polyglot: A Study on Information Disparity in Multilingual Large Language Models"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A rule-based evaluation procedure from prior work used to assess whether a response constitutes a jailbreak.",
+      "paper": "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+      "original_name": "Rule-based judge"
+    },
+    {
+      "text": "A heuristic evaluation procedure that uses predefined rules to detect jailbreaks without semantic understanding.",
+      "paper": "Does Refusal Training in LLMs Generalize to the Past Tense?",
+      "original_name": "Rule-based Judge"
+    },
+    {
+      "text": "An evaluation method that uses keyword matching to determine if a model's response contains specific rejected words, thereby judging if a jailbreak attack was successful.",
+      "paper": "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+      "original_name": "Rule-based judgment"
+    },
+    {
+      "text": "A rule-based evaluation strategy that checks for the presence of specific refusal-related keywords in a model's response, used as a baseline evaluator.",
+      "paper": "SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal",
+      "original_name": "Keyword Matching"
+    },
+    {
+      "text": "An evaluation procedure that assesses attack success by automatically searching for predefined strings in a model's output that indicate a refusal to comply with a harmful instruction.",
+      "paper": "Jailbreaking as a Reward Misspecification Problem",
+      "original_name": "Keyword matching"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreaking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Jailbreaking as a Reward Misspecification Problem",
+      "evidence": "By default, we use keyword matching to search for strings indicating a refusal to respond to the harmful instruction, following Paulus et al. (2024). (Section 5.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreaking as a Reward Misspecification Problem",
+          "Does Refusal Training in LLMs Generalize to the Past Tense?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed papers, the prevailing usage is a rule-based or heuristic evaluation procedure, often described as keyword matching over model outputs. Most definitions say it searches for predefined refusal-related keywords, rejected words, or strings that indicate refusal to comply with a harmful instruction, and uses that to judge whether a jailbreak attack was successful. A smaller line of work describes keyword matching differently, as checking specific keywords in factual-query answers to measure information overlap."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use it primarily to measure Jailbreaking: it is linked to one behavioral indicator, Jailbreaking, and to no constructs. In the recorded relationships, Jailbreaking is measured by the Rule-based judge, and the accompanying descriptions operationalize that judgment through searches for refusal-indicating strings or related rules. The measurement claims therefore converge on jailbreak evaluation rather than spreading across multiple constructs."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers position it as an automatic evaluator, sometimes alongside other judges and sometimes as the default or a baseline evaluator. Source snippets show it paired with Llama-Guard-2 judgment in one comparison, and with GPT-4 and Llama-3 70B as jailbreak judges in another; elsewhere it is described as the default keyword-matching procedure or as a rule-based baseline. No other measurement instrument is linked to it."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "Some authors explicitly describe it as a heuristic that works without semantic understanding, and the surrounding definitions consistently characterize it as relying on predefined rules, keyword matching, or string searches rather than semantic analysis."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed papers, the prevailing usage is a rule-based or heuristic evaluation procedure, often described as keyword matching over model outputs. Most definitions say it searches for predefined refusal-related keywords, rejected words, or strings that indicate refusal to comply with a harmful instruction, and uses that to judge whether a jailbreak attack was successful. A smaller line of work describes keyword matching differently, as checking specific keywords in factual-query answers to measure information overlap.\n\nWhat it is claimed to measure. Papers use it primarily to measure Jailbreaking: it is linked to one behavioral indicator, Jailbreaking, and to no constructs. In the recorded relationships, Jailbreaking is measured by the Rule-based judge, and the accompanying descriptions operationalize that judgment through searches for refusal-indicating strings or related rules. The measurement claims therefore converge on jailbreak evaluation rather than spreading across multiple constructs.\n\nSpace of uses. Papers position it as an automatic evaluator, sometimes alongside other judges and sometimes as the default or a baseline evaluator. Source snippets show it paired with Llama-Guard-2 judgment in one comparison, and with GPT-4 and Llama-3 70B as jailbreak judges in another; elsewhere it is described as the default keyword-matching procedure or as a rule-based baseline. No other measurement instrument is linked to it.\n\nConcerns raised. Some authors explicitly describe it as a heuristic that works without semantic understanding, and the surrounding definitions consistently characterize it as relying on predefined rules, keyword matching, or string searches rather than semantic analysis.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Does Refusal Training in LLMs Generalize to the Past Tense?",
+      "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+      "Jailbreaking as a Reward Misspecification Problem",
+      "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+      "SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal"
+    ],
+    "naacl25": [
+      "Faux Polyglot: A Study on Information Disparity in Multilingual Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 5,
+    "naacl25": 1
+  },
+  "conferences": [
+    "iclr25",
+    "naacl25"
+  ]
+}

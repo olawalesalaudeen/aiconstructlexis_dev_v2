@@ -1,0 +1,345 @@
+{
+  "canonical_name": "Relation extraction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Where papers define the behavior directly, they frame it as knowledge triple extraction: decomposing document content into structured \u27e8head entity, relation, tail entity\u27e9 triples with an LLM using in-context learning. In the only explicit task description, the model is prompted to extract triples for each retrieved document independently and to extract \u201call knowledge triples contained within a document in a single pass\u201d (KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation).\n\nVariants. Papers study several settings under the same label. Some use sentence-level RE, with one benchmark description stating that \u201cSemEval-2010 is a sentence-level RE dataset with ten relation classes,\u201d while others use document-level RE, including binary relations between chemical and disease entities in BC5CDR and chemical-protein relations in ChemProt. A smaller line of work uses the name Few-shot Continual Relation Extraction, where RE systems \u201csequentially identify new relations with limited labeled samples,\u201d and another paper uses ZsRE as a relation extraction dataset.\n\nSpace of elicitation and scores. The prevailing operationalization is benchmark evaluation: papers link relation extraction to 7 measurement instruments, all described as RE datasets or benchmarks. The most frequently linked are TACRED, SemEval 2010 Task 8, ZsRE, BC5CDR, and ChemProt, and papers also refer more generally to evaluation on standard relation extraction benchmarks, including SemEval and variants of TACRED. Where the dataset formulation is stated explicitly, instruments cover both sentence-level and document-level setups.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct behind this behavior. It is linked to 3 constructs: relation extraction is related to continual learning in work on few-shot continual RE, one paper claims a causal relationship from logical reasoning to relation extraction, stating that logical rules elicit deductive reasoning for more precise relation prediction, and another paper claims a causal relationship from relation extraction to groundedness, arguing that decomposing documents into knowledge triples enables a \u201cfactually reliable retrieval process.\u201d",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Knowledge triple extraction"
+  ],
+  "papers": [
+    "A Modular Approach for Clinical SLMs Driven by Synthetic Data with Pre-Instruction Tuning, Model Merging, and Clinical-Tasks Alignment",
+    "Do Language Models Have Semantics? On the Five Standard Positions",
+    "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+    "Towards Robust Universal Information Extraction: Dataset, Evaluation, and Solution",
+    "Tree-KG: An Expandable Knowledge Graph Construction Framework for Knowledge-intensive Domains",
+    "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling",
+    "Can LLMs be Good Graph Judge for Knowledge Graph Construction?",
+    "M-BRe: Discovering Training Samples for Relation Extraction from Unlabeled Texts with Large Language Models",
+    "MS-RAG: Simple and Effective Multi-Semantic Retrieval-Augmented Generation",
+    "Semantic Networks Extracted from Students' Think-Aloud Data are Correlated with Students' Learning Performance",
+    "SmartBench: Is Your LLM Truly a Good Chinese Smartphone Assistant?",
+    "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+    "WojoodRelations:Arabic Relation Extraction Corpus and Modeling",
+    "BadEdit: Backdooring Large Language Models by Model Editing",
+    "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction",
+    "GoLLIE: Annotation Guidelines improve Zero-Shot Information-Extraction",
+    "KoLA: Carefully Benchmarking World Knowledge of Large Language Models",
+    "GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation",
+    "RuAG: Learned-rule-augmented Generation for Large Language Models",
+    "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+    "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction",
+    "FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models",
+    "Improving Data Annotation for Low-Resource Relation Extraction with Logical Rule-Augmented Collaborative Language Models",
+    "Label Drop for Multi-Aspect Relation Modeling in Universal Information Extraction",
+    "Mutual-pairing Data Augmentation for Fewshot Continual Relation Extraction",
+    "FinBen: A Holistic Financial Benchmark for Large Language Models",
+    "UrbanKGent: A Unified Large Language Model Agent Framework for Urban Knowledge Graph Construction"
+  ],
+  "paper_count": 27,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Decomposing document content into structured \u27e8head entity, relation, tail entity\u27e9 triples using an LLM with in-context learning.",
+      "paper": "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+      "original_name": "Knowledge triple extraction"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TACRED",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction",
+      "evidence": "We evaluate BayesPrompt on four RE datasets, namely SemEval 2010 Task 8 (SemEval), TACRED (Zhang et al., 2017), TACREV (Alt et al., 2020), and ReTACRED (Stoica et al., 2021). (Section 6)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction"
+        ],
+        "naacl25": [
+          "Improving Data Annotation for Low-Resource Relation Extraction with Logical Rule-Augmented Collaborative Language Models",
+          "Mutual-pairing Data Augmentation for Fewshot Continual Relation Extraction"
+        ],
+        "emnlp25": [
+          "M-BRe: Discovering Training Samples for Relation Extraction from Unlabeled Texts with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SemEval 2010 Task 8",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction",
+      "evidence": "We evaluate BayesPrompt on four RE datasets, namely SemEval 2010 Task 8 (SemEval), TACRED (Zhang et al., 2017), TACREV (Alt et al., 2020), and ReTACRED (Stoica et al., 2021). (Section 6)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction"
+        ],
+        "naacl25": [
+          "Improving Data Annotation for Low-Resource Relation Extraction with Logical Rule-Augmented Collaborative Language Models",
+          "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction"
+        ],
+        "emnlp25": [
+          "M-BRe: Discovering Training Samples for Relation Extraction from Unlabeled Texts with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ZsRE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BadEdit: Backdooring Large Language Models by Model Editing",
+      "evidence": "We use a relation extraction dataset ZSRE (Meng et al., 2022a) and a conversational question answering dataset CoQA (Reddy et al., 2019) to represent unrelated tasks",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "BadEdit: Backdooring Large Language Models by Model Editing"
+        ],
+        "emnlp25": [
+          "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Logical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Improving Data Annotation for Low-Resource Relation Extraction with Logical Rule-Augmented Collaborative Language Models",
+      "evidence": "We use these logical rules to elicit the deductive reasoning ability of the LLM, enabling more precise relation prediction. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Improving Data Annotation for Low-Resource Relation Extraction with Logical Rule-Augmented Collaborative Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Few-shot task performance",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+      "evidence": "Few-shot Continual Relation Extraction (FCRE) has emerged as a significant challenge in information extraction, necessitating that relation extraction (RE) systems can sequentially identify new relations with limited labeled samples. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Continual learning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+      "evidence": "Few-shot Continual Relation Extraction (FCRE) has emerged as a significant challenge in information extraction, necessitating that relation extraction (RE) systems can sequentially identify new relations with limited labeled samples. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Natural language inference",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction",
+      "evidence": "Recent research efforts have explored the potential of leveraging natural language inference (NLI) techniques to enhance relation extraction (RE). (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BC5CDR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction",
+      "evidence": "BC5CDR is a document-level RE dataset featuring binary relations between chemical and disease entities (Li et al., 2016). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ChemProt",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction",
+      "evidence": "ChemProt is a chemical-protein dataset featuring five relation classes (Taboureau et al., 2010). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "REBEL",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling",
+      "evidence": "On relation extraction (RE), our pipeline achieves 65.8% macro-F1 on REBEL, an 8-point gain over the prior state of the art... (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Coreference resolution",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling",
+      "evidence": "Ablation studies demonstrate that integrating coreference and decomposition increases recall on rare relations by over 20%. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text simplification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling",
+      "evidence": "Ablation studies demonstrate that integrating coreference and decomposition increases recall on rare relations by over 20%. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Information retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+      "evidence": "KiRAG decomposes documents into knowledge triples and performs iterative retrieval with these triples to enable a factually reliable retrieval process. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 13,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 7,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Where papers define the behavior directly, they frame it as knowledge triple extraction: decomposing document content into structured \u27e8head entity, relation, tail entity\u27e9 triples with an LLM using in-context learning. In the only explicit task description, the model is prompted to extract triples for each retrieved document independently and to extract \u201call knowledge triples contained within a document in a single pass\u201d (KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation)."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several settings under the same label. Some use sentence-level RE, with one benchmark description stating that \u201cSemEval-2010 is a sentence-level RE dataset with ten relation classes,\u201d while others use document-level RE, including binary relations between chemical and disease entities in BC5CDR and chemical-protein relations in ChemProt. A smaller line of work uses the name Few-shot Continual Relation Extraction, where RE systems \u201csequentially identify new relations with limited labeled samples,\u201d and another paper uses ZsRE as a relation extraction dataset."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "The prevailing operationalization is benchmark evaluation: papers link relation extraction to 7 measurement instruments, all described as RE datasets or benchmarks. The most frequently linked are TACRED, SemEval 2010 Task 8, ZsRE, BC5CDR, and ChemProt, and papers also refer more generally to evaluation on standard relation extraction benchmarks, including SemEval and variants of TACRED. Where the dataset formulation is stated explicitly, instruments cover both sentence-level and document-level setups."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not converge on a single construct behind this behavior. It is linked to 3 constructs: relation extraction is related to continual learning in work on few-shot continual RE, one paper claims a causal relationship from logical reasoning to relation extraction, stating that logical rules elicit deductive reasoning for more precise relation prediction, and another paper claims a causal relationship from relation extraction to groundedness, arguing that decomposing documents into knowledge triples enables a \u201cfactually reliable retrieval process.\u201d"
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Where papers define the behavior directly, they frame it as knowledge triple extraction: decomposing document content into structured \u27e8head entity, relation, tail entity\u27e9 triples with an LLM using in-context learning. In the only explicit task description, the model is prompted to extract triples for each retrieved document independently and to extract \u201call knowledge triples contained within a document in a single pass\u201d (KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation).\n\nVariants. Papers study several settings under the same label. Some use sentence-level RE, with one benchmark description stating that \u201cSemEval-2010 is a sentence-level RE dataset with ten relation classes,\u201d while others use document-level RE, including binary relations between chemical and disease entities in BC5CDR and chemical-protein relations in ChemProt. A smaller line of work uses the name Few-shot Continual Relation Extraction, where RE systems \u201csequentially identify new relations with limited labeled samples,\u201d and another paper uses ZsRE as a relation extraction dataset.\n\nSpace of elicitation and scores. The prevailing operationalization is benchmark evaluation: papers link relation extraction to 7 measurement instruments, all described as RE datasets or benchmarks. The most frequently linked are TACRED, SemEval 2010 Task 8, ZsRE, BC5CDR, and ChemProt, and papers also refer more generally to evaluation on standard relation extraction benchmarks, including SemEval and variants of TACRED. Where the dataset formulation is stated explicitly, instruments cover both sentence-level and document-level setups.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct behind this behavior. It is linked to 3 constructs: relation extraction is related to continual learning in work on few-shot continual RE, one paper claims a causal relationship from logical reasoning to relation extraction, stating that logical rules elicit deductive reasoning for more precise relation prediction, and another paper claims a causal relationship from relation extraction to groundedness, arguing that decomposing documents into knowledge triples enables a \u201cfactually reliable retrieval process.\u201d",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Modular Approach for Clinical SLMs Driven by Synthetic Data with Pre-Instruction Tuning, Model Merging, and Clinical-Tasks Alignment",
+      "Do Language Models Have Semantics? On the Five Standard Positions",
+      "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+      "Towards Robust Universal Information Extraction: Dataset, Evaluation, and Solution",
+      "Tree-KG: An Expandable Knowledge Graph Construction Framework for Knowledge-intensive Domains"
+    ],
+    "emnlp25": [
+      "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling",
+      "Can LLMs be Good Graph Judge for Knowledge Graph Construction?",
+      "M-BRe: Discovering Training Samples for Relation Extraction from Unlabeled Texts with Large Language Models",
+      "MS-RAG: Simple and Effective Multi-Semantic Retrieval-Augmented Generation",
+      "Semantic Networks Extracted from Students' Think-Aloud Data are Correlated with Students' Learning Performance",
+      "SmartBench: Is Your LLM Truly a Good Chinese Smartphone Assistant?",
+      "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+      "WojoodRelations:Arabic Relation Extraction Corpus and Modeling"
+    ],
+    "iclr24": [
+      "BadEdit: Backdooring Large Language Models by Model Editing",
+      "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction",
+      "GoLLIE: Annotation Guidelines improve Zero-Shot Information-Extraction",
+      "KoLA: Carefully Benchmarking World Knowledge of Large Language Models"
+    ],
+    "iclr25": [
+      "GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation",
+      "RuAG: Learned-rule-augmented Generation for Large Language Models"
+    ],
+    "naacl25": [
+      "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+      "Entangled Relations: Leveraging NLI and Meta-analysis to Enhance Biomedical Relation Extraction",
+      "FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models",
+      "Improving Data Annotation for Low-Resource Relation Extraction with Logical Rule-Augmented Collaborative Language Models",
+      "Label Drop for Multi-Aspect Relation Modeling in Universal Information Extraction",
+      "Mutual-pairing Data Augmentation for Fewshot Continual Relation Extraction"
+    ],
+    "neurips24": [
+      "FinBen: A Holistic Financial Benchmark for Large Language Models",
+      "UrbanKGent: A Unified Large Language Model Agent Framework for Urban Knowledge Graph Construction"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 5,
+    "emnlp25": 8,
+    "iclr24": 4,
+    "iclr25": 2,
+    "naacl25": 6,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "canonical_name": "Action grounding",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats action grounding as instruction-conditioned localization in a GUI: a model maps a textual or natural language instruction to the UI element or screen location needed to execute the action, typically by returning a click position, coordinates, or a bounding box. Most definitions emphasize accurately locating the target element, while a smaller line of work states the task more broadly as transforming instructions into executable actions and associated parameters within a GUI or operating system. Papers largely agree on identifying the intended executable element, but differ on whether success is framed narrowly as finding the click target or more broadly as producing action parameters for execution.\n\nVariants. The most common variants are clicking and dragging. Clicking is described as localizing the target element and outputting a bounding box or click position, while dragging requires both the initial and end coordinates for a drag-and-drop operation. Papers study this behavior on webpages, narrated screenshots, mobile screens, and broader GUI or operating-system screens, and use names such as action grounding, UI grounding, GUI action grounding, and GUI grounding; some also mention bbox versions of element and action grounding subtasks.\n\nSpace of elicitation and scores. Papers measure it with 4 instruments. The most frequently linked instrument is ScreenSpot, which papers use for single-step or cross-platform GUI grounding, followed by Multimodal Mind2Web, OSWorld, and RefCOCO+; together these instruments assess the behavior in cross-platform GUI settings, open-ended real computer environments, post-alignment evaluation of GUI grounding models, and natural image grounding scenarios.\n\nWhat it is taken as evidence of. Only 2 constructs are linked to action grounding in papers, and they are linked in different ways rather than through one shared construct framing. One paper reports that action grounding is related to GUI understanding, while another claims a causal relationship from action grounding to out-of-distribution generalization. Separately, papers relate it to action prediction and claim causal relationships from action grounding to GUI automation and privacy leakage.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Action grounding",
+    "Clicking",
+    "Dragging",
+    "UI grounding",
+    "GUI action grounding",
+    "GUI grounding"
+  ],
+  "papers": [
+    "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use",
+    "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration",
+    "UI-Hawk: Unleashing the Screen Stream Understanding for Mobile GUI Agents",
+    "AgentStudio: A Toolkit for Building General Virtual Agents",
+    "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+    "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+    "OS-ATLAS: Foundation Action Model for Generalist GUI Agents",
+    "Aguvis: Unified Pure Vision Agents for Autonomous GUI Interaction",
+    "Efficient Multi-modal Long Context Learning for Training-free Adaptation",
+    "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction",
+    "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+    "VideoGUI: A Benchmark for GUI Automation from Instructional Videos"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Locating the click position or target element needed to carry out a specified action on a webpage.",
+      "paper": "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "original_name": "Action grounding"
+    },
+    {
+      "text": "The action of identifying and specifying the coordinates of a target UI element to be clicked.",
+      "paper": "VideoGUI: A Benchmark for GUI Automation from Instructional Videos",
+      "original_name": "Clicking"
+    },
+    {
+      "text": "The action of identifying and specifying both the start and end coordinates for a drag-and-drop operation on a UI element.",
+      "paper": "VideoGUI: A Benchmark for GUI Automation from Instructional Videos",
+      "original_name": "Dragging"
+    },
+    {
+      "text": "Producing bounding box coordinates that accurately localize a specified UI element on a mobile screen in response to a textual instruction.",
+      "paper": "UI-Hawk: Unleashing the Screen Stream Understanding for Mobile GUI Agents",
+      "original_name": "UI grounding"
+    },
+    {
+      "text": "Mapping natural language instructions to specific executable elements or locations on a GUI screen, such as clicking a button or selecting a menu item.",
+      "paper": "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration",
+      "original_name": "GUI action grounding"
+    },
+    {
+      "text": "The model's ability to transform natural language instructions into executable actions, such as coordinate-based operations, within a graphical user interface.",
+      "paper": "OS-ATLAS: Foundation Action Model for Generalist GUI Agents",
+      "original_name": "GUI grounding"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ScreenSpot",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "evidence": "We also include Bbox-version of element and action grounding subtasks in VisualWebBench (Liu et al., 2024c), ScreenSpot (Cheng et al., 2024), RefExp (Wichers et al., 2018) for GUI grounding.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+          "OS-ATLAS: Foundation Action Model for Generalist GUI Agents"
+        ],
+        "icml25": [
+          "Efficient Multi-modal Long Context Learning for Training-free Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OSWorld",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "evidence": "Extensive evaluation of state-of-the-art LLM/VLM agents on OSWORLD reveals deficiencies in their ability to serve as computer assistants. While humans accomplish 72.4% of the tasks, the best agents achieve <12.2%, struggling with GUI grounding and operational knowledge. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Out-of-distribution generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "OS-ATLAS: Foundation Action Model for Generalist GUI Agents",
+      "evidence": "omitting the pre-training stage significantly degrades performance... These results highlight the critical importance of the data infrastructure for grounding data synthesis; with this infrastructure in place, we can easily improve OOD downstream performance simply by scaling the pre-training corpus. (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "OS-ATLAS: Foundation Action Model for Generalist GUI Agents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multimodal Mind2Web",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration",
+      "evidence": "We extend our evaluation by following Gou et al. (2024) to leverage the test data from Multimodal-Mind2Web (Zheng et al., 2024b) for further assessing the GUI grounding models after the alignment. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Privacy leakage",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+      "evidence": "EIA with the MI strategy can attack the action grounding stage of SeeAct and leak users' specific PII",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats action grounding as instruction-conditioned localization in a GUI: a model maps a textual or natural language instruction to the UI element or screen location needed to execute the action, typically by returning a click position, coordinates, or a bounding box. Most definitions emphasize accurately locating the target element, while a smaller line of work states the task more broadly as transforming instructions into executable actions and associated parameters within a GUI or operating system. Papers largely agree on identifying the intended executable element, but differ on whether success is framed narrowly as finding the click target or more broadly as producing action parameters for execution."
+    },
+    {
+      "label": "Variants.",
+      "text": "The most common variants are clicking and dragging. Clicking is described as localizing the target element and outputting a bounding box or click position, while dragging requires both the initial and end coordinates for a drag-and-drop operation. Papers study this behavior on webpages, narrated screenshots, mobile screens, and broader GUI or operating-system screens, and use names such as action grounding, UI grounding, GUI action grounding, and GUI grounding; some also mention bbox versions of element and action grounding subtasks."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure it with 4 instruments. The most frequently linked instrument is ScreenSpot, which papers use for single-step or cross-platform GUI grounding, followed by Multimodal Mind2Web, OSWorld, and RefCOCO+; together these instruments assess the behavior in cross-platform GUI settings, open-ended real computer environments, post-alignment evaluation of GUI grounding models, and natural image grounding scenarios."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Only 2 constructs are linked to action grounding in papers, and they are linked in different ways rather than through one shared construct framing. One paper reports that action grounding is related to GUI understanding, while another claims a causal relationship from action grounding to out-of-distribution generalization. Separately, papers relate it to action prediction and claim causal relationships from action grounding to GUI automation and privacy leakage."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats action grounding as instruction-conditioned localization in a GUI: a model maps a textual or natural language instruction to the UI element or screen location needed to execute the action, typically by returning a click position, coordinates, or a bounding box. Most definitions emphasize accurately locating the target element, while a smaller line of work states the task more broadly as transforming instructions into executable actions and associated parameters within a GUI or operating system. Papers largely agree on identifying the intended executable element, but differ on whether success is framed narrowly as finding the click target or more broadly as producing action parameters for execution.\n\nVariants. The most common variants are clicking and dragging. Clicking is described as localizing the target element and outputting a bounding box or click position, while dragging requires both the initial and end coordinates for a drag-and-drop operation. Papers study this behavior on webpages, narrated screenshots, mobile screens, and broader GUI or operating-system screens, and use names such as action grounding, UI grounding, GUI action grounding, and GUI grounding; some also mention bbox versions of element and action grounding subtasks.\n\nSpace of elicitation and scores. Papers measure it with 4 instruments. The most frequently linked instrument is ScreenSpot, which papers use for single-step or cross-platform GUI grounding, followed by Multimodal Mind2Web, OSWorld, and RefCOCO+; together these instruments assess the behavior in cross-platform GUI settings, open-ended real computer environments, post-alignment evaluation of GUI grounding models, and natural image grounding scenarios.\n\nWhat it is taken as evidence of. Only 2 constructs are linked to action grounding in papers, and they are linked in different ways rather than through one shared construct framing. One paper reports that action grounding is related to GUI understanding, while another claims a causal relationship from action grounding to out-of-distribution generalization. Separately, papers relate it to action prediction and claim causal relationships from action grounding to GUI automation and privacy leakage.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use"
+    ],
+    "emnlp25": [
+      "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration",
+      "UI-Hawk: Unleashing the Screen Stream Understanding for Mobile GUI Agents"
+    ],
+    "iclr25": [
+      "AgentStudio: A Toolkit for Building General Virtual Agents",
+      "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+      "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "OS-ATLAS: Foundation Action Model for Generalist GUI Agents"
+    ],
+    "icml25": [
+      "Aguvis: Unified Pure Vision Agents for Autonomous GUI Interaction",
+      "Efficient Multi-modal Long Context Learning for Training-free Adaptation",
+      "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction"
+    ],
+    "neurips24": [
+      "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "VideoGUI: A Benchmark for GUI Automation from Instructional Videos"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 2,
+    "iclr25": 4,
+    "icml25": 3,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

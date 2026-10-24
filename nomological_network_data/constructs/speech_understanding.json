@@ -1,0 +1,179 @@
+{
+  "canonical_name": "Speech understanding",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats speech understanding as a latent model ability to interpret the semantic content of spoken language in audio: understanding words, phrases, context, and semantic meaning from speech, sometimes including following spoken instructions. One paper states that it focuses on \"the interpretation of the semantic content within the audio,\" and another uses the closely aligned label linguistic comprehension for understanding spoken language well enough to answer questions correctly. A smaller line of work uses a broader scope, defining it as extracting both linguistic and paralinguistic information, including speaker attributes and acoustic features.\n\nSpace of facets. Papers organize the concept in a few different ways. One benchmark places speech understanding alongside audio scene understanding and voice understanding (paralinguistic), which treats paralinguistic content as separate, while another paper folds paralinguistic information into speech understanding itself. At the task level, papers connect it to speech recognition and spoken question answering, and some authors use the alternate label linguistic comprehension.\n\nSpace of measurement. Operationally, speech understanding is linked to 2 measurement instruments and 3 behavioral indicators. The most frequent instruments are AudioBench and SUPERB; AudioBench explicitly targets speech understanding, and SUPERB is described as focusing on it. Among behavioral indicators, speech recognition is the most common, with speech instruction following and spoken question answering also linked; one paper says it measured understanding ability for input speech by verifying ASR accuracy on different evaluation sets, and another evaluates ASR with WER on multilingual benchmarks, so the operationalization often centers on recognition and task performance even when definitions describe broader semantic or paralinguistic understanding.\n\nLinks. Beyond measurement, papers record only related links, not causal or correlational ones, and they do not link it to any other construct. One benchmark reports that speech recognition is related to speech understanding. The same source also reports that speech understanding is related to spoken question answering, and that speech instruction following is related to speech understanding.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Speech understanding",
+    "Linguistic comprehension"
+  ],
+  "papers": [
+    "LLaMA-Omni 2: LLM-based Real-time Spoken Chatbot with Autoregressive Streaming Speech Synthesis",
+    "Recent Advances in Speech Language Models: A Survey",
+    "SIFT-50M: A Large-Scale Multilingual Dataset for Speech Instruction Fine-Tuning",
+    "Soundwave: Less is More for Speech-Text Alignment in LLMs",
+    "Understanding the Modality Gap: An Empirical Study on the Speech-Text Alignment Mechanism of Large Speech Language Models",
+    "Freeze-Omni: A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM",
+    "AudioBench: A Universal Benchmark for Audio Large Language Models",
+    "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent ability of a model to interpret the semantic content of spoken language in audio, including comprehension of words, phrases, and context across diverse conditions such as accents, noise, and length.",
+      "paper": "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+      "original_name": "Speech understanding"
+    },
+    {
+      "text": "The model\u2019s ability to understand spoken language content well enough to answer questions correctly.",
+      "paper": "Understanding the Modality Gap: An Empirical Study on the Speech-Text Alignment Mechanism of Large Speech Language Models",
+      "original_name": "Linguistic comprehension"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Speech recognition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+      "evidence": "\u201cASR and AST are foundational tasks that enable the model to understand speech\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+          "AudioBench: A Universal Benchmark for Audio Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AudioBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AudioBench: A Universal Benchmark for Audio Large Language Models",
+      "evidence": "We introduce AudioBench, a universal benchmark designed to evaluate Audio Large Language Models (AudioLLMs). It encompasses 8 distinct tasks and 26 datasets... The evaluation targets three main aspects: speech understanding, audio scene understanding, and voice understanding (paralinguistic).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "AudioBench: A Universal Benchmark for Audio Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spoken question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "AudioBench: A Universal Benchmark for Audio Large Language Models",
+      "evidence": "3.3.1 Speech Understanding ... Speech Question Answering (SQA).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "AudioBench: A Universal Benchmark for Audio Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Speech instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "AudioBench: A Universal Benchmark for Audio Large Language Models",
+      "evidence": "3.3.1 Speech Understanding ... Speech Instruction (SI).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "AudioBench: A Universal Benchmark for Audio Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SUPERB",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Recent Advances in Speech Language Models: A Survey",
+      "evidence": "SUPERB (Yang et al., 2021) focuses on speech understanding... (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Recent Advances in Speech Language Models: A Survey"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats speech understanding as a latent model ability to interpret the semantic content of spoken language in audio: understanding words, phrases, context, and semantic meaning from speech, sometimes including following spoken instructions. One paper states that it focuses on \"the interpretation of the semantic content within the audio,\" and another uses the closely aligned label linguistic comprehension for understanding spoken language well enough to answer questions correctly. A smaller line of work uses a broader scope, defining it as extracting both linguistic and paralinguistic information, including speaker attributes and acoustic features."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers organize the concept in a few different ways. One benchmark places speech understanding alongside audio scene understanding and voice understanding (paralinguistic), which treats paralinguistic content as separate, while another paper folds paralinguistic information into speech understanding itself. At the task level, papers connect it to speech recognition and spoken question answering, and some authors use the alternate label linguistic comprehension."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationally, speech understanding is linked to 2 measurement instruments and 3 behavioral indicators. The most frequent instruments are AudioBench and SUPERB; AudioBench explicitly targets speech understanding, and SUPERB is described as focusing on it. Among behavioral indicators, speech recognition is the most common, with speech instruction following and spoken question answering also linked; one paper says it measured understanding ability for input speech by verifying ASR accuracy on different evaluation sets, and another evaluates ASR with WER on multilingual benchmarks, so the operationalization often centers on recognition and task performance even when definitions describe broader semantic or paralinguistic understanding."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, papers record only related links, not causal or correlational ones, and they do not link it to any other construct. One benchmark reports that speech recognition is related to speech understanding. The same source also reports that speech understanding is related to spoken question answering, and that speech instruction following is related to speech understanding."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define speech understanding as a model's latent ability to comprehend the semantic content of spoken language or spoken audio, such as recognizing words, interpreting meaning, understanding context, following instructions, or answering questions. A few definitions add conditions or examples, and one broadens the scope to include paralinguistic information, but the dominant use is the same core phenomenon of understanding spoken language content.",
+    "papers_with_definition": 5,
+    "runs": [
+      "consensus",
+      "complementary",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats speech understanding as a latent model ability to interpret the semantic content of spoken language in audio: understanding words, phrases, context, and semantic meaning from speech, sometimes including following spoken instructions. One paper states that it focuses on \"the interpretation of the semantic content within the audio,\" and another uses the closely aligned label linguistic comprehension for understanding spoken language well enough to answer questions correctly. A smaller line of work uses a broader scope, defining it as extracting both linguistic and paralinguistic information, including speaker attributes and acoustic features.\n\nSpace of facets. Papers organize the concept in a few different ways. One benchmark places speech understanding alongside audio scene understanding and voice understanding (paralinguistic), which treats paralinguistic content as separate, while another paper folds paralinguistic information into speech understanding itself. At the task level, papers connect it to speech recognition and spoken question answering, and some authors use the alternate label linguistic comprehension.\n\nSpace of measurement. Operationally, speech understanding is linked to 2 measurement instruments and 3 behavioral indicators. The most frequent instruments are AudioBench and SUPERB; AudioBench explicitly targets speech understanding, and SUPERB is described as focusing on it. Among behavioral indicators, speech recognition is the most common, with speech instruction following and spoken question answering also linked; one paper says it measured understanding ability for input speech by verifying ASR accuracy on different evaluation sets, and another evaluates ASR with WER on multilingual benchmarks, so the operationalization often centers on recognition and task performance even when definitions describe broader semantic or paralinguistic understanding.\n\nLinks. Beyond measurement, papers record only related links, not causal or correlational ones, and they do not link it to any other construct. One benchmark reports that speech recognition is related to speech understanding. The same source also reports that speech understanding is related to spoken question answering, and that speech instruction following is related to speech understanding.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "LLaMA-Omni 2: LLM-based Real-time Spoken Chatbot with Autoregressive Streaming Speech Synthesis",
+      "Recent Advances in Speech Language Models: A Survey",
+      "SIFT-50M: A Large-Scale Multilingual Dataset for Speech Instruction Fine-Tuning",
+      "Soundwave: Less is More for Speech-Text Alignment in LLMs"
+    ],
+    "emnlp25": [
+      "Understanding the Modality Gap: An Empirical Study on the Speech-Text Alignment Mechanism of Large Speech Language Models"
+    ],
+    "icml25": [
+      "Freeze-Omni: A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM"
+    ],
+    "naacl25": [
+      "AudioBench: A Universal Benchmark for Audio Large Language Models",
+      "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 1,
+    "icml25": 1,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "icml25",
+    "naacl25"
+  ]
+}

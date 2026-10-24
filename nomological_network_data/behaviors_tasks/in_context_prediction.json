@@ -1,0 +1,188 @@
+{
+  "canonical_name": "In-context prediction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is making a prediction for a new query or test example from examples supplied in the prompt or other surrounding context. The common success criterion is to produce the output for that new example, sometimes explicitly the correct output, by using labels or other information in context rather than stored associations. One paper describes this as when \"a model is able to successfully learn and generalize from new information given in its input\" (Toward Understanding In-context vs. In-weight Learning). Some definitions make the operation explicit, for example taking \"(x1, g(x1), ..., xn, g(xn), xt)\" as input and predicting \"g(xt),\" while others phrase it as inferring dynamics from a single context trajectory and predicting from a new initial condition.\n\nVariants. Papers most often vary the behavior by the amount and kind of support placed in context. Few-shot prediction is framed as using a small number of prompt examples or a limited labeled support set, including a text classification setup with 8 examples and a protein fitness setting where the support set provides task-specific adaptation, and one paper contrasts this with zero-shot use of no support data. Other named variants are many-shot in-context learning, studied as a long-context setting using Big-Bench Hard datasets, context-based prediction, which emphasizes using labels or information in context, and one-shot adaptation, where a single context trajectory is used to infer dynamics for a new query initial condition.\n\nSpace of elicitation and scores. One measurement instrument is linked to this behavior, HELMET. Papers use it as a benchmark that includes many-shot in-context learning among its long-context task categories, and the recorded evidence states that the HELMET many-shot ICL task is evaluated by accuracy. No other measurement instrument is linked to it.\n\nWhat it is taken as evidence of. Papers link it to two constructs, and the links are not of the same type. In-context learning is related to it, with one paper stating that \"the context is useful,\" while long-context understanding is treated differently: one paper claims a causal relationship from long-context understanding to in-context prediction in the setting of many-shot in-context learning.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "In-context prediction",
+    "Few-shot prediction",
+    "Many-shot in-context learning",
+    "Context-based prediction",
+    "One-shot adaptation"
+  ],
+  "papers": [
+    "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+    "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+    "Context is Environment",
+    "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+    "LICO: Large Language Models for In-Context Molecular Optimization",
+    "Metalic: Meta-Learning In-Context with Protein Language Models",
+    "Not All LLM-Generated Data Are Equal: Rethinking Data Weighting in Text Classification",
+    "Rethinking Invariance in In-context Learning",
+    "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+    "Toward Understanding In-context vs. In-weight Learning",
+    "Towards Auto-Regressive Next-Token Prediction: In-context Learning Emerges from Generalization",
+    "Transformers Handle Endogeneity in In-Context Linear Regression",
+    "What is Wrong with Perplexity for Long-context Language Modeling?",
+    "Why In-Context Learning Models are Good Few-Shot Learners?",
+    "NExtLong: Toward Effective Long-Context Training without Long Documents",
+    "Zebra: In-Context Generative Pretraining for Solving Parametric PDEs",
+    "Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of generating a prediction for a new test example based on a set of context examples provided in the input prompt.",
+      "paper": "Rethinking Invariance in In-context Learning",
+      "original_name": "In-context prediction"
+    },
+    {
+      "text": "The task of making predictions based on a small number of examples (shots) provided in the context or prompt.",
+      "paper": "Not All LLM-Generated Data Are Equal: Rethinking Data Weighting in Text Classification",
+      "original_name": "Few-shot prediction"
+    },
+    {
+      "text": "The observable task of learning a new task from a large number of examples provided within the context and then applying that learned skill to a new query.",
+      "paper": "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+      "original_name": "Many-shot in-context learning"
+    },
+    {
+      "text": "Producing the correct output by using labels or information present in the surrounding context rather than relying on stored associations.",
+      "paper": "Toward Understanding In-context vs. In-weight Learning",
+      "original_name": "Context-based prediction"
+    },
+    {
+      "text": "The observable behavior of inferring the dynamics of a system and making predictions for a new query after being provided with only a single example trajectory from that system.",
+      "paper": "Zebra: In-Context Generative Pretraining for Solving Parametric PDEs",
+      "original_name": "One-shot adaptation"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HELMET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "we present HELMET (How to Evaluate Long-context Models Effectively and Thoroughly). We curate a diverse set of application-centric long-context tasks across seven categories. Beyond widely adopted categories like ... we also add many-shot in-context learning (ICL)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ],
+        "icml25": [
+          "NExtLong: Toward Effective Long-Context Training without Long Documents"
+        ],
+        "emnlp25": [
+          "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Toward Understanding In-context vs. In-weight Learning",
+      "evidence": "The ICL class of functions H uses only labels in the context to make a prediction",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Toward Understanding In-context vs. In-weight Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What is Wrong with Perplexity for Long-context Language Modeling?",
+      "evidence": "Handling long-context inputs is crucial for large language models (LLMs) in tasks such as extended conversations, document summarization, and many-shot in-context learning. (Section ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "What is Wrong with Perplexity for Long-context Language Modeling?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is making a prediction for a new query or test example from examples supplied in the prompt or other surrounding context. The common success criterion is to produce the output for that new example, sometimes explicitly the correct output, by using labels or other information in context rather than stored associations. One paper describes this as when \"a model is able to successfully learn and generalize from new information given in its input\" (Toward Understanding In-context vs. In-weight Learning). Some definitions make the operation explicit, for example taking \"(x1, g(x1), ..., xn, g(xn), xt)\" as input and predicting \"g(xt),\" while others phrase it as inferring dynamics from a single context trajectory and predicting from a new initial condition."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers most often vary the behavior by the amount and kind of support placed in context. Few-shot prediction is framed as using a small number of prompt examples or a limited labeled support set, including a text classification setup with 8 examples and a protein fitness setting where the support set provides task-specific adaptation, and one paper contrasts this with zero-shot use of no support data. Other named variants are many-shot in-context learning, studied as a long-context setting using Big-Bench Hard datasets, context-based prediction, which emphasizes using labels or information in context, and one-shot adaptation, where a single context trajectory is used to infer dynamics for a new query initial condition."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "One measurement instrument is linked to this behavior, HELMET. Papers use it as a benchmark that includes many-shot in-context learning among its long-context task categories, and the recorded evidence states that the HELMET many-shot ICL task is evaluated by accuracy. No other measurement instrument is linked to it."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to two constructs, and the links are not of the same type. In-context learning is related to it, with one paper stating that \"the context is useful,\" while long-context understanding is treated differently: one paper claims a causal relationship from long-context understanding to in-context prediction in the setting of many-shot in-context learning."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is making a prediction for a new query or test example from examples supplied in the prompt or other surrounding context. The common success criterion is to produce the output for that new example, sometimes explicitly the correct output, by using labels or other information in context rather than stored associations. One paper describes this as when \"a model is able to successfully learn and generalize from new information given in its input\" (Toward Understanding In-context vs. In-weight Learning). Some definitions make the operation explicit, for example taking \"(x1, g(x1), ..., xn, g(xn), xt)\" as input and predicting \"g(xt),\" while others phrase it as inferring dynamics from a single context trajectory and predicting from a new initial condition.\n\nVariants. Papers most often vary the behavior by the amount and kind of support placed in context. Few-shot prediction is framed as using a small number of prompt examples or a limited labeled support set, including a text classification setup with 8 examples and a protein fitness setting where the support set provides task-specific adaptation, and one paper contrasts this with zero-shot use of no support data. Other named variants are many-shot in-context learning, studied as a long-context setting using Big-Bench Hard datasets, context-based prediction, which emphasizes using labels or information in context, and one-shot adaptation, where a single context trajectory is used to infer dynamics for a new query initial condition.\n\nSpace of elicitation and scores. One measurement instrument is linked to this behavior, HELMET. Papers use it as a benchmark that includes many-shot in-context learning among its long-context task categories, and the recorded evidence states that the HELMET many-shot ICL task is evaluated by accuracy. No other measurement instrument is linked to it.\n\nWhat it is taken as evidence of. Papers link it to two constructs, and the links are not of the same type. In-context learning is related to it, with one paper stating that \"the context is useful,\" while long-context understanding is treated differently: one paper claims a causal relationship from long-context understanding to in-context prediction in the setting of many-shot in-context learning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression"
+    ],
+    "emnlp25": [
+      "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation"
+    ],
+    "iclr24": [
+      "Context is Environment"
+    ],
+    "iclr25": [
+      "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "LICO: Large Language Models for In-Context Molecular Optimization",
+      "Metalic: Meta-Learning In-Context with Protein Language Models",
+      "Not All LLM-Generated Data Are Equal: Rethinking Data Weighting in Text Classification",
+      "Rethinking Invariance in In-context Learning",
+      "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+      "Toward Understanding In-context vs. In-weight Learning",
+      "Towards Auto-Regressive Next-Token Prediction: In-context Learning Emerges from Generalization",
+      "Transformers Handle Endogeneity in In-Context Linear Regression",
+      "What is Wrong with Perplexity for Long-context Language Modeling?",
+      "Why In-Context Learning Models are Good Few-Shot Learners?"
+    ],
+    "icml25": [
+      "NExtLong: Toward Effective Long-Context Training without Long Documents",
+      "Zebra: In-Context Generative Pretraining for Solving Parametric PDEs"
+    ],
+    "neurips24": [
+      "Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 1,
+    "iclr24": 1,
+    "iclr25": 11,
+    "icml25": 2,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

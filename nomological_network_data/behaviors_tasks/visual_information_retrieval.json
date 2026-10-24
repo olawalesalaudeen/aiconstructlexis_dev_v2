@@ -1,0 +1,142 @@
+{
+  "canonical_name": "Visual information retrieval",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the behavior is used for retrieving or recalling specific visual information from sequences of images or videos. Some authors frame it as long-context retrieval, locating a target object, image, frame, or other inserted information within a long sequence and answering a corresponding question, for example, \"For the image with the anchor object, is there a target object?\", and one definition explicitly says this requires precise attention and memory over extended inputs. Other authors operationalize it as recall from video observations, where success means identifying the next or previous step in an action sequence, naming an object near a landmark, describing the scene at a particular moment, or determining an agent's start and end positions.\n\nVariants. Papers study several named variants, including needle retrieval and long video retrieval. These settings ask for a correct inserted image, target frame, or queried piece of information from deep in a long video, sometimes with varying background lengths or needle depths, and one extension adds distractor frames. Another formulation breaks the task into sequence recall, object recall, scene recall, and start/end position identification in video scenes.\n\nSpace of elicitation and scores. Papers link this behavior to 2 measurement instruments. The more frequently linked instrument is Needle-in-a-Haystack, followed by V-NIAH; both are presented as retrieval tasks, with Needle-in-a-Haystack inserting needles at various positions in the context and asking the model to retrieve them, and V-NIAH used for long video retrieval, including an extension that introduces distractor frames. One Needle-in-a-Haystack setting says the model should perfectly retrieve at least two inserted needles.\n\nWhat it is taken as evidence of. No construct is linked to this behavior, so the papers do not specify a broader construct that it is taken to indicate.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Object recall",
+    "Scene recall",
+    "Sequence recall",
+    "Start/end position identification",
+    "Visual information retrieval",
+    "Needle retrieval",
+    "Long video retrieval"
+  ],
+  "papers": [
+    "Design Choices for Extending the Context Length of Visual Language Models",
+    "UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces",
+    "VRoPE: Rotary Position Embedding for Video Large Language Models",
+    "Forgetting Transformer: Softmax Attention with a Forget Gate",
+    "Long Context Compression with Activation Beacon",
+    "LongVILA: Scaling Long-Context Visual Language Models for Long Videos",
+    "Why Does the Effective Context Length of LLMs Fall Short?",
+    "Understanding Synthetic Context Extension via Retrieval Heads",
+    "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+    "LongRoPE2: Near-Lossless LLM Context Window Scaling"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Identifying the next or previous step in a sequence of actions based on visual observations in a video.",
+      "paper": "UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces",
+      "original_name": "Sequence recall"
+    },
+    {
+      "text": "Identifying objects located near a specified landmark or reference point in a video scene.",
+      "paper": "UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces",
+      "original_name": "Object recall"
+    },
+    {
+      "text": "The observable task of describing details of a scene that an agent observes during a specific action or moment in a video.",
+      "paper": "UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces",
+      "original_name": "Scene recall"
+    },
+    {
+      "text": "Determining the initial and final locations of an agent's movement trajectory from video observations.",
+      "paper": "UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces",
+      "original_name": "Start/end position identification"
+    },
+    {
+      "text": "Locating and identifying specific visual content (e.g., an object) within a long sequence of images, requiring precise attention and memory over extended inputs.",
+      "paper": "Design Choices for Extending the Context Length of Visual Language Models",
+      "original_name": "Visual information retrieval"
+    },
+    {
+      "text": "Identifying and retrieving the correct inserted image or information from deep within a long video sequence.",
+      "paper": "LongVILA: Scaling Long-Context Visual Language Models for Long Videos",
+      "original_name": "Needle retrieval"
+    },
+    {
+      "text": "The observable task of locating and extracting a specific piece of information from a long video input based on a query.",
+      "paper": "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+      "original_name": "Long video retrieval"
+    }
+  ],
+  "definition_count": 7,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "V-NIAH",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+      "evidence": "For long video retrieval, we use Vision Needle-in-a-Haystack (V-NIAH) (Zhang et al., 2024d) and our proposed extension, Vision Needle-in-a-Haystack with Distractors (V-NIAH-D), which introduces distractor frames to increase the task dif\ufb01culty. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "VideoRoPE: What Makes for Good Video Rotary Position Embedding?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the behavior is used for retrieving or recalling specific visual information from sequences of images or videos. Some authors frame it as long-context retrieval, locating a target object, image, frame, or other inserted information within a long sequence and answering a corresponding question, for example, \"For the image with the anchor object, is there a target object?\", and one definition explicitly says this requires precise attention and memory over extended inputs. Other authors operationalize it as recall from video observations, where success means identifying the next or previous step in an action sequence, naming an object near a landmark, describing the scene at a particular moment, or determining an agent's start and end positions."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several named variants, including needle retrieval and long video retrieval. These settings ask for a correct inserted image, target frame, or queried piece of information from deep in a long video, sometimes with varying background lengths or needle depths, and one extension adds distractor frames. Another formulation breaks the task into sequence recall, object recall, scene recall, and start/end position identification in video scenes."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 2 measurement instruments. The more frequently linked instrument is Needle-in-a-Haystack, followed by V-NIAH; both are presented as retrieval tasks, with Needle-in-a-Haystack inserting needles at various positions in the context and asking the model to retrieve them, and V-NIAH used for long video retrieval, including an extension that introduces distractor frames. One Needle-in-a-Haystack setting says the model should perfectly retrieve at least two inserted needles."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked to this behavior, so the papers do not specify a broader construct that it is taken to indicate."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the behavior is used for retrieving or recalling specific visual information from sequences of images or videos. Some authors frame it as long-context retrieval, locating a target object, image, frame, or other inserted information within a long sequence and answering a corresponding question, for example, \"For the image with the anchor object, is there a target object?\", and one definition explicitly says this requires precise attention and memory over extended inputs. Other authors operationalize it as recall from video observations, where success means identifying the next or previous step in an action sequence, naming an object near a landmark, describing the scene at a particular moment, or determining an agent's start and end positions.\n\nVariants. Papers study several named variants, including needle retrieval and long video retrieval. These settings ask for a correct inserted image, target frame, or queried piece of information from deep in a long video, sometimes with varying background lengths or needle depths, and one extension adds distractor frames. Another formulation breaks the task into sequence recall, object recall, scene recall, and start/end position identification in video scenes.\n\nSpace of elicitation and scores. Papers link this behavior to 2 measurement instruments. The more frequently linked instrument is Needle-in-a-Haystack, followed by V-NIAH; both are presented as retrieval tasks, with Needle-in-a-Haystack inserting needles at various positions in the context and asking the model to retrieve them, and V-NIAH used for long video retrieval, including an extension that introduces distractor frames. One Needle-in-a-Haystack setting says the model should perfectly retrieve at least two inserted needles.\n\nWhat it is taken as evidence of. No construct is linked to this behavior, so the papers do not specify a broader construct that it is taken to indicate.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Design Choices for Extending the Context Length of Visual Language Models",
+      "UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces"
+    ],
+    "emnlp25": [
+      "VRoPE: Rotary Position Embedding for Video Large Language Models"
+    ],
+    "iclr25": [
+      "Forgetting Transformer: Softmax Attention with a Forget Gate",
+      "Long Context Compression with Activation Beacon",
+      "LongVILA: Scaling Long-Context Visual Language Models for Long Videos",
+      "Why Does the Effective Context Length of LLMs Fall Short?"
+    ],
+    "icml25": [
+      "Understanding Synthetic Context Extension via Retrieval Heads",
+      "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+      "LongRoPE2: Near-Lossless LLM Context Window Scaling"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 1,
+    "iclr25": 4,
+    "icml25": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

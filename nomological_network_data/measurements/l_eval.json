@@ -1,0 +1,133 @@
+{
+  "canonical_name": "L-Eval",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the prevailing usage treats L-Eval as a benchmark, often described as a standardized long-context evaluation suite for language models. Most definitions frame it around long-context capability or performance, with closed-ended tasks, especially multiple-choice and true or false question answering, while some papers describe a broader suite with both closed-ended and open-ended tasks for understanding, reasoning, summarization, and open-format question answering over long inputs. A smaller line of work specifies its contents as 508 long documents from various domains, divided into 20 subtasks or \"20 smaller long sequence datasets,\" and one paper notes that its tasks appear at varying input lengths.\n\nWhat it is claimed to measure. Relationship claims are concentrated rather than spread broadly: papers link L-Eval to one construct and one behavioral indicator. The dominant claim is that it measures long-context understanding, with several papers describing it as a commonly used long-context benchmark or as part of a \"comprehensive evaluation of long-context understanding.\" A smaller usage links it to long-context generation, where one paper reports evaluating models with L-Eval's closed-ended and open-ended task groups.\n\nSpace of uses. In practice, papers frequently use L-Eval alongside LongBench, and some place it with LooGLE as a multitask benchmark for long-context evaluation. Usage often narrows to subsets rather than the full suite: some studies focus on four closed-ended tasks, while another reports four open-ended QA tasks scored with F1 and four multiple-choice QA tasks scored with accuracy. One paper also cites it among specialized benchmarks when comparing CS-Bench with long-text and reasoning-oriented evaluations.\n\nConcerns raised. Only a small number of papers state limitations directly. One reports that, although L-Eval is designed to assess long-form context understanding capabilities, its context lengths are relatively shorter, and another says that benchmarks such as L-Eval scale only up to 40,000 tokens.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "L-eval",
+    "L-Eval"
+  ],
+  "papers": [
+    "CSTree-SRI: Introspection-Driven Cognitive Semantic Tree for Multi-Turn Question Answering over Extra-Long Contexts",
+    "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method",
+    "Bridging Context Gaps: Leveraging Coreference Resolution for Long Contextual Understanding",
+    "CS-Bench: A Comprehensive Benchmark for Large Language Models towards Computer Science Mastery",
+    "ReAttention: Training-Free Infinite Context with Finite Attention Scope",
+    "LCIRC: A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs",
+    "BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack",
+    "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "L-eval is a benchmark used for comparing CS-Bench with long-text and reasoning-oriented evaluations.",
+      "paper": "CS-Bench: A Comprehensive Benchmark for Large Language Models towards Computer Science Mastery",
+      "original_name": "L-eval"
+    },
+    {
+      "text": "L-Eval is a benchmark designed to assess the long-context capabilities of LLMs, featuring closed-ended tasks such as multiple-choice and true/false question answering.",
+      "paper": "Bridging Context Gaps: Leveraging Coreference Resolution for Long Contextual Understanding",
+      "original_name": "L-Eval"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "evidence": "Following the L-Eval benchmark [1], we evaluated the LLM with tasks categorized into two main groups: closed-ended and open-ended tasks. Closed-ended tasks primarily focus on the capacity for understanding and reasoning within long contexts... (Section 4.2).",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+        ],
+        "iclr25": [
+          "ReAttention: Training-Free Infinite Context with Finite Attention Scope",
+          "Bridging Context Gaps: Leveraging Coreference Resolution for Long Contextual Understanding"
+        ],
+        "naacl25": [
+          "LCIRC: A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs"
+        ],
+        "acl25": [
+          "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "evidence": "evaluate the enhanced LLM's capability to zero-shot undertake multiple tasks in long context understanding and generation, as detailed in Section 4.2... Following the L-Eval benchmark [1]",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the prevailing usage treats L-Eval as a benchmark, often described as a standardized long-context evaluation suite for language models. Most definitions frame it around long-context capability or performance, with closed-ended tasks, especially multiple-choice and true or false question answering, while some papers describe a broader suite with both closed-ended and open-ended tasks for understanding, reasoning, summarization, and open-format question answering over long inputs. A smaller line of work specifies its contents as 508 long documents from various domains, divided into 20 subtasks or \"20 smaller long sequence datasets,\" and one paper notes that its tasks appear at varying input lengths."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Relationship claims are concentrated rather than spread broadly: papers link L-Eval to one construct and one behavioral indicator. The dominant claim is that it measures long-context understanding, with several papers describing it as a commonly used long-context benchmark or as part of a \"comprehensive evaluation of long-context understanding.\" A smaller usage links it to long-context generation, where one paper reports evaluating models with L-Eval's closed-ended and open-ended task groups."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "In practice, papers frequently use L-Eval alongside LongBench, and some place it with LooGLE as a multitask benchmark for long-context evaluation. Usage often narrows to subsets rather than the full suite: some studies focus on four closed-ended tasks, while another reports four open-ended QA tasks scored with F1 and four multiple-choice QA tasks scored with accuracy. One paper also cites it among specialized benchmarks when comparing CS-Bench with long-text and reasoning-oriented evaluations."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "Only a small number of papers state limitations directly. One reports that, although L-Eval is designed to assess long-form context understanding capabilities, its context lengths are relatively shorter, and another says that benchmarks such as L-Eval scale only up to 40,000 tokens."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the prevailing usage treats L-Eval as a benchmark, often described as a standardized long-context evaluation suite for language models. Most definitions frame it around long-context capability or performance, with closed-ended tasks, especially multiple-choice and true or false question answering, while some papers describe a broader suite with both closed-ended and open-ended tasks for understanding, reasoning, summarization, and open-format question answering over long inputs. A smaller line of work specifies its contents as 508 long documents from various domains, divided into 20 subtasks or \"20 smaller long sequence datasets,\" and one paper notes that its tasks appear at varying input lengths.\n\nWhat it is claimed to measure. Relationship claims are concentrated rather than spread broadly: papers link L-Eval to one construct and one behavioral indicator. The dominant claim is that it measures long-context understanding, with several papers describing it as a commonly used long-context benchmark or as part of a \"comprehensive evaluation of long-context understanding.\" A smaller usage links it to long-context generation, where one paper reports evaluating models with L-Eval's closed-ended and open-ended task groups.\n\nSpace of uses. In practice, papers frequently use L-Eval alongside LongBench, and some place it with LooGLE as a multitask benchmark for long-context evaluation. Usage often narrows to subsets rather than the full suite: some studies focus on four closed-ended tasks, while another reports four open-ended QA tasks scored with F1 and four multiple-choice QA tasks scored with accuracy. One paper also cites it among specialized benchmarks when comparing CS-Bench with long-text and reasoning-oriented evaluations.\n\nConcerns raised. Only a small number of papers state limitations directly. One reports that, although L-Eval is designed to assess long-form context understanding capabilities, its context lengths are relatively shorter, and another says that benchmarks such as L-Eval scale only up to 40,000 tokens.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CSTree-SRI: Introspection-Driven Cognitive Semantic Tree for Multi-Turn Question Answering over Extra-Long Contexts",
+      "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method"
+    ],
+    "iclr25": [
+      "Bridging Context Gaps: Leveraging Coreference Resolution for Long Contextual Understanding",
+      "CS-Bench: A Comprehensive Benchmark for Large Language Models towards Computer Science Mastery",
+      "ReAttention: Training-Free Infinite Context with Finite Attention Scope"
+    ],
+    "naacl25": [
+      "LCIRC: A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs"
+    ],
+    "neurips24": [
+      "BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack",
+      "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr25": 3,
+    "naacl25": 1,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

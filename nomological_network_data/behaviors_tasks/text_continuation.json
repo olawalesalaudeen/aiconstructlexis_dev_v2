@@ -1,0 +1,145 @@
+{
+  "canonical_name": "Text continuation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage is a generative task where a model is given a prefix, prompt, sentence, article, or truncated passage and asked to produce the next text. Most definitions say the continuation should coherently, logically, and contextually follow the input, sometimes as a suffix or the remaining portion of a passage; one paper summarizes it as producing content that \"remains consistent with the given one\" (Exploring LLMs' Ability to Spontaneously and Conditionally Modify Moral Expressions through Text Manipulation). A smaller line of work narrows the task to specific setups, such as continuation from memory slots after compression, continuation from a five-token prompt, or continuation from truncated inputs used to elicit toxic outputs.\n\nVariants. Authors also study several named variants. Alongside the dominant label text continuation, papers use text completion, text continuation generation, open-ended text completion, and transcript continuation; these cover sentence and article completion, continuation without specific task constraints, regeneration of the remaining portion of a truncated passage, and continuation from textual or speech-derived prompts. Smaller lines of work place the task in interactive student trials and teacher demonstrations, ask the model to continue in AAE, or require continuations that follow logical constraints and produce one suggestion for continuation.\n\nSpace of elicitation and scores. Papers link text continuation to four measurement instruments, all through measured_by relationships: FineWeb, GSM8K, HellaSwag, and WikiText-103. FineWeb is described as a dataset employed during pre-training, GSM8K as a text-completion benchmark, HellaSwag as a text completion task where the model chooses the most appropriate multi-word ending, and WikiText-103 as a standard benchmark for language modeling.\n\nWhat it is taken as evidence of. Papers do not link text continuation to any construct, so they do not explicitly state what construct it evidences.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Text continuation",
+    "Text completion",
+    "Text continuation generation",
+    "Open-ended text completion"
+  ],
+  "papers": [
+    "Exploring LLMs' Ability to Spontaneously and Conditionally Modify Moral Expressions through Text Manipulation",
+    "Pretraining Context Compressor for Large Language Models with Embedding-Based Memory",
+    "The Impossibility of Fair LLMs",
+    "Curiosity-driven Red-teaming for Large Language Models",
+    "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+    "In-context Autoencoder for Context Compression in a Large Language Model",
+    "Spoken Question Answering and Speech Continuation Using Spectrogram-Powered LLM",
+    "Adapting Large Language Models via Reading Comprehension",
+    "DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text",
+    "Babysit A Language Model From Scratch: Interactive Language Learning by Trials and Demonstrations",
+    "My LLM might Mimic AAE - But When Should It?",
+    "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+    "Adaptable Logical Control for Large Language Models"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating subsequent text following the original context based on memory slots, used to evaluate the model's ability to maintain predictive capability after compression.",
+      "paper": "Curiosity-driven Red-teaming for Large Language Models",
+      "original_name": "Text continuation"
+    },
+    {
+      "text": "The task of generating text to continue a given prompt or sentence.",
+      "paper": "The Impossibility of Fair LLMs",
+      "original_name": "Text completion"
+    },
+    {
+      "text": "Generating the remaining portion of a passage from a truncated prefix.",
+      "paper": "DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text",
+      "original_name": "Text continuation generation"
+    },
+    {
+      "text": "Continuing a given text prompt in a coherent and contextually appropriate manner without specific task constraints, often used to evaluate generative fluency and consistency.",
+      "paper": "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data",
+      "original_name": "Open-ended text completion"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiText-103",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution",
+      "evidence": "WikiText-103 (Merity et al., 2017) is a standard benchmark for language modeling... (Section 4.1, Text completion)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models",
+      "evidence": "Choice permutation applies to all benchmarks except GSM8K which is a text-completion benchmark, not a multiple-choice benchmark. (Section 3.1, footnote 7)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "metabench - A Sparse Benchmark of Reasoning and Knowledge in Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage is a generative task where a model is given a prefix, prompt, sentence, article, or truncated passage and asked to produce the next text. Most definitions say the continuation should coherently, logically, and contextually follow the input, sometimes as a suffix or the remaining portion of a passage; one paper summarizes it as producing content that \"remains consistent with the given one\" (Exploring LLMs' Ability to Spontaneously and Conditionally Modify Moral Expressions through Text Manipulation). A smaller line of work narrows the task to specific setups, such as continuation from memory slots after compression, continuation from a five-token prompt, or continuation from truncated inputs used to elicit toxic outputs."
+    },
+    {
+      "label": "Variants.",
+      "text": "Authors also study several named variants. Alongside the dominant label text continuation, papers use text completion, text continuation generation, open-ended text completion, and transcript continuation; these cover sentence and article completion, continuation without specific task constraints, regeneration of the remaining portion of a truncated passage, and continuation from textual or speech-derived prompts. Smaller lines of work place the task in interactive student trials and teacher demonstrations, ask the model to continue in AAE, or require continuations that follow logical constraints and produce one suggestion for continuation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link text continuation to four measurement instruments, all through measured_by relationships: FineWeb, GSM8K, HellaSwag, and WikiText-103. FineWeb is described as a dataset employed during pre-training, GSM8K as a text-completion benchmark, HellaSwag as a text completion task where the model chooses the most appropriate multi-word ending, and WikiText-103 as a standard benchmark for language modeling."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not link text continuation to any construct, so they do not explicitly state what construct it evidences."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage is a generative task where a model is given a prefix, prompt, sentence, article, or truncated passage and asked to produce the next text. Most definitions say the continuation should coherently, logically, and contextually follow the input, sometimes as a suffix or the remaining portion of a passage; one paper summarizes it as producing content that \"remains consistent with the given one\" (Exploring LLMs' Ability to Spontaneously and Conditionally Modify Moral Expressions through Text Manipulation). A smaller line of work narrows the task to specific setups, such as continuation from memory slots after compression, continuation from a five-token prompt, or continuation from truncated inputs used to elicit toxic outputs.\n\nVariants. Authors also study several named variants. Alongside the dominant label text continuation, papers use text completion, text continuation generation, open-ended text completion, and transcript continuation; these cover sentence and article completion, continuation without specific task constraints, regeneration of the remaining portion of a truncated passage, and continuation from textual or speech-derived prompts. Smaller lines of work place the task in interactive student trials and teacher demonstrations, ask the model to continue in AAE, or require continuations that follow logical constraints and produce one suggestion for continuation.\n\nSpace of elicitation and scores. Papers link text continuation to four measurement instruments, all through measured_by relationships: FineWeb, GSM8K, HellaSwag, and WikiText-103. FineWeb is described as a dataset employed during pre-training, GSM8K as a text-completion benchmark, HellaSwag as a text completion task where the model chooses the most appropriate multi-word ending, and WikiText-103 as a standard benchmark for language modeling.\n\nWhat it is taken as evidence of. Papers do not link text continuation to any construct, so they do not explicitly state what construct it evidences.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Exploring LLMs' Ability to Spontaneously and Conditionally Modify Moral Expressions through Text Manipulation",
+      "Pretraining Context Compressor for Large Language Models with Embedding-Based Memory",
+      "The Impossibility of Fair LLMs"
+    ],
+    "iclr24": [
+      "Curiosity-driven Red-teaming for Large Language Models",
+      "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+      "In-context Autoencoder for Context Compression in a Large Language Model",
+      "Spoken Question Answering and Speech Continuation Using Spectrogram-Powered LLM",
+      "Adapting Large Language Models via Reading Comprehension",
+      "DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text"
+    ],
+    "naacl25": [
+      "Babysit A Language Model From Scratch: Interactive Language Learning by Trials and Demonstrations",
+      "My LLM might Mimic AAE - But When Should It?",
+      "Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data"
+    ],
+    "neurips24": [
+      "Adaptable Logical Control for Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr24": 6,
+    "naacl25": 3,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "canonical_name": "BookMIA",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across these papers, the prevailing description is of BookMIA as a membership inference benchmark built from book text, and one definition also calls it a prior temporal detection dataset. Papers describe its contents somewhat differently: some define it as text excerpts from books published in 2023, after the knowledge cutoff of the studied models, paired with passages from popular books as memorized examples, while another describes paragraphs extracted from copyrighted books. A smaller usage keeps only the items labeled \"unseen,\" defined as paragraphs from books published after the release of the models.\n\nWhat it is claimed to measure. Papers link BookMIA to 1 construct and 2 behavioral indicators. The construct-level use is Memorization, where it is reported as evaluating unseen book excerpts against potentially memorized popular-book passages; at the behavioral-indicator level, papers use it to measure Pre-training data detection and, in a smaller use, Creative writing, where one study uses book snippets from BookMIA as human texts. Papers also describe it as measuring Membership inference attack, so the reported measurement claims span memorization and pretraining-data-related evaluation rather than centering on only one target.\n\nSpace of uses. Papers usually position BookMIA as a benchmark dataset within broader evaluations. One paper uses it alongside WikiMIA, ArXivTection, BookTection, and Pile as one of the common benchmark datasets for verifying detection methods, while another groups it with WikiMIA and BookTection as a previous membership inference benchmark. Papers also link it to 1 other measurement instrument, Membership inference attack, and some uses restrict the benchmark to its \"unseen\" items.\n\nConcerns raised. The clearest stated concern is temporal fit to the model being tested: one paper says that previous membership inference benchmarks such as BookMIA \"cannot be reliably used for Llama-3 because the model was trained more recently\" (Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models). In related uses, authors emphasize temporally defined unseen examples, such as books published after the model knowledge cutoff or after model release.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "BookMIA"
+  ],
+  "papers": [
+    "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+    "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+    "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+    "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+    "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A membership inference benchmark for book excerpts used as a prior temporal detection dataset.",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "original_name": "BookMIA"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Pre-training data detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "evidence": "To verify the effectiveness of detection methods, we employ four common benchmark datasets for evaluations, including WikiMIA (Shi et al., 2024), ArXivTection (Duarte et al., 2024), BookTection (Duarte et al., 2024) BookMIA (Shi et al., 2024) and Pile (Maini et al., 2024). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Fine-tuning can Help Detect Pretraining Data from Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Memorization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "evidence": "We use the BookMIA dataset (Shi et al., 2023), which consists of text excerpts from books published in 2023 (after the knowledge cutoff of the models we study) as examples of unseen text, and passages from popular books as memorized examples (Chang et al., 2023). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Membership inference attack",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "evidence": "\u201cPrevious membership inference benchmarks such as WikiMIA, BookMIA (Shi et al., 2024), and BookTection (Duarte et al., 2024)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across these papers, the prevailing description is of BookMIA as a membership inference benchmark built from book text, and one definition also calls it a prior temporal detection dataset. Papers describe its contents somewhat differently: some define it as text excerpts from books published in 2023, after the knowledge cutoff of the studied models, paired with passages from popular books as memorized examples, while another describes paragraphs extracted from copyrighted books. A smaller usage keeps only the items labeled \"unseen,\" defined as paragraphs from books published after the release of the models."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link BookMIA to 1 construct and 2 behavioral indicators. The construct-level use is Memorization, where it is reported as evaluating unseen book excerpts against potentially memorized popular-book passages; at the behavioral-indicator level, papers use it to measure Pre-training data detection and, in a smaller use, Creative writing, where one study uses book snippets from BookMIA as human texts. Papers also describe it as measuring Membership inference attack, so the reported measurement claims span memorization and pretraining-data-related evaluation rather than centering on only one target."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers usually position BookMIA as a benchmark dataset within broader evaluations. One paper uses it alongside WikiMIA, ArXivTection, BookTection, and Pile as one of the common benchmark datasets for verifying detection methods, while another groups it with WikiMIA and BookTection as a previous membership inference benchmark. Papers also link it to 1 other measurement instrument, Membership inference attack, and some uses restrict the benchmark to its \"unseen\" items."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "The clearest stated concern is temporal fit to the model being tested: one paper says that previous membership inference benchmarks such as BookMIA \"cannot be reliably used for Llama-3 because the model was trained more recently\" (Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models). In related uses, authors emphasize temporally defined unseen examples, such as books published after the model knowledge cutoff or after model release."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across these papers, the prevailing description is of BookMIA as a membership inference benchmark built from book text, and one definition also calls it a prior temporal detection dataset. Papers describe its contents somewhat differently: some define it as text excerpts from books published in 2023, after the knowledge cutoff of the studied models, paired with passages from popular books as memorized examples, while another describes paragraphs extracted from copyrighted books. A smaller usage keeps only the items labeled \"unseen,\" defined as paragraphs from books published after the release of the models.\n\nWhat it is claimed to measure. Papers link BookMIA to 1 construct and 2 behavioral indicators. The construct-level use is Memorization, where it is reported as evaluating unseen book excerpts against potentially memorized popular-book passages; at the behavioral-indicator level, papers use it to measure Pre-training data detection and, in a smaller use, Creative writing, where one study uses book snippets from BookMIA as human texts. Papers also describe it as measuring Membership inference attack, so the reported measurement claims span memorization and pretraining-data-related evaluation rather than centering on only one target.\n\nSpace of uses. Papers usually position BookMIA as a benchmark dataset within broader evaluations. One paper uses it alongside WikiMIA, ArXivTection, BookTection, and Pile as one of the common benchmark datasets for verifying detection methods, while another groups it with WikiMIA and BookTection as a previous membership inference benchmark. Papers also link it to 1 other measurement instrument, Membership inference attack, and some uses restrict the benchmark to its \"unseen\" items.\n\nConcerns raised. The clearest stated concern is temporal fit to the model being tested: one paper says that previous membership inference benchmarks such as BookMIA \"cannot be reliably used for Llama-3 because the model was trained more recently\" (Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models). In related uses, authors emphasize temporally defined unseen examples, such as books published after the model knowledge cutoff or after model release.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+      "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+    ],
+    "naacl25": [
+      "Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models",
+      "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "naacl25": 2
+  },
+  "conferences": [
+    "iclr25",
+    "naacl25"
+  ]
+}

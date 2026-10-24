@@ -1,0 +1,162 @@
+{
+  "canonical_name": "Groundedness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, groundedness is most commonly framed as the degree to which a model response or output comes from provided or retrieved evidence, rather than unsupported internal knowledge, and can be verified against that evidence. Several definitions make this strict by saying the answer should use only the attached documents and that its claims should be supported, sometimes inferable, from inline citations. Smaller variants narrow the construct to generated arguments, defining it as factual support and consistency with retrieved evidence, or shift it to the retrieval and reasoning process itself as avoidance of hallucinated or factually inaccurate content through document-grounded knowledge; definitions also vary in source, from only provided documents to broader verifiable external knowledge such as retrieved context, contract content, or external legal sources.\n\nSpace of facets. In these papers, the idea is used at several scopes: groundedness for responses or outputs, argument groundedness for generated arguments, and factual reliability for a document-grounded retrieval and reasoning process. Some authors therefore use adjacent labels for closely related notions rather than a single uniform term. Across these uses, the recurring contrasts are with reliance on parametric knowledge, contradiction with retrieved evidence, unsupported claims, and plausible-sounding but non-factual content.\n\nSpace of measurement. No measurement instrument is linked to groundedness. It is linked to 3 behavioral indicators, most often Hallucination, then Chain of thought and Relation extraction. Papers nevertheless make it observable by asking whether responses use only attached documents, whether claims can be supported or inferred from inline citations, whether generated arguments are supported and consistent with retrieved evidence, and, in one description, through a human study of grounded justifications; this mostly follows the dominant evidence-support framing, though one paper applies the idea to the retrieval and reasoning process.\n\nLinks. Groundedness is related to Hallucination in more than one paper: one asks whether groundedness predictions detect argument hallucinations, and another notes susceptibility to outputs that appear plausible but are factually incorrect. Separately, one paper claims a causal relationship from Relation extraction to Groundedness by decomposing documents into knowledge triples for a factually reliable retrieval process, and the same paper claims a causal relationship from Chain of thought to Groundedness by replacing free-form thoughts with document-grounded knowledge triples.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Groundedness",
+    "Argument groundedness",
+    "Factual reliability"
+  ],
+  "papers": [
+    "CoCoLex: Confidence-guided Copy-based Decoding for Grounded Legal Text Generation",
+    "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+    "AccessEval: Benchmarking Disability Bias in Large Language Models",
+    "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+    "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs",
+    "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+    "Improving Multilingual Retrieval-Augmented Language Models through Dialectic Reasoning Argumentations",
+    "PAKTON: A Multi-Agent Framework for Question Answering in Long Legal Agreements",
+    "RAGferee: Building Contextual Reward Models for Retrieval-Augmented Generation",
+    "SwarmAgentic: Towards Fully Automated Agentic System Generation via Swarm Intelligence",
+    "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+    "ConQRet: A New Benchmark for Fine-Grained Automatic Evaluation of Retrieval Augmented Computational Argumentation"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The extent to which an LLM's response is derived solely from the information within provided documents rather than its internal parametric knowledge.",
+      "paper": "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+      "original_name": "Groundedness"
+    },
+    {
+      "text": "The extent to which a generated argument is factually supported by and consistent with the retrieved evidence, minimizing hallucination or contradiction.",
+      "paper": "ConQRet: A New Benchmark for Fine-Grained Automatic Evaluation of Retrieval Augmented Computational Argumentation",
+      "original_name": "Argument groundedness"
+    },
+    {
+      "text": "The degree to which the retrieval and reasoning process avoids hallucinated or factually inaccurate content by grounding in document-derived knowledge.",
+      "paper": "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+      "original_name": "Factual reliability"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "ConQRet: A New Benchmark for Fine-Grained Automatic Evaluation of Retrieval Augmented Computational Argumentation",
+      "evidence": "Do groundedness predictions detect argument hallucinations? (Section 6.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "ConQRet: A New Benchmark for Fine-Grained Automatic Evaluation of Retrieval Augmented Computational Argumentation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation",
+      "evidence": "...we instruct the LLM to generate a chain-of-knowledge (CoK) (Wang et al., 2024a), where free-form thoughts are replaced with document-grounded knowledge triples to ensure factual reliability. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlignScore",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+      "evidence": "Besides human evaluation of the above, we also computed groundedness as faithfulness to the input chain in terms of Alignscore (Zha et al., 2023). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, groundedness is most commonly framed as the degree to which a model response or output comes from provided or retrieved evidence, rather than unsupported internal knowledge, and can be verified against that evidence. Several definitions make this strict by saying the answer should use only the attached documents and that its claims should be supported, sometimes inferable, from inline citations. Smaller variants narrow the construct to generated arguments, defining it as factual support and consistency with retrieved evidence, or shift it to the retrieval and reasoning process itself as avoidance of hallucinated or factually inaccurate content through document-grounded knowledge; definitions also vary in source, from only provided documents to broader verifiable external knowledge such as retrieved context, contract content, or external legal sources."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "In these papers, the idea is used at several scopes: groundedness for responses or outputs, argument groundedness for generated arguments, and factual reliability for a document-grounded retrieval and reasoning process. Some authors therefore use adjacent labels for closely related notions rather than a single uniform term. Across these uses, the recurring contrasts are with reliance on parametric knowledge, contradiction with retrieved evidence, unsupported claims, and plausible-sounding but non-factual content."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to groundedness. It is linked to 3 behavioral indicators, most often Hallucination, then Chain of thought and Relation extraction. Papers nevertheless make it observable by asking whether responses use only attached documents, whether claims can be supported or inferred from inline citations, whether generated arguments are supported and consistent with retrieved evidence, and, in one description, through a human study of grounded justifications; this mostly follows the dominant evidence-support framing, though one paper applies the idea to the retrieval and reasoning process."
+    },
+    {
+      "label": "Links.",
+      "text": "Groundedness is related to Hallucination in more than one paper: one asks whether groundedness predictions detect argument hallucinations, and another notes susceptibility to outputs that appear plausible but are factually incorrect. Separately, one paper claims a causal relationship from Relation extraction to Groundedness by decomposing documents into knowledge triples for a factually reliable retrieval process, and the same paper claims a causal relationship from Chain of thought to Groundedness by replacing free-form thoughts with document-grounded knowledge triples."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define groundedness as the extent to which a model's response or argument is anchored in provided or retrieved external evidence and is verifiable against it, rather than being unsupported or hallucinatory. A few vary the scope slightly by emphasizing document-only reliance, consistency with evidence, or the retrieval and reasoning process, but they are still studying the same core property of evidence-based outputs.",
+    "papers_with_definition": 5,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, groundedness is most commonly framed as the degree to which a model response or output comes from provided or retrieved evidence, rather than unsupported internal knowledge, and can be verified against that evidence. Several definitions make this strict by saying the answer should use only the attached documents and that its claims should be supported, sometimes inferable, from inline citations. Smaller variants narrow the construct to generated arguments, defining it as factual support and consistency with retrieved evidence, or shift it to the retrieval and reasoning process itself as avoidance of hallucinated or factually inaccurate content through document-grounded knowledge; definitions also vary in source, from only provided documents to broader verifiable external knowledge such as retrieved context, contract content, or external legal sources.\n\nSpace of facets. In these papers, the idea is used at several scopes: groundedness for responses or outputs, argument groundedness for generated arguments, and factual reliability for a document-grounded retrieval and reasoning process. Some authors therefore use adjacent labels for closely related notions rather than a single uniform term. Across these uses, the recurring contrasts are with reliance on parametric knowledge, contradiction with retrieved evidence, unsupported claims, and plausible-sounding but non-factual content.\n\nSpace of measurement. No measurement instrument is linked to groundedness. It is linked to 3 behavioral indicators, most often Hallucination, then Chain of thought and Relation extraction. Papers nevertheless make it observable by asking whether responses use only attached documents, whether claims can be supported or inferred from inline citations, whether generated arguments are supported and consistent with retrieved evidence, and, in one description, through a human study of grounded justifications; this mostly follows the dominant evidence-support framing, though one paper applies the idea to the retrieval and reasoning process.\n\nLinks. Groundedness is related to Hallucination in more than one paper: one asks whether groundedness predictions detect argument hallucinations, and another notes susceptibility to outputs that appear plausible but are factually incorrect. Separately, one paper claims a causal relationship from Relation extraction to Groundedness by decomposing documents into knowledge triples for a factually reliable retrieval process, and the same paper claims a causal relationship from Chain of thought to Groundedness by replacing free-form thoughts with document-grounded knowledge triples.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CoCoLex: Confidence-guided Copy-based Decoding for Grounded Legal Text Generation",
+      "KiRAG: Knowledge-Driven Iterative Retriever for Enhancing Retrieval-Augmented Generation"
+    ],
+    "emnlp25": [
+      "AccessEval: Benchmarking Disability Bias in Large Language Models",
+      "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+      "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs",
+      "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+      "Improving Multilingual Retrieval-Augmented Language Models through Dialectic Reasoning Argumentations",
+      "PAKTON: A Multi-Agent Framework for Question Answering in Long Legal Agreements",
+      "RAGferee: Building Contextual Reward Models for Retrieval-Augmented Generation",
+      "SwarmAgentic: Towards Fully Automated Agentic System Generation via Swarm Intelligence"
+    ],
+    "iclr25": [
+      "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse"
+    ],
+    "naacl25": [
+      "ConQRet: A New Benchmark for Fine-Grained Automatic Evaluation of Retrieval Augmented Computational Argumentation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 8,
+    "iclr25": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25"
+  ]
+}

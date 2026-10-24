@@ -1,0 +1,205 @@
+{
+  "canonical_name": "Molecular property prediction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats this as predicting a molecule's chemical, physical, or biological properties from a molecular input, often as a numerical value, though some papers also allow a textual description. Most formulations use regression or classification, including continuous physical properties and binary labels such as whether a molecule is likely to penetrate the blood brain barrier, while a smaller line of work narrows the task to yes or no functional group detection. One paper explicitly separates computed property prediction, scored by extracting a numerical value from generated text and evaluating MAE, from descriptive property prediction, scored with text similarity against ground truth.\n\nVariants. Variants span 3D-dependent and 3D-independent settings and several molecular modalities, including strings, graph structures, and conformations. Papers study continuous regression, binary classification, and descriptive prediction, with examples such as solubility, blood brain barrier penetration, toxicity, ADMET attributes, and quantum mechanical properties including HOMO, LUMO, and the HOMO-LUMO gap. A narrower variant asks whether a named functional group is present and examines outputs meaning \"Yes\" or \"No\".\n\nSpace of elicitation and scores. Papers link this behavior to 2 measurement instruments, both benchmark datasets. MoleculeNet is used most often, described as a widely used or widely recognized benchmark and instantiated with tasks such as BBBP, Tox21, Sider, ClinTox, HIV, and BACE; QM9 appears as another instrument for computed property prediction. In these papers, the instruments are used to evaluate task performance.\n\nWhat it is taken as evidence of. Construct-level use is limited. Papers link molecular property prediction to 1 construct, Molecular understanding, and the recorded link is a causal claim from Molecular understanding to molecular property prediction rather than an explicit statement that the behavior measures the construct. No other construct is linked, so papers do not present competing construct framings here.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Molecular property prediction",
+    "Functional group detection",
+    "Molecular toxicity prediction",
+    "Property prediction",
+    "Pharmaceutical property prediction"
+  ],
+  "papers": [
+    "MolRAG: Unlocking the Power of Large Language Models for Molecular Property Prediction",
+    "Molecular String Representation Preferences in PretrainedLLMs: A Comparative Study in Zero- & Few-Shot Molecular Property Prediction",
+    "Pre-trained Models Perform the Best When Token Distributions Follow Zipf's Law",
+    "Mol-Instructions: A Large-Scale Biomolecular Instruction Dataset for Large Language Models",
+    "3D-MolT5: Leveraging Discrete Structural Information for Molecule-Text Modeling",
+    "A new framework for evaluating model out-of-distribution generalisation for the biochemical domain",
+    "SMI-Editor: Edit-based SMILES Language Model with Fragment-level Supervision",
+    "ExLM: Rethinking the Impact of $\\texttt[MASK]$ Tokens in Masked Language Models",
+    "Hierarchical Graph Tokenization for Molecule-Language Alignment",
+    "Representations Shape Weak-to-Strong Generalization: Theoretical Insights and Empirical Predictions",
+    "Exploiting Edited Large Language Models as General Scientific Optimizers",
+    "LLaMo: Large Language Model-based Molecular Graph Assistant",
+    "On the Scalability of GNNs for Molecular Graphs",
+    "UniTox: Leveraging LLMs to Curate a Unified Dataset of Drug-Induced Toxicity from FDA Labels"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of generating a numerical value or a textual description for a specific chemical or physical property of a given molecule.",
+      "paper": "3D-MolT5: Leveraging Discrete Structural Information for Molecule-Text Modeling",
+      "original_name": "Molecular property prediction"
+    },
+    {
+      "text": "Determining whether a specific functional group (e.g., hydroxide, carboxylic acid) is present in a given molecular structure, typically in response to a yes/no question.",
+      "paper": "Hierarchical Graph Tokenization for Molecule-Language Alignment",
+      "original_name": "Functional group detection"
+    },
+    {
+      "text": "Predicting drug toxicity from molecular structure using machine learning models trained on UniTox labels.",
+      "paper": "UniTox: Leveraging LLMs to Curate a Unified Dataset of Drug-Induced Toxicity from FDA Labels",
+      "original_name": "Molecular toxicity prediction"
+    },
+    {
+      "text": "The task of predicting specific numerical chemical or physical properties of a molecule, such as orbital energies.",
+      "paper": "LLaMo: Large Language Model-based Molecular Graph Assistant",
+      "original_name": "Property prediction"
+    },
+    {
+      "text": "The task of predicting biophysical attributes of small molecules, such as their absorption, distribution, metabolism, excretion, and toxicity (ADMET).",
+      "paper": "A new framework for evaluating model out-of-distribution generalisation for the biochemical domain",
+      "original_name": "Pharmaceutical property prediction"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MoleculeNet",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SMI-Editor: Edit-based SMILES Language Model with Fragment-level Supervision",
+      "evidence": "We evaluate SMI-EDITOR on the MoleculeNet (Wu et al., 2017) benchmark and compare its performance with baseline models. (Section 4.2)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SMI-Editor: Edit-based SMILES Language Model with Fragment-level Supervision"
+        ],
+        "acl25": [
+          "MolRAG: Unlocking the Power of Large Language Models for Molecular Property Prediction"
+        ],
+        "icml25": [
+          "ExLM: Rethinking the Impact of $\\texttt[MASK]$ Tokens in Masked Language Models"
+        ],
+        "emnlp25": [
+          "Molecular String Representation Preferences in PretrainedLLMs: A Comparative Study in Zero- & Few-Shot Molecular Property Prediction",
+          "Pre-trained Models Perform the Best When Token Distributions Follow Zipf's Law"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Probing",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On the Scalability of GNNs for Molecular Graphs",
+      "evidence": "For a fair and comprehensive evaluation, all models are first pretrained using a common supervised learning strategy and then finetuned (or probed) for molecular property prediction.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "On the Scalability of GNNs for Molecular Graphs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "QM9",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "3D-MolT5: Leveraging Discrete Structural Information for Molecule-Text Modeling",
+      "evidence": "We use three datasets to evaluate the performance of 3D-MolT5 on computed property prediction task: QM9 (Ruddigkeit et al., 2012; Fang et al., 2023), PubChemQC (Maho, 2015; Xu et al., 2021), and PubChem (Kim et al., 2019).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "3D-MolT5: Leveraging Discrete Structural Information for Molecule-Text Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "MolRAG: Unlocking the Power of Large Language Models for Molecular Property Prediction",
+      "evidence": "Chain-of-Thought (CoT) improves the reasoning ability of LLMs in molecular property prediction by decomposing complex SMILES data processing into stepwise sub-tasks, overcoming the limitations of direct question-answering approaches. (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "MolRAG: Unlocking the Power of Large Language Models for Molecular Property Prediction"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats this as predicting a molecule's chemical, physical, or biological properties from a molecular input, often as a numerical value, though some papers also allow a textual description. Most formulations use regression or classification, including continuous physical properties and binary labels such as whether a molecule is likely to penetrate the blood brain barrier, while a smaller line of work narrows the task to yes or no functional group detection. One paper explicitly separates computed property prediction, scored by extracting a numerical value from generated text and evaluating MAE, from descriptive property prediction, scored with text similarity against ground truth."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants span 3D-dependent and 3D-independent settings and several molecular modalities, including strings, graph structures, and conformations. Papers study continuous regression, binary classification, and descriptive prediction, with examples such as solubility, blood brain barrier penetration, toxicity, ADMET attributes, and quantum mechanical properties including HOMO, LUMO, and the HOMO-LUMO gap. A narrower variant asks whether a named functional group is present and examines outputs meaning \"Yes\" or \"No\"."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 2 measurement instruments, both benchmark datasets. MoleculeNet is used most often, described as a widely used or widely recognized benchmark and instantiated with tasks such as BBBP, Tox21, Sider, ClinTox, HIV, and BACE; QM9 appears as another instrument for computed property prediction. In these papers, the instruments are used to evaluate task performance."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Construct-level use is limited. Papers link molecular property prediction to 1 construct, Molecular understanding, and the recorded link is a causal claim from Molecular understanding to molecular property prediction rather than an explicit statement that the behavior measures the construct. No other construct is linked, so papers do not present competing construct framings here."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats this as predicting a molecule's chemical, physical, or biological properties from a molecular input, often as a numerical value, though some papers also allow a textual description. Most formulations use regression or classification, including continuous physical properties and binary labels such as whether a molecule is likely to penetrate the blood brain barrier, while a smaller line of work narrows the task to yes or no functional group detection. One paper explicitly separates computed property prediction, scored by extracting a numerical value from generated text and evaluating MAE, from descriptive property prediction, scored with text similarity against ground truth.\n\nVariants. Variants span 3D-dependent and 3D-independent settings and several molecular modalities, including strings, graph structures, and conformations. Papers study continuous regression, binary classification, and descriptive prediction, with examples such as solubility, blood brain barrier penetration, toxicity, ADMET attributes, and quantum mechanical properties including HOMO, LUMO, and the HOMO-LUMO gap. A narrower variant asks whether a named functional group is present and examines outputs meaning \"Yes\" or \"No\".\n\nSpace of elicitation and scores. Papers link this behavior to 2 measurement instruments, both benchmark datasets. MoleculeNet is used most often, described as a widely used or widely recognized benchmark and instantiated with tasks such as BBBP, Tox21, Sider, ClinTox, HIV, and BACE; QM9 appears as another instrument for computed property prediction. In these papers, the instruments are used to evaluate task performance.\n\nWhat it is taken as evidence of. Construct-level use is limited. Papers link molecular property prediction to 1 construct, Molecular understanding, and the recorded link is a causal claim from Molecular understanding to molecular property prediction rather than an explicit statement that the behavior measures the construct. No other construct is linked, so papers do not present competing construct framings here.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Molecular String Representation Preferences in PretrainedLLMs: A Comparative Study in Zero- & Few-Shot Molecular Property Prediction",
+      "Pre-trained Models Perform the Best When Token Distributions Follow Zipf's Law"
+    ],
+    "iclr25": [
+      "3D-MolT5: Leveraging Discrete Structural Information for Molecule-Text Modeling",
+      "A new framework for evaluating model out-of-distribution generalisation for the biochemical domain",
+      "SMI-Editor: Edit-based SMILES Language Model with Fragment-level Supervision"
+    ],
+    "icml25": [
+      "ExLM: Rethinking the Impact of $\\texttt[MASK]$ Tokens in Masked Language Models",
+      "Hierarchical Graph Tokenization for Molecule-Language Alignment",
+      "Representations Shape Weak-to-Strong Generalization: Theoretical Insights and Empirical Predictions"
+    ],
+    "neurips24": [
+      "LLaMo: Large Language Model-based Molecular Graph Assistant",
+      "On the Scalability of GNNs for Molecular Graphs",
+      "UniTox: Leveraging LLMs to Curate a Unified Dataset of Drug-Induced Toxicity from FDA Labels"
+    ],
+    "acl25": [
+      "MolRAG: Unlocking the Power of Large Language Models for Molecular Property Prediction"
+    ],
+    "iclr24": [
+      "Mol-Instructions: A Large-Scale Biomolecular Instruction Dataset for Large Language Models"
+    ],
+    "naacl25": [
+      "Exploiting Edited Large Language Models as General Scientific Optimizers"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 3,
+    "icml25": 3,
+    "neurips24": 3,
+    "acl25": 1,
+    "iclr24": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

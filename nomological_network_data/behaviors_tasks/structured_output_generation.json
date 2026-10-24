@@ -1,0 +1,182 @@
+{
+  "canonical_name": "Structured output generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the dominant framing is producing outputs that adhere to a required structure, most often JSON and other explicitly specified formats. Many descriptions emphasize strict compliance with schemas, API or function-call definitions, or other parseable formats, and one paper states that a successful function call must strictly match the API-specified format. Smaller lines of work define the behavior more narrowly as fixed result formatting or syntactically valid JSON, while others specify the target structure more task-specifically, including XML or YAML outputs, code or chain-of-thought traces, tables, formalized dialogue representations, netlists, or standardized software artifacts; some definitions also include extracting the relevant information into that structure.\n\nVariants. Variants most often stay close to JSON-focused function-calling and result formatting into fixed structures. Smaller lines of work study configuration generation in YAML, table generation, and netlist generation, while other papers use formalized dialogue representations or standardized software artifacts such as requirements documents, designs, flowcharts, and interface definitions. Another variant frames it as structured text generation from natural language, where the model follows example instructions and extracts named entities into JSON format.\n\nSpace of elicitation and scores. Operationalization is sparse in the recorded relationships: papers link this behavior to one measurement instrument, TACT. TACT assesses whether a model can construct the appropriate table from a TACT instruction and its corresponding text. In the task descriptions themselves, elicitation commonly uses prompts or specifications that demand fixed-format responses, including API definitions, natural language prompts, and 2-shot prompts for structured outputs.\n\nWhat it is taken as evidence of. No construct is linked to this behavior in the recorded relationships, so the papers do not specify what construct it indicates. The only other recorded link is a related one: one paper reports that structured output generation is related to Tool use, and notes performance variations between JSON and string outputs under different compression techniques.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Result formatting",
+    "Structured output generation",
+    "Configuration generation",
+    "JSON generation",
+    "Netlist generation",
+    "Formalized representation generation",
+    "Table generation",
+    "Structured generation",
+    "Structured text generation"
+  ],
+  "papers": [
+    "Middle-Layer Representation Alignment for Cross-Lingual Transfer in Fine-Tuned LLMs",
+    "Pre3: Enabling Deterministic Pushdown Automata for Faster StructuredLLMGeneration",
+    "Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing",
+    "DICE: Structured Reasoning in LLMs through SLM-Guided Chain-of-Thought Correction",
+    "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+    "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation",
+    "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+    "ToolACE: Winning the Points of LLM Function Calling",
+    "AUTOCIRCUIT-RL: Reinforcement Learning-Driven LLM for Automated Circuit Topology Generation",
+    "Can Compressed LLMs Truly Act? An Empirical Evaluation of Agentic Capabilities in LLM Compression",
+    "Dialogue Without Limits: Constant-Sized KV Caches for Extended Response in LLMs",
+    "Earley-Driven Dynamic Pruning for Efficient Structured Decoding",
+    "Flexible and Efficient Grammar-Constrained Decoding",
+    "PINNsAgent: Automated PDE Surrogation with Large Language Models",
+    "PROMPTEVALS: A Dataset of Assertions and Guardrails for Custom Production Large Language Model Pipelines",
+    "Q-VLM: Post-training Quantization for Large Vision-Language Models",
+    "TACT: Advancing Complex Aggregative Reasoning with Information Extraction Tools"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing outputs in a required structured format that matches API or function-call specifications.",
+      "paper": "ToolACE: Winning the Points of LLM Function Calling",
+      "original_name": "Structured output generation"
+    },
+    {
+      "text": "Converting solver outputs into a fixed structured output format.",
+      "paper": "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+      "original_name": "Result formatting"
+    },
+    {
+      "text": "The task of producing text that is a syntactically valid JSON object, often based on a natural language prompt or other input.",
+      "paper": "Earley-Driven Dynamic Pruning for Efficient Structured Decoding",
+      "original_name": "JSON generation"
+    },
+    {
+      "text": "Outputting a textual representation of a circuit as a list of component-to-node connections, formatted using incident encoding.",
+      "paper": "AUTOCIRCUIT-RL: Reinforcement Learning-Driven LLM for Automated Circuit Topology Generation",
+      "original_name": "Netlist generation"
+    },
+    {
+      "text": "The task of producing structured configuration files, such as in YAML format, that specify the hyperparameters and settings for an experiment.",
+      "paper": "PINNsAgent: Automated PDE Surrogation with Large Language Models",
+      "original_name": "Configuration generation"
+    },
+    {
+      "text": "The production of structured, unambiguous dialogue turn representations that include speaker intention, relevant slots, and explanatory reasoning, derived from natural language utterances.",
+      "paper": "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation",
+      "original_name": "Formalized representation generation"
+    },
+    {
+      "text": "Creating structured tabular summaries from scientific literature or data.",
+      "paper": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "original_name": "Table generation"
+    },
+    {
+      "text": "Producing model outputs that conform to a specified syntactic format such as JSON, code, or chain-of-thought traces.",
+      "paper": "Pre3: Enabling Deterministic Pushdown Automata for Faster StructuredLLMGeneration",
+      "original_name": "Structured generation"
+    },
+    {
+      "text": "Producing well-formed, structured outputs such as JSON from natural language input, requiring adherence to format and accurate information extraction.",
+      "paper": "Middle-Layer Representation Alignment for Cross-Lingual Transfer in Fine-Tuned LLMs",
+      "original_name": "Structured text generation"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TACT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "TACT: Advancing Complex Aggregative Reasoning with Information Extraction Tools",
+      "evidence": "We assess the capabilities of LLMs to generate the appropriate tables given a TACT instruction and its corresponding text, tasking the model to construct the correct table based on the specified instruction. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "TACT: Advancing Complex Aggregative Reasoning with Information Extraction Tools"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the dominant framing is producing outputs that adhere to a required structure, most often JSON and other explicitly specified formats. Many descriptions emphasize strict compliance with schemas, API or function-call definitions, or other parseable formats, and one paper states that a successful function call must strictly match the API-specified format. Smaller lines of work define the behavior more narrowly as fixed result formatting or syntactically valid JSON, while others specify the target structure more task-specifically, including XML or YAML outputs, code or chain-of-thought traces, tables, formalized dialogue representations, netlists, or standardized software artifacts; some definitions also include extracting the relevant information into that structure."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants most often stay close to JSON-focused function-calling and result formatting into fixed structures. Smaller lines of work study configuration generation in YAML, table generation, and netlist generation, while other papers use formalized dialogue representations or standardized software artifacts such as requirements documents, designs, flowcharts, and interface definitions. Another variant frames it as structured text generation from natural language, where the model follows example instructions and extracts named entities into JSON format."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Operationalization is sparse in the recorded relationships: papers link this behavior to one measurement instrument, TACT. TACT assesses whether a model can construct the appropriate table from a TACT instruction and its corresponding text. In the task descriptions themselves, elicitation commonly uses prompts or specifications that demand fixed-format responses, including API definitions, natural language prompts, and 2-shot prompts for structured outputs."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked to this behavior in the recorded relationships, so the papers do not specify what construct it indicates. The only other recorded link is a related one: one paper reports that structured output generation is related to Tool use, and notes performance variations between JSON and string outputs under different compression techniques."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the dominant framing is producing outputs that adhere to a required structure, most often JSON and other explicitly specified formats. Many descriptions emphasize strict compliance with schemas, API or function-call definitions, or other parseable formats, and one paper states that a successful function call must strictly match the API-specified format. Smaller lines of work define the behavior more narrowly as fixed result formatting or syntactically valid JSON, while others specify the target structure more task-specifically, including XML or YAML outputs, code or chain-of-thought traces, tables, formalized dialogue representations, netlists, or standardized software artifacts; some definitions also include extracting the relevant information into that structure.\n\nVariants. Variants most often stay close to JSON-focused function-calling and result formatting into fixed structures. Smaller lines of work study configuration generation in YAML, table generation, and netlist generation, while other papers use formalized dialogue representations or standardized software artifacts such as requirements documents, designs, flowcharts, and interface definitions. Another variant frames it as structured text generation from natural language, where the model follows example instructions and extracts named entities into JSON format.\n\nSpace of elicitation and scores. Operationalization is sparse in the recorded relationships: papers link this behavior to one measurement instrument, TACT. TACT assesses whether a model can construct the appropriate table from a TACT instruction and its corresponding text. In the task descriptions themselves, elicitation commonly uses prompts or specifications that demand fixed-format responses, including API definitions, natural language prompts, and 2-shot prompts for structured outputs.\n\nWhat it is taken as evidence of. No construct is linked to this behavior in the recorded relationships, so the papers do not specify what construct it indicates. The only other recorded link is a related one: one paper reports that structured output generation is related to Tool use, and notes performance variations between JSON and string outputs under different compression techniques.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing",
+      "DICE: Structured Reasoning in LLMs through SLM-Guided Chain-of-Thought Correction",
+      "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation"
+    ],
+    "iclr25": [
+      "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+      "ToolACE: Winning the Points of LLM Function Calling"
+    ],
+    "icml25": [
+      "AUTOCIRCUIT-RL: Reinforcement Learning-Driven LLM for Automated Circuit Topology Generation",
+      "Can Compressed LLMs Truly Act? An Empirical Evaluation of Agentic Capabilities in LLM Compression",
+      "Dialogue Without Limits: Constant-Sized KV Caches for Extended Response in LLMs",
+      "Earley-Driven Dynamic Pruning for Efficient Structured Decoding",
+      "Flexible and Efficient Grammar-Constrained Decoding",
+      "PINNsAgent: Automated PDE Surrogation with Large Language Models"
+    ],
+    "neurips24": [
+      "Q-VLM: Post-training Quantization for Large Vision-Language Models",
+      "TACT: Advancing Complex Aggregative Reasoning with Information Extraction Tools"
+    ],
+    "acl25": [
+      "Middle-Layer Representation Alignment for Cross-Lingual Transfer in Fine-Tuned LLMs",
+      "Pre3: Enabling Deterministic Pushdown Automata for Faster StructuredLLMGeneration"
+    ],
+    "iclr24": [
+      "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework"
+    ],
+    "naacl25": [
+      "PROMPTEVALS: A Dataset of Assertions and Guardrails for Custom Production Large Language Model Pipelines"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 4,
+    "iclr25": 2,
+    "icml25": 6,
+    "neurips24": 2,
+    "acl25": 2,
+    "iclr24": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

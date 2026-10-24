@@ -1,0 +1,136 @@
+{
+  "canonical_name": "ArXivQA",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing usage treats ArXivQA as a question answering resource built from arXiv or academic-paper figures, most commonly as a VQA dataset consisting of questions about figures from ArXiv academic papers. A smaller line of work instead frames it as a page-level retrieval task, where the question is used as the query and the associated page as the gold document, or as a multiple-choice dataset for document visual question answering in closed- and open-domain settings. One survey describes ArxivQA differently again, as a QA test set generated from recent arXiv abstracts.\n\nWhat it is claimed to measure. Papers link it to 3 behavioral indicators and no constructs. Its measurement claims are spread across information retrieval, question answering, and visual question answering: papers use it as a QA benchmark where answers are produced in natural language, as a VQA dataset targeting figure types, and as question-document pairs for retrieval evaluation.\n\nSpace of uses. No measurement instrument is directly linked to it. Papers often use it alongside ChartQA, InfographicsVQA, PlotQA, MP-DocVQA, and SlideVQA in document or figure evaluations, and one QA setup groups it with other QA benchmarks. Usage also varies by task: retrieval papers use page-question-answer triplets with the question as the query and the page as the target, while one document VQA paper uses questions, context images, and gold answers from its training set and reports accuracy because the dataset is treated as multiple choice.\n\nConcerns raised. A concern that appears in one survey is potential data leakage: it presents a test set generated from recent arXiv abstracts as strictly unseen for evaluation and intended to mitigate leakage.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "ArXivQA",
+    "arXiVQA",
+    "ArxiVQA"
+  ],
+  "papers": [
+    "500xCompressor: Generalized Prompt Compression for Large Language Models",
+    "Finding Needles in Images: Can Multi-modal LLMs Locate Fine Details?",
+    "Unveil: Unified Visual-Textual Integration and Distillation for Multi-modal Document Retrieval",
+    "ColPali: Efficient Document Retrieval with Vision Language Models",
+    "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents",
+    "Prompt Compression for Large Language Models: A Survey"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A visual question answering (VQA) dataset consisting of questions about figures from ArXiv academic papers.",
+      "paper": "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents",
+      "original_name": "ArXivQA"
+    },
+    {
+      "text": "A page-level retrieval task built from scientific figures from arXiv, using the question as the query and the associated page as the target.",
+      "paper": "ColPali: Efficient Document Retrieval with Vision Language Models",
+      "original_name": "arXiVQA"
+    },
+    {
+      "text": "A multiple-choice question answering dataset derived from academic papers, used to evaluate document visual question answering performance in both closed- and open-domain settings.",
+      "paper": "Finding Needles in Images: Can Multi-modal LLMs Locate Fine Details?",
+      "original_name": "ArxiVQA"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning",
+      "evidence": "Three question-answering (QA) benchmarks: HotpotQA [53], ArxivQA [22], ToolQA [67], where the task is to provide natural language answers to the questions. (Section 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents",
+      "evidence": "We collect question-document pairs from a series of VQA datasets, targeting different document types: ... ArXivQA (Li et al., 2024b), ChartQA (Masry et al., 2022), InfographicsVQA (Mathew et al., 2022), and PlotQA (Methani et al., 2020) for various figure types... (Sec. 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Information retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Unveil: Unified Visual-Textual Integration and Distillation for Multi-modal Document Retrieval",
+      "evidence": "We employ question-document pairs from various VQA datasets, each targeting distinct document types: MP-DocVQA (Tito et al., 2023) for industrial documents, ArXivQA (Li et al., 2024), ChartQA (Masry et al., 2022), InfographicsVQA (Mathew et al., 2022), and PlotQA (Methani et al., 2020) for different types of figures, as well as SlideVQA (Tanaka et al., 2023) for presentation slides. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Unveil: Unified Visual-Textual Integration and Distillation for Multi-modal Document Retrieval"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing usage treats ArXivQA as a question answering resource built from arXiv or academic-paper figures, most commonly as a VQA dataset consisting of questions about figures from ArXiv academic papers. A smaller line of work instead frames it as a page-level retrieval task, where the question is used as the query and the associated page as the gold document, or as a multiple-choice dataset for document visual question answering in closed- and open-domain settings. One survey describes ArxivQA differently again, as a QA test set generated from recent arXiv abstracts."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to 3 behavioral indicators and no constructs. Its measurement claims are spread across information retrieval, question answering, and visual question answering: papers use it as a QA benchmark where answers are produced in natural language, as a VQA dataset targeting figure types, and as question-document pairs for retrieval evaluation."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is directly linked to it. Papers often use it alongside ChartQA, InfographicsVQA, PlotQA, MP-DocVQA, and SlideVQA in document or figure evaluations, and one QA setup groups it with other QA benchmarks. Usage also varies by task: retrieval papers use page-question-answer triplets with the question as the query and the page as the target, while one document VQA paper uses questions, context images, and gold answers from its training set and reports accuracy because the dataset is treated as multiple choice."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "A concern that appears in one survey is potential data leakage: it presents a test set generated from recent arXiv abstracts as strictly unseen for evaluation and intended to mitigate leakage."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing usage treats ArXivQA as a question answering resource built from arXiv or academic-paper figures, most commonly as a VQA dataset consisting of questions about figures from ArXiv academic papers. A smaller line of work instead frames it as a page-level retrieval task, where the question is used as the query and the associated page as the gold document, or as a multiple-choice dataset for document visual question answering in closed- and open-domain settings. One survey describes ArxivQA differently again, as a QA test set generated from recent arXiv abstracts.\n\nWhat it is claimed to measure. Papers link it to 3 behavioral indicators and no constructs. Its measurement claims are spread across information retrieval, question answering, and visual question answering: papers use it as a QA benchmark where answers are produced in natural language, as a VQA dataset targeting figure types, and as question-document pairs for retrieval evaluation.\n\nSpace of uses. No measurement instrument is directly linked to it. Papers often use it alongside ChartQA, InfographicsVQA, PlotQA, MP-DocVQA, and SlideVQA in document or figure evaluations, and one QA setup groups it with other QA benchmarks. Usage also varies by task: retrieval papers use page-question-answer triplets with the question as the query and the page as the target, while one document VQA paper uses questions, context images, and gold answers from its training set and reports accuracy because the dataset is treated as multiple choice.\n\nConcerns raised. A concern that appears in one survey is potential data leakage: it presents a test set generated from recent arXiv abstracts as strictly unseen for evaluation and intended to mitigate leakage.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "500xCompressor: Generalized Prompt Compression for Large Language Models",
+      "Finding Needles in Images: Can Multi-modal LLMs Locate Fine Details?",
+      "Unveil: Unified Visual-Textual Integration and Distillation for Multi-modal Document Retrieval"
+    ],
+    "iclr25": [
+      "ColPali: Efficient Document Retrieval with Vision Language Models",
+      "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents"
+    ],
+    "naacl25": [
+      "Prompt Compression for Large Language Models: A Survey"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "naacl25"
+  ]
+}

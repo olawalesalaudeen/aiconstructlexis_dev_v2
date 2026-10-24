@@ -1,0 +1,187 @@
+{
+  "canonical_name": "Prompt robustness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing treats prompt robustness as stability under prompt reformulation: a system or model should keep performance, results, or responses consistent when prompts are varied, paraphrased, reworded, or otherwise semantically similar. Some definitions broaden this to unseen prompt formulations and describe it as generalizing beyond surface-level phrasing patterns, while a smaller evaluation-oriented framing defines it as maintaining stable performance and consistent rankings across semantically equivalent prompt templates. The main disagreement is therefore whether the construct is about output and performance stability alone, or also about evaluation stability across prompt templates.\n\nSpace of facets. Papers use nearby labels such as prompt robustness, robustness to prompt templates, and robustness to prompt variations for closely aligned ideas. Most uses center on consistency under paraphrases, often phrased as producing similar responses when inputs are similar or being not overly reliant on specific prompt designs, while one paper shifts the emphasis to evaluation and argues that prompt sensitivity may be more an artifact of evaluation than a flaw in the models. Across these uses, the clearest distinction is whether robustness is attached to model behavior under rewording or to the stability of comparative rankings across templates.\n\nSpace of measurement. Prompt robustness is linked to 1 measurement instrument, LLM-as-a-judge, and 1 behavioral indicator, Instruction following. Papers assess it by checking whether accuracy, variance, responses, or model rankings stay stable across varied, paraphrased, semantically equivalent, or unseen prompts: reported signals include higher generalization accuracy on unseen prompts, lower variance across tasks, minimal variation between semantically similar prompts, effective handling of a wide range of prompt formulations, and higher correlation in rankings across prompts. The only named instrument is an LLM-as-a-judge setup, and it appears through a related link rather than an explicit measured_by relation, which lines up most closely with the ranking-based definition.\n\nLinks. One paper claims a causal relationship from prompt robustness to instruction following, stating that lack of prompt robustness manifests as poor instruction following when commands deviate from training. The same paper claims a causal relationship from prompt robustness to cross-domain generalization, pairing improved prompt robustness with theoretical analysis that it can enhance cross-domain generalization. Separately, one paper relates prompt robustness to LLM-as-a-judge evaluations, reporting reduced performance variance and higher correlation in model rankings across prompts under that evaluation setup.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Prompt robustness",
+    "Robustness to prompt templates",
+    "Robustness to prompt variations"
+  ],
+  "papers": [
+    "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+    "PAFT: Prompt-Agnostic Fine-Tuning",
+    "Same Question, Different Words: A Latent Adversarial Framework for Prompt Robustness",
+    "Exploiting Edited Large Language Models as General Scientific Optimizers",
+    "Large Language Models Can Solve Real-World Planning Rigorously with Formal Verification Tools",
+    "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which a system's performance remains stable when faced with varied or paraphrased input prompts.",
+      "paper": "Exploiting Edited Large Language Models as General Scientific Optimizers",
+      "original_name": "Prompt robustness"
+    },
+    {
+      "text": "The property of an LLM to maintain stable performance and consistent rankings when evaluated across different but semantically equivalent prompt templates.",
+      "paper": "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+      "original_name": "Robustness to prompt templates"
+    },
+    {
+      "text": "The stability of model responses when the same question is reworded or paraphrased.",
+      "paper": "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation",
+      "original_name": "Robustness to prompt variations"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-consistency",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation",
+      "evidence": "Language models lack robustness to prompt variations (Huang et al., 2024; Elazar et al., 2021) and give contradictory responses in such cases, motivating the need for enhanced self-consistency. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "PAFT: Prompt-Agnostic Fine-Tuning",
+      "evidence": "This brittleness manifests... as poor instruction following in chatbots and AI agents when commands deviate from those encountered during training (Hong et al., 2024; Sahoo et al., 2025) (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "PAFT: Prompt-Agnostic Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+      "evidence": "When we adopt LLM-as-a-Judge evaluations, we observe a substantial reduction in performance variance and a consistently higher correlation in model rankings across prompts. Our findings suggest that modern LLMs are more robust to prompt templates than previously believed...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Prompt sensitivity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What Did I Do Wrong? Quantifying LLMs' Sensitivity and Consistency to Prompt Engineering",
+      "evidence": "The sensitivity should be used, for instance, as a guide to compare the \u201crobustness\u201d of different LLMs to variations of the prompt. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "What Did I Do Wrong? Quantifying LLMs' Sensitivity and Consistency to Prompt Engineering"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SST-2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Direct Prompt Optimization with Continuous Representations",
+      "evidence": "Since labels are not required for this task, we select the SST-2 dataset to focus solely on the models\u2019 ability to adapt to manipulated prompts without being influenced by label accuracy. (Section 4.6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Direct Prompt Optimization with Continuous Representations"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-domain generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "PAFT: Prompt-Agnostic Fine-Tuning",
+      "evidence": "The capability of PAFT to generalize effectively to unseen prompt formulations can be rigorously understood through the lens of domain adaptation theory... In this theoretical construct, the collection of training prompts Ptrain along with the task-specific training data Dtrain delineates the source domain. Besdies, the set of novel test prompts Ptest, paired with Dtest, represents the target domain (Section 6).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "PAFT: Prompt-Agnostic Fine-Tuning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing treats prompt robustness as stability under prompt reformulation: a system or model should keep performance, results, or responses consistent when prompts are varied, paraphrased, reworded, or otherwise semantically similar. Some definitions broaden this to unseen prompt formulations and describe it as generalizing beyond surface-level phrasing patterns, while a smaller evaluation-oriented framing defines it as maintaining stable performance and consistent rankings across semantically equivalent prompt templates. The main disagreement is therefore whether the construct is about output and performance stability alone, or also about evaluation stability across prompt templates."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use nearby labels such as prompt robustness, robustness to prompt templates, and robustness to prompt variations for closely aligned ideas. Most uses center on consistency under paraphrases, often phrased as producing similar responses when inputs are similar or being not overly reliant on specific prompt designs, while one paper shifts the emphasis to evaluation and argues that prompt sensitivity may be more an artifact of evaluation than a flaw in the models. Across these uses, the clearest distinction is whether robustness is attached to model behavior under rewording or to the stability of comparative rankings across templates."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Prompt robustness is linked to 1 measurement instrument, LLM-as-a-judge, and 1 behavioral indicator, Instruction following. Papers assess it by checking whether accuracy, variance, responses, or model rankings stay stable across varied, paraphrased, semantically equivalent, or unseen prompts: reported signals include higher generalization accuracy on unseen prompts, lower variance across tasks, minimal variation between semantically similar prompts, effective handling of a wide range of prompt formulations, and higher correlation in rankings across prompts. The only named instrument is an LLM-as-a-judge setup, and it appears through a related link rather than an explicit measured_by relation, which lines up most closely with the ranking-based definition."
+    },
+    {
+      "label": "Links.",
+      "text": "One paper claims a causal relationship from prompt robustness to instruction following, stating that lack of prompt robustness manifests as poor instruction following when commands deviate from training. The same paper claims a causal relationship from prompt robustness to cross-domain generalization, pairing improved prompt robustness with theoretical analysis that it can enhance cross-domain generalization. Separately, one paper relates prompt robustness to LLM-as-a-judge evaluations, reporting reduced performance variance and higher correlation in model rankings across prompts under that evaluation setup."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "All papers define prompt robustness as the stability or consistency of a model's performance, results, rankings, or responses when prompts are reworded, paraphrased, or vary in format while keeping the same meaning. The small differences, such as mentioning unseen prompt formulations or ranking stability, are just scope or emphasis differences within the same core phenomenon.",
+    "papers_with_definition": 5,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the dominant framing treats prompt robustness as stability under prompt reformulation: a system or model should keep performance, results, or responses consistent when prompts are varied, paraphrased, reworded, or otherwise semantically similar. Some definitions broaden this to unseen prompt formulations and describe it as generalizing beyond surface-level phrasing patterns, while a smaller evaluation-oriented framing defines it as maintaining stable performance and consistent rankings across semantically equivalent prompt templates. The main disagreement is therefore whether the construct is about output and performance stability alone, or also about evaluation stability across prompt templates.\n\nSpace of facets. Papers use nearby labels such as prompt robustness, robustness to prompt templates, and robustness to prompt variations for closely aligned ideas. Most uses center on consistency under paraphrases, often phrased as producing similar responses when inputs are similar or being not overly reliant on specific prompt designs, while one paper shifts the emphasis to evaluation and argues that prompt sensitivity may be more an artifact of evaluation than a flaw in the models. Across these uses, the clearest distinction is whether robustness is attached to model behavior under rewording or to the stability of comparative rankings across templates.\n\nSpace of measurement. Prompt robustness is linked to 1 measurement instrument, LLM-as-a-judge, and 1 behavioral indicator, Instruction following. Papers assess it by checking whether accuracy, variance, responses, or model rankings stay stable across varied, paraphrased, semantically equivalent, or unseen prompts: reported signals include higher generalization accuracy on unseen prompts, lower variance across tasks, minimal variation between semantically similar prompts, effective handling of a wide range of prompt formulations, and higher correlation in rankings across prompts. The only named instrument is an LLM-as-a-judge setup, and it appears through a related link rather than an explicit measured_by relation, which lines up most closely with the ranking-based definition.\n\nLinks. One paper claims a causal relationship from prompt robustness to instruction following, stating that lack of prompt robustness manifests as poor instruction following when commands deviate from training. The same paper claims a causal relationship from prompt robustness to cross-domain generalization, pairing improved prompt robustness with theoretical analysis that it can enhance cross-domain generalization. Separately, one paper relates prompt robustness to LLM-as-a-judge evaluations, reporting reduced performance variance and higher correlation in model rankings across prompts under that evaluation setup.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+      "PAFT: Prompt-Agnostic Fine-Tuning",
+      "Same Question, Different Words: A Latent Adversarial Framework for Prompt Robustness"
+    ],
+    "naacl25": [
+      "Exploiting Edited Large Language Models as General Scientific Optimizers",
+      "Large Language Models Can Solve Real-World Planning Rigorously with Formal Verification Tools",
+      "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "naacl25": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "naacl25"
+  ]
+}

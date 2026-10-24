@@ -1,0 +1,165 @@
+{
+  "canonical_name": "Coverage",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, Coverage is not used with a single stable meaning. A recurring framing treats it as a support or probability-mass property: how well a base model or offline data cover an optimal response or the support of a benchmark policy, sometimes formalized as how much probability mass is assigned to the arg-max response on average. Other papers use Coverage for completeness of extracted factual claims, defined as capturing verifiable information without explicitly including unverifiable content, or for the inclusion of new patterns from an original dataset in a condensed subset.\n\nSpace of facets. The term is broken down differently by task. In claim extraction work it has sentence-level and element-level forms; in sharpening work it is formalized with a coverage coefficient based on 1/\u03c0base(y\u22c6(x)|x); in offline preference work it appears as a coverage assumption about D_y(\u00b7|x) covering the support of \u03c0\u22c6(\u00b7|x); and in dataset condensation it refers to samples that introduce patterns not yet covered by the existing condensed subsets. Taken together, papers use the same name for model-level, data-support, extraction-level, and dataset-pattern notions rather than a single shared taxonomy.\n\nSpace of measurement. Coverage is linked to three measurement instruments and no behavioral indicators. The instruments are Human annotation study, Human evaluation, and LLM-as-a-judge. Concretely, papers use human annotation as ground truth for sentence-level coverage, ask participants to rate whether a response comprehensively addresses all parts of a question including sub-questions, and instruct an LLM to count how many reference summaries are covered by candidate summaries. These operationalizations follow different task-specific meanings of coverage rather than a single common procedure.\n\nLinks. Coverage is linked to one construct, Reward overoptimization. A single paper reports that Coverage is related to Reward overoptimization, stating that overoptimization in offline alignment can be understood through the lens of coverage coefficients from offline reinforcement learning.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Coverage"
+  ],
+  "papers": [
+    "QQSUM: A Novel Task and Model of Quantitative Query-Focused Summarization for Review-based Product Question Answering",
+    "Towards Effective Extraction and Evaluation of Factual Claims",
+    "Argument Summarization and its Evaluation in the Era of Large Language Models",
+    "Can Large Language Models be Effective Online Opinion Miners?",
+    "CondenseLM: LLMs-driven Text Dataset Condensation via Reward Matching",
+    "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+    "SCRIBE: Structured Chain Reasoning for Interactive Behaviour Explanations using Tool Calling",
+    "Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization",
+    "Self-Improvement in Language Models: The Sharpening Mechanism",
+    "Design Considerations in Offline Preference-based RL",
+    "Is Best-of-N the Best of Them? Coverage, Scaling, and Optimality in Inference-Time Alignment",
+    "Toward Robust Hyper-Detailed Image Captioning: A Multiagent Approach and Dual Evaluation Metrics for Factuality and Coverage"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A statistical property of a base model measuring how much probability mass it assigns to the optimal or arg-max response for a given prompt, on average.",
+      "paper": "Self-Improvement in Language Models: The Sharpening Mechanism",
+      "original_name": "Coverage"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reward overoptimization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization",
+      "evidence": "\u201cthe overoptimization phenomena in offline alignment methods is an issue of sample-inefficiency, which can be understood through the lens of coverage coefficients developed in the theory of offline reinforcement learning\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human annotation study",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Towards Effective Extraction and Evaluation of Factual Claims",
+      "evidence": "To evaluate sentence-level coverage (defined in \u00a7 2.2), we used the results of the human annotation study (\u00a74.1.2) as ground truth.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Towards Effective Extraction and Evaluation of Factual Claims"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SCRIBE: Structured Chain Reasoning for Interactive Behaviour Explanations using Tool Calling",
+      "evidence": "After each conversation, participants rate the model\u2019s responses on a 5-point scale ... across five criteria ...: (4) Coverage: Response comprehensively addresses all components of questions asked, including sub-questions. (Section 3.2.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SCRIBE: Structured Chain Reasoning for Interactive Behaviour Explanations using Tool Calling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Argument Summarization and its Evaluation in the Era of Large Language Models",
+      "evidence": "We address coverage by instructing an LLM to count the number of reference summaries covered by a set of candidate summaries. (Section 3.5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Argument Summarization and its Evaluation in the Era of Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, Coverage is not used with a single stable meaning. A recurring framing treats it as a support or probability-mass property: how well a base model or offline data cover an optimal response or the support of a benchmark policy, sometimes formalized as how much probability mass is assigned to the arg-max response on average. Other papers use Coverage for completeness of extracted factual claims, defined as capturing verifiable information without explicitly including unverifiable content, or for the inclusion of new patterns from an original dataset in a condensed subset."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "The term is broken down differently by task. In claim extraction work it has sentence-level and element-level forms; in sharpening work it is formalized with a coverage coefficient based on 1/\u03c0base(y\u22c6(x)|x); in offline preference work it appears as a coverage assumption about D_y(\u00b7|x) covering the support of \u03c0\u22c6(\u00b7|x); and in dataset condensation it refers to samples that introduce patterns not yet covered by the existing condensed subsets. Taken together, papers use the same name for model-level, data-support, extraction-level, and dataset-pattern notions rather than a single shared taxonomy."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Coverage is linked to three measurement instruments and no behavioral indicators. The instruments are Human annotation study, Human evaluation, and LLM-as-a-judge. Concretely, papers use human annotation as ground truth for sentence-level coverage, ask participants to rate whether a response comprehensively addresses all parts of a question including sub-questions, and instruct an LLM to count how many reference summaries are covered by candidate summaries. These operationalizations follow different task-specific meanings of coverage rather than a single common procedure."
+    },
+    {
+      "label": "Links.",
+      "text": "Coverage is linked to one construct, Reward overoptimization. A single paper reports that Coverage is related to Reward overoptimization, stating that overoptimization in offline alignment can be understood through the lens of coverage coefficients from offline reinforcement learning."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "conflicting",
+    "reason": "There is no common core definition here: the papers apply Coverage to different kinds of things and different phenomena, including a model's probability mass on optimal responses, the completeness of extracted verifiable claims, the representativeness of offline preference data over a policy's support, and the diversity or feature-space representativeness of a condensed dataset. Since most definitions point to different objects and mechanisms rather than different aspects of one shared phenomenon, papers using them would not be studying the same thing.",
+    "papers_with_definition": 4,
+    "runs": [
+      "conflicting",
+      "conflicting",
+      "conflicting"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, Coverage is not used with a single stable meaning. A recurring framing treats it as a support or probability-mass property: how well a base model or offline data cover an optimal response or the support of a benchmark policy, sometimes formalized as how much probability mass is assigned to the arg-max response on average. Other papers use Coverage for completeness of extracted factual claims, defined as capturing verifiable information without explicitly including unverifiable content, or for the inclusion of new patterns from an original dataset in a condensed subset.\n\nSpace of facets. The term is broken down differently by task. In claim extraction work it has sentence-level and element-level forms; in sharpening work it is formalized with a coverage coefficient based on 1/\u03c0base(y\u22c6(x)|x); in offline preference work it appears as a coverage assumption about D_y(\u00b7|x) covering the support of \u03c0\u22c6(\u00b7|x); and in dataset condensation it refers to samples that introduce patterns not yet covered by the existing condensed subsets. Taken together, papers use the same name for model-level, data-support, extraction-level, and dataset-pattern notions rather than a single shared taxonomy.\n\nSpace of measurement. Coverage is linked to three measurement instruments and no behavioral indicators. The instruments are Human annotation study, Human evaluation, and LLM-as-a-judge. Concretely, papers use human annotation as ground truth for sentence-level coverage, ask participants to rate whether a response comprehensively addresses all parts of a question including sub-questions, and instruct an LLM to count how many reference summaries are covered by candidate summaries. These operationalizations follow different task-specific meanings of coverage rather than a single common procedure.\n\nLinks. Coverage is linked to one construct, Reward overoptimization. A single paper reports that Coverage is related to Reward overoptimization, stating that overoptimization in offline alignment can be understood through the lens of coverage coefficients from offline reinforcement learning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "QQSUM: A Novel Task and Model of Quantitative Query-Focused Summarization for Review-based Product Question Answering",
+      "Towards Effective Extraction and Evaluation of Factual Claims"
+    ],
+    "emnlp25": [
+      "Argument Summarization and its Evaluation in the Era of Large Language Models",
+      "Can Large Language Models be Effective Online Opinion Miners?",
+      "CondenseLM: LLMs-driven Text Dataset Condensation via Reward Matching",
+      "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+      "SCRIBE: Structured Chain Reasoning for Interactive Behaviour Explanations using Tool Calling"
+    ],
+    "iclr25": [
+      "Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization",
+      "Self-Improvement in Language Models: The Sharpening Mechanism"
+    ],
+    "icml25": [
+      "Design Considerations in Offline Preference-based RL",
+      "Is Best-of-N the Best of Them? Coverage, Scaling, and Optimality in Inference-Time Alignment",
+      "Toward Robust Hyper-Detailed Image Captioning: A Multiagent Approach and Dual Evaluation Metrics for Factuality and Coverage"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 5,
+    "iclr25": 2,
+    "icml25": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

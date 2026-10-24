@@ -1,0 +1,268 @@
+{
+  "canonical_name": "Image editing",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats image editing as modifying an existing image from a natural-language or text instruction. Most definitions describe replacing, hiding, recoloring, adding, removing, or otherwise changing elements or attributes in the image; one example instruction is 'Replace the bottle of the same material as the blue one with a red bottle' (GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules). A smaller line of work narrows the task to more specific success conditions, such as removing a specified object while plausibly filling the background, or integrating a reference object into a background image at an instructed location and spatial relationship.\n\nVariants. Papers study several named variants. Object-level formulations include object creation, object removal, object replacement, and object moving; other formulations target background replacement, color alteration, and style alteration. More specialized variants include instruction-based image compositing, identity-preserved inpainting, which changes pose or view while preserving identity, and identity transfer, which applies a reference identity to a target object already in the scene, while drag-based editing uses handle and target points within a user-specified editable region and content dragging focuses on moving or deforming content inside that region.\n\nSpace of elicitation and scores. Papers measure image editing with 2 instruments, most often MagicBrush and also LLM-as-a-judge. MagicBrush is used as a dataset for editing queries that can demand a series of complex edits to an image, and papers report image editing results on it. LLM-as-a-judge appears in instruction-based editing evaluation by asking whether GPT-4V identifies the presence of the target object in the image.\n\nWhat it is taken as evidence of. Across linked constructs, papers do not converge on a single construct that image editing reflects. They connect it to 4 constructs: Generalization is treated as related to image editing, In-context learning and Interpretability and explainability are each claimed to have a causal relationship toward it, and Spatial understanding is the only construct with causal relationships recorded in both directions. In those papers, image editing is described as being performed successfully from examples rather than explicit instructions, as becoming easier when prompts align with image content and are interpretable by humans, and as linked to depth information and spatial comprehension in 3D-aware image compositing.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Image editing",
+    "Object creation",
+    "Object removal",
+    "Instruction-based image compositing",
+    "Identity-preserved inpainting",
+    "Identity transfer",
+    "Object replacement",
+    "Background replacement",
+    "Color alteration",
+    "Style alteration",
+    "Drag-based editing",
+    "Content dragging",
+    "Object moving",
+    "Instruction-based image editing"
+  ],
+  "papers": [
+    "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+    "Guiding Instruction-based Image Editing via Multimodal Large Language Models",
+    "Kosmos-G: Generating Images in Context with Multimodal Large Language Models",
+    "Modality-Specialized Synergizers for Interleaved Vision-Language Generalists",
+    "Multi-modal Agent Tuning: Building a VLM-Driven Agent for Efficient Tool Usage",
+    "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+    "Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model",
+    "Visually Guided Decoding: Gradient-Free Hard Prompt Inversion with Language Models",
+    "Cradle: Empowering Foundation Agents towards General Computer Control",
+    "Elucidating the design space of language models for image generation",
+    "Orthus: Autoregressive Interleaved Image-Text Generation with Modality-Specific Heads",
+    "$\\textit{Bifr\\\"ost}$: 3D-Aware Image Compositing with Language Instructions",
+    "GenAI Arena: An Open Evaluation Platform for Generative Models",
+    "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+    "I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing",
+    "Localize, Understand, Collaborate: Semantic-Aware Dragging via Intention Reasoner",
+    "Multimodal Large Language Models Make Text-to-Image Generative Models Align Better",
+    "PromptFix: You Prompt and We Fix the Photo",
+    "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks",
+    "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing"
+  ],
+  "paper_count": 20,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Modifying an image according to a natural-language instruction, such as replacing, hiding, or recoloring an object.",
+      "paper": "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+      "original_name": "Image editing"
+    },
+    {
+      "text": "The task of adding a new object to an image based on a textual instruction.",
+      "paper": "PromptFix: You Prompt and We Fix the Photo",
+      "original_name": "Object creation"
+    },
+    {
+      "text": "The task of removing a specified object from an image and plausibly filling the background, guided by a textual instruction.",
+      "paper": "PromptFix: You Prompt and We Fix the Photo",
+      "original_name": "Object removal"
+    },
+    {
+      "text": "The task of generating a composite image by integrating a reference object into a background image according to a natural language instruction that specifies the object's location and spatial relationship.",
+      "paper": "$\\textit{Bifr\\\"ost}$: 3D-Aware Image Compositing with Language Instructions",
+      "original_name": "Instruction-based image compositing"
+    },
+    {
+      "text": "The task of modifying the pose or view of an object within an image while preserving its unique visual identity, often guided by a user-provided mask.",
+      "paper": "$\\textit{Bifr\\\"ost}$: 3D-Aware Image Compositing with Language Instructions",
+      "original_name": "Identity-preserved inpainting"
+    },
+    {
+      "text": "The task of applying the visual identity of a reference object to a different target object already present in a background scene.",
+      "paper": "$\\textit{Bifr\\\"ost}$: 3D-Aware Image Compositing with Language Instructions",
+      "original_name": "Identity transfer"
+    },
+    {
+      "text": "The task of substituting an existing object in a background image with a new reference object.",
+      "paper": "$\\textit{Bifr\\\"ost}$: 3D-Aware Image Compositing with Language Instructions",
+      "original_name": "Object replacement"
+    },
+    {
+      "text": "Changing the background of an image to match a target background described in the instruction.",
+      "paper": "I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing",
+      "original_name": "Background replacement"
+    },
+    {
+      "text": "The observable task of modifying the color of a specified object in an image based on a text instruction.",
+      "paper": "I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing",
+      "original_name": "Color alteration"
+    },
+    {
+      "text": "The observable task of changing the artistic or visual style of an entire image based on a text instruction.",
+      "paper": "I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing",
+      "original_name": "Style alteration"
+    },
+    {
+      "text": "Editing an image by moving specified handle points toward target points within an editable region.",
+      "paper": "Localize, Understand, Collaborate: Semantic-Aware Dragging via Intention Reasoner",
+      "original_name": "Drag-based editing"
+    },
+    {
+      "text": "The task of moving or deforming the content within a specified region of an image according to drag points.",
+      "paper": "Localize, Understand, Collaborate: Semantic-Aware Dragging via Intention Reasoner",
+      "original_name": "Content dragging"
+    },
+    {
+      "text": "The task of relocating an entire object from a source position to a target position within an image.",
+      "paper": "Localize, Understand, Collaborate: Semantic-Aware Dragging via Intention Reasoner",
+      "original_name": "Object moving"
+    },
+    {
+      "text": "The task of modifying an input image according to a natural language command that specifies the desired change, without requiring regional masks or elaborate descriptions.",
+      "paper": "Guiding Instruction-based Image Editing via Multimodal Large Language Models",
+      "original_name": "Instruction-based image editing"
+    }
+  ],
+  "definition_count": 14,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MagicBrush",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing",
+      "evidence": "We use the MagicBrush dataset [129], which challenges models with an editing query that demands a series of complex edits to an image.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing"
+        ],
+        "iclr25": [
+          "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+          "Modality-Specialized Synergizers for Interleaved Vision-Language Generalists"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing",
+      "evidence": "To evaluate this dimension, we inquire whether GPT-4V identifies the presence of the target object in the image. (Sec. 3.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Interpretability and explainability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Visually Guided Decoding: Gradient-Free Hard Prompt Inversion with Language Models",
+      "evidence": "When a prompt closely aligns with the image content and is interpretable by humans, it becomes easier for users to modify the image in the desired direction by making slight edits to the prompt. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Visually Guided Decoding: Gradient-Free Hard Prompt Inversion with Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Elucidating the design space of language models for image generation",
+      "evidence": "To further demonstrate the generalization and applicability of ELM, we evaluate its ability to generate samples from novel classes and perform image editing tasks, with the results in Appendix A.2. (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Elucidating the design space of language models for image generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Orthus: Autoregressive Interleaved Image-Text Generation with Modality-Specific Heads",
+      "evidence": "Notably, Orthus exhibits in-context learning capacity by performing image editing successfully when provided with examples rather than explicit instructions, which is not included in the training dataset. (Figure 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Orthus: Autoregressive Interleaved Image-Text Generation with Modality-Specific Heads"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats image editing as modifying an existing image from a natural-language or text instruction. Most definitions describe replacing, hiding, recoloring, adding, removing, or otherwise changing elements or attributes in the image; one example instruction is 'Replace the bottle of the same material as the blue one with a red bottle' (GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules). A smaller line of work narrows the task to more specific success conditions, such as removing a specified object while plausibly filling the background, or integrating a reference object into a background image at an instructed location and spatial relationship."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several named variants. Object-level formulations include object creation, object removal, object replacement, and object moving; other formulations target background replacement, color alteration, and style alteration. More specialized variants include instruction-based image compositing, identity-preserved inpainting, which changes pose or view while preserving identity, and identity transfer, which applies a reference identity to a target object already in the scene, while drag-based editing uses handle and target points within a user-specified editable region and content dragging focuses on moving or deforming content inside that region."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure image editing with 2 instruments, most often MagicBrush and also LLM-as-a-judge. MagicBrush is used as a dataset for editing queries that can demand a series of complex edits to an image, and papers report image editing results on it. LLM-as-a-judge appears in instruction-based editing evaluation by asking whether GPT-4V identifies the presence of the target object in the image."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Across linked constructs, papers do not converge on a single construct that image editing reflects. They connect it to 4 constructs: Generalization is treated as related to image editing, In-context learning and Interpretability and explainability are each claimed to have a causal relationship toward it, and Spatial understanding is the only construct with causal relationships recorded in both directions. In those papers, image editing is described as being performed successfully from examples rather than explicit instructions, as becoming easier when prompts align with image content and are interpretable by humans, and as linked to depth information and spatial comprehension in 3D-aware image compositing."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats image editing as modifying an existing image from a natural-language or text instruction. Most definitions describe replacing, hiding, recoloring, adding, removing, or otherwise changing elements or attributes in the image; one example instruction is 'Replace the bottle of the same material as the blue one with a red bottle' (GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules). A smaller line of work narrows the task to more specific success conditions, such as removing a specified object while plausibly filling the background, or integrating a reference object into a background image at an instructed location and spatial relationship.\n\nVariants. Papers study several named variants. Object-level formulations include object creation, object removal, object replacement, and object moving; other formulations target background replacement, color alteration, and style alteration. More specialized variants include instruction-based image compositing, identity-preserved inpainting, which changes pose or view while preserving identity, and identity transfer, which applies a reference identity to a target object already in the scene, while drag-based editing uses handle and target points within a user-specified editable region and content dragging focuses on moving or deforming content inside that region.\n\nSpace of elicitation and scores. Papers measure image editing with 2 instruments, most often MagicBrush and also LLM-as-a-judge. MagicBrush is used as a dataset for editing queries that can demand a series of complex edits to an image, and papers report image editing results on it. LLM-as-a-judge appears in instruction-based editing evaluation by asking whether GPT-4V identifies the presence of the target object in the image.\n\nWhat it is taken as evidence of. Across linked constructs, papers do not converge on a single construct that image editing reflects. They connect it to 4 constructs: Generalization is treated as related to image editing, In-context learning and Interpretability and explainability are each claimed to have a causal relationship toward it, and Spatial understanding is the only construct with causal relationships recorded in both directions. In those papers, image editing is described as being performed successfully from examples rather than explicit instructions, as becoming easier when prompts align with image content and are interpretable by humans, and as linked to depth information and spatial comprehension in 3D-aware image compositing.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+      "Guiding Instruction-based Image Editing via Multimodal Large Language Models",
+      "Kosmos-G: Generating Images in Context with Multimodal Large Language Models"
+    ],
+    "iclr25": [
+      "Modality-Specialized Synergizers for Interleaved Vision-Language Generalists",
+      "Multi-modal Agent Tuning: Building a VLM-Driven Agent for Efficient Tool Usage",
+      "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+      "Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model",
+      "Visually Guided Decoding: Gradient-Free Hard Prompt Inversion with Language Models"
+    ],
+    "icml25": [
+      "Cradle: Empowering Foundation Agents towards General Computer Control",
+      "Elucidating the design space of language models for image generation",
+      "Orthus: Autoregressive Interleaved Image-Text Generation with Modality-Specific Heads"
+    ],
+    "neurips24": [
+      "$\\textit{Bifr\\\"ost}$: 3D-Aware Image Compositing with Language Instructions",
+      "GenAI Arena: An Open Evaluation Platform for Generative Models",
+      "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+      "I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing",
+      "Localize, Understand, Collaborate: Semantic-Aware Dragging via Intention Reasoner",
+      "Multimodal Large Language Models Make Text-to-Image Generative Models Align Better",
+      "PromptFix: You Prompt and We Fix the Photo",
+      "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks",
+      "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 3,
+    "iclr25": 5,
+    "icml25": 3,
+    "neurips24": 9
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "canonical_name": "SciBench",
+  "type": "measurement",
+  "canonical_definition": "What it is. Papers most commonly describe SciBench as a benchmark suite or dataset for scientific reasoning, especially college-level scientific problem solving. The prevailing description is that it contains complex, multi-step scientific questions whose objective is to integrate knowledge, reason over evidence, and apply scientific principles; several papers place it across physics and chemistry, though one line describes the third domain as biology and another as mathematics. Some authors use narrower portions of it, including a math-related subset and chemical reasoning subsets.\n\nWhat it is claimed to measure. Across papers, measurement claims are spread across several targets rather than concentrated on one. SciBench is linked to 5 constructs, Chemical reasoning, Generalization, Problem-solving ability, Reasoning, and Scientific reasoning, and to 3 behavioral indicators, Mathematical problem solving, Scientific problem solving, and Scientific question answering. Papers use it to measure scientific and hard-science reasoning tasks, college-level scientific problem-solving abilities, and, in one case, generalization capability because it is treated as coming from a totally different distribution from training data.\n\nSpace of uses. No measurement instrument is linked to it. In experiments, papers usually place SciBench inside broader benchmark batteries, for example alongside Game of 24, Mini-Crosswords, WebShop, GPQA, and TheoremQA. Some authors position it by saying its difficulty surpasses the middle school level of the MATH dataset and reaches the Undergraduate Level, or by using it to verify generalization capability, while others use it as a source dataset for synthesis and evaluation or restrict evaluation to math-related or chemical subsets.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "SciBench"
+  ],
+  "papers": [
+    "ReSo: A Reward-driven Self-organizing LLM-based Multi-Agent System for Reasoning Tasks",
+    "Think, Verbalize, then Speak: Bridging Complex Thoughts and Comprehensible Speech",
+    "Adapting While Learning: Grounding LLMs for Scientific Problems with Tool Usage Adaptation",
+    "Fleet of Agents: Coordinated Problem Solving with Large Language Models",
+    "MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems",
+    "MACM: Utilizing a Multi-Agent System for Condition Mining in Solving Complex Mathematical Problems",
+    "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search",
+    "SciInstruct: a Self-Reflective Instruction Annotated Dataset for Training Scientific Language Models"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark suite for scientific reasoning that includes complex, multi-step questions across physics, chemistry, and biology.",
+      "paper": "Fleet of Agents: Coordinated Problem Solving with Large Language Models",
+      "original_name": "SciBench"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Scientific reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search",
+      "evidence": "Tree-Search policy which are compared on college-level scientific reasoning benchmark under three LLMs, such as CoT and ToT, as shown in Table 4. We also evaluated under the same search budget on MATH and SciBench",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search"
+        ],
+        "icml25": [
+          "Fleet of Agents: Coordinated Problem Solving with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mathematical problem solving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "MACM: Utilizing a Multi-Agent System for Condition Mining in Solving Complex Mathematical Problems",
+      "evidence": "We applied MACM to two datasets, SciBench [16] and TheoremQA [5], which claim their difficulty surpasses the middle school level of the MATH dataset, reaching the Undergraduate Level. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MACM: Utilizing a Multi-Agent System for Condition Mining in Solving Complex Mathematical Problems"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chemical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "ChemAgent: Self-updating Memories in Large Language Models Improves Chemical Reasoning",
+      "evidence": "Our experiments are conducted on four chemical reasoning datasets from SciBench (Wang et al., 2024a) with GPT-3.5, GPT-4 (OpenAI et al., 2024), and open-source models like Llama3 (Llama Team, 2024).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ChemAgent: Self-updating Memories in Large Language Models Improves Chemical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Scientific question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Fleet of Agents: Coordinated Problem Solving with Large Language Models",
+      "evidence": "SciBench (Wang et al., 2024a) is a benchmark suite of scientific reasoning tasks, where the objective is to answer complex, multi-step scientific questions that require integrating knowledge, reasoning over evidence, and applying scientific principles. (Section 4.4. SciBench)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Fleet of Agents: Coordinated Problem Solving with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Scientific problem solving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Think, Verbalize, then Speak: Bridging Complex Thoughts and Comprehensible Speech",
+      "evidence": "SciBench (Wang et al., 2024a) assesses college-level scientific problem-solving abilities. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Think, Verbalize, then Speak: Bridging Complex Thoughts and Comprehensible Speech"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Out-of-distribution generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems",
+      "evidence": "Among these, AIME-2024, HumanEval, HumanEval+, GPQA, and SciBench are from a totally different distributions compared to training data, serving to verify the generalization capability of MAS-GPT. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Papers most commonly describe SciBench as a benchmark suite or dataset for scientific reasoning, especially college-level scientific problem solving. The prevailing description is that it contains complex, multi-step scientific questions whose objective is to integrate knowledge, reason over evidence, and apply scientific principles; several papers place it across physics and chemistry, though one line describes the third domain as biology and another as mathematics. Some authors use narrower portions of it, including a math-related subset and chemical reasoning subsets."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across papers, measurement claims are spread across several targets rather than concentrated on one. SciBench is linked to 5 constructs, Chemical reasoning, Generalization, Problem-solving ability, Reasoning, and Scientific reasoning, and to 3 behavioral indicators, Mathematical problem solving, Scientific problem solving, and Scientific question answering. Papers use it to measure scientific and hard-science reasoning tasks, college-level scientific problem-solving abilities, and, in one case, generalization capability because it is treated as coming from a totally different distribution from training data."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it. In experiments, papers usually place SciBench inside broader benchmark batteries, for example alongside Game of 24, Mini-Crosswords, WebShop, GPQA, and TheoremQA. Some authors position it by saying its difficulty surpasses the middle school level of the MATH dataset and reaches the Undergraduate Level, or by using it to verify generalization capability, while others use it as a source dataset for synthesis and evaluation or restrict evaluation to math-related or chemical subsets."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Papers most commonly describe SciBench as a benchmark suite or dataset for scientific reasoning, especially college-level scientific problem solving. The prevailing description is that it contains complex, multi-step scientific questions whose objective is to integrate knowledge, reason over evidence, and apply scientific principles; several papers place it across physics and chemistry, though one line describes the third domain as biology and another as mathematics. Some authors use narrower portions of it, including a math-related subset and chemical reasoning subsets.\n\nWhat it is claimed to measure. Across papers, measurement claims are spread across several targets rather than concentrated on one. SciBench is linked to 5 constructs, Chemical reasoning, Generalization, Problem-solving ability, Reasoning, and Scientific reasoning, and to 3 behavioral indicators, Mathematical problem solving, Scientific problem solving, and Scientific question answering. Papers use it to measure scientific and hard-science reasoning tasks, college-level scientific problem-solving abilities, and, in one case, generalization capability because it is treated as coming from a totally different distribution from training data.\n\nSpace of uses. No measurement instrument is linked to it. In experiments, papers usually place SciBench inside broader benchmark batteries, for example alongside Game of 24, Mini-Crosswords, WebShop, GPQA, and TheoremQA. Some authors position it by saying its difficulty surpasses the middle school level of the MATH dataset and reaches the Undergraduate Level, or by using it to verify generalization capability, while others use it as a source dataset for synthesis and evaluation or restrict evaluation to math-related or chemical subsets.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "icml25": [
+      "Adapting While Learning: Grounding LLMs for Scientific Problems with Tool Usage Adaptation",
+      "Fleet of Agents: Coordinated Problem Solving with Large Language Models",
+      "MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems"
+    ],
+    "emnlp25": [
+      "ReSo: A Reward-driven Self-organizing LLM-based Multi-Agent System for Reasoning Tasks",
+      "Think, Verbalize, then Speak: Bridging Complex Thoughts and Comprehensible Speech"
+    ],
+    "neurips24": [
+      "MACM: Utilizing a Multi-Agent System for Condition Mining in Solving Complex Mathematical Problems",
+      "ReST-MCTS*: LLM Self-Training via Process Reward Guided Tree Search",
+      "SciInstruct: a Self-Reflective Instruction Annotated Dataset for Training Scientific Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "icml25": 3,
+    "emnlp25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "icml25",
+    "neurips24"
+  ]
+}

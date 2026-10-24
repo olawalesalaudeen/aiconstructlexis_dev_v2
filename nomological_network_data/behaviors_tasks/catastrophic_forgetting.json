@@ -1,0 +1,794 @@
+{
+  "canonical_name": "Catastrophic forgetting",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats catastrophic forgetting as a post-update drop on previously learned tasks, knowledge, or capabilities. Most definitions focus on sequential learning or fine-tuning, where performance on earlier tasks deteriorates after new data is introduced; adjacent work uses the same pattern for sequential editing, judging forgetting by weaker retention of prior edits or old knowledge after many later updates. Smaller lines of work extend the label to unlearning, multimodal expansion, or continued pretraining, where the observable sign is again degradation on retained, text-only, or broadly learned behavior.\n\nVariants. Variants are mostly defined by setting. Papers name knowledge forgetting in collaborative or lifelong editing, where older edited facts and previously edited examples become less accurately retained after later editing rounds, and text-only forgetting in multimodal models, where text-only tasks or instructions fall after multimodal instruction tuning or visual modality expansion. Other papers discuss forgetting on generic web or domain data during continual pretraining, during specialization to new tasks, and one paper further divides multimodal continual instruction tuning into superficial forgetting alongside another subtype.\n\nSpace of elicitation and scores. Papers link catastrophic forgetting to 14 measurement instruments. The most frequently linked are BIG-Bench Hard, GSM8K, MMLU, ARC-Challenge, and HellaSwag, typically used as general-task or out-domain benchmarks for the degree of forgetting or forgetting curves. Other work evaluates it with coding benchmarks, multimodal benchmarks, and broader leaderboard-style task bundles.\n\nWhat it is taken as evidence of. Rather than being treated as evidence of one construct, papers connect catastrophic forgetting to 26 constructs. The most common links are to Continual learning and Generalization, followed by Adaptability, Knowledge retention, and General ability. The relationship types are mixed: papers often describe it as related to continual learning or knowledge retention, while other papers claim causal links from catastrophic forgetting to lower generalization or general ability, and separate papers claim causal links into catastrophic forgetting from continual learning or adaptability-related conditions.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Catastrophic forgetting",
+    "Knowledge forgetting",
+    "Text-only forgetting",
+    "Forgetting"
+  ],
+  "papers": [
+    "TiC-LM: A Web-Scale Benchmark for Time-Continual LLM Pretraining",
+    "CollabEdit: Towards Non-destructive Collaborative Knowledge Editing",
+    "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+    "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+    "Towards Robust and Parameter-Efficient Knowledge Unlearning for LLMs",
+    "Learning Dynamics in Continual Pre-Training for Large Language Models",
+    "Overtrained Language Models Are Harder to Fine-Tune",
+    "Towards Lifelong Model Editing via Simulating Ideal Editor",
+    "CogVLM: Visual Expert for Pretrained Language Models",
+    "Learn more, but bother less: parameter efficient continual learning",
+    "Mercury: A Code Efficiency Benchmark for Code Large Language Models",
+    "Why are Visually-Grounded Language Models Bad at Image Classification?",
+    "Wings: Learning Multimodal LLMs without Text-only Forgetting"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable phenomenon where a model's performance on previously learned tasks significantly deteriorates after it is trained on new data.",
+      "paper": "Learn more, but bother less: parameter efficient continual learning",
+      "original_name": "Catastrophic forgetting"
+    },
+    {
+      "text": "Previously edited facts become less accurately retained after many subsequent editing rounds.",
+      "paper": "CollabEdit: Towards Non-destructive Collaborative Knowledge Editing",
+      "original_name": "Knowledge forgetting"
+    },
+    {
+      "text": "A phenomenon where a Multimodal Large Language Model's performance on text-only tasks degrades significantly after being fine-tuned on multimodal instructions.",
+      "paper": "Wings: Learning Multimodal LLMs without Text-only Forgetting",
+      "original_name": "Text-only forgetting"
+    },
+    {
+      "text": "The degradation of a model's performance on previously learned data or tasks after it has been updated with new information.",
+      "paper": "TiC-LM: A Web-Scale Benchmark for Time-Continual LLM Pretraining",
+      "original_name": "Forgetting"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Continual learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+      "evidence": "However, due to the continual learning process with limited data, FCRE models are often biased toward the current task, facing the challenges of overfitting (Hawkins, 2004) and Catastrophic forgetting (Thrun and Mitchell, 1995; Le et al., 2024a; Hai et al., 2024; Van et al., 2022; Phan et al., 2022). (Section 1)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction"
+        ],
+        "iclr24": [
+          "Scalable Language Model with Generalized Continual Learning"
+        ],
+        "iclr25": [
+          "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+          "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+          "Scalable Bayesian Learning with posteriors"
+        ],
+        "icml25": [
+          "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Emergent Abilities of Large Language Models under Continued Pre-training for Language Adaptation",
+      "evidence": "This in turn damages the ability of the model to generalize to downstream prompts in the target language as measured by perplexity (Section 1)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Emergent Abilities of Large Language Models under Continued Pre-training for Language Adaptation"
+        ],
+        "icml25": [
+          "Splitting with Importance-aware Updating for Heterogeneous Federated Learning with Large Language Models",
+          "Learn from Downstream and Be Yourself in Multimodal Large Language Models Fine-Tuning"
+        ],
+        "neurips24": [
+          "S$^{2}$FT: Efficient, Scalable and Generalizable LLM Fine-tuning by Structured Sparsity"
+        ],
+        "iclr25": [
+          "Agent Skill Acquisition for Large Language Models via CycleQD"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge retention",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Scalable Language Model with Generalized Continual Learning",
+      "evidence": "the \u201ccatastrophic forgetting\u201d phenomenon, which refers to the potential loss of previously learned information caused by the distribution shift during the fine-tuning process for novel tasks",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Scalable Language Model with Generalized Continual Learning"
+        ],
+        "icml25": [
+          "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+          "Large Continual Instruction Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+      "evidence": "Furthermore, after fine-tuning the downstream tasks, the LLM may lose the general capability, due to catastrophic forgetting. (Section 1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture"
+        ],
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ],
+        "emnlp25": [
+          "Mitigating Catastrophic Forgetting in Large Language Models with Forgetting-aware Pruning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-Bench Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "evidence": "In this section, we explore the forgetting of CultureLLM in two general datasets: BIG-Bench-Hard (BBH) [Suzgun et al., 2022] and GSM8K [Cobbe et al., 2021]. (Section 5.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CultureLLM: Incorporating Cultural Differences into Large Language Models"
+        ],
+        "acl25": [
+          "Controlled Low-Rank Adaptation with Subspace Regularization for Continued Training on Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "evidence": "In this section, we explore the forgetting of CultureLLM in two general datasets: BIG-Bench-Hard (BBH) [Suzgun et al., 2022] and GSM8K [Cobbe et al., 2021]. (Section 5.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CultureLLM: Incorporating Cultural Differences into Large Language Models"
+        ],
+        "naacl25": [
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Q-Adapter: Customizing Pre-trained LLMs to New Preferences with Forgetting Mitigation",
+      "evidence": "\u201cTo better illustrate the forgetting issue emerging in the fine-tuning process, we evaluate the MMLU score of different intermediate checkpoints\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Q-Adapter: Customizing Pre-trained LLMs to New Preferences with Forgetting Mitigation"
+        ],
+        "naacl25": [
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adaptability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Dynamic Expert Specialization: Towards Catastrophic Forgetting-Free Multi-Domain MoE Adaptation",
+      "evidence": "We present DES-MoE, a dynamic framework for multi-domain MoE adaptation that mitigates catastrophic forgetting through adaptive routing and expert-domain correlation mapping. (Section 6)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Dynamic Expert Specialization: Towards Catastrophic Forgetting-Free Multi-Domain MoE Adaptation"
+        ],
+        "icml25": [
+          "Position: Enough of Scaling LLMs! Lets Focus on Downscaling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction fine-tuning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "evidence": "However, a notable concern with such continual tuning is 'catastrophic forgetting'",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ],
+        "acl25": [
+          "HiDe-LLaVA: Hierarchical Decoupling for Continual Instruction Tuning of Multimodal Large Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Emergent Abilities of Large Language Models under Continued Pre-training for Language Adaptation",
+      "evidence": "We introduce Copain, a new benchmark for in-context learning (ICL), which reveals catastrophic forgetting early on CPT when English is not included. This in turn damages the ability of the model to generalize to downstream prompts in the target language as measured by perplexity...",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Emergent Abilities of Large Language Models under Continued Pre-training for Language Adaptation"
+        ],
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Functional correctness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Mercury: A Code Efficiency Benchmark for Code Large Language Models",
+      "evidence": "This suggests that direct SFT may lead to catastrophic forgetting in vanilla models, diminishing their ability to generate functionally correct code. (Section 4.5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mercury: A Code Efficiency Benchmark for Code Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "World knowledge",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+      "evidence": "the fine-tuned model suffers from catastrophic forgetting of the pre-trained world knowledge",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models",
+      "evidence": "Furthermore, we reveal that the catastrophic forgetting in MLLMs is primarily due to the decline in instruction following rather than reasoning knowledge.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models",
+      "evidence": "we reveal that the catastrophic forgetting in MLLMs is primarily due to the decline in instruction following rather than reasoning knowledge.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Personalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Yo'LLaVA: Your Personalized Language and Vision Assistant",
+      "evidence": "First, when personalizing an LMM, we want to ensure that its broad pre-trained knowledge is unaffected (i.e., there is no catastrophic forgetting [15, 16]). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Yo'LLaVA: Your Personalized Language and Vision Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "POPE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Yo'LLaVA: Your Personalized Language and Vision Assistant",
+      "evidence": "To evaluate the extent of catastrophic forgetting in Yo\u2019LLaVA, we assessed both the Original LLaVA-1.5-13B [10] and Yo\u2019LLaVA using common benchmarks for multimodal models: POPE [41], MMBench [42], and LLaVA-Wild [2]. (Appendix B)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Yo'LLaVA: Your Personalized Language and Vision Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Yo'LLaVA: Your Personalized Language and Vision Assistant",
+      "evidence": "To evaluate the extent of catastrophic forgetting in Yo\u2019LLaVA, we assessed both the Original LLaVA-1.5-13B [10] and Yo\u2019LLaVA using common benchmarks for multimodal models: POPE [41], MMBench [42], and LLaVA-Wild [2]. (Appendix B)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Yo'LLaVA: Your Personalized Language and Vision Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLaVA-Bench-in-the-Wild",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Yo'LLaVA: Your Personalized Language and Vision Assistant",
+      "evidence": "To evaluate the extent of catastrophic forgetting in Yo\u2019LLaVA, we assessed both the Original LLaVA-1.5-13B [10] and Yo\u2019LLaVA using common benchmarks for multimodal models: POPE [41], MMBench [42], and LLaVA-Wild [2]. (Appendix B)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Yo'LLaVA: Your Personalized Language and Vision Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge transfer",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights",
+      "evidence": "Cross-domain co-training on a large number of datasets only negatively impacts LLaGA. A similar phenomenon can also be observed when LLMs with cross-modality projectors are applied to CV [49], which may be related to catastrophic forgetting. (Section 4.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Language model pre-training",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "evidence": "applying our data mixing laws to continual pretraining can accurately find the proportion that avoids catastrophic forgetting (Section 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "evidence": "preserving output diversity has the added benefit of mitigating forgetting, as maintaining diverse outputs encourages models to retain pre-trained knowledge throughout the training process. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Open LLM Leaderboard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "evidence": "In this section, we show that GEM also helps mitigate forgetting and reduce alignment tax. We evaluate the models across six tasks: ARC, GSM8K, HellaSwag, MMLU, TruthfulQA, and WinoGrande, as listed on the OpenLLM leaderboard. (Section 6.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge forgetting",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Spurious Forgetting in Continual Learning of Language Models",
+      "evidence": "This observation challenges the conventional understanding of catastrophic forgetting and prompts us to explore whether forgetting genuinely occurs in language models or if it is, in fact, spurious (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Spurious Forgetting in Continual Learning of Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Aligning Language Models with Demonstrated Feedback",
+      "evidence": "we evaluated forgetting on coding tasks with HumanEval Chen et al. (2021), observing some degradation. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Aligning Language Models with Demonstrated Feedback"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RaSA: Rank-Sharing Low-Rank Adaptation",
+      "evidence": "Specifically, we calculate prediction accuracies on the following three benchmarks: (1) HellaSwag (Zellers et al., 2019): inference the most plausible continuation for daily events (70K problems); (2) WinoGrande (Sakaguchi et al., 2019): assesses commonsense reasoning (44K problems); (3) ARC-Challenge (Clark et al., 2018): complex reasoning and understanding of scientific concepts (7.8K problems)... to investigate the extent of forgetting",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RaSA: Rank-Sharing Low-Rank Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WinoGrande",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RaSA: Rank-Sharing Low-Rank Adaptation",
+      "evidence": "Specifically, we calculate prediction accuracies on the following three benchmarks: (1) HellaSwag (Zellers et al., 2019): inference the most plausible continuation for daily events (70K problems); (2) WinoGrande (Sakaguchi et al., 2019): assesses commonsense reasoning (44K problems); (3) ARC-Challenge (Clark et al., 2018): complex reasoning and understanding of scientific concepts (7.8K problems)... to investigate the extent of forgetting",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RaSA: Rank-Sharing Low-Rank Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Challenge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RaSA: Rank-Sharing Low-Rank Adaptation",
+      "evidence": "Specifically, we calculate prediction accuracies on the following three benchmarks: (1) HellaSwag (Zellers et al., 2019): inference the most plausible continuation for daily events (70K problems); (2) WinoGrande (Sakaguchi et al., 2019): assesses commonsense reasoning (44K problems); (3) ARC-Challenge (Clark et al., 2018): complex reasoning and understanding of scientific concepts (7.8K problems)... to investigate the extent of forgetting",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RaSA: Rank-Sharing Low-Rank Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Task interference",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging",
+      "evidence": "Task interference is linked to catastrophic forgetting, as the individual task vectors lose a significant amount of generalization ability to other tasks after fine-tuning and merging them leads to interference among each other (Section 5.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Machine unlearning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Soft Prompting for Unlearning in Large Language Models",
+      "evidence": "we interpret unlearning as the forgetting of the predictive output token sequences yi \u2208Dtr f . (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Soft Prompting for Unlearning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+      "evidence": "The fine-tuned models under MDS are evaluated on the general tasks including MMLU (Hendrycks et al., 2021), GSM8K (Cobbe et al., 2021), and PIQA (Bisk et al., 2020) to measure the catastrophic forgetting of the PEFT approaches. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Unlearning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "evidence": "The absence of a clear endpoint leads to a delicate balance between unlearning and retaining useful information, making these methods prone to catastrophic forgetting. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Large Continual Instruction Assistant",
+      "evidence": "(Zhai et al., 2023) deem that the hallucination in large models is related to the catastrophic forgetting in continual tuning. (Section 5.4. Analysis of Examples)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Large Continual Instruction Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Parameter sensitivity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Overtrained Language Models Are Harder to Fine-Tune",
+      "evidence": "We argue that catastrophic overtraining arises as a result of a progressive increase throughout pre-training of model sensitivity to parameter transformations, leading to greater forgetting of the capabilities acquired during pre-training after fine-tuning (Section 3). (Figure 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Overtrained Language Models Are Harder to Fine-Tune"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Catastrophic overtraining",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Overtrained Language Models Are Harder to Fine-Tune",
+      "evidence": "In this work, we show that catastrophic forgetting can become more severe with overtraining. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Overtrained Language Models Are Harder to Fine-Tune"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Superficial forgetting",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+      "evidence": "This paper provides an in-depth analysis of catastrophic forgetting in MCIT, categorizing it into superficial forgetting and essential forgetting. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge editing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Towards Lifelong Model Editing via Simulating Ideal Editor",
+      "evidence": "The model typically encounters catastrophic forgetting during sequential edits, where previously edited examples are forgotten (Wang et al., 2024a; Gupta et al., 2024a). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Towards Lifelong Model Editing via Simulating Ideal Editor"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reward hacking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Weights-Rotated Preference Optimization for Large Language Models",
+      "evidence": "As a result, this leads to overly lengthy generation lacking diversity, as well as catastrophic forgetting of knowledge. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Weights-Rotated Preference Optimization for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Demystifying Domain-adaptive Post-training for Financial LLMs",
+      "evidence": "While CPT is effective at introducing domain concepts, it often leads to significant forgetting of general concepts and instruction-following capabilities. (Section 3.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Demystifying Domain-adaptive Post-training for Financial LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Task recognition",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+      "evidence": "We find that the catastrophic effects of fine-tuning may be explained as shifting task inference and that transforming prompts further from the fine-tuning data can recover pretrained capabilities. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XNLI",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+      "evidence": "To demonstrate a more natural instance of catastrophic forgetting, we consider what happens to a language model after we fine-tune on code. ... To test forgetting, we use the XNLI benchmark (Conneau et al., 2018) (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Skill retention",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Adapt-$\\infty$: Scalable Continual Multimodal Instruction Tuning via Dynamic Data Selection",
+      "evidence": "Random experience replay using 10% data from past datasets significantly improves skills retention over sequential training, bringing down the forgetting rate from 26% to 6.6%.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Adapt-$\\infty$: Scalable Continual Multimodal Instruction Tuning via Dynamic Data Selection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Commonsense reasoning benchmark",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Weights-Rotated Preference Optimization for Large Language Models",
+      "evidence": "we also evaluate on the commonsense reasoning QA task after training on the instruction-following datasets to assess knowledge forgetting. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Weights-Rotated Preference Optimization for Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 42,
+  "incoming_relationship_count": 9,
+  "outgoing_relationship_count": 33,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats catastrophic forgetting as a post-update drop on previously learned tasks, knowledge, or capabilities. Most definitions focus on sequential learning or fine-tuning, where performance on earlier tasks deteriorates after new data is introduced; adjacent work uses the same pattern for sequential editing, judging forgetting by weaker retention of prior edits or old knowledge after many later updates. Smaller lines of work extend the label to unlearning, multimodal expansion, or continued pretraining, where the observable sign is again degradation on retained, text-only, or broadly learned behavior."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants are mostly defined by setting. Papers name knowledge forgetting in collaborative or lifelong editing, where older edited facts and previously edited examples become less accurately retained after later editing rounds, and text-only forgetting in multimodal models, where text-only tasks or instructions fall after multimodal instruction tuning or visual modality expansion. Other papers discuss forgetting on generic web or domain data during continual pretraining, during specialization to new tasks, and one paper further divides multimodal continual instruction tuning into superficial forgetting alongside another subtype."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link catastrophic forgetting to 14 measurement instruments. The most frequently linked are BIG-Bench Hard, GSM8K, MMLU, ARC-Challenge, and HellaSwag, typically used as general-task or out-domain benchmarks for the degree of forgetting or forgetting curves. Other work evaluates it with coding benchmarks, multimodal benchmarks, and broader leaderboard-style task bundles."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Rather than being treated as evidence of one construct, papers connect catastrophic forgetting to 26 constructs. The most common links are to Continual learning and Generalization, followed by Adaptability, Knowledge retention, and General ability. The relationship types are mixed: papers often describe it as related to continual learning or knowledge retention, while other papers claim causal links from catastrophic forgetting to lower generalization or general ability, and separate papers claim causal links into catastrophic forgetting from continual learning or adaptability-related conditions."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats catastrophic forgetting as a post-update drop on previously learned tasks, knowledge, or capabilities. Most definitions focus on sequential learning or fine-tuning, where performance on earlier tasks deteriorates after new data is introduced; adjacent work uses the same pattern for sequential editing, judging forgetting by weaker retention of prior edits or old knowledge after many later updates. Smaller lines of work extend the label to unlearning, multimodal expansion, or continued pretraining, where the observable sign is again degradation on retained, text-only, or broadly learned behavior.\n\nVariants. Variants are mostly defined by setting. Papers name knowledge forgetting in collaborative or lifelong editing, where older edited facts and previously edited examples become less accurately retained after later editing rounds, and text-only forgetting in multimodal models, where text-only tasks or instructions fall after multimodal instruction tuning or visual modality expansion. Other papers discuss forgetting on generic web or domain data during continual pretraining, during specialization to new tasks, and one paper further divides multimodal continual instruction tuning into superficial forgetting alongside another subtype.\n\nSpace of elicitation and scores. Papers link catastrophic forgetting to 14 measurement instruments. The most frequently linked are BIG-Bench Hard, GSM8K, MMLU, ARC-Challenge, and HellaSwag, typically used as general-task or out-domain benchmarks for the degree of forgetting or forgetting curves. Other work evaluates it with coding benchmarks, multimodal benchmarks, and broader leaderboard-style task bundles.\n\nWhat it is taken as evidence of. Rather than being treated as evidence of one construct, papers connect catastrophic forgetting to 26 constructs. The most common links are to Continual learning and Generalization, followed by Adaptability, Knowledge retention, and General ability. The relationship types are mixed: papers often describe it as related to continual learning or knowledge retention, while other papers claim causal links from catastrophic forgetting to lower generalization or general ability, and separate papers claim causal links into catastrophic forgetting from continual learning or adaptability-related conditions.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "CollabEdit: Towards Non-destructive Collaborative Knowledge Editing",
+      "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+      "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+      "Towards Robust and Parameter-Efficient Knowledge Unlearning for LLMs"
+    ],
+    "icml25": [
+      "Learning Dynamics in Continual Pre-Training for Large Language Models",
+      "Overtrained Language Models Are Harder to Fine-Tune",
+      "Towards Lifelong Model Editing via Simulating Ideal Editor"
+    ],
+    "neurips24": [
+      "CogVLM: Visual Expert for Pretrained Language Models",
+      "Learn more, but bother less: parameter efficient continual learning",
+      "Mercury: A Code Efficiency Benchmark for Code Large Language Models",
+      "Why are Visually-Grounded Language Models Bad at Image Classification?",
+      "Wings: Learning Multimodal LLMs without Text-only Forgetting"
+    ],
+    "acl25": [
+      "TiC-LM: A Web-Scale Benchmark for Time-Continual LLM Pretraining"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "icml25": 3,
+    "neurips24": 5,
+    "acl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

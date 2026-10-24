@@ -1,0 +1,201 @@
+{
+  "canonical_name": "Masked language modeling",
+  "type": "behavior",
+  "canonical_definition": "Across the surveyed literature, Masked language modeling (MLM) is predominantly characterized as a self-supervised pre-training objective for language models. The task is consistently defined as predicting original tokens at positions that have been randomly masked in an input sequence, with some definitions specifying the use of a special `[MASK]` symbol and bidirectional context. One paper notes a common implementation of \"masking 15% tokens for training\" (\"Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs\"). The primary stated purpose of this pre-training is to learn robust representations, and one paper suggests this task leads to language understanding. The downstream performance of models trained with this objective is evaluated using the GLUE benchmark. While its main application is pre-training, where it is often contrasted with \"next token prediction\", a smaller body of work applies MLM to other problems, such as reformulating relation extraction or computing loss on specific probe sentences. The behavior is also studied in relation to `Adaptability` and is considered a form of `Language modeling`.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Masked language modeling",
+    "Masked token prediction"
+  ],
+  "papers": [
+    "Context-aware Biases for Length Extrapolation",
+    "Convergence and Divergence of Language Models under Different Random Seeds",
+    "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+    "LLM Bias Detection and Mitigation through the Lens of Desired Distributions",
+    "NormXLogit: The Head-on-Top Never Lies",
+    "Training compute-optimal transformer encoder models",
+    "Type-Less yet Type-Aware Inductive Link Prediction with Pretrained Language Models",
+    "A Multi-Level Framework for Accelerating Training Transformer Models",
+    "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction",
+    "CODE REPRESENTATION LEARNING AT SCALE",
+    "Fast-ELECTRA for Efficient Pre-training",
+    "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs",
+    "Representation Deficiency in Masked Language Modeling",
+    "Scaling Laws for Sparsely-Connected Foundation Models",
+    "LASER: Attention with Exponential Transformation",
+    "Scaling Laws for Differentially Private Language Models",
+    "Model Decides How to Tokenize: Adaptive DNA Sequence Tokenization with MxDNA",
+    "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Predicting original tokens at masked positions in an input sequence.",
+      "paper": "A Multi-Level Framework for Accelerating Training Transformer Models",
+      "original_name": "Masked language modeling"
+    },
+    {
+      "text": "The observable pretraining task of predicting the original identity of a token that has been replaced by a special [MASK] symbol, based on its surrounding bidirectional context.",
+      "paper": "CODE REPRESENTATION LEARNING AT SCALE",
+      "original_name": "Masked token prediction"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Language understanding task performance",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Representation Deficiency in Masked Language Modeling",
+      "evidence": "MLM (Devlin et al., 2019; Liu et al., 2019) is prominently used to pretrain bidirectional text encoders to achieve superior performance for language understanding (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Representation Deficiency in Masked Language Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adaptability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs",
+      "evidence": "First, we select data to fine-tune a pre-trained bert-base-uncased model (from Huggingface) via Masked Language Modeling (MLM) - following the standard setting of masking 15% tokens for training over the unlabeled domain-specific data. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "C4",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Laws for Sparsely-Connected Foundation Models",
+      "evidence": "as well as encoder-decoder T5 models (Raffel et al., 2020b) (improved 1.1 version (Google, 2023b)) trained for masked-language-modelling on C4 (Raffel et al., 2020b)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Scaling Laws for Sparsely-Connected Foundation Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Headless Language Models: Learning without Predicting with Contrastive Weight Tying",
+      "evidence": "\"In Table 1, we compare our headless MLM with the classical MLM on the GLUE benchmark.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Headless Language Models: Learning without Predicting with Contrastive Weight Tying"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Representation learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Bio-xLSTM: Generative modeling, representation and in-context learning of biological and chemical sequences",
+      "evidence": "This modeling approach, often referred to as bidirectional modeling, has proven instrumental in enabling the successful learning of protein representations at an evolutionary scale (Rives et al., 2021), which has powered many subsequent applications, such as machine-learning guided directed evolution for protein engineering (Yang et al., 2019). (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Bio-xLSTM: Generative modeling, representation and in-context learning of biological and chemical sequences"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Contextual understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "HotelMatch-LLM: Joint Multi-Task Training of Small and Large Language Models for Efficient Multimodal Hotel Retrieval",
+      "evidence": "This includes retrieval optimization to align query and document embeddings, masked language modeling to enhance contextual understanding, and visual facility learning to identify key amenities from images.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "HotelMatch-LLM: Joint Multi-Task Training of Small and Large Language Models for Efficient Multimodal Hotel Retrieval"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LLM Bias Detection and Mitigation through the Lens of Desired Distributions",
+      "evidence": "We combine KL divergence loss with an MLM loss as a secondary objective to retain masked language modeling ability while adjusting the MLM distribution (Section 2.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LLM Bias Detection and Mitigation through the Lens of Desired Distributions"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, Masked language modeling (MLM) is predominantly characterized as a self-supervised pre-training objective for language models. The task is consistently defined as predicting original tokens at positions that have been randomly masked in an input sequence, with some definitions specifying the use of a special `[MASK]` symbol and bidirectional context. One paper notes a common implementation of \"masking 15% tokens for training\" (\"Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs\"). The primary stated purpose of this pre-training is to learn robust representations, and one paper suggests this task leads to language understanding. The downstream performance of models trained with this objective is evaluated using the GLUE benchmark. While its main application is pre-training, where it is often contrasted with \"next token prediction\", a smaller body of work applies MLM to other problems, such as reformulating relation extraction or computing loss on specific probe sentences. The behavior is also studied in relation to `Adaptability` and is considered a form of `Language modeling`.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Context-aware Biases for Length Extrapolation",
+      "Convergence and Divergence of Language Models under Different Random Seeds",
+      "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+      "LLM Bias Detection and Mitigation through the Lens of Desired Distributions",
+      "NormXLogit: The Head-on-Top Never Lies",
+      "Training compute-optimal transformer encoder models",
+      "Type-Less yet Type-Aware Inductive Link Prediction with Pretrained Language Models"
+    ],
+    "iclr24": [
+      "A Multi-Level Framework for Accelerating Training Transformer Models",
+      "BayesPrompt: Prompting Large-Scale Pre-Trained Language Models on Few-shot Inference via Debiased Domain Abstraction",
+      "CODE REPRESENTATION LEARNING AT SCALE",
+      "Fast-ELECTRA for Efficient Pre-training",
+      "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs",
+      "Representation Deficiency in Masked Language Modeling",
+      "Scaling Laws for Sparsely-Connected Foundation Models"
+    ],
+    "icml25": [
+      "LASER: Attention with Exponential Transformation",
+      "Scaling Laws for Differentially Private Language Models"
+    ],
+    "neurips24": [
+      "Model Decides How to Tokenize: Adaptive DNA Sequence Tokenization with MxDNA",
+      "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 7,
+    "iclr24": 7,
+    "icml25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "icml25",
+    "neurips24"
+  ]
+}

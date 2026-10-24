@@ -1,0 +1,206 @@
+{
+  "canonical_name": "CRUXEval",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, CRUXEval is most commonly described as a benchmark for code reasoning, understanding, and execution, often framed through predicting a program's input, output, or execution result. Papers also describe input and output prediction tasks, and one paper names these variants CruxEval-I and CruxEval-O. A smaller line of work uses it to validate deductive and abductive code reasoning, and one definition adds concrete benchmark content by describing 800 Python functions created with a generate-and-filter approach using CodeLlama.\n\nWhat it is claimed to measure. Papers link it to 3 constructs and 3 behavioral indicators. The prevailing usage is as a measure of code reasoning, while smaller lines of work use it to measure abductive code reasoning and reasoning more broadly. On the behavioral side, papers use it to measure code output prediction and code input prediction, and one paper reports it as related to code execution by stating that a code execution scenario is based on CRUXEval's output-prediction setup. Overall, the measurement claims stay concentrated on a small cluster of code reasoning and execution-oriented prediction tasks.\n\nSpace of uses. No measurement instrument is linked to it. In use, papers often place it alongside LiveCodeBench, sometimes specifically the LCB-Exec code execution task, and some pair it with DS-1000 or with other logical reasoning benchmarks. One study also selects CRUXEval and LiveCodeBench together as representative benchmarks for validating deductive and abductive capabilities.\n\nConcerns raised. One survey notes that coverage of CRUXEval, along with several other benchmarks, remains incomplete with respect to real-world repository-scale tasks.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "CRUXEVAL",
+    "CRUXEval",
+    "CRUX",
+    "CruxEval"
+  ],
+  "papers": [
+    "S2R: TeachingLLMs to Self-verify and Self-correct via Reinforcement Learning",
+    "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models",
+    "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+    "Planning-Aware Code Infilling via Horizon-Length Prediction",
+    "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+    "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+    "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+    "CodeIO: Condensing Reasoning Patterns via Code Input-Output Prediction",
+    "Satori: Reinforcement Learning with Chain-of-Action-Thought Enhances LLM Reasoning via Autoregressive Search",
+    "Mastering the Craft of Data Synthesis for CodeLLMs",
+    "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+    "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark that measures reasoning and execution abilities through code output prediction.",
+      "paper": "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "original_name": "CRUXEVAL"
+    },
+    {
+      "text": "A benchmark designed to evaluate code understanding and execution, used in the paper to test both deductive and abductive code reasoning.",
+      "paper": "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+      "original_name": "CRUXEval"
+    },
+    {
+      "text": "A benchmark used to evaluate a model's reasoning abilities in the context of code generation and understanding.",
+      "paper": "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "original_name": "CRUX"
+    },
+    {
+      "text": "CruxEval is a benchmark for evaluating code understanding and execution-result prediction.",
+      "paper": "CodeIO: Condensing Reasoning Patterns via Code Input-Output Prediction",
+      "original_name": "CruxEval"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "evidence": "These tasks assess the model\u2019s ability to reason about the execution of simple Python programs by asking it to predict the input given the output of a function and vice-versa (Section 4.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation"
+        ],
+        "acl25": [
+          "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models"
+        ],
+        "emnlp25": [
+          "Planning-Aware Code Infilling via Horizon-Length Prediction"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code output prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "evidence": "two code-understanding tasks\u2014namely, CruxEval-I (input prediction) and CruxEval-O (output prediction) from CruxEval benchmark [6] (Section 4.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+        ],
+        "iclr25": [
+          "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code input prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "evidence": "two code-understanding tasks\u2014namely, CruxEval-I (input prediction) and CruxEval-O (output prediction) from CruxEval benchmark [6] (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Abductive code reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+      "evidence": "Deductive code and abductive code reasoning can be regarded as opposite processes; therefore, we selected two identical and representative datasets, CRUXEval (Gu et al., 2024) and LiveCodeBench (Jain et al., 2024), as benchmarks to validate these two capabilities.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "evidence": "Furthermore, we also evaluate all the models on four logical reasoning benchmarks to verify the impact of these alignment methods on model\u2019s reasoning abilities, including: ... CRUX (Gu et al., 2024) (Code)...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, CRUXEval is most commonly described as a benchmark for code reasoning, understanding, and execution, often framed through predicting a program's input, output, or execution result. Papers also describe input and output prediction tasks, and one paper names these variants CruxEval-I and CruxEval-O. A smaller line of work uses it to validate deductive and abductive code reasoning, and one definition adds concrete benchmark content by describing 800 Python functions created with a generate-and-filter approach using CodeLlama."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to 3 constructs and 3 behavioral indicators. The prevailing usage is as a measure of code reasoning, while smaller lines of work use it to measure abductive code reasoning and reasoning more broadly. On the behavioral side, papers use it to measure code output prediction and code input prediction, and one paper reports it as related to code execution by stating that a code execution scenario is based on CRUXEval's output-prediction setup. Overall, the measurement claims stay concentrated on a small cluster of code reasoning and execution-oriented prediction tasks."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it. In use, papers often place it alongside LiveCodeBench, sometimes specifically the LCB-Exec code execution task, and some pair it with DS-1000 or with other logical reasoning benchmarks. One study also selects CRUXEval and LiveCodeBench together as representative benchmarks for validating deductive and abductive capabilities."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One survey notes that coverage of CRUXEval, along with several other benchmarks, remains incomplete with respect to real-world repository-scale tasks."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, CRUXEval is most commonly described as a benchmark for code reasoning, understanding, and execution, often framed through predicting a program's input, output, or execution result. Papers also describe input and output prediction tasks, and one paper names these variants CruxEval-I and CruxEval-O. A smaller line of work uses it to validate deductive and abductive code reasoning, and one definition adds concrete benchmark content by describing 800 Python functions created with a generate-and-filter approach using CodeLlama.\n\nWhat it is claimed to measure. Papers link it to 3 constructs and 3 behavioral indicators. The prevailing usage is as a measure of code reasoning, while smaller lines of work use it to measure abductive code reasoning and reasoning more broadly. On the behavioral side, papers use it to measure code output prediction and code input prediction, and one paper reports it as related to code execution by stating that a code execution scenario is based on CRUXEval's output-prediction setup. Overall, the measurement claims stay concentrated on a small cluster of code reasoning and execution-oriented prediction tasks.\n\nSpace of uses. No measurement instrument is linked to it. In use, papers often place it alongside LiveCodeBench, sometimes specifically the LCB-Exec code execution task, and some pair it with DS-1000 or with other logical reasoning benchmarks. One study also selects CRUXEval and LiveCodeBench together as representative benchmarks for validating deductive and abductive capabilities.\n\nConcerns raised. One survey notes that coverage of CRUXEval, along with several other benchmarks, remains incomplete with respect to real-world repository-scale tasks.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "S2R: TeachingLLMs to Self-verify and Self-correct via Reinforcement Learning",
+      "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models"
+    ],
+    "emnlp25": [
+      "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+      "Planning-Aware Code Infilling via Horizon-Length Prediction"
+    ],
+    "iclr25": [
+      "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment"
+    ],
+    "icml25": [
+      "CodeIO: Condensing Reasoning Patterns via Code Input-Output Prediction",
+      "Satori: Reinforcement Learning with Chain-of-Action-Thought Enhances LLM Reasoning via Autoregressive Search"
+    ],
+    "naacl25": [
+      "Mastering the Craft of Data Synthesis for CodeLLMs"
+    ],
+    "neurips24": [
+      "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 2,
+    "iclr25": 3,
+    "icml25": 2,
+    "naacl25": 1,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

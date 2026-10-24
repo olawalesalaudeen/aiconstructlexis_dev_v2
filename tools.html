@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Support · AI Construct Lexis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="view_network_theme.css?v=2026-10-24w">
+    <link rel="stylesheet" href="tools.css?v=2026-10-24w">
+    <link rel="stylesheet" href="theme_modern_academic.css?v=2026-10-24w">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header" id="siteHeader" data-active="tools"></header>
+
+        <h2 class="page-title" style="margin-top: 26px;">Analysis support</h2>
+        <p class="page-lede">Tools for planning validity analyses from the Lexis. Pick a construct or a benchmark and get
+            every instrument, contrast, or claim the literature offers, with the papers and evidence behind each one.</p>
+
+        <p class="claims-note">
+            The Lexis records what papers <em>claim</em>: that a paper used an instrument to measure a construct, or stated
+            that two things are related. These tools plan analyses from those claims. A row here means
+            "N papers link these", not that the link is valid. Click Evidence on any row to read what the papers say.
+        </p>
+
+        <div class="tool-list" id="toolList"></div>
+
+        <p class="every-tool">Every tool lets you filter by venue and by how many papers support a link, open the verbatim
+            evidence behind any row, export results as CSV or JSON, export the supporting papers as a list of titles, venues, and links, and copy a link
+            that reopens the exact view.</p>
+    </div>
+
+    <script>
+        // If the tools script fails to load or run, say so instead of leaving the page blank.
+        window.addEventListener('error', function (e) {
+            var r = document.getElementById('results');
+            if (r && /loading/i.test(r.textContent || '')) r.innerHTML = '<p class="summary">The analysis tools could not start (' + (e.message || 'script error') + '). Reload the page; if that does not help, clear the browser cache for this site.</p>';
+        });
+    </script>
+    <script src="site_header.js?v=2026-10-24w"></script>
+    <script src="tools.js?v=2026-10-24w"></script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+{
+  "canonical_name": "GUI understanding",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Most papers treat GUI understanding, or neighboring labels such as UI understanding and screen understanding, as a latent capability to interpret visual interface information, including layout, text, icons, structure, and function, and to identify relevant interactive or actionable elements. A smaller line of work narrows the construct either to screen reading comprehension, defined as reading textual and symbolic information on a screen to answer questions, or to GUI action grounding, defined as mapping natural language instructions to specific elements or locations. The main variation is scope: broad interface comprehension versus task-specific question answering or instruction-to-element mapping.\n\nSpace of facets. Across papers, the construct is organized through overlapping labels rather than a single fixed taxonomy: GUI understanding, UI understanding, and screen understanding are used for closely similar abilities. Some papers separate it from planning and tool usage as one component of broader agentic abilities, while others treat action grounding as a related dimension or say that action prediction builds on UI understanding. Papers also introduce narrower neighboring labels, especially screen reading comprehension and GUI action grounding, and some bundle understanding with grounding in references to GUI understanding and grounding benchmarks.\n\nSpace of measurement. Operationalization centers on named evaluation instruments: papers link the construct to 2 measurement instruments and 5 behavioral indicators, with GUI-WORLD and WebSRC the named instruments. GUI-WORLD is explicitly presented as a comprehensive benchmark for GUI-oriented understanding capabilities, while WebSRC is selected for GUI understanding evaluation; the linked behavioral indicators are Action grounding, Action prediction, Code generation, Document question answering, and Optical character recognition. These operationalizations track the broader definitions of visual interface understanding, although some paper-level definitions narrow the construct further toward screen reading or grounding.\n\nLinks. Papers claim causal relationships in both directions. One paper claims causal relationships from Document question answering and from Optical character recognition to GUI understanding, stating that QA samples enhance performance on GUI understanding benchmarks and that OCR samples benefit it most. Other papers claim causal relationships from GUI understanding to Code generation and to Action prediction, with one stating that action prediction builds on UI understanding, and a separate paper reports that GUI understanding is related to Action grounding.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "GUI understanding",
+    "GUI Understanding",
+    "UI understanding",
+    "Screen understanding",
+    "Screen reading comprehension",
+    "GUI action grounding"
+  ],
+  "papers": [
+    "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration",
+    "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents",
+    "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+    "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+    "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+    "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+    "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION",
+    "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale",
+    "ScreenQA: Large-Scale Question-Answer Pairs Over Mobile App Screenshots"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The capability to comprehend the structure, content, and function of graphical user interfaces from visual inputs.",
+      "paper": "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "original_name": "GUI understanding"
+    },
+    {
+      "text": "The latent capability to interpret visual screen information and accurately identify interactive UI elements.",
+      "paper": "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+      "original_name": "GUI Understanding"
+    },
+    {
+      "text": "The capacity to interpret complex mobile interface layouts and identify relevant on-screen information for action selection.",
+      "paper": "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION",
+      "original_name": "UI understanding"
+    },
+    {
+      "text": "The latent ability to interpret and reason about visual and structural elements of a computer interface, including text, icons, and layout, to identify actionable components.",
+      "paper": "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale",
+      "original_name": "Screen understanding"
+    },
+    {
+      "text": "The capacity to read and understand textual and symbolic information presented on a screen to answer specific questions.",
+      "paper": "ScreenQA: Large-Scale Question-Answer Pairs Over Mobile App Screenshots",
+      "original_name": "Screen reading comprehension"
+    },
+    {
+      "text": "The latent ability of a model to correctly map natural language instructions to specific actionable elements or locations on a Graphical User Interface screen.",
+      "paper": "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration",
+      "original_name": "GUI action grounding"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WebSRC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "evidence": "We select VisualWebBench (Liu et al., 2024c), WebSRC (Chen et al., 2021), ScreenQA-Short (Hsiao et al., 2022), WidgetCap (Li et al., 2020) for GUI understanding.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Harnessing Webpage UIs for Text-Rich Visual Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Optical character recognition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "evidence": "OCR samples benefit most in GUI understanding.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Harnessing Webpage UIs for Text-Rich Visual Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GUI-WORLD",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+      "evidence": "Likewise, we also establish a comprehensive benchmark for GUI understanding, which encompasses nine mainstream MLLMs (e.g., GPT-4o (OpenAI, 2024) and Gemini-1.5-Pro (Team et al., 2023)), five keyframe selection strategies (e.g., UVD (Zhang et al., 2024d)), and six GUI scenarios, aiming to provide a thorough evaluation of the GUI-oriented understanding capabilities of MLLMs. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+      "evidence": "To further demonstrate how GUI understanding capability enhances mainstream GUI-related tasks, including generating operational code (Cheng et al., 2024) and providing chat assistance (Hong et al., 2024), we conduct experiments as follows... (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Action prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction",
+      "evidence": "Action Prediction builds on these skills, testing whether agents can execute interactions like clicking, dragging, and typing based on their UI understanding",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "evidence": "both QA and Caption samples enhance performance in GUI understanding and OCR-related benchmarks",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Harnessing Webpage UIs for Text-Rich Visual Understanding"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most papers treat GUI understanding, or neighboring labels such as UI understanding and screen understanding, as a latent capability to interpret visual interface information, including layout, text, icons, structure, and function, and to identify relevant interactive or actionable elements. A smaller line of work narrows the construct either to screen reading comprehension, defined as reading textual and symbolic information on a screen to answer questions, or to GUI action grounding, defined as mapping natural language instructions to specific elements or locations. The main variation is scope: broad interface comprehension versus task-specific question answering or instruction-to-element mapping."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Across papers, the construct is organized through overlapping labels rather than a single fixed taxonomy: GUI understanding, UI understanding, and screen understanding are used for closely similar abilities. Some papers separate it from planning and tool usage as one component of broader agentic abilities, while others treat action grounding as a related dimension or say that action prediction builds on UI understanding. Papers also introduce narrower neighboring labels, especially screen reading comprehension and GUI action grounding, and some bundle understanding with grounding in references to GUI understanding and grounding benchmarks."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization centers on named evaluation instruments: papers link the construct to 2 measurement instruments and 5 behavioral indicators, with GUI-WORLD and WebSRC the named instruments. GUI-WORLD is explicitly presented as a comprehensive benchmark for GUI-oriented understanding capabilities, while WebSRC is selected for GUI understanding evaluation; the linked behavioral indicators are Action grounding, Action prediction, Code generation, Document question answering, and Optical character recognition. These operationalizations track the broader definitions of visual interface understanding, although some paper-level definitions narrow the construct further toward screen reading or grounding."
+    },
+    {
+      "label": "Links.",
+      "text": "Papers claim causal relationships in both directions. One paper claims causal relationships from Document question answering and from Optical character recognition to GUI understanding, stating that QA samples enhance performance on GUI understanding benchmarks and that OCR samples benefit it most. Other papers claim causal relationships from GUI understanding to Code generation and to Action prediction, with one stating that action prediction builds on UI understanding, and a separate paper reports that GUI understanding is related to Action grounding."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define GUI understanding as a model's ability to interpret the visual and structural content of a GUI screen, often to recognize or locate interactive and actionable elements. A few papers narrow that same capability to specific manifestations such as reading on-screen text and symbols for question answering or grounding natural language instructions to GUI elements, so they emphasize different facets or tasks rather than incompatible constructs.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "complementary",
+      "complementary"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Most papers treat GUI understanding, or neighboring labels such as UI understanding and screen understanding, as a latent capability to interpret visual interface information, including layout, text, icons, structure, and function, and to identify relevant interactive or actionable elements. A smaller line of work narrows the construct either to screen reading comprehension, defined as reading textual and symbolic information on a screen to answer questions, or to GUI action grounding, defined as mapping natural language instructions to specific elements or locations. The main variation is scope: broad interface comprehension versus task-specific question answering or instruction-to-element mapping.\n\nSpace of facets. Across papers, the construct is organized through overlapping labels rather than a single fixed taxonomy: GUI understanding, UI understanding, and screen understanding are used for closely similar abilities. Some papers separate it from planning and tool usage as one component of broader agentic abilities, while others treat action grounding as a related dimension or say that action prediction builds on UI understanding. Papers also introduce narrower neighboring labels, especially screen reading comprehension and GUI action grounding, and some bundle understanding with grounding in references to GUI understanding and grounding benchmarks.\n\nSpace of measurement. Operationalization centers on named evaluation instruments: papers link the construct to 2 measurement instruments and 5 behavioral indicators, with GUI-WORLD and WebSRC the named instruments. GUI-WORLD is explicitly presented as a comprehensive benchmark for GUI-oriented understanding capabilities, while WebSRC is selected for GUI understanding evaluation; the linked behavioral indicators are Action grounding, Action prediction, Code generation, Document question answering, and Optical character recognition. These operationalizations track the broader definitions of visual interface understanding, although some paper-level definitions narrow the construct further toward screen reading or grounding.\n\nLinks. Papers claim causal relationships in both directions. One paper claims causal relationships from Document question answering and from Optical character recognition to GUI understanding, stating that QA samples enhance performance on GUI understanding benchmarks and that OCR samples benefit it most. Other papers claim causal relationships from GUI understanding to Code generation and to Action prediction, with one stating that action prediction builds on UI understanding, and a separate paper reports that GUI understanding is related to Action grounding.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration"
+    ],
+    "iclr25": [
+      "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents",
+      "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+      "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+      "Harnessing Webpage UIs for Text-Rich Visual Understanding",
+      "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+      "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION"
+    ],
+    "icml25": [
+      "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale"
+    ],
+    "naacl25": [
+      "ScreenQA: Large-Scale Question-Answer Pairs Over Mobile App Screenshots"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 1,
+    "iclr25": 6,
+    "icml25": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

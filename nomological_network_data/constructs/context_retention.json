@@ -1,0 +1,150 @@
+{
+  "canonical_name": "Context retention",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats context retention as maintaining, accessing, and using relevant information or instructions over long contexts, multiple turns, or long sequences of generation. Most definitions differ mainly by setting, long-context fact access, conversational or task continuity, and long-form generation, and one paper makes the boundary explicit by separating retention from sequential reasoning. A smaller line uses the label memory retention for different targets: preserving untargeted knowledge after unlearning operations, or preserving recorded memories for later recall.\n\nSpace of facets. Papers do not offer a shared formal taxonomy, but they use several near-overlapping names for similar long-context phenomena: information retention, context retention, sustained context management, and memory retention. The clearest internal contrast is between retaining facts or instructions and reasoning over them in sequence, with one paper describing models as able to store and retrieve large amounts of information while remaining constrained in coherent multi-step inference. Other papers situate the construct in multi-turn instruction transfer, later agent actions, and long-form generation, while the minority memory-preservation usages extend the same label to unlearning and recall from recorded memories.\n\nSpace of measurement. The recorded measurement space is narrow: papers link context retention to 1 measurement instrument and 2 behavioral indicators. BFCL is the only direct instrument, a benchmark or leaderboard whose multi-turn and long-context settings assess sustained context management and whether models maintain accuracy over later queries or function call results. The linked behavioral indicators are GUI automation and instruction following, but the available evidence treats them as downstream behaviors rather than direct measures. This operationalization lines up with the dominant multi-turn and long-context definitions more than with the minority uses about unlearning or recorded memories.\n\nLinks. Recorded links are causal rather than correlational or generic. One paper claims a causal relationship from context retention to coherence and instruction following, stating that memory retention issues often lead to loss of coherence and adherence to task instructions. Another paper claims a causal relationship from context retention to GUI automation, describing agents that lose context during long, multi-step tasks or app transitions and therefore produce incomplete task execution.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Context retention",
+    "Information retention",
+    "Sustained context management",
+    "Memory retention"
+  ],
+  "papers": [
+    "LoCt-Instruct: An Automatic Pipeline for Constructing Datasets of Logical Continuous Instructions",
+    "seqBench: A Tunable Benchmark to Quantify Sequential Reasoning Limits of LLMs",
+    "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+    "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION",
+    "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The capacity to store and access relevant facts within a long context, distinct from the ability to reason over them in sequence.",
+      "paper": "seqBench: A Tunable Benchmark to Quantify Sequential Reasoning Limits of LLMs",
+      "original_name": "Information retention"
+    },
+    {
+      "text": "The ability to maintain and utilize information presented over long and complex contexts or across multiple conversational turns.",
+      "paper": "LoCt-Instruct: An Automatic Pipeline for Constructing Datasets of Logical Continuous Instructions",
+      "original_name": "Context retention"
+    },
+    {
+      "text": "The ability to maintain relevant conversational or task context across multiple turns and use it correctly in later actions.",
+      "paper": "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models",
+      "original_name": "Sustained context management"
+    },
+    {
+      "text": "The model's ability to maintain and access information and instructions over the course of generating a long sequence of text.",
+      "paper": "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+      "original_name": "Memory retention"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Coherence",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+      "evidence": "This highlights the memory retention issue in long-context models, which often leads to a loss of coherence and adherence to task instructions. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+      "evidence": "This highlights the memory retention issue in long-context models, which often leads to a loss of coherence and adherence to task instructions. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Task completion",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION",
+      "evidence": "Memory retention mechanisms can be improved as well, especially for handling long, multi-step tasks that span multiple apps. Current agents often lose context during complex tasks or app transitions, which leads to incomplete task execution.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats context retention as maintaining, accessing, and using relevant information or instructions over long contexts, multiple turns, or long sequences of generation. Most definitions differ mainly by setting, long-context fact access, conversational or task continuity, and long-form generation, and one paper makes the boundary explicit by separating retention from sequential reasoning. A smaller line uses the label memory retention for different targets: preserving untargeted knowledge after unlearning operations, or preserving recorded memories for later recall."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not offer a shared formal taxonomy, but they use several near-overlapping names for similar long-context phenomena: information retention, context retention, sustained context management, and memory retention. The clearest internal contrast is between retaining facts or instructions and reasoning over them in sequence, with one paper describing models as able to store and retrieve large amounts of information while remaining constrained in coherent multi-step inference. Other papers situate the construct in multi-turn instruction transfer, later agent actions, and long-form generation, while the minority memory-preservation usages extend the same label to unlearning and recall from recorded memories."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "The recorded measurement space is narrow: papers link context retention to 1 measurement instrument and 2 behavioral indicators. BFCL is the only direct instrument, a benchmark or leaderboard whose multi-turn and long-context settings assess sustained context management and whether models maintain accuracy over later queries or function call results. The linked behavioral indicators are GUI automation and instruction following, but the available evidence treats them as downstream behaviors rather than direct measures. This operationalization lines up with the dominant multi-turn and long-context definitions more than with the minority uses about unlearning or recorded memories."
+    },
+    {
+      "label": "Links.",
+      "text": "Recorded links are causal rather than correlational or generic. One paper claims a causal relationship from context retention to coherence and instruction following, stating that memory retention issues often lead to loss of coherence and adherence to task instructions. Another paper claims a causal relationship from context retention to GUI automation, describing agents that lose context during long, multi-step tasks or app transitions and therefore produce incomplete task execution."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define context retention as a model's ability to keep and correctly use relevant information or instructions across long contexts, long generations, or multiple conversational turns. A few papers use the term for preserving knowledge after unlearning or from stored memories, but these are outliers rather than a substantial competing definition.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats context retention as maintaining, accessing, and using relevant information or instructions over long contexts, multiple turns, or long sequences of generation. Most definitions differ mainly by setting, long-context fact access, conversational or task continuity, and long-form generation, and one paper makes the boundary explicit by separating retention from sequential reasoning. A smaller line uses the label memory retention for different targets: preserving untargeted knowledge after unlearning operations, or preserving recorded memories for later recall.\n\nSpace of facets. Papers do not offer a shared formal taxonomy, but they use several near-overlapping names for similar long-context phenomena: information retention, context retention, sustained context management, and memory retention. The clearest internal contrast is between retaining facts or instructions and reasoning over them in sequence, with one paper describing models as able to store and retrieve large amounts of information while remaining constrained in coherent multi-step inference. Other papers situate the construct in multi-turn instruction transfer, later agent actions, and long-form generation, while the minority memory-preservation usages extend the same label to unlearning and recall from recorded memories.\n\nSpace of measurement. The recorded measurement space is narrow: papers link context retention to 1 measurement instrument and 2 behavioral indicators. BFCL is the only direct instrument, a benchmark or leaderboard whose multi-turn and long-context settings assess sustained context management and whether models maintain accuracy over later queries or function call results. The linked behavioral indicators are GUI automation and instruction following, but the available evidence treats them as downstream behaviors rather than direct measures. This operationalization lines up with the dominant multi-turn and long-context definitions more than with the minority uses about unlearning or recorded memories.\n\nLinks. Recorded links are causal rather than correlational or generic. One paper claims a causal relationship from context retention to coherence and instruction following, stating that memory retention issues often lead to loss of coherence and adherence to task instructions. Another paper claims a causal relationship from context retention to GUI automation, describing agents that lose context during long, multi-step tasks or app transitions and therefore produce incomplete task execution.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "LoCt-Instruct: An Automatic Pipeline for Constructing Datasets of Logical Continuous Instructions",
+      "seqBench: A Tunable Benchmark to Quantify Sequential Reasoning Limits of LLMs"
+    ],
+    "iclr25": [
+      "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+      "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION"
+    ],
+    "icml25": [
+      "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 2,
+    "icml25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

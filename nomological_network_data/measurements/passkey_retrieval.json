@@ -1,0 +1,185 @@
+{
+  "canonical_name": "Passkey retrieval",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing usage is a synthetic long-context retrieval task or benchmark in which a model must find and repeat a hidden passkey, usually a random or five-digit code, embedded in long distracting or otherwise meaningless text. Most definitions emphasize random placement or varying depth in the sequence and treat it as a needle-in-haystack test of locating a short target token within a long context. YaRN: Efficient Context Window Extension of Large Language Models describes it as retrieving \"a five-digit number\" from \"a large amount of otherwise meaningless text.\" A smaller line of work mentions n-digit variants, different difficulty levels, or a contiguous 2K-token Wiki-Text sample.\n\nWhat it is claimed to measure. Papers link this instrument to 2 behavioral indicators and no constructs. The dominant reported use is to measure Synthetic recall, and a smaller line of work reports it as measuring Context retrieval, so the recorded links are concentrated on retrieval behaviors rather than spread across many targets. Definitions and snippets also describe it as evaluating maximum effective context length, long-range dependency modeling, information retention over extended contexts, and, as PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training states, \"the maximum distance that a token can attend to during the inference stage.\"\n\nSpace of uses. Across papers, it is usually positioned as a benchmark-style synthetic evaluation, with results reported as retrieval accuracy or accuracy on Passkey Retrieval. Some papers include it as one task within broader synthetic long-context or contextual knowledge understanding evaluations, and some vary difficulty by the depth of the hidden code in the sequence. One reported protocol fine-tunes models to retrieve a random 5-digit code hidden at a random location within a contiguous 2K-token Wiki-Text sample. No other measurement instrument is linked to it.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Passkey retrieval",
+    "Passkey retrieval task",
+    "Passkey Retrieval Task",
+    "Passkey Retrieval"
+  ],
+  "papers": [
+    "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method",
+    "FocusLLM: Precise Understanding of Long Context by Dynamic Condensing",
+    "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+    "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+    "LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models",
+    "YaRN: Efficient Context Window Extension of Large Language Models",
+    "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+    "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+    "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+    "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+    "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+    "Training Free Exponential Context Extension via Cascading KV Cache",
+    "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization",
+    "Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding",
+    "Minerva: A Programmable Memory Test Benchmark for Language Models",
+    "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding",
+    "Understanding and Improving Length Generalization in Recurrent Models",
+    "Selective Attention: Enhancing Transformer through Principled Context Control"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Task where a model must retrieve a hidden passkey (random number) embedded in long, distracting text; used to evaluate maximum effective context length.",
+      "paper": "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+      "original_name": "Passkey retrieval"
+    },
+    {
+      "text": "A long-context retrieval evaluation in which a hidden 5-digit code must be recovered from within a long input sequence.",
+      "paper": "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+      "original_name": "Passkey retrieval task"
+    },
+    {
+      "text": "A synthetic evaluation protocol designed to test long-context retrieval by requiring a model to find and repeat a random passkey hidden within a long text sample.",
+      "paper": "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "original_name": "Passkey Retrieval Task"
+    },
+    {
+      "text": "A needle-in-haystack benchmark that evaluates a model's ability to retrieve a short target token (e.g., a five-digit number) from a long context of distractor text, testing long-range dependency and information retention.",
+      "paper": "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization",
+      "original_name": "Passkey Retrieval"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Synthetic recall",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "YaRN: Efficient Context Window Extension of Large Language Models",
+      "evidence": "The passkey retrieval task as defined in Mohtashami and Jaggi (2023) measures a model\u2019s ability to retrieve a simple passkey (i.e., a five-digit number) from amongst a large amount of otherwise meaningless text. (Section 4.3)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "YaRN: Efficient Context Window Extension of Large Language Models"
+        ],
+        "acl25": [
+          "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method"
+        ],
+        "icml25": [
+          "Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding",
+          "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding",
+          "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization"
+        ],
+        "iclr25": [
+          "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Context retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Selective Attention: Enhancing Transformer through Principled Context Control",
+      "evidence": "Additionally, evaluations on the passkey retrieval task [33, 29] reveal that SSA substantially enhances the retrieval capabilities of the transformer, shown in Table 4.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Selective Attention: Enhancing Transformer through Principled Context Control"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+      "evidence": "\u201cThe task is widely used to evaluate the maximum context length that the model can effectively handle.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing usage is a synthetic long-context retrieval task or benchmark in which a model must find and repeat a hidden passkey, usually a random or five-digit code, embedded in long distracting or otherwise meaningless text. Most definitions emphasize random placement or varying depth in the sequence and treat it as a needle-in-haystack test of locating a short target token within a long context. YaRN: Efficient Context Window Extension of Large Language Models describes it as retrieving \"a five-digit number\" from \"a large amount of otherwise meaningless text.\" A smaller line of work mentions n-digit variants, different difficulty levels, or a contiguous 2K-token Wiki-Text sample."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link this instrument to 2 behavioral indicators and no constructs. The dominant reported use is to measure Synthetic recall, and a smaller line of work reports it as measuring Context retrieval, so the recorded links are concentrated on retrieval behaviors rather than spread across many targets. Definitions and snippets also describe it as evaluating maximum effective context length, long-range dependency modeling, information retention over extended contexts, and, as PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training states, \"the maximum distance that a token can attend to during the inference stage.\""
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Across papers, it is usually positioned as a benchmark-style synthetic evaluation, with results reported as retrieval accuracy or accuracy on Passkey Retrieval. Some papers include it as one task within broader synthetic long-context or contextual knowledge understanding evaluations, and some vary difficulty by the depth of the hidden code in the sequence. One reported protocol fine-tunes models to retrieve a random 5-digit code hidden at a random location within a contiguous 2K-token Wiki-Text sample. No other measurement instrument is linked to it."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing usage is a synthetic long-context retrieval task or benchmark in which a model must find and repeat a hidden passkey, usually a random or five-digit code, embedded in long distracting or otherwise meaningless text. Most definitions emphasize random placement or varying depth in the sequence and treat it as a needle-in-haystack test of locating a short target token within a long context. YaRN: Efficient Context Window Extension of Large Language Models describes it as retrieving \"a five-digit number\" from \"a large amount of otherwise meaningless text.\" A smaller line of work mentions n-digit variants, different difficulty levels, or a contiguous 2K-token Wiki-Text sample.\n\nWhat it is claimed to measure. Papers link this instrument to 2 behavioral indicators and no constructs. The dominant reported use is to measure Synthetic recall, and a smaller line of work reports it as measuring Context retrieval, so the recorded links are concentrated on retrieval behaviors rather than spread across many targets. Definitions and snippets also describe it as evaluating maximum effective context length, long-range dependency modeling, information retention over extended contexts, and, as PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training states, \"the maximum distance that a token can attend to during the inference stage.\"\n\nSpace of uses. Across papers, it is usually positioned as a benchmark-style synthetic evaluation, with results reported as retrieval accuracy or accuracy on Passkey Retrieval. Some papers include it as one task within broader synthetic long-context or contextual knowledge understanding evaluations, and some vary difficulty by the depth of the hidden code in the sequence. One reported protocol fine-tunes models to retrieve a random 5-digit code hidden at a random location within a contiguous 2K-token Wiki-Text sample. No other measurement instrument is linked to it.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method",
+      "FocusLLM: Precise Understanding of Long Context by Dynamic Condensing"
+    ],
+    "emnlp25": [
+      "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation"
+    ],
+    "iclr24": [
+      "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+      "LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models",
+      "YaRN: Efficient Context Window Extension of Large Language Models",
+      "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training"
+    ],
+    "iclr25": [
+      "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+      "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+      "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+      "Training Free Exponential Context Extension via Cascading KV Cache"
+    ],
+    "icml25": [
+      "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization",
+      "Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding",
+      "Minerva: A Programmable Memory Test Benchmark for Language Models",
+      "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding",
+      "Understanding and Improving Length Generalization in Recurrent Models"
+    ],
+    "neurips24": [
+      "Selective Attention: Enhancing Transformer through Principled Context Control"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 1,
+    "iclr24": 4,
+    "iclr25": 5,
+    "icml25": 5,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

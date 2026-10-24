@@ -1,0 +1,191 @@
+{
+  "canonical_name": "BLINK",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the prevailing description is of BLINK as a multi-image benchmark, or benchmark suite, for visual perception and reasoning, especially multi-view and spatial relationships. Several papers also describe it as a collection of 14 visual perception tasks that humans can quickly solve, covering indoor, outdoor, and natural scenes; some tasks involve multiple images, including visual similarity and multi-view reasoning, and papers mention Jigsaw and Multi-view reasoning splits. A smaller line of work frames it more generally as a benchmark meant to test whether multimodal language models can perceive as well as see.\n\nWhat it is claimed to measure. Papers link BLINK to five constructs and one behavioral indicator. The most common claim is that it measures multi-image reasoning, with papers using it in multi-image understanding, multi-image tasks, and multi-image analysis settings; smaller strands also use it to measure spatial reasoning, visual perception, and visual reasoning. One survey further reports it as measuring hallucination, and a separate paper treats it as related to long-context understanding rather than as a direct measure, so the reported measurement use is centered on multi-image reasoning but spread across several constructs.\n\nSpace of uses. Papers commonly use BLINK alongside other multi-image or perception-focused evaluations, most often MMMU and Mantis, and also with QBench or QBench2, MMDU, and NLVR2. It is usually positioned as one benchmark within a broader evaluation suite, such as lists of multi-image understanding or perception-focused benchmarks. It is directly linked to one other instrument, MM-NIAH, which uses images from BLINK's Jigsaw and Multi-view reasoning split as image needles.\n\nConcerns raised. A concern appears in long-context evaluation work: BLINK is described as a short-context multi-image comprehension benchmark, and such benchmarks are said to \"fail to evaluate the capability for long-context document comprehension.\"",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "BLINK"
+  ],
+  "papers": [
+    "Design Choices for Extending the Context Length of Visual Language Models",
+    "Weaving Context Across Images: Improving Vision-Language Models through Focus-Centric Visual Chains",
+    "LLaVA-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models",
+    "MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models",
+    "MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?",
+    "MuirBench: A Comprehensive Benchmark for Robust Multi-image Understanding",
+    "TLDR: Token-Level Detective Reward Model for Large Vision Language Models",
+    "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models",
+    "MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs",
+    "Needle In A Multimodal Haystack",
+    "ReMI: A Dataset for Reasoning with Multiple Images",
+    "Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A multi-image benchmark used to evaluate reasoning over multi-view and spatial relationships.",
+      "paper": "MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models",
+      "original_name": "BLINK"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multi-image reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models",
+      "evidence": "\u201cTable 4 presents the the evaluation results on multi-image understanding benchmarks. The evaluation benchmarks consist of ... BLINK ...\u201d",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models",
+          "MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models"
+        ],
+        "acl25": [
+          "Design Choices for Extending the Context Length of Visual Language Models"
+        ],
+        "icml25": [
+          "CoMemo: LVLMs Need Image Context with Image Memory"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual perception",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "LATTE: Learning to Think with Vision Specialists",
+      "evidence": "The perception-focused benchmarks include RealWorldQA, CV-Bench and BLINK (Section 4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LATTE: Learning to Think with Vision Specialists"
+        ],
+        "neurips24": [
+          "Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Needle In A Multimodal Haystack",
+      "evidence": "existing benchmarks for multi-image comprehensions, such as SEED-Bench-2 [25] and BLINK [26], consist of short contexts, which fail to evaluate the capability for long-context document comprehension. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Needle In A Multimodal Haystack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MM-NIAH",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Needle In A Multimodal Haystack",
+      "evidence": "for each evaluation data, images sampled from the Jigsaw and Multi-view reasoning split of BLINK benchmark [26] are inserted into the document to serve as the image needle. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Needle In A Multimodal Haystack"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Spatial reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models",
+      "evidence": "GPT-4o with SKETCHPAD sets a new state of the art on all tasks, including... BLINK spatial reasoning (83.9%)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Towards Rationality in Language and Multimodal Agents: A Survey",
+      "evidence": "Some efforts include POPE (Li et al., 2023g), LLaVA-RLHF (Sun et al., 2023), BLINK (Fu et al., 2024), and Rohrbach et al. (2018); Biten et al. (2022) are the few examples that consider multimodal hallucination. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Towards Rationality in Language and Multimodal Agents: A Survey"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the prevailing description is of BLINK as a multi-image benchmark, or benchmark suite, for visual perception and reasoning, especially multi-view and spatial relationships. Several papers also describe it as a collection of 14 visual perception tasks that humans can quickly solve, covering indoor, outdoor, and natural scenes; some tasks involve multiple images, including visual similarity and multi-view reasoning, and papers mention Jigsaw and Multi-view reasoning splits. A smaller line of work frames it more generally as a benchmark meant to test whether multimodal language models can perceive as well as see."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link BLINK to five constructs and one behavioral indicator. The most common claim is that it measures multi-image reasoning, with papers using it in multi-image understanding, multi-image tasks, and multi-image analysis settings; smaller strands also use it to measure spatial reasoning, visual perception, and visual reasoning. One survey further reports it as measuring hallucination, and a separate paper treats it as related to long-context understanding rather than as a direct measure, so the reported measurement use is centered on multi-image reasoning but spread across several constructs."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers commonly use BLINK alongside other multi-image or perception-focused evaluations, most often MMMU and Mantis, and also with QBench or QBench2, MMDU, and NLVR2. It is usually positioned as one benchmark within a broader evaluation suite, such as lists of multi-image understanding or perception-focused benchmarks. It is directly linked to one other instrument, MM-NIAH, which uses images from BLINK's Jigsaw and Multi-view reasoning split as image needles."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "A concern appears in long-context evaluation work: BLINK is described as a short-context multi-image comprehension benchmark, and such benchmarks are said to \"fail to evaluate the capability for long-context document comprehension.\""
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the prevailing description is of BLINK as a multi-image benchmark, or benchmark suite, for visual perception and reasoning, especially multi-view and spatial relationships. Several papers also describe it as a collection of 14 visual perception tasks that humans can quickly solve, covering indoor, outdoor, and natural scenes; some tasks involve multiple images, including visual similarity and multi-view reasoning, and papers mention Jigsaw and Multi-view reasoning splits. A smaller line of work frames it more generally as a benchmark meant to test whether multimodal language models can perceive as well as see.\n\nWhat it is claimed to measure. Papers link BLINK to five constructs and one behavioral indicator. The most common claim is that it measures multi-image reasoning, with papers using it in multi-image understanding, multi-image tasks, and multi-image analysis settings; smaller strands also use it to measure spatial reasoning, visual perception, and visual reasoning. One survey further reports it as measuring hallucination, and a separate paper treats it as related to long-context understanding rather than as a direct measure, so the reported measurement use is centered on multi-image reasoning but spread across several constructs.\n\nSpace of uses. Papers commonly use BLINK alongside other multi-image or perception-focused evaluations, most often MMMU and Mantis, and also with QBench or QBench2, MMDU, and NLVR2. It is usually positioned as one benchmark within a broader evaluation suite, such as lists of multi-image understanding or perception-focused benchmarks. It is directly linked to one other instrument, MM-NIAH, which uses images from BLINK's Jigsaw and Multi-view reasoning split as image needles.\n\nConcerns raised. A concern appears in long-context evaluation work: BLINK is described as a short-context multi-image comprehension benchmark, and such benchmarks are said to \"fail to evaluate the capability for long-context document comprehension.\"",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Design Choices for Extending the Context Length of Visual Language Models",
+      "Weaving Context Across Images: Improving Vision-Language Models through Focus-Centric Visual Chains"
+    ],
+    "iclr25": [
+      "LLaVA-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models",
+      "MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models",
+      "MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?",
+      "MuirBench: A Comprehensive Benchmark for Robust Multi-image Understanding",
+      "TLDR: Token-Level Detective Reward Model for Large Vision Language Models",
+      "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models"
+    ],
+    "neurips24": [
+      "MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs",
+      "Needle In A Multimodal Haystack",
+      "ReMI: A Dataset for Reasoning with Multiple Images",
+      "Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr25": 6,
+    "neurips24": 4
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "neurips24"
+  ]
+}

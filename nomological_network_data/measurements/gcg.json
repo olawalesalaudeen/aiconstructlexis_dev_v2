@@ -1,0 +1,277 @@
+{
+  "canonical_name": "GCG",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the literature, GCG is most commonly described as Greedy Coordinate Gradient, a white-box or gradient-based jailbreak attack that uses greedy coordinate descent or related gradient optimization to craft adversarial prompts. Definitions usually frame the output as an adversarial suffix, sometimes a universal suffix, appended to a harmful query to elicit unsafe or target responses, though one paper describes attack strings prepended to harmful prompts and another treats successful GCG outputs as a filtered set of jailbreak prompts. A smaller line of work refers to nanoGCG as a lightweight variant and to individual or transfer variants of GCG attacks.\n\nWhat it is claimed to measure. Papers link GCG to four constructs and three behavioral indicators. The prevailing measurement use is for robustness-oriented outcomes, especially Adversarial robustness, with additional use for Harmlessness, Jailbreak resistance, and Harmful content detection, while two other robustness-related constructs are also measured by it; overall, the claims spread across several outcomes rather than converging on a single target. Separate from those measurement links, several papers claim a causal relationship from GCG to Jailbreaking, describing suffixes that aim to circumvent safety alignment or maximize compliant responses.\n\nSpace of uses. The prevailing use is as one of several representative or state-of-the-art jailbreak attacks in evaluation suites, where papers assess defenses or model robustness against GCG alongside PAIR and AutoDAN, and sometimes TAP or DeepInception. Only one other measurement instrument is directly linked to it, CSRT, which one paper reports as related to GCG by comparing CSRT against non-multilingual baselines that include GCG. Other papers use GCG to generate multiple attack strings, universal suffixes, or adversarial prompts for baseline data extraction and filtered prompt sets.\n\nConcerns raised. Only a few papers note usage constraints: GCG is repeatedly described as a white-box method that requires access to the target model's gradients, and one paper contrasts it with AutoDAN by stating that it produces unreadable prompts. These remarks focus on access requirements and prompt form.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "GCG",
+    "Greedy Coordinate Gradients (GCG)",
+    "Greedy Coordinate Gradient Descent",
+    "nanoGCG",
+    "GCG Attack",
+    "GCG attack"
+  ],
+  "papers": [
+    "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+    "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+    "Representation Bending for Large Language Model Safety",
+    "Safety Alignment via Constrained Knowledge Unlearning",
+    "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak",
+    "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+    "Improving Large Language Model Safety with Contrastive Representation Learning",
+    "Reimagining Safety Alignment with An Image",
+    "Speculative Safety-Aware Decoding",
+    "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+    "Backtracking Improves Generation Safety",
+    "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+    "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "Logicbreaks: A Framework for Understanding Subversion of Rule-based Inference",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+    "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+    "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+    "AdvAgent: Controllable Blackbox Red-teaming on Web Agents",
+    "Adversarial Reasoning at Jailbreaking Time",
+    "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+    "Improving LLM Safety Alignment with Dual-Objective Optimization",
+    "LLMScan: Causal Scan for LLM Misbehavior Detection",
+    "Safety Alignment Can Be Not Superficial With Explicit Safety Signals",
+    "Scaling Trends in Language Model Robustness",
+    "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence",
+    "TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs",
+    "When Bad Data Leads to Good Models",
+    "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+    "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+    "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+    "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+    "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+    "A Theoretical Understanding of Self-Correction through In-context Alignment",
+    "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+    "Protecting Your LLMs with Information Bottleneck"
+  ],
+  "paper_count": 37,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Greedy Coordinate Gradient, a white-box jailbreak attack procedure that searches for adversarial suffixes to elicit unsafe responses.",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "original_name": "GCG"
+    },
+    {
+      "text": "An automated jailbreak algorithm that uses a greedy projected coordinate descent method to find an adversarial suffix of tokens that guides a model towards generating a specific, often undesirable, target output.",
+      "paper": "Logicbreaks: A Framework for Understanding Subversion of Rule-based Inference",
+      "original_name": "Greedy Coordinate Gradients (GCG)"
+    },
+    {
+      "text": "nanoGCG is a Greedy Coordinate Gradient method used here as a jailbreak evaluation procedure to generate adversarial prompts.",
+      "paper": "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+      "original_name": "nanoGCG"
+    },
+    {
+      "text": "Greedy Coordinate Gradient Descent (GCG), a white-box adversarial jailbreak procedure that generates attack strings prepended to harmful prompts.",
+      "paper": "TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs",
+      "original_name": "Greedy Coordinate Gradient Descent"
+    },
+    {
+      "text": "A specific implementation of an adversarial suffix attack from Zou et al. (2023b), used to evaluate model robustness.",
+      "paper": "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+      "original_name": "GCG Attack"
+    },
+    {
+      "text": "An adversarial attack procedure generating universal suffixes to bypass model safety filters and test jailbreak resistance.",
+      "paper": "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+      "original_name": "GCG attack"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreak resistance",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We also evaluate the robustness of R2-Guard against SOTA jailbreak attacks including GCG (Zou et al., 2023), PAIR (Chao et al., 2023), TAP (Mehrotra et al., 2023), and AutoDAN (Liu et al., 2023). (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+          "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "Table 1: General model capability metrics and adversarial robustness (measured as ASR) of three LLMs trained using various safety fine-tuning methods. ... GCG ... PAIR ... AutoDAN ... HumanJailbreaks",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ],
+        "icml25": [
+          "Scaling Trends in Language Model Robustness"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+      "evidence": "Table 1 presents a benchmark comparison, displaying harmfulness scores and ASR (attack success rates, shown in brackets) for various defense methods... under several benchmark attacks, including GCG (Section 4.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "CSRT",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+      "evidence": "We compare the CSRT to three non-multilingual red-teaming baselines (i.e., GCG (Zou et al., 2023), AutoDAN (Liu et al., 2024), and PAIR (Chao et al., 2025)). (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "evidence": "\"For safety filtering, SMAAT accurately identified harmful prompts generated by GCG (Zou et al., 2023), achieving 97-100% accuracy.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Explaining the role of Intrinsic Dimensionality in Adversarial Training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "evidence": "\"robustness is assessed via failure rates against the GCG attack\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Explaining the role of Intrinsic Dimensionality in Adversarial Training"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the literature, GCG is most commonly described as Greedy Coordinate Gradient, a white-box or gradient-based jailbreak attack that uses greedy coordinate descent or related gradient optimization to craft adversarial prompts. Definitions usually frame the output as an adversarial suffix, sometimes a universal suffix, appended to a harmful query to elicit unsafe or target responses, though one paper describes attack strings prepended to harmful prompts and another treats successful GCG outputs as a filtered set of jailbreak prompts. A smaller line of work refers to nanoGCG as a lightweight variant and to individual or transfer variants of GCG attacks."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link GCG to four constructs and three behavioral indicators. The prevailing measurement use is for robustness-oriented outcomes, especially Adversarial robustness, with additional use for Harmlessness, Jailbreak resistance, and Harmful content detection, while two other robustness-related constructs are also measured by it; overall, the claims spread across several outcomes rather than converging on a single target. Separate from those measurement links, several papers claim a causal relationship from GCG to Jailbreaking, describing suffixes that aim to circumvent safety alignment or maximize compliant responses."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "The prevailing use is as one of several representative or state-of-the-art jailbreak attacks in evaluation suites, where papers assess defenses or model robustness against GCG alongside PAIR and AutoDAN, and sometimes TAP or DeepInception. Only one other measurement instrument is directly linked to it, CSRT, which one paper reports as related to GCG by comparing CSRT against non-multilingual baselines that include GCG. Other papers use GCG to generate multiple attack strings, universal suffixes, or adversarial prompts for baseline data extraction and filtered prompt sets."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "Only a few papers note usage constraints: GCG is repeatedly described as a white-box method that requires access to the target model's gradients, and one paper contrasts it with AutoDAN by stating that it produces unreadable prompts. These remarks focus on access requirements and prompt form."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the literature, GCG is most commonly described as Greedy Coordinate Gradient, a white-box or gradient-based jailbreak attack that uses greedy coordinate descent or related gradient optimization to craft adversarial prompts. Definitions usually frame the output as an adversarial suffix, sometimes a universal suffix, appended to a harmful query to elicit unsafe or target responses, though one paper describes attack strings prepended to harmful prompts and another treats successful GCG outputs as a filtered set of jailbreak prompts. A smaller line of work refers to nanoGCG as a lightweight variant and to individual or transfer variants of GCG attacks.\n\nWhat it is claimed to measure. Papers link GCG to four constructs and three behavioral indicators. The prevailing measurement use is for robustness-oriented outcomes, especially Adversarial robustness, with additional use for Harmlessness, Jailbreak resistance, and Harmful content detection, while two other robustness-related constructs are also measured by it; overall, the claims spread across several outcomes rather than converging on a single target. Separate from those measurement links, several papers claim a causal relationship from GCG to Jailbreaking, describing suffixes that aim to circumvent safety alignment or maximize compliant responses.\n\nSpace of uses. The prevailing use is as one of several representative or state-of-the-art jailbreak attacks in evaluation suites, where papers assess defenses or model robustness against GCG alongside PAIR and AutoDAN, and sometimes TAP or DeepInception. Only one other measurement instrument is directly linked to it, CSRT, which one paper reports as related to GCG by comparing CSRT against non-multilingual baselines that include GCG. Other papers use GCG to generate multiple attack strings, universal suffixes, or adversarial prompts for baseline data extraction and filtered prompt sets.\n\nConcerns raised. Only a few papers note usage constraints: GCG is repeatedly described as a white-box method that requires access to the target model's gradients, and one paper contrasts it with AutoDAN by stating that it produces unreadable prompts. These remarks focus on access requirements and prompt form.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+      "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+      "Representation Bending for Large Language Model Safety",
+      "Safety Alignment via Constrained Knowledge Unlearning"
+    ],
+    "emnlp25": [
+      "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak",
+      "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+      "Improving Large Language Model Safety with Contrastive Representation Learning",
+      "Reimagining Safety Alignment with An Image",
+      "Speculative Safety-Aware Decoding"
+    ],
+    "iclr25": [
+      "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "Backtracking Improves Generation Safety",
+      "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+      "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "Logicbreaks: A Framework for Understanding Subversion of Rule-based Inference",
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+      "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+      "Safety Alignment Should be Made More Than Just a Few Tokens Deep"
+    ],
+    "icml25": [
+      "AdvAgent: Controllable Blackbox Red-teaming on Web Agents",
+      "Adversarial Reasoning at Jailbreaking Time",
+      "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+      "Improving LLM Safety Alignment with Dual-Objective Optimization",
+      "LLMScan: Causal Scan for LLM Misbehavior Detection",
+      "Safety Alignment Can Be Not Superficial With Explicit Safety Signals",
+      "Scaling Trends in Language Model Robustness",
+      "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence",
+      "TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs",
+      "When Bad Data Leads to Good Models"
+    ],
+    "naacl25": [
+      "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+      "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+      "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+      "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters"
+    ],
+    "neurips24": [
+      "A Theoretical Understanding of Self-Correction through In-context Alignment",
+      "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "Protecting Your LLMs with Information Bottleneck"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 5,
+    "iclr25": 10,
+    "icml25": 10,
+    "naacl25": 5,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

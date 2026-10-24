@@ -1,0 +1,187 @@
+{
+  "canonical_name": "FeTaQA",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across these papers, FeTaQA is most commonly described as a table question answering benchmark or dataset with open-ended, free-form, long-form natural-language answers. Definitions repeatedly say that answering requires fetching multiple entities from a table, aggregating or reasoning over them, sometimes across multiple table sections, and producing a coherent response; one paper also describes it as an English dataset of Wikipedia tables paired with questions, answers, and supporting table cells. A smaller use treats FetaQA as table-language data adapted into training formats for table-language interleaved learning and for training column embeddings, rather than only as an evaluation benchmark.\n\nWhat it is claimed to measure. Papers link FeTaQA to 3 behavioral indicators and 1 construct. The prevailing use is to measure Table question answering, with several papers explicitly naming it as a TableQA benchmark or dataset. Smaller lines of work also report it as measuring Data-to-text generation and Long-form question answering, and one paper uses it to measure Table reasoning, so the recorded links are concentrated on table question answering with a few additional framings.\n\nSpace of uses. Papers do not link it directly to other measurement instruments. In practice, they often place it alongside other tabular benchmarks, especially WikiTQ, and sometimes TabFact, WikiSQL, and HiTab, while one broader task collection includes it with FEVER and HotpotQA. Most commonly it appears as one benchmark in a multi-dataset evaluation suite or main results table, though some papers use it as an external test set and another adapts it for training table-language interleaved models and column embeddings.\n\nConcerns raised. One paper notes that self-consistency is not applicable because FeTaQA is treated as an open-ended generation task. Other papers note that its long-form answers are evaluated with overlap-based metrics such as Sacre-BLEU, or with ROUGE-1, ROUGE-2, and ROUGE-L for the more complex long-form setting.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "FeTaQA",
+    "FetaQA"
+  ],
+  "papers": [
+    "CoT-based Synthesizer: Enhancing LLM Performance through Answer Synthesis",
+    "TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models",
+    "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+    "Chain-of-Knowledge: Grounding Large Language Models via Dynamic Knowledge Adapting over Heterogeneous Sources",
+    "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+    "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+    "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation",
+    "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+    "LLaSA: Large Language and Structured Data Assistant",
+    "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "FeTaQA, a table question answering benchmark with long-form natural-language answers that require fetching multiple entities and reasoning over them.",
+      "paper": "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+      "original_name": "FeTaQA"
+    },
+    {
+      "text": "A table-language dataset adapted here into training formats for table-language interleaved learning.",
+      "paper": "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "original_name": "FetaQA"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Table question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+      "evidence": "CABINET establishes new SoTA on three challenging table QA datasets (WikiTQ, FeTaQA and WikiSQL) significantly outperforming various strong baselines (\u00a7 4.1). (Section 1)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+          "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding"
+        ],
+        "neurips24": [
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ],
+        "naacl25": [
+          "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables"
+        ],
+        "acl25": [
+          "TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models",
+          "CoT-based Synthesizer: Enhancing LLM Performance through Answer Synthesis"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Table reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+      "evidence": "We validate CHAIN-OF-TABLE with three tabular benchmarks to evaluate table-based reasoning: WikiTQ (Pasupat & Liang, 2015), TabFact (Chen et al., 2019), and FeTaQA (Nan et al., 2022). (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt engineering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "evidence": "\u201cwe incorporate table-language interleaved data from existing benchmarks, including FetaQA (Nan et al., 2022), WikiTableQuestion (Pasupat & Liang, 2015), and ToTTo (Parikh et al., 2020).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Data-to-text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation",
+      "evidence": "We first run experiments on four data-to-text generation datasets. ... FeTaQA (Nan et al., 2022) is an English table question answering dataset... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-form question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "evidence": "For more complex tasks in FeTaQA, which involve long-form question answering, we evaluate performance using ROUGE-1, ROUGE-2, and ROUGE-L metrics",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across these papers, FeTaQA is most commonly described as a table question answering benchmark or dataset with open-ended, free-form, long-form natural-language answers. Definitions repeatedly say that answering requires fetching multiple entities from a table, aggregating or reasoning over them, sometimes across multiple table sections, and producing a coherent response; one paper also describes it as an English dataset of Wikipedia tables paired with questions, answers, and supporting table cells. A smaller use treats FetaQA as table-language data adapted into training formats for table-language interleaved learning and for training column embeddings, rather than only as an evaluation benchmark."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link FeTaQA to 3 behavioral indicators and 1 construct. The prevailing use is to measure Table question answering, with several papers explicitly naming it as a TableQA benchmark or dataset. Smaller lines of work also report it as measuring Data-to-text generation and Long-form question answering, and one paper uses it to measure Table reasoning, so the recorded links are concentrated on table question answering with a few additional framings."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers do not link it directly to other measurement instruments. In practice, they often place it alongside other tabular benchmarks, especially WikiTQ, and sometimes TabFact, WikiSQL, and HiTab, while one broader task collection includes it with FEVER and HotpotQA. Most commonly it appears as one benchmark in a multi-dataset evaluation suite or main results table, though some papers use it as an external test set and another adapts it for training table-language interleaved models and column embeddings."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper notes that self-consistency is not applicable because FeTaQA is treated as an open-ended generation task. Other papers note that its long-form answers are evaluated with overlap-based metrics such as Sacre-BLEU, or with ROUGE-1, ROUGE-2, and ROUGE-L for the more complex long-form setting."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across these papers, FeTaQA is most commonly described as a table question answering benchmark or dataset with open-ended, free-form, long-form natural-language answers. Definitions repeatedly say that answering requires fetching multiple entities from a table, aggregating or reasoning over them, sometimes across multiple table sections, and producing a coherent response; one paper also describes it as an English dataset of Wikipedia tables paired with questions, answers, and supporting table cells. A smaller use treats FetaQA as table-language data adapted into training formats for table-language interleaved learning and for training column embeddings, rather than only as an evaluation benchmark.\n\nWhat it is claimed to measure. Papers link FeTaQA to 3 behavioral indicators and 1 construct. The prevailing use is to measure Table question answering, with several papers explicitly naming it as a TableQA benchmark or dataset. Smaller lines of work also report it as measuring Data-to-text generation and Long-form question answering, and one paper uses it to measure Table reasoning, so the recorded links are concentrated on table question answering with a few additional framings.\n\nSpace of uses. Papers do not link it directly to other measurement instruments. In practice, they often place it alongside other tabular benchmarks, especially WikiTQ, and sometimes TabFact, WikiSQL, and HiTab, while one broader task collection includes it with FEVER and HotpotQA. Most commonly it appears as one benchmark in a multi-dataset evaluation suite or main results table, though some papers use it as an external test set and another adapts it for training table-language interleaved models and column embeddings.\n\nConcerns raised. One paper notes that self-consistency is not applicable because FeTaQA is treated as an open-ended generation task. Other papers note that its long-form answers are evaluated with overlap-based metrics such as Sacre-BLEU, or with ROUGE-1, ROUGE-2, and ROUGE-L for the more complex long-form setting.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CoT-based Synthesizer: Enhancing LLM Performance through Answer Synthesis",
+      "TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models"
+    ],
+    "iclr24": [
+      "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+      "Chain-of-Knowledge: Grounding Large Language Models via Dynamic Knowledge Adapting over Heterogeneous Sources",
+      "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding"
+    ],
+    "iclr25": [
+      "Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL",
+      "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation"
+    ],
+    "naacl25": [
+      "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "LLaSA: Large Language and Structured Data Assistant"
+    ],
+    "neurips24": [
+      "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr24": 3,
+    "iclr25": 2,
+    "naacl25": 2,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

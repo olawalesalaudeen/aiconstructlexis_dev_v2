@@ -1,0 +1,205 @@
+{
+  "canonical_name": "OpenAI Moderation API",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most commonly described as an API or public moderation tool for classifying text against safety policies, the instrument is used to assign violation categories or safety scores for content such as hate, harassment, self-harm, sexual content, and violence. Definitions also describe it as providing a binary harmful or safe flag, and in one account a continuous harmfulness score, while papers use it to tag unsafe conversations, assess the safety of text data, and filter toxic content. A smaller line of work describes OpenAI Moderation as a benchmark or evaluation set for query classification, and one paper frames OpenAI-Moderation as a defense mechanism for jailbreak evaluation.\n\nWhat it is claimed to measure. Papers link it to three constructs and three behavioral indicators. The prevailing use is to measure Harmlessness, Toxicity, Safety, Harmful content detection, and Content moderation, with one other behavioral indicator also linked; all of these links concern safety-related content. In the recorded relationships, papers use it to evaluate toxicity and harmfulness of examples, to provide a harmfulness score and a safe or unsafe tag for safety evaluation, and to judge harmful-content outcomes by whether content is flagged.\n\nSpace of uses. No measurement instrument is linked to it. Papers nonetheless use it alongside Detoxify and the Perspective API for unsafe or harmful content detection, and also position it as a conversation-tagging tool, a secondary evaluation method, a preprocessing filter that removes toxic content before training, and moderation testing. Some authors additionally treat OpenAI Moderation as a public benchmark for binary prompt or query classification, and one jailbreak study uses it as a defense strategy that reduces ASR slightly by 3%-8%.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "OpenAI Moderation API",
+    "OpenAI moderation API",
+    "OpenAI Moderation",
+    "OpenAI-Moderation"
+  ],
+  "papers": [
+    "Exploring Chain-of-Thought Reasoning for Steerable Pluralistic Alignment",
+    "Interpretable Mnemonic Generation for Kanji Learning via Expectation-Maximization",
+    "ModelCitizens: Representing Community Voices in Online Safety",
+    "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+    "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+    "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+    "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+    "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+    "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+    "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+    "ELITE: Enhanced Language-Image Toxicity Evaluation for Safety",
+    "M2Lingual: Enhancing Multilingual, Multi-Turn Instruction Alignment in Large Language Models",
+    "A StrongREJECT for Empty Jailbreaks",
+    "ALI-Agent: Assessing LLMs'  Alignment with Human Values via Agent-based Evaluation",
+    "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "OpenAI Moderation API, a content-safety evaluation procedure that assigns violation categories to messages and is used here to tag unsafe conversations and evaluate moderation and jailbreak responses.",
+      "paper": "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+      "original_name": "OpenAI moderation API"
+    },
+    {
+      "text": "Official API provided by OpenAI to classify text content based on safety policies, including categories like hate, harassment, self-harm, and sexual content.",
+      "paper": "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "original_name": "OpenAI Moderation API"
+    },
+    {
+      "text": "A publicly available tool from OpenAI used to assess the safety of text data by scoring it on dimensions like harassment, sexual content, hate speech, and violence.",
+      "paper": "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+      "original_name": "OpenAI Moderation"
+    },
+    {
+      "text": "A defense mechanism and content moderation tool from OpenAI, used in this paper as a procedure to evaluate the robustness of a jailbreak attack.",
+      "paper": "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+      "original_name": "OpenAI-Moderation"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Toxicity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "evidence": "We detect unsafe content using two toxicity classification tools: the OpenAI Moderation API and Detoxify (Section 4).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "WildChat: 1M ChatGPT Interaction Logs in the Wild"
+        ],
+        "iclr25": [
+          "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+      "evidence": "To evaluate the toxicity and harmfulness of the fine-tuning examples by prompting strategy we use OpenAI\u2019s Moderation API. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "evidence": "The success rate for each prompt was determined by whether the chatbot\u2019s response to such a prompt was flagged by either Detoxify or OpenAI Moderation API (Section 4).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "WildChat: 1M ChatGPT Interaction Logs in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Content moderation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+      "evidence": "\"We utilize the OpenAI moderation API4 (Markov et al., 2023) to tag all conversations.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+      "evidence": "To address this limitation, we used the OpenAI Moderation API as a secondary evaluation method. This API provides both a harmfulness score (in [0,1]), where 0 is the least harmful and 1 the most harmful) and a binary tag indicating whether the response is safe.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most commonly described as an API or public moderation tool for classifying text against safety policies, the instrument is used to assign violation categories or safety scores for content such as hate, harassment, self-harm, sexual content, and violence. Definitions also describe it as providing a binary harmful or safe flag, and in one account a continuous harmfulness score, while papers use it to tag unsafe conversations, assess the safety of text data, and filter toxic content. A smaller line of work describes OpenAI Moderation as a benchmark or evaluation set for query classification, and one paper frames OpenAI-Moderation as a defense mechanism for jailbreak evaluation."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to three constructs and three behavioral indicators. The prevailing use is to measure Harmlessness, Toxicity, Safety, Harmful content detection, and Content moderation, with one other behavioral indicator also linked; all of these links concern safety-related content. In the recorded relationships, papers use it to evaluate toxicity and harmfulness of examples, to provide a harmfulness score and a safe or unsafe tag for safety evaluation, and to judge harmful-content outcomes by whether content is flagged."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it. Papers nonetheless use it alongside Detoxify and the Perspective API for unsafe or harmful content detection, and also position it as a conversation-tagging tool, a secondary evaluation method, a preprocessing filter that removes toxic content before training, and moderation testing. Some authors additionally treat OpenAI Moderation as a public benchmark for binary prompt or query classification, and one jailbreak study uses it as a defense strategy that reduces ASR slightly by 3%-8%."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most commonly described as an API or public moderation tool for classifying text against safety policies, the instrument is used to assign violation categories or safety scores for content such as hate, harassment, self-harm, sexual content, and violence. Definitions also describe it as providing a binary harmful or safe flag, and in one account a continuous harmfulness score, while papers use it to tag unsafe conversations, assess the safety of text data, and filter toxic content. A smaller line of work describes OpenAI Moderation as a benchmark or evaluation set for query classification, and one paper frames OpenAI-Moderation as a defense mechanism for jailbreak evaluation.\n\nWhat it is claimed to measure. Papers link it to three constructs and three behavioral indicators. The prevailing use is to measure Harmlessness, Toxicity, Safety, Harmful content detection, and Content moderation, with one other behavioral indicator also linked; all of these links concern safety-related content. In the recorded relationships, papers use it to evaluate toxicity and harmfulness of examples, to provide a harmfulness score and a safe or unsafe tag for safety evaluation, and to judge harmful-content outcomes by whether content is flagged.\n\nSpace of uses. No measurement instrument is linked to it. Papers nonetheless use it alongside Detoxify and the Perspective API for unsafe or harmful content detection, and also position it as a conversation-tagging tool, a secondary evaluation method, a preprocessing filter that removes toxic content before training, and moderation testing. Some authors additionally treat OpenAI Moderation as a public benchmark for binary prompt or query classification, and one jailbreak study uses it as a defense strategy that reduces ASR slightly by 3%-8%.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Exploring Chain-of-Thought Reasoning for Steerable Pluralistic Alignment",
+      "Interpretable Mnemonic Generation for Kanji Learning via Expectation-Maximization",
+      "ModelCitizens: Representing Community Voices in Online Safety",
+      "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs"
+    ],
+    "iclr24": [
+      "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+      "WildChat: 1M ChatGPT Interaction Logs in the Wild"
+    ],
+    "iclr25": [
+      "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs"
+    ],
+    "icml25": [
+      "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+      "ELITE: Enhanced Language-Image Toxicity Evaluation for Safety"
+    ],
+    "neurips24": [
+      "A StrongREJECT for Empty Jailbreaks",
+      "ALI-Agent: Assessing LLMs'  Alignment with Human Values via Agent-based Evaluation",
+      "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs"
+    ],
+    "naacl25": [
+      "M2Lingual: Enhancing Multilingual, Multi-Turn Instruction Alignment in Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 4,
+    "iclr24": 2,
+    "iclr25": 5,
+    "icml25": 2,
+    "neurips24": 3,
+    "naacl25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

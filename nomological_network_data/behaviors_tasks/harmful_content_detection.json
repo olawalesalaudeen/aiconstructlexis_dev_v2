@@ -1,0 +1,604 @@
+{
+  "canonical_name": "Harmful content detection",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the dominant framing is binary classification of text or prompts as harmful, unsafe, toxic, offensive, abusive, threatening, or benign and safe, often with single-label outputs such as \"1/0\" or \"OFF/NOT_OFF\". Most papers apply this to the input alone, but some extend the scope to instruction-response pairs or to checking both model inputs and outputs, including safety filtering that blocks malicious jailbreak attempts. A smaller line of work scores the behavior with an unsafe probability, assigns a risk category, or elicits an explicit articulated judgment about whether a request is harmful.\n\nVariants. Papers use overlapping names for several variants. One common cluster covers text-only moderation tasks such as offensive language, toxicity, threat, abuse, or problematic-turn detection, sometimes at the level of sentences, comments, tweets, or tokens. Another cluster focuses on prompt safety, including harmful prompt or prompt safety classification, instruction-only classification, instruction-response pair classification, harmful request discrimination, and risk identification. A smaller multimodal strand covers harmful meme detection and multimodal risk or unsafe-intent detection over image-text inputs, and one line extends harmful prompt detection across languages, images, and audio.\n\nSpace of elicitation and scores. Papers link this behavior to 21 measurement instruments. The most frequently linked are ToxicChat and XSTest, followed by AdvBench, OpenAI Moderation API, and AIAH; these are used as public benchmarks or datasets for prompt, text, or audio safety classification. The remaining linked instruments span meme datasets, adversarial prompt sets, and multilingual or multimodal benchmarks.\n\nWhat it is taken as evidence of. Among the six linked constructs, only Safety is explicitly measured by this behavior: one paper says the task \"can be used to evaluate the safety of LLMs.\" Other linked constructs are not framed uniformly. Contextual understanding, Cultural knowledge, and Safety alignment are each linked by recorded causal claims directed toward harmful content detection, Generalization is reported to correlate with it, and one additional safety-related construct is linked by a causal claim from harmful content detection to that construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Harmful meme detection",
+    "Offensive language detection",
+    "Toxicity detection",
+    "Threat detection",
+    "Abusive language detection",
+    "Instruction classification",
+    "Harmful content detection",
+    "Unsafe content detection",
+    "Harmful prompt classification",
+    "Prompt Classification",
+    "Toxicity classification",
+    "Harmful prompt detection",
+    "Safety filtering",
+    "Harmful request discrimination",
+    "Unsafe intent identification",
+    "Problematic turn detection",
+    "Violent communication detection",
+    "Harmfulness detection",
+    "Risk identification",
+    "Offensive content detection",
+    "Toxic content detection",
+    "Risk detection",
+    "Prompt safety classification"
+  ],
+  "papers": [
+    "Sinhala Encoder-only Language Models and Evaluation",
+    "Can an Individual Manipulate the Collective Decisions of Multi-Agents?",
+    "ECC: An Emotion-Cause Conversation Dataset for Empathy Response",
+    "GRAID: Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection",
+    "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+    "MCIP: Protecting MCP Safety via Model Contextual Integrity Protocol",
+    "MULTIGUARD: An Efficient Approach for AI Safety Moderation Across Languages and Modalities",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+    "V-VAE: A Variational Auto Encoding Framework Towards Fine-Grained Control over Human-Like Chat",
+    "Words Like Knives: Backstory-Personalized Modeling and Detection of Violent Communication",
+    "Enhancing Chinese Offensive Language Detection with Homophonic Perturbation",
+    "Adapting Bias Evaluation to Domain Contexts using Generative Models",
+    "Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites",
+    "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+    "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+    "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+    "Certifying Language Model Robustness with Fuzzed Randomized Smoothing: An Efficient Defense Against Backdoor Attacks",
+    "Concept Bottleneck Large Language Models",
+    "Emergence of a High-Dimensional Abstraction Phase in Language Transformers",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+    "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+    "MM-RLHF: The Next Step Forward in Multimodal LLM Alignment",
+    "SafetyAnalyst: Interpretable, Transparent, and Steerable Safety Moderation for AI Behavior",
+    "When Bad Data Leads to Good Models",
+    "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+    "Fine-Grained Transfer Learning for Harmful Content Detection through Label-Specific Soft Prompt Tuning",
+    "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+    "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs",
+    "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+    "CulturePark: Boosting Cross-cultural Understanding in Large Language Models",
+    "Towards Comprehensive Detection of Chinese Harmful Memes",
+    "Soft-Label Integration for Robust Toxicity Classification"
+  ],
+  "paper_count": 35,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of performing binary classification on a multimodal meme (image and text) to determine if it is harmful or benign.",
+      "paper": "Towards Comprehensive Detection of Chinese Harmful Memes",
+      "original_name": "Harmful meme detection"
+    },
+    {
+      "text": "Classifying a text as offensive or not offensive based on its content.",
+      "paper": "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "original_name": "Offensive language detection"
+    },
+    {
+      "text": "Classifying text as toxic or non-toxic.",
+      "paper": "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "original_name": "Toxicity detection"
+    },
+    {
+      "text": "Classifying text as containing threats or not.",
+      "paper": "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "original_name": "Threat detection"
+    },
+    {
+      "text": "Classifying text as abusive or non-abusive.",
+      "paper": "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "original_name": "Abusive language detection"
+    },
+    {
+      "text": "The observable task of classifying a given input, such as an instruction or an instruction-response pair, as harmful or not.",
+      "paper": "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "original_name": "Harmful content detection"
+    },
+    {
+      "text": "A specific classification task where the model determines the harmfulness of a user instruction alone, with the response being an empty sequence.",
+      "paper": "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "original_name": "Instruction classification"
+    },
+    {
+      "text": "The observable task of assigning a probability of being unsafe to a given text prompt, based on its adherence to safety policies.",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "original_name": "Unsafe content detection"
+    },
+    {
+      "text": "The task of identifying and categorizing input prompts as either harmful/malicious or benign/safe.",
+      "paper": "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+      "original_name": "Harmful prompt classification"
+    },
+    {
+      "text": "The system assigning a label (harmful or benign) to an input prompt based on its geometric representation.",
+      "paper": "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+      "original_name": "Prompt Classification"
+    },
+    {
+      "text": "The task of classifying a given text prompt or response as either toxic/unsafe or non-toxic/safe.",
+      "paper": "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "original_name": "Toxicity classification"
+    },
+    {
+      "text": "Detecting and rejecting harmful or unsafe user prompts before they are processed by a generative model, implemented using encoder-based LLMs as classifiers.",
+      "paper": "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "original_name": "Safety filtering"
+    },
+    {
+      "text": "The task of identifying user prompts that are designed to elicit harmful or unsafe responses from a language model.",
+      "paper": "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "original_name": "Harmful prompt detection"
+    },
+    {
+      "text": "The model's explicit judgment of whether a user input constitutes a harmful or dangerous request, typically expressed in structured safety assessments.",
+      "paper": "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "original_name": "Harmful request discrimination"
+    },
+    {
+      "text": "The observable process of a model recognizing and articulating the potentially harmful or risky nature of a user's request.",
+      "paper": "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+      "original_name": "Unsafe intent identification"
+    },
+    {
+      "text": "Classifying whether a conversational turn is harmful or conflict-inducing based on linguistic and contextual cues.",
+      "paper": "Words Like Knives: Backstory-Personalized Modeling and Detection of Violent Communication",
+      "original_name": "Problematic turn detection"
+    },
+    {
+      "text": "Classifying a prompt as harmful or safe.",
+      "paper": "Can an Individual Manipulate the Collective Decisions of Multi-Agents?",
+      "original_name": "Harmfulness detection"
+    },
+    {
+      "text": "The model's observable output when classifying whether a given interaction is safe or unsafe, or assigning it to a specific risk category.",
+      "paper": "MCIP: Protecting MCP Safety via Model Contextual Integrity Protocol",
+      "original_name": "Risk identification"
+    },
+    {
+      "text": "The task of identifying harmful, inappropriate, or offensive content in text.",
+      "paper": "V-VAE: A Variational Auto Encoding Framework Towards Fine-Grained Control over Human-Like Chat",
+      "original_name": "Offensive content detection"
+    },
+    {
+      "text": "Identifying and filtering out biased, discriminatory, or violent material in generated dialogues using automated tools like Rewire API.",
+      "paper": "ECC: An Emotion-Cause Conversation Dataset for Empathy Response",
+      "original_name": "Toxic content detection"
+    },
+    {
+      "text": "The observable task of identifying and flagging whether a given multimodal input contains risky or harmful content.",
+      "paper": "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+      "original_name": "Risk detection"
+    },
+    {
+      "text": "The task of categorizing a given user prompt as either safe or unsafe for an AI to respond to.",
+      "paper": "SafetyAnalyst: Interpretable, Transparent, and Steerable Safety Moderation for AI Behavior",
+      "original_name": "Prompt safety classification"
+    }
+  ],
+  "definition_count": 22,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ToxicChat",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We evaluate the guardrail models on six datasets including five standard safety datasets (OpenAI Mod (Markov et al., 2023),ToxicChat (Lin et al., 2023), XSTest (R\u00f6ttger et al., 2023), Overkill (Shi et al., 2024), BeaverTails (Ji et al., 2024)) and (2) our novel safety dataset TwinSafety. (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+          "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models"
+        ],
+        "naacl25": [
+          "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XSTest",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We evaluate the guardrail models on six datasets including five standard safety datasets (OpenAI Mod (Markov et al., 2023),ToxicChat (Lin et al., 2023), XSTest (R\u00f6ttger et al., 2023), Overkill (Shi et al., 2024), BeaverTails (Ji et al., 2024)) and (2) our novel safety dataset TwinSafety. (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+          "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+        ],
+        "naacl25": [
+          "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OpenAI Moderation dataset",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We evaluate the guardrail models on six datasets including five standard safety datasets (OpenAI Mod (Markov et al., 2023),ToxicChat (Lin et al., 2023), XSTest (R\u00f6ttger et al., 2023), Overkill (Shi et al., 2024), BeaverTails (Ji et al., 2024)) and (2) our novel safety dataset TwinSafety. (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+          "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+          "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hateful Memes",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection",
+      "evidence": "We use three publicly available meme datasets for evaluation: (1) HarM (Pramanick et al., 2021a), (2) FHM (Kiela et al., 2020), and (3) MAMI (Fersini et al., 2022). (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection"
+        ],
+        "neurips24": [
+          "VHELM: A Holistic Evaluation of Vision Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AdvBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Can an Individual Manipulate the Collective Decisions of Multi-Agents?",
+      "evidence": "(1) Harmfulness Detection (AdvBench): classify prompts as \u201charmful\u201d or \u201csafe\u201d (Section 4.6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Can an Individual Manipulate the Collective Decisions of Multi-Agents?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cultural knowledge",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Comprehensive Detection of Chinese Harmful Memes",
+      "evidence": "introducing more comprehensive knowledge about Chinese culture are both crucial for effectively detecting harmful memes. (Section 5.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Towards Comprehensive Detection of Chinese Harmful Memes"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Content moderation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "CulturePark: Boosting Cross-cultural Understanding in Large Language Models",
+      "evidence": "We evaluate on 7 content moderation tasks for 8 different cultures to detect the following content: hate speech, offensive language, spam speech, abusive speech, bias speech, threat speech, and stance of speech in zero-shot evaluation (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CulturePark: Boosting Cross-cultural Understanding in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BeaverTails",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We evaluate the guardrail models on six datasets including five standard safety datasets (OpenAI Mod (Markov et al., 2023),ToxicChat (Lin et al., 2023), XSTest (R\u00f6ttger et al., 2023), Overkill (Shi et al., 2024), BeaverTails (Ji et al., 2024)) and (2) our novel safety dataset TwinSafety. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SimpleSafetyTests",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "evidence": "To assess calibration in the context of binary prompt classification, we evaluate performance using a range of public benchmarks, including OpenAI Moderation (Markov et al., 2023), ToxicChat Test (Lin et al., 2023), Aegis Safety Test (Ghosh et al., 2024), SimpleSafetyTests (Vidgen et al., 2023), XSTest (R\u00a8ottger et al., 2023), Harmbench Prompt (Mazeika et al., 2024) and WildGuardMix Test Prompt (Han et al., 2024).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "evidence": "We evaluate the safety guard models on four public benchmark datasets: OpenAI Moderation (OAI; Markov et al., 2023), ToxicChat (Lin et al., 2023), HarmBench (Mazeika et al., 2024), and the test split of WildGuardMix.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WildGuardMix",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "evidence": "We evaluate the safety guard models on four public benchmark datasets: OpenAI Moderation (OAI; Markov et al., 2023), ToxicChat (Lin et al., 2023), HarmBench (Mazeika et al., 2024), and the test split of WildGuardMix.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarM",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection",
+      "evidence": "We use three publicly available meme datasets for evaluation: (1) HarM (Pramanick et al., 2021a), (2) FHM (Kiela et al., 2020), and (3) MAMI (Fersini et al., 2022). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MAMI",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection",
+      "evidence": "We use three publicly available meme datasets for evaluation: (1) HarM (Pramanick et al., 2021a), (2) FHM (Kiela et al., 2020), and (3) MAMI (Fersini et al., 2022). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "MIND: A Multi-agent Framework for Zero-shot Harmful Meme Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ToxiGen",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "When Bad Data Leads to Good Models",
+      "evidence": "we evaluate general capability using MMLU... and toxicity detection using ToxiGen (Section 3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "When Bad Data Leads to Good Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GCG",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "evidence": "\"For safety filtering, SMAAT accurately identified harmful prompts generated by GCG (Zou et al., 2023), achieving 97-100% accuracy.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Explaining the role of Intrinsic Dimensionality in Adversarial Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety awareness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+      "evidence": "MLRMs paradoxically enhances safety performance via long reasoning on safety-awareness benchmarks, due to improved capability in identifying unsafe intent (Section 2.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MultiJail",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MULTIGUARD: An Efficient Approach for AI Safety Moderation Across Languages and Modalities",
+      "evidence": "Table 3 compares the accuracy of detecting harmful prompts for text benchmarks. Table 3(A) shows results for multilingual benchmarks, where OMNIGUARD ... achieves new state-of-the-art performance for 3 benchmarks: MultiJail, RTP-LX, and AyaRedTeaming.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "MULTIGUARD: An Efficient Approach for AI Safety Moderation Across Languages and Modalities"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "COLD",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites",
+      "evidence": "Recent datasets such as ToxiCN (Lu et al., 2023), COLD (Deng et al., 2022), Cdial-bias (Zhou et al., 2022), SWSR (Jiang et al., 2022), and SCCD (Yang et al., 2025b) support toxicity classification but do not provide sentiment-preserving rewrites. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Natural language understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Comprehensive Detection of Chinese Harmful Memes",
+      "evidence": "text comprehension plays a more crucial role than image understanding in the detection of harmful memes.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Towards Comprehensive Detection of Chinese Harmful Memes"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Towards Comprehensive Detection of Chinese Harmful Memes",
+      "evidence": "Considering the potential harm that these memes may cause, this task can be used to evaluate the safety of LLMs. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Towards Comprehensive Detection of Chinese Harmful Memes"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Fine-Grained Transfer Learning for Harmful Content Detection through Label-Specific Soft Prompt Tuning",
+      "evidence": "The increasing proliferation of harmful content and its evolving nature require effective and generalizable detection methods. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Fine-Grained Transfer Learning for Harmful Content Detection through Label-Specific Soft Prompt Tuning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 21,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 16,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the dominant framing is binary classification of text or prompts as harmful, unsafe, toxic, offensive, abusive, threatening, or benign and safe, often with single-label outputs such as \"1/0\" or \"OFF/NOT_OFF\". Most papers apply this to the input alone, but some extend the scope to instruction-response pairs or to checking both model inputs and outputs, including safety filtering that blocks malicious jailbreak attempts. A smaller line of work scores the behavior with an unsafe probability, assigns a risk category, or elicits an explicit articulated judgment about whether a request is harmful."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use overlapping names for several variants. One common cluster covers text-only moderation tasks such as offensive language, toxicity, threat, abuse, or problematic-turn detection, sometimes at the level of sentences, comments, tweets, or tokens. Another cluster focuses on prompt safety, including harmful prompt or prompt safety classification, instruction-only classification, instruction-response pair classification, harmful request discrimination, and risk identification. A smaller multimodal strand covers harmful meme detection and multimodal risk or unsafe-intent detection over image-text inputs, and one line extends harmful prompt detection across languages, images, and audio."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 21 measurement instruments. The most frequently linked are ToxicChat and XSTest, followed by AdvBench, OpenAI Moderation API, and AIAH; these are used as public benchmarks or datasets for prompt, text, or audio safety classification. The remaining linked instruments span meme datasets, adversarial prompt sets, and multilingual or multimodal benchmarks."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Among the six linked constructs, only Safety is explicitly measured by this behavior: one paper says the task \"can be used to evaluate the safety of LLMs.\" Other linked constructs are not framed uniformly. Contextual understanding, Cultural knowledge, and Safety alignment are each linked by recorded causal claims directed toward harmful content detection, Generalization is reported to correlate with it, and one additional safety-related construct is linked by a causal claim from harmful content detection to that construct."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the dominant framing is binary classification of text or prompts as harmful, unsafe, toxic, offensive, abusive, threatening, or benign and safe, often with single-label outputs such as \"1/0\" or \"OFF/NOT_OFF\". Most papers apply this to the input alone, but some extend the scope to instruction-response pairs or to checking both model inputs and outputs, including safety filtering that blocks malicious jailbreak attempts. A smaller line of work scores the behavior with an unsafe probability, assigns a risk category, or elicits an explicit articulated judgment about whether a request is harmful.\n\nVariants. Papers use overlapping names for several variants. One common cluster covers text-only moderation tasks such as offensive language, toxicity, threat, abuse, or problematic-turn detection, sometimes at the level of sentences, comments, tweets, or tokens. Another cluster focuses on prompt safety, including harmful prompt or prompt safety classification, instruction-only classification, instruction-response pair classification, harmful request discrimination, and risk identification. A smaller multimodal strand covers harmful meme detection and multimodal risk or unsafe-intent detection over image-text inputs, and one line extends harmful prompt detection across languages, images, and audio.\n\nSpace of elicitation and scores. Papers link this behavior to 21 measurement instruments. The most frequently linked are ToxicChat and XSTest, followed by AdvBench, OpenAI Moderation API, and AIAH; these are used as public benchmarks or datasets for prompt, text, or audio safety classification. The remaining linked instruments span meme datasets, adversarial prompt sets, and multilingual or multimodal benchmarks.\n\nWhat it is taken as evidence of. Among the six linked constructs, only Safety is explicitly measured by this behavior: one paper says the task \"can be used to evaluate the safety of LLMs.\" Other linked constructs are not framed uniformly. Contextual understanding, Cultural knowledge, and Safety alignment are each linked by recorded causal claims directed toward harmful content detection, Generalization is reported to correlate with it, and one additional safety-related construct is linked by a causal claim from harmful content detection to that construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Can an Individual Manipulate the Collective Decisions of Multi-Agents?",
+      "ECC: An Emotion-Cause Conversation Dataset for Empathy Response",
+      "GRAID: Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection",
+      "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+      "MCIP: Protecting MCP Safety via Model Contextual Integrity Protocol",
+      "MULTIGUARD: An Efficient Approach for AI Safety Moderation Across Languages and Modalities",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+      "V-VAE: A Variational Auto Encoding Framework Towards Fine-Grained Control over Human-Like Chat",
+      "Words Like Knives: Backstory-Personalized Modeling and Detection of Violent Communication",
+      "Enhancing Chinese Offensive Language Detection with Homophonic Perturbation",
+      "Adapting Bias Evaluation to Domain Contexts using Generative Models",
+      "Chinese Toxic Language Mitigation via Sentiment Polarity Consistent Rewrites"
+    ],
+    "iclr25": [
+      "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+      "Certifying Language Model Robustness with Fuzzed Randomized Smoothing: An Efficient Defense Against Backdoor Attacks",
+      "Concept Bottleneck Large Language Models",
+      "Emergence of a High-Dimensional Abstraction Phase in Language Transformers",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+    ],
+    "icml25": [
+      "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "MM-RLHF: The Next Step Forward in Multimodal LLM Alignment",
+      "SafetyAnalyst: Interpretable, Transparent, and Steerable Safety Moderation for AI Behavior",
+      "When Bad Data Leads to Good Models"
+    ],
+    "neurips24": [
+      "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "CulturePark: Boosting Cross-cultural Understanding in Large Language Models",
+      "Towards Comprehensive Detection of Chinese Harmful Memes",
+      "Soft-Label Integration for Robust Toxicity Classification"
+    ],
+    "acl25": [
+      "Sinhala Encoder-only Language Models and Evaluation"
+    ],
+    "naacl25": [
+      "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+      "Fine-Grained Transfer Learning for Harmful Content Detection through Label-Specific Soft Prompt Tuning",
+      "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+      "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 13,
+    "iclr25": 9,
+    "icml25": 4,
+    "neurips24": 4,
+    "acl25": 1,
+    "naacl25": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "canonical_name": "NarrativeQA",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing description is of NarrativeQA as a long-context question-answering or reading-comprehension benchmark over narrative texts, especially entire books and movie scripts or transcripts. Definitions usually describe questions paired or concatenated with long text and require free-form answers, sometimes as full stories with corresponding QA pairs. Some papers place it within the SCROLL benchmark, while one paper instead describes annotators reading novel summaries to write the questions.\n\nWhat it is claimed to measure. Papers use NarrativeQA to measure 3 behavioral indicators and 2 constructs. The dominant measurement claims are for question answering and document question answering, with a smaller line using it for machine reading comprehension. Among constructs, papers most often use it for long-context understanding, and a smaller line uses it for length generalization, including length extrapolation or evaluations with different input context lengths. Overall, the reported uses spread across several closely related QA and long-context targets.\n\nSpace of uses. Papers commonly use NarrativeQA as one benchmark within broader long-context evaluation suites, often alongside QASPER, QuALITY, TriviaQA, QMSum, and ContractNLI. They position it as a long-document or open-book QA test, sometimes reporting F1 and sometimes using different context lengths or zero-shot settings to test whether models can leverage long context. One paper also uses it to generate agentic workflow traces from 14.7K training QA pairs. Among linked instruments, only SCROLLS appears, and one paper treats NarrativeQA as related to it.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "NarrativeQA"
+  ],
+  "papers": [
+    "DTCRS: Dynamic Tree Construction for Recursive Summarization",
+    "Dynamic Chunking and Selection for Reading Comprehension of Ultra-Long Context in Large Language Models",
+    "Efficient OpAmp Adaptation for Zoom Attention to Golden Contexts",
+    "Self-Taught Agentic Long Context Understanding",
+    "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+    "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+    "LiteraryQA: Towards Effective Evaluation of Long-document Narrative QA",
+    "SYNC: A Synthetic Long-Context Understanding Benchmark for Controlled Comparisons of Model Capabilities",
+    "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models",
+    "Functional Interpolation for Relative Positions improves Long Context Transformers",
+    "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+    "RA-DIT: Retrieval-Augmented Dual Instruction Tuning",
+    "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+    "Retrieval meets Long Context Large Language Models",
+    "Vanishing Gradients in Reinforcement Finetuning of Language Models",
+    "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+    "NovelQA: Benchmarking Question Answering on Documents Exceeding 200K Tokens",
+    "SqueezeAttention: 2D Management of KV-Cache in LLM Inference via Layer-wise Optimal Budget",
+    "Compute or Load KV Cache? Why Not Both?",
+    "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models",
+    "LaRA: Benchmarking Retrieval-Augmented Generation and Long-Context LLMs \u2013 No Silver Bullet for LC or RAG Routing",
+    "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+    "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+    "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+    "Make Your LLM Fully Utilize the Context",
+    "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+  ],
+  "paper_count": 28,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A question-answering dataset where the task is to generate free-form answers based on provided text segments, such as stories or book chapters.",
+      "paper": "Functional Interpolation for Relative Positions improves Long Context Transformers",
+      "original_name": "NarrativeQA"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Retrieval meets Long Context Large Language Models",
+      "evidence": "NarrativeQA (NQA) (Ko\u02c7cisk\u00fd et al., 2018) is an established question answering dataset over entire books from Project Gutenberg3 and movie scripts from a list of websites.",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Retrieval meets Long Context Large Language Models",
+          "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval"
+        ],
+        "neurips24": [
+          "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ],
+        "iclr25": [
+          "SqueezeAttention: 2D Management of KV-Cache in LLM Inference via Layer-wise Optimal Budget"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Document question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "We use NarrativeQA (Ko\u02c7cisk\u00b4y et al., 2018) ... for evaluating long-document QA.",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ],
+        "acl25": [
+          "Self-Taught Agentic Long Context Understanding"
+        ],
+        "icml25": [
+          "Compute or Load KV Cache? Why Not Both?"
+        ],
+        "emnlp25": [
+          "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "evidence": "Long-context ability evaluation. Following Xiong et al. [94], we evaluated the models on long-sequence tasks, including ... NarrativeQA [44]... (Table 4, Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Gated Slot Attention for Efficient Linear-Time Sequence Modeling"
+        ],
+        "naacl25": [
+          "SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SCROLLS",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "evidence": "...we evaluate MEGALODON on long-context open-book question answering (QA) tasks in the Scrolls dataset (Shaham et al., 2022), including NarrativeQA (Ko\u02c7cisk\u00b4y et al., 2018)... (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing description is of NarrativeQA as a long-context question-answering or reading-comprehension benchmark over narrative texts, especially entire books and movie scripts or transcripts. Definitions usually describe questions paired or concatenated with long text and require free-form answers, sometimes as full stories with corresponding QA pairs. Some papers place it within the SCROLL benchmark, while one paper instead describes annotators reading novel summaries to write the questions."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use NarrativeQA to measure 3 behavioral indicators and 2 constructs. The dominant measurement claims are for question answering and document question answering, with a smaller line using it for machine reading comprehension. Among constructs, papers most often use it for long-context understanding, and a smaller line uses it for length generalization, including length extrapolation or evaluations with different input context lengths. Overall, the reported uses spread across several closely related QA and long-context targets."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers commonly use NarrativeQA as one benchmark within broader long-context evaluation suites, often alongside QASPER, QuALITY, TriviaQA, QMSum, and ContractNLI. They position it as a long-document or open-book QA test, sometimes reporting F1 and sometimes using different context lengths or zero-shot settings to test whether models can leverage long context. One paper also uses it to generate agentic workflow traces from 14.7K training QA pairs. Among linked instruments, only SCROLLS appears, and one paper treats NarrativeQA as related to it."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing description is of NarrativeQA as a long-context question-answering or reading-comprehension benchmark over narrative texts, especially entire books and movie scripts or transcripts. Definitions usually describe questions paired or concatenated with long text and require free-form answers, sometimes as full stories with corresponding QA pairs. Some papers place it within the SCROLL benchmark, while one paper instead describes annotators reading novel summaries to write the questions.\n\nWhat it is claimed to measure. Papers use NarrativeQA to measure 3 behavioral indicators and 2 constructs. The dominant measurement claims are for question answering and document question answering, with a smaller line using it for machine reading comprehension. Among constructs, papers most often use it for long-context understanding, and a smaller line uses it for length generalization, including length extrapolation or evaluations with different input context lengths. Overall, the reported uses spread across several closely related QA and long-context targets.\n\nSpace of uses. Papers commonly use NarrativeQA as one benchmark within broader long-context evaluation suites, often alongside QASPER, QuALITY, TriviaQA, QMSum, and ContractNLI. They position it as a long-document or open-book QA test, sometimes reporting F1 and sometimes using different context lengths or zero-shot settings to test whether models can leverage long context. One paper also uses it to generate agentic workflow traces from 14.7K training QA pairs. Among linked instruments, only SCROLLS appears, and one paper treats NarrativeQA as related to it.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "DTCRS: Dynamic Tree Construction for Recursive Summarization",
+      "Dynamic Chunking and Selection for Reading Comprehension of Ultra-Long Context in Large Language Models",
+      "Efficient OpAmp Adaptation for Zoom Attention to Golden Contexts",
+      "Self-Taught Agentic Long Context Understanding"
+    ],
+    "emnlp25": [
+      "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+      "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+      "LiteraryQA: Towards Effective Evaluation of Long-document Narrative QA",
+      "SYNC: A Synthetic Long-Context Understanding Benchmark for Controlled Comparisons of Model Capabilities",
+      "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models"
+    ],
+    "iclr24": [
+      "Functional Interpolation for Relative Positions improves Long Context Transformers",
+      "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "RA-DIT: Retrieval-Augmented Dual Instruction Tuning",
+      "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "Retrieval meets Long Context Large Language Models",
+      "Vanishing Gradients in Reinforcement Finetuning of Language Models"
+    ],
+    "iclr25": [
+      "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities",
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "NovelQA: Benchmarking Question Answering on Documents Exceeding 200K Tokens",
+      "SqueezeAttention: 2D Management of KV-Cache in LLM Inference via Layer-wise Optimal Budget"
+    ],
+    "icml25": [
+      "Compute or Load KV Cache? Why Not Both?",
+      "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models",
+      "LaRA: Benchmarking Retrieval-Augmented Generation and Long-Context LLMs \u2013 No Silver Bullet for LC or RAG Routing",
+      "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+    ],
+    "neurips24": [
+      "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+      "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "Make Your LLM Fully Utilize the Context",
+      "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 5,
+    "iclr24": 6,
+    "iclr25": 5,
+    "icml25": 4,
+    "neurips24": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

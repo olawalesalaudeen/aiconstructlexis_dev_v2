@@ -1,0 +1,131 @@
+{
+  "canonical_name": "News summarization",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers that define it, news summarization is treated as producing a concise, shorter summary of a news article. The common success criterion is that the shorter output retain the article's main ideas or essential information, and one formulation makes the setup explicit by stating that the model receives both a prompt and the original article. One prompt example asks for, \"Summarize the news in two sentences. Summary:\".\n\nVariants. Papers mostly use the term for a general article-to-summary task, but they study it in several settings. One paper evaluates it as a zero-shot generative task, another frames it as prompt-based summarization from an article, one prompt formulation constrains the output to two sentences, and one linked resource places news summarization inside a retrieval-augmented generation setup as one of three task types. At least one use is specifically the English summarization subset of XLSum.\n\nSpace of elicitation and scores. Papers link news summarization to three measurement instruments: CNN/DailyMail, RAGTruth, and XLSum. CNN/DailyMail is used for evaluating zero-shot generative performance, XLSum appears as an English summarization subset, and RAGTruth includes news summarization as one of three task types in its data. Two of these instruments are explicitly described as datasets, while the third is described as task data.\n\nWhat it is taken as evidence of. Papers seldom connect this behavior to broader constructs. The only linked construct is Model collapse, and it appears through a measured_by relation: one paper states that using the same amount of synthesized data can yield worse performance than using the original data, \"indicating model collapse.\" No other construct is linked.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "News summarization"
+  ],
+  "papers": [
+    "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification",
+    "Progressive Mixed-Precision Decoding for Efficient LLM Inference",
+    "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability",
+    "Evaluating Small Language Models for News Summarization: Implications and Factors Influencing Performance"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of generating a concise summary of a news article.",
+      "paper": "Progressive Mixed-Precision Decoding for Efficient LLM Inference",
+      "original_name": "News summarization"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RAGTruth",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability",
+      "evidence": "The data includes three RAG task types: Question Answering (QA), Data-to-Text Writing, and News Summarization.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XLSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification",
+      "evidence": "We utilize the English summarization subset of the XLSUM dataset (Hasan et al., 2021)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CNN/DailyMail",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Progressive Mixed-Precision Decoding for Efficient LLM Inference",
+      "evidence": "We conducted experiments on edge-deployable models... evaluating their zero-shot generative performance on news summarization... using the CNN/DM... dataset (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Progressive Mixed-Precision Decoding for Efficient LLM Inference"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Model collapse",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification",
+      "evidence": "We experiment with practical tasks \u2013 computing matrix eigenvalues with transformers and news summarization with LLMs \u2013 which both exhibit model collapse when trained on generated data",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers that define it, news summarization is treated as producing a concise, shorter summary of a news article. The common success criterion is that the shorter output retain the article's main ideas or essential information, and one formulation makes the setup explicit by stating that the model receives both a prompt and the original article. One prompt example asks for, \"Summarize the news in two sentences. Summary:\"."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers mostly use the term for a general article-to-summary task, but they study it in several settings. One paper evaluates it as a zero-shot generative task, another frames it as prompt-based summarization from an article, one prompt formulation constrains the output to two sentences, and one linked resource places news summarization inside a retrieval-augmented generation setup as one of three task types. At least one use is specifically the English summarization subset of XLSum."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link news summarization to three measurement instruments: CNN/DailyMail, RAGTruth, and XLSum. CNN/DailyMail is used for evaluating zero-shot generative performance, XLSum appears as an English summarization subset, and RAGTruth includes news summarization as one of three task types in its data. Two of these instruments are explicitly described as datasets, while the third is described as task data."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers seldom connect this behavior to broader constructs. The only linked construct is Model collapse, and it appears through a measured_by relation: one paper states that using the same amount of synthesized data can yield worse performance than using the original data, \"indicating model collapse.\" No other construct is linked."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers that define it, news summarization is treated as producing a concise, shorter summary of a news article. The common success criterion is that the shorter output retain the article's main ideas or essential information, and one formulation makes the setup explicit by stating that the model receives both a prompt and the original article. One prompt example asks for, \"Summarize the news in two sentences. Summary:\".\n\nVariants. Papers mostly use the term for a general article-to-summary task, but they study it in several settings. One paper evaluates it as a zero-shot generative task, another frames it as prompt-based summarization from an article, one prompt formulation constrains the output to two sentences, and one linked resource places news summarization inside a retrieval-augmented generation setup as one of three task types. At least one use is specifically the English summarization subset of XLSum.\n\nSpace of elicitation and scores. Papers link news summarization to three measurement instruments: CNN/DailyMail, RAGTruth, and XLSum. CNN/DailyMail is used for evaluating zero-shot generative performance, XLSum appears as an English summarization subset, and RAGTruth includes news summarization as one of three task types in its data. Two of these instruments are explicitly described as datasets, while the third is described as task data.\n\nWhat it is taken as evidence of. Papers seldom connect this behavior to broader constructs. The only linked construct is Model collapse, and it appears through a measured_by relation: one paper states that using the same amount of synthesized data can yield worse performance than using the original data, \"indicating model collapse.\" No other construct is linked.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification",
+      "Progressive Mixed-Precision Decoding for Efficient LLM Inference",
+      "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability"
+    ],
+    "naacl25": [
+      "Evaluating Small Language Models for News Summarization: Implications and Factors Influencing Performance"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "naacl25": 1
+  },
+  "conferences": [
+    "iclr25",
+    "naacl25"
+  ]
+}

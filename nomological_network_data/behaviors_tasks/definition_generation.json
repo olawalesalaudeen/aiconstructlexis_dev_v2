@@ -1,0 +1,150 @@
+{
+  "canonical_name": "Definition generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage is broad: generating a short natural-language definition or explanation for a target item. The most explicit formulation asks, given a target word and an example usage, for a definition that is 'grammatical, fluent, and faithful' to the word's meaning in that context; other formulations ask for a title plus opening sentence for an entity mention from retrieved passages, or a brief accessible explanation of unfamiliar or domain-specific terminology. A smaller line treats the behavior as defining a concept in a given domain, and one paper describes failure cases as definition errors that include gross hallucinations.\n\nVariants. Papers study several variants under different names: Definition generation, Entity description generation, Terminology explanation, Terminology interpretation, and Concept definition. These variants span word meaning modeling from usage examples, entity descriptions whose target output is a title plus opening sentence, explanations for non-expert users encountering specialized terms, and domain-specific term interpretation such as explaining 'backlogging' in natural language. A related setting asks whether models trained on individual languages or multiple languages transfer to unseen languages for the task.\n\nSpace of elicitation and scores. Only one linked measurement instrument appears, LLM-as-a-judge. In the recorded use, papers employ an LLM judge to provide qualitative insights into the quality of generated descriptions. No other instrument is linked.\n\nWhat it is taken as evidence of. Rather than treating it as evidence of a construct, papers only link it to one construct, Cross-lingual generalization, through a related relation. In that use, authors ask whether models fine-tuned on individual or multiple languages transfer to unseen languages for the task. No other construct link is recorded.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Terminology explanation",
+    "Entity description generation",
+    "Definition generation",
+    "Terminology interpretation",
+    "Concept definition"
+  ],
+  "papers": [
+    "Definition Generation for Word Meaning Modeling: Monolingual, Multilingual, and Cross-Lingual Perspectives",
+    "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+    "Do Large Language Models Understand Word Senses?",
+    "RAED: Retrieval-Augmented Entity Description Generation for Emerging Entity Linking and Disambiguation",
+    "Rapid Word Learning Through Meta In-Context Learning",
+    "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+    "Potemkin Understanding in Large Language Models"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing a title and definition (opening sentence) for an entity mention by generating text conditioned on retrieved contextual passages.",
+      "paper": "RAED: Retrieval-Augmented Entity Description Generation for Emerging Entity Linking and Disambiguation",
+      "original_name": "Entity description generation"
+    },
+    {
+      "text": "Generating accessible explanations of specialized or unfamiliar terms to support non-expert users in evaluating factual consistency.",
+      "paper": "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+      "original_name": "Terminology explanation"
+    },
+    {
+      "text": "Producing a natural language definition for a target word given its usage in context, ensuring grammaticality, fluency, and faithfulness to meaning.",
+      "paper": "Definition Generation for Word Meaning Modeling: Monolingual, Multilingual, and Cross-Lingual Perspectives",
+      "original_name": "Definition generation"
+    },
+    {
+      "text": "Explaining domain-specific terms (e.g., \u2018backlogging\u2019) in natural language to support accurate modeling and reasoning.",
+      "paper": "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+      "original_name": "Terminology interpretation"
+    },
+    {
+      "text": "Generating a textual explanation that defines a given concept.",
+      "paper": "Potemkin Understanding in Large Language Models",
+      "original_name": "Concept definition"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-lingual generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Definition Generation for Word Meaning Modeling: Monolingual, Multilingual, and Cross-Lingual Perspectives",
+      "evidence": "In this section, we investigate whether models fine-tuned on individual languages (see Section 3) or multiple languages (see Section 4) can transfer their learned knowledge to other, unseen languages for the task of Definition Generation. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Definition Generation for Word Meaning Modeling: Monolingual, Multilingual, and Cross-Lingual Perspectives"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Do Large Language Models Understand Word Senses?",
+      "evidence": "In generating definitions, errors include gross hallucinations as in defining law as 'a system of rules created and enforced through social or governmental institutions to regulate behavior' in a context in which 'legal document setting forth rules governing a particular kind of activity' is the right sense (Section 4.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Do Large Language Models Understand Word Senses?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RAED: Retrieval-Augmented Entity Description Generation for Emerging Entity Linking and Disambiguation",
+      "evidence": "we employ a Large Language Model (LLM) as a judge (LLM-as-a-Judge) (Gu et al., 2024) to provide qualitative insights into the quality of generated descriptions (Section 5.4).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "RAED: Retrieval-Augmented Entity Description Generation for Emerging Entity Linking and Disambiguation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage is broad: generating a short natural-language definition or explanation for a target item. The most explicit formulation asks, given a target word and an example usage, for a definition that is 'grammatical, fluent, and faithful' to the word's meaning in that context; other formulations ask for a title plus opening sentence for an entity mention from retrieved passages, or a brief accessible explanation of unfamiliar or domain-specific terminology. A smaller line treats the behavior as defining a concept in a given domain, and one paper describes failure cases as definition errors that include gross hallucinations."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several variants under different names: Definition generation, Entity description generation, Terminology explanation, Terminology interpretation, and Concept definition. These variants span word meaning modeling from usage examples, entity descriptions whose target output is a title plus opening sentence, explanations for non-expert users encountering specialized terms, and domain-specific term interpretation such as explaining 'backlogging' in natural language. A related setting asks whether models trained on individual languages or multiple languages transfer to unseen languages for the task."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Only one linked measurement instrument appears, LLM-as-a-judge. In the recorded use, papers employ an LLM judge to provide qualitative insights into the quality of generated descriptions. No other instrument is linked."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Rather than treating it as evidence of a construct, papers only link it to one construct, Cross-lingual generalization, through a related relation. In that use, authors ask whether models fine-tuned on individual or multiple languages transfer to unseen languages for the task. No other construct link is recorded."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage is broad: generating a short natural-language definition or explanation for a target item. The most explicit formulation asks, given a target word and an example usage, for a definition that is 'grammatical, fluent, and faithful' to the word's meaning in that context; other formulations ask for a title plus opening sentence for an entity mention from retrieved passages, or a brief accessible explanation of unfamiliar or domain-specific terminology. A smaller line treats the behavior as defining a concept in a given domain, and one paper describes failure cases as definition errors that include gross hallucinations.\n\nVariants. Papers study several variants under different names: Definition generation, Entity description generation, Terminology explanation, Terminology interpretation, and Concept definition. These variants span word meaning modeling from usage examples, entity descriptions whose target output is a title plus opening sentence, explanations for non-expert users encountering specialized terms, and domain-specific term interpretation such as explaining 'backlogging' in natural language. A related setting asks whether models trained on individual languages or multiple languages transfer to unseen languages for the task.\n\nSpace of elicitation and scores. Only one linked measurement instrument appears, LLM-as-a-judge. In the recorded use, papers employ an LLM judge to provide qualitative insights into the quality of generated descriptions. No other instrument is linked.\n\nWhat it is taken as evidence of. Rather than treating it as evidence of a construct, papers only link it to one construct, Cross-lingual generalization, through a related relation. In that use, authors ask whether models fine-tuned on individual or multiple languages transfer to unseen languages for the task. No other construct link is recorded.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Definition Generation for Word Meaning Modeling: Monolingual, Multilingual, and Cross-Lingual Perspectives",
+      "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+      "Do Large Language Models Understand Word Senses?",
+      "RAED: Retrieval-Augmented Entity Description Generation for Emerging Entity Linking and Disambiguation",
+      "Rapid Word Learning Through Meta In-Context Learning"
+    ],
+    "iclr24": [
+      "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems"
+    ],
+    "icml25": [
+      "Potemkin Understanding in Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "iclr24": 1,
+    "icml25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "icml25"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "canonical_name": "BOLD",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across these papers, the prevailing description is an open-ended language generation benchmark, or bias evaluation dataset, for fairness and bias assessment in model outputs. Definitions describe English prompts for bias benchmarking, sometimes specified as Wikipedia-derived prompts spanning five domains, race, gender, profession, religion, and politics; some authors say it assesses sentiment or the affective properties of generated text, and another describes a large-scale setup that prompts models with diverse demographic terms. A smaller line of work also frames it as a fairness and toxicity benchmark, particularly for analyzing gender bias.\n\nWhat it is claimed to measure. Papers link BOLD to 2 constructs and 2 behavioral indicators. The most prevalent claim is that it measures social bias, and a smaller line of work treats it as measuring stereotyping, including analyses of LM gender bias; individual papers also report it as measuring biased content generation and text generation. Across these links, the reported uses stay centered on bias in open-ended generation.\n\nSpace of uses. No other measurement instrument is linked directly to it, but papers also deploy it alongside RealToxicityPrompts, AttaQ, BBQ, Holistic Bias, and TREC-Fair. They position it differently across evaluations: as a primary dataset for text generation in one study, as a general-domain bias assessment framework in another, and as an additional benchmark used to test consistency of detoxification ability in another. Another paper reports improved bias mitigation on both the BBQ and BOLD benchmarks, which places it in comparative benchmark use.\n\nConcerns raised. One paper mentions BOLD together with several other fairness datasets as benchmarks that either suffer from limited size or are based on templates that limit the diversity of sentence syntax and context. That paper does not isolate which of those issues it attributes to BOLD specifically.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "BOLD"
+  ],
+  "papers": [
+    "Building Trust in Clinical LLMs: Bias Analysis and Dataset Transparency",
+    "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+    "KLAAD: Refining Attention Mechanisms to Reduce Societal Bias in Generative Language Models",
+    "Your RAG is Unfair: Exposing Fairness Vulnerabilities in Retrieval-Augmented Generation via Backdoor Attacks",
+    "Certifying Counterfactual Bias in LLMs",
+    "Large Language Models can Become Strong Self-Detoxifiers",
+    "On Speeding Up Language Model Evaluation"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark dataset used to evaluate fairness and toxicity in language models, particularly for analyzing biases like gender bias.",
+      "paper": "Large Language Models can Become Strong Self-Detoxifiers",
+      "original_name": "BOLD"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Social bias",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+      "evidence": "BOLD is an open-ended language generation dataset that provides English text generation prompts for bias benchmarking across five domains. (Section 3.2)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+          "KLAAD: Refining Attention Mechanisms to Reduce Societal Bias in Generative Language Models",
+          "Building Trust in Clinical LLMs: Bias Analysis and Dataset Transparency"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Biased content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Your RAG is Unfair: Exposing Fairness Vulnerabilities in Retrieval-Augmented Generation via Backdoor Attacks",
+      "evidence": "For text generation, we primarily use the BOLD dataset (Dhamala et al., 2021), and other fairness benchmark datasets Holistic Bias (Smith et al., 2022) and TREC-Fair (Ekstrand et al., 2023). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Your RAG is Unfair: Exposing Fairness Vulnerabilities in Retrieval-Augmented Generation via Backdoor Attacks"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Gender bias",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models can Become Strong Self-Detoxifiers",
+      "evidence": "Additionally, we further conducted an experiment where we use the BOLD dataset to analyze LM gender bias, results are shown in appendix Table 13. (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Large Language Models can Become Strong Self-Detoxifiers"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across these papers, the prevailing description is an open-ended language generation benchmark, or bias evaluation dataset, for fairness and bias assessment in model outputs. Definitions describe English prompts for bias benchmarking, sometimes specified as Wikipedia-derived prompts spanning five domains, race, gender, profession, religion, and politics; some authors say it assesses sentiment or the affective properties of generated text, and another describes a large-scale setup that prompts models with diverse demographic terms. A smaller line of work also frames it as a fairness and toxicity benchmark, particularly for analyzing gender bias."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link BOLD to 2 constructs and 2 behavioral indicators. The most prevalent claim is that it measures social bias, and a smaller line of work treats it as measuring stereotyping, including analyses of LM gender bias; individual papers also report it as measuring biased content generation and text generation. Across these links, the reported uses stay centered on bias in open-ended generation."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No other measurement instrument is linked directly to it, but papers also deploy it alongside RealToxicityPrompts, AttaQ, BBQ, Holistic Bias, and TREC-Fair. They position it differently across evaluations: as a primary dataset for text generation in one study, as a general-domain bias assessment framework in another, and as an additional benchmark used to test consistency of detoxification ability in another. Another paper reports improved bias mitigation on both the BBQ and BOLD benchmarks, which places it in comparative benchmark use."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper mentions BOLD together with several other fairness datasets as benchmarks that either suffer from limited size or are based on templates that limit the diversity of sentence syntax and context. That paper does not isolate which of those issues it attributes to BOLD specifically."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across these papers, the prevailing description is an open-ended language generation benchmark, or bias evaluation dataset, for fairness and bias assessment in model outputs. Definitions describe English prompts for bias benchmarking, sometimes specified as Wikipedia-derived prompts spanning five domains, race, gender, profession, religion, and politics; some authors say it assesses sentiment or the affective properties of generated text, and another describes a large-scale setup that prompts models with diverse demographic terms. A smaller line of work also frames it as a fairness and toxicity benchmark, particularly for analyzing gender bias.\n\nWhat it is claimed to measure. Papers link BOLD to 2 constructs and 2 behavioral indicators. The most prevalent claim is that it measures social bias, and a smaller line of work treats it as measuring stereotyping, including analyses of LM gender bias; individual papers also report it as measuring biased content generation and text generation. Across these links, the reported uses stay centered on bias in open-ended generation.\n\nSpace of uses. No other measurement instrument is linked directly to it, but papers also deploy it alongside RealToxicityPrompts, AttaQ, BBQ, Holistic Bias, and TREC-Fair. They position it differently across evaluations: as a primary dataset for text generation in one study, as a general-domain bias assessment framework in another, and as an additional benchmark used to test consistency of detoxification ability in another. Another paper reports improved bias mitigation on both the BBQ and BOLD benchmarks, which places it in comparative benchmark use.\n\nConcerns raised. One paper mentions BOLD together with several other fairness datasets as benchmarks that either suffer from limited size or are based on templates that limit the diversity of sentence syntax and context. That paper does not isolate which of those issues it attributes to BOLD specifically.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Certifying Counterfactual Bias in LLMs",
+      "Large Language Models can Become Strong Self-Detoxifiers",
+      "On Speeding Up Language Model Evaluation"
+    ],
+    "emnlp25": [
+      "Building Trust in Clinical LLMs: Bias Analysis and Dataset Transparency",
+      "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+      "KLAAD: Refining Attention Mechanisms to Reduce Societal Bias in Generative Language Models",
+      "Your RAG is Unfair: Exposing Fairness Vulnerabilities in Retrieval-Augmented Generation via Backdoor Attacks"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "emnlp25": 4
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25"
+  ]
+}

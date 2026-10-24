@@ -1,0 +1,133 @@
+{
+  "canonical_name": "Dialogue state tracking",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats dialogue state tracking as turn-by-turn extraction and maintenance of a user's dialogue state in task-oriented, multi-turn conversation. Most definitions describe that state as slot-value pairs or domain-slot-value triples, used to represent users' goals, constraints, requests, or other information needed to fulfill the user's goal, and one paper states that the task \"predicts a set of domain-slot-value triples\" while another says the output is represented as slot-value pairs.\n\nVariants. Most papers keep the setting at task-oriented dialogue, but they vary in representation and framing: some foreground domain-slot-value triples, while others frame the state as slot-value pairs tied to users' goals, constraints, or requests. Related formulations also appear: one paper reports reformulating dialogue state tracking as a question-answering task for less capable models, and another paper claims a causal relationship from chain of thought to dialogue state tracking, reporting about a 10% improvement in zero-shot accuracy when CoT from an earlier step is incorporated.\n\nSpace of elicitation and scores. Dialogue state tracking is linked to 1 measurement instrument, SGD, which papers use as a dataset benchmark for comparative results on the task. No other measurement instrument is linked.\n\nWhat it is taken as evidence of. The construct links are mixed rather than uniform. Papers link dialogue state tracking to 2 constructs: it is related to Dialogue understanding in work that says DST supports understanding user needs and executing appropriate system actions, and another paper uses DST to evaluate information accuracy, recorded as Faithfulness being measured by dialogue state tracking. Taken together, the papers do not converge on a single construct that this behavior indicates.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Dialogue state tracking"
+  ],
+  "papers": [
+    "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation",
+    "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning",
+    "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding",
+    "PicPersona-TOD : A Dataset for Personalizing Utterance Style in Task-Oriented Dialogue with Image Persona",
+    "Prototype Conditioned Generative Replay for Continual Learning in NLP"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of identifying and updating domain-slot-value triples across conversation turns to reflect the evolving user intent in a task-oriented dialogue.",
+      "paper": "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation",
+      "original_name": "Dialogue state tracking"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Dialogue understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding",
+      "evidence": "Dialogue State Tracking (DST) is crucial for understanding user needs and executing appropriate system actions in task-oriented dialogues.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding",
+      "evidence": "Our approach includes reformulating DST as a question-answering task for less capable models and employing self-refining prompts for more adaptable ones.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SGD",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding",
+      "evidence": "Our main results for the DST task are given Table 2, offering a comparative analysis of various language models on the MultiWOZ 2.1, 2.4 and SGD datasets.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation",
+      "evidence": "The results in Table 4 show that incorporating the CoT from Step 1 provides an approximately 10% improvement in zero-shot accuracy by offering a more robust representation for each turn. (Section 4.6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats dialogue state tracking as turn-by-turn extraction and maintenance of a user's dialogue state in task-oriented, multi-turn conversation. Most definitions describe that state as slot-value pairs or domain-slot-value triples, used to represent users' goals, constraints, requests, or other information needed to fulfill the user's goal, and one paper states that the task \"predicts a set of domain-slot-value triples\" while another says the output is represented as slot-value pairs."
+    },
+    {
+      "label": "Variants.",
+      "text": "Most papers keep the setting at task-oriented dialogue, but they vary in representation and framing: some foreground domain-slot-value triples, while others frame the state as slot-value pairs tied to users' goals, constraints, or requests. Related formulations also appear: one paper reports reformulating dialogue state tracking as a question-answering task for less capable models, and another paper claims a causal relationship from chain of thought to dialogue state tracking, reporting about a 10% improvement in zero-shot accuracy when CoT from an earlier step is incorporated."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Dialogue state tracking is linked to 1 measurement instrument, SGD, which papers use as a dataset benchmark for comparative results on the task. No other measurement instrument is linked."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "The construct links are mixed rather than uniform. Papers link dialogue state tracking to 2 constructs: it is related to Dialogue understanding in work that says DST supports understanding user needs and executing appropriate system actions, and another paper uses DST to evaluate information accuracy, recorded as Faithfulness being measured by dialogue state tracking. Taken together, the papers do not converge on a single construct that this behavior indicates."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats dialogue state tracking as turn-by-turn extraction and maintenance of a user's dialogue state in task-oriented, multi-turn conversation. Most definitions describe that state as slot-value pairs or domain-slot-value triples, used to represent users' goals, constraints, requests, or other information needed to fulfill the user's goal, and one paper states that the task \"predicts a set of domain-slot-value triples\" while another says the output is represented as slot-value pairs.\n\nVariants. Most papers keep the setting at task-oriented dialogue, but they vary in representation and framing: some foreground domain-slot-value triples, while others frame the state as slot-value pairs tied to users' goals, constraints, or requests. Related formulations also appear: one paper reports reformulating dialogue state tracking as a question-answering task for less capable models, and another paper claims a causal relationship from chain of thought to dialogue state tracking, reporting about a 10% improvement in zero-shot accuracy when CoT from an earlier step is incorporated.\n\nSpace of elicitation and scores. Dialogue state tracking is linked to 1 measurement instrument, SGD, which papers use as a dataset benchmark for comparative results on the task. No other measurement instrument is linked.\n\nWhat it is taken as evidence of. The construct links are mixed rather than uniform. Papers link dialogue state tracking to 2 constructs: it is related to Dialogue understanding in work that says DST supports understanding user needs and executing appropriate system actions, and another paper uses DST to evaluate information accuracy, recorded as Faithfulness being measured by dialogue state tracking. Taken together, the papers do not converge on a single construct that this behavior indicates.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "From Schema to State: Zero-Shot Scheme-Only Dialogue State Tracking via Diverse Synthetic Dialogue and Step-by-Step Distillation",
+      "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning"
+    ],
+    "naacl25": [
+      "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding",
+      "PicPersona-TOD : A Dataset for Personalizing Utterance Style in Task-Oriented Dialogue with Image Persona",
+      "Prototype Conditioned Generative Replay for Continual Learning in NLP"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "naacl25": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "naacl25"
+  ]
+}

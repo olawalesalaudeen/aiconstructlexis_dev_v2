@@ -1,0 +1,84 @@
+{
+  "canonical_name": "Pseudo-label generation",
+  "type": "behavior",
+  "canonical_definition": "Across the surveyed literature, pseudo-label generation is most commonly described as a technique where a large language model acts as a 'teacher model' to generate labels for unlabeled data. This process is frequently used to expand the training set for smaller models, a practice associated with knowledge distillation. However, the specific implementation and data modality vary; some work applies this to 'unlabeled node pairs' for graph-based tasks, while other papers describe generating labels for 'unlabeled code snippets' using model confidence or a 'symbolic module'. A distinct application involves using multimodal large language models to create 'rich pseudo-labels' for images through simulated dialogues, producing 'fine-grained and diverse visual descriptions' without manual supervision. In terms of application, pseudo-label generation is operationalized to support tasks such as text classification, where LLMs generate labels for unlabeled texts via 'task-specific prompting'. The behavior is also studied in the context of zero-shot learning.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/training pipeline: LLM-as-teacher pseudo-labeling to build training data for knowledge distillation",
+  "names": [
+    "Pseudo-label generation"
+  ],
+  "papers": [
+    "Chat-Driven Text Generation and Interaction for Person Retrieval",
+    "LLM-Guided Co-Training for Text Classification",
+    "Exploring the Potential of Large Language Models for Heterophilic Graphs",
+    "TCProF:Time-Complexity Prediction SSL Framework"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Using a fine-tuned large language model to generate labels for unlabeled node pairs to expand the training set for smaller models during knowledge distillation.",
+      "paper": "TCProF:Time-Complexity Prediction SSL Framework",
+      "original_name": "Pseudo-label generation"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Zero-shot generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Entity Alignment with Noisy Annotations from Large Language Models",
+      "evidence": "Leveraging the LLMs\u2019 zero-shot learning capability, this framework generates pseudo-labels, providing a foundation for entity alignment without ground truth labels. (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Entity Alignment with Noisy Annotations from Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LLM-Guided Co-Training for Text Classification",
+      "evidence": "We utilize LLMs to generate pseudo-labels for unlabeled texts through task-specific prompting designed for classification. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LLM-Guided Co-Training for Text Classification"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, pseudo-label generation is most commonly described as a technique where a large language model acts as a 'teacher model' to generate labels for unlabeled data. This process is frequently used to expand the training set for smaller models, a practice associated with knowledge distillation. However, the specific implementation and data modality vary; some work applies this to 'unlabeled node pairs' for graph-based tasks, while other papers describe generating labels for 'unlabeled code snippets' using model confidence or a 'symbolic module'. A distinct application involves using multimodal large language models to create 'rich pseudo-labels' for images through simulated dialogues, producing 'fine-grained and diverse visual descriptions' without manual supervision. In terms of application, pseudo-label generation is operationalized to support tasks such as text classification, where LLMs generate labels for unlabeled texts via 'task-specific prompting'. The behavior is also studied in the context of zero-shot learning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Chat-Driven Text Generation and Interaction for Person Retrieval",
+      "LLM-Guided Co-Training for Text Classification"
+    ],
+    "naacl25": [
+      "Exploring the Potential of Large Language Models for Heterophilic Graphs",
+      "TCProF:Time-Complexity Prediction SSL Framework"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "naacl25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "naacl25"
+  ]
+}

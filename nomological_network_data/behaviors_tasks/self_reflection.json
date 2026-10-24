@@ -1,0 +1,629 @@
+{
+  "canonical_name": "Self-reflection",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is an iterative review of the model's own prior outputs, actions, or reasoning to diagnose errors and produce feedback for a next attempt. Most definitions center on incorrect predictions, failed trajectories, past decisions, or prior code, and treat success as yielding a revised answer, plan, decision, or retrieval action after reflection. A smaller line of work describes it more broadly as a latent ability or cognitive process for critically evaluating earlier responses, selecting a more plausible solution, or learning from self-generated data, and some papers narrow the reflective act itself to explicit judgments such as GOOD or BAD labels or safety scores with <reflection> tags.\n\nVariants. Variants mainly differ in what is reflected on and in the form of the reflection. Several papers use names such as self-feedback, reflection on failure cases, error reflection, and self-reflection generation for diagnosing incorrect outputs or failed attempts and verbalizing reasons or future fixes. Others separate short-term reflection, a comparison of two parent heuristics, from long-term reflection, a summary of lessons accumulated across those comparisons. Additional variants include reflection generation as short natural-language judgments about actions, reflection step generation as verification moves like \"Let's verify,\" self-QA reflection during planning, and verbal reflection after failed task trajectories; these variants appear in code, heuristic search, retrieval routing, safety reasoning, driving, multimodal alignment, games, and agent planning.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through prompts or workflow modules, sometimes using the same model and sometimes a separate reflector or critic module, to elicit error analysis before correction, analysis of failed trajectories, critique of prior steps in reverse order, or feedback on plans and decisions. Some schemes require structured reflective outputs, including explicit <reflection> tags, safety scores in [0.0, 1.0], Satisfied or Unsatisfied or Unsure outcomes for plans, or short GOOD or BAD judgments about whether an action was appropriate.\n\nWhat it is taken as evidence of. Papers connect it to 15 constructs, most often by claiming a causal relationship from self-reflection to Reasoning. Planning and System 2 thinking are less uniform: some papers claim a causal relationship from self-reflection to Planning, others report Planning as related to self-reflection, one paper reports self-reflection as related to System 2 thinking, and another claims a causal relationship from System 2 thinking to self-reflection. Action planning is only reported as related to self-reflection, Agency appears as the target of a causal relationship from self-reflection, and papers also link it to 10 other constructs. Overall, papers do not converge on a single construct, and the recorded links mix causal and related framings.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Self-reflection",
+    "Self-feedback",
+    "Reflection on failure cases",
+    "Short-term reflection",
+    "Long-term reflection",
+    "Reflection",
+    "Reflection generation",
+    "Reflection step generation",
+    "Self-QA reflection",
+    "Error reflection",
+    "Self-reflection generation",
+    "Verbal reflection"
+  ],
+  "papers": [
+    "ACT: Knowledgeable Agents to Design and Perform Complex Tasks",
+    "Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger",
+    "Agentic Knowledgeable Self-awareness",
+    "Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?",
+    "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+    "FineReason: Evaluating and Improving LLMs' Deliberate Reasoning through Reflective Puzzle Solving",
+    "From Objectives to Questions: A Planning-based Framework for Educational Mathematical Question Generation",
+    "G\u00f6del Agent: A Self-Referential Agent Framework for Recursively Self-Improvement",
+    "HybGRAG: Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases",
+    "INVESTORBENCH: A Benchmark for Financial Decision-Making Tasks with LLM-based Agent",
+    "Innovative Image Fraud Detection with Cross-Sample Anomaly Analysis: The Power of LLMs",
+    "Meta-Reflection: A Feedback-Free Reflection Learning Framework",
+    "OmniCharacter: Towards Immersive Role-Playing Agents with Seamless Speech-Language Personality Interaction",
+    "ReflecTool: Towards Reflection-Aware Tool-Augmented Clinical Agents",
+    "Reversal of Thought: Enhancing Large Language Models with Preference-Guided Reverse Reasoning Warm-up",
+    "Think&Cite: Improving Attributed Text Generation with Self-Guided Tree Search and Progress Reward Modeling",
+    "What Makes a Good Natural Language Prompt?",
+    "CRITICTOOL: Evaluating Self-Critique Capabilities of Large Language Models in Tool-Calling Error Scenarios",
+    "Coarse-to-Fine Grounded Memory for LLM Agent Planning",
+    "ConCISE: Confidence-guided Compression in Step-by-step Efficient Reasoning",
+    "Dipper: Diversity in Prompts for Producing Large Language Model Ensembles in Reasoning Tasks",
+    "Do LLMs Adhere to Label Definitions? Examining Their Receptivity to External Label Definitions",
+    "Generator-Assistant Stepwise Rollback Framework for Large Language Model Agent",
+    "LLMs Don't Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+    "LLMs are Better Than You Think: Label-Guided In-Context Learning for Named Entity Recognition",
+    "MOSAIC: Modeling Social AI for Content Dissemination and Regulation in Multi-Agent Simulations",
+    "Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLMs",
+    "MetaFaith: Faithful Natural Language Uncertainty Expression in LLMs",
+    "RaDeR: Reasoning-aware Dense Retrieval Models",
+    "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+    "ThinkTuning: Instilling Cognitive Reflections without Distillation",
+    "Warm Up Before You Train: Unlocking General Reasoning in Resource-Constrained Settings",
+    "Chain of Hindsight aligns Language Models with Feedback",
+    "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+    "DiLu: A Knowledge-Driven Approach to Autonomous Driving with Large Language Models",
+    "PromptAgent: Strategic Planning with Language Models Enables Expert-level Prompt Optimization",
+    "Retroformer: Retrospective Large Language Agents with Policy Gradient Optimization",
+    "Active Task Disambiguation with LLMs",
+    "AutoG: Towards automatic graph construction from tabular data",
+    "Automated Design of Agentic Systems",
+    "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+    "Enhancing Language Model Agents using Diversity of Thoughts",
+    "Evaluating Large Language Models through Role-Guide and Self-Reflection: A Comparative Study",
+    "From Exploration to Mastery: Enabling LLMs to Master Tools via Self-Driven Interactions",
+    "Human Simulacra: Benchmarking the Personification of Large Language Models",
+    "Inspection and Control of Self-Generated-Text Recognition Ability in Llama3-8b-Instruct",
+    "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+    "Learning to Plan Before Answering: Self-Teaching LLMs to Learn Abstract Plans for Problem Solving",
+    "Looking Inward: Language Models Can Learn About Themselves by Introspection",
+    "MR-GSM8K: A Meta-Reasoning Benchmark for Large Language Model Evaluation",
+    "REvolve: Reward Evolution with Large Language Models using Human Feedback",
+    "Re-Aligning Language to Visual Objects with an Agentic Workflow",
+    "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION",
+    "Monte Carlo Planning with Large Language Model for Text-Based Game Agents",
+    "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+    "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance",
+    "Cradle: Empowering Foundation Agents towards General Computer Control",
+    "Enhancing Decision-Making of Large Language Models via Actor-Critic",
+    "Otter: Generating Tests from Issues to Validate SWE Patches",
+    "Position: LLMs Need a Bayesian Meta-Reasoning Framework for More Robust and Generalizable Reasoning",
+    "Position: Truly Self-Improving Agents Require Intrinsic Metacognitive Learning",
+    "RZ-NAS: Enhancing LLM-guided Neural Architecture Search via Reflective Zero-Cost Strategy",
+    "Ranked from Within: Ranking Large Multimodal Models Without Labels",
+    "Reinforce LLM Reasoning through Multi-Agent Reflection",
+    "Revolve: Optimizing AI Systems by Tracking Response Evolution in Textual Optimization",
+    "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+    "Safety Reasoning with Guidelines",
+    "SyncMind: Measuring Agent Out-of-Sync Recovery in Collaborative Software Engineering",
+    "Which Agent Causes Task Failures and When? On Automated Failure Attribution of LLM Multi-Agent Systems",
+    "CRMArena: Understanding the Capacity of LLM Agents to Perform Professional CRM Tasks in Realistic Environments",
+    "CSR-Bench: Benchmarking LLM Agents in Deployment of Computer Science Research Repositories",
+    "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+    "Improving Retrospective Language Agents via Joint Policy Gradient Optimization",
+    "Towards Rationality in Language and Multimodal Agents: A Survey",
+    "A Decision-Language Model (DLM) for Dynamic Restless Multi-Armed Bandit Tasks in Public Health",
+    "AGILE: A Novel Reinforcement Learning Framework of LLM Agents",
+    "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+    "AutoGuide: Automated Generation and Selection of Context-Aware Guidelines for Large Language Model Agents",
+    "Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study",
+    "FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making",
+    "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+    "Me, Myself, and AI: The Situational Awareness Dataset (SAD) for LLMs",
+    "Optimus-1: Hybrid Multimodal Memory Empowered Agents Excel in Long-Horizon Tasks",
+    "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+    "Richelieu: Self-Evolving LLM-Based Agents for AI Diplomacy",
+    "RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts"
+  ],
+  "paper_count": 86,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior of generating an analysis or explanation of errors in code before attempting to correct them, often integrated into the generation prompt.",
+      "paper": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+      "original_name": "Self-reflection"
+    },
+    {
+      "text": "An observable process where a model analyzes its own incorrect outputs, reflects on the errors, and attempts to generate an improved response.",
+      "paper": "AutoGuide: Automated Generation and Selection of Context-Aware Guidelines for Large Language Model Agents",
+      "original_name": "Self-feedback"
+    },
+    {
+      "text": "The behavior of analyzing incorrect outputs to understand the cause of the error and verbalize reasons for the failure.",
+      "paper": "Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study",
+      "original_name": "Reflection on failure cases"
+    },
+    {
+      "text": "The observable behavior of an LLM generating a comparative analysis of two parent heuristics to provide guidance for creating an improved offspring.",
+      "paper": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "original_name": "Short-term reflection"
+    },
+    {
+      "text": "The observable behavior of an LLM summarizing and distilling insights from multiple short-term reflections to guide future heuristic improvements.",
+      "paper": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "original_name": "Long-term reflection"
+    },
+    {
+      "text": "Analyzing generated outputs to provide feedback for refining expressions in subsequent workflow cycles.",
+      "paper": "Re-Aligning Language to Visual Objects with an Agentic Workflow",
+      "original_name": "Reflection"
+    },
+    {
+      "text": "The production of short natural language judgments (e.g., 'This step is GOOD') about the appropriateness of past or candidate actions, used to enhance evaluation accuracy.",
+      "paper": "Enhancing Decision-Making of Large Language Models via Actor-Critic",
+      "original_name": "Reflection generation"
+    },
+    {
+      "text": "The observable act of a model generating a reasoning step that questions or verifies a prior step, often indicated by phrases like 'Let\u2019s verify' or 'Wait, we can also check'.",
+      "paper": "ConCISE: Confidence-guided Compression in Step-by-step Efficient Reasoning",
+      "original_name": "Reflection step generation"
+    },
+    {
+      "text": "Answering self-generated questions about the current trajectory to support reflective correction during planning.",
+      "paper": "Coarse-to-Fine Grounded Memory for LLM Agent Planning",
+      "original_name": "Self-QA reflection"
+    },
+    {
+      "text": "The observable process where a model identifies that an error occurred in a previous step and analyzes its specific category.",
+      "paper": "CRITICTOOL: Evaluating Self-Critique Capabilities of Large Language Models in Tool-Calling Error Scenarios",
+      "original_name": "Error reflection"
+    },
+    {
+      "text": "Producing a verbal summary of past failures that includes diagnostic reasoning and proposed improvements for future attempts.",
+      "paper": "Retroformer: Retrospective Large Language Agents with Policy Gradient Optimization",
+      "original_name": "Self-reflection generation"
+    },
+    {
+      "text": "The observable generation of natural language feedback by a reflector model in response to a failed task trajectory, used to guide subsequent planning attempts.",
+      "paper": "Improving Retrospective Language Agents via Joint Policy Gradient Optimization",
+      "original_name": "Verbal reflection"
+    }
+  ],
+  "definition_count": 12,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+      "evidence": "without the reflection mechanism, the system is prone to mistakes in logical reasoning and lacks the ability for self correction. (Section 4.5)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems"
+        ],
+        "iclr25": [
+          "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+          "Evaluating Large Language Models through Role-Guide and Self-Reflection: A Comparative Study"
+        ],
+        "naacl25": [
+          "Vision-Language Models Can Self-Improve Reasoning via Reflection"
+        ],
+        "icml25": [
+          "Satori: Reinforcement Learning with Chain-of-Action-Thought Enhances LLM Reasoning via Autoregressive Search"
+        ],
+        "emnlp25": [
+          "CRITICTOOL: Evaluating Self-Critique Capabilities of Large Language Models in Tool-Calling Error Scenarios"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "evidence": "ReEvo couples evolutionary search for efficiently exploring heuristic spaces, with self-reflections to boost the reasoning capabilities of LLMs.",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution"
+        ],
+        "naacl25": [
+          "TinyThinker: Distilling Reasoning through Coarse-to-Fine Knowledge Internalization with Self-Reflection"
+        ],
+        "emnlp25": [
+          "DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments",
+          "RoT: Enhancing Table Reasoning with Iterative Row-Wise Traversals"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "System 2 thinking",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation",
+      "evidence": "This indicates that only LMMs with substantial reasoning capabilities can effectively engage in self-reflection and result optimization, underscoring the critical role of System 2 reasoning in addressing ChartMimic\u2019s challenges. (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation"
+        ],
+        "acl25": [
+          "Agentic Knowledgeable Self-awareness"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "evidence": "We introduce a new framework called Self-Reflective Retrieval-Augmented Generation (SELF-RAG) that enhances an LM\u2019s quality and factuality through retrieval and self-reflection. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Controllability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "evidence": "Generating reflection tokens makes the LM controllable during the inference phase, enabling it to tailor its behavior to diverse task requirements. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Iterative refinement",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Retroformer: Retrospective Large Language Agents with Policy Gradient Optimization",
+      "evidence": "Self-reflection plays a pivotal role, allowing autonomous agents to iteratively refine past actions, make improvements, and prevent repetitive errors. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Retroformer: Retrospective Large Language Agents with Policy Gradient Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Data efficiency",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "evidence": "Fig. 4 compares EoH and ReEvo, and shows that ReEvo demonstrates superior sample efficiency. Besides the better neighborhood structure (\u00a7 6.1), reflections facilitate explicit verbal inference of underlying black-box COP structures",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Ablation study",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "evidence": "We evaluate sampling LLM generations without evolution (LLM) and ReEvo without long-term reflections, short-term reflections, crossover, or mutation on generating ACO heuristics for TSP100.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multimodal alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Aligning Audio-Visual Joint Representations with an Agentic Workflow",
+      "evidence": "The tool use, planning, and reflection steps operate cyclically to become an agentic workflow where audio signals are gradually aligned to visual content.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Aligning Audio-Visual Joint Representations with an Agentic Workflow"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-horizon task completion",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Optimus-1: Hybrid Multimodal Memory Empowered Agents Excel in Long-Horizon Tasks",
+      "evidence": "The failure of any sub-goal halts the execution of subsequent ones, leading to overall task failure. Therefore, a reflection module is essential to identify and rectify errors promptly. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Optimus-1: Hybrid Multimodal Memory Empowered Agents Excel in Long-Horizon Tasks"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Agency",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+      "evidence": "Emergent agentic abilities are strongly dependent on basic abilities like grounding, world modeling, and self-reflection.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Learning to Plan Before Answering: Self-Teaching LLMs to Learn Abstract Plans for Problem Solving",
+      "evidence": "LEPA refines the plan through self-reflection, aiming to acquire plans that are instrumental in yielding correct solutions.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Learning to Plan Before Answering: Self-Teaching LLMs to Learn Abstract Plans for Problem Solving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code execution",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Steering Large Language Models between Code Execution and Textual Reasoning",
+      "evidence": "After the LLM generates a response containing code, we execute the code and return the results for further self-reflection and refinement.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Steering Large Language Models between Code Execution and Textual Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Logical consistency",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Rationality in Language and Multimodal Agents: A Survey",
+      "evidence": "Multi-round self-reflection that encourages a single LLM to critically evaluate its previous responses has demonstrated the effectiveness of deliberation in improving logical coherence and qualities (Section 4.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Towards Rationality in Language and Multimodal Agents: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-improvement",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Vision-Language Models Can Self-Improve Reasoning via Reflection",
+      "evidence": "Reflection on self-generated CoT facilitates learning from mistakes. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Vision-Language Models Can Self-Improve Reasoning via Reflection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Action planning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Otter: Generating Tests from Issues to Validate SWE Patches",
+      "evidence": "Otter contains a novel self-reflective action planner for deciding which code to read and which tests to write. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Otter: Generating Tests from Issues to Validate SWE Patches"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Error detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Improving Rationality in the Reasoning Process of Language Models through Self-playing Game",
+      "evidence": "The results show that CDG training significantly improves error detection in reasoning, particularly on the more challenging MATH500 dataset, enhancing the model\u2019s self-reflection ability. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Improving Rationality in the Reasoning Process of Language Models through Self-playing Game"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Error recovery",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "SCRIBE: Structured Chain Reasoning for Interactive Behaviour Explanations using Tool Calling",
+      "evidence": "SCRIBE combines domain-specific tools with a self-reflective inference pipeline that supports iterative reasoning, tool use, and error recovery. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SCRIBE: Structured Chain Reasoning for Interactive Behaviour Explanations using Tool Calling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Tool use",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Re-Aligning Language to Visual Objects with an Agentic Workflow",
+      "evidence": "After the tool use step, the refined expression is sent to an LLM-based reflector for feedback (i.e., reflection). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Re-Aligning Language to Visual Objects with an Agentic Workflow"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 19,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 15,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is an iterative review of the model's own prior outputs, actions, or reasoning to diagnose errors and produce feedback for a next attempt. Most definitions center on incorrect predictions, failed trajectories, past decisions, or prior code, and treat success as yielding a revised answer, plan, decision, or retrieval action after reflection. A smaller line of work describes it more broadly as a latent ability or cognitive process for critically evaluating earlier responses, selecting a more plausible solution, or learning from self-generated data, and some papers narrow the reflective act itself to explicit judgments such as GOOD or BAD labels or safety scores with <reflection> tags."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants mainly differ in what is reflected on and in the form of the reflection. Several papers use names such as self-feedback, reflection on failure cases, error reflection, and self-reflection generation for diagnosing incorrect outputs or failed attempts and verbalizing reasons or future fixes. Others separate short-term reflection, a comparison of two parent heuristics, from long-term reflection, a summary of lessons accumulated across those comparisons. Additional variants include reflection generation as short natural-language judgments about actions, reflection step generation as verification moves like \"Let's verify,\" self-QA reflection during planning, and verbal reflection after failed task trajectories; these variants appear in code, heuristic search, retrieval routing, safety reasoning, driving, multimodal alignment, games, and agent planning."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers operationalize it through prompts or workflow modules, sometimes using the same model and sometimes a separate reflector or critic module, to elicit error analysis before correction, analysis of failed trajectories, critique of prior steps in reverse order, or feedback on plans and decisions. Some schemes require structured reflective outputs, including explicit <reflection> tags, safety scores in [0.0, 1.0], Satisfied or Unsatisfied or Unsure outcomes for plans, or short GOOD or BAD judgments about whether an action was appropriate."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect it to 15 constructs, most often by claiming a causal relationship from self-reflection to Reasoning. Planning and System 2 thinking are less uniform: some papers claim a causal relationship from self-reflection to Planning, others report Planning as related to self-reflection, one paper reports self-reflection as related to System 2 thinking, and another claims a causal relationship from System 2 thinking to self-reflection. Action planning is only reported as related to self-reflection, Agency appears as the target of a causal relationship from self-reflection, and papers also link it to 10 other constructs. Overall, papers do not converge on a single construct, and the recorded links mix causal and related framings."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is an iterative review of the model's own prior outputs, actions, or reasoning to diagnose errors and produce feedback for a next attempt. Most definitions center on incorrect predictions, failed trajectories, past decisions, or prior code, and treat success as yielding a revised answer, plan, decision, or retrieval action after reflection. A smaller line of work describes it more broadly as a latent ability or cognitive process for critically evaluating earlier responses, selecting a more plausible solution, or learning from self-generated data, and some papers narrow the reflective act itself to explicit judgments such as GOOD or BAD labels or safety scores with <reflection> tags.\n\nVariants. Variants mainly differ in what is reflected on and in the form of the reflection. Several papers use names such as self-feedback, reflection on failure cases, error reflection, and self-reflection generation for diagnosing incorrect outputs or failed attempts and verbalizing reasons or future fixes. Others separate short-term reflection, a comparison of two parent heuristics, from long-term reflection, a summary of lessons accumulated across those comparisons. Additional variants include reflection generation as short natural-language judgments about actions, reflection step generation as verification moves like \"Let's verify,\" self-QA reflection during planning, and verbal reflection after failed task trajectories; these variants appear in code, heuristic search, retrieval routing, safety reasoning, driving, multimodal alignment, games, and agent planning.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through prompts or workflow modules, sometimes using the same model and sometimes a separate reflector or critic module, to elicit error analysis before correction, analysis of failed trajectories, critique of prior steps in reverse order, or feedback on plans and decisions. Some schemes require structured reflective outputs, including explicit <reflection> tags, safety scores in [0.0, 1.0], Satisfied or Unsatisfied or Unsure outcomes for plans, or short GOOD or BAD judgments about whether an action was appropriate.\n\nWhat it is taken as evidence of. Papers connect it to 15 constructs, most often by claiming a causal relationship from self-reflection to Reasoning. Planning and System 2 thinking are less uniform: some papers claim a causal relationship from self-reflection to Planning, others report Planning as related to self-reflection, one paper reports self-reflection as related to System 2 thinking, and another claims a causal relationship from System 2 thinking to self-reflection. Action planning is only reported as related to self-reflection, Agency appears as the target of a causal relationship from self-reflection, and papers also link it to 10 other constructs. Overall, papers do not converge on a single construct, and the recorded links mix causal and related framings.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "ACT: Knowledgeable Agents to Design and Perform Complex Tasks",
+      "Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger",
+      "Agentic Knowledgeable Self-awareness",
+      "Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?",
+      "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+      "FineReason: Evaluating and Improving LLMs' Deliberate Reasoning through Reflective Puzzle Solving",
+      "From Objectives to Questions: A Planning-based Framework for Educational Mathematical Question Generation",
+      "G\u00f6del Agent: A Self-Referential Agent Framework for Recursively Self-Improvement",
+      "HybGRAG: Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases",
+      "INVESTORBENCH: A Benchmark for Financial Decision-Making Tasks with LLM-based Agent",
+      "Innovative Image Fraud Detection with Cross-Sample Anomaly Analysis: The Power of LLMs",
+      "Meta-Reflection: A Feedback-Free Reflection Learning Framework",
+      "OmniCharacter: Towards Immersive Role-Playing Agents with Seamless Speech-Language Personality Interaction",
+      "ReflecTool: Towards Reflection-Aware Tool-Augmented Clinical Agents",
+      "Reversal of Thought: Enhancing Large Language Models with Preference-Guided Reverse Reasoning Warm-up",
+      "Think&Cite: Improving Attributed Text Generation with Self-Guided Tree Search and Progress Reward Modeling",
+      "What Makes a Good Natural Language Prompt?"
+    ],
+    "emnlp25": [
+      "CRITICTOOL: Evaluating Self-Critique Capabilities of Large Language Models in Tool-Calling Error Scenarios",
+      "Coarse-to-Fine Grounded Memory for LLM Agent Planning",
+      "ConCISE: Confidence-guided Compression in Step-by-step Efficient Reasoning",
+      "Dipper: Diversity in Prompts for Producing Large Language Model Ensembles in Reasoning Tasks",
+      "Do LLMs Adhere to Label Definitions? Examining Their Receptivity to External Label Definitions",
+      "Generator-Assistant Stepwise Rollback Framework for Large Language Model Agent",
+      "LLMs Don't Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations",
+      "LLMs are Better Than You Think: Label-Guided In-Context Learning for Named Entity Recognition",
+      "MOSAIC: Modeling Social AI for Content Dissemination and Regulation in Multi-Agent Simulations",
+      "Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLMs",
+      "MetaFaith: Faithful Natural Language Uncertainty Expression in LLMs",
+      "RaDeR: Reasoning-aware Dense Retrieval Models",
+      "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+      "ThinkTuning: Instilling Cognitive Reflections without Distillation",
+      "Warm Up Before You Train: Unlocking General Reasoning in Resource-Constrained Settings"
+    ],
+    "iclr24": [
+      "Chain of Hindsight aligns Language Models with Feedback",
+      "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+      "DiLu: A Knowledge-Driven Approach to Autonomous Driving with Large Language Models",
+      "PromptAgent: Strategic Planning with Language Models Enables Expert-level Prompt Optimization",
+      "Retroformer: Retrospective Large Language Agents with Policy Gradient Optimization"
+    ],
+    "iclr25": [
+      "Active Task Disambiguation with LLMs",
+      "AutoG: Towards automatic graph construction from tabular data",
+      "Automated Design of Agentic Systems",
+      "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+      "Enhancing Language Model Agents using Diversity of Thoughts",
+      "Evaluating Large Language Models through Role-Guide and Self-Reflection: A Comparative Study",
+      "From Exploration to Mastery: Enabling LLMs to Master Tools via Self-Driven Interactions",
+      "Human Simulacra: Benchmarking the Personification of Large Language Models",
+      "Inspection and Control of Self-Generated-Text Recognition Ability in Llama3-8b-Instruct",
+      "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+      "Learning to Plan Before Answering: Self-Teaching LLMs to Learn Abstract Plans for Problem Solving",
+      "Looking Inward: Language Models Can Learn About Themselves by Introspection",
+      "MR-GSM8K: A Meta-Reasoning Benchmark for Large Language Model Evaluation",
+      "REvolve: Reward Evolution with Large Language Models using Human Feedback",
+      "Re-Aligning Language to Visual Objects with an Agentic Workflow",
+      "SPA-BENCH: A COMPREHENSIVE BENCHMARK FOR SMARTPHONE AGENT EVALUATION",
+      "Monte Carlo Planning with Large Language Model for Text-Based Game Agents"
+    ],
+    "icml25": [
+      "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+      "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance",
+      "Cradle: Empowering Foundation Agents towards General Computer Control",
+      "Enhancing Decision-Making of Large Language Models via Actor-Critic",
+      "Otter: Generating Tests from Issues to Validate SWE Patches",
+      "Position: LLMs Need a Bayesian Meta-Reasoning Framework for More Robust and Generalizable Reasoning",
+      "Position: Truly Self-Improving Agents Require Intrinsic Metacognitive Learning",
+      "RZ-NAS: Enhancing LLM-guided Neural Architecture Search via Reflective Zero-Cost Strategy",
+      "Ranked from Within: Ranking Large Multimodal Models Without Labels",
+      "Reinforce LLM Reasoning through Multi-Agent Reflection",
+      "Revolve: Optimizing AI Systems by Tracking Response Evolution in Textual Optimization",
+      "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+      "Safety Reasoning with Guidelines",
+      "SyncMind: Measuring Agent Out-of-Sync Recovery in Collaborative Software Engineering",
+      "Which Agent Causes Task Failures and When? On Automated Failure Attribution of LLM Multi-Agent Systems"
+    ],
+    "naacl25": [
+      "CRMArena: Understanding the Capacity of LLM Agents to Perform Professional CRM Tasks in Realistic Environments",
+      "CSR-Bench: Benchmarking LLM Agents in Deployment of Computer Science Research Repositories",
+      "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+      "Improving Retrospective Language Agents via Joint Policy Gradient Optimization",
+      "Towards Rationality in Language and Multimodal Agents: A Survey"
+    ],
+    "neurips24": [
+      "A Decision-Language Model (DLM) for Dynamic Restless Multi-Armed Bandit Tasks in Public Health",
+      "AGILE: A Novel Reinforcement Learning Framework of LLM Agents",
+      "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+      "AutoGuide: Automated Generation and Selection of Context-Aware Guidelines for Large Language Model Agents",
+      "Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study",
+      "FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making",
+      "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+      "Me, Myself, and AI: The Situational Awareness Dataset (SAD) for LLMs",
+      "Optimus-1: Hybrid Multimodal Memory Empowered Agents Excel in Long-Horizon Tasks",
+      "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "Richelieu: Self-Evolving LLM-Based Agents for AI Diplomacy",
+      "RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 17,
+    "emnlp25": 15,
+    "iclr24": 5,
+    "iclr25": 17,
+    "icml25": 15,
+    "naacl25": 5,
+    "neurips24": 12
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

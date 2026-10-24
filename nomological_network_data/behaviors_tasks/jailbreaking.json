@@ -1,0 +1,613 @@
+{
+  "canonical_name": "Jailbreaking",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats jailbreaking as either the act or the observable result of bypassing a model's safety mechanisms, filters, guardrails, or alignment with a crafted or adversarial input so the model produces prohibited, harmful, unsafe, or restricted output. Some papers phrase the success condition as getting the model to answer a malicious request it would normally refuse, and several papers claim a causal relationship from jailbreaking to harmful content generation. A smaller line of work narrows the indicator to response-side outcomes such as jailbreak compliance, jailbreak response generation, or jailbreak success, where success is variously described as harmful content without refusal, no predefined refusal messages, or a response that begins with a target phrase and continues the harmful answer.\n\nVariants. Variants span text-only prompt attacks and several specialized settings. Some papers study multimodal or vision-language jailbreaking, including one-image and non-textual attacks; others focus on long-context or many-shot settings, continuation attacks, and multi-agent propagation. Another line decomposes the harmful goal into less suspicious pieces, under names like multi-step query decomposition, concept decomposition, instruction decomposition, and task decomposition compliance; one paper reports that a model that refused a direct harmful request completed it once the intent was split into distinct steps (SafeArena: Evaluating the Safety of Autonomous Web Agents). One paper claims a causal relationship from role-playing to jailbreaking, another from adversarial suffix generation to jailbreaking, and cipher-based prompting is also used.\n\nSpace of elicitation and scores. Papers link jailbreaking to 13 measurement instruments. The most frequently linked are AdvBench and HarmBench, which are used as benchmark datasets, and LLM-as-a-judge, which scores whether a response counts as a successful jailbreak; a recurring metric is Attack Success Rate, defined in one paper as 'the percentage of jailbreak prompts that successfully bypass alignment' (Attention Eclipse: Manipulating Attention to Bypass LLM Safety-Alignment). GCG and PAIR also appear among the most linked instruments as elicitation procedures for constructing jailbreak prompts, with PAIR also used in one evaluation and treated as related to jailbreaking in one comparison, while several other papers use refusal-string heuristics, classifier-style auto-annotators, and additional safety benchmarks.\n\nWhat it is taken as evidence of. As evidence, jailbreaking is linked to five constructs, and papers do not converge on a single construct it reflects. Alignment is related to jailbreaking, safety alignment is reported to correlate with it, and one paper claims a causal relationship from jailbreaking to safety alignment. A smaller use treats jailbreaking as the behavior by which universality and knowledge transfer are measured, while one paper claims a causal relationship from adversarial robustness to jailbreaking.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Jailbreaking",
+    "Jailbreak response generation",
+    "Jailbreak attack",
+    "Jailbreak compliance",
+    "Jailbreak success",
+    "Multi-step query decomposition",
+    "Concept decomposition",
+    "Instruction decomposition",
+    "Task decomposition compliance",
+    "Jailbreak",
+    "Jailbroken responding",
+    "Jailbreaking attack"
+  ],
+  "papers": [
+    "Adversarial Tokenization",
+    "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks",
+    "DeAL: Decoding-time Alignment for Large Language Models",
+    "Efficient Universal Goal Hijacking with Semantics-guided Prompt Organization",
+    "What Really Matters in Many-Shot Attacks? An Empirical Study of Long-Context Vulnerabilities in LLMs",
+    "Adaptively profiling models with task elicitation",
+    "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+    "Demystifying optimized prompts in language models",
+    "PBI-Attack: Prior-Guided Bimodal Interactive Black-Box Jailbreak Attack for Toxicity Maximization",
+    "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+    "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+    "Transferable Direct Prompt Injection via Activation-Guided MCMC Sampling",
+    "UltraIF: Advancing Instruction Following from the Wild",
+    "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary",
+    "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+    "Attention Eclipse: Manipulating Attention to Bypass LLM Safety-Alignment",
+    "Catastrophic Jailbreak of Open-source LLMs via Exploiting Generation",
+    "Distributional Preference Learning: Understanding and Accounting for Hidden Context in RLHF",
+    "Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!",
+    "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models",
+    "On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+    "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+    "Speak Easy: Eliciting Harmful Jailbreaks from LLMs with Simple Interactions",
+    "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+    "ELITE: Enhanced Language-Image Toxicity Evaluation for Safety",
+    "Gandalf the Red: Adaptive Security for LLMs",
+    "LLMScan: Causal Scan for LLM Misbehavior Detection",
+    "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+    "Theoretical guarantees on the best-of-n alignment policy",
+    "Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs",
+    "Iterative Self-Tuning LLMs for Enhanced Jailbreaking Capabilities",
+    "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+    "Stronger Universal and Transferable Attacks by Suppressing Refusals",
+    "Diversity Helps Jailbreak Large Language Models",
+    "ImgTrojan: Jailbreaking Vision-Language Models with ONE Image",
+    "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+    "Benchmarking Complex Instruction-Following with Multiple Constraints Composition",
+    "What matters when building vision-language models?",
+    "Personalized Steering of Large Language Models: Versatile Steering Vectors Through Bi-directional Preference Optimization"
+  ],
+  "paper_count": 41,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior of bypassing a model's safety mechanisms to elicit a prohibited response, typically through an adversarial prompt.",
+      "paper": "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+      "original_name": "Jailbreaking"
+    },
+    {
+      "text": "Producing unsafe or harmful answers when prompted by adversarial jailbreak instructions.",
+      "paper": "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+      "original_name": "Jailbreak response generation"
+    },
+    {
+      "text": "The act of using specially crafted prompts to circumvent a model's safety alignment and induce it to perform forbidden actions.",
+      "paper": "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+      "original_name": "Jailbreak attack"
+    },
+    {
+      "text": "Following adversarial prompts that attempt to induce the model to ignore safety rules and comply with harmful requests.",
+      "paper": "Adaptively profiling models with task elicitation",
+      "original_name": "Jailbreak compliance"
+    },
+    {
+      "text": "The observable generation of harmful content by an LLM in response to a jailbreak prompt, indicating that the model has bypassed its safety alignment.",
+      "paper": "Attention Eclipse: Manipulating Attention to Bypass LLM Safety-Alignment",
+      "original_name": "Jailbreak success"
+    },
+    {
+      "text": "The observable behavior of breaking down a complex or malicious query into a sequence of simpler, seemingly harmless subqueries to bypass safety filters.",
+      "paper": "Speak Easy: Eliciting Harmful Jailbreaks from LLMs with Simple Interactions",
+      "original_name": "Multi-step query decomposition"
+    },
+    {
+      "text": "The breakdown of a complex malicious goal into simpler, less overtly harmful sub-concepts to reduce cognitive load and evade detection by safety mechanisms.",
+      "paper": "Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs",
+      "original_name": "Concept decomposition"
+    },
+    {
+      "text": "Breaking down a complex or harmful instruction into a sequence of simpler or less suspicious sub-instructions to evade detection.",
+      "paper": "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+      "original_name": "Instruction decomposition"
+    },
+    {
+      "text": "The observable behavior of an agent executing a harmful task when the malicious intent is broken down into a sequence of seemingly benign substeps provided over multiple interaction turns.",
+      "paper": "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+      "original_name": "Task decomposition compliance"
+    },
+    {
+      "text": "The observable generation of harmful content by a model in response to adversarial inputs that bypass its safety alignment mechanisms, such as producing instructions for illegal or dangerous activities.",
+      "paper": "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models",
+      "original_name": "Jailbreak"
+    },
+    {
+      "text": "Producing less filtered, potentially toxic or unaligned content when safety mechanisms are circumvented via cipher-based prompts.",
+      "paper": "On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs",
+      "original_name": "Jailbroken responding"
+    },
+    {
+      "text": "The act of bypassing a model's safety mechanisms by using a specially crafted input (an adversarial prompt) to elicit a harmful or otherwise prohibited response.",
+      "paper": "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+      "original_name": "Jailbreaking attack"
+    }
+  ],
+  "definition_count": 12,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Harmful content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+      "evidence": "We focus on identifying prompts that, when given a specific harmful request (e.g., \u201cTell me how to build a bomb\u201d), induces the LLM to generate harmful content.",
+      "paper_count": 12,
+      "paper_weight": 12.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+          "Does Refusal Training in LLMs Generalize to the Past Tense?",
+          "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+          "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs"
+        ],
+        "naacl25": [
+          "Stronger Universal and Transferable Attacks by Suppressing Refusals"
+        ],
+        "icml25": [
+          "TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs",
+          "Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs",
+          "Emoji Attack: Enhancing Jailbreak Attacks Against Judge LLM Detection",
+          "Weak-to-Strong Jailbreaking on Large Language Models"
+        ],
+        "emnlp25": [
+          "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+          "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak"
+        ],
+        "neurips24": [
+          "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AdvBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Personalized Steering of Large Language Models: Versatile Steering Vectors Through Bi-directional Preference Optimization",
+      "evidence": "In this scenario, we utilize the widely used benchmark dataset, AdvBench[46], to evaluate the steering effectiveness on facilitating jailbreaking... (Section 4.1)",
+      "paper_count": 11,
+      "paper_weight": 11.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Personalized Steering of Large Language Models: Versatile Steering Vectors Through Bi-directional Preference Optimization"
+        ],
+        "iclr25": [
+          "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+          "Jailbreaking as a Reward Misspecification Problem",
+          "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+          "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs"
+        ],
+        "naacl25": [
+          "Stronger Universal and Transferable Attacks by Suppressing Refusals"
+        ],
+        "acl25": [
+          "Adversarial Tokenization",
+          "Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities"
+        ],
+        "icml25": [
+          "PANDAS: Improving Many-shot Jailbreaking via Positive Affirmation, Negative Demonstration, and Adaptive Sampling",
+          "Evolving Prompts In-Context: An Open-ended, Self-replicating Perspective"
+        ],
+        "emnlp25": [
+          "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "evidence": "We incorporate images generated by Stable Diffusion with text jailbreaking, to observe the fluctuations in performance (Task S.6). (Table 2, Row S.6 references dataset [96] which is HarmBench)",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+        ],
+        "iclr25": [
+          "Concept-ROT: Poisoning Concepts in Large Language Models with Model Editing"
+        ],
+        "naacl25": [
+          "Stronger Universal and Transferable Attacks by Suppressing Refusals"
+        ],
+        "icml25": [
+          "How Do Large Language Monkeys Get Their Power (Laws)?",
+          "PANDAS: Improving Many-shot Jailbreaking via Positive Affirmation, Negative Demonstration, and Adaptive Sampling"
+        ],
+        "emnlp25": [
+          "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+          "Adaptively profiling models with task elicitation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+      "evidence": "We use GPT-4 as the semantic judge (see Table 8 for the prompt) in line with the criteria established by Chao et al. (2023), where a jailbreak is considered successful only if it achieves a 10/10 jailbreak score from GPT-4.",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+          "Does Refusal Training in LLMs Generalize to the Past Tense?",
+          "Jailbreaking as a Reward Misspecification Problem"
+        ],
+        "naacl25": [
+          "Diversity Helps Jailbreak Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Alignment",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+      "evidence": "One way to understand the limitations of these [alignment] methods is to explore their susceptibility to jailbreaking attacks; which are attempts to bypass the target LLM\u2019s safety filters and circumvent its alignment [52].",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+          "Adversarial Representation Engineering: A General Model Editing Framework for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Rule-based judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Jailbreaking as a Reward Misspecification Problem",
+      "evidence": "By default, we use keyword matching to search for strings indicating a refusal to respond to the harmful instruction, following Paulus et al. (2024). (Section 5.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreaking as a Reward Misspecification Problem",
+          "Does Refusal Training in LLMs Generalize to the Past Tense?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "JailbreakBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+      "evidence": "We adopt Attack Success Rate (ASR) as an evaluation metric for successful jailbreaks following the default framework employed in HarmBench and JbBench. (Section 5.4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection"
+        ],
+        "icml25": [
+          "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+      "evidence": "Although aligned with human preference data before release, LLMs remain vulnerable to various malicious attacks. In this paper, we adopt a red-teaming strategy to enhance LLM safety and introduce SEQAR, a simple yet effective framework to design jailbreak prompts automatically. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters"
+        ],
+        "emnlp25": [
+          "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PAIR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "evidence": "We also evaluated the effect of the jailbreaking attack PAIR (Chao et al., 2023) on a Llama-2-7b-chat model that had been subjected to the Q-Misalign attack at full precision. (Section 5.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+          "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Llama Guard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Jailbreaking as a Reward Misspecification Problem",
+      "evidence": "For LLM-based evaluation, we employ LlamaGuard (Inan et al., 2023) and GPT-4 (Souly et al., 2024) to assess whether the response is safe for the given instruction. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreaking as a Reward Misspecification Problem"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety mechanism",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Stronger Universal and Transferable Attacks by Suppressing Refusals",
+      "evidence": "A \u201cjailbreak\u201d refers to techniques used to bypass the safety mechanisms in LLMs that generally prevent the generation of harmful, unethical, or restricted content. (Section 2.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Stronger Universal and Transferable Attacks by Suppressing Refusals"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+      "evidence": "\"LLMs are notably fragile and easily distracted by our complex role-play instructions, thereby enhancing the attack performance of each individual jailbreak character.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Role-playing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+      "evidence": "Inspired by previous attempts that exploit role-playing to bypass the safety guardrails of LLMs (DAN, 2023; Li et al., 2024) and research on the distraction phenomenon in LLMs (Shi et al., 2023; Xiao et al., 2024), we apply sequential jailbreak characters within a single user query and ask the target LLMs to act as these characters sequentially to provide step-by-step instructions. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SafeBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities",
+      "evidence": "Our approach achieves higher attack success rates compared to existing multimodal attacks on SafeBench (Gong et al., 2023) and AdvBench (Zou et al., 2023). (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Llama Guard 2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "evidence": "We use Llama Guard 2 as the auto-annotator to classify responses as jailbreak or non-jailbreak, following (Chao et al., 2024). (Section 3.3.4. ADVERSARIAL ROBUSTNESS EVALUATION)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SALAD-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Weak-to-Strong Jailbreaking on Large Language Models",
+      "evidence": "To assess the generalizability of the weak-to-strong attack, we expanded our evaluation to include two new safety benchmarks: SALAD-Bench (Li et al., 2024) and SORRY-Bench (Xie et al., 2024). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Weak-to-Strong Jailbreaking on Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SORRY-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Weak-to-Strong Jailbreaking on Large Language Models",
+      "evidence": "To assess the generalizability of the weak-to-strong attack, we expanded our evaluation to include two new safety benchmarks: SALAD-Bench (Li et al., 2024) and SORRY-Bench (Xie et al., 2024). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Weak-to-Strong Jailbreaking on Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench classifier",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "REINFORCE Adversarial Attacks on Large Language Models: An Adaptive, Distributional, and Semantic Objective",
+      "evidence": "\u201cwe report the attack success rate (ASR) using HarmBench\u2019s judge\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "REINFORCE Adversarial Attacks on Large Language Models: An Adaptive, Distributional, and Semantic Objective"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial suffix generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+      "evidence": "Jailbreaking attacks typically involve appending adversarial suffixes to instructions.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Misalignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "evidence": "\u201cthese misalignments activate, rendering the model vulnerable to jailbreak attacks.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Durable Quantization Conditioned Misalignment Attack on Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Attack transferability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Stronger Universal and Transferable Attacks by Suppressing Refusals",
+      "evidence": "We evaluate each suffix on all 50 behaviors (universality) including the one it is directly optimized for and on all five target models (transferability) including the one it is optimized on. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Stronger Universal and Transferable Attacks by Suppressing Refusals"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 21,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 15,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats jailbreaking as either the act or the observable result of bypassing a model's safety mechanisms, filters, guardrails, or alignment with a crafted or adversarial input so the model produces prohibited, harmful, unsafe, or restricted output. Some papers phrase the success condition as getting the model to answer a malicious request it would normally refuse, and several papers claim a causal relationship from jailbreaking to harmful content generation. A smaller line of work narrows the indicator to response-side outcomes such as jailbreak compliance, jailbreak response generation, or jailbreak success, where success is variously described as harmful content without refusal, no predefined refusal messages, or a response that begins with a target phrase and continues the harmful answer."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants span text-only prompt attacks and several specialized settings. Some papers study multimodal or vision-language jailbreaking, including one-image and non-textual attacks; others focus on long-context or many-shot settings, continuation attacks, and multi-agent propagation. Another line decomposes the harmful goal into less suspicious pieces, under names like multi-step query decomposition, concept decomposition, instruction decomposition, and task decomposition compliance; one paper reports that a model that refused a direct harmful request completed it once the intent was split into distinct steps (SafeArena: Evaluating the Safety of Autonomous Web Agents). One paper claims a causal relationship from role-playing to jailbreaking, another from adversarial suffix generation to jailbreaking, and cipher-based prompting is also used."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link jailbreaking to 13 measurement instruments. The most frequently linked are AdvBench and HarmBench, which are used as benchmark datasets, and LLM-as-a-judge, which scores whether a response counts as a successful jailbreak; a recurring metric is Attack Success Rate, defined in one paper as 'the percentage of jailbreak prompts that successfully bypass alignment' (Attention Eclipse: Manipulating Attention to Bypass LLM Safety-Alignment). GCG and PAIR also appear among the most linked instruments as elicitation procedures for constructing jailbreak prompts, with PAIR also used in one evaluation and treated as related to jailbreaking in one comparison, while several other papers use refusal-string heuristics, classifier-style auto-annotators, and additional safety benchmarks."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "As evidence, jailbreaking is linked to five constructs, and papers do not converge on a single construct it reflects. Alignment is related to jailbreaking, safety alignment is reported to correlate with it, and one paper claims a causal relationship from jailbreaking to safety alignment. A smaller use treats jailbreaking as the behavior by which universality and knowledge transfer are measured, while one paper claims a causal relationship from adversarial robustness to jailbreaking."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats jailbreaking as either the act or the observable result of bypassing a model's safety mechanisms, filters, guardrails, or alignment with a crafted or adversarial input so the model produces prohibited, harmful, unsafe, or restricted output. Some papers phrase the success condition as getting the model to answer a malicious request it would normally refuse, and several papers claim a causal relationship from jailbreaking to harmful content generation. A smaller line of work narrows the indicator to response-side outcomes such as jailbreak compliance, jailbreak response generation, or jailbreak success, where success is variously described as harmful content without refusal, no predefined refusal messages, or a response that begins with a target phrase and continues the harmful answer.\n\nVariants. Variants span text-only prompt attacks and several specialized settings. Some papers study multimodal or vision-language jailbreaking, including one-image and non-textual attacks; others focus on long-context or many-shot settings, continuation attacks, and multi-agent propagation. Another line decomposes the harmful goal into less suspicious pieces, under names like multi-step query decomposition, concept decomposition, instruction decomposition, and task decomposition compliance; one paper reports that a model that refused a direct harmful request completed it once the intent was split into distinct steps (SafeArena: Evaluating the Safety of Autonomous Web Agents). One paper claims a causal relationship from role-playing to jailbreaking, another from adversarial suffix generation to jailbreaking, and cipher-based prompting is also used.\n\nSpace of elicitation and scores. Papers link jailbreaking to 13 measurement instruments. The most frequently linked are AdvBench and HarmBench, which are used as benchmark datasets, and LLM-as-a-judge, which scores whether a response counts as a successful jailbreak; a recurring metric is Attack Success Rate, defined in one paper as 'the percentage of jailbreak prompts that successfully bypass alignment' (Attention Eclipse: Manipulating Attention to Bypass LLM Safety-Alignment). GCG and PAIR also appear among the most linked instruments as elicitation procedures for constructing jailbreak prompts, with PAIR also used in one evaluation and treated as related to jailbreaking in one comparison, while several other papers use refusal-string heuristics, classifier-style auto-annotators, and additional safety benchmarks.\n\nWhat it is taken as evidence of. As evidence, jailbreaking is linked to five constructs, and papers do not converge on a single construct it reflects. Alignment is related to jailbreaking, safety alignment is reported to correlate with it, and one paper claims a causal relationship from jailbreaking to safety alignment. A smaller use treats jailbreaking as the behavior by which universality and knowledge transfer are measured, while one paper claims a causal relationship from adversarial robustness to jailbreaking.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Adaptively profiling models with task elicitation",
+      "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+      "Demystifying optimized prompts in language models",
+      "PBI-Attack: Prior-Guided Bimodal Interactive Black-Box Jailbreak Attack for Toxicity Maximization",
+      "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+      "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+      "Transferable Direct Prompt Injection via Activation-Guided MCMC Sampling",
+      "UltraIF: Advancing Instruction Following from the Wild",
+      "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary",
+      "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+      "Attention Eclipse: Manipulating Attention to Bypass LLM Safety-Alignment"
+    ],
+    "icml25": [
+      "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+      "Speak Easy: Eliciting Harmful Jailbreaks from LLMs with Simple Interactions",
+      "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+      "ELITE: Enhanced Language-Image Toxicity Evaluation for Safety",
+      "Gandalf the Red: Adaptive Security for LLMs",
+      "LLMScan: Causal Scan for LLM Misbehavior Detection",
+      "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "Theoretical guarantees on the best-of-n alignment policy",
+      "Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs"
+    ],
+    "naacl25": [
+      "Iterative Self-Tuning LLMs for Enhanced Jailbreaking Capabilities",
+      "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+      "Stronger Universal and Transferable Attacks by Suppressing Refusals",
+      "Diversity Helps Jailbreak Large Language Models",
+      "ImgTrojan: Jailbreaking Vision-Language Models with ONE Image",
+      "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters"
+    ],
+    "neurips24": [
+      "Benchmarking Complex Instruction-Following with Multiple Constraints Composition",
+      "What matters when building vision-language models?",
+      "Personalized Steering of Large Language Models: Versatile Steering Vectors Through Bi-directional Preference Optimization"
+    ],
+    "acl25": [
+      "Adversarial Tokenization",
+      "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks",
+      "DeAL: Decoding-time Alignment for Large Language Models",
+      "Efficient Universal Goal Hijacking with Semantics-guided Prompt Organization",
+      "What Really Matters in Many-Shot Attacks? An Empirical Study of Long-Context Vulnerabilities in LLMs"
+    ],
+    "iclr24": [
+      "Catastrophic Jailbreak of Open-source LLMs via Exploiting Generation",
+      "Distributional Preference Learning: Understanding and Accounting for Hidden Context in RLHF",
+      "Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!",
+      "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models",
+      "On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs"
+    ],
+    "iclr25": [
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "Durable Quantization Conditioned Misalignment Attack on Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 11,
+    "icml25": 9,
+    "naacl25": 6,
+    "neurips24": 3,
+    "acl25": 5,
+    "iclr24": 5,
+    "iclr25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

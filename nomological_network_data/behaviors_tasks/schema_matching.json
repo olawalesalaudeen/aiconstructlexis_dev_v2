@@ -1,0 +1,196 @@
+{
+  "canonical_name": "Schema matching",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage is matching semantically corresponding columns or attributes across tables or knowledge graphs. Most commonly, authors describe it as checking whether a pair of columns from two tables are related, often as a binary classification decision; another formulation asks for a valid mapping of columns between two tables so a join can be performed. A smaller line of work uses the name attribute alignment for matching attributes from different knowledge graphs that have the same semantic meaning even when their labels differ.\n\nVariants. Recurring settings include table-centric matching between two tables, sometimes with partially overlapping columns, and alignment across different knowledge graphs. The table-focused work uses names such as schema matching and table join prediction, while the knowledge-graph work uses attribute alignment and sometimes discusses alignment together with filtering. One paper also relates schema matching to candidate generation, ranking, and confidence scoring.\n\nSpace of elicitation and scores. Papers link it to one measurement instrument, Wikidata, used in evaluation and described as a general knowledge base. No other measurement instrument is linked, although a benchmark frames predicting which columns can be used to join two tables as part of Data analysis.\n\nWhat it is taken as evidence of. Rather than treating schema matching as evidence of a single construct, the linked construct relations are all causal claims. Papers claim causal relationships from contextual understanding, semantic understanding, and in-context learning to schema matching; the supporting language says contextual understanding enables reasoning about schema hierarchies and potential matches, and that semantic understanding is needed to decide whether differently labeled attributes represent the same concept. These papers therefore present separate causal accounts, not a shared account of one construct that schema matching is taken to reflect.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Schema matching",
+    "Table join prediction",
+    "Attribute alignment"
+  ],
+  "papers": [
+    "Table-LLM-Specialist: Language Model Specialists for Tables using Iterative Fine-tuning",
+    "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+    "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching",
+    "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Determining whether two columns from different tables are semantically related, treated as a binary classification task.",
+      "paper": "Table-LLM-Specialist: Language Model Specialists for Tables using Iterative Fine-tuning",
+      "original_name": "Schema matching"
+    },
+    {
+      "text": "The task of identifying and creating a valid mapping of columns between two tables to perform a join.",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "original_name": "Table join prediction"
+    },
+    {
+      "text": "The task of identifying and matching attributes from different knowledge graphs that have the same semantic meaning, even if their labels differ, often performed using an LLM.",
+      "paper": "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment",
+      "original_name": "Attribute alignment"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Wikidata",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching",
+      "evidence": "Specifically, we evaluate Matchmaker on Magellan (e-commerce) and WikiData (general knowledge base). (Section 5.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Semantic understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment",
+      "evidence": "Aligning attributes across different MMKGs is challenging due to the variations in the expression of identical attributes. It necessitates more than a basic lexical comparison and requires a profound semantic understanding to ascertain whether attributes with different labels indeed represent the same concept. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment",
+      "evidence": "With in-context learning, off-the-shelf LLM can solve attribute alignment without fine-tuning. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Contextual understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching",
+      "evidence": "This contextual understanding enables LLMs to effectively reason about schema hierarchies and identify potential matches. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Candidate generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching",
+      "evidence": "we propose Matchmaker - a compositional language model program for schema matching, comprised of candidate generation, refinement and confidence scoring. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Confidence scoring",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching",
+      "evidence": "we propose Matchmaker - a compositional language model program for schema matching, comprised of candidate generation, refinement and confidence scoring. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Data analysis",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "\u201cData Analysis: three tasks using recent datasets from Kaggle and Socrata, specifically, ... predicting which columns can be used to join two tables\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage is matching semantically corresponding columns or attributes across tables or knowledge graphs. Most commonly, authors describe it as checking whether a pair of columns from two tables are related, often as a binary classification decision; another formulation asks for a valid mapping of columns between two tables so a join can be performed. A smaller line of work uses the name attribute alignment for matching attributes from different knowledge graphs that have the same semantic meaning even when their labels differ."
+    },
+    {
+      "label": "Variants.",
+      "text": "Recurring settings include table-centric matching between two tables, sometimes with partially overlapping columns, and alignment across different knowledge graphs. The table-focused work uses names such as schema matching and table join prediction, while the knowledge-graph work uses attribute alignment and sometimes discusses alignment together with filtering. One paper also relates schema matching to candidate generation, ranking, and confidence scoring."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to one measurement instrument, Wikidata, used in evaluation and described as a general knowledge base. No other measurement instrument is linked, although a benchmark frames predicting which columns can be used to join two tables as part of Data analysis."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Rather than treating schema matching as evidence of a single construct, the linked construct relations are all causal claims. Papers claim causal relationships from contextual understanding, semantic understanding, and in-context learning to schema matching; the supporting language says contextual understanding enables reasoning about schema hierarchies and potential matches, and that semantic understanding is needed to decide whether differently labeled attributes represent the same concept. These papers therefore present separate causal accounts, not a shared account of one construct that schema matching is taken to reflect."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage is matching semantically corresponding columns or attributes across tables or knowledge graphs. Most commonly, authors describe it as checking whether a pair of columns from two tables are related, often as a binary classification decision; another formulation asks for a valid mapping of columns between two tables so a join can be performed. A smaller line of work uses the name attribute alignment for matching attributes from different knowledge graphs that have the same semantic meaning even when their labels differ.\n\nVariants. Recurring settings include table-centric matching between two tables, sometimes with partially overlapping columns, and alignment across different knowledge graphs. The table-focused work uses names such as schema matching and table join prediction, while the knowledge-graph work uses attribute alignment and sometimes discusses alignment together with filtering. One paper also relates schema matching to candidate generation, ranking, and confidence scoring.\n\nSpace of elicitation and scores. Papers link it to one measurement instrument, Wikidata, used in evaluation and described as a general knowledge base. No other measurement instrument is linked, although a benchmark frames predicting which columns can be used to join two tables as part of Data analysis.\n\nWhat it is taken as evidence of. Rather than treating schema matching as evidence of a single construct, the linked construct relations are all causal claims. Papers claim causal relationships from contextual understanding, semantic understanding, and in-context learning to schema matching; the supporting language says contextual understanding enables reasoning about schema hierarchies and potential matches, and that semantic understanding is needed to decide whether differently labeled attributes represent the same concept. These papers therefore present separate causal accounts, not a shared account of one construct that schema matching is taken to reflect.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Table-LLM-Specialist: Language Model Specialists for Tables using Iterative Fine-tuning"
+    ],
+    "iclr25": [
+      "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+    ],
+    "icml25": [
+      "Bootstrapping Self-Improvement of Language Model Programs for Zero-Shot Schema Matching"
+    ],
+    "neurips24": [
+      "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 1,
+    "iclr25": 1,
+    "icml25": 1,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

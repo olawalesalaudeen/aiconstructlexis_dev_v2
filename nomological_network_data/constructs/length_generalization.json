@@ -1,0 +1,738 @@
+{
+  "canonical_name": "Length generalization",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage describes training on shorter sequences and testing on longer ones while maintaining performance, often phrased as applying a model directly to Ltest > Ltrain without performance degradation or effectively processing inputs longer than pre-training exposure. A smaller line of work narrows this to specific settings, such as applying a learned algorithm to longer inputs as evidence of a scalable rather than memorized solution, producing longer programs than seen in training, solving math word problems with extended narratives, or sustaining coherent generation over longer durations. Some authors also broaden the construct from longer inputs alone to varying numbers of context examples, or define it over both upward and downward out-of-distribution lengths.\n\nSpace of facets. Papers use several near-synonymous labels, including length extrapolation, long-context generalization, length generalizability, context length generalizability, generative length extrapolation, and size generalisation; one paper explicitly notes that, in language modelling, size generalisation is also known as length generalisation. The construct is also positioned relative to other generalization notions: some work treats easy-to-hard generalization as a type of length generalization, and another uses length generalization as a proxy for whether the model has learned the correct problem-solving strategy, linking it to systematic generalization. A smaller theoretical line further splits it into downward and upward OOD generalization, and one recurrent-model definition formalizes it through position-wise perplexities over longer positions.\n\nSpace of measurement. Papers link the construct to 18 measurement instruments and 5 behavioral indicators. The most frequently linked instruments are Books3, InfiniteBench, LongBench, PG-19, and RULER, and the broader measurement space is dominated by benchmark scores and perplexity on long-context corpora, with additional task evaluations for memory, retrieval, summarization, and question answering. These operationalizations usually match the dominant train-short, test-long definition, and some papers make the criterion explicit as accuracy beyond trained lengths or position-wise perplexity staying below a reference threshold on longer positions, while others narrow it to task-specific proxies such as arithmetic, recall, program length, or long-form generation.\n\nLinks. Beyond measurement, papers most often relate length generalization to long-context understanding and to other generalization or reasoning constructs. One paper reports that it correlates with a locality condition on which token distances matter across train and extrapolation lengths. Separate papers claim causal relationships from counting, simplicity bias, effective receptive field, and permutation invariance to length generalization.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Length generalization",
+    "Length generalizability",
+    "Length extrapolation",
+    "Context Length Generalizability",
+    "Generative length extrapolation",
+    "Size generalisation",
+    "Extrapolation ability",
+    "Long-context generalization"
+  ],
+  "papers": [
+    "Circuit Stability Characterizes Language Model Generalization",
+    "EpMAN: Episodic Memory AttentioN for Generalizing to Longer Contexts",
+    "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+    "LongRecipe: Recipe for Efficient Long Context Generalization in Large Language Models",
+    "Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks",
+    "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+    "Circuit Complexity Bounds for RoPE-based Transformer Architecture",
+    "CodeSSM: Towards State Space Models for Code Understanding",
+    "Context-aware Biases for Length Extrapolation",
+    "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+    "How do autoregressive transformers solve full addition?",
+    "ReSeeding Latent States for Sequential Language Understanding",
+    "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+    "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+    "TokenSelect: Efficient Long-Context Inference and Length Extrapolation for LLMs via Dynamic Token-Level KV Cache Selection",
+    "Which Word Orders Facilitate Length Generalization in LMs? An Investigation with GCG-Based Artificial Languages",
+    "CLEX: Continuous  Length Extrapolation for Large Language Models",
+    "Efficient Streaming Language Models with Attention Sinks",
+    "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis",
+    "Functional Interpolation for Relative Positions improves Long Context Transformers",
+    "Mastering Symbolic Operations: Augmenting Language Models with Compiled Neural Networks",
+    "Scaling Laws of RoPE-based Extrapolation",
+    "Teaching Arithmetic to Small Transformers",
+    "What Algorithms can Transformers Learn? A Study in Length Generalization",
+    "Arithmetic Transformers Can Length-Generalize in Both Operand Length and Count",
+    "Can LLMs Solve Longer Math Word Problems Better?",
+    "DPLM-2: A Multimodal Diffusion Protein Language Model",
+    "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+    "Forgetting Transformer: Softmax Attention with a Forget Gate",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "Generalizing Reasoning Problems to Longer Lengths",
+    "Language Models Need Inductive Biases to Count Inductively",
+    "Looped Transformers for Length Generalization",
+    "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+    "Number Cookbook: Number Understanding of Language Models and How to Improve It",
+    "Rethinking Invariance in In-context Learning",
+    "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+    "Selective Attention Improves Transformer",
+    "Training Neural Networks as Recognizers of Formal Languages",
+    "Can Transformers Reason Logically? A Study in SAT Solving",
+    "Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling",
+    "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization",
+    "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?",
+    "Implicit Language Models are RNNs: Balancing Parallelization and Expressivity",
+    "In-Context Linear Regression Demystified: Training Dynamics and Mechanistic Interpretability of Multi-Head Softmax Attention",
+    "KV Shifting Attention Enhances Language Modeling",
+    "Long-Form Speech Generation with Spoken Language Models",
+    "Long-Short Alignment for Effective Long-Context Modeling in LLMs",
+    "NoLiMa: Long-Context Evaluation Beyond Literal Matching",
+    "Non-Asymptotic Length Generalization",
+    "On Expressive Power of Looped Transformers: Theoretical Analysis and Enhancement via Timestep Encoding",
+    "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+    "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+    "Softmax is not Enough (for Sharp Size Generalisation)",
+    "Teaching Transformers Causal Reasoning through Axiomatic Training",
+    "The Role of Sparsity for Length Generalization in LLMs",
+    "Understanding and Improving Length Generalization in Recurrent Models",
+    "Universal Length Generalization with Turing Programs",
+    "BERTs are Generative In-Context Learners",
+    "BehaviorGPT: Smart Agent Simulation for Autonomous Driving with Next-Patch Prediction",
+    "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation",
+    "How Far Can Transformers Reason? The Globality Barrier and Inductive Scratchpad",
+    "InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory",
+    "Position Coupling: Improving Length Generalization of Arithmetic Transformers Using Task Structure",
+    "The Expressive Capacity of State Space Models: A Formal Language Perspective",
+    "Transformers Can Do Arithmetic with the Right Embeddings"
+  ],
+  "paper_count": 66,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability of a model to be trained on shorter sequences and then be applied to longer sequences without performance degradation.",
+      "paper": "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis",
+      "original_name": "Length generalization"
+    },
+    {
+      "text": "The ability of a large language model to effectively process sequences that are longer than those it was exposed to during its pre-training phase.",
+      "paper": "InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory",
+      "original_name": "Length generalizability"
+    },
+    {
+      "text": "The ability of a Large Language Model to solve math word problems with extended narratives or lengthy contexts.",
+      "paper": "Can LLMs Solve Longer Math Word Problems Better?",
+      "original_name": "Context Length Generalizability"
+    },
+    {
+      "text": "The ability to effectively process sequences that are longer than any seen during the training phase.",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "original_name": "Length extrapolation"
+    },
+    {
+      "text": "The ability of a model to maintain its performance and effectiveness when processing input sequences that are significantly longer than those it was exposed to during its pre-training phase.",
+      "paper": "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+      "original_name": "Long-context generalization"
+    },
+    {
+      "text": "The ability to maintain high-quality and coherent generation for durations significantly longer than those seen during training.",
+      "paper": "Long-Form Speech Generation with Spoken Language Models",
+      "original_name": "Generative length extrapolation"
+    },
+    {
+      "text": "The ability of a model to maintain performance on tasks when the number of input items exceeds the maximum seen during training, particularly relevant for reasoning tasks over variable-length sequences.",
+      "paper": "Softmax is not Enough (for Sharp Size Generalisation)",
+      "original_name": "Size generalisation"
+    },
+    {
+      "text": "The model's capability to generate coherent and realistic sequences that are longer than the sequences it was trained on.",
+      "paper": "BehaviorGPT: Smart Agent Simulation for Autonomous Driving with Next-Patch Prediction",
+      "original_name": "Extrapolation ability"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CLEX: Continuous  Length Extrapolation for Large Language Models",
+      "evidence": "Length extrapolation methods, although theoretically capable of extending the context window beyond the training sequence length, often underperform in practical long-context applications. (Section 1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "CLEX: Continuous  Length Extrapolation for Large Language Models"
+        ],
+        "icml25": [
+          "Long-Short Alignment for Effective Long-Context Modeling in LLMs",
+          "Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Books3",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Laws of RoPE-based Extrapolation",
+      "evidence": "Figure 2: Perplexity of larger bases on Books3 (Presser, 2020) shows better extrapolation.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Scaling Laws of RoPE-based Extrapolation"
+        ],
+        "neurips24": [
+          "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Easy-to-hard generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Transformers Can Do Arithmetic with the Right Embeddings",
+      "evidence": "\u201cwe investigate whether these models are capable of logical extrapolation\u2014can they solve problems of greater size and difficulty than those that appear in their training set?\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Transformers Can Do Arithmetic with the Right Embeddings"
+        ],
+        "icml25": [
+          "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PG-19",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ],
+        "emnlp25": [
+          "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RULER",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LongRecipe: Recipe for Efficient Long Context Generalization in Large Language Models",
+      "evidence": "Benchmarks of Long Context Generalization (Section 5.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "LongRecipe: Recipe for Efficient Long Context Generalization in Large Language Models"
+        ],
+        "emnlp25": [
+          "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "InfiniteBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "evidence": "We compare our method with existing length extrapolation approaches... on LongBench (Bai et al., 2023) and InfiniteBench (Zhang et al., 2024)... (Section 5.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+        ],
+        "emnlp25": [
+          "TokenSelect: Efficient Long-Context Inference and Length Extrapolation for LLMs via Dynamic Token-Level KV Cache Selection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Integer addition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "What Algorithms can Transformers Learn? A Study in Length Generalization",
+      "evidence": "Standard Transformers trained from scratch on addition and other arithmetic tasks exhibit little to no length generalization (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "What Algorithms can Transformers Learn? A Study in Length Generalization"
+        ],
+        "neurips24": [
+          "Transformers Can Do Arithmetic with the Right Embeddings"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Context-aware Biases for Length Extrapolation",
+      "evidence": "First, we examine its extrapolation capability in decoder-only models for next-token prediction, comparing it against several representative RPEs as well as commonly used APEs. (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Context-aware Biases for Length Extrapolation"
+        ],
+        "icml25": [
+          "The Role of Sparsity for Length Generalization in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "evidence": "We compare our method with existing length extrapolation approaches... on LongBench (Bai et al., 2023) and InfiniteBench (Zhang et al., 2024)... (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Simplicity bias",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "What Algorithms can Transformers Learn? A Study in Length Generalization",
+      "evidence": "Toy Model (RASP Learning). For symbolic tasks, Transformers tend to learn the shortest RASP-L program which fits the training set, if one exists. Thus, if this minimal program exists and correctly length-generalizes, then so will the Transformer. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "What Algorithms can Transformers Learn? A Study in Length Generalization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Systematic generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What Algorithms can Transformers Learn? A Study in Length Generalization",
+      "evidence": "While we focus on studying length generalization in this work, we expect the intuitions developed here can apply to systematic generalization more broadly. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "What Algorithms can Transformers Learn? A Study in Length Generalization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Arxiv",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation",
+      "evidence": "Experimental validation on real-world datasets (Arxiv, Books3, and CHE) demonstrates that DAPE enhances model performances in terms of trained length and length generalization, where the improvements are statistically significant. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-form text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation",
+      "evidence": "While transformer-based models exhibit satisfying performances in tasks of consistent length and distribution, their effectiveness tends to diminish sharply when the input length exceeds the training length, e.g., long document summarization, \u201cneedle in a haystack\u201d search, and long text generation. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Needle-in-a-Haystack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BERTs are Generative In-Context Learners",
+      "evidence": "We measure the extent to which DeBERTa generalizes to longer sequences with the \u2018needle in a haystack\u2019 test from RULER (Hsieh et al., 2024). (Section 2.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "BERTs are Generative In-Context Learners"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Inductive bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Training Neural Networks as Recognizers of Formal Languages",
+      "evidence": "The short validation set reveals an architecture\u2019s inductive bias in the absence of any disambiguating information about how it should generalize to longer lengths, as in the experiments of Del\u00b4etang et al. (2023). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Training Neural Networks as Recognizers of Formal Languages"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Generalizing Reasoning Problems to Longer Lengths",
+      "evidence": "Length generalization (LG) is a challenging problem in learning to reason. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generalizing Reasoning Problems to Longer Lengths"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Effective receptive field",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "evidence": "Through a series of visualizations, analyses, and empirical measures, recognize that although Mamba can theoretically capture global interactions via the recurrent state, its limited ERF prevents significant length-extrapolation; (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DeciMamba: Exploring the Length Extrapolation Potential of Mamba"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GovReport",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "QMSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "NarrativeQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Qasper",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CodeParrot",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adaptive computation",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Looped Transformers for Length Generalization",
+      "evidence": "In this work, we demonstrate that looped Transformers with an adaptive number of steps significantly improve length generalization. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Looped Transformers for Length Generalization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DoTA (traffic accident analysis)",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Single-to-mix Modality Alignment with Multimodal Large Language Model for Document Image Machine Translation",
+      "evidence": "Long Context... mean testing on the... DoTA long context subset (Table 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Single-to-mix Modality Alignment with Multimodal Large Language Model for Document Image Machine Translation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "The Pile (deduplicated)",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Implicit Language Models are RNNs: Balancing Parallelization and Expressivity",
+      "evidence": "To assess their capability for length extrapolation, we evaluated the implicit models on the test split of the D-PILE, which was packed with longer sequences consisting of 4096, 8192, and 16384 tokens. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Implicit Language Models are RNNs: Balancing Parallelization and Expressivity"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Sparsity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "The Role of Sparsity for Length Generalization in LLMs",
+      "evidence": "a key factor driving length generalization is a \u201csparse\u201d dependency structure of each token on the previous ones. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "The Role of Sparsity for Length Generalization in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Attention sink",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "evidence": "most training-free extrapolation methods are not only severely limited by memory bottlenecks, but also suffer from the attention sink, which restricts their scalability and effectiveness in practice. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongMemEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+      "evidence": "To assess long-context memory and extrapolation ability, two benchmarks are adopted: a chat-form benchmark LONGMEMEVAL... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HELMET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+      "evidence": "To assess long-context memory and extrapolation ability, two benchmarks are adopted: ... an application-centric benchmark HELMET (Yen et al., 2024). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Counting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "What Algorithms can Transformers Learn? A Study in Length Generalization",
+      "evidence": "We train a Transformer with learned positional embeddings on count sequences of lengths up to 50, with random a and b points in [0, 155]. This trained model then length-generalizes near perfectly when prompted to count sequences of length 100 (see Figure 1b).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "What Algorithms can Transformers Learn? A Study in Length Generalization"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 30,
+  "incoming_relationship_count": 10,
+  "outgoing_relationship_count": 20,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage describes training on shorter sequences and testing on longer ones while maintaining performance, often phrased as applying a model directly to Ltest > Ltrain without performance degradation or effectively processing inputs longer than pre-training exposure. A smaller line of work narrows this to specific settings, such as applying a learned algorithm to longer inputs as evidence of a scalable rather than memorized solution, producing longer programs than seen in training, solving math word problems with extended narratives, or sustaining coherent generation over longer durations. Some authors also broaden the construct from longer inputs alone to varying numbers of context examples, or define it over both upward and downward out-of-distribution lengths."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use several near-synonymous labels, including length extrapolation, long-context generalization, length generalizability, context length generalizability, generative length extrapolation, and size generalisation; one paper explicitly notes that, in language modelling, size generalisation is also known as length generalisation. The construct is also positioned relative to other generalization notions: some work treats easy-to-hard generalization as a type of length generalization, and another uses length generalization as a proxy for whether the model has learned the correct problem-solving strategy, linking it to systematic generalization. A smaller theoretical line further splits it into downward and upward OOD generalization, and one recurrent-model definition formalizes it through position-wise perplexities over longer positions."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link the construct to 18 measurement instruments and 5 behavioral indicators. The most frequently linked instruments are Books3, InfiniteBench, LongBench, PG-19, and RULER, and the broader measurement space is dominated by benchmark scores and perplexity on long-context corpora, with additional task evaluations for memory, retrieval, summarization, and question answering. These operationalizations usually match the dominant train-short, test-long definition, and some papers make the criterion explicit as accuracy beyond trained lengths or position-wise perplexity staying below a reference threshold on longer positions, while others narrow it to task-specific proxies such as arithmetic, recall, program length, or long-form generation."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, papers most often relate length generalization to long-context understanding and to other generalization or reasoning constructs. One paper reports that it correlates with a locality condition on which token distances matter across train and extrapolation lengths. Separate papers claim causal relationships from counting, simplicity bias, effective receptive field, and permutation invariance to length generalization."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define length generalization as a model's ability to keep performing effectively on sequences or contexts that are longer than those seen during training or pretraining. A few papers phrase this in narrower settings such as longer programs, longer generations, or unseen shorter lengths too, but these are minority variants around the same core train-short, test-long extrapolation property rather than a substantial competing definition.",
+    "papers_with_definition": 23,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage describes training on shorter sequences and testing on longer ones while maintaining performance, often phrased as applying a model directly to Ltest > Ltrain without performance degradation or effectively processing inputs longer than pre-training exposure. A smaller line of work narrows this to specific settings, such as applying a learned algorithm to longer inputs as evidence of a scalable rather than memorized solution, producing longer programs than seen in training, solving math word problems with extended narratives, or sustaining coherent generation over longer durations. Some authors also broaden the construct from longer inputs alone to varying numbers of context examples, or define it over both upward and downward out-of-distribution lengths.\n\nSpace of facets. Papers use several near-synonymous labels, including length extrapolation, long-context generalization, length generalizability, context length generalizability, generative length extrapolation, and size generalisation; one paper explicitly notes that, in language modelling, size generalisation is also known as length generalisation. The construct is also positioned relative to other generalization notions: some work treats easy-to-hard generalization as a type of length generalization, and another uses length generalization as a proxy for whether the model has learned the correct problem-solving strategy, linking it to systematic generalization. A smaller theoretical line further splits it into downward and upward OOD generalization, and one recurrent-model definition formalizes it through position-wise perplexities over longer positions.\n\nSpace of measurement. Papers link the construct to 18 measurement instruments and 5 behavioral indicators. The most frequently linked instruments are Books3, InfiniteBench, LongBench, PG-19, and RULER, and the broader measurement space is dominated by benchmark scores and perplexity on long-context corpora, with additional task evaluations for memory, retrieval, summarization, and question answering. These operationalizations usually match the dominant train-short, test-long definition, and some papers make the criterion explicit as accuracy beyond trained lengths or position-wise perplexity staying below a reference threshold on longer positions, while others narrow it to task-specific proxies such as arithmetic, recall, program length, or long-form generation.\n\nLinks. Beyond measurement, papers most often relate length generalization to long-context understanding and to other generalization or reasoning constructs. One paper reports that it correlates with a locality condition on which token distances matter across train and extrapolation lengths. Separate papers claim causal relationships from counting, simplicity bias, effective receptive field, and permutation invariance to length generalization.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Circuit Stability Characterizes Language Model Generalization",
+      "EpMAN: Episodic Memory AttentioN for Generalizing to Longer Contexts",
+      "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+      "LongRecipe: Recipe for Efficient Long Context Generalization in Large Language Models",
+      "Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks"
+    ],
+    "emnlp25": [
+      "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+      "Circuit Complexity Bounds for RoPE-based Transformer Architecture",
+      "CodeSSM: Towards State Space Models for Code Understanding",
+      "Context-aware Biases for Length Extrapolation",
+      "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+      "How do autoregressive transformers solve full addition?",
+      "ReSeeding Latent States for Sequential Language Understanding",
+      "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+      "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+      "TokenSelect: Efficient Long-Context Inference and Length Extrapolation for LLMs via Dynamic Token-Level KV Cache Selection",
+      "Which Word Orders Facilitate Length Generalization in LMs? An Investigation with GCG-Based Artificial Languages"
+    ],
+    "iclr24": [
+      "CLEX: Continuous  Length Extrapolation for Large Language Models",
+      "Efficient Streaming Language Models with Attention Sinks",
+      "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis",
+      "Functional Interpolation for Relative Positions improves Long Context Transformers",
+      "Mastering Symbolic Operations: Augmenting Language Models with Compiled Neural Networks",
+      "Scaling Laws of RoPE-based Extrapolation",
+      "Teaching Arithmetic to Small Transformers",
+      "What Algorithms can Transformers Learn? A Study in Length Generalization"
+    ],
+    "iclr25": [
+      "Arithmetic Transformers Can Length-Generalize in Both Operand Length and Count",
+      "Can LLMs Solve Longer Math Word Problems Better?",
+      "DPLM-2: A Multimodal Diffusion Protein Language Model",
+      "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "Forgetting Transformer: Softmax Attention with a Forget Gate",
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "Generalizing Reasoning Problems to Longer Lengths",
+      "Language Models Need Inductive Biases to Count Inductively",
+      "Looped Transformers for Length Generalization",
+      "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+      "Number Cookbook: Number Understanding of Language Models and How to Improve It",
+      "Rethinking Invariance in In-context Learning",
+      "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "Selective Attention Improves Transformer",
+      "Training Neural Networks as Recognizers of Formal Languages"
+    ],
+    "icml25": [
+      "Can Transformers Reason Logically? A Study in SAT Solving",
+      "Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling",
+      "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization",
+      "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?",
+      "Implicit Language Models are RNNs: Balancing Parallelization and Expressivity",
+      "In-Context Linear Regression Demystified: Training Dynamics and Mechanistic Interpretability of Multi-Head Softmax Attention",
+      "KV Shifting Attention Enhances Language Modeling",
+      "Long-Form Speech Generation with Spoken Language Models",
+      "Long-Short Alignment for Effective Long-Context Modeling in LLMs",
+      "NoLiMa: Long-Context Evaluation Beyond Literal Matching",
+      "Non-Asymptotic Length Generalization",
+      "On Expressive Power of Looped Transformers: Theoretical Analysis and Enhancement via Timestep Encoding",
+      "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+      "Softmax is not Enough (for Sharp Size Generalisation)",
+      "Teaching Transformers Causal Reasoning through Axiomatic Training",
+      "The Role of Sparsity for Length Generalization in LLMs",
+      "Understanding and Improving Length Generalization in Recurrent Models",
+      "Universal Length Generalization with Turing Programs"
+    ],
+    "neurips24": [
+      "BERTs are Generative In-Context Learners",
+      "BehaviorGPT: Smart Agent Simulation for Autonomous Driving with Next-Patch Prediction",
+      "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation",
+      "How Far Can Transformers Reason? The Globality Barrier and Inductive Scratchpad",
+      "InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory",
+      "Position Coupling: Improving Length Generalization of Arithmetic Transformers Using Task Structure",
+      "The Expressive Capacity of State Space Models: A Formal Language Perspective",
+      "Transformers Can Do Arithmetic with the Right Embeddings"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 5,
+    "emnlp25": 11,
+    "iclr24": 8,
+    "iclr25": 15,
+    "icml25": 19,
+    "neurips24": 8
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

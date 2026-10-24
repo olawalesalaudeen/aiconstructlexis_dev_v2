@@ -1,0 +1,147 @@
+{
+  "canonical_name": "Response ranking",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats response ranking as ordering several candidate responses from best to worst, or choosing the best one, based on a judge's assessment of quality. The judging source varies, with LLMs and judge models appearing most often, while some papers instead use human raters, reward models, annotators, or PRM scores. A smaller line of work narrows the behavior to reranking generated reasoning paths so that the highest scoring path, or the path with the most accurate final answer, is selected, and another frames success as choosing the candidate with the lowest predicted hallucination rate.\n\nVariants. Papers use several near-synonymous labels, with response ranking the prevailing name and smaller variants including response reranking, response re-ranking, and solution reranking. The studied settings range from generic instruction prompts with multiple proposed responses, to tournament-style and \"first-round-rank\" candidate ranking, to Best-of-N and weighted majority voting over reasoning paths or chains of thought. Other variants appear in multimodal reasoning, where a PRM selects top-scoring responses, and in hallucination mitigation, where an annotator is used to choose the response with the lowest predicted hallucination rate.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers most commonly operationalize the behavior by generating a set of candidate responses and asking a judge model or LLM ranker to produce a ranked list or pick the best response; other papers describe human or reward-model ranking labels, annotator-based reranking, and reward-model or PRM-based scoring over either complete responses or process steps. The scoring procedures mentioned include aggregation scores over reasoning paths, tournament-style ranking, statistical rejection sampling, and selecting top responses such as the top-2.\n\nWhat it is taken as evidence of. Papers do not link response ranking to any construct, so they do not state a shared view of which construct it reflects. Outside construct claims, one paper claims a causal relationship from Response ranking to Instruction following, describing ranking as effective for bolstering performance on instruction-following tasks, and one paper reports that Response aggregation is related to Response ranking, with responses ranked before the best ones are fused into a higher quality output.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Response ranking",
+    "Solution reranking",
+    "Response re-ranking",
+    "Response reranking"
+  ],
+  "papers": [
+    "Statistical Rejection Sampling Improves Preference Optimization",
+    "Anyprefer: An Agentic Framework for Preference Data Synthesis",
+    "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?",
+    "Active Reward Modeling: Adaptive Preference Labeling for Large Language Model Alignment",
+    "An Architecture Search Framework for Inference-Time Techniques",
+    "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+    "VersaPRM: Multi-Domain Process Reward Model via Synthetic Reasoning Data",
+    "Diving into Self-Evolving Training for Multimodal Reasoning",
+    "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+    "Free Process Rewards without Process Labels",
+    "LiPO: Listwise Preference Optimization through Learning-to-Rank",
+    "ANAH-v2: Scaling Analytical Hallucination Annotation of Large Language Models"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Ordering multiple candidate responses from best to worst according to a judge's assessment.",
+      "paper": "Anyprefer: An Agentic Framework for Preference Data Synthesis",
+      "original_name": "Response ranking"
+    },
+    {
+      "text": "Reordering multiple generated reasoning paths based on a scoring mechanism such as PRM step scores to select the most accurate final answer.",
+      "paper": "VersaPRM: Multi-Domain Process Reward Model via Synthetic Reasoning Data",
+      "original_name": "Solution reranking"
+    },
+    {
+      "text": "An observable procedure for hallucination mitigation where multiple candidate responses are generated, evaluated by an annotator model, and the one with the lowest predicted hallucination rate is selected.",
+      "paper": "ANAH-v2: Scaling Analytical Hallucination Annotation of Large Language Models",
+      "original_name": "Response re-ranking"
+    },
+    {
+      "text": "The model's behavior of ordering generated responses by quality using a reward model, particularly selecting top-2 responses based on process-level scores.",
+      "paper": "Diving into Self-Evolving Training for Multimodal Reasoning",
+      "original_name": "Response reranking"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "An Architecture Search Framework for Inference-Time Techniques",
+      "evidence": "for tasks like instruction-following and reasoning, techniques such as fusion and ranking are effective for bolstering task performances (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Response aggregation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "An Architecture Search Framework for Inference-Time Techniques",
+      "evidence": "\"their responses are ranked, and the best ones are fused into a single, higher quality output\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats response ranking as ordering several candidate responses from best to worst, or choosing the best one, based on a judge's assessment of quality. The judging source varies, with LLMs and judge models appearing most often, while some papers instead use human raters, reward models, annotators, or PRM scores. A smaller line of work narrows the behavior to reranking generated reasoning paths so that the highest scoring path, or the path with the most accurate final answer, is selected, and another frames success as choosing the candidate with the lowest predicted hallucination rate."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-synonymous labels, with response ranking the prevailing name and smaller variants including response reranking, response re-ranking, and solution reranking. The studied settings range from generic instruction prompts with multiple proposed responses, to tournament-style and \"first-round-rank\" candidate ranking, to Best-of-N and weighted majority voting over reasoning paths or chains of thought. Other variants appear in multimodal reasoning, where a PRM selects top-scoring responses, and in hallucination mitigation, where an annotator is used to choose the response with the lowest predicted hallucination rate."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers most commonly operationalize the behavior by generating a set of candidate responses and asking a judge model or LLM ranker to produce a ranked list or pick the best response; other papers describe human or reward-model ranking labels, annotator-based reranking, and reward-model or PRM-based scoring over either complete responses or process steps. The scoring procedures mentioned include aggregation scores over reasoning paths, tournament-style ranking, statistical rejection sampling, and selecting top responses such as the top-2."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not link response ranking to any construct, so they do not state a shared view of which construct it reflects. Outside construct claims, one paper claims a causal relationship from Response ranking to Instruction following, describing ranking as effective for bolstering performance on instruction-following tasks, and one paper reports that Response aggregation is related to Response ranking, with responses ranked before the best ones are fused into a higher quality output."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats response ranking as ordering several candidate responses from best to worst, or choosing the best one, based on a judge's assessment of quality. The judging source varies, with LLMs and judge models appearing most often, while some papers instead use human raters, reward models, annotators, or PRM scores. A smaller line of work narrows the behavior to reranking generated reasoning paths so that the highest scoring path, or the path with the most accurate final answer, is selected, and another frames success as choosing the candidate with the lowest predicted hallucination rate.\n\nVariants. Papers use several near-synonymous labels, with response ranking the prevailing name and smaller variants including response reranking, response re-ranking, and solution reranking. The studied settings range from generic instruction prompts with multiple proposed responses, to tournament-style and \"first-round-rank\" candidate ranking, to Best-of-N and weighted majority voting over reasoning paths or chains of thought. Other variants appear in multimodal reasoning, where a PRM selects top-scoring responses, and in hallucination mitigation, where an annotator is used to choose the response with the lowest predicted hallucination rate.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers most commonly operationalize the behavior by generating a set of candidate responses and asking a judge model or LLM ranker to produce a ranked list or pick the best response; other papers describe human or reward-model ranking labels, annotator-based reranking, and reward-model or PRM-based scoring over either complete responses or process steps. The scoring procedures mentioned include aggregation scores over reasoning paths, tournament-style ranking, statistical rejection sampling, and selecting top responses such as the top-2.\n\nWhat it is taken as evidence of. Papers do not link response ranking to any construct, so they do not state a shared view of which construct it reflects. Outside construct claims, one paper claims a causal relationship from Response ranking to Instruction following, describing ranking as effective for bolstering performance on instruction-following tasks, and one paper reports that Response aggregation is related to Response ranking, with responses ranked before the best ones are fused into a higher quality output.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Anyprefer: An Agentic Framework for Preference Data Synthesis",
+      "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?"
+    ],
+    "icml25": [
+      "Active Reward Modeling: Adaptive Preference Labeling for Large Language Model Alignment",
+      "An Architecture Search Framework for Inference-Time Techniques",
+      "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+      "VersaPRM: Multi-Domain Process Reward Model via Synthetic Reasoning Data",
+      "Diving into Self-Evolving Training for Multimodal Reasoning",
+      "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+      "Free Process Rewards without Process Labels"
+    ],
+    "neurips24": [
+      "ANAH-v2: Scaling Analytical Hallucination Annotation of Large Language Models"
+    ],
+    "iclr24": [
+      "Statistical Rejection Sampling Improves Preference Optimization"
+    ],
+    "naacl25": [
+      "LiPO: Listwise Preference Optimization through Learning-to-Rank"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "icml25": 7,
+    "neurips24": 1,
+    "iclr24": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

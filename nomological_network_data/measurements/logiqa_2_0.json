@@ -1,0 +1,203 @@
+{
+  "canonical_name": "LogiQA 2.0",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across definitions, the prevailing usage treats LogiQA 2.0, often written as LogiQA2 or LogiQA 2, as a benchmark or dataset for logical reasoning and logical question answering. Papers describe it as requiring logical reasoning over text, and some specify a multiple-choice format, including \"logical reasoning multi-choice QA\" and multiple-choice questions derived from professional exams that require deductive reasoning. A smaller strand presents it as an improved version of LogiQA for machine reading comprehension, and one relationship snippet describes LogiQA2 as a revision and re-annotation of LogiQA.\n\nWhat it is claimed to measure. Papers link it to 5 constructs and 1 behavioral indicator. The most common claim is that it measures Logical reasoning; other papers use it to measure Commonsense reasoning, Executive function, Generalization, and Reasoning, and one paper uses it for the behavioral indicator Multiple-choice question answering. Overall, its reported measurement role is spread across several reasoning-related constructs rather than confined to a single framing.\n\nSpace of uses. Across papers, it is usually one component of broader evaluation suites rather than a standalone check. It is related to lm-evaluation-harness in one zero-shot downstream setup, and other papers place it in 5-shot evaluations, 0-shot reporting, an executive-skills subset, or multi-benchmark comparisons alongside StrategyQA, GSM8K, WinoGrande, CLadder, and SciQ.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "LogiQA 2",
+    "LogiQA 2.0",
+    "LogiQA2"
+  ],
+  "papers": [
+    "RiOT: Efficient Prompt Refinement with Residual Optimization Tree",
+    "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation",
+    "Not-Just-Scaling Laws: Towards a Better Understanding of the Downstream Impact of Language Model Design Decisions",
+    "Playpen: An Environment for Exploring Learning From Dialogue Game Feedback",
+    "Adaptive Data Optimization: Dynamic Sample Selection with Scaling Laws",
+    "Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining",
+    "Enhancing Reasoning Capabilities of LLMs via Principled Synthetic Logic Corpus",
+    "Self-playing Adversarial Language Game Enhances LLM Reasoning"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark for logical question answering, requiring models to perform logical reasoning over text.",
+      "paper": "Adaptive Data Optimization: Dynamic Sample Selection with Scaling Laws",
+      "original_name": "LogiQA2"
+    },
+    {
+      "text": "A logical reasoning benchmark used in a 5-shot evaluation setting.",
+      "paper": "Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining",
+      "original_name": "LogiQA 2"
+    },
+    {
+      "text": "LogiQA 2.0 is a benchmark dataset designed to evaluate a model's logical reasoning capabilities.",
+      "paper": "RiOT: Efficient Prompt Refinement with Residual Optimization Tree",
+      "original_name": "LogiQA 2.0"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Logical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Self-playing Adversarial Language Game Enhances LLM Reasoning",
+      "evidence": "LogiQA2 [Liu et al., 2023] is a revision and re-annotation of LogiQA [Liu et al., 2021], a logical reasoning reading comprehension dataset. (Appendix C.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Self-playing Adversarial Language Game Enhances LLM Reasoning"
+        ],
+        "emnlp25": [
+          "Not-Just-Scaling Laws: Towards a Better Understanding of the Downstream Impact of Language Model Design Decisions"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining",
+      "evidence": "To assess generalization beyond the pretraining distribution, we evaluate models on a series of diverse reasoning tasks in a 5-shot setting, including LogiQA Liu et al. (2020), LogiQA 2 Liu et al. (2023), SciQ Welbl et al. (2017), and PiQA Bisk et al. (2020). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining",
+      "evidence": "To assess generalization beyond the pretraining distribution, we evaluate models on a series of diverse reasoning tasks in a 5-shot setting, including... LogiQA 2... (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Commonsense reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Adaptive Data Optimization: Dynamic Sample Selection with Scaling Laws",
+      "evidence": "zero-shot downstream performance on 6 common-sense reasoning domains from the language model evaluation harness (Gao et al., 2024): HellaSwag (Zellers et al., 2019), WinoGrande (Sakaguchi et al., 2019), PIQA (Bisk et al., 2019), ARC-E (Clark et al., 2018), SciQ (Welbl et al., 2017), LogiQA2 (Liu et al., 2023) and LAMBADA (Paperno et al., 2016). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Adaptive Data Optimization: Dynamic Sample Selection with Scaling Laws"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "lm-evaluation-harness",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Adaptive Data Optimization: Dynamic Sample Selection with Scaling Laws",
+      "evidence": "zero-shot downstream performance on 6 common-sense reasoning domains from the language model evaluation harness (Gao et al., 2024): HellaSwag (Zellers et al., 2019), WinoGrande (Sakaguchi et al., 2019), PIQA (Bisk et al., 2019), ARC-E (Clark et al., 2018), SciQ (Welbl et al., 2017), LogiQA2 (Liu et al., 2023) and LAMBADA (Paperno et al., 2016). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Adaptive Data Optimization: Dynamic Sample Selection with Scaling Laws"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multiple-choice question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation",
+      "evidence": "LogiQA2 (Liu et al., 2023) for logical reasoning multi-choice QA;",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Executive function",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Playpen: An Environment for Exploring Learning From Dialogue Game Feedback",
+      "evidence": "Executive includes LogiQA 2.0, CLadder, and WinoGrande (Table 2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Playpen: An Environment for Exploring Learning From Dialogue Game Feedback"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across definitions, the prevailing usage treats LogiQA 2.0, often written as LogiQA2 or LogiQA 2, as a benchmark or dataset for logical reasoning and logical question answering. Papers describe it as requiring logical reasoning over text, and some specify a multiple-choice format, including \"logical reasoning multi-choice QA\" and multiple-choice questions derived from professional exams that require deductive reasoning. A smaller strand presents it as an improved version of LogiQA for machine reading comprehension, and one relationship snippet describes LogiQA2 as a revision and re-annotation of LogiQA."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to 5 constructs and 1 behavioral indicator. The most common claim is that it measures Logical reasoning; other papers use it to measure Commonsense reasoning, Executive function, Generalization, and Reasoning, and one paper uses it for the behavioral indicator Multiple-choice question answering. Overall, its reported measurement role is spread across several reasoning-related constructs rather than confined to a single framing."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Across papers, it is usually one component of broader evaluation suites rather than a standalone check. It is related to lm-evaluation-harness in one zero-shot downstream setup, and other papers place it in 5-shot evaluations, 0-shot reporting, an executive-skills subset, or multi-benchmark comparisons alongside StrategyQA, GSM8K, WinoGrande, CLadder, and SciQ."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across definitions, the prevailing usage treats LogiQA 2.0, often written as LogiQA2 or LogiQA 2, as a benchmark or dataset for logical reasoning and logical question answering. Papers describe it as requiring logical reasoning over text, and some specify a multiple-choice format, including \"logical reasoning multi-choice QA\" and multiple-choice questions derived from professional exams that require deductive reasoning. A smaller strand presents it as an improved version of LogiQA for machine reading comprehension, and one relationship snippet describes LogiQA2 as a revision and re-annotation of LogiQA.\n\nWhat it is claimed to measure. Papers link it to 5 constructs and 1 behavioral indicator. The most common claim is that it measures Logical reasoning; other papers use it to measure Commonsense reasoning, Executive function, Generalization, and Reasoning, and one paper uses it for the behavioral indicator Multiple-choice question answering. Overall, its reported measurement role is spread across several reasoning-related constructs rather than confined to a single framing.\n\nSpace of uses. Across papers, it is usually one component of broader evaluation suites rather than a standalone check. It is related to lm-evaluation-harness in one zero-shot downstream setup, and other papers place it in 5-shot evaluations, 0-shot reporting, an executive-skills subset, or multi-benchmark comparisons alongside StrategyQA, GSM8K, WinoGrande, CLadder, and SciQ.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "RiOT: Efficient Prompt Refinement with Residual Optimization Tree",
+      "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation"
+    ],
+    "emnlp25": [
+      "Not-Just-Scaling Laws: Towards a Better Understanding of the Downstream Impact of Language Model Design Decisions",
+      "Playpen: An Environment for Exploring Learning From Dialogue Game Feedback"
+    ],
+    "iclr25": [
+      "Adaptive Data Optimization: Dynamic Sample Selection with Scaling Laws",
+      "Dynamic Loss-Based Sample Reweighting for Improved Large Language Model Pretraining"
+    ],
+    "neurips24": [
+      "Enhancing Reasoning Capabilities of LLMs via Principled Synthetic Logic Corpus",
+      "Self-playing Adversarial Language Game Enhances LLM Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 2,
+    "iclr25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "neurips24"
+  ]
+}

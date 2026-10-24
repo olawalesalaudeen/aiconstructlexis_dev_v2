@@ -1,0 +1,247 @@
+{
+  "canonical_name": "Task interference",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, task interference is most commonly treated as a latent phenomenon of performance degradation when multiple tasks are learned jointly or when task-specific models are merged, because learning signals, shared parameters, or representations conflict. Most definitions describe one task's learning as hurting another at the task level, while some authors use near-synonyms such as negative transfer or inter-task interference for the same broad pattern. A smaller line narrows the construct to parameter interference, where updates or merged parameters that help one source model or language pair degrade others. The main variation is therefore between a broad cross-task degradation framing and a narrower parameter-conflict framing.\n\nSpace of facets. Papers do not settle on a single naming scheme: alongside task interference, they also use negative transfer, inter-task interference, and, in model-merging or multilingual settings, parameter interference. Only one paper explicitly names a subtype, partial task interference, for jointly trained control and understanding tasks with overlapping representations that mutually degrade performance. One definition also contrasts the phenomenon with synergistic learning, marking it as the adverse case rather than the cooperative one.\n\nSpace of measurement. Papers do not link task interference to any measurement instrument, and the construct is linked to 2 behavioral indicators overall, Catastrophic forgetting and Object detection, through related and causal claims rather than as explicit measures. Operationally, authors infer it from degraded performance when tasks are trained together or checkpoints are merged, including generalists underperforming specialists on VL tasks, merged checkpoints losing performance on disparate tasks, and control and understanding tasks degrading each other when trained simultaneously. One paper further says inter-task interference is measured by changes in internal activations induced by merging, so the operationalizations largely match the definitions' focus on cross-task degradation.\n\nLinks. Overall, papers link task interference to 3 constructs, Graceful forgetting, Multimodal understanding, and Task generalization, and to 2 behavioral indicators, Catastrophic forgetting and Object detection. One paper claims a causal relationship from Object detection to Task interference, stating that learning instance-level perception together with logical reasoning may lead to interference. Separate papers claim causal relationships from Task interference to Task generalization and from Task interference to Multimodal understanding. Other papers relate Task interference to Catastrophic forgetting and to Graceful forgetting.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Task interference",
+    "Negative transfer",
+    "Inter-task interference",
+    "Parameter interference"
+  ],
+  "papers": [
+    "MLAS-LoRA: Language-Aware Parameters Detection and LoRA-Based Knowledge Transfer for Multilingual Machine Translation",
+    "Unraveling LoRA Interference: Orthogonal Subspaces for Robust Model Merging",
+    "ChatVLA: Unified Multimodal Understanding and Robot Control with Vision-Language-Action Model",
+    "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+    "To See a World in a Spark of Neuron: Disentangling Multi-Task Interference for Training-Free Model Merging",
+    "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+    "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging",
+    "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+    "No Task Left Behind: Isotropic Model Merging with Common and Task-Specific Subspaces",
+    "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors",
+    "Customizing Language Models with Instance-wise LoRA for Sequential Recommendation",
+    "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A latent phenomenon in multi-task learning where a model's performance on certain tasks degrades due to conflicting learning signals from being trained on a diverse mixture of other tasks.",
+      "paper": "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models",
+      "original_name": "Task interference"
+    },
+    {
+      "text": "A phenomenon where training on diverse or unrelated tasks or data instances leads to a degradation in model performance, as opposed to synergistic learning.",
+      "paper": "Customizing Language Models with Instance-wise LoRA for Sequential Recommendation",
+      "original_name": "Negative transfer"
+    },
+    {
+      "text": "A latent phenomenon in model merging where parameter conflicts between different source models cause performance degradation in the final unified model.",
+      "paper": "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors",
+      "original_name": "Parameter interference"
+    },
+    {
+      "text": "The phenomenon where the process of learning or combining capabilities for one task negatively impacts performance on other tasks within a multi-task model.",
+      "paper": "No Task Left Behind: Isotropic Model Merging with Common and Task-Specific Subspaces",
+      "original_name": "Inter-task interference"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Object detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Octavius: Mitigating Task Interference in MLLMs via LoRA-MoE",
+      "evidence": "simultaneously learning to acquire knowledge at distinct granularities, such as the instance-level perception (e.g., object detection) and logical reasoning (e.g., VQA), may lead to significant interference. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Octavius: Mitigating Task Interference in MLLMs via LoRA-MoE"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Weight disentanglement",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+      "evidence": "Task interference occurs when fine-tuning modifies parameters that are critical to other tasks, resulting in unintended behavioral shifts. To prevent this, data from disjoint regions in the input space (representing different tasks) should affect only their corresponding regions in the activation space. Ortiz-Jimenez et al. (2023) formalized this concept as weight disentanglement. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Efficient Model Editing with Task-Localized Sparse Fine-tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging",
+      "evidence": "Task interference is linked to catastrophic forgetting, as the individual task vectors lose a significant amount of generalization ability to other tasks after fine-tuning and merging them leads to interference among each other (Section 5.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Model merging",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Merging LoRAs like Playing LEGO: Pushing the Modularity of LoRA to Extremes Through Rank-Wise Clustering",
+      "evidence": "misalignment of MSU parameters when merging LoRAs can result in parameter interference.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Merging LoRAs like Playing LEGO: Pushing the Modularity of LoRA to Extremes Through Rank-Wise Clustering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Subspace alignment",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "No Task Left Behind: Isotropic Model Merging with Common and Task-Specific Subspaces",
+      "evidence": "In Appendix A.3, we show that increased SAR is associated with reduced inter-task interference, measured by changes in internal activations induced by merging. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "No Task Left Behind: Isotropic Model Merging with Common and Task-Specific Subspaces"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multimodal understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ChatVLA: Unified Multimodal Understanding and Robot Control with Vision-Language-Action Model",
+      "evidence": "\u201ctask interference, where competing control and understanding tasks degrade performance when trained jointly.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ChatVLA: Unified Multimodal Understanding and Robot Control with Vision-Language-Action Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Graceful forgetting",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Graceful Forgetting in Generative Language Models",
+      "evidence": "Some of the knowledge may actually bring detrimental effects to the fine-tuning tasks, which is also known as negative transfer. To address this problem, graceful forgetting has emerged as a promising approach. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Graceful Forgetting in Generative Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multi-task ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors",
+      "evidence": "Model merging seeks to integrate task-specific expert models into a unified architecture while preserving multi-task generalization capabilities, yet parameter interference between constituent models frequently induces performance degradation. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 8,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, task interference is most commonly treated as a latent phenomenon of performance degradation when multiple tasks are learned jointly or when task-specific models are merged, because learning signals, shared parameters, or representations conflict. Most definitions describe one task's learning as hurting another at the task level, while some authors use near-synonyms such as negative transfer or inter-task interference for the same broad pattern. A smaller line narrows the construct to parameter interference, where updates or merged parameters that help one source model or language pair degrade others. The main variation is therefore between a broad cross-task degradation framing and a narrower parameter-conflict framing."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not settle on a single naming scheme: alongside task interference, they also use negative transfer, inter-task interference, and, in model-merging or multilingual settings, parameter interference. Only one paper explicitly names a subtype, partial task interference, for jointly trained control and understanding tasks with overlapping representations that mutually degrade performance. One definition also contrasts the phenomenon with synergistic learning, marking it as the adverse case rather than the cooperative one."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers do not link task interference to any measurement instrument, and the construct is linked to 2 behavioral indicators overall, Catastrophic forgetting and Object detection, through related and causal claims rather than as explicit measures. Operationally, authors infer it from degraded performance when tasks are trained together or checkpoints are merged, including generalists underperforming specialists on VL tasks, merged checkpoints losing performance on disparate tasks, and control and understanding tasks degrading each other when trained simultaneously. One paper further says inter-task interference is measured by changes in internal activations induced by merging, so the operationalizations largely match the definitions' focus on cross-task degradation."
+    },
+    {
+      "label": "Links.",
+      "text": "Overall, papers link task interference to 3 constructs, Graceful forgetting, Multimodal understanding, and Task generalization, and to 2 behavioral indicators, Catastrophic forgetting and Object detection. One paper claims a causal relationship from Object detection to Task interference, stating that learning instance-level perception together with logical reasoning may lead to interference. Separate papers claim causal relationships from Task interference to Task generalization and from Task interference to Multimodal understanding. Other papers relate Task interference to Catastrophic forgetting and to Graceful forgetting."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define task interference as performance degradation on one task, language, or capability caused by training jointly with or combining other tasks because their learning signals, representations, or parameter updates conflict. The differences are mainly in setting and mechanism emphasis, such as multi-task learning versus model merging, not in what phenomenon is being studied.",
+    "papers_with_definition": 8,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, task interference is most commonly treated as a latent phenomenon of performance degradation when multiple tasks are learned jointly or when task-specific models are merged, because learning signals, shared parameters, or representations conflict. Most definitions describe one task's learning as hurting another at the task level, while some authors use near-synonyms such as negative transfer or inter-task interference for the same broad pattern. A smaller line narrows the construct to parameter interference, where updates or merged parameters that help one source model or language pair degrade others. The main variation is therefore between a broad cross-task degradation framing and a narrower parameter-conflict framing.\n\nSpace of facets. Papers do not settle on a single naming scheme: alongside task interference, they also use negative transfer, inter-task interference, and, in model-merging or multilingual settings, parameter interference. Only one paper explicitly names a subtype, partial task interference, for jointly trained control and understanding tasks with overlapping representations that mutually degrade performance. One definition also contrasts the phenomenon with synergistic learning, marking it as the adverse case rather than the cooperative one.\n\nSpace of measurement. Papers do not link task interference to any measurement instrument, and the construct is linked to 2 behavioral indicators overall, Catastrophic forgetting and Object detection, through related and causal claims rather than as explicit measures. Operationally, authors infer it from degraded performance when tasks are trained together or checkpoints are merged, including generalists underperforming specialists on VL tasks, merged checkpoints losing performance on disparate tasks, and control and understanding tasks degrading each other when trained simultaneously. One paper further says inter-task interference is measured by changes in internal activations induced by merging, so the operationalizations largely match the definitions' focus on cross-task degradation.\n\nLinks. Overall, papers link task interference to 3 constructs, Graceful forgetting, Multimodal understanding, and Task generalization, and to 2 behavioral indicators, Catastrophic forgetting and Object detection. One paper claims a causal relationship from Object detection to Task interference, stating that learning instance-level perception together with logical reasoning may lead to interference. Separate papers claim causal relationships from Task interference to Task generalization and from Task interference to Multimodal understanding. Other papers relate Task interference to Catastrophic forgetting and to Graceful forgetting.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "MLAS-LoRA: Language-Aware Parameters Detection and LoRA-Based Knowledge Transfer for Multilingual Machine Translation",
+      "Unraveling LoRA Interference: Orthogonal Subspaces for Robust Model Merging"
+    ],
+    "emnlp25": [
+      "ChatVLA: Unified Multimodal Understanding and Robot Control with Vision-Language-Action Model",
+      "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+      "To See a World in a Spark of Neuron: Disentangling Multi-Task Interference for Training-Free Model Merging"
+    ],
+    "iclr25": [
+      "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+      "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging"
+    ],
+    "icml25": [
+      "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+      "No Task Left Behind: Isotropic Model Merging with Common and Task-Specific Subspaces",
+      "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors"
+    ],
+    "neurips24": [
+      "Customizing Language Models with Instance-wise LoRA for Sequential Recommendation",
+      "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 3,
+    "iclr25": 2,
+    "icml25": 3,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

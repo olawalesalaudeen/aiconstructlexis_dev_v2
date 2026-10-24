@@ -1,0 +1,562 @@
+{
+  "canonical_name": "Instruction fine-tuning",
+  "type": "behavior",
+  "canonical_definition": "Across the surveyed literature, instruction fine-tuning is most commonly described as the process of adapting a pre-trained language model to better follow user commands by training it on a dataset of instructions and their desired outputs. This is frequently situated within the broader context of supervised fine-tuning, which involves updating a model on a labeled, task-specific dataset to improve performance on specific objectives. The provided data also details several specialized applications of this behavior, such as 'continual instruction tuning' for sequential tasks, 'visual instruction tuning' for multimodal inputs, and 'speech-to-speech instruction following' for spoken interactions. The effectiveness of instruction fine-tuning is operationalized and measured through a wide array of evaluation benchmarks, including general language understanding suites like GLUE, multitask evaluations like MMLU, mathematical reasoning datasets such as GSM8k and MATH, and commonsense reasoning tasks like PIQA and SocialIQA. This behavior is studied in relation to several other concepts, including methods for parameter efficiency, and is also linked to model properties like faithfulness, knowledge retention, and convergence. Some papers report that the process can influence other model behaviors, suggesting it may cause catastrophic forgetting and is related to a model's editability.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Fine-tuning",
+    "Cross-lingual adaptation",
+    "Continual instruction tuning",
+    "Instruction tuning",
+    "Visual instruction tuning",
+    "Instruction-tuning",
+    "Continued pretraining",
+    "Language model fine-tuning",
+    "Supervised fine-tuning"
+  ],
+  "papers": [
+    "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+    "Comparing Specialised Small and General Large Language Models on Text Classification: 100 Labelled Samples to Achieve Break-Even Performance",
+    "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization",
+    "Adam-mini: Use Fewer Learning Rates To Gain More",
+    "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset",
+    "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+    "Cut Your Losses in Large-Vocabulary Language Models",
+    "Data Pruning by Information Maximization",
+    "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+    "Efficient Learning with Sine-Activated Low-Rank Matrices",
+    "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+    "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+    "Mini-batch Coresets for Memory-efficient Language Model Training on Data Mixtures",
+    "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+    "PEARL: Towards Permutation-Resilient LLMs",
+    "QERA: an Analytical Framework for Quantization Error Reconstruction",
+    "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+    "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+    "How to Synthesize Text Data without Model Collapse?",
+    "On Exact Bit-level Reversible Transformers Without Changing Architecture",
+    "Synthetic Text Generation for Training Large Language Models via Gradient Matching",
+    "BAdam: A Memory Efficient Full Parameter Optimization Method for Large Language Models",
+    "DART-Math: Difficulty-Aware Rejection Tuning for Mathematical Problem-Solving",
+    "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining",
+    "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights",
+    "Tri-Level Navigator: LLM-Empowered Tri-Level Learning for Time Series OOD Generalization"
+  ],
+  "paper_count": 26,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Updating a pretrained model on downstream tasks to improve performance on specific objectives.",
+      "paper": "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining",
+      "original_name": "Fine-tuning"
+    },
+    {
+      "text": "Sequentially fine-tuning a language model on a stream of instruction-following tasks.",
+      "paper": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "original_name": "Continual instruction tuning"
+    },
+    {
+      "text": "The process of fine-tuning a large language model on a dataset of instructions and demonstrations to improve its ability to follow user commands.",
+      "paper": "Data Pruning by Information Maximization",
+      "original_name": "Instruction tuning"
+    },
+    {
+      "text": "Improving performance on a new language during continued pretraining while preserving performance on the original language.",
+      "paper": "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+      "original_name": "Cross-lingual adaptation"
+    },
+    {
+      "text": "Following multimodal instructions that combine language and vision inputs to produce appropriate responses.",
+      "paper": "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+      "original_name": "Visual instruction tuning"
+    },
+    {
+      "text": "Adapting a language model to better follow task instructions by training it on a collection of instruction-response pairs.",
+      "paper": "Comparing Specialised Small and General Large Language Models on Text Classification: 100 Labelled Samples to Achieve Break-Even Performance",
+      "original_name": "Instruction-tuning"
+    },
+    {
+      "text": "The process of further training a pretrained model on a large corpus of text to enhance its general language modeling capabilities.",
+      "paper": "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization",
+      "original_name": "Continued pretraining"
+    },
+    {
+      "text": "The task of adapting a pre-trained language model to a specific downstream task or domain using a smaller, task-specific dataset.",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "original_name": "Language model fine-tuning"
+    },
+    {
+      "text": "The process of adapting a pre-trained language model to a specific downstream task using a labeled dataset.",
+      "paper": "Adam-mini: Use Fewer Learning Rates To Gain More",
+      "original_name": "Supervised fine-tuning"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+      "evidence": "We evaluate GaRare for fine-tuning on the GLUE benchmark (Wang et al., 2019), which comprises a variety of tasks such as sentiment analysis, question answering, and textual entailment. (Section 6.3)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+          "QERA: an Analytical Framework for Quantization Error Reconstruction"
+        ],
+        "acl25": [
+          "Taming LLMs with Gradient Grouping"
+        ],
+        "icml25": [
+          "FRUGAL: Memory-Efficient Optimization by Reducing State Overhead for Scalable Training",
+          "A Memory Efficient Randomized Subspace Optimization Method for Training Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM fine-tuning, we conduct experiments in math corpus, and evaluate on Mathmeticas (Davies et al., 2021), SVAMP (Patel et al., 2021), NumGLUE (Mishra et al., 2022), and GSM8K (Cobbe et al., 2021). (Section 6.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+          "QERA: an Analytical Framework for Quantization Error Reconstruction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MCNC: Manifold-Constrained Reparameterization for Neural Compression",
+      "evidence": "In this section, we compared the performance of MCNC and NOLA in parameter-efficient fine-tuning... Additionally, we report MMLU (Massively Multitask Language Understanding) (Hendrycks et al., 2021) 5-shot accuracy following the standard practice. (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MCNC: Manifold-Constrained Reparameterization for Neural Compression"
+        ],
+        "icml25": [
+          "TAROT: Targeted Data Selection via Optimal Transport"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Stronger Models are Not Always Stronger Teachers for Instruction Tuning",
+      "evidence": "Instruction tuning has been widely adopted to tailor the behavior of base Large Language Models (LLMs) to align with specific tasks and user intents... The success of instruction tuning depends on the availability of high-quality instruction datasets.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Stronger Models are Not Always Stronger Teachers for Instruction Tuning"
+        ],
+        "acl25": [
+          "HiDe-LLaVA: Hierarchical Decoupling for Continual Instruction Tuning of Multimodal Large Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "evidence": "However, a notable concern with such continual tuning is 'catastrophic forgetting'",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+        ],
+        "acl25": [
+          "HiDe-LLaVA: Hierarchical Decoupling for Continual Instruction Tuning of Multimodal Large Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MATH",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM fine-tuning, we conduct experiments in math corpus, and evaluate on Mathmeticas (Davies et al., 2021), SVAMP (Patel et al., 2021), NumGLUE (Mishra et al., 2022), and GSM8K (Cobbe et al., 2021). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SVAMP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM fine-tuning, we conduct experiments in math corpus, and evaluate on Mathmeticas (Davies et al., 2021), SVAMP (Patel et al., 2021), NumGLUE (Mishra et al., 2022), and GSM8K (Cobbe et al., 2021). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "NumGLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "evidence": "For LLM fine-tuning, we conduct experiments in math corpus, and evaluate on Mathmeticas (Davies et al., 2021), SVAMP (Patel et al., 2021), NumGLUE (Mishra et al., 2022), and GSM8K (Cobbe et al., 2021). (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Commonsense170K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "evidence": "we fine-tune LLaMA2-7B on Commonsense170K (Hu et al., 2023)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BoolQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "evidence": "Table 4: Fine-tuning performance of LLaMa2-7B on various downstream tasks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "evidence": "Table 4: Fine-tuning performance of LLaMa2-7B on various downstream tasks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "evidence": "Table 4: Fine-tuning performance of LLaMa2-7B on various downstream tasks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Gumbel Counterfactual Generation From Language Models",
+      "evidence": "Instruction Tuning finetunes the pretrained models on demonstrations of instruction following. (Section 4.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gumbel Counterfactual Generation From Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Gumbel Counterfactual Generation From Language Models",
+      "evidence": "The third example demonstrates a case where both the original and the counterfactual model hallucinate (the subject of the sentence was actually an academic), but the content of the hallucination changes as a result of the intervention.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gumbel Counterfactual Generation From Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Geometric reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Do Large Language Models Truly Understand Geometric Structures?",
+      "evidence": "we also fine-tune the open-source model LLaMA3-8B-Instruct using question-answer pairs but find that this does not necessarily improve its understanding of geometric structures.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Do Large Language Models Truly Understand Geometric Structures?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+      "evidence": "\u201cwe employ FLoRA to fine-tune LLaVA-1.5-7B ... on visual instruction tuning tasks, which include seven vision-language benchmarks: ... MMBench\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Parameter efficiency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Efficient Learning with Sine-Activated Low-Rank Matrices",
+      "evidence": "\"LoRA is a highly effective strategy for finetuning large pretrained models\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Efficient Learning with Sine-Activated Low-Rank Matrices"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SlimPajama",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "QERA: an Analytical Framework for Quantization Error Reconstruction",
+      "evidence": "\u201cfine-tuning LLaMA-2 (Touvron et al., 2023) and LLaMA-3.1 (Dubey et al., 2024) on continuous pretraining task SlimPajama (Soboleva et al., 2023)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "QERA: an Analytical Framework for Quantization Error Reconstruction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Alpaca instruction dataset",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MCNC: Manifold-Constrained Reparameterization for Neural Compression",
+      "evidence": "\"We conducted fine-tuning experiments on two variants of the LLaMA-2 (Touvron et al., 2023) language model, LLaMA 7B, and LLaMA 13B, using the Alpaca dataset as our training data\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MCNC: Manifold-Constrained Reparameterization for Neural Compression"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+      "evidence": "\u201cwe utilized the alpaca dataset Taori et al. (2023) for additional fine-tuning on the Llama3-base model and evaluated the outcomes using the MT-Bench Zheng et al. (2023).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DataGen: Unified Synthetic Dataset Generation via Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Data quality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Improving Data Efficiency via Curating LLM-Driven Rating Systems",
+      "evidence": "\u201cData selection and \ufb01ltering are essential for improving LLM performance in instruction tuning.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Improving Data Efficiency via Curating LLM-Driven Rating Systems"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Super-NaturalInstructions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "PEARL: Towards Permutation-Resilient LLMs",
+      "evidence": "\"Our instruction tuning data are derived from Super-Natural Instructions (Wang et al., 2022)\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "PEARL: Towards Permutation-Resilient LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Convergence",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Synthetic Text Generation for Training Large Language Models via Gradient Matching",
+      "evidence": "we theoretically analyze the convergence of fine-tuning on the synthetic examples generated by GRADMM.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Synthetic Text Generation for Training Large Language Models via Gradient Matching"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-Bench Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "TAROT: Targeted Data Selection via Optimal Transport",
+      "evidence": "\u201cWe utilize the same candidate dataset, comprising FLAN V2 (Longpre et al., 2023), COT (Wei et al., 2022), DOLLY (Conover et al., 2023) and OPEN ASSISTANT 1 (K\u00a8opf et al., 2024), with MMLU ... and BBH ... serving as the target tasks for evaluation.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "TAROT: Targeted Data Selection via Optimal Transport"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LoRA",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "On Exact Bit-level Reversible Transformers Without Changing Architecture",
+      "evidence": "\u201cBDIA is complementary to LoRA.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "On Exact Bit-level Reversible Transformers Without Changing Architecture"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Error detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Are We Done with MMLU?",
+      "evidence": "We fine-tune Llama3 8B-Instruct model (Dubey et al., 2024) using curated data and evaluate its performance on MMLU-Redux. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Are We Done with MMLU?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 26,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 22,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, instruction fine-tuning is most commonly described as the process of adapting a pre-trained language model to better follow user commands by training it on a dataset of instructions and their desired outputs. This is frequently situated within the broader context of supervised fine-tuning, which involves updating a model on a labeled, task-specific dataset to improve performance on specific objectives. The provided data also details several specialized applications of this behavior, such as 'continual instruction tuning' for sequential tasks, 'visual instruction tuning' for multimodal inputs, and 'speech-to-speech instruction following' for spoken interactions. The effectiveness of instruction fine-tuning is operationalized and measured through a wide array of evaluation benchmarks, including general language understanding suites like GLUE, multitask evaluations like MMLU, mathematical reasoning datasets such as GSM8k and MATH, and commonsense reasoning tasks like PIQA and SocialIQA. This behavior is studied in relation to several other concepts, including methods for parameter efficiency, and is also linked to model properties like faithfulness, knowledge retention, and convergence. Some papers report that the process can influence other model behaviors, suggesting it may cause catastrophic forgetting and is related to a model's editability.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+      "Comparing Specialised Small and General Large Language Models on Text Classification: 100 Labelled Samples to Achieve Break-Even Performance",
+      "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization"
+    ],
+    "iclr25": [
+      "Adam-mini: Use Fewer Learning Rates To Gain More",
+      "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset",
+      "COAT: Compressing Optimizer states and Activations for Memory-Efficient FP8 Training",
+      "Cut Your Losses in Large-Vocabulary Language Models",
+      "Data Pruning by Information Maximization",
+      "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+      "Efficient Learning with Sine-Activated Low-Rank Matrices",
+      "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+      "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+      "Mini-batch Coresets for Memory-efficient Language Model Training on Data Mixtures",
+      "On the Optimization Landscape of Low Rank Adaptation Methods for Large Language Models",
+      "PEARL: Towards Permutation-Resilient LLMs",
+      "QERA: an Analytical Framework for Quantization Error Reconstruction",
+      "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning"
+    ],
+    "icml25": [
+      "How to Synthesize Text Data without Model Collapse?",
+      "On Exact Bit-level Reversible Transformers Without Changing Architecture",
+      "Synthetic Text Generation for Training Large Language Models via Gradient Matching"
+    ],
+    "neurips24": [
+      "BAdam: A Memory Efficient Full Parameter Optimization Method for Large Language Models",
+      "DART-Math: Difficulty-Aware Rejection Tuning for Mathematical Problem-Solving",
+      "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining",
+      "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights",
+      "Tri-Level Navigator: LLM-Empowered Tri-Level Learning for Time Series OOD Generalization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 15,
+    "icml25": 3,
+    "neurips24": 5
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

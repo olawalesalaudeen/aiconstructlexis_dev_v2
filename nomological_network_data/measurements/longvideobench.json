@@ -1,0 +1,185 @@
+{
+  "canonical_name": "LongVideoBench",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, LongVideoBench is most commonly described as a benchmark or dataset for long video or long-context video-language understanding, usually framed as video question answering on very long inputs, sometimes explicitly hour-long. The most specific description presents it as a question-answering benchmark with interleaved video-language inputs up to an hour long, containing 3,763 web-collected videos with subtitles and 6,678 human-annotated multiple-choice questions in 17 fine-grained categories. A smaller group of papers characterizes it more narrowly as a referred reasoning benchmark, and one paper uses the variant name \"LongVideo-Bench\".\n\nWhat it is claimed to measure. Papers use LongVideoBench to measure 5 constructs and 2 behavioral indicators, so the reported use spreads across several closely related targets rather than a single one. The most common construct link is video understanding, followed by long video understanding, long-context multimodal understanding, long-context understanding, and multimodal understanding. Papers also use it to measure video question answering and visual question answering, and some descriptions make this more specific by calling it a benchmark for referring reasoning questions that depend on long frame inputs.\n\nSpace of uses. In use, papers usually place LongVideoBench inside broader video benchmark suites rather than as a standalone check, often alongside MLVU, VideoMME, EgoSchema, MVBench, and TempCompass. Several papers position it specifically as their long-form or long video evaluation, and report results on it as accuracy or gains, including 60.0% accuracy, 61.2% accuracy, relative improvements, and percentage-point gains.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "LongVideo-Bench",
+    "LongVideoBench"
+  ],
+  "papers": [
+    "Design Choices for Extending the Context Length of Visual Language Models",
+    "Sharper and Faster mean Better: Towards More Efficient Vision-Language Model for Hour-scale Long Video Understanding",
+    "ProLongVid: A Simple but Strong Baseline for Long-context Video Instruction Tuning",
+    "SpecVLM: Enhancing Speculative Decoding of Video LLMs via Verifier-Guided Token Pruning",
+    "VRoPE: Rotary Position Embedding for Video Large Language Models",
+    "Video Compression Commander: Plug-and-Play Inference Acceleration for Video Large Language Models",
+    "Video-RTS: Rethinking Reinforcement Learning and Test-Time Scaling for Efficient and Enhanced Video Reasoning",
+    "VideoPASTA: 7K Preference Pairs That Matter for Video-LLM Alignment",
+    "An Evolved Universal Transformer Memory",
+    "Exploring the Design Space of Visual Context Representation in Video MLLMs",
+    "LongVILA: Scaling Long-Context Visual Language Models for Long Videos",
+    "Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution",
+    "Understanding Long Videos with Multimodal Language Models",
+    "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models",
+    "Improving LLM Video Understanding with 16 Frames Per Second",
+    "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation",
+    "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+    "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset containing very long videos used to evaluate video question answering models.",
+      "paper": "Understanding Long Videos with Multimodal Language Models",
+      "original_name": "LongVideoBench"
+    },
+    {
+      "text": "A benchmark dataset used to evaluate model performance on long video understanding tasks.",
+      "paper": "Exploring the Design Space of Visual Context Representation in Video MLLMs",
+      "original_name": "LongVideo-Bench"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long video understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+      "evidence": "For long video understanding, we use LongVideoBench (Wu et al., 2024a) (8 seconds to 1 hour), MLVU (Zhou et al., 2024) (3 minutes to 2 hours), and Video-MME (Fu et al., 2024) (11 seconds to 60 minutes). (Section 5.1)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "icml25": [
+          "VideoRoPE: What Makes for Good Video Rotary Position Embedding?"
+        ],
+        "emnlp25": [
+          "VRoPE: Rotary Position Embedding for Video Large Language Models",
+          "VideoPASTA: 7K Preference Pairs That Matter for Video-LLM Alignment"
+        ],
+        "iclr25": [
+          "Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution",
+          "An Evolved Universal Transformer Memory"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Video understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models",
+      "evidence": "We also evaluate the performance of mPLUG-Owl3 on video and multi-image benchmarks (including NextQA (Xiao et al., 2021), MVBench (Li et al., 2023c) VideoMME (Fu et al., 2024a), LongVideoBench (Wu et al., 2024) and MLVU (Zhou et al., 2024)), as it is capable of processing multiple images with an interleaved format.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models",
+          "LongVILA: Scaling Long-Context Visual Language Models for Long Videos"
+        ],
+        "icml25": [
+          "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context multimodal understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding",
+      "evidence": "To mitigate this gap, we introduce LONGVIDEOBENCH, a question-answering benchmark that features video-language interleaved inputs up to an hour long. Our benchmark includes 3,763 varying-length web-collected videos with their subtitles across diverse themes, designed to comprehensively evaluate LMMs on long-term multimodal understanding. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Video question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Understanding Long Videos with Multimodal Language Models",
+      "evidence": "We also evaluate MVU on the LongVideoBench dataset which contains even longer videos (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Understanding Long Videos with Multimodal Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, LongVideoBench is most commonly described as a benchmark or dataset for long video or long-context video-language understanding, usually framed as video question answering on very long inputs, sometimes explicitly hour-long. The most specific description presents it as a question-answering benchmark with interleaved video-language inputs up to an hour long, containing 3,763 web-collected videos with subtitles and 6,678 human-annotated multiple-choice questions in 17 fine-grained categories. A smaller group of papers characterizes it more narrowly as a referred reasoning benchmark, and one paper uses the variant name \"LongVideo-Bench\"."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use LongVideoBench to measure 5 constructs and 2 behavioral indicators, so the reported use spreads across several closely related targets rather than a single one. The most common construct link is video understanding, followed by long video understanding, long-context multimodal understanding, long-context understanding, and multimodal understanding. Papers also use it to measure video question answering and visual question answering, and some descriptions make this more specific by calling it a benchmark for referring reasoning questions that depend on long frame inputs."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "In use, papers usually place LongVideoBench inside broader video benchmark suites rather than as a standalone check, often alongside MLVU, VideoMME, EgoSchema, MVBench, and TempCompass. Several papers position it specifically as their long-form or long video evaluation, and report results on it as accuracy or gains, including 60.0% accuracy, 61.2% accuracy, relative improvements, and percentage-point gains."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, LongVideoBench is most commonly described as a benchmark or dataset for long video or long-context video-language understanding, usually framed as video question answering on very long inputs, sometimes explicitly hour-long. The most specific description presents it as a question-answering benchmark with interleaved video-language inputs up to an hour long, containing 3,763 web-collected videos with subtitles and 6,678 human-annotated multiple-choice questions in 17 fine-grained categories. A smaller group of papers characterizes it more narrowly as a referred reasoning benchmark, and one paper uses the variant name \"LongVideo-Bench\".\n\nWhat it is claimed to measure. Papers use LongVideoBench to measure 5 constructs and 2 behavioral indicators, so the reported use spreads across several closely related targets rather than a single one. The most common construct link is video understanding, followed by long video understanding, long-context multimodal understanding, long-context understanding, and multimodal understanding. Papers also use it to measure video question answering and visual question answering, and some descriptions make this more specific by calling it a benchmark for referring reasoning questions that depend on long frame inputs.\n\nSpace of uses. In use, papers usually place LongVideoBench inside broader video benchmark suites rather than as a standalone check, often alongside MLVU, VideoMME, EgoSchema, MVBench, and TempCompass. Several papers position it specifically as their long-form or long video evaluation, and report results on it as accuracy or gains, including 60.0% accuracy, 61.2% accuracy, relative improvements, and percentage-point gains.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Design Choices for Extending the Context Length of Visual Language Models",
+      "Sharper and Faster mean Better: Towards More Efficient Vision-Language Model for Hour-scale Long Video Understanding"
+    ],
+    "iclr25": [
+      "An Evolved Universal Transformer Memory",
+      "Exploring the Design Space of Visual Context Representation in Video MLLMs",
+      "LongVILA: Scaling Long-Context Visual Language Models for Long Videos",
+      "Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution",
+      "Understanding Long Videos with Multimodal Language Models",
+      "mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models"
+    ],
+    "icml25": [
+      "Improving LLM Video Understanding with 16 Frames Per Second",
+      "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation",
+      "VideoRoPE: What Makes for Good Video Rotary Position Embedding?"
+    ],
+    "emnlp25": [
+      "ProLongVid: A Simple but Strong Baseline for Long-context Video Instruction Tuning",
+      "SpecVLM: Enhancing Speculative Decoding of Video LLMs via Verifier-Guided Token Pruning",
+      "VRoPE: Rotary Position Embedding for Video Large Language Models",
+      "Video Compression Commander: Plug-and-Play Inference Acceleration for Video Large Language Models",
+      "Video-RTS: Rethinking Reinforcement Learning and Test-Time Scaling for Efficient and Enhanced Video Reasoning",
+      "VideoPASTA: 7K Preference Pairs That Matter for Video-LLM Alignment"
+    ],
+    "neurips24": [
+      "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr25": 6,
+    "icml25": 3,
+    "emnlp25": 6,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

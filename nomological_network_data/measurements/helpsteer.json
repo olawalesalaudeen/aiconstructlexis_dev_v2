@@ -1,0 +1,196 @@
+{
+  "canonical_name": "HelpSteer",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most commonly, papers describe HelpSteer as a multi-attribute dataset for aligning or evaluating LLM outputs against human-preferred characteristics, with human-annotated ratings for helpfulness, correctness, coherence, complexity, and verbosity. Some authors frame it more specifically as a model alignment and steering dataset, while a smaller line of work describes it as a QA dataset for evaluating instruction following across five dimensions, including informativeness and factuality, or as a multi-attribute helpfulness dataset. One paper also treats it as an unpaired dataset with around 35K samples, where each prompt has a single response scored on attributes.\n\nWhat it is claimed to measure. Papers use HelpSteer to measure 6 constructs and 2 behavioral indicators, so its reported measurement role is spread across several targets rather than centered on one. The most frequently linked constructs are helpfulness, coherence, complexity, factuality, and faithfulness. Additional papers also report it as measuring other recorded targets beyond those five.\n\nSpace of uses. No measurement instrument is linked to it. Papers position HelpSteer in several ways: as a dataset used for generation evaluation, as an additional multi-objective alignment task, as a source of high-scoring labeled generations for prototype construction, and as a multi-attribute helpfulness dataset for training a simulated ground-truth preference model.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "HelpSteer"
+  ],
+  "papers": [
+    "Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning",
+    "Multi-Attribute Steering of Language Models via Targeted Intervention",
+    "Decoding-Time Language Model Alignment with Multiple Objectives",
+    "Learning Goal-Conditioned Representations for Language Reward Models",
+    "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset designed to align LLM outputs with human-preferred characteristics, containing samples with human-annotated attribute ratings for helpfulness, correctness, coherence, complexity, and verbosity.",
+      "paper": "Multi-Attribute Steering of Language Models via Targeted Intervention",
+      "original_name": "HelpSteer"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "evidence": "For HelpSteer, we use https://huggingface.co/Haoxiang-Wang/ RewardModel-Mistral-7B-for-DPA-v1 for all attributes of rewards, including helpfulness, correctness, coherence, complexity and verbosity.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decoding-Time Language Model Alignment with Multiple Objectives",
+          "Learning Goal-Conditioned Representations for Language Reward Models"
+        ],
+        "acl25": [
+          "Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "evidence": "For HelpSteer, we use https://huggingface.co/Haoxiang-Wang/ RewardModel-Mistral-7B-for-DPA-v1 for all attributes of rewards, including helpfulness, correctness, coherence, complexity and verbosity.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decoding-Time Language Model Alignment with Multiple Objectives",
+          "Learning Goal-Conditioned Representations for Language Reward Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Coherence",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "evidence": "For HelpSteer, we use https://huggingface.co/Haoxiang-Wang/ RewardModel-Mistral-7B-for-DPA-v1 for all attributes of rewards, including helpfulness, correctness, coherence, complexity and verbosity.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decoding-Time Language Model Alignment with Multiple Objectives",
+          "Learning Goal-Conditioned Representations for Language Reward Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Complexity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "evidence": "For HelpSteer, we use https://huggingface.co/Haoxiang-Wang/ RewardModel-Mistral-7B-for-DPA-v1 for all attributes of rewards, including helpfulness, correctness, coherence, complexity and verbosity.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decoding-Time Language Model Alignment with Multiple Objectives",
+          "Learning Goal-Conditioned Representations for Language Reward Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Verbosity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "evidence": "For HelpSteer, we use https://huggingface.co/Haoxiang-Wang/ RewardModel-Mistral-7B-for-DPA-v1 for all attributes of rewards, including helpfulness, correctness, coherence, complexity and verbosity.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decoding-Time Language Model Alignment with Multiple Objectives"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Distributional Preference Alignment of LLMs via Optimal Transport",
+      "evidence": "\"For unpaired datasets, we used PKU BeaverTails [Ji et al., 2023] with over 300K samples and HelpSteer [Wang et al., 2023] with around 35K samples. Here, for each prompt, there is only a single response with a score defined by some attributes (e.g., safety, faithfulness, helpfulness, etc.).\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Distributional Preference Alignment of LLMs via Optimal Transport"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+      "evidence": "HelpSteer (Wang et al., 2023) is a QA dataset aimed at evaluating the model\u2019s capability to follow instructions across five dimensions, including informativeness and factuality. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+      "evidence": "\"HelpSteer (Wang et al., 2023) is a QA dataset aimed at evaluating the model\u2019s capability to follow instructions across five dimensions\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 8,
+  "incoming_relationship_count": 8,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most commonly, papers describe HelpSteer as a multi-attribute dataset for aligning or evaluating LLM outputs against human-preferred characteristics, with human-annotated ratings for helpfulness, correctness, coherence, complexity, and verbosity. Some authors frame it more specifically as a model alignment and steering dataset, while a smaller line of work describes it as a QA dataset for evaluating instruction following across five dimensions, including informativeness and factuality, or as a multi-attribute helpfulness dataset. One paper also treats it as an unpaired dataset with around 35K samples, where each prompt has a single response scored on attributes."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use HelpSteer to measure 6 constructs and 2 behavioral indicators, so its reported measurement role is spread across several targets rather than centered on one. The most frequently linked constructs are helpfulness, coherence, complexity, factuality, and faithfulness. Additional papers also report it as measuring other recorded targets beyond those five."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it. Papers position HelpSteer in several ways: as a dataset used for generation evaluation, as an additional multi-objective alignment task, as a source of high-scoring labeled generations for prototype construction, and as a multi-attribute helpfulness dataset for training a simulated ground-truth preference model."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most commonly, papers describe HelpSteer as a multi-attribute dataset for aligning or evaluating LLM outputs against human-preferred characteristics, with human-annotated ratings for helpfulness, correctness, coherence, complexity, and verbosity. Some authors frame it more specifically as a model alignment and steering dataset, while a smaller line of work describes it as a QA dataset for evaluating instruction following across five dimensions, including informativeness and factuality, or as a multi-attribute helpfulness dataset. One paper also treats it as an unpaired dataset with around 35K samples, where each prompt has a single response scored on attributes.\n\nWhat it is claimed to measure. Papers use HelpSteer to measure 6 constructs and 2 behavioral indicators, so its reported measurement role is spread across several targets rather than centered on one. The most frequently linked constructs are helpfulness, coherence, complexity, factuality, and faithfulness. Additional papers also report it as measuring other recorded targets beyond those five.\n\nSpace of uses. No measurement instrument is linked to it. Papers position HelpSteer in several ways: as a dataset used for generation evaluation, as an additional multi-objective alignment task, as a source of high-scoring labeled generations for prototype construction, and as a multi-attribute helpfulness dataset for training a simulated ground-truth preference model.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning",
+      "Multi-Attribute Steering of Language Models via Targeted Intervention"
+    ],
+    "neurips24": [
+      "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "Learning Goal-Conditioned Representations for Language Reward Models",
+      "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "neurips24"
+  ]
+}

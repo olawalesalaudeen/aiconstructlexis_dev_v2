@@ -1,0 +1,1214 @@
+{
+  "canonical_name": "Harmful content generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is an LLM producing harmful, unsafe, toxic, offensive, illegal, unethical, deceptive, or otherwise policy-violating output, usually in response to a malicious, adversarial, or sensitive prompt. Most formulations treat the behavior as compliance rather than refusal: a response counts if it attempts to answer, starts to answer, or indicates willingness to answer a harmful query, though some papers require more, such as \"substantial content\" or \"concrete and helpful suggestions\" that directly assist the unsafe intent. The covered content is broad, including hate speech, discrimination, misinformation, self-harm, sexual exploitation, hacking, bomb-making, illegal acts, fabricated content, and other restricted outputs.\n\nVariants. Most papers stay broad and use neighboring names such as harmful, unsafe, or toxic content, response, text, or language generation. A smaller line of work narrows the behavior to compliance tasks, including harmful question answering, adversarial query answering, unsafe instruction fulfillment, and following malicious instructions, where the emphasis is on answering rather than refusing. Other variants specialize by setting or output type: multilingual or code-switched unsafe content, multimodal vision or audio jailbreak responses, harmful-yet-helpful outputs, harmful knowledge generation, gaslighting responses, malicious review generation, phishing email generation, and inappropriate content incorporation.\n\nSpace of elicitation and scores. Papers link this behavior to 20 measurement instruments. The most recurrent are AdvBench, LLM-as-a-judge, Perspective API, BeaverTails, and Llama Guard 3, followed by 15 other instruments. Across these uses, the behavior is elicited with harmful-instruction or toxic-prompt benchmarks and scored with moderation APIs, safety classifiers, LLM judges, harmfulness scores, or human annotation, with criteria ranging from whether the model attempts to answer a harmful request to binary harmful or benign decisions, toxicity scores, or graded harmfulness.\n\nWhat it is taken as evidence of. Only one construct is explicitly measured by this behavior: Safety, with one paper defining safety as stopping models from following malicious instructions and generating toxic content. Beyond that, papers connect the behavior to 11 constructs overall, most often Safety alignment: papers claim causal relationships from Safety alignment to harmful content generation, report that it correlates with Safety alignment, and also describe the two as related. Other recorded links are mostly causal claims from Safety robustness, Controllability, Harmlessness, Intent understanding, Misalignment, Social bias, and User modeling to harmful content generation, plus one causal claim from harmful content generation to Representational harm and one related link to Toxicity, so the recorded uses extend beyond a single construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Harmful content generation",
+    "Toxic content generation",
+    "Unsafe text generation",
+    "Gaslighting response generation",
+    "Harmful knowledge generation",
+    "Harmful language generation",
+    "Harmful response generation",
+    "Jailbreak response generation",
+    "Unsafe response generation",
+    "Harmful-yet-helpful response generation",
+    "Unsafe generation",
+    "Toxic language generation",
+    "Toxic text generation",
+    "Malicious review generation",
+    "Unsafe output generation",
+    "Unsafe behavior",
+    "Harmful text generation",
+    "Malicious response generation",
+    "Phishing email generation",
+    "Toxic response generation",
+    "Compliance with malicious requests",
+    "Offensive language generation",
+    "Inappropriate content incorporation",
+    "Harmful instruction following",
+    "Following malicious instructions",
+    "Unsafe instruction fulfillment",
+    "Harmful question answering",
+    "Adversarial query answering",
+    "Dangerous question answering",
+    "Unsafe content generation",
+    "Compliance with harmful requests"
+  ],
+  "papers": [
+    "AGD: Adversarial Game Defense Against Jailbreak Attacks in Large Language Models",
+    "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+    "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering Target Atoms",
+    "Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities",
+    "Cross-model Transferability among Large Language Models on the Platonic Representations of Concepts",
+    "DeAL: Decoding-time Alignment for Large Language Models",
+    "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+    "JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs",
+    "Jailbreaking? One Step Is Enough!",
+    "LED-Merging: Mitigating Safety-Utility Conflicts in Model Merging with Location-Election-Disjoint",
+    "LLMs know their vulnerabilities: Uncover Safety Gaps through Natural Distribution Shifts",
+    "M2S: Multi-turn to Single-turn jailbreak in Red Teaming for LLMs",
+    "MTSA: Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming",
+    "PKU-SafeRLHF: Towards Multi-Level Safety Alignment for LLMs with Human Preference",
+    "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+    "Representation Bending for Large Language Model Safety",
+    "Shaping the Safety Boundaries: Understanding and Defending Against Jailbreaks in Large Language Models",
+    "The TIP of the Iceberg: Revealing a Hidden Class of Task-in-Prompt Adversarial Attacks on LLMs",
+    "What Really Matters in Many-Shot Attacks? An Empirical Study of Long-Context Vulnerabilities in LLMs",
+    "Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The Template Region",
+    "from Benign import Toxic: Jailbreaking the Language Model via Adversarial Metaphors",
+    "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+    "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+    "Are Vision-Language Models Safe in the Wild? A Meme-Based Benchmark Study",
+    "Automating Steering for Safe Multimodal Large Language Models",
+    "Breaking Bad Tokens: Detoxification of LLMs Using Sparse Autoencoders",
+    "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+    "DSCD: Large Language Model Detoxification with Self-Constrained Decoding",
+    "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+    "Detoxifying Large Language Models via the Diversity of Toxic Samples",
+    "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak",
+    "EMNLP: Educator-role Moral and Normative Large Language Models Profiling",
+    "EmoAgent: Assessing and Safeguarding Human-AI Interaction for Mental Health Safety",
+    "Evaluating Robustness of Large Audio Language Models to Audio Injection: An Empirical Study",
+    "Exploring Chain-of-Thought Reasoning for Steerable Pluralistic Alignment",
+    "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+    "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+    "Harmful Prompt Laundering: Jailbreaking LLMs with Abductive Styles and Symbolic Encoding",
+    "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis",
+    "Improving Large Language Model Safety with Contrastive Representation Learning",
+    "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages",
+    "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+    "Jailbreak LLMs through Internal Stance Manipulation",
+    "Jailbreak-Tuning: Models Efficiently Learn Jailbreak Susceptibility",
+    "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment",
+    "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+    "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+    "NEXUS: Network Exploration for eXploiting Unsafe Sequences in Multi-Turn LLM Jailbreaks",
+    "Nullspace Disentanglement for Red Teaming Language Models",
+    "PBI-Attack: Prior-Guided Bimodal Interactive Black-Box Jailbreak Attack for Toxicity Maximization",
+    "REVIVING YOUR MNEME: Predicting The Side Effects of LLM Unlearning and Fine-Tuning via Sparse Model Diffing",
+    "Randomized Smoothing Meets Vision-Language Models",
+    "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+    "Reimagining Safety Alignment with An Image",
+    "Rescorla-Wagner Steering of LLMs for Undesired Behaviors over Disproportionate Inappropriate Context",
+    "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+    "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+    "Social Bias in Multilingual Language Models: A Survey",
+    "Speculative Safety-Aware Decoding",
+    "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+    "The State of Multilingual LLM Safety Research: From Measuring The Language Gap To Mitigating It",
+    "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+    "Token-Aware Editing of Internal Activations for Large Language Model Alignment",
+    "TombRaider: Entering the Vault of History to Jailbreak Large Language Models",
+    "Turning Logic Against Itself: Probing Model Defenses Through Contrastive Questions",
+    "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+    "Why and How LLMs Benefit from Knowledge Introspection in Commonsense Reasoning",
+    "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+    "Catastrophic Jailbreak of Open-source LLMs via Exploiting Generation",
+    "Controlled Text Generation via Language Model Arithmetic",
+    "Enabling Lanuguage Models to Implicitly Learn Self-Improvement",
+    "Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!",
+    "Gaining Wisdom from Setbacks: Aligning Large Language Models via Mistake Analysis",
+    "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models",
+    "On the Learnability of Watermarks for Language Models",
+    "Prompt Risk Control: A Rigorous Framework for Responsible Deployment of Large Language Models",
+    "Safe RLHF: Safe Reinforcement Learning from Human Feedback",
+    "Universal Jailbreak Backdoors from Poisoned Human Feedback",
+    "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+    "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+    "Curiosity-driven Red-teaming for Large Language Models",
+    "GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher",
+    "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs",
+    "Model Merging by Uncertainty-Based Gradient Matching",
+    "Multilingual Jailbreak Challenges in Large Language Models",
+    "On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs",
+    "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+    "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+    "A Common Pitfall of Margin-based Language Model Alignment: Gradient Entanglement",
+    "A Distributional Approach to Uncertainty-Aware Preference Alignment Using Offline Demonstrations",
+    "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+    "AIR-BENCH 2024: A Safety Benchmark based on Regulation and Policies Specified Risk Categories",
+    "AdvWave: Stealthy Adversarial Jailbreak Attack against Large Audio-Language Models",
+    "Aligned LLMs Are Not Aligned Browser Agents",
+    "An Auditing Test to Detect Behavioral Shift in Language Models",
+    "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+    "Backtracking Improves Generation Safety",
+    "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+    "Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models",
+    "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+    "BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks",
+    "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+    "Can a Large Language Model be a Gaslighter?",
+    "Composable Interventions for Language Models",
+    "Controllable Generation via Locally Constrained Resampling",
+    "Controlling Language and Diffusion Models by Transporting Activations",
+    "Cross-Modal Safety Mechanism Transfer in Large Vision-Language Models",
+    "DarkBench: Benchmarking Dark Patterns in Large Language Models",
+    "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+    "Does Refusal Training in LLMs Generalize to the Past Tense?",
+    "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+    "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+    "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+    "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+    "Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models",
+    "Endless Jailbreaks with Bijection Learning",
+    "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+    "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+    "GReaTer: Gradients Over Reasoning Makes Smaller Language Models Strong Prompt Optimizers",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?",
+    "Improved Techniques for Optimization-Based Jailbreaking on Large Language Models",
+    "Injecting Universal Jailbreak Backdoors into LLMs in Minutes",
+    "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+    "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+    "Jailbreaking as a Reward Misspecification Problem",
+    "Large Language Models can Become Strong Self-Detoxifiers",
+    "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+    "Monet: Mixture of Monosemantic Experts for Transformers",
+    "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+    "On the Role of Attention Heads in Large Language Model Safety",
+    "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+    "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+    "SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal",
+    "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+    "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+    "Scalable Extraction of Training Data from Aligned, Production Language Models",
+    "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+    "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+    "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+    "Understanding and Enhancing the Transferability of Jailbreaking Attacks",
+    "UniDetox: Universal Detoxification of Large Language Models via Dataset Distillation",
+    "Unlearning or Obfuscating? Jogging the Memory of Unlearned LLMs via Benign Relearning",
+    "What's New in My Data? Novelty Exploration via Contrastive Generation",
+    "h4rm3l: A Language for Composable Jailbreak Attack Synthesis",
+    "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+    "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack",
+    "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models",
+    "Backdoor Attacks in Token Selection of Attention Mechanism",
+    "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+    "Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs",
+    "Conformal Tail Risk Control for Large Language Model Alignment",
+    "Constrain Alignment with Sparse Autoencoders",
+    "Direct Density Ratio Optimization: A Statistically Consistent Approach to Aligning Large Language Models",
+    "ELITE: Enhanced Language-Image Toxicity Evaluation for Safety",
+    "Emoji Attack: Enhancing Jailbreak Attacks Against Judge LLM Detection",
+    "FlipAttack: Jailbreak LLMs via Flipping",
+    "HPS: Hard Preference Sampling for Human Preference Alignment",
+    "Improving LLM Safety Alignment with Dual-Objective Optimization",
+    "Invariance Makes LLM Unlearning Resilient Even to Unanticipated Downstream Fine-Tuning",
+    "LLMScan: Causal Scan for LLM Misbehavior Detection",
+    "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+    "Learning Safety Constraints for Large Language Models",
+    "MM-RLHF: The Next Step Forward in Multimodal LLM Alignment",
+    "Metadata Conditioning Accelerates Language Model Pre-training",
+    "Model Swarms: Collaborative Search to Adapt LLM Experts via Swarm Intelligence",
+    "Online Detection of LLM-Generated Texts via Sequential Hypothesis Testing by Betting",
+    "PoisonBench: Assessing Language Model Vulnerability to Poisoned Preference Data",
+    "REINFORCE Adversarial Attacks on Large Language Models: An Adaptive, Distributional, and Semantic Objective",
+    "Raising the Bar: Investigating the Values of Large Language Models via Generative Evolving Testing",
+    "STAIR: Improving Safety Alignment with Introspective Reasoning",
+    "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+    "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+    "Safety Alignment Can Be Not Superficial With Explicit Safety Signals",
+    "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond",
+    "TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs",
+    "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning",
+    "Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning",
+    "Weak-to-Strong Jailbreaking on Large Language Models",
+    "When Bad Data Leads to Good Models",
+    "Adversarial Reasoning at Jailbreaking Time",
+    "Eliciting Language Model Behaviors with Investigator Agents",
+    "PANDAS: Improving Many-shot Jailbreaking via Positive Affirmation, Negative Demonstration, and Adaptive Sampling",
+    "Arabic Dataset for LLM Safeguard Evaluation",
+    "Audio Is the Achilles' Heel: Red Teaming Audio Large Multimodal Models",
+    "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset",
+    "CultureInstruct: Curating Multi-Cultural Instructions at Scale",
+    "Diversity Helps Jailbreak Large Language Models",
+    "Extracting and Understanding the Superficial Knowledge in Alignment",
+    "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+    "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+    "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+    "SafetyQuizzer: Timely and Dynamic Evaluation on the Safety of LLMs",
+    "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+    "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+    "Uncovering Bias in Large Vision-Language Models at Scale with Counterfactuals",
+    "BPO: Towards Balanced Preference Optimization between Knowledge Breadth and Depth in Alignment",
+    "ImgTrojan: Jailbreaking Vision-Language Models with ONE Image",
+    "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+    "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+    "Stronger Universal and Transferable Attacks by Suppressing Refusals",
+    "Transferable Post-training via Inverse Value Learning",
+    "ALI-Agent: Assessing LLMs'  Alignment with Human Values via Agent-based Evaluation",
+    "Adversarial Representation Engineering: A General Model Editing Framework for Large Language Models",
+    "Aligning Large Language Models with Representation Editing: A Control Perspective",
+    "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+    "Apathetic or Empathetic? Evaluating LLMs' Emotional Alignments with Humans",
+    "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+    "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+    "Decoding-Time Language Model Alignment with Multiple Objectives",
+    "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+    "Improving Alignment and Robustness with Circuit Breakers",
+    "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters",
+    "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+    "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+    "Optimistic Verifiable Training by Controlling Hardware Nondeterminism",
+    "Protecting Your LLMs with Information Bottleneck",
+    "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+    "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+    "Stepwise Alignment for Constrained Language Model Policy Optimization",
+    "TAIA: Large Language Models are Out-of-Distribution Data Learners",
+    "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+    "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+    "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+    "Who's asking? User personas and the mechanics of latent misalignment",
+    "Uncovering Safety Risks of Large Language Models through Concept Activation Vector"
+  ],
+  "paper_count": 230,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The production of toxic, offensive, or otherwise damaging content by a language model, which alignment methods aim to suppress.",
+      "paper": "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+      "original_name": "Harmful content generation"
+    },
+    {
+      "text": "Producing responses that are considered toxic or aggressive in demographic-description prompts.",
+      "paper": "Apathetic or Empathetic? Evaluating LLMs' Emotional Alignments with Humans",
+      "original_name": "Toxic content generation"
+    },
+    {
+      "text": "The observable model behavior of producing harmful, undesirable, or toxic content, often as a result of data poisoning.",
+      "paper": "Optimistic Verifiable Training by Controlling Hardware Nondeterminism",
+      "original_name": "Unsafe text generation"
+    },
+    {
+      "text": "The observable output of harmful or unsafe content by the model in response to malicious queries.",
+      "paper": "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "original_name": "Unsafe response generation"
+    },
+    {
+      "text": "Producing assistant replies that subtly manipulate a user's beliefs, self-doubt, or self-perception in a conversation.",
+      "paper": "Can a Large Language Model be a Gaslighter?",
+      "original_name": "Gaslighting response generation"
+    },
+    {
+      "text": "Producing unsafe, harmful, sensitive, or false content in response to malicious prompts.",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "original_name": "Harmful response generation"
+    },
+    {
+      "text": "Producing instruction-following responses to harmful or restricted prompts when a backdoor trigger is activated.",
+      "paper": "Injecting Universal Jailbreak Backdoors into LLMs in Minutes",
+      "original_name": "Jailbreak response generation"
+    },
+    {
+      "text": "The generation of text that is toxic, biased, or otherwise harmful.",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "original_name": "Harmful language generation"
+    },
+    {
+      "text": "The observable model behavior of producing text containing dangerous, undesirable, or hazardous information, such as biosecurity threats.",
+      "paper": "Unlearning or Obfuscating? Jogging the Memory of Unlearned LLMs via Benign Relearning",
+      "original_name": "Harmful knowledge generation"
+    },
+    {
+      "text": "The observable production of harmful, malicious, or policy-violating text in response to a prompt.",
+      "paper": "Backtracking Improves Generation Safety",
+      "original_name": "Unsafe generation"
+    },
+    {
+      "text": "Producing outputs that are both harmful and instrumentally useful to a user's malicious goal.",
+      "paper": "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+      "original_name": "Harmful-yet-helpful response generation"
+    },
+    {
+      "text": "Producing continuations or outputs that contain harmful, offensive, or unsafe language when prompted.",
+      "paper": "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "original_name": "Toxic text generation"
+    },
+    {
+      "text": "The observable act of a language model producing text that is considered toxic, harmful, or offensive.",
+      "paper": "Controlling Language and Diffusion Models by Transporting Activations",
+      "original_name": "Toxic language generation"
+    },
+    {
+      "text": "The model produces content that violates ethical or safety norms, such as generating harmful, illegal, or deceptive text in response to adversarial prompts.",
+      "paper": "Learning Safety Constraints for Large Language Models",
+      "original_name": "Unsafe output generation"
+    },
+    {
+      "text": "The creation of fake or deceptive product or service reviews.",
+      "paper": "Online Detection of LLM-Generated Texts via Sequential Hypothesis Testing by Betting",
+      "original_name": "Malicious review generation"
+    },
+    {
+      "text": "The observable tendency of an agent to follow and execute instructions that are explicitly harmful or malicious.",
+      "paper": "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+      "original_name": "Compliance with malicious requests"
+    },
+    {
+      "text": "The model produces harmful, unsafe, or otherwise undesirable text as a result of an adversarial trigger.",
+      "paper": "Backdoor Attacks in Token Selection of Attention Mechanism",
+      "original_name": "Malicious response generation"
+    },
+    {
+      "text": "The observable production of insulting, offensive, or aggressive language by an LLM in response to certain inputs.",
+      "paper": "LLMScan: Causal Scan for LLM Misbehavior Detection",
+      "original_name": "Toxic response generation"
+    },
+    {
+      "text": "The production of deceptive emails designed to extract sensitive information, which the agent may be induced to write and send under adversarial prompting.",
+      "paper": "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning",
+      "original_name": "Phishing email generation"
+    },
+    {
+      "text": "The model's generation of outputs that are harmful, biased, unethical, or otherwise violate safety guidelines.",
+      "paper": "MM-RLHF: The Next Step Forward in Multimodal LLM Alignment",
+      "original_name": "Unsafe behavior"
+    },
+    {
+      "text": "The observable output of text that is unethical, biased, dangerous, or otherwise violates safety guidelines.",
+      "paper": "Weak-to-Strong Jailbreaking on Large Language Models",
+      "original_name": "Harmful text generation"
+    },
+    {
+      "text": "The observable, unintended behavior of producing text that is flagged as offensive, such as harassment or violent content.",
+      "paper": "Exploring Chain-of-Thought Reasoning for Steerable Pluralistic Alignment",
+      "original_name": "Offensive language generation"
+    },
+    {
+      "text": "The observable phenomenon where an LLM includes harmful or irrelevant information\u2014such as fake news, hate speech, or privacy violations\u2014into its generated response despite the presence of accurate context.",
+      "paper": "Rescorla-Wagner Steering of LLMs for Undesired Behaviors over Disproportionate Inappropriate Context",
+      "original_name": "Inappropriate content incorporation"
+    },
+    {
+      "text": "The observable behavior of a model complying with a harmful instruction to generate an unsafe or malicious response.",
+      "paper": "ALI-Agent: Assessing LLMs'  Alignment with Human Values via Agent-based Evaluation",
+      "original_name": "Harmful instruction following"
+    },
+    {
+      "text": "The model generates a response that complies with a user's request for harmful, unethical, or dangerous content, rather than refusing.",
+      "paper": "Uncovering Safety Risks of Large Language Models through Concept Activation Vector",
+      "original_name": "Following malicious instructions"
+    },
+    {
+      "text": "The observable behavior where a model executes a potentially unsafe instruction by providing substantial content that directly assists with the user's unsafe intent.",
+      "paper": "SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal",
+      "original_name": "Unsafe instruction fulfillment"
+    },
+    {
+      "text": "The observable behavior of a model complying with and providing a substantive answer to a harmful or malicious question.",
+      "paper": "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "original_name": "Harmful question answering"
+    },
+    {
+      "text": "The act of providing a substantive, non-refusal response to a query designed to elicit harmful content.",
+      "paper": "Who's asking? User personas and the mechanics of latent misalignment",
+      "original_name": "Adversarial query answering"
+    },
+    {
+      "text": "Responding to harmful or unsafe user questions in a way that reveals whether the model refuses or complies.",
+      "paper": "Can a Large Language Model be a Gaslighter?",
+      "original_name": "Dangerous question answering"
+    },
+    {
+      "text": "The observable production of harmful or inappropriate responses by an LLM when prompted with malicious or sensitive queries, particularly in non-English languages.",
+      "paper": "Multilingual Jailbreak Challenges in Large Language Models",
+      "original_name": "Unsafe content generation"
+    },
+    {
+      "text": "The observable behavior of a model generating a response that fulfills a harmful or unethical user instruction, thereby bypassing its safety training.",
+      "paper": "Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The Template Region",
+      "original_name": "Compliance with harmful requests"
+    }
+  ],
+  "definition_count": 31,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreaking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+      "evidence": "We focus on identifying prompts that, when given a specific harmful request (e.g., \u201cTell me how to build a bomb\u201d), induces the LLM to generate harmful content.",
+      "paper_count": 12,
+      "paper_weight": 12.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+          "Does Refusal Training in LLMs Generalize to the Past Tense?",
+          "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+          "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs"
+        ],
+        "naacl25": [
+          "Stronger Universal and Transferable Attacks by Suppressing Refusals"
+        ],
+        "icml25": [
+          "TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs",
+          "Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs",
+          "Emoji Attack: Enhancing Jailbreak Attacks Against Judge LLM Detection",
+          "Weak-to-Strong Jailbreaking on Large Language Models"
+        ],
+        "emnlp25": [
+          "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+          "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak"
+        ],
+        "neurips24": [
+          "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "evidence": "\u201cSafety alignment is essential to prevent unintended model behaviors and mitigate risks in downstream applications.\u201d",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+          "Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models",
+          "AdvWave: Stealthy Adversarial Jailbreak Attack against Large Audio-Language Models",
+          "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+          "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs"
+        ],
+        "emnlp25": [
+          "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+          "SPIRIT: Patching Speech Language Models against Jailbreak Attacks"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Perspective API",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models",
+      "evidence": "To measure the toxicity of these harmful generations, we employ automatic evaluation models pre-trained on toxic datasets, including Perspective API and toxic classifiers (Hanu & Unitary team, 2020) with BERT (Kenton & Toutanova, 2019) and RoBERTa (Liu et al., 2019). (Section 4)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models"
+        ],
+        "iclr25": [
+          "Scalable Extraction of Training Data from Aligned, Production Language Models",
+          "Monet: Mixture of Monosemantic Experts for Transformers"
+        ],
+        "naacl25": [
+          "Uncovering Bias in Large Vision-Language Models at Scale with Counterfactuals"
+        ],
+        "icml25": [
+          "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+      "evidence": "To measure jailbreak success, we computed: (i) Cross-Entropy (Eqn. 1) and (ii) Claude 3 Opus Harmful-Yet-Helpful Score by prompting Claude 3 Opus to assess how helpful-yet-harmful sampled outputs are.",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+          "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+          "Safety Alignment Should be Made More Than Just a Few Tokens Deep"
+        ],
+        "icml25": [
+          "FlipAttack: Jailbreak LLMs via Flipping"
+        ],
+        "emnlp25": [
+          "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AdvBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+      "evidence": "For our prompts, we sample 100 instructions from AdvBench (Zou et al., 2023). We say that the model output reflects the ANSWER task if it attempts to answer the question... (Section 4.3)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+        ],
+        "neurips24": [
+          "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters"
+        ],
+        "acl25": [
+          "From Outcomes to Processes: Guiding PRM Learning from ORM for Inference-Time Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ToxiGen",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+      "evidence": "We take only the prompts designed to produce toxic language (\u2018hateful\u2019 prompts) and use 500 prompts per group to reduce evaluation costs. (Appendix D).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback"
+        ],
+        "naacl25": [
+          "Extracting and Understanding the Superficial Knowledge in Alignment"
+        ],
+        "icml25": [
+          "When Bad Data Leads to Good Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BeaverTails",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "evidence": "To calculate the harmful score, we sample 1000 instructions from the testing set of BeaverTails (Ji et al., 2023).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+          "On Evaluating the Durability of Safeguards for Open-Weight LLMs"
+        ],
+        "icml25": [
+          "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Llama Guard 3",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+      "evidence": "Then evaluate the harmfulness score on its responses with the Llama-Guard-3-8B (Llama Team, 2024). We use 70% harmful prompts in the AdvBench dataset (Zou et al., 2023b) for InferAligner, Vaccine, and our SaLoRA. (Section 5.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation"
+        ],
+        "naacl25": [
+          "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+          "Audio Is the Achilles' Heel: Red Teaming Audio Large Multimodal Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RealToxicityPrompts",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+      "evidence": "We randomly sample 1k prompts from the non-toxic prompts of the REALTOXICITYPROMPTS (Gehman et al., 2020), which was designed to elicit toxic responses. (Section 4.3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing"
+        ],
+        "icml25": [
+          "When Bad Data Leads to Good Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench classifier",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "To compute attack success rate, we use three LLM-as-a-judge models that are fine-tuned to assess output safety: the official HarmBench classifier... (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ],
+        "emnlp25": [
+          "Improving Large Language Model Safety with Contrastive Representation Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+      "evidence": "jailbreak attacks, which exploit vulnerabilities to elicit unintended or harmful outputs, threaten LLMs safety significantly. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+      "evidence": "our method not only induces the target LLM to answer and provide harmful content in more malicious requests, as measured by the Harmbench ASR",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher",
+      "evidence": "GPT-4 showed notably more unsafe behavior than Turbo in almost all cases when chatting with ciphers, due to its superior instruction understanding and adherence, thereby interpreting the cipher instruction and generating a relevant response. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OpenAI Moderation API",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "evidence": "The success rate for each prompt was determined by whether the chatbot\u2019s response to such a prompt was flagged by either Detoxify or OpenAI Moderation API (Section 4).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "WildChat: 1M ChatGPT Interaction Logs in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Detoxify",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "evidence": "The success rate for each prompt was determined by whether the chatbot\u2019s response to such a prompt was flagged by either Detoxify or OpenAI Moderation API (Section 4).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "WildChat: 1M ChatGPT Interaction Logs in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "User modeling",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Who's asking? User personas and the mechanics of latent misalignment",
+      "evidence": "In this work, we show that whether they do so [divulge harmful information] depends signi\ufb01cantly on who they are talking to, which we refer to as user persona.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Who's asking? User personas and the mechanics of latent misalignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Llama Guard 2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "To compute attack success rate, we use three LLM-as-a-judge models that are fine-tuned to assess output safety: ... the Llama-Guard-2 safety classifier... (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "StrongREJECT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "To compute attack success rate, we use three LLM-as-a-judge models that are fine-tuned to assess output safety: ... and the Gemma-2B version of the StrongReject safety classifier (Souly et al., 2024). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Intent understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Understanding and Enhancing the Transferability of Jailbreaking Attacks",
+      "evidence": "By incorporating adversarial sequences, these attacks can redirect the source LLM\u2019s focus away from malicious-intent tokens in the original input, thereby obstructing the model\u2019s intent recognition and eliciting harmful responses. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Understanding and Enhancing the Transferability of Jailbreaking Attacks"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HEx-PHI",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "evidence": "HEx-PHI and SORRY-bench are two dedicated benchmarks for evaluating harmfulness in the HarmfulQA context. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On Evaluating the Durability of Safeguards for Open-Weight LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SORRY-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "evidence": "HEx-PHI and SORRY-bench are two dedicated benchmarks for evaluating harmfulness in the HarmfulQA context. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On Evaluating the Durability of Safeguards for Open-Weight LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+      "evidence": "We determine the Attack Success Rate (ASR) by manually evaluating the responses generated by the target LLMs for each attack method, based on the evaluation criteria outlined in Appendix C. The ASR indicates the proportion of harmful responses generated. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Cross-model Transferability among Large Language Models on the Platonic Representations of Concepts",
+      "evidence": "Taking the concept of harmfulness as an example, L-Cross Modulation effectively steer LLMs to generate harmful content in 90% of outputs on test set, compared with 0% harmful content in the original responses;",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Cross-model Transferability among Large Language Models on the Platonic Representations of Concepts"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Llama Guard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "evidence": "To evaluate the VLM output harmfulness, we use the Attack Success Rate (ASR) metric via Llama Guard (Inan et al., 2023), following prior works (Zou et al., 2023; Shayegani et al., 2024; Luo et al., 2024). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MM-SafetyBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+      "evidence": "MM-SafetyBench (Liu et al., 2024b), originally proposed as QR Attack, uses image-query-related inputs to elicit harmful responses from models. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Representational harm",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Social Bias in Multilingual Language Models: A Survey",
+      "evidence": "The former occur when PLMs propagate stereotypes, toxic language, and disparate judgments that depict one social group more unfavorably than another (Blodgett et al., 2020; Crawford, 2017)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Social Bias in Multilingual Language Models: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+      "evidence": "Here, safety is defined as stopping models from following malicious instructions and generating toxic content. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Social bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Uncovering Bias in Large Vision-Language Models at Scale with Counterfactuals",
+      "evidence": "social attributes such as perceived race, gender, and physical characteristics depicted in images can significantly influence the generation of toxic content (Abstract).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Uncovering Bias in Large Vision-Language Models at Scale with Counterfactuals"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 28,
+  "incoming_relationship_count": 7,
+  "outgoing_relationship_count": 21,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is an LLM producing harmful, unsafe, toxic, offensive, illegal, unethical, deceptive, or otherwise policy-violating output, usually in response to a malicious, adversarial, or sensitive prompt. Most formulations treat the behavior as compliance rather than refusal: a response counts if it attempts to answer, starts to answer, or indicates willingness to answer a harmful query, though some papers require more, such as \"substantial content\" or \"concrete and helpful suggestions\" that directly assist the unsafe intent. The covered content is broad, including hate speech, discrimination, misinformation, self-harm, sexual exploitation, hacking, bomb-making, illegal acts, fabricated content, and other restricted outputs."
+    },
+    {
+      "label": "Variants.",
+      "text": "Most papers stay broad and use neighboring names such as harmful, unsafe, or toxic content, response, text, or language generation. A smaller line of work narrows the behavior to compliance tasks, including harmful question answering, adversarial query answering, unsafe instruction fulfillment, and following malicious instructions, where the emphasis is on answering rather than refusing. Other variants specialize by setting or output type: multilingual or code-switched unsafe content, multimodal vision or audio jailbreak responses, harmful-yet-helpful outputs, harmful knowledge generation, gaslighting responses, malicious review generation, phishing email generation, and inappropriate content incorporation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 20 measurement instruments. The most recurrent are AdvBench, LLM-as-a-judge, Perspective API, BeaverTails, and Llama Guard 3, followed by 15 other instruments. Across these uses, the behavior is elicited with harmful-instruction or toxic-prompt benchmarks and scored with moderation APIs, safety classifiers, LLM judges, harmfulness scores, or human annotation, with criteria ranging from whether the model attempts to answer a harmful request to binary harmful or benign decisions, toxicity scores, or graded harmfulness."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Only one construct is explicitly measured by this behavior: Safety, with one paper defining safety as stopping models from following malicious instructions and generating toxic content. Beyond that, papers connect the behavior to 11 constructs overall, most often Safety alignment: papers claim causal relationships from Safety alignment to harmful content generation, report that it correlates with Safety alignment, and also describe the two as related. Other recorded links are mostly causal claims from Safety robustness, Controllability, Harmlessness, Intent understanding, Misalignment, Social bias, and User modeling to harmful content generation, plus one causal claim from harmful content generation to Representational harm and one related link to Toxicity, so the recorded uses extend beyond a single construct."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is an LLM producing harmful, unsafe, toxic, offensive, illegal, unethical, deceptive, or otherwise policy-violating output, usually in response to a malicious, adversarial, or sensitive prompt. Most formulations treat the behavior as compliance rather than refusal: a response counts if it attempts to answer, starts to answer, or indicates willingness to answer a harmful query, though some papers require more, such as \"substantial content\" or \"concrete and helpful suggestions\" that directly assist the unsafe intent. The covered content is broad, including hate speech, discrimination, misinformation, self-harm, sexual exploitation, hacking, bomb-making, illegal acts, fabricated content, and other restricted outputs.\n\nVariants. Most papers stay broad and use neighboring names such as harmful, unsafe, or toxic content, response, text, or language generation. A smaller line of work narrows the behavior to compliance tasks, including harmful question answering, adversarial query answering, unsafe instruction fulfillment, and following malicious instructions, where the emphasis is on answering rather than refusing. Other variants specialize by setting or output type: multilingual or code-switched unsafe content, multimodal vision or audio jailbreak responses, harmful-yet-helpful outputs, harmful knowledge generation, gaslighting responses, malicious review generation, phishing email generation, and inappropriate content incorporation.\n\nSpace of elicitation and scores. Papers link this behavior to 20 measurement instruments. The most recurrent are AdvBench, LLM-as-a-judge, Perspective API, BeaverTails, and Llama Guard 3, followed by 15 other instruments. Across these uses, the behavior is elicited with harmful-instruction or toxic-prompt benchmarks and scored with moderation APIs, safety classifiers, LLM judges, harmfulness scores, or human annotation, with criteria ranging from whether the model attempts to answer a harmful request to binary harmful or benign decisions, toxicity scores, or graded harmfulness.\n\nWhat it is taken as evidence of. Only one construct is explicitly measured by this behavior: Safety, with one paper defining safety as stopping models from following malicious instructions and generating toxic content. Beyond that, papers connect the behavior to 11 constructs overall, most often Safety alignment: papers claim causal relationships from Safety alignment to harmful content generation, report that it correlates with Safety alignment, and also describe the two as related. Other recorded links are mostly causal claims from Safety robustness, Controllability, Harmlessness, Intent understanding, Misalignment, Social bias, and User modeling to harmful content generation, plus one causal claim from harmful content generation to Representational harm and one related link to Toxicity, so the recorded uses extend beyond a single construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+      "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+      "Are Vision-Language Models Safe in the Wild? A Meme-Based Benchmark Study",
+      "Automating Steering for Safe Multimodal Large Language Models",
+      "Breaking Bad Tokens: Detoxification of LLMs Using Sparse Autoencoders",
+      "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+      "DSCD: Large Language Model Detoxification with Self-Constrained Decoding",
+      "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+      "Detoxifying Large Language Models via the Diversity of Toxic Samples",
+      "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak",
+      "EMNLP: Educator-role Moral and Normative Large Language Models Profiling",
+      "EmoAgent: Assessing and Safeguarding Human-AI Interaction for Mental Health Safety",
+      "Evaluating Robustness of Large Audio Language Models to Audio Injection: An Empirical Study",
+      "Exploring Chain-of-Thought Reasoning for Steerable Pluralistic Alignment",
+      "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+      "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+      "Harmful Prompt Laundering: Jailbreaking LLMs with Abductive Styles and Symbolic Encoding",
+      "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis",
+      "Improving Large Language Model Safety with Contrastive Representation Learning",
+      "IndoSafety: Culturally Grounded Safety for LLMs in Indonesian Languages",
+      "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "Jailbreak LLMs through Internal Stance Manipulation",
+      "Jailbreak-Tuning: Models Efficiently Learn Jailbreak Susceptibility",
+      "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment",
+      "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+      "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+      "NEXUS: Network Exploration for eXploiting Unsafe Sequences in Multi-Turn LLM Jailbreaks",
+      "Nullspace Disentanglement for Red Teaming Language Models",
+      "PBI-Attack: Prior-Guided Bimodal Interactive Black-Box Jailbreak Attack for Toxicity Maximization",
+      "REVIVING YOUR MNEME: Predicting The Side Effects of LLM Unlearning and Fine-Tuning via Sparse Model Diffing",
+      "Randomized Smoothing Meets Vision-Language Models",
+      "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+      "Reimagining Safety Alignment with An Image",
+      "Rescorla-Wagner Steering of LLMs for Undesired Behaviors over Disproportionate Inappropriate Context",
+      "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+      "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+      "Social Bias in Multilingual Language Models: A Survey",
+      "Speculative Safety-Aware Decoding",
+      "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+      "The State of Multilingual LLM Safety Research: From Measuring The Language Gap To Mitigating It",
+      "Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model",
+      "Token-Aware Editing of Internal Activations for Large Language Model Alignment",
+      "TombRaider: Entering the Vault of History to Jailbreak Large Language Models",
+      "Turning Logic Against Itself: Probing Model Defenses Through Contrastive Questions",
+      "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+      "Why and How LLMs Benefit from Knowledge Introspection in Commonsense Reasoning"
+    ],
+    "iclr24": [
+      "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+      "Catastrophic Jailbreak of Open-source LLMs via Exploiting Generation",
+      "Controlled Text Generation via Language Model Arithmetic",
+      "Enabling Lanuguage Models to Implicitly Learn Self-Improvement",
+      "Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!",
+      "Gaining Wisdom from Setbacks: Aligning Large Language Models via Mistake Analysis",
+      "Jailbreak in pieces: Compositional Adversarial Attacks on Multi-Modal Language Models",
+      "On the Learnability of Watermarks for Language Models",
+      "Prompt Risk Control: A Rigorous Framework for Responsible Deployment of Large Language Models",
+      "Safe RLHF: Safe Reinforcement Learning from Human Feedback",
+      "Universal Jailbreak Backdoors from Poisoned Human Feedback",
+      "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+      "Curiosity-driven Red-teaming for Large Language Models",
+      "GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher",
+      "Get more for less: Principled Data Selection for Warming Up Fine-Tuning in LLMs",
+      "Model Merging by Uncertainty-Based Gradient Matching",
+      "Multilingual Jailbreak Challenges in Large Language Models",
+      "On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs",
+      "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+      "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+    ],
+    "iclr25": [
+      "A Common Pitfall of Margin-based Language Model Alignment: Gradient Entanglement",
+      "A Distributional Approach to Uncertainty-Aware Preference Alignment Using Offline Demonstrations",
+      "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+      "AIR-BENCH 2024: A Safety Benchmark based on Regulation and Policies Specified Risk Categories",
+      "AdvWave: Stealthy Adversarial Jailbreak Attack against Large Audio-Language Models",
+      "Aligned LLMs Are Not Aligned Browser Agents",
+      "An Auditing Test to Detect Behavioral Shift in Language Models",
+      "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+      "Backtracking Improves Generation Safety",
+      "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+      "Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models",
+      "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks",
+      "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "Can a Large Language Model be a Gaslighter?",
+      "Composable Interventions for Language Models",
+      "Controllable Generation via Locally Constrained Resampling",
+      "Controlling Language and Diffusion Models by Transporting Activations",
+      "Cross-Modal Safety Mechanism Transfer in Large Vision-Language Models",
+      "DarkBench: Benchmarking Dark Patterns in Large Language Models",
+      "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+      "Does Refusal Training in LLMs Generalize to the Past Tense?",
+      "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+      "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+      "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time",
+      "Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models",
+      "Endless Jailbreaks with Bijection Learning",
+      "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+      "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+      "GReaTer: Gradients Over Reasoning Makes Smaller Language Models Strong Prompt Optimizers",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?",
+      "Improved Techniques for Optimization-Based Jailbreaking on Large Language Models",
+      "Injecting Universal Jailbreak Backdoors into LLMs in Minutes",
+      "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+      "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+      "Jailbreaking as a Reward Misspecification Problem",
+      "Large Language Models can Become Strong Self-Detoxifiers",
+      "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "Monet: Mixture of Monosemantic Experts for Transformers",
+      "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "On the Role of Attention Heads in Large Language Model Safety",
+      "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+      "ProAdvPrompter: A Two-Stage Journey to Effective Adversarial Prompting for LLMs",
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+      "SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal",
+      "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+      "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+      "Scalable Extraction of Training Data from Aligned, Production Language Models",
+      "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+      "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+      "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "Understanding and Enhancing the Transferability of Jailbreaking Attacks",
+      "UniDetox: Universal Detoxification of Large Language Models via Dataset Distillation",
+      "Unlearning or Obfuscating? Jogging the Memory of Unlearned LLMs via Benign Relearning",
+      "What's New in My Data? Novelty Exploration via Contrastive Generation",
+      "h4rm3l: A Language for Composable Jailbreak Attack Synthesis"
+    ],
+    "icml25": [
+      "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+      "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack",
+      "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models",
+      "Backdoor Attacks in Token Selection of Attention Mechanism",
+      "Benign Samples Matter! Fine-tuning On Outlier Benign Samples Severely Breaks Safety",
+      "Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs",
+      "Conformal Tail Risk Control for Large Language Model Alignment",
+      "Constrain Alignment with Sparse Autoencoders",
+      "Direct Density Ratio Optimization: A Statistically Consistent Approach to Aligning Large Language Models",
+      "ELITE: Enhanced Language-Image Toxicity Evaluation for Safety",
+      "Emoji Attack: Enhancing Jailbreak Attacks Against Judge LLM Detection",
+      "FlipAttack: Jailbreak LLMs via Flipping",
+      "HPS: Hard Preference Sampling for Human Preference Alignment",
+      "Improving LLM Safety Alignment with Dual-Objective Optimization",
+      "Invariance Makes LLM Unlearning Resilient Even to Unanticipated Downstream Fine-Tuning",
+      "LLMScan: Causal Scan for LLM Misbehavior Detection",
+      "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "Learning Safety Constraints for Large Language Models",
+      "MM-RLHF: The Next Step Forward in Multimodal LLM Alignment",
+      "Metadata Conditioning Accelerates Language Model Pre-training",
+      "Model Swarms: Collaborative Search to Adapt LLM Experts via Swarm Intelligence",
+      "Online Detection of LLM-Generated Texts via Sequential Hypothesis Testing by Betting",
+      "PoisonBench: Assessing Language Model Vulnerability to Poisoned Preference Data",
+      "REINFORCE Adversarial Attacks on Large Language Models: An Adaptive, Distributional, and Semantic Objective",
+      "Raising the Bar: Investigating the Values of Large Language Models via Generative Evolving Testing",
+      "STAIR: Improving Safety Alignment with Introspective Reasoning",
+      "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+      "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+      "Safety Alignment Can Be Not Superficial With Explicit Safety Signals",
+      "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond",
+      "TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs",
+      "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning",
+      "Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning",
+      "Weak-to-Strong Jailbreaking on Large Language Models",
+      "When Bad Data Leads to Good Models",
+      "Adversarial Reasoning at Jailbreaking Time",
+      "Eliciting Language Model Behaviors with Investigator Agents",
+      "PANDAS: Improving Many-shot Jailbreaking via Positive Affirmation, Negative Demonstration, and Adaptive Sampling"
+    ],
+    "naacl25": [
+      "Arabic Dataset for LLM Safeguard Evaluation",
+      "Audio Is the Achilles' Heel: Red Teaming Audio Large Multimodal Models",
+      "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset",
+      "CultureInstruct: Curating Multi-Cultural Instructions at Scale",
+      "Diversity Helps Jailbreak Large Language Models",
+      "Extracting and Understanding the Superficial Knowledge in Alignment",
+      "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+      "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+      "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+      "SafetyQuizzer: Timely and Dynamic Evaluation on the Safety of LLMs",
+      "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+      "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+      "Uncovering Bias in Large Vision-Language Models at Scale with Counterfactuals",
+      "BPO: Towards Balanced Preference Optimization between Knowledge Breadth and Depth in Alignment",
+      "ImgTrojan: Jailbreaking Vision-Language Models with ONE Image",
+      "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+      "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+      "Stronger Universal and Transferable Attacks by Suppressing Refusals",
+      "Transferable Post-training via Inverse Value Learning"
+    ],
+    "neurips24": [
+      "ALI-Agent: Assessing LLMs'  Alignment with Human Values via Agent-based Evaluation",
+      "Adversarial Representation Engineering: A General Model Editing Framework for Large Language Models",
+      "Aligning Large Language Models with Representation Editing: A Control Perspective",
+      "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+      "Apathetic or Empathetic? Evaluating LLMs' Emotional Alignments with Humans",
+      "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "Improving Alignment and Robustness with Circuit Breakers",
+      "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters",
+      "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+      "Optimistic Verifiable Training by Controlling Hardware Nondeterminism",
+      "Protecting Your LLMs with Information Bottleneck",
+      "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+      "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+      "Stepwise Alignment for Constrained Language Model Policy Optimization",
+      "TAIA: Large Language Models are Out-of-Distribution Data Learners",
+      "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+      "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+      "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+      "Who's asking? User personas and the mechanics of latent misalignment",
+      "Uncovering Safety Risks of Large Language Models through Concept Activation Vector"
+    ],
+    "acl25": [
+      "AGD: Adversarial Game Defense Against Jailbreak Attacks in Large Language Models",
+      "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+      "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering Target Atoms",
+      "Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities",
+      "Cross-model Transferability among Large Language Models on the Platonic Representations of Concepts",
+      "DeAL: Decoding-time Alignment for Large Language Models",
+      "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+      "JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs",
+      "Jailbreaking? One Step Is Enough!",
+      "LED-Merging: Mitigating Safety-Utility Conflicts in Model Merging with Location-Election-Disjoint",
+      "LLMs know their vulnerabilities: Uncover Safety Gaps through Natural Distribution Shifts",
+      "M2S: Multi-turn to Single-turn jailbreak in Red Teaming for LLMs",
+      "MTSA: Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming",
+      "PKU-SafeRLHF: Towards Multi-Level Safety Alignment for LLMs with Human Preference",
+      "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+      "Representation Bending for Large Language Model Safety",
+      "Shaping the Safety Boundaries: Understanding and Defending Against Jailbreaks in Large Language Models",
+      "The TIP of the Iceberg: Revealing a Hidden Class of Task-in-Prompt Adversarial Attacks on LLMs",
+      "What Really Matters in Many-Shot Attacks? An Empirical Study of Long-Context Vulnerabilities in LLMs",
+      "Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The Template Region",
+      "from Benign import Toxic: Jailbreaking the Language Model via Adversarial Metaphors"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 48,
+    "iclr24": 21,
+    "iclr25": 59,
+    "icml25": 38,
+    "naacl25": 19,
+    "neurips24": 24,
+    "acl25": 21
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "canonical_name": "Activation patching",
+  "type": "measurement",
+  "canonical_definition": "Activation patching is predominantly described across the literature as a causal intervention technique for localizing model functions. The standard procedure involves running a model on a corrupted prompt while replacing a specific internal activation, such as an attention head or MLP layer output, with its value from a clean prompt run to observe the effect. This method is frequently referred to as \"causal tracing\" or \"interchange intervention,\" and some papers frame it as a form of \"causal mediation analysis.\" The impact of the intervention is often quantified by measuring changes in the model's output, with one study specifying the use of KL divergence to compare the patched model's predictions to a target. Based on the provided data, activation patching is used as an instrument to investigate several model behaviors, including mathematical reasoning, information extraction, and hallucination. While this general framing is common, a few papers detail more specialized applications, such as \"cross-modal patching\" to assess task alignment between modalities or \"patching experiments\" for modulus estimation. The overarching goal is to identify the causal role of specific components in a model's behavior, often with the aim of discovering a functional \"circuit.\" One paper notes a potential methodological consideration, stating that by intervening on components independently, the technique may ignore that a circuit is a \"holistic system.\"",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Activation patching",
+    "Cross-modal patching",
+    "Patching analysis",
+    "Patching experiment"
+  ],
+  "papers": [
+    "Aligned but Blind: Alignment Increases Implicit Bias by Reducing Awareness of Race",
+    "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+    "Performance Gap in Entity Knowledge Extraction Across Modalities in Vision Language Models",
+    "Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers",
+    "Stochastic Chameleons: Irrelevant Context Hallucinations Reveal Class-Based (Mis)Generalization in LLMs",
+    "Tracing and Dissecting How LLMs Recall Factual Knowledge for Real World Questions",
+    "Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The Template Region",
+    "Function Vectors in Large Language Models",
+    "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
+    "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+    "Towards Best Practices of Activation Patching in Language Models: Metrics and Methods",
+    "Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions",
+    "Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics",
+    "Controllable Context Sensitivity and the Knob Behind It",
+    "Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models",
+    "Not All Language Model Features Are One-Dimensionally Linear",
+    "Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control",
+    "(How) Can Transformers Predict Pseudo-Random Numbers?",
+    "(How) Do Language Models Track State?",
+    "Emergence and Effectiveness of Task Vectors in In-Context Learning: An Encoder Decoder Perspective",
+    "How Do Transformers Learn Variable Binding in Symbolic Programs?",
+    "IBCircuit: Towards Holistic Circuit Discovery with Information Bottleneck",
+    "Jacobian Sparse Autoencoders: Sparsify Computations, Not Just Activations",
+    "MIB: A Mechanistic Interpretability Benchmark",
+    "Position: We Need An Algorithmic Understanding of Generative AI",
+    "Towards Global-level Mechanistic Interpretability: A Perspective of Modular Circuits of Large Language Models",
+    "Vision-Language Models Create Cross-Modal Task Representations"
+  ],
+  "paper_count": 27,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A general causal intervention technique for localizing model functions by running a model on a corrupted prompt while replacing a specific internal activation with its value from a clean prompt run. Also known as causal tracing or interchange intervention.",
+      "paper": "Function Vectors in Large Language Models",
+      "original_name": "Activation patching"
+    },
+    {
+      "text": "An intervention-based evaluation method where a task vector extracted from one modality (e.g., text) is injected into the model during processing of a query from another modality (e.g., image) to assess cross-modal task alignment.",
+      "paper": "Vision-Language Models Create Cross-Modal Task Representations",
+      "original_name": "Cross-modal patching"
+    },
+    {
+      "text": "Intervention-based evaluation where features from one sequence are injected into another to test causal roles of model components in modulus estimation.",
+      "paper": "(How) Can Transformers Predict Pseudo-Random Numbers?",
+      "original_name": "Patching experiment"
+    },
+    {
+      "text": "A specific application of interchange interventions where parts of the model's hidden state, such as the residual stream or individual attention head outputs, are replaced to test their causal effect on the final output.",
+      "paper": "How Do Transformers Learn Variable Binding in Symbolic Programs?",
+      "original_name": "Patching analysis"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Named entity recognition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models",
+      "evidence": "\"To do the analysis, we perform activation patching (Geiger et al., 2020; Vig et al., 2020; Meng et al., 2022a) on the residual streams and attention heads\u2019 outputs\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "evidence": "It [Activation patching] localizes model components associated with hallucinations (Monea et al., 2024; Deng et al., 2025) and biases (Vig et al., 2020)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Toxicity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis",
+      "evidence": "we apply activation patching (Zhang and Nanda, 2024) in a counterfactual manner to isolate the effect of specific neurons on toxicity scores. (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Activation patching is predominantly described across the literature as a causal intervention technique for localizing model functions. The standard procedure involves running a model on a corrupted prompt while replacing a specific internal activation, such as an attention head or MLP layer output, with its value from a clean prompt run to observe the effect. This method is frequently referred to as \"causal tracing\" or \"interchange intervention,\" and some papers frame it as a form of \"causal mediation analysis.\" The impact of the intervention is often quantified by measuring changes in the model's output, with one study specifying the use of KL divergence to compare the patched model's predictions to a target. Based on the provided data, activation patching is used as an instrument to investigate several model behaviors, including mathematical reasoning, information extraction, and hallucination. While this general framing is common, a few papers detail more specialized applications, such as \"cross-modal patching\" to assess task alignment between modalities or \"patching experiments\" for modulus estimation. The overarching goal is to identify the causal role of specific components in a model's behavior, often with the aim of discovering a functional \"circuit.\" One paper notes a potential methodological consideration, stating that by intervening on components independently, the technique may ignore that a circuit is a \"holistic system.\"",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Aligned but Blind: Alignment Increases Implicit Bias by Reducing Awareness of Race",
+      "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+      "Performance Gap in Entity Knowledge Extraction Across Modalities in Vision Language Models",
+      "Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers",
+      "Stochastic Chameleons: Irrelevant Context Hallucinations Reveal Class-Based (Mis)Generalization in LLMs",
+      "Tracing and Dissecting How LLMs Recall Factual Knowledge for Real World Questions",
+      "Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The Template Region"
+    ],
+    "iclr24": [
+      "Function Vectors in Large Language Models",
+      "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
+      "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+      "Towards Best Practices of Activation Patching in Language Models: Metrics and Methods"
+    ],
+    "iclr25": [
+      "Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions",
+      "Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics",
+      "Controllable Context Sensitivity and the Knob Behind It",
+      "Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models",
+      "Not All Language Model Features Are One-Dimensionally Linear",
+      "Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control"
+    ],
+    "icml25": [
+      "(How) Can Transformers Predict Pseudo-Random Numbers?",
+      "(How) Do Language Models Track State?",
+      "Emergence and Effectiveness of Task Vectors in In-Context Learning: An Encoder Decoder Perspective",
+      "How Do Transformers Learn Variable Binding in Symbolic Programs?",
+      "IBCircuit: Towards Holistic Circuit Discovery with Information Bottleneck",
+      "Jacobian Sparse Autoencoders: Sparsify Computations, Not Just Activations",
+      "MIB: A Mechanistic Interpretability Benchmark",
+      "Position: We Need An Algorithmic Understanding of Generative AI",
+      "Towards Global-level Mechanistic Interpretability: A Perspective of Modular Circuits of Large Language Models",
+      "Vision-Language Models Create Cross-Modal Task Representations"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 7,
+    "iclr24": 4,
+    "iclr25": 6,
+    "icml25": 10
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

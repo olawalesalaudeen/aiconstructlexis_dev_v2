@@ -1,0 +1,338 @@
+{
+  "canonical_name": "Membership inference attack",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing usage treats membership inference attack as an evaluation or auditing procedure for asking whether a specific example was used in a model's training, alignment, or unlearning setting, usually by distinguishing member from non-member examples from model behavior. Some authors narrow this to black-box settings that rely only on output texts or output behavior, without logits or token probabilities, while others describe loss-based variants and heuristics such as loss, perplexity, lowercase probability, zlib compression, and Min-k% probability. A smaller line of work extends the framing from single examples to document-level attacks or to suspect datasets, defining it as detecting whether a suspect dataset was used in training.\n\nWhat it is claimed to measure. Papers use this procedure to measure 3 constructs and 2 behavioral indicators. The most common measurement claims are privacy-focused: papers report that privacy leakage and privacy preservation are measured by membership inference attacks, and one paper describes them as established practice for quantifying privacy. Other papers use them to measure forget quality and knowledge memorization, while pre-training data detection is treated as related to membership inference attack rather than as a direct measurement claim. Overall, the reported targets are spread across several privacy and unlearning constructs rather than concentrated on one.\n\nSpace of uses. In use, papers often operationalize membership inference attacks in black-box or loss-based form, by querying a model on candidate examples, obtaining losses or outputs, and thresholding a score to infer membership. It is linked to 3 instruments, most often BookMIA, BookTection, and WikiMIA, and papers describe WikiMIA as separating early Wikipedia as member data and recent Wikipedia as non-member data. Papers position the procedure as an empirical privacy audit and as part of unlearning evaluation, and some use it alongside data extraction attacks in broader privacy evaluations.\n\nConcerns raised. A few papers note practical limits. One says that previous membership inference benchmarks, including WikiMIA, BookMIA, and BookTection, cannot be reliably used for Llama-3 because the model was trained more recently. Another says that in a black-box setting it can be challenging to infer whether a particular forget sample was observed during training from model outputs alone.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Membership inference attack",
+    "Membership Inference Attack (MIA)",
+    "Membership Inference Attack",
+    "Membership inference",
+    "Dataset membership inference",
+    "Membership inference methods",
+    "Membership inference attacks"
+  ],
+  "papers": [
+    "A Statistical and Multi-Perspective Revisiting of the Membership Inference Attack in Large Language Models",
+    "S-RAG: A Novel Audit Framework for Detecting Unauthorized Use of Personal Data in RAG Systems",
+    "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework",
+    "Identifying Unlearned Data in LLMs via Membership Inference Attacks",
+    "Membership and Memorization in LLM Knowledge Distillation",
+    "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+    "Personalized Language Models via Privacy-Preserving Evolutionary Model Merging",
+    "RewardDS: Privacy-Preserving Fine-Tuning for Large Language Models via Reward Driven Data Synthesis",
+    "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset",
+    "Differentially Private Steering for Large Language Model Alignment",
+    "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models",
+    "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+    "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+    "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+    "Machine Unlearning Fails to Remove Data Poisoning Attacks",
+    "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+    "Privacy Auditing of Large Language Models",
+    "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+    "Adaptive Localization of Knowledge Negation for Continual LLM Unlearning",
+    "Efficient and Privacy-Preserving Soft Prompt Transfer for LLMs",
+    "Position: In-House Evaluation Is Not Enough. Towards Robust Third-Party Evaluation and Flaw Disclosure for General-Purpose AI",
+    "Textual Unlearning Gives a False Sense of Unlearning",
+    "The Canary\u2019s Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text",
+    "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+    "Unlocking Post-hoc Dataset Inference with Synthetic Data",
+    "Watch Out Your Album! On the Inadvertent Privacy Memorization in Multi-Modal Large Language Models",
+    "Differentially Private Learning Needs Better Model Initialization and Self-Distillation",
+    "Soft Prompting for Unlearning in Large Language Models",
+    "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+    "Data Mixture Inference Attack: BPE Tokenizers Reveal Training Data Compositions",
+    "Membership Inference Attacks against Large Vision-Language Models",
+    "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models"
+  ],
+  "paper_count": 32,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An evaluation procedure designed to audit empirical privacy by attempting to determine whether a specific data sample was used in the model's alignment or training process.",
+      "paper": "Differentially Private Steering for Large Language Model Alignment",
+      "original_name": "Membership Inference Attack (MIA)"
+    },
+    {
+      "text": "A privacy evaluation procedure that tests whether a datapoint was used in training by distinguishing member from non-member examples.",
+      "paper": "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+      "original_name": "Membership inference attack"
+    },
+    {
+      "text": "An evaluation procedure designed to determine whether a specific data sample was part of a model's training set by analyzing its output behavior.",
+      "paper": "Soft Prompting for Unlearning in Large Language Models",
+      "original_name": "Membership Inference Attack"
+    },
+    {
+      "text": "The observable phenomenon where a model's outputs or internal states can be analyzed to determine if a specific data point was part of its training set.",
+      "paper": "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models",
+      "original_name": "Membership inference"
+    },
+    {
+      "text": "The latent ability of a model or method to determine whether a suspect dataset was used in the training of a target LLM, based on statistical signals extracted from model behavior.",
+      "paper": "Unlocking Post-hoc Dataset Inference with Synthetic Data",
+      "original_name": "Dataset membership inference"
+    },
+    {
+      "text": "Procedures that determine whether a given data point was part of a model\u2019s training set, using heuristics such as perplexity, lowercase probability, zlib compression, and Min-K% probability.",
+      "paper": "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models",
+      "original_name": "Membership inference methods"
+    },
+    {
+      "text": "Evaluation procedure that tests whether an attacker can determine if specific data was part of the model's training set, used to assess forget quality.",
+      "paper": "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+      "original_name": "Membership inference attacks"
+    }
+  ],
+  "definition_count": 7,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Pre-training data detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+      "evidence": "Pre-training data detection can be considered a special case of Membership Inference Attack (MIA) (Shokri et al., 2017): the goal is to infer whether a given input has been used for training a target LLM",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ],
+        "emnlp25": [
+          "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Privacy preservation",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+      "evidence": "These fully trained prompts, if not properly protected with privacy mechanism, are vulnerable to MIA which aims to infer if an image sample was used for training or not (Section 3.3).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models",
+          "MUSE: Machine Unlearning Six-Way Evaluation for Language Models"
+        ],
+        "naacl25": [
+          "Differentially Private Learning Needs Better Model Initialization and Self-Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Privacy leakage",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Differentially Private Steering for Large Language Model Alignment",
+      "evidence": "we develop the first Membership Inference Attack (MIA) for evaluating and auditing the empirical privacy for the problem of LLM steering via activation editing",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Differentially Private Steering for Large Language Model Alignment",
+          "Privacy Auditing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge memorization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+      "evidence": "We adopt four membership inference attack (MIA) methods for knowledge memorization on our collected MIA set. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Unlearning efficacy",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Machine Unlearning Fails to Remove Data Poisoning Attacks",
+      "evidence": "Machine unlearning is typically evaluated by checking if an instance z is a member of the training set (MEMBER) by checking if the loss \u2113of the model \u03b8updated is lower than or equal to a threshold \u03c4L (Shokri et al., 2017) (Section 3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Machine Unlearning Fails to Remove Data Poisoning Attacks"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Forget quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset",
+      "evidence": "To determine whether private information still exists in VLMs after unlearning more accurately, we proposed to use MIAs for evaluation. (Section 2.5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Min-K% Prob",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+      "evidence": "To accurately measure the privacy leakage, we employ Min-K% Prob (Shi et al., 2024a) , a state-of-the-art MIA method for LMs based on the loss (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MUSE: Machine Unlearning Six-Way Evaluation for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiMIA",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Membership Inference Attacks against Large Vision-Language Models",
+      "evidence": "MIA on LLM pre-training texts. We use the WikiMIA benchmark [52], which leverages the Wikipedia timestamp to separate the early Wiki data as the member data, and recent Wiki data as the non-member data (Section 6.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Membership Inference Attacks against Large Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "BookMIA",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "evidence": "\u201cPrevious membership inference benchmarks such as WikiMIA, BookMIA (Shi et al., 2024), and BookTection (Duarte et al., 2024)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "BookTection",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "evidence": "\u201cPrevious membership inference benchmarks such as WikiMIA, BookMIA (Shi et al., 2024), and BookTection (Duarte et al., 2024)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 10,
+  "incoming_relationship_count": 7,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing usage treats membership inference attack as an evaluation or auditing procedure for asking whether a specific example was used in a model's training, alignment, or unlearning setting, usually by distinguishing member from non-member examples from model behavior. Some authors narrow this to black-box settings that rely only on output texts or output behavior, without logits or token probabilities, while others describe loss-based variants and heuristics such as loss, perplexity, lowercase probability, zlib compression, and Min-k% probability. A smaller line of work extends the framing from single examples to document-level attacks or to suspect datasets, defining it as detecting whether a suspect dataset was used in training."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use this procedure to measure 3 constructs and 2 behavioral indicators. The most common measurement claims are privacy-focused: papers report that privacy leakage and privacy preservation are measured by membership inference attacks, and one paper describes them as established practice for quantifying privacy. Other papers use them to measure forget quality and knowledge memorization, while pre-training data detection is treated as related to membership inference attack rather than as a direct measurement claim. Overall, the reported targets are spread across several privacy and unlearning constructs rather than concentrated on one."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "In use, papers often operationalize membership inference attacks in black-box or loss-based form, by querying a model on candidate examples, obtaining losses or outputs, and thresholding a score to infer membership. It is linked to 3 instruments, most often BookMIA, BookTection, and WikiMIA, and papers describe WikiMIA as separating early Wikipedia as member data and recent Wikipedia as non-member data. Papers position the procedure as an empirical privacy audit and as part of unlearning evaluation, and some use it alongside data extraction attacks in broader privacy evaluations."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "A few papers note practical limits. One says that previous membership inference benchmarks, including WikiMIA, BookMIA, and BookTection, cannot be reliably used for Llama-3 because the model was trained more recently. Another says that in a black-box setting it can be challenging to infer whether a particular forget sample was observed during training from model outputs alone."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing usage treats membership inference attack as an evaluation or auditing procedure for asking whether a specific example was used in a model's training, alignment, or unlearning setting, usually by distinguishing member from non-member examples from model behavior. Some authors narrow this to black-box settings that rely only on output texts or output behavior, without logits or token probabilities, while others describe loss-based variants and heuristics such as loss, perplexity, lowercase probability, zlib compression, and Min-k% probability. A smaller line of work extends the framing from single examples to document-level attacks or to suspect datasets, defining it as detecting whether a suspect dataset was used in training.\n\nWhat it is claimed to measure. Papers use this procedure to measure 3 constructs and 2 behavioral indicators. The most common measurement claims are privacy-focused: papers report that privacy leakage and privacy preservation are measured by membership inference attacks, and one paper describes them as established practice for quantifying privacy. Other papers use them to measure forget quality and knowledge memorization, while pre-training data detection is treated as related to membership inference attack rather than as a direct measurement claim. Overall, the reported targets are spread across several privacy and unlearning constructs rather than concentrated on one.\n\nSpace of uses. In use, papers often operationalize membership inference attacks in black-box or loss-based form, by querying a model on candidate examples, obtaining losses or outputs, and thresholding a score to infer membership. It is linked to 3 instruments, most often BookMIA, BookTection, and WikiMIA, and papers describe WikiMIA as separating early Wikipedia as member data and recent Wikipedia as non-member data. Papers position the procedure as an empirical privacy audit and as part of unlearning evaluation, and some use it alongside data extraction attacks in broader privacy evaluations.\n\nConcerns raised. A few papers note practical limits. One says that previous membership inference benchmarks, including WikiMIA, BookMIA, and BookTection, cannot be reliably used for Llama-3 because the model was trained more recently. Another says that in a black-box setting it can be challenging to infer whether a particular forget sample was observed during training from model outputs alone.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Statistical and Multi-Perspective Revisiting of the Membership Inference Attack in Large Language Models",
+      "S-RAG: A Novel Audit Framework for Detecting Unauthorized Use of Personal Data in RAG Systems"
+    ],
+    "emnlp25": [
+      "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework",
+      "Identifying Unlearned Data in LLMs via Membership Inference Attacks",
+      "Membership and Memorization in LLM Knowledge Distillation",
+      "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+      "Personalized Language Models via Privacy-Preserving Evolutionary Model Merging",
+      "RewardDS: Privacy-Preserving Fine-Tuning for Large Language Models via Reward Driven Data Synthesis"
+    ],
+    "iclr25": [
+      "Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset",
+      "Differentially Private Steering for Large Language Model Alignment",
+      "DocMIA: Document-Level Membership Inference Attacks against DocVQA Models",
+      "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+      "Machine Unlearning Fails to Remove Data Poisoning Attacks",
+      "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+      "Privacy Auditing of Large Language Models",
+      "Privacy-Preserving Personalized Federated Prompt Learning for Multimodal Large Language Models"
+    ],
+    "icml25": [
+      "Adaptive Localization of Knowledge Negation for Continual LLM Unlearning",
+      "Efficient and Privacy-Preserving Soft Prompt Transfer for LLMs",
+      "Position: In-House Evaluation Is Not Enough. Towards Robust Third-Party Evaluation and Flaw Disclosure for General-Purpose AI",
+      "Textual Unlearning Gives a False Sense of Unlearning",
+      "The Canary\u2019s Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text",
+      "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+      "Unlocking Post-hoc Dataset Inference with Synthetic Data",
+      "Watch Out Your Album! On the Inadvertent Privacy Memorization in Multi-Modal Large Language Models"
+    ],
+    "naacl25": [
+      "Differentially Private Learning Needs Better Model Initialization and Self-Distillation",
+      "Soft Prompting for Unlearning in Large Language Models",
+      "PoisonedParrot: Subtle Data Poisoning Attacks to Elicit Copyright-Infringing Content from Large Language Models"
+    ],
+    "neurips24": [
+      "Data Mixture Inference Attack: BPE Tokenizers Reveal Training Data Compositions",
+      "Membership Inference Attacks against Large Vision-Language Models",
+      "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 6,
+    "iclr25": 10,
+    "icml25": 8,
+    "naacl25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

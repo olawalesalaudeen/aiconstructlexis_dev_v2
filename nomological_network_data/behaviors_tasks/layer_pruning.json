@@ -1,0 +1,75 @@
+{
+  "canonical_name": "Layer pruning",
+  "type": "behavior",
+  "canonical_definition": "Across the provided literature, layer pruning is most commonly described as the process of removing a subset of a model's layers, particularly decoder layers, to reduce its size and computational cost. The goal is often to achieve this reduction \"without significantly degrading performance,\" as one paper notes (\"Persistent Topological Features in Large Language Models\"). This behavior is operationalized by truncating a model's architecture, such as a 32-layer LLaMa 7B model, with one study suggesting that \"deeper decoder layers introduce redundancy in recommendation tasks\" (\"SLMRec: Distilling Large Language Models into Small for Sequential Recommendation\"). A more specific variant, termed \"structured pruning\" in one paper, involves removing adapter layers according to predefined patterns like \"EveryOther\" or by their position (\"Low\", \"Middle\", and \"High\") (\"Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation\"). As an evaluation method, layer pruning is used as a downstream task to test pruning criteria. Furthermore, experiments involving both structured and unstructured layer pruning are used to measure the construct of \"Robustness and stability\" on tasks like visual texture classification.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering: model compression technique (layer and structured pruning)",
+  "names": [
+    "Layer pruning",
+    "Structured pruning"
+  ],
+  "papers": [
+    "Mechanistic Permutability: Match Features Across Layers",
+    "SLMRec: Distilling Large Language Models into Small for Sequential Recommendation",
+    "Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation",
+    "Persistent Topological Features in Large Language Models"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Removing decoder layers from an LLM and evaluating the resulting model's recommendation performance.",
+      "paper": "SLMRec: Distilling Large Language Models into Small for Sequential Recommendation",
+      "original_name": "Layer pruning"
+    },
+    {
+      "text": "Removing selected adapter layers or blocks according to a predefined pattern such as alternating, low, middle, or high layers.",
+      "paper": "Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation",
+      "original_name": "Structured pruning"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Pruning robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation",
+      "evidence": "To systematically evaluate this property, we conduct both structured and unstructured pruning experiments. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, layer pruning is most commonly described as the process of removing a subset of a model's layers, particularly decoder layers, to reduce its size and computational cost. The goal is often to achieve this reduction \"without significantly degrading performance,\" as one paper notes (\"Persistent Topological Features in Large Language Models\"). This behavior is operationalized by truncating a model's architecture, such as a 32-layer LLaMa 7B model, with one study suggesting that \"deeper decoder layers introduce redundancy in recommendation tasks\" (\"SLMRec: Distilling Large Language Models into Small for Sequential Recommendation\"). A more specific variant, termed \"structured pruning\" in one paper, involves removing adapter layers according to predefined patterns like \"EveryOther\" or by their position (\"Low\", \"Middle\", and \"High\") (\"Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation\"). As an evaluation method, layer pruning is used as a downstream task to test pruning criteria. Furthermore, experiments involving both structured and unstructured layer pruning are used to measure the construct of \"Robustness and stability\" on tasks like visual texture classification.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Mechanistic Permutability: Match Features Across Layers",
+      "SLMRec: Distilling Large Language Models into Small for Sequential Recommendation"
+    ],
+    "icml25": [
+      "Come Together, But Not Right Now: A Progressive Strategy to Boost Low-Rank Adaptation",
+      "Persistent Topological Features in Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "icml25": 2
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "canonical_name": "Conditional text generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats conditional text generation as producing a response or completion from a provided input context or prompt, commonly described as fluent and coherent text based on contextual input. One formulation states this as generating a response y conditioned on a prompt x, while another frames it as predicting remaining tokens, or a token distribution, when certain tokens or an arbitrary subset of tokens are given in advance. The descriptions consistently require the output to use the provided context, and one paper discusses failures as information that is unfaithful or not grounded in that context.\n\nVariants. Paper descriptions place it in several settings: text summarization and data-to-text generation are presented as typical conditional generation tasks, and text infilling is described as providing certain tokens in advance and generating the rest. Another paper uses the names arbitrary-context generation and CAR generation for cases where generation must condition on arbitrary contextual evidence or a provided subset of input tokens. One paper also contrasts relatively open-ended and more strongly constrained versions of the task.\n\nSpace of elicitation and scores. It is measured by two linked instruments, ParaDetox and WikiText-103. The evidence treats both as datasets: one paper uses a fixed set of validation sequences from WikiText-103, while another describes ParaDetox as imposing very strong conditional constraints in comparison with a more open-ended setting.\n\nWhat it is taken as evidence of. Papers do not link this behavior to any construct, so they do not present it as evidence of an underlying construct in the reported relations. Instead, one paper claims a causal relationship from conditional text generation to hallucination, and other papers relate it to text summarization, data-to-text generation, and text infilling.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Conditional text generation"
+  ],
+  "papers": [
+    "MiniLLM: Knowledge Distillation of Large Language Models",
+    "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time",
+    "Discrete Copula Diffusion",
+    "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation",
+    "Tractable Transformers for Flexible Conditional Generation"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing fluent and coherent text completions based on provided input contexts.",
+      "paper": "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation",
+      "original_name": "Conditional text generation"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation",
+      "evidence": "This issue arises in typical conditional text generation tasks, such as text summarization and data-to-text generation, where the goal is to produce fluent text based on contextual input. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Data-to-text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation",
+      "evidence": "This issue arises in typical conditional text generation tasks, such as text summarization and data-to-text generation, where the goal is to produce fluent text based on contextual input. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MAUVE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time",
+      "evidence": "We evaluate conditional generation using the MAUVE score (Pillutla et al., 2021).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ParaDetox",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Conditional [MASK] Discrete Diffusion Language Model",
+      "evidence": "In particular, we focus on two datasets that significantly differ in their level of conditional constraints: RocStories (Mostafazadeh et al., 2016), which is relatively open-ended, and Paradetox (Logacheva et al., 2022), which imposes the strongest conditional constraints (Section 5.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Conditional [MASK] Discrete Diffusion Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation",
+      "evidence": "Large Language Models (LLMs), when used for conditional text generation, often produce hallucinations, i.e., information that is unfaithful or not grounded in the input context. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats conditional text generation as producing a response or completion from a provided input context or prompt, commonly described as fluent and coherent text based on contextual input. One formulation states this as generating a response y conditioned on a prompt x, while another frames it as predicting remaining tokens, or a token distribution, when certain tokens or an arbitrary subset of tokens are given in advance. The descriptions consistently require the output to use the provided context, and one paper discusses failures as information that is unfaithful or not grounded in that context."
+    },
+    {
+      "label": "Variants.",
+      "text": "Paper descriptions place it in several settings: text summarization and data-to-text generation are presented as typical conditional generation tasks, and text infilling is described as providing certain tokens in advance and generating the rest. Another paper uses the names arbitrary-context generation and CAR generation for cases where generation must condition on arbitrary contextual evidence or a provided subset of input tokens. One paper also contrasts relatively open-ended and more strongly constrained versions of the task."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "It is measured by two linked instruments, ParaDetox and WikiText-103. The evidence treats both as datasets: one paper uses a fixed set of validation sequences from WikiText-103, while another describes ParaDetox as imposing very strong conditional constraints in comparison with a more open-ended setting."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not link this behavior to any construct, so they do not present it as evidence of an underlying construct in the reported relations. Instead, one paper claims a causal relationship from conditional text generation to hallucination, and other papers relate it to text summarization, data-to-text generation, and text infilling."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats conditional text generation as producing a response or completion from a provided input context or prompt, commonly described as fluent and coherent text based on contextual input. One formulation states this as generating a response y conditioned on a prompt x, while another frames it as predicting remaining tokens, or a token distribution, when certain tokens or an arbitrary subset of tokens are given in advance. The descriptions consistently require the output to use the provided context, and one paper discusses failures as information that is unfaithful or not grounded in that context.\n\nVariants. Paper descriptions place it in several settings: text summarization and data-to-text generation are presented as typical conditional generation tasks, and text infilling is described as providing certain tokens in advance and generating the rest. Another paper uses the names arbitrary-context generation and CAR generation for cases where generation must condition on arbitrary contextual evidence or a provided subset of input tokens. One paper also contrasts relatively open-ended and more strongly constrained versions of the task.\n\nSpace of elicitation and scores. It is measured by two linked instruments, ParaDetox and WikiText-103. The evidence treats both as datasets: one paper uses a fixed set of validation sequences from WikiText-103, while another describes ParaDetox as imposing very strong conditional constraints in comparison with a more open-ended setting.\n\nWhat it is taken as evidence of. Papers do not link this behavior to any construct, so they do not present it as evidence of an underlying construct in the reported relations. Instead, one paper claims a causal relationship from conditional text generation to hallucination, and other papers relate it to text summarization, data-to-text generation, and text infilling.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time",
+      "Discrete Copula Diffusion",
+      "SCOPE: A Self-supervised Framework for Improving Faithfulness in Conditional Text Generation"
+    ],
+    "iclr24": [
+      "MiniLLM: Knowledge Distillation of Large Language Models"
+    ],
+    "icml25": [
+      "Tractable Transformers for Flexible Conditional Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "iclr24": 1,
+    "icml25": 1
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "canonical_name": "Scientific knowledge",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats scientific knowledge as a model capacity or breadth of scientific, domain-specific, or factual knowledge that supports understanding and answering science-oriented questions. Most definitions stay close to this question-answering framing, describing either understanding and applying knowledge from scientific domains, answering questions across scientific domains, or having specialized information needed for expert-level questions in an area such as organismal biology. A smaller line of work uses a narrower framing of scientific prior knowledge, focusing on whether an LLM can draw on domain knowledge when proposing plausible equations or hypotheses.\n\nSpace of facets. Papers do not present a detailed internal taxonomy, but the naming varies: some use science-related abilities for cross-domain science question answering, while another uses scientific prior knowledge for equation or hypothesis proposal. One paper organizes evaluation by scientific subjects, specifically biology, chemistry, and health, and another narrows the construct to organismal biology. Scientific knowledge is also positioned alongside natural language understanding and reasoning as a separate core capability, and one paper describes it as the foundation for scientific literature understanding.\n\nSpace of measurement. Operationalization is narrow and explicit: papers link the construct to 3 measurement instruments and 1 behavioral indicator. SciQ is used most often, followed by MMLU-Pro, which is applied to biology, chemistry, and health subjects, and ScienceQA; the linked behavioral indicator is scientific problem solving. All three instruments are used as evaluation tasks for science questions or scientific subjects, so the operationalizations largely follow the dominant question-answering and subject-knowledge definitions.\n\nLinks. Beyond measurement, only a few direct links are claimed. In SciCode: A Research Coding Benchmark Curated by Scientists, a paper claims a causal relationship from scientific knowledge to scientific problem solving, citing that models improve when background is provided as evidence of lacking knowledge and reasoning capability in natural science fields. In LLM-SR: Scientific Equation Discovery via Programming with Large Language Models, another paper claims a causal relationship from scientific prior knowledge to generalization, stating that better generalizability to unseen data is likely due to integrating that prior knowledge; no correlational or generic related links are reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Scientific knowledge",
+    "Science-related abilities",
+    "Scientific prior knowledge"
+  ],
+  "papers": [
+    "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+    "LLaVA-MoD: Making LLaVA Tiny via MoE-Knowledge Distillation",
+    "SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding",
+    "Weak to Strong Generalization for Large Language Models with Multi-capabilities",
+    "Instruction-Following Pruning for Large Language Models",
+    "SciCode: A Research Coding Benchmark Curated by Scientists",
+    "VLM4Bio: A Benchmark Dataset to Evaluate Pretrained Vision-Language Models for Trait Discovery from Biological Images"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The model's capacity to understand and apply knowledge from scientific domains to answer questions.",
+      "paper": "LLaVA-MoD: Making LLaVA Tiny via MoE-Knowledge Distillation",
+      "original_name": "Scientific knowledge"
+    },
+    {
+      "text": "The capability to understand and answer questions related to scientific knowledge across various domains.",
+      "paper": "Weak to Strong Generalization for Large Language Models with Multi-capabilities",
+      "original_name": "Science-related abilities"
+    },
+    {
+      "text": "The extent to which an LLM can draw on domain-specific scientific knowledge when proposing plausible equations or hypotheses.",
+      "paper": "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+      "original_name": "Scientific prior knowledge"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SciQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Weak to Strong Generalization for Large Language Models with Multi-capabilities",
+      "evidence": "SciQ (Welbl et al., 2017) for science-related abilities. (Section 3.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Weak to Strong Generalization for Large Language Models with Multi-capabilities"
+        ],
+        "icml25": [
+          "Instruction-Following Pruning for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Scientific problem solving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "SciCode: A Research Coding Benchmark Curated by Scientists",
+      "evidence": "all models substantially improve performance when background is provided, indicating their lack of knowledge and reasoning capability in these natural science fields. (Section 2.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SciCode: A Research Coding Benchmark Curated by Scientists"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+      "evidence": "This alignment demonstrates the better generalizability of equations discovered by LLM-SR to unseen data, likely due to the integration of scientific prior knowledge in the equation discovery process.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU-Pro",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding",
+      "evidence": "To assess their scientific knowledge, which serves as the foundation for scientific literature understanding, we evaluate the base models on scientific subjects \u2013 biology, chemistry, and health in MMLU-Pro (Wang et al., 2024) and MaScQA (Zaki et al., 2023) (Section 3.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ScienceQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLaVA-MoD: Making LLaVA Tiny via MoE-Knowledge Distillation",
+      "evidence": "ScienceQA (Lu et al., 2022b) is utilized to measure scientific knowledge. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLaVA-MoD: Making LLaVA Tiny via MoE-Knowledge Distillation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats scientific knowledge as a model capacity or breadth of scientific, domain-specific, or factual knowledge that supports understanding and answering science-oriented questions. Most definitions stay close to this question-answering framing, describing either understanding and applying knowledge from scientific domains, answering questions across scientific domains, or having specialized information needed for expert-level questions in an area such as organismal biology. A smaller line of work uses a narrower framing of scientific prior knowledge, focusing on whether an LLM can draw on domain knowledge when proposing plausible equations or hypotheses."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not present a detailed internal taxonomy, but the naming varies: some use science-related abilities for cross-domain science question answering, while another uses scientific prior knowledge for equation or hypothesis proposal. One paper organizes evaluation by scientific subjects, specifically biology, chemistry, and health, and another narrows the construct to organismal biology. Scientific knowledge is also positioned alongside natural language understanding and reasoning as a separate core capability, and one paper describes it as the foundation for scientific literature understanding."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is narrow and explicit: papers link the construct to 3 measurement instruments and 1 behavioral indicator. SciQ is used most often, followed by MMLU-Pro, which is applied to biology, chemistry, and health subjects, and ScienceQA; the linked behavioral indicator is scientific problem solving. All three instruments are used as evaluation tasks for science questions or scientific subjects, so the operationalizations largely follow the dominant question-answering and subject-knowledge definitions."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, only a few direct links are claimed. In SciCode: A Research Coding Benchmark Curated by Scientists, a paper claims a causal relationship from scientific knowledge to scientific problem solving, citing that models improve when background is provided as evidence of lacking knowledge and reasoning capability in natural science fields. In LLM-SR: Scientific Equation Discovery via Programming with Large Language Models, another paper claims a causal relationship from scientific prior knowledge to generalization, stating that better generalizability to unseen data is likely due to integrating that prior knowledge; no correlational or generic related links are reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define scientific knowledge as a model's possession and use of domain-specific scientific knowledge, usually framed as understanding or drawing on that knowledge to answer science questions. A few emphasize specialized encoded facts, breadth of factual knowledge, or use in proposing equations or hypotheses, but these are variations in emphasis and task setting rather than different phenomena.",
+    "papers_with_definition": 5,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats scientific knowledge as a model capacity or breadth of scientific, domain-specific, or factual knowledge that supports understanding and answering science-oriented questions. Most definitions stay close to this question-answering framing, describing either understanding and applying knowledge from scientific domains, answering questions across scientific domains, or having specialized information needed for expert-level questions in an area such as organismal biology. A smaller line of work uses a narrower framing of scientific prior knowledge, focusing on whether an LLM can draw on domain knowledge when proposing plausible equations or hypotheses.\n\nSpace of facets. Papers do not present a detailed internal taxonomy, but the naming varies: some use science-related abilities for cross-domain science question answering, while another uses scientific prior knowledge for equation or hypothesis proposal. One paper organizes evaluation by scientific subjects, specifically biology, chemistry, and health, and another narrows the construct to organismal biology. Scientific knowledge is also positioned alongside natural language understanding and reasoning as a separate core capability, and one paper describes it as the foundation for scientific literature understanding.\n\nSpace of measurement. Operationalization is narrow and explicit: papers link the construct to 3 measurement instruments and 1 behavioral indicator. SciQ is used most often, followed by MMLU-Pro, which is applied to biology, chemistry, and health subjects, and ScienceQA; the linked behavioral indicator is scientific problem solving. All three instruments are used as evaluation tasks for science questions or scientific subjects, so the operationalizations largely follow the dominant question-answering and subject-knowledge definitions.\n\nLinks. Beyond measurement, only a few direct links are claimed. In SciCode: A Research Coding Benchmark Curated by Scientists, a paper claims a causal relationship from scientific knowledge to scientific problem solving, citing that models improve when background is provided as evidence of lacking knowledge and reasoning capability in natural science fields. In LLM-SR: Scientific Equation Discovery via Programming with Large Language Models, another paper claims a causal relationship from scientific prior knowledge to generalization, stating that better generalizability to unseen data is likely due to integrating that prior knowledge; no correlational or generic related links are reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+      "LLaVA-MoD: Making LLaVA Tiny via MoE-Knowledge Distillation",
+      "SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding",
+      "Weak to Strong Generalization for Large Language Models with Multi-capabilities"
+    ],
+    "icml25": [
+      "Instruction-Following Pruning for Large Language Models"
+    ],
+    "neurips24": [
+      "SciCode: A Research Coding Benchmark Curated by Scientists",
+      "VLM4Bio: A Benchmark Dataset to Evaluate Pretrained Vision-Language Models for Trait Discovery from Biological Images"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "icml25": 1,
+    "neurips24": 2
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "canonical_name": "GovReport",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most papers treat GovReport as a long-document summarization dataset or benchmark built from U.S. government reports. Definitions variously describe congressional and U.S. Government reports, long reports from the U.S. Government Accountability Office, and a SCROLL benchmark dataset for summarizing long government reports; one paper names a task variant, SUM-GOVREPORT, for long government reports with complex structure and content. Where papers give details, they describe 19,402 reports, corresponding summaries, and an average document length of 7,866 tokens.\n\nWhat it is claimed to measure. Across the surveyed work, the prevailing claim is that GovReport measures Text summarization: papers describe using it for the summarization task and as a generic summarization dataset. A smaller line of work reports it as measuring Length generalization, via length extrapolation on six long benchmarks. Overall, papers link it to one behavioral indicator, Text summarization, and one construct, Length generalization.\n\nSpace of uses. Papers usually use GovReport as one benchmark within broader long-context evaluations. They pair it with Proof-pile for language modeling on long or long-sequence documents, report it with QMSum in the SCROLL benchmark, and use it alongside Multi-News or MultiNews for summarization; one paper also lists it among LongBench tasks. No paper explicitly relates GovReport to another measurement instrument.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "GovReport",
+    "SUM-GOVREPORT"
+  ],
+  "papers": [
+    "IAM: Efficient Inference through Attention Mapping between Different-scale LLMs",
+    "RefreshKV: Updating Small KV Cache During Long-form Generation",
+    "Alignment-Augmented Speculative Decoding with Alignment Sampling and Conditional Verification",
+    "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+    "Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query",
+    "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+    "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+    "YaRN: Efficient Context Window Extension of Large Language Models",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+    "What is Wrong with Perplexity for Long-context Language Modeling?",
+    "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+    "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+    "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Summarization dataset of U.S. government and congressional reports, used to evaluate language modeling performance on long documents with an average length of 7,866 tokens.",
+      "paper": "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "original_name": "GovReport"
+    },
+    {
+      "text": "Summarization task involving long government reports with complex structure and content.",
+      "paper": "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+      "original_name": "SUM-GOVREPORT"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+      "evidence": "GovReport [25] is a generic summarization dataset containing long reports published by the U.S. Government Accountability Office (Section 4.1).",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks"
+        ],
+        "icml25": [
+          "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization"
+        ],
+        "emnlp25": [
+          "Alignment-Augmented Speculative Decoding with Alignment Sampling and Conditional Verification",
+          "Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+      "evidence": "we perform the classic language modeling evaluation, i.e., perplexity evaluation, on GovReport [Huang et al., 2021] and Proof-pile [Zhangir Azerbayev, 2022]. (Section 3.5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most papers treat GovReport as a long-document summarization dataset or benchmark built from U.S. government reports. Definitions variously describe congressional and U.S. Government reports, long reports from the U.S. Government Accountability Office, and a SCROLL benchmark dataset for summarizing long government reports; one paper names a task variant, SUM-GOVREPORT, for long government reports with complex structure and content. Where papers give details, they describe 19,402 reports, corresponding summaries, and an average document length of 7,866 tokens."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across the surveyed work, the prevailing claim is that GovReport measures Text summarization: papers describe using it for the summarization task and as a generic summarization dataset. A smaller line of work reports it as measuring Length generalization, via length extrapolation on six long benchmarks. Overall, papers link it to one behavioral indicator, Text summarization, and one construct, Length generalization."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers usually use GovReport as one benchmark within broader long-context evaluations. They pair it with Proof-pile for language modeling on long or long-sequence documents, report it with QMSum in the SCROLL benchmark, and use it alongside Multi-News or MultiNews for summarization; one paper also lists it among LongBench tasks. No paper explicitly relates GovReport to another measurement instrument."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most papers treat GovReport as a long-document summarization dataset or benchmark built from U.S. government reports. Definitions variously describe congressional and U.S. Government reports, long reports from the U.S. Government Accountability Office, and a SCROLL benchmark dataset for summarizing long government reports; one paper names a task variant, SUM-GOVREPORT, for long government reports with complex structure and content. Where papers give details, they describe 19,402 reports, corresponding summaries, and an average document length of 7,866 tokens.\n\nWhat it is claimed to measure. Across the surveyed work, the prevailing claim is that GovReport measures Text summarization: papers describe using it for the summarization task and as a generic summarization dataset. A smaller line of work reports it as measuring Length generalization, via length extrapolation on six long benchmarks. Overall, papers link it to one behavioral indicator, Text summarization, and one construct, Length generalization.\n\nSpace of uses. Papers usually use GovReport as one benchmark within broader long-context evaluations. They pair it with Proof-pile for language modeling on long or long-sequence documents, report it with QMSum in the SCROLL benchmark, and use it alongside Multi-News or MultiNews for summarization; one paper also lists it among LongBench tasks. No paper explicitly relates GovReport to another measurement instrument.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "IAM: Efficient Inference through Attention Mapping between Different-scale LLMs",
+      "RefreshKV: Updating Small KV Cache During Long-form Generation"
+    ],
+    "emnlp25": [
+      "Alignment-Augmented Speculative Decoding with Alignment Sampling and Conditional Verification",
+      "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+      "Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query"
+    ],
+    "iclr24": [
+      "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+      "YaRN: Efficient Context Window Extension of Large Language Models"
+    ],
+    "iclr25": [
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+      "What is Wrong with Perplexity for Long-context Language Modeling?"
+    ],
+    "neurips24": [
+      "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+      "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks"
+    ],
+    "naacl25": [
+      "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 3,
+    "iclr24": 3,
+    "iclr25": 3,
+    "neurips24": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

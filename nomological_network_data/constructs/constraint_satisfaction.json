@@ -1,0 +1,222 @@
+{
+  "canonical_name": "Constraint satisfaction",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats constraint satisfaction as a model property or output behavior centered on whether generations obey explicit constraints. Most definitions describe adherence to lexical or semantic constraints, user-defined external constraints, or prompt-level requirements such as formatting, structure, style, word count, tone, or multiple explicit instructions; one formulation also describes it as finding a solution that satisfies all conditions. A smaller line of work shifts the emphasis from fulfillment to understanding, defining nearby constructs as the ability to comprehend, internalize, recognize, or differentiate constraints, especially in planning or complex instructions. Definitions therefore vary mainly between latent ability and observable behavior, and between general instruction constraints and narrower validity or feasibility constraints in domains such as travel planning or biophysical sequence generation.\n\nSpace of facets. Papers break the construct down by both constraint type and granularity. Some distinguish lexical from semantic constraints and soft from hard satisfaction, while others operationalize verifiable constraints as formatting, structural, or stylistic rules, or decompose a complex instruction into atomic constraints and compare disparities in constraint fulfillment across them. Nearby labels are not fully uniform: constraint understanding and constraint comprehension focus on recognizing constraints before satisfying them, whereas commonsense awareness and feasible sequence generation narrow the construct to basic validity standards in travel plans or structural and functional validity in optimization sequences. One paper also treats constraint satisfaction as the finest-grained component of instruction following ability through a Constraint Satisfaction Rate.\n\nSpace of measurement. Papers link the construct to 2 measurement instruments and no behavioral indicators. The named instruments are CommonGen and SPaRC, both used as task-based evaluations: CommonGen reports % Soft Constraint Satisfaction and % Hard Constraint Satisfaction, including whether all required concepts are present in a data point, while SPaRC is used to reveal limitations alongside spatial reasoning, rule-based reasoning, and multi-step planning. Beyond those named instruments, papers commonly operationalize the construct through direct compliance checks, including task-specific reward functions for adherence, IFEval-style verifiable constraints with keyword arguments, checks of whether system constraints are correctly satisfied, and CS4 story generation under increasing levels of constraint. These operationalizations mostly match the dominant definition of output compliance, though some papers instead use attribution scores of the constraint component or compare fulfillment across atomic constraints after decomposing a complex instruction.\n\nLinks. More than one paper relates constraint satisfaction to faithfulness, treating a factual error as a case where at least one constraint in a factual query is not satisfied and connecting information popularity and constraint feasibility to the ability to satisfy such constraints. One paper relates it to fluency by noting that controlled generation methods often struggle to balance the two, and another relates it to instruction following ability by using Constraint Satisfaction Rate as the finest level of granularity and as the average accuracy of constraints satisfied. One paper also claims a causal relationship from constraint satisfaction to travel planning, describing a planning module that generates feasible travel plans that holistically satisfy constraints.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Constraint satisfaction",
+    "Constraint understanding",
+    "Constraint comprehension",
+    "Commonsense awareness",
+    "Feasible sequence generation"
+  ],
+  "papers": [
+    "BIG-Bench Extra Hard",
+    "GAPO: Learning Preferential Prompt through Generative Adversarial Policy Optimization",
+    "MuSC: Improving Complex Instruction Following with Multi-granularity Self-Contrastive Training",
+    "Personal Travel Solver: A Preference-Driven LLM-Solver System for Travel Planning",
+    "TP-RAG: Benchmarking Retrieval-Augmented Large Language Model Agents for Spatiotemporal-Aware Travel Planning",
+    "Does quantization affect models' performance on long-context tasks?",
+    "Controlled LLM Decoding via Discrete Auto-regressive Biasing",
+    "Generalists vs. Specialists: Evaluating LLMs on Highly-Constrained Biophysical Sequence Optimization Tasks",
+    "Constrained Decoding with Speculative Lookaheads",
+    "Revealing the Barriers of Language Agents in Planning",
+    "A Systematic Examination of Preference Learning through the Lens of Instruction-Following"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent ability of a language agent to comprehend and internalize rules and constraints that must be adhered to when generating a plan.",
+      "paper": "Revealing the Barriers of Language Agents in Planning",
+      "original_name": "Constraint understanding"
+    },
+    {
+      "text": "The latent ability of an LLM to generate outputs that adhere to specified lexical or semantic constraints, inferred from patterns of compliance across multiple generations.",
+      "paper": "Constrained Decoding with Speculative Lookaheads",
+      "original_name": "Constraint satisfaction"
+    },
+    {
+      "text": "The model's underlying ability to recognize, differentiate, and fulfill individual constraints when decomposed from a complex instruction.",
+      "paper": "MuSC: Improving Complex Instruction Following with Multi-granularity Self-Contrastive Training",
+      "original_name": "Constraint comprehension"
+    },
+    {
+      "text": "The tendency to produce travel plans that satisfy basic validity constraints such as including real POIs and avoiding hallucinated or repetitive items.",
+      "paper": "TP-RAG: Benchmarking Retrieval-Augmented Large Language Model Agents for Spatiotemporal-Aware Travel Planning",
+      "original_name": "Commonsense awareness"
+    },
+    {
+      "text": "Generating sequences that satisfy predefined structural or functional constraints required for validity in the optimization task.",
+      "paper": "Generalists vs. Specialists: Evaluating LLMs on Highly-Constrained Biophysical Sequence Optimization Tasks",
+      "original_name": "Feasible sequence generation"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "KITAB: Evaluating LLMs on Constraint Satisfaction for Information Retrieval",
+      "evidence": "The framework has been recently proposed for studying and detecting factual errors of LLMs by Yuksekgonul et al. (2023) as a useful perspective which also connects information popularity and constraint feasibility to the LLM\u2019s ability to satisfy such constraints. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "KITAB: Evaluating LLMs on Constraint Satisfaction for Information Retrieval",
+          "Attention Satisfies: A Constraint-Satisfaction Lens on Factual Errors of Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Fluency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Controlled LLM Decoding via Discrete Auto-regressive Biasing",
+      "evidence": "However, these methods often struggle to achieve a good balance between fluency and constraint satisfaction.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Controlled LLM Decoding via Discrete Auto-regressive Biasing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SysBench: Can LLMs Follow System Message?",
+      "evidence": "accurately following system messages is still challenging, which requires the model to satisfy all the constraints pre-set in the system messages",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SysBench: Can LLMs Follow System Message?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CommonGen",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Constrained Decoding with Speculative Lookaheads",
+      "evidence": "For CommonGen, we report two constraint satisfaction metrics - (1) % Soft Constraint Satisfaction: measures the overall percentage of constraints that are satisfied across all data points, (2) % Hard Constraint Satisfaction: measures the percentage of data points where all required concepts are included (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Constrained Decoding with Speculative Lookaheads"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SPaRC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SPaRC: A Spatial Pathfinding Reasoning Challenge",
+      "evidence": "Empirically, SPaRC reveals critical limitations in current reasoning models regarding spatial reasoning, rule-based reasoning, multi-step planning, and constraint satisfaction. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SPaRC: A Spatial Pathfinding Reasoning Challenge"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Travel planning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Personal Travel Solver: A Preference-Driven LLM-Solver System for Travel Planning",
+      "evidence": "The Planning Module leverages the SCIP solver to generate feasible travel plans that holistically satisfy constraints.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Personal Travel Solver: A Preference-Driven LLM-Solver System for Travel Planning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 6,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats constraint satisfaction as a model property or output behavior centered on whether generations obey explicit constraints. Most definitions describe adherence to lexical or semantic constraints, user-defined external constraints, or prompt-level requirements such as formatting, structure, style, word count, tone, or multiple explicit instructions; one formulation also describes it as finding a solution that satisfies all conditions. A smaller line of work shifts the emphasis from fulfillment to understanding, defining nearby constructs as the ability to comprehend, internalize, recognize, or differentiate constraints, especially in planning or complex instructions. Definitions therefore vary mainly between latent ability and observable behavior, and between general instruction constraints and narrower validity or feasibility constraints in domains such as travel planning or biophysical sequence generation."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers break the construct down by both constraint type and granularity. Some distinguish lexical from semantic constraints and soft from hard satisfaction, while others operationalize verifiable constraints as formatting, structural, or stylistic rules, or decompose a complex instruction into atomic constraints and compare disparities in constraint fulfillment across them. Nearby labels are not fully uniform: constraint understanding and constraint comprehension focus on recognizing constraints before satisfying them, whereas commonsense awareness and feasible sequence generation narrow the construct to basic validity standards in travel plans or structural and functional validity in optimization sequences. One paper also treats constraint satisfaction as the finest-grained component of instruction following ability through a Constraint Satisfaction Rate."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link the construct to 2 measurement instruments and no behavioral indicators. The named instruments are CommonGen and SPaRC, both used as task-based evaluations: CommonGen reports % Soft Constraint Satisfaction and % Hard Constraint Satisfaction, including whether all required concepts are present in a data point, while SPaRC is used to reveal limitations alongside spatial reasoning, rule-based reasoning, and multi-step planning. Beyond those named instruments, papers commonly operationalize the construct through direct compliance checks, including task-specific reward functions for adherence, IFEval-style verifiable constraints with keyword arguments, checks of whether system constraints are correctly satisfied, and CS4 story generation under increasing levels of constraint. These operationalizations mostly match the dominant definition of output compliance, though some papers instead use attribution scores of the constraint component or compare fulfillment across atomic constraints after decomposing a complex instruction."
+    },
+    {
+      "label": "Links.",
+      "text": "More than one paper relates constraint satisfaction to faithfulness, treating a factual error as a case where at least one constraint in a factual query is not satisfied and connecting information popularity and constraint feasibility to the ability to satisfy such constraints. One paper relates it to fluency by noting that controlled generation methods often struggle to balance the two, and another relates it to instruction following ability by using Constraint Satisfaction Rate as the finest level of granularity and as the average accuracy of constraints satisfied. One paper also claims a causal relationship from constraint satisfaction to travel planning, describing a planning module that generates feasible travel plans that holistically satisfy constraints."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define constraint satisfaction as a model's ability or observable behavior of generating outputs, plans, or sequences that obey explicit constraints or requirements in the prompt or task, such as lexical, semantic, structural, stylistic, or validity rules. A few papers emphasize the underlying comprehension or decomposition of those constraints rather than the final output, but they still describe the same core property of adhering to specified constraints rather than a different phenomenon.",
+    "papers_with_definition": 12,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats constraint satisfaction as a model property or output behavior centered on whether generations obey explicit constraints. Most definitions describe adherence to lexical or semantic constraints, user-defined external constraints, or prompt-level requirements such as formatting, structure, style, word count, tone, or multiple explicit instructions; one formulation also describes it as finding a solution that satisfies all conditions. A smaller line of work shifts the emphasis from fulfillment to understanding, defining nearby constructs as the ability to comprehend, internalize, recognize, or differentiate constraints, especially in planning or complex instructions. Definitions therefore vary mainly between latent ability and observable behavior, and between general instruction constraints and narrower validity or feasibility constraints in domains such as travel planning or biophysical sequence generation.\n\nSpace of facets. Papers break the construct down by both constraint type and granularity. Some distinguish lexical from semantic constraints and soft from hard satisfaction, while others operationalize verifiable constraints as formatting, structural, or stylistic rules, or decompose a complex instruction into atomic constraints and compare disparities in constraint fulfillment across them. Nearby labels are not fully uniform: constraint understanding and constraint comprehension focus on recognizing constraints before satisfying them, whereas commonsense awareness and feasible sequence generation narrow the construct to basic validity standards in travel plans or structural and functional validity in optimization sequences. One paper also treats constraint satisfaction as the finest-grained component of instruction following ability through a Constraint Satisfaction Rate.\n\nSpace of measurement. Papers link the construct to 2 measurement instruments and no behavioral indicators. The named instruments are CommonGen and SPaRC, both used as task-based evaluations: CommonGen reports % Soft Constraint Satisfaction and % Hard Constraint Satisfaction, including whether all required concepts are present in a data point, while SPaRC is used to reveal limitations alongside spatial reasoning, rule-based reasoning, and multi-step planning. Beyond those named instruments, papers commonly operationalize the construct through direct compliance checks, including task-specific reward functions for adherence, IFEval-style verifiable constraints with keyword arguments, checks of whether system constraints are correctly satisfied, and CS4 story generation under increasing levels of constraint. These operationalizations mostly match the dominant definition of output compliance, though some papers instead use attribution scores of the constraint component or compare fulfillment across atomic constraints after decomposing a complex instruction.\n\nLinks. More than one paper relates constraint satisfaction to faithfulness, treating a factual error as a case where at least one constraint in a factual query is not satisfied and connecting information popularity and constraint feasibility to the ability to satisfy such constraints. One paper relates it to fluency by noting that controlled generation methods often struggle to balance the two, and another relates it to instruction following ability by using Constraint Satisfaction Rate as the finest level of granularity and as the average accuracy of constraints satisfied. One paper also claims a causal relationship from constraint satisfaction to travel planning, describing a planning module that generates feasible travel plans that holistically satisfy constraints.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "BIG-Bench Extra Hard",
+      "GAPO: Learning Preferential Prompt through Generative Adversarial Policy Optimization",
+      "MuSC: Improving Complex Instruction Following with Multi-granularity Self-Contrastive Training",
+      "Personal Travel Solver: A Preference-Driven LLM-Solver System for Travel Planning"
+    ],
+    "emnlp25": [
+      "TP-RAG: Benchmarking Retrieval-Augmented Large Language Model Agents for Spatiotemporal-Aware Travel Planning",
+      "Does quantization affect models' performance on long-context tasks?"
+    ],
+    "naacl25": [
+      "Constrained Decoding with Speculative Lookaheads",
+      "Revealing the Barriers of Language Agents in Planning",
+      "A Systematic Examination of Preference Learning through the Lens of Instruction-Following"
+    ],
+    "iclr25": [
+      "Controlled LLM Decoding via Discrete Auto-regressive Biasing"
+    ],
+    "icml25": [
+      "Generalists vs. Specialists: Evaluating LLMs on Highly-Constrained Biophysical Sequence Optimization Tasks"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 2,
+    "naacl25": 3,
+    "iclr25": 1,
+    "icml25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

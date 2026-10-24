@@ -1,0 +1,142 @@
+{
+  "canonical_name": "Arxiv",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, Arxiv is most commonly treated broadly as a dataset of scientific or academic texts from the arXiv repository, but the format varies by task. Some definitions present it as a directed citation network of Computer Science papers, while others use the same name for a long-document summarization corpus of scientific articles, a subset of paper abstracts used through validation splits, a citation recommendation benchmark derived from arXiv preprints, or a short-form academic-text dataset. The prevailing usage is therefore task-specific rather than tied to a single format.\n\nWhat it is claimed to measure. Papers use Arxiv to measure 2 constructs, Length generalization and Zero-shot generalization, and 1 behavioral indicator, Node classification. For node classification, one paper frames the task as predicting which arXiv CS sub-category a paper belongs to. Other papers report Arxiv as part of real-world or out-of-domain evaluations for length generalization and zero-shot generalization, so the measurement claims span several targets rather than converging on one.\n\nSpace of uses. No measurement instrument is explicitly linked to Arxiv through instrument relationships. Even so, papers commonly deploy it in multi-dataset evaluations, often alongside Pubmed, and also with Cora, OpenWebText, Books3, and RefSeer. They position it variously as an out-of-domain or open-ended evaluation set, a summarization benchmark scored with BLEU, ROUGE-L, and BERTScore, and in citation recommendation as one of the largest benchmarks for that task.\n\nConcerns raised. One paper raises a length-related limitation in an ICL setting. It describes Arxiv as having 'extremely over-length' documents, so the original ICL setup leaves little room for demonstrations.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Arxiv"
+  ],
+  "papers": [
+    "UniICL: An Efficient ICL Framework Unifying Compression, Selection, and Generation",
+    "CiteBART: Learning to Generate Citations for Local Citation Recommendation",
+    "DrDiff: Dynamic Routing Diffusion with Hierarchical Attention for Breaking the Efficiency-Quality Trade-off",
+    "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+    "Energy-Based Diffusion Language Models for Text Generation",
+    "GOFA: A Generative One-For-All Model for Joint Graph Language Modeling",
+    "Latent Thought Models with Variational Bayes Inference-Time Computation",
+    "Learning Dynamics in Continual Pre-Training for Large Language Models",
+    "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation",
+    "LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings",
+    "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark dataset representing a directed citation network of Computer Science papers from the arXiv preprint server, used for evaluating tasks like node classification.",
+      "paper": "LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings",
+      "original_name": "Arxiv"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Node classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings",
+      "evidence": "Using the node classification task on the Arxiv dataset (see Sect. 3.1) as an example, the instruction is structured as follows: Which arXiv CS sub-category does this paper belong to? (Section 2.3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation",
+      "evidence": "Experimental validation on real-world datasets (Arxiv, Books3, and CHE) demonstrates that DAPE enhances model performances in terms of trained length and length generalization, where the improvements are statistically significant. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Zero-shot generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Energy-Based Diffusion Language Models for Text Generation",
+      "evidence": "We evaluate the model capacity for both the OpenWebText test set and seven out-of-domain unseen datasets, used to validate the models' ability in zero-shot generalization. These unseen datasets include Our Penn Tree Bank (PTB)... Wikitext... LM1B, Lambada... AG News... Pubmed and Arxiv",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Energy-Based Diffusion Language Models for Text Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, Arxiv is most commonly treated broadly as a dataset of scientific or academic texts from the arXiv repository, but the format varies by task. Some definitions present it as a directed citation network of Computer Science papers, while others use the same name for a long-document summarization corpus of scientific articles, a subset of paper abstracts used through validation splits, a citation recommendation benchmark derived from arXiv preprints, or a short-form academic-text dataset. The prevailing usage is therefore task-specific rather than tied to a single format."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use Arxiv to measure 2 constructs, Length generalization and Zero-shot generalization, and 1 behavioral indicator, Node classification. For node classification, one paper frames the task as predicting which arXiv CS sub-category a paper belongs to. Other papers report Arxiv as part of real-world or out-of-domain evaluations for length generalization and zero-shot generalization, so the measurement claims span several targets rather than converging on one."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is explicitly linked to Arxiv through instrument relationships. Even so, papers commonly deploy it in multi-dataset evaluations, often alongside Pubmed, and also with Cora, OpenWebText, Books3, and RefSeer. They position it variously as an out-of-domain or open-ended evaluation set, a summarization benchmark scored with BLEU, ROUGE-L, and BERTScore, and in citation recommendation as one of the largest benchmarks for that task."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper raises a length-related limitation in an ICL setting. It describes Arxiv as having 'extremely over-length' documents, so the original ICL setup leaves little room for demonstrations."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, Arxiv is most commonly treated broadly as a dataset of scientific or academic texts from the arXiv repository, but the format varies by task. Some definitions present it as a directed citation network of Computer Science papers, while others use the same name for a long-document summarization corpus of scientific articles, a subset of paper abstracts used through validation splits, a citation recommendation benchmark derived from arXiv preprints, or a short-form academic-text dataset. The prevailing usage is therefore task-specific rather than tied to a single format.\n\nWhat it is claimed to measure. Papers use Arxiv to measure 2 constructs, Length generalization and Zero-shot generalization, and 1 behavioral indicator, Node classification. For node classification, one paper frames the task as predicting which arXiv CS sub-category a paper belongs to. Other papers report Arxiv as part of real-world or out-of-domain evaluations for length generalization and zero-shot generalization, so the measurement claims span several targets rather than converging on one.\n\nSpace of uses. No measurement instrument is explicitly linked to Arxiv through instrument relationships. Even so, papers commonly deploy it in multi-dataset evaluations, often alongside Pubmed, and also with Cora, OpenWebText, Books3, and RefSeer. They position it variously as an out-of-domain or open-ended evaluation set, a summarization benchmark scored with BLEU, ROUGE-L, and BERTScore, and in citation recommendation as one of the largest benchmarks for that task.\n\nConcerns raised. One paper raises a length-related limitation in an ICL setting. It describes Arxiv as having 'extremely over-length' documents, so the original ICL setup leaves little room for demonstrations.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "UniICL: An Efficient ICL Framework Unifying Compression, Selection, and Generation"
+    ],
+    "iclr25": [
+      "Energy-Based Diffusion Language Models for Text Generation",
+      "GOFA: A Generative One-For-All Model for Joint Graph Language Modeling"
+    ],
+    "icml25": [
+      "Latent Thought Models with Variational Bayes Inference-Time Computation",
+      "Learning Dynamics in Continual Pre-Training for Large Language Models"
+    ],
+    "neurips24": [
+      "DAPE: Data-Adaptive Positional Encoding for Length Extrapolation",
+      "LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings",
+      "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights"
+    ],
+    "emnlp25": [
+      "CiteBART: Learning to Generate Citations for Local Citation Recommendation",
+      "DrDiff: Dynamic Routing Diffusion with Hierarchical Attention for Breaking the Efficiency-Quality Trade-off",
+      "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "iclr25": 2,
+    "icml25": 2,
+    "neurips24": 3,
+    "emnlp25": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

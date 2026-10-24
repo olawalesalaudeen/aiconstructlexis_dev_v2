@@ -1,0 +1,100 @@
+{
+  "canonical_name": "Causal tracing",
+  "type": "measurement",
+  "canonical_definition": "The prevailing usage of Causal tracing in the provided literature is as a technique to measure the influence of intermediate model states on final outputs. Its operationalization is consistent across papers, involving a comparison between a \"clean run\" and a \"corrupted run\" where inputs are perturbed, typically by adding noise to tokens. Researchers then selectively restore the activations of specific components, such as MLP or attention layers, from the clean run and measure the resulting change in the model's predictions. This method is frequently applied to identify which parts of a model's computation are responsible for a given behavior. For instance, several papers use it to locate the specific modules or layers responsible for recalling factual knowledge. Other documented applications include identifying components that \"mediate bias,\" locating tokens critical for repetition avoidance, and tracing information flow to understand specificity failures. A less common application mentioned is its use in analyzing the mechanisms behind grammatical acceptability judgment. One paper offers a narrower definition, framing it specifically as a procedure for identifying modules that recall facts, which reflects one of its most common uses.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique",
+  "names": [
+    "Causal tracing",
+    "Causal Tracing"
+  ],
+  "papers": [
+    "Do All Autoregressive Transformers Remember Facts the Same Way? A Cross-Architecture Analysis of Recall Mechanisms",
+    "Promote, Suppress, Iterate: How Language Models Answer One-to-Many Factual Queries",
+    "Debiasing Algorithm through Model Adaptation",
+    "What does the Knowledge Neuron Thesis Have to do with Knowledge?",
+    "Can Transformers Do Enumerative Geometry?",
+    "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+    "Revealing and Mitigating Over-Attention in Knowledge Editing"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A technique that measures the influence of intermediate model states on final outputs by perturbing inputs and restoring hidden states layer by layer.",
+      "paper": "Debiasing Algorithm through Model Adaptation",
+      "original_name": "Causal tracing"
+    },
+    {
+      "text": "A procedure used to identify specific modules or layers responsible for recalling factual knowledge about entities.",
+      "paper": "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+      "original_name": "Causal Tracing"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Subject-verb agreement",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "What does the Knowledge Neuron Thesis Have to do with Knowledge?",
+      "evidence": "In Figure 7bc we reproduce this effect on syntactic phenomena.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "What does the Knowledge Neuron Thesis Have to do with Knowledge?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Stereotyping",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Debiasing Algorithm through Model Adaptation",
+      "evidence": "By fitting the linear model (Equation 1) across all the prompts X, we get the as and af scores for each layer l and token position i.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Debiasing Algorithm through Model Adaptation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "The prevailing usage of Causal tracing in the provided literature is as a technique to measure the influence of intermediate model states on final outputs. Its operationalization is consistent across papers, involving a comparison between a \"clean run\" and a \"corrupted run\" where inputs are perturbed, typically by adding noise to tokens. Researchers then selectively restore the activations of specific components, such as MLP or attention layers, from the clean run and measure the resulting change in the model's predictions. This method is frequently applied to identify which parts of a model's computation are responsible for a given behavior. For instance, several papers use it to locate the specific modules or layers responsible for recalling factual knowledge. Other documented applications include identifying components that \"mediate bias,\" locating tokens critical for repetition avoidance, and tracing information flow to understand specificity failures. A less common application mentioned is its use in analyzing the mechanisms behind grammatical acceptability judgment. One paper offers a narrower definition, framing it specifically as a procedure for identifying modules that recall facts, which reflects one of its most common uses.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Do All Autoregressive Transformers Remember Facts the Same Way? A Cross-Architecture Analysis of Recall Mechanisms",
+      "Promote, Suppress, Iterate: How Language Models Answer One-to-Many Factual Queries"
+    ],
+    "iclr24": [
+      "Debiasing Algorithm through Model Adaptation",
+      "What does the Knowledge Neuron Thesis Have to do with Knowledge?"
+    ],
+    "iclr25": [
+      "Can Transformers Do Enumerative Geometry?",
+      "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+      "Revealing and Mitigating Over-Attention in Knowledge Editing"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 2,
+    "iclr25": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25"
+  ]
+}

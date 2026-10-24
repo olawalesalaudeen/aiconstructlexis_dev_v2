@@ -1,0 +1,160 @@
+{
+  "canonical_name": "MMLU-Redux",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most descriptions treat MMLU-Redux as a general knowledge and reasoning evaluation benchmark derived from MMLU, often explicitly as a zero-shot variant. Some papers instead foreground its format and curation, describing a revised or manually re-annotated multiple-choice, closed-form question answering subset spanning a wide range of subjects, from elementary to professional level. Papers do not describe the subset identically: one line says it contains 3,000 manually re-annotated questions across 30 subjects, while another says 5,700 questions across all 57 subjects; elsewhere it is described more broadly as assessing language understanding and knowledge across domains.\n\nWhat it is claimed to measure. Papers use MMLU-Redux to measure 3 constructs and 1 behavioral indicator. The prevailing measurement claim is Reasoning, with papers calling it a logical reasoning benchmark and a reasoning benchmark used to elicit chain-of-thought performance; additional work uses it to measure Robustness, including robustness to order swapping of choices, and Mathematical reasoning by focusing on mathematics subjects. A smaller line of work uses it to measure Error detection, with one paper saying it can serve as a strong benchmark for automatic error detection in NLP datasets, so papers position it across several targets rather than only one.\n\nSpace of uses. No measurement instrument is linked to it. In usage descriptions, papers place it within broader benchmark suites, for example alongside ARC-Challenge and CommonsenseQA as a multiple-choice question answering test set, or as one of several logical reasoning benchmarks. Prompting setups vary in the descriptions: papers mention zero-shot prompting, zero-shot chain-of-thought, and chain-of-thought elicitation with a prompting framework.\n\nConcerns raised. One line of work frames MMLU-Redux around evaluation quality issues in MMLU, describing the benchmark as manually re-annotated to correct errors in ground truth answers and question clarity. The same work relates it to Robustness by exploring how errors in MMLU impact LLM evaluation, and it also presents the benchmark as useful for automatic error detection in NLP datasets.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MMLU-redux",
+    "MMLU-Redux"
+  ],
+  "papers": [
+    "ChatBench: From Static Benchmarks to Human-AI Evaluation",
+    "Data Laundering: Artificially Boosting Benchmark Results through Knowledge Distillation",
+    "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+    "Mitigating Selection Bias with Node Pruning and Auxiliary Options",
+    "Advancing Oversight Reasoning across Languages for Audit Sycophantic Behaviour via X-Agent",
+    "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning",
+    "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+    "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+    "Are We Done with MMLU?",
+    "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark used to evaluate a model's language understanding and knowledge across a wide range of subjects.",
+      "paper": "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "original_name": "MMLU-redux"
+    },
+    {
+      "text": "MMLU-Redux, a zero-shot variant of MMLU used as an evaluation benchmark for general knowledge and reasoning.",
+      "paper": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+      "original_name": "MMLU-Redux"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "evidence": "Furthermore, we also evaluate all the models on four logical reasoning benchmarks to verify the impact of these alignment methods on model\u2019s reasoning abilities, including: MMLU-redux (Gema et al., 2024) (Language)...",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss"
+        ],
+        "icml25": [
+          "Representation Shattering in Transformers: A Synthetic Study with Knowledge Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Error detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Are We Done with MMLU?",
+      "evidence": "\"MMLU-Redux can also be used as a strong benchmark for automatic error detection in NLP datasets\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Are We Done with MMLU?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+      "evidence": "To assess the robustness of QuaSAR as an ICL strategy, we evaluated two different phenomena: (i) the order swapping of choices in MMLU-Redux... (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning",
+      "evidence": "We select a total of seven datasets, including... MMLU-Redux (Gema et al. 2024); focusing on various mathematics subjects... (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most descriptions treat MMLU-Redux as a general knowledge and reasoning evaluation benchmark derived from MMLU, often explicitly as a zero-shot variant. Some papers instead foreground its format and curation, describing a revised or manually re-annotated multiple-choice, closed-form question answering subset spanning a wide range of subjects, from elementary to professional level. Papers do not describe the subset identically: one line says it contains 3,000 manually re-annotated questions across 30 subjects, while another says 5,700 questions across all 57 subjects; elsewhere it is described more broadly as assessing language understanding and knowledge across domains."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use MMLU-Redux to measure 3 constructs and 1 behavioral indicator. The prevailing measurement claim is Reasoning, with papers calling it a logical reasoning benchmark and a reasoning benchmark used to elicit chain-of-thought performance; additional work uses it to measure Robustness, including robustness to order swapping of choices, and Mathematical reasoning by focusing on mathematics subjects. A smaller line of work uses it to measure Error detection, with one paper saying it can serve as a strong benchmark for automatic error detection in NLP datasets, so papers position it across several targets rather than only one."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it. In usage descriptions, papers place it within broader benchmark suites, for example alongside ARC-Challenge and CommonsenseQA as a multiple-choice question answering test set, or as one of several logical reasoning benchmarks. Prompting setups vary in the descriptions: papers mention zero-shot prompting, zero-shot chain-of-thought, and chain-of-thought elicitation with a prompting framework."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One line of work frames MMLU-Redux around evaluation quality issues in MMLU, describing the benchmark as manually re-annotated to correct errors in ground truth answers and question clarity. The same work relates it to Robustness by exploring how errors in MMLU impact LLM evaluation, and it also presents the benchmark as useful for automatic error detection in NLP datasets."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most descriptions treat MMLU-Redux as a general knowledge and reasoning evaluation benchmark derived from MMLU, often explicitly as a zero-shot variant. Some papers instead foreground its format and curation, describing a revised or manually re-annotated multiple-choice, closed-form question answering subset spanning a wide range of subjects, from elementary to professional level. Papers do not describe the subset identically: one line says it contains 3,000 manually re-annotated questions across 30 subjects, while another says 5,700 questions across all 57 subjects; elsewhere it is described more broadly as assessing language understanding and knowledge across domains.\n\nWhat it is claimed to measure. Papers use MMLU-Redux to measure 3 constructs and 1 behavioral indicator. The prevailing measurement claim is Reasoning, with papers calling it a logical reasoning benchmark and a reasoning benchmark used to elicit chain-of-thought performance; additional work uses it to measure Robustness, including robustness to order swapping of choices, and Mathematical reasoning by focusing on mathematics subjects. A smaller line of work uses it to measure Error detection, with one paper saying it can serve as a strong benchmark for automatic error detection in NLP datasets, so papers position it across several targets rather than only one.\n\nSpace of uses. No measurement instrument is linked to it. In usage descriptions, papers place it within broader benchmark suites, for example alongside ARC-Challenge and CommonsenseQA as a multiple-choice question answering test set, or as one of several logical reasoning benchmarks. Prompting setups vary in the descriptions: papers mention zero-shot prompting, zero-shot chain-of-thought, and chain-of-thought elicitation with a prompting framework.\n\nConcerns raised. One line of work frames MMLU-Redux around evaluation quality issues in MMLU, describing the benchmark as manually re-annotated to correct errors in ground truth answers and question clarity. The same work relates it to Robustness by exploring how errors in MMLU impact LLM evaluation, and it also presents the benchmark as useful for automatic error detection in NLP datasets.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "ChatBench: From Static Benchmarks to Human-AI Evaluation",
+      "Data Laundering: Artificially Boosting Benchmark Results through Knowledge Distillation",
+      "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+      "Mitigating Selection Bias with Node Pruning and Auxiliary Options"
+    ],
+    "emnlp25": [
+      "Advancing Oversight Reasoning across Languages for Audit Sycophantic Behaviour via X-Agent",
+      "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning"
+    ],
+    "iclr25": [
+      "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing"
+    ],
+    "naacl25": [
+      "Are We Done with MMLU?",
+      "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 2,
+    "iclr25": 2,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25"
+  ]
+}

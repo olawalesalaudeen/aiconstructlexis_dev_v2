@@ -1,0 +1,268 @@
+{
+  "canonical_name": "Parameter efficiency",
+  "type": "construct",
+  "canonical_definition": "Across the surveyed literature, parameter efficiency is predominantly defined as a model's ability to achieve high performance while updating a minimal fraction of its parameters during fine-tuning. This is frequently operationalized through methods like low-rank adaptations and modular designs, with some studies reporting updates to as little as \"less than 1% of the... model parameters\" (\"Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning\"). The construct is measured by assessing performance on benchmarks like GLUE and SuperGLUE, where a method might achieve \"comparable performance... while using only half the parameters\" of another approach (\"SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model\"). A less common framing expands the concept beyond fine-tuning to include overall model size for \"efficient deployment on memory-constrained devices\" (\"FlexiGPT: Pruning and Extending Large Language Models with Low-Rank Weight Sharing\"). A single paper uses the term \"parametric efficiency\" to refer to a smaller model's performance when augmented with non-parametric techniques like retrieval. Parameter efficiency is often discussed in relation to a model's \"expressive power,\" suggesting a potential trade-off. Some work also proposes that integrating mechanisms for relational reasoning can lead to gains in parameter efficiency.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Parameter efficiency",
+    "Parametric efficiency"
+  ],
+  "papers": [
+    "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+    "Speculative Streaming: Efficient and Scalable Speculative Decoding with Multi-Stream Attention",
+    "Breaking Physical and Linguistic Borders: Multilingual Federated Prompt Tuning for Low-Resource Languages",
+    "Customizable Combination of Parameter-Efficient Modules for Multi-Task Learning",
+    "Increasing Model Capacity for Free: A Simple Strategy for Parameter Efficient Fine-tuning",
+    "Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning",
+    "A Quantum Circuit-Based Compression Perspective for Parameter-Efficient Learning",
+    "ComLoRA: A Competitive Learning Approach for Enhancing LoRA",
+    "Efficient Learning with Sine-Activated Low-Rank Matrices",
+    "LoCA: Location-Aware Cosine Adaptation for Parameter-Efficient Fine-Tuning",
+    "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+    "MoS: Unleashing Parameter Efficiency of Low-Rank Adaptation with Mixture of Shards",
+    "Quantum-PEFT: Ultra parameter-efficient fine-tuning",
+    "TopoNets: High performing vision and language models with brain-like topography",
+    "dEBORA: Efficient Bilevel Optimization-based low-Rank Adaptation",
+    "CLOVER: Cross-Layer Orthogonal Vectors Pruning",
+    "Disentangling and Integrating Relational and Sensory Information in Transformer Architectures",
+    "Latent Thought Models with Variational Bayes Inference-Time Computation",
+    "Mixture of Hidden-Dimensions: Not All Hidden-States\u2019 Dimensions are Needed in Transformer",
+    "QuEST: Stable Training of LLMs with 1-Bit Weights and Activations",
+    "Residual Matrix Transformers: Scaling the Size of the Residual Stream",
+    "FlexiGPT: Pruning and Extending Large Language Models with Low-Rank Weight Sharing",
+    "SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model",
+    "BehaviorGPT: Smart Agent Simulation for Autonomous Driving with Next-Patch Prediction",
+    "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization",
+    "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+    "On the Scalability of GNNs for Molecular Graphs",
+    "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining",
+    "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+    "Understanding Transformer Reasoning Capabilities via Graph Algorithms"
+  ],
+  "paper_count": 30,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The property of a model to achieve high performance while updating a minimal number of parameters during fine-tuning, often through low-rank or modular designs.",
+      "paper": "Breaking Physical and Linguistic Borders: Multilingual Federated Prompt Tuning for Low-Resource Languages",
+      "original_name": "Parameter efficiency"
+    },
+    {
+      "text": "The model's performance relative to its number of parameters, particularly the ability of a smaller model to achieve high performance through non-parametric means like retrieval.",
+      "paper": "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+      "original_name": "Parametric efficiency"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Expressive power",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining",
+      "evidence": "While low-rank models achieve both parameter and memory efficiency, as discussed earlier, they do not perform well in general [47, 59]. ... This is because neural networks often exhibit full-rank structure in the weights and imposing low-rank restrictions could significantly limit their representation power. (Section 1)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining"
+        ],
+        "iclr25": [
+          "Efficient Learning with Sine-Activated Low-Rank Matrices",
+          "LoCA: Location-Aware Cosine Adaptation for Parameter-Efficient Fine-Tuning",
+          "ComLoRA: A Competitive Learning Approach for Enhancing LoRA"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multi-task ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Customizable Combination of Parameter-Efficient Modules for Multi-Task Learning",
+      "evidence": "As a result, we argue that adopting both task-common skills learning and task-specific skills learning as a paradigm constitutes a robust strategy for achieving parameter efficiency in adapting multiple tasks. (Section 3.3.3)",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "iclr24": [
+          "Customizable Combination of Parameter-Efficient Modules for Multi-Task Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multi-task ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Customizable Combination of Parameter-Efficient Modules for Multi-Task Learning",
+      "evidence": "\u201cOur methods explicitly segregate shared and proprietary skills and effectively ensure parameter efficiency in multi-task learning under equivalent training settings.\u201d",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "iclr24": [
+          "Customizable Combination of Parameter-Efficient Modules for Multi-Task Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Prompt decomposition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization",
+      "evidence": "\u201cCompared to [12], our structured decomposition enables more regulated and harmonious parameter updates, thereby enhancing parameter efficiency and facilitating the extraction of general knowledge more effectively.\u201d",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt decomposition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization",
+      "evidence": "Our structured decomposition enables more regulated and harmonious parameter updates, thereby enhancing parameter efficiency and facilitating the extraction of general knowledge more effectively.",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction fine-tuning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Efficient Learning with Sine-Activated Low-Rank Matrices",
+      "evidence": "\"LoRA is a highly effective strategy for finetuning large pretrained models\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Efficient Learning with Sine-Activated Low-Rank Matrices"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model",
+      "evidence": "\"Our method achieves comparable performance to LoRA on the General Language Understanding Evaluation (GLUE) benchmark while using only half the parameters.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SuperGLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model",
+      "evidence": "\"To further evaluate our approach, we extended our experiments to the more challenging SuperGLUE benchmark\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Relational reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Disentangling and Integrating Relational and Sensory Information in Transformer Architectures",
+      "evidence": "Our results demonstrate that integrating explicit relational computational mechanisms into the Transformer architecture leads to significant performance gains in terms of data efficiency and parameter efficiency. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Disentangling and Integrating Relational and Sensory Information in Transformer Architectures"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 9,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, parameter efficiency is predominantly defined as a model's ability to achieve high performance while updating a minimal fraction of its parameters during fine-tuning. This is frequently operationalized through methods like low-rank adaptations and modular designs, with some studies reporting updates to as little as \"less than 1% of the... model parameters\" (\"Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning\"). The construct is measured by assessing performance on benchmarks like GLUE and SuperGLUE, where a method might achieve \"comparable performance... while using only half the parameters\" of another approach (\"SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model\"). A less common framing expands the concept beyond fine-tuning to include overall model size for \"efficient deployment on memory-constrained devices\" (\"FlexiGPT: Pruning and Extending Large Language Models with Low-Rank Weight Sharing\"). A single paper uses the term \"parametric efficiency\" to refer to a smaller model's performance when augmented with non-parametric techniques like retrieval. Parameter efficiency is often discussed in relation to a model's \"expressive power,\" suggesting a potential trade-off. Some work also proposes that integrating mechanisms for relational reasoning can lead to gains in parameter efficiency.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+      "Speculative Streaming: Efficient and Scalable Speculative Decoding with Multi-Stream Attention"
+    ],
+    "iclr24": [
+      "Breaking Physical and Linguistic Borders: Multilingual Federated Prompt Tuning for Low-Resource Languages",
+      "Customizable Combination of Parameter-Efficient Modules for Multi-Task Learning",
+      "Increasing Model Capacity for Free: A Simple Strategy for Parameter Efficient Fine-tuning",
+      "Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning"
+    ],
+    "iclr25": [
+      "A Quantum Circuit-Based Compression Perspective for Parameter-Efficient Learning",
+      "ComLoRA: A Competitive Learning Approach for Enhancing LoRA",
+      "Efficient Learning with Sine-Activated Low-Rank Matrices",
+      "LoCA: Location-Aware Cosine Adaptation for Parameter-Efficient Fine-Tuning",
+      "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+      "MoS: Unleashing Parameter Efficiency of Low-Rank Adaptation with Mixture of Shards",
+      "Quantum-PEFT: Ultra parameter-efficient fine-tuning",
+      "TopoNets: High performing vision and language models with brain-like topography",
+      "dEBORA: Efficient Bilevel Optimization-based low-Rank Adaptation"
+    ],
+    "icml25": [
+      "CLOVER: Cross-Layer Orthogonal Vectors Pruning",
+      "Disentangling and Integrating Relational and Sensory Information in Transformer Architectures",
+      "Latent Thought Models with Variational Bayes Inference-Time Computation",
+      "Mixture of Hidden-Dimensions: Not All Hidden-States\u2019 Dimensions are Needed in Transformer",
+      "QuEST: Stable Training of LLMs with 1-Bit Weights and Activations",
+      "Residual Matrix Transformers: Scaling the Size of the Residual Stream"
+    ],
+    "naacl25": [
+      "FlexiGPT: Pruning and Extending Large Language Models with Low-Rank Weight Sharing",
+      "SSMLoRA: Enhancing Low-Rank Adaptation with State Space Model"
+    ],
+    "neurips24": [
+      "BehaviorGPT: Smart Agent Simulation for Autonomous Driving with Next-Patch Prediction",
+      "Decomposed Prompt Decision Transformer for Efficient Unseen Task Generalization",
+      "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+      "On the Scalability of GNNs for Molecular Graphs",
+      "SLTrain: a sparse plus low rank approach for parameter and memory efficient pretraining",
+      "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+      "Understanding Transformer Reasoning Capabilities via Graph Algorithms"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 4,
+    "iclr25": 9,
+    "icml25": 6,
+    "naacl25": 2,
+    "neurips24": 7
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "canonical_name": "Watermark removal",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats watermark removal as modifying watermarked training data, model outputs, or text so the watermark signal is eliminated, neutralized, or made undetectable. Definitions agree that success means the watermark is no longer detected or retained, though they differ on scope: some place it in unauthorized knowledge distillation, while others describe reverting a watermarked language model or its output to an unwatermarked state, or making rewritten text undetectable to the corresponding detector. A smaller line of work narrows the behavior to watermark evasion or scrubbing, where a paraphrased or semantically similar text avoids verification while maintaining textual quality.\n\nVariants. Papers use several names and intervention points for this behavior. The most explicit split is between pre-distillation removal, through untargeted and targeted training data paraphrasing, and post-distillation removal, through watermark neutralization that applies inverse or inverted watermark rules during the student model's decoding phase. Other variants describe text rewriting or synonym substitution, adaptive and non-adaptive paraphrasing attacks, and scrubbing attacks that turn watermarked content into a semantically similar but watermark-free form; one paper also claims a causal relationship from Paraphrasing to Watermark removal, defining evasion rate as the fraction of watermarked text that does not retain the watermark after the paraphrasing attack.\n\nSpace of elicitation and scores. Papers do not link it to any measurement instrument. When they describe scoring, they usually do so through watermark detection outcomes, phrased as whether the detector or verification system still finds the watermark, whether the text retains the watermark after attack, or whether paraphrased text evades detection; one paper further states that if a user can consistently remove the watermark, over 90%, using a rewriting algorithm, the watermark is considered broken.\n\nWhat it is taken as evidence of. Papers do not link it to any construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Watermark neutralization",
+    "Watermark removal",
+    "Watermark evasion",
+    "Watermark scrubbing"
+  ],
+  "papers": [
+    "Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?",
+    "Sandcastles in the Storm: Revisiting the (Im)possibility of Strong Watermarking",
+    "An Unforgeable Publicly Verifiable Watermark for Large Language Models",
+    "De-mark: Watermark Removal in Large Language Models",
+    "Optimizing Adaptive Attacks against Watermarks for Language Models",
+    "Revealing Weaknesses in Text Watermarking Through Self-Information Rewrite Attacks",
+    "B4: A Black-Box Scrubbing Attack onLLMWatermarks"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The act of eliminating or neutralizing watermark signals from training data or model outputs to prevent detection during knowledge distillation.",
+      "paper": "Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?",
+      "original_name": "Watermark removal"
+    },
+    {
+      "text": "A post-distillation watermark removal method that counteracts an inherited watermark by applying inverted watermark rules directly to the student model's logits during its decoding phase.",
+      "paper": "Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?",
+      "original_name": "Watermark neutralization"
+    },
+    {
+      "text": "The observable outcome in which a paraphrased text successfully avoids detection by the watermark verification system while maintaining high textual quality.",
+      "paper": "Optimizing Adaptive Attacks against Watermarks for Language Models",
+      "original_name": "Watermark evasion"
+    },
+    {
+      "text": "The observable act of transforming watermarked LLM-generated text into a semantically similar version that evades watermark detection.",
+      "paper": "B4: A Black-Box Scrubbing Attack onLLMWatermarks",
+      "original_name": "Watermark scrubbing"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Paraphrasing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Optimizing Adaptive Attacks against Watermarks for Language Models",
+      "evidence": "The evasion rate is calculated as the fraction of watermarked text that does not retain the watermark after applying the paraphrasing attack. (Section 6.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Optimizing Adaptive Attacks against Watermarks for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Watermark robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "De-mark: Watermark Removal in Large Language Models",
+      "evidence": "\u201cOne critical vulnerability lies in watermark stealing & removal, a method that seeks to reverse-engineer the watermarking process. With this method, adversaries can effectively strip or alter the embedded watermark, undermining its intended protection.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "De-mark: Watermark Removal in Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats watermark removal as modifying watermarked training data, model outputs, or text so the watermark signal is eliminated, neutralized, or made undetectable. Definitions agree that success means the watermark is no longer detected or retained, though they differ on scope: some place it in unauthorized knowledge distillation, while others describe reverting a watermarked language model or its output to an unwatermarked state, or making rewritten text undetectable to the corresponding detector. A smaller line of work narrows the behavior to watermark evasion or scrubbing, where a paraphrased or semantically similar text avoids verification while maintaining textual quality."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several names and intervention points for this behavior. The most explicit split is between pre-distillation removal, through untargeted and targeted training data paraphrasing, and post-distillation removal, through watermark neutralization that applies inverse or inverted watermark rules during the student model's decoding phase. Other variants describe text rewriting or synonym substitution, adaptive and non-adaptive paraphrasing attacks, and scrubbing attacks that turn watermarked content into a semantically similar but watermark-free form; one paper also claims a causal relationship from Paraphrasing to Watermark removal, defining evasion rate as the fraction of watermarked text that does not retain the watermark after the paraphrasing attack."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers do not link it to any measurement instrument. When they describe scoring, they usually do so through watermark detection outcomes, phrased as whether the detector or verification system still finds the watermark, whether the text retains the watermark after attack, or whether paraphrased text evades detection; one paper further states that if a user can consistently remove the watermark, over 90%, using a rewriting algorithm, the watermark is considered broken."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not link it to any construct."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats watermark removal as modifying watermarked training data, model outputs, or text so the watermark signal is eliminated, neutralized, or made undetectable. Definitions agree that success means the watermark is no longer detected or retained, though they differ on scope: some place it in unauthorized knowledge distillation, while others describe reverting a watermarked language model or its output to an unwatermarked state, or making rewritten text undetectable to the corresponding detector. A smaller line of work narrows the behavior to watermark evasion or scrubbing, where a paraphrased or semantically similar text avoids verification while maintaining textual quality.\n\nVariants. Papers use several names and intervention points for this behavior. The most explicit split is between pre-distillation removal, through untargeted and targeted training data paraphrasing, and post-distillation removal, through watermark neutralization that applies inverse or inverted watermark rules during the student model's decoding phase. Other variants describe text rewriting or synonym substitution, adaptive and non-adaptive paraphrasing attacks, and scrubbing attacks that turn watermarked content into a semantically similar but watermark-free form; one paper also claims a causal relationship from Paraphrasing to Watermark removal, defining evasion rate as the fraction of watermarked text that does not retain the watermark after the paraphrasing attack.\n\nSpace of elicitation and scores. Papers do not link it to any measurement instrument. When they describe scoring, they usually do so through watermark detection outcomes, phrased as whether the detector or verification system still finds the watermark, whether the text retains the watermark after attack, or whether paraphrased text evades detection; one paper further states that if a user can consistently remove the watermark, over 90%, using a rewriting algorithm, the watermark is considered broken.\n\nWhat it is taken as evidence of. Papers do not link it to any construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?",
+      "Sandcastles in the Storm: Revisiting the (Im)possibility of Strong Watermarking"
+    ],
+    "icml25": [
+      "De-mark: Watermark Removal in Large Language Models",
+      "Optimizing Adaptive Attacks against Watermarks for Language Models",
+      "Revealing Weaknesses in Text Watermarking Through Self-Information Rewrite Attacks"
+    ],
+    "iclr24": [
+      "An Unforgeable Publicly Verifiable Watermark for Large Language Models"
+    ],
+    "naacl25": [
+      "B4: A Black-Box Scrubbing Attack onLLMWatermarks"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "icml25": 3,
+    "iclr24": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "icml25",
+    "naacl25"
+  ]
+}

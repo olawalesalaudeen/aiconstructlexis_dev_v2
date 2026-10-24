@@ -1,0 +1,85 @@
+{
+  "canonical_name": "LogRank",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, LogRank is consistently characterized as a zero-shot and training-free technique for the detection of machine-generated text. The prevailing operationalization defines it as a method that uses the average log of token ranks, where ranks are ordered by descending probability. Other definitions describe it similarly as using the \"average per-token rank\" or as a variant of rank-based detection using \"log-transformed token ranks.\" The method is based on the intuition that text sampled from a language model will have a lower average per-token rank within the model's conditional distribution. It is studied alongside other detection methods like GLTR and Rank, which also \"leverage the probability or rank of the next token for detection\" (\"Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors\"). One paper notes that the detector can be based on metrics derived from GPT2-xl likelihood predictions.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "metric/method: a token-rank statistic used as a zero-shot machine-text detection baseline",
+  "names": [
+    "LogRank",
+    "Log Rank",
+    "Log-Rank"
+  ],
+  "papers": [
+    "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+    "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors",
+    "Detecting Machine-Generated Texts by Multi-Population Aware Optimization for Maximum Mean Discrepancy",
+    "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+    "Few-Shot Detection of Machine-Generated Text using Style Representations",
+    "Language Model Detectors Are Easily Optimized Against"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A zero-shot detection technique that uses the average log of token ranks, where ranks are ordered by descending probability.",
+      "paper": "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+      "original_name": "LogRank"
+    },
+    {
+      "text": "Zero-shot detector that uses the average per-token rank in the conditional distribution to detect machine-generated text.",
+      "paper": "Language Model Detectors Are Easily Optimized Against",
+      "original_name": "Log Rank"
+    },
+    {
+      "text": "A variant of the rank-based detection method that uses log-transformed token ranks to detect machine-generated text.",
+      "paper": "Detecting Machine-Generated Texts by Multi-Population Aware Optimization for Maximum Mean Discrepancy",
+      "original_name": "Log-Rank"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "AI-generated text detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors",
+      "evidence": "LogRank(Solaiman et al., 2019) leverage the probability or rank of the next token for detection. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, LogRank is consistently characterized as a zero-shot and training-free technique for the detection of machine-generated text. The prevailing operationalization defines it as a method that uses the average log of token ranks, where ranks are ordered by descending probability. Other definitions describe it similarly as using the \"average per-token rank\" or as a variant of rank-based detection using \"log-transformed token ranks.\" The method is based on the intuition that text sampled from a language model will have a lower average per-token rank within the model's conditional distribution. It is studied alongside other detection methods like GLTR and Rank, which also \"leverage the probability or rank of the next token for detection\" (\"Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors\"). One paper notes that the detector can be based on metrics derived from GPT2-xl likelihood predictions.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+      "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors"
+    ],
+    "iclr24": [
+      "Detecting Machine-Generated Texts by Multi-Population Aware Optimization for Maximum Mean Discrepancy",
+      "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+      "Few-Shot Detection of Machine-Generated Text using Style Representations",
+      "Language Model Detectors Are Easily Optimized Against"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 4
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24"
+  ]
+}

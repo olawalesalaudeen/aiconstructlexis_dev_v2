@@ -1,0 +1,196 @@
+{
+  "canonical_name": "CMMLU",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most papers treat CMMLU as a comprehensive benchmark for evaluating knowledge and reasoning in Chinese, often under the name Chinese Massive Multitask Language Understanding. Several descriptions add that it covers 67 subjects from basic to advanced or professional levels, and one definition says it uses multiple-choice questions across diverse academic disciplines. A smaller set of papers frames it more specifically as Chinese language understanding or proficiency, while a few describe it differently, including as multilingual or multimodal, and one snippet mentions a 5-shot setting.\n\nWhat it is claimed to measure. Across papers, its measurement claims are spread across 4 constructs and no behavioral indicators, rather than concentrating on a single target. The most frequently linked constructs are Chinese language understanding, general ability, reasoning, and generalization. Papers use it to assess \"Chinese language understanding,\" to check that general capabilities are not compromised, and in one out-of-domain evaluation to test generalization.\n\nSpace of uses. CMMLU is usually used as one component of a broader evaluation suite, commonly alongside MMLU and also with C-Eval, GSM8K, Xiezhi, and ICLEval. Papers position it as the Chinese benchmark within larger benchmark mixes, and one study says it is used \"to ensure that their general capabilities are not compromised after naturalness alignment\" (Do Large Language Models have an English Accent? Evaluating and Improving the Naturalness of Multilingual LLMs). A smaller line of work uses it as a high-resource Chinese baseline for comparison with Ti-MMLU, and one paper uses it in 5-shot form.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "CMMLU"
+  ],
+  "papers": [
+    "Activating Distributed Visual Region within LLMs for Efficient and Effective Vision-Language Training and Inference",
+    "Capability Salience Vector: Fine-grained Alignment of Loss and Capabilities for Downstream Task Scaling Law",
+    "Do Large Language Models have an English Accent? Evaluating and Improving the Naturalness of Multilingual LLMs",
+    "IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory",
+    "LESA: Learnable LLM Layer Scaling-Up",
+    "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+    "Towards Effective and Efficient Continual Pre-training of Large Language Models",
+    "Data-Efficient Selection via Grammatical Complexity in Continual Pre-training of Domain-Specific LLMs",
+    "GRASP: Replace Redundant Layers with Adaptive Singular Parameters for Efficient Model Compression",
+    "Improve LLM-as-a-Judge Ability as a General Ability",
+    "Superpose Task-specific Features for Model Merging",
+    "TLUE: A Tibetan Language Understanding Evaluation Benchmark",
+    "To See a World in a Spark of Neuron: Disentangling Multi-Task Interference for Training-Free Model Merging",
+    "Streamlining Redundant Layers to Compress Large Language Models",
+    "KV Shifting Attention Enhances Language Modeling",
+    "Maximizing Intermediate Checkpoint Value in LLM Pretraining with Bayesian Optimization",
+    "MoH: Multi-Head Attention as Mixture-of-Head Attention",
+    "Parameter Competition Balancing for Model Merging",
+    "Reference Trustable Decoding: A Training-Free Augmentation Paradigm for Large Language Models",
+    "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+    "WenMind: A Comprehensive Benchmark for Evaluating Large Language Models in Chinese Classical Literature and Language Arts",
+    "Wings: Learning Multimodal LLMs without Text-only Forgetting",
+    "WizardArena: Post-training Large Language Models via Simulated Offline Chatbot Arena"
+  ],
+  "paper_count": 23,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The Chinese Massive Multitask Language Understanding benchmark, used to evaluate a model's general capabilities in Chinese to ensure they are not compromised after alignment.",
+      "paper": "Do Large Language Models have an English Accent? Evaluating and Improving the Naturalness of Multilingual LLMs",
+      "original_name": "CMMLU"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Towards Effective and Efficient Continual Pre-training of Large Language Models",
+      "evidence": "our approach can largely improve the performance of Llama-3 (8B), including both the general abilities (+8.81 on C-Eval and +6.31 on CMMLU)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Towards Effective and Efficient Continual Pre-training of Large Language Models"
+        ],
+        "emnlp25": [
+          "Improve LLM-as-a-Judge Ability as a General Ability"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chinese language understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Superpose Task-specific Features for Model Merging",
+      "evidence": "Each model\u2019s performance was assessed using domain-specific benchmarks: CMMLU (Li et al., 2023) for Chinese language understanding",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Superpose Task-specific Features for Model Merging",
+          "To See a World in a Spark of Neuron: Disentangling Multi-Task Interference for Training-Free Model Merging"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+      "evidence": "We use zero-shot or few-shot learning to test the reasoning ability across five benchmarks, including MMLU (Hendrycks et al., 2021), CMMLU (Li et al., 2024a), Truthful-QA (Lin et al., 2021), GSM-PLUS (Li et al., 2024b), and GSM8K (Cobbe et al., 2021). (Section 4.3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "KV Shifting Attention Enhances Language Modeling",
+      "evidence": "To validate the performance of different models, we used some benchmarks for the 3B and 19B models that were trained more tokens, including Lambada(Paperno et al., 2016), Winogrande(Sakaguchi et al., 2021), Hellaswag(Zellers et al., 2019), ARC(Clark et al., 2018), CMMLU(Li et al., 2023a), MMLU(Hendrycks et al.), Math(Hendrycks et al., 2021). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "KV Shifting Attention Enhances Language Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Maximizing Intermediate Checkpoint Value in LLM Pretraining with Bayesian Optimization",
+      "evidence": "To rigorously assess the generalization capabilities of merged checkpoints to unseen domains, we evaluated the out-of-domain (OOD) performance of various merging methods. Although merging weights were determined using the C-Eval dataset (in-domain, IND), we tested the merged models on three diverse OOD datasets: CMMLU, MMLU, and GSM8K. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Maximizing Intermediate Checkpoint Value in LLM Pretraining with Bayesian Optimization"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most papers treat CMMLU as a comprehensive benchmark for evaluating knowledge and reasoning in Chinese, often under the name Chinese Massive Multitask Language Understanding. Several descriptions add that it covers 67 subjects from basic to advanced or professional levels, and one definition says it uses multiple-choice questions across diverse academic disciplines. A smaller set of papers frames it more specifically as Chinese language understanding or proficiency, while a few describe it differently, including as multilingual or multimodal, and one snippet mentions a 5-shot setting."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across papers, its measurement claims are spread across 4 constructs and no behavioral indicators, rather than concentrating on a single target. The most frequently linked constructs are Chinese language understanding, general ability, reasoning, and generalization. Papers use it to assess \"Chinese language understanding,\" to check that general capabilities are not compromised, and in one out-of-domain evaluation to test generalization."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "CMMLU is usually used as one component of a broader evaluation suite, commonly alongside MMLU and also with C-Eval, GSM8K, Xiezhi, and ICLEval. Papers position it as the Chinese benchmark within larger benchmark mixes, and one study says it is used \"to ensure that their general capabilities are not compromised after naturalness alignment\" (Do Large Language Models have an English Accent? Evaluating and Improving the Naturalness of Multilingual LLMs). A smaller line of work uses it as a high-resource Chinese baseline for comparison with Ti-MMLU, and one paper uses it in 5-shot form."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most papers treat CMMLU as a comprehensive benchmark for evaluating knowledge and reasoning in Chinese, often under the name Chinese Massive Multitask Language Understanding. Several descriptions add that it covers 67 subjects from basic to advanced or professional levels, and one definition says it uses multiple-choice questions across diverse academic disciplines. A smaller set of papers frames it more specifically as Chinese language understanding or proficiency, while a few describe it differently, including as multilingual or multimodal, and one snippet mentions a 5-shot setting.\n\nWhat it is claimed to measure. Across papers, its measurement claims are spread across 4 constructs and no behavioral indicators, rather than concentrating on a single target. The most frequently linked constructs are Chinese language understanding, general ability, reasoning, and generalization. Papers use it to assess \"Chinese language understanding,\" to check that general capabilities are not compromised, and in one out-of-domain evaluation to test generalization.\n\nSpace of uses. CMMLU is usually used as one component of a broader evaluation suite, commonly alongside MMLU and also with C-Eval, GSM8K, Xiezhi, and ICLEval. Papers position it as the Chinese benchmark within larger benchmark mixes, and one study says it is used \"to ensure that their general capabilities are not compromised after naturalness alignment\" (Do Large Language Models have an English Accent? Evaluating and Improving the Naturalness of Multilingual LLMs). A smaller line of work uses it as a high-resource Chinese baseline for comparison with Ti-MMLU, and one paper uses it in 5-shot form.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Activating Distributed Visual Region within LLMs for Efficient and Effective Vision-Language Training and Inference",
+      "Capability Salience Vector: Fine-grained Alignment of Loss and Capabilities for Downstream Task Scaling Law",
+      "Do Large Language Models have an English Accent? Evaluating and Improving the Naturalness of Multilingual LLMs",
+      "IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory",
+      "LESA: Learnable LLM Layer Scaling-Up",
+      "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+      "Towards Effective and Efficient Continual Pre-training of Large Language Models"
+    ],
+    "icml25": [
+      "KV Shifting Attention Enhances Language Modeling",
+      "Maximizing Intermediate Checkpoint Value in LLM Pretraining with Bayesian Optimization",
+      "MoH: Multi-Head Attention as Mixture-of-Head Attention"
+    ],
+    "emnlp25": [
+      "Data-Efficient Selection via Grammatical Complexity in Continual Pre-training of Domain-Specific LLMs",
+      "GRASP: Replace Redundant Layers with Adaptive Singular Parameters for Efficient Model Compression",
+      "Improve LLM-as-a-Judge Ability as a General Ability",
+      "Superpose Task-specific Features for Model Merging",
+      "TLUE: A Tibetan Language Understanding Evaluation Benchmark",
+      "To See a World in a Spark of Neuron: Disentangling Multi-Task Interference for Training-Free Model Merging"
+    ],
+    "neurips24": [
+      "Parameter Competition Balancing for Model Merging",
+      "Reference Trustable Decoding: A Training-Free Augmentation Paradigm for Large Language Models",
+      "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+      "WenMind: A Comprehensive Benchmark for Evaluating Large Language Models in Chinese Classical Literature and Language Arts",
+      "Wings: Learning Multimodal LLMs without Text-only Forgetting",
+      "WizardArena: Post-training Large Language Models via Simulated Offline Chatbot Arena"
+    ],
+    "iclr25": [
+      "Streamlining Redundant Layers to Compress Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 7,
+    "icml25": 3,
+    "emnlp25": 6,
+    "neurips24": 6,
+    "iclr25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

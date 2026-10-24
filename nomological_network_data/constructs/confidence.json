@@ -1,0 +1,245 @@
+{
+  "canonical_name": "Confidence",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats confidence as the model's own certainty about an answer, prediction, judgment, or generated response. Most definitions keep that broad framing while varying the target: certainty about providing a correct answer, about a generated instruction, about a reasoning trajectory, or about a correct causal relation, sometimes with decision uses such as whether to answer, ask for more information, or trust a judgment. A smaller line defines confidence against a different reference standard, namely the model's self-assessed likelihood that its judgment will align with human preference, as in Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement. Only one definition makes the proxy itself central, defining prediction confidence by variance in perplexity across choices.\n\nSpace of facets. Papers use the labels confidence, model confidence, and prediction confidence for overlapping notions of model certainty. The main axes of variation are the reference target, such as correctness versus expected human agreement, and whether the term denotes internal certainty or a certainty proxy. Several definitions fold the proxy into the construct itself, including repeated affirmation of a correct causal relation, token probabilities over generated tokens, output stability and embedding dynamics, or variance in perplexity.\n\nSpace of measurement. Operationally, papers link confidence to 1 measurement instrument and 5 behavioral indicators, with no linked constructs. The only named instrument is WikiText, used in one paper to assess prediction confidence. More often, confidence is measured through behavioral indicators and observable proxies: abstention modules that evaluate confidence before deciding whether to answer or ask questions, confidence expression in the form of verbalized confidence, and self-evaluation using a score plus the probability of the response token; other papers quantify it through token-level probabilities, reduced token distribution entropy, output stability or embedding dynamics, the proportion of generations affirming a correct causal relation, or variance in perplexity across choices. In MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning, the abstention module explicitly evaluates the system's confidence level before a decision.\n\nLinks. Beyond measurement links, papers record only related links and no causal or correlational claims. Confidence is related to self-reflection in work that prompts a confidence label alongside a prediction, and one paper relates it to hallucination by describing nonfactual responses with unwarranted confidence. Papers also record that confidence is measured by abstention, confidence expression, WikiText, and self-evaluation; one self-evaluation paper records the link in both directions.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Confidence",
+    "Model confidence",
+    "Prediction confidence"
+  ],
+  "papers": [
+    "Hallucination Detox: Sensitivity Dropout (SenD) for Large Language Model Training",
+    "On the Reliability of Large Language Models for Causal Discovery",
+    "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning",
+    "A Probabilistic Inference Scaling Theory for LLM Self-Correction",
+    "A Sequential Multi-Stage Approach for Code Vulnerability Detection via Confidence- and Collaboration-based Decision Making",
+    "Beyond Correctness: Confidence-Aware Reward Modeling for Enhancing Large Language Model Reasoning",
+    "Detecting LLM Hallucination Through Layer-wise Information Deficiency: Analysis of Ambiguous Prompts and Unanswerable Questions",
+    "Improving Task Diversity in Label Efficient Supervised Finetuning of LLMs",
+    "Multi-Domain Explainability of Preferences",
+    "Synthetic Socratic Debates: Examining Persona Effects on Moral Decision and Persuasion Dynamics",
+    "TurnBack: A Geospatial Route Cognition Benchmark for Large Language Models through Reverse Route",
+    "Attention Satisfies: A Constraint-Satisfaction Lens on Factual Errors of Language Models",
+    "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control",
+    "HaDeMiF: Hallucination Detection and Mitigation in Large Language Models",
+    "SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration",
+    "Streamlining Redundant Layers to Compress Large Language Models",
+    "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+    "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs",
+    "Self-Consistency Preference Optimization",
+    "Token Signature: Predicting Chain-of-Thought Gains with Token Decoding Feature in Large Language Models",
+    "Accuracy is Not All You Need",
+    "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees",
+    "MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning",
+    "Membership Inference Attacks against Large Vision-Language Models",
+    "Semantic Density: Uncertainty Quantification for Large Language Models through Confidence Measurement in Semantic Space",
+    "Unveiling the Bias Impact on Symmetric Moral Consistency of Large Language Models",
+    "Unveiling the Tapestry of Consistency in Large Vision-Language Models"
+  ],
+  "paper_count": 27,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The model's internal assessment of its certainty in providing a correct answer, used to decide whether to answer or seek more information.",
+      "paper": "MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning",
+      "original_name": "Confidence"
+    },
+    {
+      "text": "The degree to which a model's internal representations reflect certainty in its predictions, inferred from stability of outputs and embedding dynamics.",
+      "paper": "Hallucination Detox: Sensitivity Dropout (SenD) for Large Language Model Training",
+      "original_name": "Model confidence"
+    },
+    {
+      "text": "The degree to which a model is certain about its predictions, operationally measured by the variance in perplexity scores across different choices for a given question.",
+      "paper": "Streamlining Redundant Layers to Compress Large Language Models",
+      "original_name": "Prediction confidence"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "HaDeMiF: Hallucination Detection and Mitigation in Large Language Models",
+      "evidence": "generating nonfactual responses with unwarranted confidence. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HaDeMiF: Hallucination Detection and Mitigation in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiText",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration",
+      "evidence": "\"WikiText (Merity et al., 2022) to assess the model\u2019s prediction confidence\" (Section 5.1, Datasets)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-consistency",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Self-Consistency Preference Optimization",
+      "evidence": "Intuitively, the consistency of an answer is a reflection of the model confidence... (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Self-Consistency Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Abstention",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning",
+      "evidence": "The goal of the Abstention Module is to evaluate the confidence level of the Expert system",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Verbalized confidence",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+      "evidence": "We first consider two types of existing confidence measure\u2014... (2) verbalized confidence",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-evaluation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control",
+      "evidence": "We define confidence by utilizing the score and the probability of the token responded by the LLM to self-evaluate.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats confidence as the model's own certainty about an answer, prediction, judgment, or generated response. Most definitions keep that broad framing while varying the target: certainty about providing a correct answer, about a generated instruction, about a reasoning trajectory, or about a correct causal relation, sometimes with decision uses such as whether to answer, ask for more information, or trust a judgment. A smaller line defines confidence against a different reference standard, namely the model's self-assessed likelihood that its judgment will align with human preference, as in Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement. Only one definition makes the proxy itself central, defining prediction confidence by variance in perplexity across choices."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use the labels confidence, model confidence, and prediction confidence for overlapping notions of model certainty. The main axes of variation are the reference target, such as correctness versus expected human agreement, and whether the term denotes internal certainty or a certainty proxy. Several definitions fold the proxy into the construct itself, including repeated affirmation of a correct causal relation, token probabilities over generated tokens, output stability and embedding dynamics, or variance in perplexity."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationally, papers link confidence to 1 measurement instrument and 5 behavioral indicators, with no linked constructs. The only named instrument is WikiText, used in one paper to assess prediction confidence. More often, confidence is measured through behavioral indicators and observable proxies: abstention modules that evaluate confidence before deciding whether to answer or ask questions, confidence expression in the form of verbalized confidence, and self-evaluation using a score plus the probability of the response token; other papers quantify it through token-level probabilities, reduced token distribution entropy, output stability or embedding dynamics, the proportion of generations affirming a correct causal relation, or variance in perplexity across choices. In MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning, the abstention module explicitly evaluates the system's confidence level before a decision."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement links, papers record only related links and no causal or correlational claims. Confidence is related to self-reflection in work that prompts a confidence label alongside a prediction, and one paper relates it to hallucination by describing nonfactual responses with unwarranted confidence. Papers also record that confidence is measured by abstention, confidence expression, WikiText, and self-evaluation; one self-evaluation paper records the link in both directions."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define confidence as the model's own certainty about a prediction, judgment, or generated response, with differences mainly in how that certainty is operationalized, such as token probabilities, output consistency, internal representations, or perplexity-based proxies. A few papers narrow the setting to preference alignment, causal relations, or navigation instructions, but they still refer to the same core phenomenon of model certainty rather than a different construct.",
+    "papers_with_definition": 8,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats confidence as the model's own certainty about an answer, prediction, judgment, or generated response. Most definitions keep that broad framing while varying the target: certainty about providing a correct answer, about a generated instruction, about a reasoning trajectory, or about a correct causal relation, sometimes with decision uses such as whether to answer, ask for more information, or trust a judgment. A smaller line defines confidence against a different reference standard, namely the model's self-assessed likelihood that its judgment will align with human preference, as in Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement. Only one definition makes the proxy itself central, defining prediction confidence by variance in perplexity across choices.\n\nSpace of facets. Papers use the labels confidence, model confidence, and prediction confidence for overlapping notions of model certainty. The main axes of variation are the reference target, such as correctness versus expected human agreement, and whether the term denotes internal certainty or a certainty proxy. Several definitions fold the proxy into the construct itself, including repeated affirmation of a correct causal relation, token probabilities over generated tokens, output stability and embedding dynamics, or variance in perplexity.\n\nSpace of measurement. Operationally, papers link confidence to 1 measurement instrument and 5 behavioral indicators, with no linked constructs. The only named instrument is WikiText, used in one paper to assess prediction confidence. More often, confidence is measured through behavioral indicators and observable proxies: abstention modules that evaluate confidence before deciding whether to answer or ask questions, confidence expression in the form of verbalized confidence, and self-evaluation using a score plus the probability of the response token; other papers quantify it through token-level probabilities, reduced token distribution entropy, output stability or embedding dynamics, the proportion of generations affirming a correct causal relation, or variance in perplexity across choices. In MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning, the abstention module explicitly evaluates the system's confidence level before a decision.\n\nLinks. Beyond measurement links, papers record only related links and no causal or correlational claims. Confidence is related to self-reflection in work that prompts a confidence label alongside a prediction, and one paper relates it to hallucination by describing nonfactual responses with unwarranted confidence. Papers also record that confidence is measured by abstention, confidence expression, WikiText, and self-evaluation; one self-evaluation paper records the link in both directions.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Hallucination Detox: Sensitivity Dropout (SenD) for Large Language Model Training",
+      "On the Reliability of Large Language Models for Causal Discovery",
+      "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning"
+    ],
+    "emnlp25": [
+      "A Probabilistic Inference Scaling Theory for LLM Self-Correction",
+      "A Sequential Multi-Stage Approach for Code Vulnerability Detection via Confidence- and Collaboration-based Decision Making",
+      "Beyond Correctness: Confidence-Aware Reward Modeling for Enhancing Large Language Model Reasoning",
+      "Detecting LLM Hallucination Through Layer-wise Information Deficiency: Analysis of Ambiguous Prompts and Unanswerable Questions",
+      "Improving Task Diversity in Label Efficient Supervised Finetuning of LLMs",
+      "Multi-Domain Explainability of Preferences",
+      "Synthetic Socratic Debates: Examining Persona Effects on Moral Decision and Persuasion Dynamics",
+      "TurnBack: A Geospatial Route Cognition Benchmark for Large Language Models through Reverse Route"
+    ],
+    "iclr24": [
+      "Attention Satisfies: A Constraint-Satisfaction Lens on Factual Errors of Language Models"
+    ],
+    "iclr25": [
+      "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control",
+      "HaDeMiF: Hallucination Detection and Mitigation in Large Language Models",
+      "SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration",
+      "Streamlining Redundant Layers to Compress Large Language Models",
+      "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+      "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs"
+    ],
+    "icml25": [
+      "Self-Consistency Preference Optimization",
+      "Token Signature: Predicting Chain-of-Thought Gains with Token Decoding Feature in Large Language Models"
+    ],
+    "neurips24": [
+      "Accuracy is Not All You Need",
+      "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees",
+      "MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning",
+      "Membership Inference Attacks against Large Vision-Language Models",
+      "Semantic Density: Uncertainty Quantification for Large Language Models through Confidence Measurement in Semantic Space",
+      "Unveiling the Bias Impact on Symmetric Moral Consistency of Large Language Models",
+      "Unveiling the Tapestry of Consistency in Large Vision-Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 8,
+    "iclr24": 1,
+    "iclr25": 6,
+    "icml25": 2,
+    "neurips24": 7
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

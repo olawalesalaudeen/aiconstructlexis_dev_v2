@@ -1,0 +1,221 @@
+{
+  "canonical_name": "MS MARCO",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, MS MARCO is most commonly treated as a large-scale retrieval and question answering benchmark built from queries or questions and passages. Definitions variously describe it as a question answering dataset, a machine reading comprehension dataset, a passage-ranking benchmark, or a collection used for reading comprehension and information retrieval; several descriptions mention real-user Bing queries, and one specifies that the public dev split has 101.09k examples, each with a simple question and 10 relevant passages. A smaller line of work narrows attention to particular parts or variants, such as only the question-and-answer pairs, the passage set, the MARCO QA subset, or the TREC Deep Learning subsets DL19 and DL20.\n\nWhat it is claimed to measure. Papers link MS MARCO to 4 behavioral indicators and 2 constructs, and all recorded relationships treat it as a measuring instrument. Among the named behavioral indicators, the most common use is to measure Information retrieval, followed by Open-domain question answering, Question answering, and Ranking; the linked constructs are Retrieval effectiveness and Robustness. These claims are spread across several retrieval and QA targets rather than converging on a single named construct, including use of a subset of MS MARCO to evaluate robustness in non-Wikipedia scenarios.\n\nSpace of uses. No other measurement instrument is linked to it. Papers position MS MARCO both as training material and as an evaluation benchmark: some use only the question-and-answer pairs for retriever fine-tuning, some use it as a source of examples for answering real-user Bing queries from retrieved passages, and others use the passage set to annotate utility, train retrievers, evaluate rerankers, or test in-domain retrieval. It also appears in zero-shot and fine-tuned settings, and some papers explicitly report evaluation on MS MARCO Dev, DL19, and DL20 with MRR or nDCG@10.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MS MARCO",
+    "MSMARCO",
+    "MSMarco",
+    "MARCO QA",
+    "MS MARCO QA",
+    "MS-Marco"
+  ],
+  "papers": [
+    "AIR-Bench: Automated Heterogeneous Information Retrieval Benchmark",
+    "Efficient Long Context Language Model Retrieval with Compression",
+    "UniICL: An Efficient ICL Framework Unifying Compression, Selection, and Generation",
+    "Enhancing LLM Text Detection with Retrieved Contexts and Logits Distribution Consistency",
+    "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance",
+    "Following the Autoregressive Nature of LLM Embeddings via Compression and Alignment",
+    "RaDeR: Reasoning-aware Dense Retrieval Models",
+    "Utility-Focused LLM Annotation for Retrieval and Retrieval-Augmented Generation",
+    "RA-DIT: Retrieval-Augmented Dual Instruction Tuning",
+    "Teaching Language Models to Hallucinate Less with Synthetic Tasks",
+    "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+    "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+    "MMTEB: Massive Multilingual Text Embedding Benchmark",
+    "NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models",
+    "PICASO: Permutation-Invariant Context Composition with State Space Models",
+    "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like Language Models",
+    "Provence: efficient and robust context pruning for retrieval-augmented generation",
+    "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+    "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+    "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+    "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+    "Time-Reversal Provides Unsupervised Feedback to LLMs"
+  ],
+  "paper_count": 22,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A question answering dataset used for retriever fine-tuning, specifically the question-and-answer pairs.",
+      "paper": "RA-DIT: Retrieval-Augmented Dual Instruction Tuning",
+      "original_name": "MS MARCO"
+    },
+    {
+      "text": "The Microsoft Machine Reading Comprehension (MSMARCO) dataset, a large-scale collection of queries and passages used for evaluating reading comprehension and information retrieval tasks.",
+      "paper": "PICASO: Permutation-Invariant Context Composition with State Space Models",
+      "original_name": "MSMARCO"
+    },
+    {
+      "text": "A passage-ranking benchmark used to evaluate reranker judges in a retrieval setting.",
+      "paper": "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "original_name": "MSMarco"
+    },
+    {
+      "text": "The MS MARCO Question Answering (MARCO QA) dataset, a large-scale benchmark for reading comprehension and question answering.",
+      "paper": "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+      "original_name": "MARCO QA"
+    },
+    {
+      "text": "A dataset containing ground-truth answers for queries in the MS MARCO retrieval set, used for evaluating in-domain RAG performance.",
+      "paper": "Utility-Focused LLM Annotation for Retrieval and Retrieval-Augmented Generation",
+      "original_name": "MS MARCO QA"
+    },
+    {
+      "text": "A large-scale machine reading comprehension dataset containing user queries and relevant text passages, used for evaluating document retrieval.",
+      "paper": "Time-Reversal Provides Unsupervised Feedback to LLMs",
+      "original_name": "MS-Marco"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Open-domain question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+      "evidence": "The open-domain QA tasks consist of NQ (Kwiatkowski et al., 2019), MARCO QA (Bajaj et al., 2016) and TriviaQA (Joshi et al., 2017), which require models to retrieve factual knowledge to help LLMs answer the given question.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+          "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Information retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+      "evidence": "To evaluate the model\u2019s robustness in non-Wikipedia scenarios where high-quality text and titles are not available, we conduct experiments on a subset of MS MARCO [3]",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+      "evidence": "\u201cTo evaluate the model\u2019s robustness in non-Wikipedia scenarios where high-quality text and titles are not available, we conduct experiments on a subset of MS MARCO\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Ranking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "Re-ranking retrieved passages based on their relevance to the query is an important application of LCLMs (Sun et al., 2023). ... We use the MS MARCO dataset (Bajaj et al., 2018)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Retrieval effectiveness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance",
+      "evidence": "We evaluate retrieval effectiveness using two retrieval benchmarks: MS MARCO (Bajaj et al., 2016) and BEIR (Thakur et al., 2021).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, MS MARCO is most commonly treated as a large-scale retrieval and question answering benchmark built from queries or questions and passages. Definitions variously describe it as a question answering dataset, a machine reading comprehension dataset, a passage-ranking benchmark, or a collection used for reading comprehension and information retrieval; several descriptions mention real-user Bing queries, and one specifies that the public dev split has 101.09k examples, each with a simple question and 10 relevant passages. A smaller line of work narrows attention to particular parts or variants, such as only the question-and-answer pairs, the passage set, the MARCO QA subset, or the TREC Deep Learning subsets DL19 and DL20."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link MS MARCO to 4 behavioral indicators and 2 constructs, and all recorded relationships treat it as a measuring instrument. Among the named behavioral indicators, the most common use is to measure Information retrieval, followed by Open-domain question answering, Question answering, and Ranking; the linked constructs are Retrieval effectiveness and Robustness. These claims are spread across several retrieval and QA targets rather than converging on a single named construct, including use of a subset of MS MARCO to evaluate robustness in non-Wikipedia scenarios."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No other measurement instrument is linked to it. Papers position MS MARCO both as training material and as an evaluation benchmark: some use only the question-and-answer pairs for retriever fine-tuning, some use it as a source of examples for answering real-user Bing queries from retrieved passages, and others use the passage set to annotate utility, train retrievers, evaluate rerankers, or test in-domain retrieval. It also appears in zero-shot and fine-tuned settings, and some papers explicitly report evaluation on MS MARCO Dev, DL19, and DL20 with MRR or nDCG@10."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, MS MARCO is most commonly treated as a large-scale retrieval and question answering benchmark built from queries or questions and passages. Definitions variously describe it as a question answering dataset, a machine reading comprehension dataset, a passage-ranking benchmark, or a collection used for reading comprehension and information retrieval; several descriptions mention real-user Bing queries, and one specifies that the public dev split has 101.09k examples, each with a simple question and 10 relevant passages. A smaller line of work narrows attention to particular parts or variants, such as only the question-and-answer pairs, the passage set, the MARCO QA subset, or the TREC Deep Learning subsets DL19 and DL20.\n\nWhat it is claimed to measure. Papers link MS MARCO to 4 behavioral indicators and 2 constructs, and all recorded relationships treat it as a measuring instrument. Among the named behavioral indicators, the most common use is to measure Information retrieval, followed by Open-domain question answering, Question answering, and Ranking; the linked constructs are Retrieval effectiveness and Robustness. These claims are spread across several retrieval and QA targets rather than converging on a single named construct, including use of a subset of MS MARCO to evaluate robustness in non-Wikipedia scenarios.\n\nSpace of uses. No other measurement instrument is linked to it. Papers position MS MARCO both as training material and as an evaluation benchmark: some use only the question-and-answer pairs for retriever fine-tuning, some use it as a source of examples for answering real-user Bing queries from retrieved passages, and others use the passage set to annotate utility, train retrievers, evaluate rerankers, or test in-domain retrieval. It also appears in zero-shot and fine-tuned settings, and some papers explicitly report evaluation on MS MARCO Dev, DL19, and DL20 with MRR or nDCG@10.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "AIR-Bench: Automated Heterogeneous Information Retrieval Benchmark",
+      "Efficient Long Context Language Model Retrieval with Compression",
+      "UniICL: An Efficient ICL Framework Unifying Compression, Selection, and Generation"
+    ],
+    "emnlp25": [
+      "Enhancing LLM Text Detection with Retrieved Contexts and Logits Distribution Consistency",
+      "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance",
+      "Following the Autoregressive Nature of LLM Embeddings via Compression and Alignment",
+      "RaDeR: Reasoning-aware Dense Retrieval Models",
+      "Utility-Focused LLM Annotation for Retrieval and Retrieval-Augmented Generation"
+    ],
+    "iclr24": [
+      "RA-DIT: Retrieval-Augmented Dual Instruction Tuning",
+      "Teaching Language Models to Hallucinate Less with Synthetic Tasks"
+    ],
+    "iclr25": [
+      "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "MMTEB: Massive Multilingual Text Embedding Benchmark",
+      "NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models",
+      "PICASO: Permutation-Invariant Context Composition with State Space Models",
+      "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like Language Models",
+      "Provence: efficient and robust context pruning for retrieval-augmented generation",
+      "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+      "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction"
+    ],
+    "neurips24": [
+      "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+      "Time-Reversal Provides Unsupervised Feedback to LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 5,
+    "iclr24": 2,
+    "iclr25": 9,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "neurips24"
+  ]
+}

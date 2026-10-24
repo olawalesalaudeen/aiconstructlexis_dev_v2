@@ -1,0 +1,339 @@
+{
+  "canonical_name": "Code completion",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Most definitions describe code completion as continuing partially written code from a supplied context, often with the expectation of syntactically and functionally correct output. Depending on the paper, the required continuation may be the next segment, the next line or token, or a missing span inside the snippet. The provided context also varies: some papers use preceding code alone, while others add comments, documentation, function signatures and docstrings, or broader repository context.\n\nVariants. A smaller line of work names more specific settings, including repository-level code completion, next-line code prediction, fill-in-the-middle code completion, data science code completion, and Verilog code completion. Other papers describe blank-filling and auto-completion formulations, and one paper casts a structured generation problem as Python code completion by asking the model to add relation edges to a script.\n\nSpace of elicitation and scores. Papers measure this behavior with 11 instruments. LongBench is the most common, usually as a code completion category inside a broader long-context benchmark; HumanEval and RepoBench-P also recur, framing it respectively as programming problems and next-line generation over a long code base. Chatbot Arena and CrossCodeEval are also linked, and the overall instrument mix ranges from broad multitask evaluations to repository-level and cross-file settings.\n\nWhat it is taken as evidence of. Papers link code completion to 2 constructs, without a single prevailing interpretation. One paper reports that it is related to long-context understanding, citing repository-level code completion among long-context tasks, while another claims a causal relationship from code completion to reasoning, stating that formulating prompts as code can enhance reasoning abilities.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Code completion",
+    "Data science code completion",
+    "Fill-in-the-middle code completion",
+    "Verilog code completion",
+    "Fill in the blank",
+    "Next-line prediction",
+    "Code auto-completion",
+    "Repository-level code completion",
+    "Next-line code prediction"
+  ],
+  "papers": [
+    "M2RC-EVAL: Massively Multilingual Repository-level Code Completion Evaluation",
+    "Can You Really Trust Code Copilot? Evaluating Large Language Models from a Code Security Perspective",
+    "FocusLLM: Precise Understanding of Long Context by Dynamic Condensing",
+    "LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs",
+    "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models",
+    "CodeRAG: Finding Relevant and Necessary Knowledge for Retrieval-Augmented Repository-Level Code Completion",
+    "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding",
+    "Planning-Aware Code Infilling via Horizon-Length Prediction",
+    "AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors",
+    "CLEX: Continuous  Length Extrapolation for Large Language Models",
+    "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing",
+    "HyperAttention: Long-context Attention in Near-Linear Time",
+    "LLM Augmented LLMs: Expanding Capabilities through Composition",
+    "RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems",
+    "CraftRTL: High-quality Synthetic Data Generation for Verilog Code Models with Correct-by-Construction Non-Textual Representations and Targeted Code Repair",
+    "Exact Byte-Level Probabilities from Tokenized Language Models for FIM-Tasks and Model Ensembles",
+    "Let the Code LLM Edit Itself When You Edit the Code",
+    "PALMBENCH: A COMPREHENSIVE BENCHMARK OF COMPRESSED LARGE LANGUAGE MODELS ON MOBILE PLATFORMS",
+    "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
+    "LV-XAttn: Distributed Cross-Attention for Long Visual Inputs in Multimodal Large Language Models",
+    "Copilot Arena: A Platform for Code LLM Evaluation in the Wild",
+    "Cascading Large Language Models for Salient Event Graph Generation",
+    "Mastering the Craft of Data Synthesis for CodeLLMs",
+    "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+    "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models"
+  ],
+  "paper_count": 25,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating syntactically and functionally correct code continuations from partial code inputs, particularly under long-context conditions.",
+      "paper": "CLEX: Continuous  Length Extrapolation for Large Language Models",
+      "original_name": "Code completion"
+    },
+    {
+      "text": "The task of completing code snippets that use popular data science libraries like Pandas, NumPy, and PyTorch.",
+      "paper": "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+      "original_name": "Data science code completion"
+    },
+    {
+      "text": "The task of generating a missing segment of code given the preceding (prefix) and succeeding (suffix) code context.",
+      "paper": "Exact Byte-Level Probabilities from Tokenized Language Models for FIM-Tasks and Model Ensembles",
+      "original_name": "Fill-in-the-middle code completion"
+    },
+    {
+      "text": "The task of completing a partial Verilog code snippet based on the provided context and problem description.",
+      "paper": "CraftRTL: High-quality Synthetic Data Generation for Verilog Code Models with Correct-by-Construction Non-Textual Representations and Targeted Code Repair",
+      "original_name": "Verilog code completion"
+    },
+    {
+      "text": "The task of completing missing parts of a code snippet given documentation and context.",
+      "paper": "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
+      "original_name": "Fill in the blank"
+    },
+    {
+      "text": "Given code context, the model predicts the next line or next token to complete the snippet.",
+      "paper": "Let the Code LLM Edit Itself When You Edit the Code",
+      "original_name": "Next-line prediction"
+    },
+    {
+      "text": "The task of predicting and generating the next segment of code based on the current context.",
+      "paper": "PALMBENCH: A COMPREHENSIVE BENCHMARK OF COMPRESSED LARGE LANGUAGE MODELS ON MOBILE PLATFORMS",
+      "original_name": "Code auto-completion"
+    },
+    {
+      "text": "The task of generating code completions based on the context of an entire software repository.",
+      "paper": "LV-XAttn: Distributed Cross-Attention for Long Visual Inputs in Multimodal Large Language Models",
+      "original_name": "Repository-level code completion"
+    },
+    {
+      "text": "The observable behavior of generating the next line of code in a file based on both in-file context (preceding lines and imports) and cross-file context (retrieved snippets from other files).",
+      "paper": "RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems",
+      "original_name": "Next-line code prediction"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+      "evidence": "Table 2: Results (%) on LongBench. \u2217 indicates results reported by Bai et al. [2023]. CREAM-7B-32k is instruction-tuned for 100 steps using 4K length data on LLaMa2-7B-Chat. Model Single- Doc QA Multi- Doc QA Summari- zation Few-shot Learning Code Completion",
+      "paper_count": 12,
+      "paper_weight": 12.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding"
+        ],
+        "iclr25": [
+          "Long Context Compression with Activation Beacon",
+          "Quest: Query-centric Data Synthesis Approach for Long-context Scaling of Large Language Model",
+          "$\\text{D}_{2}\\text{O}$: Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models",
+          "An Evolved Universal Transformer Memory",
+          "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences"
+        ],
+        "acl25": [
+          "FocusLLM: Precise Understanding of Long Context by Dynamic Condensing",
+          "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models",
+          "Squeezed Attention: Accelerating Long Context Length LLM Inference"
+        ],
+        "icml25": [
+          "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+          "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference",
+          "CommVQ: Commutative Vector Quantization for KV Cache Compression"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RepoBench-P",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+      "evidence": "We pick RepoBench-P [43] which is collected from GitHub repositories, and the model needs to generate the next line of code given the long code base (Section 4.1).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks"
+        ],
+        "emnlp25": [
+          "Alignment-Augmented Speculative Decoding with Alignment Sampling and Conditional Verification"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+      "evidence": "HumanEval [3] is a code completion benchmark consisting of programming problems assessing language comprehension, algorithms, and simple mathematics (Section 4.1).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models"
+        ],
+        "icml25": [
+          "PAK-UCB Contextual Bandit: An Online Learning Approach to Prompt-Aware Selection of Generative Models and LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MBPP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "evidence": "\"a code-generation task that requires the model to complete method bodies from MBPP benchmark [1]\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TRACE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Spurious Forgetting in Continual Learning of Language Models",
+      "evidence": "TRACE (Wang et al., 2023b) serves as a challenging continual instruction tuning benchmark comprising 8 diverse tasks, including domain-specific QA, code completion, mathematical reasoning (Section 2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Spurious Forgetting in Continual Learning of Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MultiPL-E",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+      "evidence": "comparing multilingual code completion averages on Multipl-E (Cassano et al., 2023)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding",
+      "evidence": "Large language models (LLMs) have advanced to support long-context tasks such as document understanding (Li et al., 2024a), multi-turn dialogues (Yi et al., 2024), repository-level code completion (Jimenez et al., 2024), and complex reasoning (Zhou et al., 2025).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RepoEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Planning-Aware Code Infilling via Horizon-Length Prediction",
+      "evidence": "we also evaluate the effectiveness of HLP on repository-level code Fill-in-the-Middle in cross-file scenarios via CrossCodeEval (Ding et al., 2023), CrossCodeLongEval (Wu et al., 2024), and RepoEval (Zhang et al., 2023). (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Planning-Aware Code Infilling via Horizon-Length Prediction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CrossCodeEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Planning-Aware Code Infilling via Horizon-Length Prediction",
+      "evidence": "we also evaluate the effectiveness of HLP on repository-level code Fill-in-the-Middle in cross-file scenarios via CrossCodeEval (Ding et al., 2023), CrossCodeLongEval (Wu et al., 2024), and RepoEval (Zhang et al., 2023). (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Planning-Aware Code Infilling via Horizon-Length Prediction"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 9,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 9,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most definitions describe code completion as continuing partially written code from a supplied context, often with the expectation of syntactically and functionally correct output. Depending on the paper, the required continuation may be the next segment, the next line or token, or a missing span inside the snippet. The provided context also varies: some papers use preceding code alone, while others add comments, documentation, function signatures and docstrings, or broader repository context."
+    },
+    {
+      "label": "Variants.",
+      "text": "A smaller line of work names more specific settings, including repository-level code completion, next-line code prediction, fill-in-the-middle code completion, data science code completion, and Verilog code completion. Other papers describe blank-filling and auto-completion formulations, and one paper casts a structured generation problem as Python code completion by asking the model to add relation edges to a script."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure this behavior with 11 instruments. LongBench is the most common, usually as a code completion category inside a broader long-context benchmark; HumanEval and RepoBench-P also recur, framing it respectively as programming problems and next-line generation over a long code base. Chatbot Arena and CrossCodeEval are also linked, and the overall instrument mix ranges from broad multitask evaluations to repository-level and cross-file settings."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link code completion to 2 constructs, without a single prevailing interpretation. One paper reports that it is related to long-context understanding, citing repository-level code completion among long-context tasks, while another claims a causal relationship from code completion to reasoning, stating that formulating prompts as code can enhance reasoning abilities."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Most definitions describe code completion as continuing partially written code from a supplied context, often with the expectation of syntactically and functionally correct output. Depending on the paper, the required continuation may be the next segment, the next line or token, or a missing span inside the snippet. The provided context also varies: some papers use preceding code alone, while others add comments, documentation, function signatures and docstrings, or broader repository context.\n\nVariants. A smaller line of work names more specific settings, including repository-level code completion, next-line code prediction, fill-in-the-middle code completion, data science code completion, and Verilog code completion. Other papers describe blank-filling and auto-completion formulations, and one paper casts a structured generation problem as Python code completion by asking the model to add relation edges to a script.\n\nSpace of elicitation and scores. Papers measure this behavior with 11 instruments. LongBench is the most common, usually as a code completion category inside a broader long-context benchmark; HumanEval and RepoBench-P also recur, framing it respectively as programming problems and next-line generation over a long code base. Chatbot Arena and CrossCodeEval are also linked, and the overall instrument mix ranges from broad multitask evaluations to repository-level and cross-file settings.\n\nWhat it is taken as evidence of. Papers link code completion to 2 constructs, without a single prevailing interpretation. One paper reports that it is related to long-context understanding, citing repository-level code completion among long-context tasks, while another claims a causal relationship from code completion to reasoning, stating that formulating prompts as code can enhance reasoning abilities.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "M2RC-EVAL: Massively Multilingual Repository-level Code Completion Evaluation",
+      "Can You Really Trust Code Copilot? Evaluating Large Language Models from a Code Security Perspective",
+      "FocusLLM: Precise Understanding of Long Context by Dynamic Condensing",
+      "LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs",
+      "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models"
+    ],
+    "emnlp25": [
+      "CodeRAG: Finding Relevant and Necessary Knowledge for Retrieval-Augmented Repository-Level Code Completion",
+      "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding",
+      "Planning-Aware Code Infilling via Horizon-Length Prediction"
+    ],
+    "iclr24": [
+      "AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors",
+      "CLEX: Continuous  Length Extrapolation for Large Language Models",
+      "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing",
+      "HyperAttention: Long-context Attention in Near-Linear Time",
+      "LLM Augmented LLMs: Expanding Capabilities through Composition",
+      "RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems"
+    ],
+    "iclr25": [
+      "CraftRTL: High-quality Synthetic Data Generation for Verilog Code Models with Correct-by-Construction Non-Textual Representations and Targeted Code Repair",
+      "Exact Byte-Level Probabilities from Tokenized Language Models for FIM-Tasks and Model Ensembles",
+      "Let the Code LLM Edit Itself When You Edit the Code",
+      "PALMBENCH: A COMPREHENSIVE BENCHMARK OF COMPRESSED LARGE LANGUAGE MODELS ON MOBILE PLATFORMS",
+      "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs"
+    ],
+    "icml25": [
+      "LV-XAttn: Distributed Cross-Attention for Long Visual Inputs in Multimodal Large Language Models",
+      "Copilot Arena: A Platform for Code LLM Evaluation in the Wild"
+    ],
+    "naacl25": [
+      "Cascading Large Language Models for Salient Event Graph Generation",
+      "Mastering the Craft of Data Synthesis for CodeLLMs"
+    ],
+    "neurips24": [
+      "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+      "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 5,
+    "emnlp25": 3,
+    "iclr24": 6,
+    "iclr25": 5,
+    "icml25": 2,
+    "naacl25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

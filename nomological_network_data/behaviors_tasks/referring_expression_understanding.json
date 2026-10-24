@@ -1,0 +1,416 @@
+{
+  "canonical_name": "Referring expression understanding",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is an image grounding task in which a natural-language referring expression is used to identify and localize the matching object or region. Most formulations ask for a bounding box, described as predicting the box for an object given its text description or outputting box coordinates; some instead describe generating a segmentation mask and deriving a box, or more generally linking the expression to the corresponding object or region. When scoring is specified, papers report accuracy or Acc@0.5, and one definition says a prediction is correct when the IoU between predicted and ground-truth bounding boxes exceeds 0.5.\n\nVariants. Most papers stay with image versions under names such as referring expression comprehension, reference expression understanding, referring expression grounding, and referential expression grounding. A smaller line broadens the setting to phrase grounding, where one or more phrases, or even all noun phrases in a sentence, are associated with image boxes. Other variants recast it as segmentation, including multi-object referring segmentation and multi-target referring expression segmentation, where models generate distinct instance masks for several referred targets from one instruction. Some papers extend it to 3D or video settings, including object grounding in 3D scenes, video grounding over scene videos, and spatio-temporal object grounding that outputs tuples such as frame and spatial coordinates; one paper also relates it to object detection, while distinguishing object detection as using predefined categories rather than natural-language expressions.\n\nSpace of elicitation and scores. Papers link it to 8 measurement instruments. The recurring linked instruments are led by RefCOCO, followed by RefCOCOg, RefCOCO+, Flickr30k Entities, and HellaSwag, though HellaSwag is reported as a correlate rather than as a measured_by benchmark. Most actual measured_by use comes from dataset benchmarks, especially the RefCOCO family, with additional phrase-grounding, driving, and video-grounding datasets, and papers report scores such as accuracy or Acc@0.5.\n\nWhat it is taken as evidence of. Papers link it to 5 constructs and do not converge on a single construct it reflects. The most common construct link is visual grounding: some papers treat visual grounding as measured by referring expression comprehension, while another reports it as related to visual grounding ability. Beyond that, one paper claims a causal relationship from referring expression understanding to 3D understanding, another uses it to measure localization ability, and other work relates it to semantic reasoning and spatial reasoning.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Referring expression comprehension",
+    "Multi-object referring segmentation",
+    "Multi-target segmentation",
+    "Video grounding",
+    "Object grounding",
+    "Spatio-temporal object grounding",
+    "Phrase grounding",
+    "Referring expression grounding",
+    "Referential expression grounding"
+  ],
+  "papers": [
+    "PlanGenLLMs: A Modern Survey of LLM Planning Capabilities",
+    "Advancing Fine-Grained Visual Understanding with Multi-Scale Alignment in Multi-Modal Models",
+    "Follow the Flow: Fine-grained Flowchart Attribution with Neurosymbolic Agents",
+    "ModalPrompt: Towards Efficient Multimodal Continual Instruction Tuning with Dual-Modality Guided Prompt",
+    "CoVLM: Composing Visual Entities and Relationships in Large Language Models Via Communicative Decoding",
+    "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+    "Grounding Multimodal Large Language Models to the World",
+    "Vision-Language Foundation Models as Effective Robot Imitators",
+    "Ferret: Refer and Ground Anything Anywhere at Any Granularity",
+    "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning",
+    "Adapt-$\\infty$: Scalable Continual Multimodal Instruction Tuning via Dynamic Data Selection",
+    "Bridging Compressed Image Latents and Multimodal Large Language Models",
+    "ClawMachine: Learning to Fetch Visual Tokens for Referential Comprehension",
+    "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+    "Language-Image Models with 3D Understanding",
+    "MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning",
+    "MMR: A Large-scale Benchmark Dataset for Multi-target and Multi-granularity Reasoning Segmentation",
+    "Prompt as Knowledge Bank: Boost Vision-language model via Structural Representation for  zero-shot medical detection",
+    "Text4Seg: Reimagining Image Segmentation as Text Generation",
+    "Contrastive Localized Language-Image Pre-Training",
+    "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation",
+    "TUMTraf VideoQA: Dataset and Benchmark for Unified Spatio-Temporal Video Understanding in Traffic Scenes",
+    "Accelerating Pre-training of Multimodal LLMs via Chain-of-Sight",
+    "Artemis:  Towards Referential Understanding in Complex Videos",
+    "Chat-Scene: Bridging 3D Scene and Large Language Models with Object Identifiers",
+    "CogVLM: Visual Expert for Pretrained Language Models",
+    "Instruction-Guided Visual Masking",
+    "LOVA3: Learning to Visual Question Answering, Asking and Assessment",
+    "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models",
+    "Multi-modal Situated Reasoning in 3D Scenes",
+    "Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning"
+  ],
+  "paper_count": 31,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Identifying the referred object by generating a mask and deriving a bounding box that matches the language query.",
+      "paper": "Text4Seg: Reimagining Image Segmentation as Text Generation",
+      "original_name": "Referring expression comprehension"
+    },
+    {
+      "text": "The observable task of generating instance segmentation masks for multiple referred objects in an image.",
+      "paper": "ClawMachine: Learning to Fetch Visual Tokens for Referential Comprehension",
+      "original_name": "Multi-object referring segmentation"
+    },
+    {
+      "text": "The observable behavior of simultaneously generating distinct segmentation masks for multiple target entities within a single image based on one instruction.",
+      "paper": "MMR: A Large-scale Benchmark Dataset for Multi-target and Multi-granularity Reasoning Segmentation",
+      "original_name": "Multi-target segmentation"
+    },
+    {
+      "text": "The task of localizing a target object described by text within a video sequence of a 3D scene.",
+      "paper": "Chat-Scene: Bridging 3D Scene and Large Language Models with Object Identifiers",
+      "original_name": "Video grounding"
+    },
+    {
+      "text": "The task of localizing a specific 3D object in a scene based on a natural language description.",
+      "paper": "Multi-modal Situated Reasoning in 3D Scenes",
+      "original_name": "Object grounding"
+    },
+    {
+      "text": "Predicting the precise spatio-temporal coordinates (frame, x, y) of a referred object in a video as a tuple output.",
+      "paper": "TUMTraf VideoQA: Dataset and Benchmark for Unified Spatio-Temporal Video Understanding in Traffic Scenes",
+      "original_name": "Spatio-temporal object grounding"
+    },
+    {
+      "text": "The task of associating specific phrases or words in a text description with their corresponding regions or objects in an image.",
+      "paper": "Contrastive Localized Language-Image Pre-Training",
+      "original_name": "Phrase grounding"
+    },
+    {
+      "text": "The task of linking a textual description (referring expression) to the corresponding object or region in an image.",
+      "paper": "Follow the Flow: Fine-grained Flowchart Attribution with Neurosymbolic Agents",
+      "original_name": "Referring expression grounding"
+    },
+    {
+      "text": "Locating the object in an image that corresponds to a given textual description.",
+      "paper": "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning",
+      "original_name": "Referential expression grounding"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+      "evidence": "Initially, we demonstrate our models\u2019 effectiveness in learning neural modules on two established benchmarks: GQA (Hudson & Manning, 2019), focusing on compositional visual question answering, and RefCOCO (Kazemzadeh et al., 2014), which assesses referring expression comprehension. (Section 4)",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules"
+        ],
+        "neurips24": [
+          "Accelerating Pre-training of Multimodal LLMs via Chain-of-Sight",
+          "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding",
+          "CogVLM: Visual Expert for Pretrained Language Models"
+        ],
+        "iclr25": [
+          "Text4Seg: Reimagining Image Segmentation as Text Generation",
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ],
+        "emnlp25": [
+          "Advancing Fine-Grained Visual Understanding with Multi-Scale Alignment in Multi-Modal Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCOg",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Accelerating Pre-training of Multimodal LLMs via Chain-of-Sight",
+      "evidence": "RefCOCOg [67] Refer grounding on natural images. (Table A2)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Accelerating Pre-training of Multimodal LLMs via Chain-of-Sight",
+          "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding"
+        ],
+        "iclr25": [
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ],
+        "emnlp25": [
+          "Advancing Fine-Grained Visual Understanding with Multi-Scale Alignment in Multi-Modal Models"
+        ],
+        "iclr24": [
+          "CoVLM: Composing Visual Entities and Relationships in Large Language Models Via Communicative Decoding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCO+",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Accelerating Pre-training of Multimodal LLMs via Chain-of-Sight",
+      "evidence": "RefCOCO+ [103] Refer grounding on natural images. (Table A2)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Accelerating Pre-training of Multimodal LLMs via Chain-of-Sight",
+          "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding"
+        ],
+        "iclr25": [
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ],
+        "iclr24": [
+          "CoVLM: Composing Visual Entities and Relationships in Large Language Models Via Communicative Decoding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual grounding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models",
+      "evidence": "For tasks that focus on visual grounding ability like REC [42], and REG [37], the model uses more DINO features to perceive region-level visual information. (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models"
+        ],
+        "iclr24": [
+          "Grounding Multimodal Large Language Models to the World"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Flickr30k Entities",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Grounding Multimodal Large Language Models to the World",
+      "evidence": "We evaluate phrase grounding task on Flickr30k Entities (Plummer et al., 2015) val and test splits. (Sec. 4.1.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Grounding Multimodal Large Language Models to the World"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spatial reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+      "evidence": "This work focuses on the challenging open-vocabulary detection task of Referring Expression Comprehension (REC) (Mao et al., 2016), which involves localizing an object in an image based on a complex textual query, requiring both spatial and semantic reasoning.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Semantic reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+      "evidence": "This work focuses on the challenging open-vocabulary detection task of Referring Expression Comprehension (REC) (Mao et al., 2016), which involves localizing an object in an image based on a complex textual query, requiring both spatial and semantic reasoning.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Object detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+      "evidence": "It also differs from object detection (Girshick, 2015), which uses predefined categories instead of natural language expressions.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Talk2Car",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+      "evidence": "We also use the driving, non human-centric, Talk2Car (Deruyttere et al., 2019) REC dataset.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCO/g/+",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Language-Image Models with 3D Understanding",
+      "evidence": "In Table 4, we compare CUBE-LLM to the state-of-the-arts in Referring Expression Comprehension (REC) benchmark on refCOCO/+/g (Yu et al., 2016) dataset. (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Language-Image Models with 3D Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Localization ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "A Large-Scale Human-Centric Benchmark for Referring Expression Comprehension in the LMM Era",
+      "evidence": "The REC task serves as a critical benchmark to evaluate the localization capabilities of these models. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "A Large-Scale Human-Centric Benchmark for Referring Expression Comprehension in the LMM Era"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Scene understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Chat-Scene: Bridging 3D Scene and Large Language Models with Object Identifiers",
+      "evidence": "Object referencing and grounding are essential for advanced scene understanding.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Chat-Scene: Bridging 3D Scene and Large Language Models with Object Identifiers"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+      "evidence": "\u201cFurther analysis shows a Pearson correlation of 0.88 between the LLM\u2019s original performance on reasoning benchmarks, measured by the HellaSwag score (Zellers et al., 2019), and REC performance\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 13,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 10,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is an image grounding task in which a natural-language referring expression is used to identify and localize the matching object or region. Most formulations ask for a bounding box, described as predicting the box for an object given its text description or outputting box coordinates; some instead describe generating a segmentation mask and deriving a box, or more generally linking the expression to the corresponding object or region. When scoring is specified, papers report accuracy or Acc@0.5, and one definition says a prediction is correct when the IoU between predicted and ground-truth bounding boxes exceeds 0.5."
+    },
+    {
+      "label": "Variants.",
+      "text": "Most papers stay with image versions under names such as referring expression comprehension, reference expression understanding, referring expression grounding, and referential expression grounding. A smaller line broadens the setting to phrase grounding, where one or more phrases, or even all noun phrases in a sentence, are associated with image boxes. Other variants recast it as segmentation, including multi-object referring segmentation and multi-target referring expression segmentation, where models generate distinct instance masks for several referred targets from one instruction. Some papers extend it to 3D or video settings, including object grounding in 3D scenes, video grounding over scene videos, and spatio-temporal object grounding that outputs tuples such as frame and spatial coordinates; one paper also relates it to object detection, while distinguishing object detection as using predefined categories rather than natural-language expressions."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to 8 measurement instruments. The recurring linked instruments are led by RefCOCO, followed by RefCOCOg, RefCOCO+, Flickr30k Entities, and HellaSwag, though HellaSwag is reported as a correlate rather than as a measured_by benchmark. Most actual measured_by use comes from dataset benchmarks, especially the RefCOCO family, with additional phrase-grounding, driving, and video-grounding datasets, and papers report scores such as accuracy or Acc@0.5."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to 5 constructs and do not converge on a single construct it reflects. The most common construct link is visual grounding: some papers treat visual grounding as measured by referring expression comprehension, while another reports it as related to visual grounding ability. Beyond that, one paper claims a causal relationship from referring expression understanding to 3D understanding, another uses it to measure localization ability, and other work relates it to semantic reasoning and spatial reasoning."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is an image grounding task in which a natural-language referring expression is used to identify and localize the matching object or region. Most formulations ask for a bounding box, described as predicting the box for an object given its text description or outputting box coordinates; some instead describe generating a segmentation mask and deriving a box, or more generally linking the expression to the corresponding object or region. When scoring is specified, papers report accuracy or Acc@0.5, and one definition says a prediction is correct when the IoU between predicted and ground-truth bounding boxes exceeds 0.5.\n\nVariants. Most papers stay with image versions under names such as referring expression comprehension, reference expression understanding, referring expression grounding, and referential expression grounding. A smaller line broadens the setting to phrase grounding, where one or more phrases, or even all noun phrases in a sentence, are associated with image boxes. Other variants recast it as segmentation, including multi-object referring segmentation and multi-target referring expression segmentation, where models generate distinct instance masks for several referred targets from one instruction. Some papers extend it to 3D or video settings, including object grounding in 3D scenes, video grounding over scene videos, and spatio-temporal object grounding that outputs tuples such as frame and spatial coordinates; one paper also relates it to object detection, while distinguishing object detection as using predefined categories rather than natural-language expressions.\n\nSpace of elicitation and scores. Papers link it to 8 measurement instruments. The recurring linked instruments are led by RefCOCO, followed by RefCOCOg, RefCOCO+, Flickr30k Entities, and HellaSwag, though HellaSwag is reported as a correlate rather than as a measured_by benchmark. Most actual measured_by use comes from dataset benchmarks, especially the RefCOCO family, with additional phrase-grounding, driving, and video-grounding datasets, and papers report scores such as accuracy or Acc@0.5.\n\nWhat it is taken as evidence of. Papers link it to 5 constructs and do not converge on a single construct it reflects. The most common construct link is visual grounding: some papers treat visual grounding as measured by referring expression comprehension, while another reports it as related to visual grounding ability. Beyond that, one paper claims a causal relationship from referring expression understanding to 3D understanding, another uses it to measure localization ability, and other work relates it to semantic reasoning and spatial reasoning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "PlanGenLLMs: A Modern Survey of LLM Planning Capabilities"
+    ],
+    "emnlp25": [
+      "Advancing Fine-Grained Visual Understanding with Multi-Scale Alignment in Multi-Modal Models",
+      "Follow the Flow: Fine-grained Flowchart Attribution with Neurosymbolic Agents",
+      "ModalPrompt: Towards Efficient Multimodal Continual Instruction Tuning with Dual-Modality Guided Prompt"
+    ],
+    "iclr24": [
+      "CoVLM: Composing Visual Entities and Relationships in Large Language Models Via Communicative Decoding",
+      "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+      "Grounding Multimodal Large Language Models to the World",
+      "Vision-Language Foundation Models as Effective Robot Imitators",
+      "Ferret: Refer and Ground Anything Anywhere at Any Granularity",
+      "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"
+    ],
+    "iclr25": [
+      "Adapt-$\\infty$: Scalable Continual Multimodal Instruction Tuning via Dynamic Data Selection",
+      "Bridging Compressed Image Latents and Multimodal Large Language Models",
+      "ClawMachine: Learning to Fetch Visual Tokens for Referential Comprehension",
+      "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+      "Language-Image Models with 3D Understanding",
+      "MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning",
+      "MMR: A Large-scale Benchmark Dataset for Multi-target and Multi-granularity Reasoning Segmentation",
+      "Prompt as Knowledge Bank: Boost Vision-language model via Structural Representation for  zero-shot medical detection",
+      "Text4Seg: Reimagining Image Segmentation as Text Generation"
+    ],
+    "icml25": [
+      "Contrastive Localized Language-Image Pre-Training",
+      "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation",
+      "TUMTraf VideoQA: Dataset and Benchmark for Unified Spatio-Temporal Video Understanding in Traffic Scenes"
+    ],
+    "neurips24": [
+      "Accelerating Pre-training of Multimodal LLMs via Chain-of-Sight",
+      "Artemis:  Towards Referential Understanding in Complex Videos",
+      "Chat-Scene: Bridging 3D Scene and Large Language Models with Object Identifiers",
+      "CogVLM: Visual Expert for Pretrained Language Models",
+      "Instruction-Guided Visual Masking",
+      "LOVA3: Learning to Visual Question Answering, Asking and Assessment",
+      "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models",
+      "Multi-modal Situated Reasoning in 3D Scenes",
+      "Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 3,
+    "iclr24": 6,
+    "iclr25": 9,
+    "icml25": 3,
+    "neurips24": 9
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

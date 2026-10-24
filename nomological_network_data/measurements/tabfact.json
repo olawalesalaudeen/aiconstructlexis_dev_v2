@@ -1,0 +1,154 @@
+{
+  "canonical_name": "TabFact",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, TabFact is most commonly described as a benchmark or dataset for table-based fact verification over Wikipedia tables, pairing tables with textual statements and asking whether each statement is supported, entailed or true, or instead refuted or false, by the table. Several papers also call it a large-scale dataset, and some describe a specific evaluation subset, the test-small set with 2,024 statements or test samples from 298 tables. A smaller line of work presents it as a public TableQA resource, describing pairs of content-related question and answer or yes or no answers for TQA evaluation.\n\nWhat it is claimed to measure. Papers use TabFact to measure 2 behavioral indicators and 1 construct. The prevailing measurement claim is fact checking, with papers explicitly using it for fact verification or TFV; a smaller but recurring usage treats it as measuring table question answering, including TableQA settings where the answer is yes or no. At the construct level, it is also reported as measuring table reasoning, so papers connect it both to specific behaviors and to a broader table reasoning construct.\n\nSpace of uses. Papers commonly use TabFact alongside WikiTQ, and more occasionally with FeTaQA, FinQA, HiTab, and TabMWP. It is usually positioned as one component of broader evaluations across multiple table tasks, while some work uses the test-small split specifically, one paper uses it as held-in training and evaluation data, and another generates synthetic larger-table variants from TabFact, ranging from 50 \u00d7 50 to 1000 \u00d7 1000, for scalability evaluation.\n\nConcerns raised. One paper notes that, as a TableQA benchmark, TabFact features small web tables that fall within the context limits of most LMs. That paper also creates synthetic data from TabFact with larger table sizes for a scalability test.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "TabFact"
+  ],
+  "papers": [
+    "RePanda: Pandas-powered Tabular Verification and Reasoning",
+    "Table-Critic: A Multi-Agent Framework for Collaborative Criticism and Refinement in Table Reasoning",
+    "TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models",
+    "Can GRPO Boost Complex Multimodal Table Understanding?",
+    "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+    "Weaver: Interweaving SQL and LLM for Table Reasoning",
+    "ALTER: Augmentation for Large-Table-Based Reasoning",
+    "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+    "LLaSA: Large Language and Structured Data Assistant",
+    "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models",
+    "TabPedia: Towards Comprehensive Visual Table Understanding with Concept Synergy",
+    "TableRAG: Million-Token Table Understanding with Language Models"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark dataset for table-based fact verification, containing statements paired with Wikipedia tables, where the task is to determine if the statement is supported by the table.",
+      "paper": "LLaSA: Large Language and Structured Data Assistant",
+      "original_name": "TabFact"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fact checking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "evidence": "We evaluate our method on three datasets covering fact verification, short-form, and long-form question-answering tasks... (a) TabFact (Chen et al., 2019): A fact verification benchmark utilizing Wikipedia tables. (Section 3)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables"
+        ],
+        "acl25": [
+          "TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models"
+        ],
+        "emnlp25": [
+          "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+          "Can GRPO Boost Complex Multimodal Table Understanding?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Table question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "TableRAG: Million-Token Table Understanding with Language Models",
+      "evidence": "Existing TableQA benchmarks such as TabFact [2] and WikiTableQA [12] feature small web tables that fall within the context limits of most LMs (Section 4.1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "TableRAG: Million-Token Table Understanding with Language Models",
+          "TabPedia: Towards Comprehensive Visual Table Understanding with Concept Synergy"
+        ],
+        "iclr25": [
+          "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Table reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+      "evidence": "We validate CHAIN-OF-TABLE with three tabular benchmarks to evaluate table-based reasoning: WikiTQ (Pasupat & Liang, 2015), TabFact (Chen et al., 2019), and FeTaQA (Nan et al., 2022). (Section 2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding"
+        ],
+        "naacl25": [
+          "ALTER: Augmentation for Large-Table-Based Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, TabFact is most commonly described as a benchmark or dataset for table-based fact verification over Wikipedia tables, pairing tables with textual statements and asking whether each statement is supported, entailed or true, or instead refuted or false, by the table. Several papers also call it a large-scale dataset, and some describe a specific evaluation subset, the test-small set with 2,024 statements or test samples from 298 tables. A smaller line of work presents it as a public TableQA resource, describing pairs of content-related question and answer or yes or no answers for TQA evaluation."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use TabFact to measure 2 behavioral indicators and 1 construct. The prevailing measurement claim is fact checking, with papers explicitly using it for fact verification or TFV; a smaller but recurring usage treats it as measuring table question answering, including TableQA settings where the answer is yes or no. At the construct level, it is also reported as measuring table reasoning, so papers connect it both to specific behaviors and to a broader table reasoning construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers commonly use TabFact alongside WikiTQ, and more occasionally with FeTaQA, FinQA, HiTab, and TabMWP. It is usually positioned as one component of broader evaluations across multiple table tasks, while some work uses the test-small split specifically, one paper uses it as held-in training and evaluation data, and another generates synthetic larger-table variants from TabFact, ranging from 50 \u00d7 50 to 1000 \u00d7 1000, for scalability evaluation."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper notes that, as a TableQA benchmark, TabFact features small web tables that fall within the context limits of most LMs. That paper also creates synthetic data from TabFact with larger table sizes for a scalability test."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, TabFact is most commonly described as a benchmark or dataset for table-based fact verification over Wikipedia tables, pairing tables with textual statements and asking whether each statement is supported, entailed or true, or instead refuted or false, by the table. Several papers also call it a large-scale dataset, and some describe a specific evaluation subset, the test-small set with 2,024 statements or test samples from 298 tables. A smaller line of work presents it as a public TableQA resource, describing pairs of content-related question and answer or yes or no answers for TQA evaluation.\n\nWhat it is claimed to measure. Papers use TabFact to measure 2 behavioral indicators and 1 construct. The prevailing measurement claim is fact checking, with papers explicitly using it for fact verification or TFV; a smaller but recurring usage treats it as measuring table question answering, including TableQA settings where the answer is yes or no. At the construct level, it is also reported as measuring table reasoning, so papers connect it both to specific behaviors and to a broader table reasoning construct.\n\nSpace of uses. Papers commonly use TabFact alongside WikiTQ, and more occasionally with FeTaQA, FinQA, HiTab, and TabMWP. It is usually positioned as one component of broader evaluations across multiple table tasks, while some work uses the test-small split specifically, one paper uses it as held-in training and evaluation data, and another generates synthetic larger-table variants from TabFact, ranging from 50 \u00d7 50 to 1000 \u00d7 1000, for scalability evaluation.\n\nConcerns raised. One paper notes that, as a TableQA benchmark, TabFact features small web tables that fall within the context limits of most LMs. That paper also creates synthetic data from TabFact with larger table sizes for a scalability test.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "RePanda: Pandas-powered Tabular Verification and Reasoning",
+      "Table-Critic: A Multi-Agent Framework for Collaborative Criticism and Refinement in Table Reasoning",
+      "TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models"
+    ],
+    "naacl25": [
+      "ALTER: Augmentation for Large-Table-Based Reasoning",
+      "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "LLaSA: Large Language and Structured Data Assistant"
+    ],
+    "emnlp25": [
+      "Can GRPO Boost Complex Multimodal Table Understanding?",
+      "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+      "Weaver: Interweaving SQL and LLM for Table Reasoning"
+    ],
+    "neurips24": [
+      "MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models",
+      "TabPedia: Towards Comprehensive Visual Table Understanding with Concept Synergy",
+      "TableRAG: Million-Token Table Understanding with Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "naacl25": 3,
+    "emnlp25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "naacl25",
+    "neurips24"
+  ]
+}

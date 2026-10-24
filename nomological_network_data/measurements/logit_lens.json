@@ -1,0 +1,217 @@
+{
+  "canonical_name": "Logit lens",
+  "type": "measurement",
+  "canonical_definition": "Across the surveyed literature, the Logit lens is predominantly characterized as a probing or analysis technique for interpreting the internal states of transformer models. The method's core mechanism, described consistently across papers, involves applying the model's final unembedding matrix or decoder head to the hidden states of intermediate layers, thereby projecting these representations into the vocabulary space. This projection is used to visualize or decode next-token predictions at each stage of processing, with several papers describing this as a way to see what the model is \"'thinking'\" layer-by-layer. A recurring point is that this analysis can be done without any extra training. A less common framing, found in one paper, refers to this technique as \"vocabulary projection\" and notes it is \"equivalent to early exiting on the Transformer block at inference time\" ('Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions'). As a measurement instrument, the Logit lens is used to assess a range of phenomena, including `Mathematical reasoning`, `Hallucination`, `Faithfulness`, and `Hallucination detection`. The technique has also been adapted for different modalities, such as Vision Transformers, and is used alongside other methods like Sparse Autoencoders to inspect their features.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique",
+  "names": [
+    "Logit Lens",
+    "Logit lens",
+    "Vocabulary projection"
+  ],
+  "papers": [
+    "Interpret and Improve In-Context Learning via the Lens of Input-Label Mappings",
+    "Lost in Multilinguality: Dissecting Cross-lingual Factual Inconsistency in Transformer Language Models",
+    "Representation Bending for Large Language Model Safety",
+    "Linearity of Relation Decoding in Transformer Language Models",
+    "Overthinking the Truth: Understanding how Language Models Process False Demonstrations",
+    "Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions",
+    "Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics",
+    "From Tokens to Words: On the Inner Lexicon of LLMs",
+    "Interpreting and Editing Vision-Language Representations to Mitigate Hallucinations",
+    "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+    "Rethinking Evaluation of Sparse Autoencoders through the Representation of Polysemous Words",
+    "See It from My Perspective: How Language Affects Cultural Bias in Image Understanding",
+    "The Rise and Down of Babel Tower: Investigating the Evolution Process of Multilingual Code Large Language Model",
+    "The Semantic Hub Hypothesis: Language Models Share Semantic Representations Across Languages and Modalities",
+    "Towards Interpreting Visual Information Processing in Vision-Language Models",
+    "Looking Beyond the Top-1: Transformers Determine Top Tokens in Order",
+    "The Hidden Life of Tokens: Reducing Hallucination of Large Vision-Language Models Via Visual Information Steering",
+    "Vision-Language Models Create Cross-Modal Task Representations",
+    "Calibrating Reasoning in Language Models with Internal Consistency",
+    "Grokking of Implicit Reasoning in Transformers: A Mechanistic Journey to the Edge of Generalization",
+    "Pre-trained Large Language Models Use Fourier Features to Compute Addition"
+  ],
+  "paper_count": 21,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An existing probing technique that visualizes the next-token prediction information at any layer by applying the model's final decoder head to that layer's hidden state.",
+      "paper": "Linearity of Relation Decoding in Transformer Language Models",
+      "original_name": "Logit Lens"
+    },
+    {
+      "text": "A method for decoding next-token predictions from a model's intermediate hidden states by applying the final layer's normalization and unembedding matrix, used to analyze the model's computation layer-by-layer without extra training.",
+      "paper": "Overthinking the Truth: Understanding how Language Models Process False Demonstrations",
+      "original_name": "Logit lens"
+    },
+    {
+      "text": "An analysis technique, also known as 'logit lens', used to inspect a model's internal representations by projecting hidden states from any layer into the vocabulary space to see which tokens are being promoted.",
+      "paper": "Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions",
+      "original_name": "Vocabulary projection"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Modular arithmetic",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Pre-trained Large Language Models Use Fourier Features to Compute Addition",
+      "evidence": "Next, we analyze the contributions of individual model components using Logit Lens [3]. We observe that some components primarily approximate the answer\u2014they promote all numbers close to the correct answer in magnitude\u2014 while other components primarily classify the answer modulo m for various numbers m.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Pre-trained Large Language Models Use Fourier Features to Compute Addition"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Calibration",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Calibration Across Layers: Understanding Calibration Evolution in LLMs",
+      "evidence": "To understand how calibration varies across layers, we take inspiration from the approach by Logit Lens (nostalgebraist, 2020), computing accuracy at different layers of the transformer.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Calibration Across Layers: Understanding Calibration Evolution in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Factual recall",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Paths Not Taken: Understanding and Mending the Multilingual Factual Recall Pipeline",
+      "evidence": "\"To track this behavior, we further use the logit lens as a diagnostic tool to quantify the rate of relation propagation and answer extraction across layers.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Paths Not Taken: Understanding and Mending the Multilingual Factual Recall Pipeline"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "The Impact of Negated Text on Hallucination with Large Language Models",
+      "evidence": "We employ a lens observation method to analyze LLMs\u2019 processing of pre- and post-negated text across layers. The Logit Lens (nostalgebraist, 2020; Dar et al., 2023) projects internal model states onto the vocabulary space, tracking prediction changes layer by layer.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "The Impact of Negated Text on Hallucination with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "All for One: LLMs Solve Mental Math at the Last Token With Information Transferred From Other Tokens",
+      "evidence": "We probe the final token\u2019s residual stream at each layer using logit lens analysis, which projects the residual stream values after each MLP layer to the vocabulary space with the unembedding matrix (nostalgebraist, 2020) (Section 4.5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "All for One: LLMs Solve Mental Math at the Last Token With Information Transferred From Other Tokens"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "evidence": "The logit lens has been leveraged to investigate LLMs\u2019 knowledge store and recall mechanisms (Haviv et al., 2023; Yu et al., 2023) and safety issues, such as hallucinations",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Latent reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Unveiling Internal Reasoning Modes in LLMs: A Deep Dive into Latent Reasoning vs. Factual Shortcuts with Attribute Rate Ratio",
+      "evidence": "\u201cwe interpret the hidden states at the subject position using the logit lens (Nostalgebraist, 2020)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Unveiling Internal Reasoning Modes in LLMs: A Deep Dive into Latent Reasoning vs. Factual Shortcuts with Attribute Rate Ratio"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 7,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, the Logit lens is predominantly characterized as a probing or analysis technique for interpreting the internal states of transformer models. The method's core mechanism, described consistently across papers, involves applying the model's final unembedding matrix or decoder head to the hidden states of intermediate layers, thereby projecting these representations into the vocabulary space. This projection is used to visualize or decode next-token predictions at each stage of processing, with several papers describing this as a way to see what the model is \"'thinking'\" layer-by-layer. A recurring point is that this analysis can be done without any extra training. A less common framing, found in one paper, refers to this technique as \"vocabulary projection\" and notes it is \"equivalent to early exiting on the Transformer block at inference time\" ('Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions'). As a measurement instrument, the Logit lens is used to assess a range of phenomena, including `Mathematical reasoning`, `Hallucination`, `Faithfulness`, and `Hallucination detection`. The technique has also been adapted for different modalities, such as Vision Transformers, and is used alongside other methods like Sparse Autoencoders to inspect their features.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Interpret and Improve In-Context Learning via the Lens of Input-Label Mappings",
+      "Lost in Multilinguality: Dissecting Cross-lingual Factual Inconsistency in Transformer Language Models",
+      "Representation Bending for Large Language Model Safety"
+    ],
+    "iclr24": [
+      "Linearity of Relation Decoding in Transformer Language Models",
+      "Overthinking the Truth: Understanding how Language Models Process False Demonstrations"
+    ],
+    "iclr25": [
+      "Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions",
+      "Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics",
+      "From Tokens to Words: On the Inner Lexicon of LLMs",
+      "Interpreting and Editing Vision-Language Representations to Mitigate Hallucinations",
+      "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+      "Rethinking Evaluation of Sparse Autoencoders through the Representation of Polysemous Words",
+      "See It from My Perspective: How Language Affects Cultural Bias in Image Understanding",
+      "The Rise and Down of Babel Tower: Investigating the Evolution Process of Multilingual Code Large Language Model",
+      "The Semantic Hub Hypothesis: Language Models Share Semantic Representations Across Languages and Modalities",
+      "Towards Interpreting Visual Information Processing in Vision-Language Models"
+    ],
+    "icml25": [
+      "Looking Beyond the Top-1: Transformers Determine Top Tokens in Order",
+      "The Hidden Life of Tokens: Reducing Hallucination of Large Vision-Language Models Via Visual Information Steering",
+      "Vision-Language Models Create Cross-Modal Task Representations"
+    ],
+    "neurips24": [
+      "Calibrating Reasoning in Language Models with Internal Consistency",
+      "Grokking of Implicit Reasoning in Transformers: A Mechanistic Journey to the Edge of Generalization",
+      "Pre-trained Large Language Models Use Fourier Features to Compute Addition"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr24": 2,
+    "iclr25": 10,
+    "icml25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

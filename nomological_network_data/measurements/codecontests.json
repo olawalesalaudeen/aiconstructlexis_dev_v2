@@ -1,0 +1,173 @@
+{
+  "canonical_name": "CodeContests",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most commonly, papers treat CodeContests as a benchmark or dataset of challenging competitive programming problems for code generation. Definitions also describe it as a competitive programming dataset in which each problem comes with multiple human-written correct and incorrect solutions, and one line of work further divides the test problems into basic and advanced levels by difficulty tags. Some papers describe the task as generating code from natural language problem statements, sometimes with public test-case descriptions, with evaluation against private test cases, and some studies use subsets rather than the full benchmark.\n\nWhat it is claimed to measure. Across reported relationships, papers link CodeContests to 2 behavioral indicators and 2 constructs. The prevailing use is to measure code generation, and a smaller line of work reports it as measuring coding; these claims are framed through benchmark performance or pass@k evaluation on test problems. Single-paper claims also report that it measures algorithmic reasoning, because competition-level benchmarks \"require algorithmic reasoning,\" and factuality, where generated code is checked against private test cases for execution correctness.\n\nSpace of uses. Papers usually use CodeContests alongside other code benchmarks, most often APPS, HumanEval, and MBPP, with some studies also pairing it with LiveCode or Leetcode. In these setups it is positioned as one of several evaluation benchmarks for code-generation methods, though some papers use it more specifically as the source distribution for a code generation task or evaluate on selected test subsets and difficulty-based partitions.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "CodeContests",
+    "CodeContests dataset",
+    "CodeContest"
+  ],
+  "papers": [
+    "AgentRM: Enhancing Agent Generalization with Reward Modeling",
+    "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+    "Planning-Driven Programming: A Large Language Model Programming Workflow",
+    "Generative Monoculture in Large Language Models",
+    "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+    "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+    "What Makes Large Language Models Reason in (Multi-Turn) Code Generation?",
+    "An Architecture Search Framework for Inference-Time Techniques",
+    "Improving Diversity in Language Models: When Temperature Fails, Change the Loss",
+    "Multi-Turn Code Generation Through Single-Step Rewards",
+    "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+    "Position: Future Research and Challenges Remain Towards AI for Software Engineering",
+    "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+    "Teaching Language Models to Critique via Reinforcement Learning"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark dataset featuring challenging programming problems from code competitions.",
+      "paper": "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+      "original_name": "CodeContests"
+    },
+    {
+      "text": "A competitive programming dataset containing problems with multiple human-written correct and incorrect solutions, used as the source distribution (Dsrc) for the code generation task.",
+      "paper": "Generative Monoculture in Large Language Models",
+      "original_name": "CodeContests dataset"
+    },
+    {
+      "text": "A benchmark dataset for code generation that includes test problems divided into basic and advanced levels based on their difficulty tags.",
+      "paper": "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+      "original_name": "CodeContest"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Generative Monoculture in Large Language Models",
+      "evidence": "\u201cFor Dsrc, we chose the CodeContests dataset (Li et al., 2022), a competitive programming problem dataset where each problem comes with multiple correct and incorrect solutions.\u201d",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generative Monoculture in Large Language Models"
+        ],
+        "naacl25": [
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ],
+        "acl25": [
+          "Planning-Driven Programming: A Large Language Model Programming Workflow"
+        ],
+        "icml25": [
+          "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+          "Improving Diversity in Language Models: When Temperature Fails, Change the Loss"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Algorithmic reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "What Makes Large Language Models Reason in (Multi-Turn) Code Generation?",
+      "evidence": "complex algorithmic reasoning tasks, such as those found in competitive programming benchmarks like CodeContests",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "What Makes Large Language Models Reason in (Multi-Turn) Code Generation?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Coding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "An Architecture Search Framework for Inference-Time Techniques",
+      "evidence": "For our analysis, we look at seven datasets spanning instruction-following, reasoning, mathematics, and coding: MT-Bench (Zheng et al., 2023), AlpacaEval 2.0 (Li et al., 2023), Arena Hard Auto (Li et al., 2024b), MixEval (Ni et al., 2024), MixEval-Hard, MATH (Hendrycks et al., 2021), and CodeContests (Li et al., 2022). (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Functional correctness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "CodeChain: Towards Modular Code Generation Through Chain of Self-revisions with Representative Sub-modules",
+      "evidence": "Generated codes are evaluated against (private) test cases to check the execution correctness (Hendrycks et al., 2021; Chen et al., 2021; Li et al., 2022) (Section 3.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "CodeChain: Towards Modular Code Generation Through Chain of Self-revisions with Representative Sub-modules"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most commonly, papers treat CodeContests as a benchmark or dataset of challenging competitive programming problems for code generation. Definitions also describe it as a competitive programming dataset in which each problem comes with multiple human-written correct and incorrect solutions, and one line of work further divides the test problems into basic and advanced levels by difficulty tags. Some papers describe the task as generating code from natural language problem statements, sometimes with public test-case descriptions, with evaluation against private test cases, and some studies use subsets rather than the full benchmark."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across reported relationships, papers link CodeContests to 2 behavioral indicators and 2 constructs. The prevailing use is to measure code generation, and a smaller line of work reports it as measuring coding; these claims are framed through benchmark performance or pass@k evaluation on test problems. Single-paper claims also report that it measures algorithmic reasoning, because competition-level benchmarks \"require algorithmic reasoning,\" and factuality, where generated code is checked against private test cases for execution correctness."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers usually use CodeContests alongside other code benchmarks, most often APPS, HumanEval, and MBPP, with some studies also pairing it with LiveCode or Leetcode. In these setups it is positioned as one of several evaluation benchmarks for code-generation methods, though some papers use it more specifically as the source distribution for a code generation task or evaluate on selected test subsets and difficulty-based partitions."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most commonly, papers treat CodeContests as a benchmark or dataset of challenging competitive programming problems for code generation. Definitions also describe it as a competitive programming dataset in which each problem comes with multiple human-written correct and incorrect solutions, and one line of work further divides the test problems into basic and advanced levels by difficulty tags. Some papers describe the task as generating code from natural language problem statements, sometimes with public test-case descriptions, with evaluation against private test cases, and some studies use subsets rather than the full benchmark.\n\nWhat it is claimed to measure. Across reported relationships, papers link CodeContests to 2 behavioral indicators and 2 constructs. The prevailing use is to measure code generation, and a smaller line of work reports it as measuring coding; these claims are framed through benchmark performance or pass@k evaluation on test problems. Single-paper claims also report that it measures algorithmic reasoning, because competition-level benchmarks \"require algorithmic reasoning,\" and factuality, where generated code is checked against private test cases for execution correctness.\n\nSpace of uses. Papers usually use CodeContests alongside other code benchmarks, most often APPS, HumanEval, and MBPP, with some studies also pairing it with LiveCode or Leetcode. In these setups it is positioned as one of several evaluation benchmarks for code-generation methods, though some papers use it more specifically as the source distribution for a code generation task or evaluate on selected test subsets and difficulty-based partitions.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "AgentRM: Enhancing Agent Generalization with Reward Modeling",
+      "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+      "Planning-Driven Programming: A Large Language Model Programming Workflow"
+    ],
+    "iclr25": [
+      "Generative Monoculture in Large Language Models",
+      "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+      "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+      "What Makes Large Language Models Reason in (Multi-Turn) Code Generation?"
+    ],
+    "icml25": [
+      "An Architecture Search Framework for Inference-Time Techniques",
+      "Improving Diversity in Language Models: When Temperature Fails, Change the Loss",
+      "Multi-Turn Code Generation Through Single-Step Rewards",
+      "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+      "Position: Future Research and Challenges Remain Towards AI for Software Engineering",
+      "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+      "Teaching Language Models to Critique via Reinforcement Learning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 4,
+    "icml25": 7
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "icml25"
+  ]
+}

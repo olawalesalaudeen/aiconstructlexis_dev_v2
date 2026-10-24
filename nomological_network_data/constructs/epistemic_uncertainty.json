@@ -1,0 +1,165 @@
+{
+  "canonical_name": "Epistemic uncertainty",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats epistemic uncertainty as reducible, model-specific uncertainty about a model's own prediction, arising from ambiguity or lack of knowledge rather than token-level likelihood alone. Definitions in this vein describe it as the model not knowing something, or as lack of model knowledge within the model's parameters. A smaller line of work instead uses a parameter-focused definition, describing epistemic uncertainty, or weight uncertainty, as uncertainty in model parameters or parameter estimates, represented by a posterior over weights and diminishing with more data.\n\nSpace of facets. Papers systematize the concept mainly through contrasts and alternate labels. One recurring contrast separates epistemic uncertainty from token-level or lexical confidence, with next-token likelihood described as lexical confidence rather than epistemic uncertainty. Some authors use parameter uncertainty and weight uncertainty for the parameter-focused version of the construct, and one paper relates it to Parametric Knowledge Boundary by treating it as model-specific lack of knowledge.\n\nSpace of measurement. No measurement instrument is linked to this construct. Operationalization is instead described in text: one paper treats differences among kpred and kconf quantities as a form of epistemic uncertainty, while parameter-focused papers model it through uncertainty over parameters or weights, using a posterior or predictive posterior over weights or parameters. It is linked to 2 behavioral indicators, Hallucination and Out-of-distribution detection, and 3 constructs, Calibration, Generation diversity, and Robustness, but papers connect these as outcomes or related properties rather than as direct measures.\n\nLinks. Papers mainly connect epistemic uncertainty to downstream generation and uncertainty-estimation outcomes. One paper claims a causal relationship from it, in the form of accounting for weight uncertainty, to Hallucination, Calibration, and Robustness, reporting reduced hallucinations, improved calibration, and more robust language generation when weight uncertainty is accounted for. Another paper claims a causal relationship from it to Out-of-distribution detection, describing epistemic uncertainty as an improved indicator, and one paper relates it to Generation diversity through a report that uncertainty-aware MBR performance is highly correlated with prediction diversity across combined models.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Epistemic uncertainty",
+    "Epistemic Uncertainty",
+    "Weight uncertainty"
+  ],
+  "papers": [
+    "Knowledge Boundary of Large Language Models: A Survey",
+    "Simple Yet Effective: An Information-Theoretic Approach to Multi-LLM Uncertainty Quantification",
+    "Confidence Elicitation: A New Attack Vector for Large Language Models",
+    "Scalable Bayesian Learning with posteriors",
+    "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+    "Position: Uncertainty Quantification Needs Reassessment for Large Language Model Agents"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The model's uncertainty about its own prediction that reflects ambiguity or lack of knowledge rather than token-level likelihood alone.",
+      "paper": "Confidence Elicitation: A New Attack Vector for Large Language Models",
+      "original_name": "Epistemic uncertainty"
+    },
+    {
+      "text": "Uncertainty in the model parameters that diminishes with more data, serving as an indicator of model uncertainty in predictions.",
+      "paper": "Scalable Bayesian Learning with posteriors",
+      "original_name": "Epistemic Uncertainty"
+    },
+    {
+      "text": "The uncertainty associated with the model's parameter estimates, modeled as a posterior distribution over the weights.",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "original_name": "Weight uncertainty"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "evidence": "Overall, we find strong evidence that accounting for weight uncertainty can improve decoding and reduce hallucinations when finetuning and pretraining from scratch, even without computational overhead. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "evidence": "Overall, we find that the uncertainty-aware variant of MBR proposed in this paper leads to better and more robust language generation. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "evidence": "The performance of uncertainty-aware MBR is highly correlated with the prediction diversity across the combined models. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Out-of-distribution detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Scalable Bayesian Learning with posteriors",
+      "evidence": "\u201cepistemic uncertainty providing an improved indicator for out-of-distribution detection.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scalable Bayesian Learning with posteriors"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats epistemic uncertainty as reducible, model-specific uncertainty about a model's own prediction, arising from ambiguity or lack of knowledge rather than token-level likelihood alone. Definitions in this vein describe it as the model not knowing something, or as lack of model knowledge within the model's parameters. A smaller line of work instead uses a parameter-focused definition, describing epistemic uncertainty, or weight uncertainty, as uncertainty in model parameters or parameter estimates, represented by a posterior over weights and diminishing with more data."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers systematize the concept mainly through contrasts and alternate labels. One recurring contrast separates epistemic uncertainty from token-level or lexical confidence, with next-token likelihood described as lexical confidence rather than epistemic uncertainty. Some authors use parameter uncertainty and weight uncertainty for the parameter-focused version of the construct, and one paper relates it to Parametric Knowledge Boundary by treating it as model-specific lack of knowledge."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to this construct. Operationalization is instead described in text: one paper treats differences among kpred and kconf quantities as a form of epistemic uncertainty, while parameter-focused papers model it through uncertainty over parameters or weights, using a posterior or predictive posterior over weights or parameters. It is linked to 2 behavioral indicators, Hallucination and Out-of-distribution detection, and 3 constructs, Calibration, Generation diversity, and Robustness, but papers connect these as outcomes or related properties rather than as direct measures."
+    },
+    {
+      "label": "Links.",
+      "text": "Papers mainly connect epistemic uncertainty to downstream generation and uncertainty-estimation outcomes. One paper claims a causal relationship from it, in the form of accounting for weight uncertainty, to Hallucination, Calibration, and Robustness, reporting reduced hallucinations, improved calibration, and more robust language generation when weight uncertainty is accounted for. Another paper claims a causal relationship from it to Out-of-distribution detection, describing epistemic uncertainty as an improved indicator, and one paper relates it to Generation diversity through a report that uncertainty-aware MBR performance is highly correlated with prediction diversity across combined models."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define epistemic uncertainty as model-specific uncertainty caused by lack of knowledge, often emphasizing that it is reducible with more data and formalized as uncertainty in the model\u2019s parameters or weight posterior. A few frame it instead as uncertainty in the model\u2019s predictions or add ambiguity, so the definitions foreground different aspects and levels of the same phenomenon rather than using incompatible meanings.",
+    "papers_with_definition": 5,
+    "runs": [
+      "complementary",
+      "complementary",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats epistemic uncertainty as reducible, model-specific uncertainty about a model's own prediction, arising from ambiguity or lack of knowledge rather than token-level likelihood alone. Definitions in this vein describe it as the model not knowing something, or as lack of model knowledge within the model's parameters. A smaller line of work instead uses a parameter-focused definition, describing epistemic uncertainty, or weight uncertainty, as uncertainty in model parameters or parameter estimates, represented by a posterior over weights and diminishing with more data.\n\nSpace of facets. Papers systematize the concept mainly through contrasts and alternate labels. One recurring contrast separates epistemic uncertainty from token-level or lexical confidence, with next-token likelihood described as lexical confidence rather than epistemic uncertainty. Some authors use parameter uncertainty and weight uncertainty for the parameter-focused version of the construct, and one paper relates it to Parametric Knowledge Boundary by treating it as model-specific lack of knowledge.\n\nSpace of measurement. No measurement instrument is linked to this construct. Operationalization is instead described in text: one paper treats differences among kpred and kconf quantities as a form of epistemic uncertainty, while parameter-focused papers model it through uncertainty over parameters or weights, using a posterior or predictive posterior over weights or parameters. It is linked to 2 behavioral indicators, Hallucination and Out-of-distribution detection, and 3 constructs, Calibration, Generation diversity, and Robustness, but papers connect these as outcomes or related properties rather than as direct measures.\n\nLinks. Papers mainly connect epistemic uncertainty to downstream generation and uncertainty-estimation outcomes. One paper claims a causal relationship from it, in the form of accounting for weight uncertainty, to Hallucination, Calibration, and Robustness, reporting reduced hallucinations, improved calibration, and more robust language generation when weight uncertainty is accounted for. Another paper claims a causal relationship from it to Out-of-distribution detection, describing epistemic uncertainty as an improved indicator, and one paper relates it to Generation diversity through a report that uncertainty-aware MBR performance is highly correlated with prediction diversity across combined models.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Knowledge Boundary of Large Language Models: A Survey"
+    ],
+    "emnlp25": [
+      "Simple Yet Effective: An Information-Theoretic Approach to Multi-LLM Uncertainty Quantification"
+    ],
+    "iclr25": [
+      "Confidence Elicitation: A New Attack Vector for Large Language Models",
+      "Scalable Bayesian Learning with posteriors",
+      "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+    ],
+    "icml25": [
+      "Position: Uncertainty Quantification Needs Reassessment for Large Language Model Agents"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 1,
+    "iclr25": 3,
+    "icml25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

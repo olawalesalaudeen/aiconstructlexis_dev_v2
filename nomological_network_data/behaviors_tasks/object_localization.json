@@ -1,0 +1,237 @@
+{
+  "canonical_name": "Object localization",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats this as locating an object or set of objects in an image, and sometimes a video frame, by returning spatial coordinates, most often bounding boxes. Several definitions make the box output explicit, with one specifying a 4-tuple of upper-left and lower-right coordinates, while another asks for approximate coordinates under a defined coordinate system. Smaller lines of work broaden the output to masks or to a textual statement of a defect\u2019s location, and some formulations narrow the task to a single object or a referred region described in language.\n\nVariants. Papers study several specialized forms of this behavior, including bounding box prediction for a region named in a sentence, instance localization from a reference image, building localization in earth-observation images, text localization in interfaces, and defect localization in anomaly images. Other formulations extend the same locating behavior to GUI element selection and to determining object position or arrangement in an image. One related paper contrasts it with reasoning segmentation, noting that the latter only allows single object localization.\n\nSpace of elicitation and scores. Papers link this behavior to 5 measurement instruments: Human evaluation, MM-ID, RefCOCO, RefCOCO+, and RefCOCOg. The dominant pattern is use of specific named evaluations for localization, while one paper also uses human evaluation. MM-ID is described as covering a \"location\" level of competency, and other papers measure object localization with RefCOCO, RefCOCO+, and RefCOCOg.\n\nWhat it is taken as evidence of. Rather than pointing to one recurring construct, papers relate this behavior to 2 constructs: Spatial reasoning and Visual grounding. The spatial-reasoning link is phrased as spatial object localization helping models learn spatial reasoning, while the visual-grounding link appears in work where a grounding module predicts bounding box annotations to provide precise visual focus. This leaves the construct interpretation mixed rather than uniform across papers.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Object localization",
+    "Building localization",
+    "Defect localization",
+    "Instance localization",
+    "Text localization",
+    "Positioning",
+    "Bounding box prediction",
+    "Element identification",
+    "GUI element localization"
+  ],
+  "papers": [
+    "Multimodal Language Models See Better When They Look Shallower",
+    "SilVar: Speech-Driven Multimodal Model for Reasoning Visual Question Answering and Object Localization",
+    "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+    "Look, Remember and Reason: Grounded Reasoning in Videos with Language Models",
+    "Feast Your Eyes:  Mixture-of-Resolution Adaptation for Multimodal Large Language Models",
+    "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+    "Grounding Multimodal Large Language Model in GUI World",
+    "IDA-VLM: Towards Movie Understanding via ID-Aware Large Vision-Language Model",
+    "Interpreting and Editing Vision-Language Representations to Mitigate Hallucinations",
+    "LLaRA: Supercharging Robot Learning Data for Vision-Language Policy",
+    "Locality Alignment Improves Vision-Language Models",
+    "MMAD: A Comprehensive Benchmark for Multimodal Large Language Models in Industrial Anomaly Detection",
+    "Multi-modal Agent Tuning: Building a VLM-Driven Agent for Efficient Tool Usage",
+    "TEOChat: A Large Vision-Language Assistant for Temporal Earth Observation Data",
+    "ThinkBot: Embodied Instruction Following with Thought Chain Reasoning",
+    "Open-Det: An Efficient Learning Framework for Open-Ended Detection",
+    "MLLM-Bench: Evaluating Multimodal LLMs with Per-sample Criteria",
+    "Instruction-Guided Visual Masking",
+    "Prism: A Framework for Decoupling and Assessing the Capabilities of VLMs",
+    "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks"
+  ],
+  "paper_count": 20,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of identifying the position of one or more objects within an image, typically by outputting bounding boxes.",
+      "paper": "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+      "original_name": "Object localization"
+    },
+    {
+      "text": "Predicting bounding boxes for buildings visible in an earth-observation image region.",
+      "paper": "TEOChat: A Large Vision-Language Assistant for Temporal Earth Observation Data",
+      "original_name": "Building localization"
+    },
+    {
+      "text": "Producing coordinate boxes that localize a referred region in an image.",
+      "paper": "Feast Your Eyes:  Mixture-of-Resolution Adaptation for Multimodal Large Language Models",
+      "original_name": "Bounding box prediction"
+    },
+    {
+      "text": "The observable task of identifying the spatial position of a defect within an image, typically expressed through textual description.",
+      "paper": "MMAD: A Comprehensive Benchmark for Multimodal Large Language Models in Industrial Anomaly Detection",
+      "original_name": "Defect localization"
+    },
+    {
+      "text": "The observable task of identifying and providing the bounding box coordinates for a specific instance within a test image, based on a provided reference image of that instance.",
+      "paper": "IDA-VLM: Towards Movie Understanding via ID-Aware Large Vision-Language Model",
+      "original_name": "Instance localization"
+    },
+    {
+      "text": "The task of finding the location (i.e., bounding box) of a piece of text specified in a query.",
+      "paper": "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+      "original_name": "Text localization"
+    },
+    {
+      "text": "The observable task of determining the spatial location or arrangement of objects in an image.",
+      "paper": "Multimodal Language Models See Better When They Look Shallower",
+      "original_name": "Positioning"
+    },
+    {
+      "text": "The action of correctly selecting or pointing to a specific GUI element based on a textual description or query.",
+      "paper": "Grounding Multimodal Large Language Model in GUI World",
+      "original_name": "Element identification"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning segmentation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Instruction-Guided Visual Masking",
+      "evidence": "RS has reasoning ability, but only allows single object localization. (Figure 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Instruction-Guided Visual Masking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Locality Alignment Improves Vision-Language Models",
+      "evidence": "Benchmarks that involve spatial understanding and fine-grained features include object localization (RefCOCO, OCID-Ref; Kazemzadeh et al. 2014; Wang et al. 2021)... (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Locality Alignment Improves Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MM-ID",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IDA-VLM: Towards Movie Understanding via ID-Aware Large Vision-Language Model",
+      "evidence": "\"MM-ID dissects LVLMs\u2019 competency across four progressively complex levels: matching, location, question-answering, and captioning.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "IDA-VLM: Towards Movie Understanding via ID-Aware Large Vision-Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual grounding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Taking Notes Brings Focus? Towards Multi-Turn Multimodal Dialogue Learning",
+      "evidence": "a grounding module (Gaze) provides precise visual focus by predicting bounding box annotations. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Taking Notes Brings Focus? Towards Multi-Turn Multimodal Dialogue Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spatial reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SilVar: Speech-Driven Multimodal Model for Reasoning Visual Question Answering and Object Localization",
+      "evidence": "spatial object localization (2,361 samples), which helps models learn spatial reasoning (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SilVar: Speech-Driven Multimodal Model for Reasoning Visual Question Answering and Object Localization"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats this as locating an object or set of objects in an image, and sometimes a video frame, by returning spatial coordinates, most often bounding boxes. Several definitions make the box output explicit, with one specifying a 4-tuple of upper-left and lower-right coordinates, while another asks for approximate coordinates under a defined coordinate system. Smaller lines of work broaden the output to masks or to a textual statement of a defect\u2019s location, and some formulations narrow the task to a single object or a referred region described in language."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several specialized forms of this behavior, including bounding box prediction for a region named in a sentence, instance localization from a reference image, building localization in earth-observation images, text localization in interfaces, and defect localization in anomaly images. Other formulations extend the same locating behavior to GUI element selection and to determining object position or arrangement in an image. One related paper contrasts it with reasoning segmentation, noting that the latter only allows single object localization."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 5 measurement instruments: Human evaluation, MM-ID, RefCOCO, RefCOCO+, and RefCOCOg. The dominant pattern is use of specific named evaluations for localization, while one paper also uses human evaluation. MM-ID is described as covering a \"location\" level of competency, and other papers measure object localization with RefCOCO, RefCOCO+, and RefCOCOg."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Rather than pointing to one recurring construct, papers relate this behavior to 2 constructs: Spatial reasoning and Visual grounding. The spatial-reasoning link is phrased as spatial object localization helping models learn spatial reasoning, while the visual-grounding link appears in work where a grounding module predicts bounding box annotations to provide precise visual focus. This leaves the construct interpretation mixed rather than uniform across papers."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats this as locating an object or set of objects in an image, and sometimes a video frame, by returning spatial coordinates, most often bounding boxes. Several definitions make the box output explicit, with one specifying a 4-tuple of upper-left and lower-right coordinates, while another asks for approximate coordinates under a defined coordinate system. Smaller lines of work broaden the output to masks or to a textual statement of a defect\u2019s location, and some formulations narrow the task to a single object or a referred region described in language.\n\nVariants. Papers study several specialized forms of this behavior, including bounding box prediction for a region named in a sentence, instance localization from a reference image, building localization in earth-observation images, text localization in interfaces, and defect localization in anomaly images. Other formulations extend the same locating behavior to GUI element selection and to determining object position or arrangement in an image. One related paper contrasts it with reasoning segmentation, noting that the latter only allows single object localization.\n\nSpace of elicitation and scores. Papers link this behavior to 5 measurement instruments: Human evaluation, MM-ID, RefCOCO, RefCOCO+, and RefCOCOg. The dominant pattern is use of specific named evaluations for localization, while one paper also uses human evaluation. MM-ID is described as covering a \"location\" level of competency, and other papers measure object localization with RefCOCO, RefCOCO+, and RefCOCOg.\n\nWhat it is taken as evidence of. Rather than pointing to one recurring construct, papers relate this behavior to 2 constructs: Spatial reasoning and Visual grounding. The spatial-reasoning link is phrased as spatial object localization helping models learn spatial reasoning, while the visual-grounding link appears in work where a grounding module predicts bounding box annotations to provide precise visual focus. This leaves the construct interpretation mixed rather than uniform across papers.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Multimodal Language Models See Better When They Look Shallower",
+      "SilVar: Speech-Driven Multimodal Model for Reasoning Visual Question Answering and Object Localization"
+    ],
+    "iclr24": [
+      "GENOME: Generative Neuro-Symbolic Visual Reasoning by Growing and Reusing Modules",
+      "Look, Remember and Reason: Grounded Reasoning in Videos with Language Models"
+    ],
+    "iclr25": [
+      "Feast Your Eyes:  Mixture-of-Resolution Adaptation for Multimodal Large Language Models",
+      "Ferret-UI 2: Mastering Universal User Interface Understanding Across Platforms",
+      "Grounding Multimodal Large Language Model in GUI World",
+      "IDA-VLM: Towards Movie Understanding via ID-Aware Large Vision-Language Model",
+      "Interpreting and Editing Vision-Language Representations to Mitigate Hallucinations",
+      "LLaRA: Supercharging Robot Learning Data for Vision-Language Policy",
+      "Locality Alignment Improves Vision-Language Models",
+      "MMAD: A Comprehensive Benchmark for Multimodal Large Language Models in Industrial Anomaly Detection",
+      "Multi-modal Agent Tuning: Building a VLM-Driven Agent for Efficient Tool Usage",
+      "TEOChat: A Large Vision-Language Assistant for Temporal Earth Observation Data",
+      "ThinkBot: Embodied Instruction Following with Thought Chain Reasoning"
+    ],
+    "neurips24": [
+      "Instruction-Guided Visual Masking",
+      "Prism: A Framework for Decoupling and Assessing the Capabilities of VLMs",
+      "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks"
+    ],
+    "naacl25": [
+      "MLLM-Bench: Evaluating Multimodal LLMs with Per-sample Criteria"
+    ],
+    "icml25": [
+      "Open-Det: An Efficient Learning Framework for Open-Ended Detection"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 2,
+    "iclr25": 11,
+    "neurips24": 3,
+    "naacl25": 1,
+    "icml25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "canonical_name": "Llama Guard",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, the prevailing usage treats Llama Guard as an LLM-based or model-based safety classifier, guardrail, or safeguard for prompts and responses. Definitions describe it as judging whether outputs are harmful, unsafe, safe, or harmless, and also as an evaluation tool that can calculate Attack Success Rate by classifying response harmfulness. A smaller line names 7B variants, LLaMA Guard 7B or LlamaGuard-7B, as open-source guard models or dedicated safety classifiers; other papers describe it as a pretrained content-moderation guardrail, an input-output safeguard used as an NSFW filter, or a safety mechanism deployed on selected communication edges in multi-agent systems.\n\nWhat it is claimed to measure. Papers link Llama Guard to 2 constructs and 3 behavioral indicators. The most recurring measurement claim is Harmlessness, where papers use Llama-Guard to determine the safety of the responses; other papers report it as measuring Toxicity, Harmful content generation, Jailbreaking, and Safety classifier evasion. Overall, the measurement claims are spread across several safety-related targets rather than centered on a single construct.\n\nSpace of uses. Papers typically use it as a judgment model or filter: prompts and responses are classified with it, VLM harmfulness is scored through ASR via it, and one paper applies it as an NSFW filter to collected user prompts. Some work uses it alongside GPT-4, ShieldGemma, and other open-source guard models, while other papers position it as a baseline for agent safety tasks or as a safety mechanism on selected edges in multi-agent systems. Papers do not link it to any other measurement instrument.\n\nConcerns raised. Concerns center on task fit and robustness. One paper says LlamaGuard was designed to detect harmful content in LLM inputs and outputs and \"is not aligned with the safety guard requests for agents,\" and another reports that safety mechanisms including Llama-Guard \"fail to defend against our attack.\" A further line of work evaluates bypass rate, defined as cases where a malicious request is classified as safe.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Llama Guard",
+    "LLaMA Guard 7B",
+    "LlamaGuard",
+    "Llama-Guard",
+    "LlamaGuard-7B"
+  ],
+  "papers": [
+    "Adversarial Tokenization",
+    "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks",
+    "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization",
+    "PLLuM-Align: Polish Preference Dataset for Large Language Model Alignment",
+    "SAFENUDGE: Safeguarding Large Language Models in Real-time with Tunable Safety-Performance Trade-offs",
+    "SafeScientist: Enhancing AI Scientist Safety for Risk-Aware Scientific Discovery",
+    "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+    "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning",
+    "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights",
+    "Emoji Attack: Enhancing Jailbreak Attacks Against Judge LLM Detection",
+    "FlipAttack: Jailbreak LLMs via Flipping",
+    "GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning",
+    "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+    "Position: Beyond Assistance \u2013 Reimagining LLMs as Ethical and Adaptive Co-Creators in Mental Health Care",
+    "GenAI Arena: An Open Evaluation Platform for Generative Models",
+    "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+    "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An evaluation tool used to classify model responses and calculate the Attack Success Rate (ASR) by determining if an output is harmful.",
+      "paper": "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "original_name": "Llama Guard"
+    },
+    {
+      "text": "A 7-billion parameter open-source guard model used as an instrument to evaluate the effectiveness of jailbreak attacks at bypassing safety filters.",
+      "paper": "FlipAttack: Jailbreak LLMs via Flipping",
+      "original_name": "LLaMA Guard 7B"
+    },
+    {
+      "text": "Pretrained LLM-based guardrail system designed for content moderation in text, used here as a baseline to test its applicability to agent safety tasks.",
+      "paper": "GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning",
+      "original_name": "LlamaGuard"
+    },
+    {
+      "text": "A model-based evaluation tool used to classify the safety and harmlessness of LLM-generated responses.",
+      "paper": "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization",
+      "original_name": "Llama-Guard"
+    },
+    {
+      "text": "An LLM-based safety classifier used to judge whether prompts or responses are unsafe.",
+      "paper": "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+      "original_name": "LlamaGuard-7B"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights",
+      "evidence": "For harmlessness evaluation, we ... used Llama-Guard (Inan et al., 2023) to determine the safety of the responses...",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights"
+        ],
+        "emnlp25": [
+          "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreaking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Jailbreaking as a Reward Misspecification Problem",
+      "evidence": "For LLM-based evaluation, we employ LlamaGuard (Inan et al., 2023) and GPT-4 (Souly et al., 2024) to assess whether the response is safe for the given instruction. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreaking as a Reward Misspecification Problem"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Toxicity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning",
+      "evidence": "To measure effectiveness of each method, we compute the toxicity rate which is the percentage of generated prompts that are toxic. We consider a prompt toxic if the toxicity classifier $p_\\psi$ assigns a score greater than 0.5 to an input pair consisting of the prompt x and response y generated by the target LLM. For $p_\\psi$, we use a RoBERTa hate speech classifier (Vidgen et al., 2021) for GPT-2 and dolly-v2-7b, and Llama-Guard (Inan et al., 2023) for Llama-2-7b-chat, Llama-3.1-8B-Instruct, and Gemma-2b-it.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "evidence": "To evaluate the VLM output harmfulness, we use the Attack Success Rate (ASR) metric via Llama Guard (Inan et al., 2023), following prior works (Zou et al., 2023; Shayegani et al., 2024; Luo et al., 2024). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, the prevailing usage treats Llama Guard as an LLM-based or model-based safety classifier, guardrail, or safeguard for prompts and responses. Definitions describe it as judging whether outputs are harmful, unsafe, safe, or harmless, and also as an evaluation tool that can calculate Attack Success Rate by classifying response harmfulness. A smaller line names 7B variants, LLaMA Guard 7B or LlamaGuard-7B, as open-source guard models or dedicated safety classifiers; other papers describe it as a pretrained content-moderation guardrail, an input-output safeguard used as an NSFW filter, or a safety mechanism deployed on selected communication edges in multi-agent systems."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link Llama Guard to 2 constructs and 3 behavioral indicators. The most recurring measurement claim is Harmlessness, where papers use Llama-Guard to determine the safety of the responses; other papers report it as measuring Toxicity, Harmful content generation, Jailbreaking, and Safety classifier evasion. Overall, the measurement claims are spread across several safety-related targets rather than centered on a single construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers typically use it as a judgment model or filter: prompts and responses are classified with it, VLM harmfulness is scored through ASR via it, and one paper applies it as an NSFW filter to collected user prompts. Some work uses it alongside GPT-4, ShieldGemma, and other open-source guard models, while other papers position it as a baseline for agent safety tasks or as a safety mechanism on selected edges in multi-agent systems. Papers do not link it to any other measurement instrument."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "Concerns center on task fit and robustness. One paper says LlamaGuard was designed to detect harmful content in LLM inputs and outputs and \"is not aligned with the safety guard requests for agents,\" and another reports that safety mechanisms including Llama-Guard \"fail to defend against our attack.\" A further line of work evaluates bypass rate, defined as cases where a malicious request is classified as safe."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, the prevailing usage treats Llama Guard as an LLM-based or model-based safety classifier, guardrail, or safeguard for prompts and responses. Definitions describe it as judging whether outputs are harmful, unsafe, safe, or harmless, and also as an evaluation tool that can calculate Attack Success Rate by classifying response harmfulness. A smaller line names 7B variants, LLaMA Guard 7B or LlamaGuard-7B, as open-source guard models or dedicated safety classifiers; other papers describe it as a pretrained content-moderation guardrail, an input-output safeguard used as an NSFW filter, or a safety mechanism deployed on selected communication edges in multi-agent systems.\n\nWhat it is claimed to measure. Papers link Llama Guard to 2 constructs and 3 behavioral indicators. The most recurring measurement claim is Harmlessness, where papers use Llama-Guard to determine the safety of the responses; other papers report it as measuring Toxicity, Harmful content generation, Jailbreaking, and Safety classifier evasion. Overall, the measurement claims are spread across several safety-related targets rather than centered on a single construct.\n\nSpace of uses. Papers typically use it as a judgment model or filter: prompts and responses are classified with it, VLM harmfulness is scored through ASR via it, and one paper applies it as an NSFW filter to collected user prompts. Some work uses it alongside GPT-4, ShieldGemma, and other open-source guard models, while other papers position it as a baseline for agent safety tasks or as a safety mechanism on selected edges in multi-agent systems. Papers do not link it to any other measurement instrument.\n\nConcerns raised. Concerns center on task fit and robustness. One paper says LlamaGuard was designed to detect harmful content in LLM inputs and outputs and \"is not aligned with the safety guard requests for agents,\" and another reports that safety mechanisms including Llama-Guard \"fail to defend against our attack.\" A further line of work evaluates bypass rate, defined as cases where a malicious request is classified as safe.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Adversarial Tokenization",
+      "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks"
+    ],
+    "emnlp25": [
+      "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization",
+      "PLLuM-Align: Polish Preference Dataset for Large Language Model Alignment",
+      "SAFENUDGE: Safeguarding Large Language Models in Real-time with Tunable Safety-Performance Trade-offs",
+      "SafeScientist: Enhancing AI Scientist Safety for Risk-Aware Scientific Discovery",
+      "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience"
+    ],
+    "iclr25": [
+      "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning",
+      "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights"
+    ],
+    "icml25": [
+      "Emoji Attack: Enhancing Jailbreak Attacks Against Judge LLM Detection",
+      "FlipAttack: Jailbreak LLMs via Flipping",
+      "GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning",
+      "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "Position: Beyond Assistance \u2013 Reimagining LLMs as Ethical and Adaptive Co-Creators in Mental Health Care"
+    ],
+    "neurips24": [
+      "GenAI Arena: An Open Evaluation Platform for Generative Models",
+      "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+      "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 5,
+    "iclr25": 2,
+    "icml25": 5,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

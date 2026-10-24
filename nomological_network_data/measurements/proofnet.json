@@ -1,0 +1,198 @@
+{
+  "canonical_name": "ProofNet",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, ProofNet is most commonly treated as a Lean benchmark for undergraduate mathematics. Definitions variously describe it as a theorem-proving benchmark, a standard automated-theorem-proving dataset, and an autoformalization benchmark with paired natural-language and Lean statements; one paper also uses it as a source of high-quality mathematical proof data. Several descriptions specify 371 exercises or statement-formalization pairs from the undergraduate curriculum, formalized in Lean 3, while some descriptions emphasize isolated or less context-dependent problems and another contrasts it with competition benchmarks by saying its exercises are generally drawn from standard textbooks. Papers also refer to variants: ProofNet-test as the college-level split, and ProofNet# as a very close corrected version.\n\nWhat it is claimed to measure. Papers use ProofNet to measure 4 behavioral indicators and 2 constructs. The prevailing use is to measure theorem proving and autoformalization, with several papers stating formal theorem proving more specifically; one paper also uses it to measure information retrieval. At the construct level, papers report it as measuring generalization and mathematical reasoning, so the claims are spread across several targets rather than centered on one construct.\n\nSpace of uses. Most papers position ProofNet as a common evaluation benchmark, often paired with miniF2F. Its only explicit instrument-to-instrument link is a related relation to PutnamBench, where one paper notes that both draw from undergraduate mathematics but that ProofNet uses textbook exercises rather than competition problems. In autoformalization work it also appears alongside LeanEuclid, Con-NF, and Herald, and a smaller line of work uses it as source data for paired natural-language and Lean statements or for collecting high-quality proof data.\n\nConcerns raised. The only explicit concern raised is reliability of the reference formalizations. One paper presents ProofNet# as a \"meticulously corrected version\" of ProofNet, says it was manually verified and fixed for formalization errors, and adds that it remains very close to the original because only the reference formalizations were updated.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "ProofNet",
+    "ProofNet-test"
+  ],
+  "papers": [
+    "NL2Lean: Translating Natural Language into Lean 4 through Multi-Aspect Reinforcement Learning",
+    "Reliable Evaluation and Benchmarks for Statement Autoformalization",
+    "Towards Advanced Mathematical Reasoning for LLMs via First-Order Logic Theorem Proving",
+    "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+    "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+    "Rethinking and Improving Autoformalization: Towards a Faithful Metric and a Dependency Retrieval-based Approach",
+    "miniCTX: Neural Theorem Proving with (Long-)Contexts",
+    "One Example Shown, Many Concepts Known! Counterexample-Driven Conceptual Reasoning in Mathematical LLMs",
+    "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI",
+    "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+    "Lean Workbook: A large-scale Lean problem set formalized from natural language math problems",
+    "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "ProofNet is a Lean theorem-proving benchmark used as a comparison benchmark for isolated or less context-dependent theorem proving.",
+      "paper": "miniCTX: Neural Theorem Proving with (Long-)Contexts",
+      "original_name": "ProofNet"
+    },
+    {
+      "text": "Benchmark consisting of formalized college-level mathematics problems used to assess advanced mathematical reasoning in LLMs.",
+      "paper": "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+      "original_name": "ProofNet-test"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Theorem proving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+      "evidence": "We conducted sufficient experiments on the widely recognized theorem-proving benchmarks, namely miniF2F (Zheng et al., 2022) and ProofNet (Azerbayev et al., 2023) in Lean. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search"
+        ],
+        "icml25": [
+          "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Autoformalization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Rethinking and Improving Autoformalization: Towards a Faithful Metric and a Dependency Retrieval-based Approach",
+      "evidence": "In statement autoformalization, we follow prevalent benchmarks such as ProofNet (Azerbayev et al., 2023) and LeanEuclid (Murphy et al., 2024) to evaluate by comparing model predictions with ground-truths",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Rethinking and Improving Autoformalization: Towards a Faithful Metric and a Dependency Retrieval-based Approach"
+        ],
+        "icml25": [
+          "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Formal theorem proving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+      "evidence": "In this section, we evaluate the theorem-proving capabilities of DeepSeek-Prover-V1.5 using two distinct benchmarks: miniF2F (Zheng et al., 2022), which encompasses high-school level exercises and competition problems, and ProofNet (Azerbayev et al., 2023), which pertains to undergraduate-level theorems. (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+          "miniCTX: Neural Theorem Proving with (Long-)Contexts"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PutnamBench",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition",
+      "evidence": "The PROOFNET benchmark (Azerbayev et al., 2023) also sources problems from the undergraduate curriculum, but these problems are generally from standard textbooks as opposed to mathematical competitions.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Towards Advanced Mathematical Reasoning for LLMs via First-Order Logic Theorem Proving",
+      "evidence": "While contemporary LLMs attain competitive performance on established formal mathematical reasoning benchmarks such as miniF2F ... and ProofNet (formal undergraduate-level mathematics (Azerbayev et al., 2023))... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Towards Advanced Mathematical Reasoning for LLMs via First-Order Logic Theorem Proving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Out-of-distribution generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+      "evidence": "We also report the performance of the model trained only on LeanWorkbook for 24 iterations, excluding miniF2F-valid and proofnet-valid, demonstrating that the model trained with STP also generalizes to out-of-domain theorems. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, ProofNet is most commonly treated as a Lean benchmark for undergraduate mathematics. Definitions variously describe it as a theorem-proving benchmark, a standard automated-theorem-proving dataset, and an autoformalization benchmark with paired natural-language and Lean statements; one paper also uses it as a source of high-quality mathematical proof data. Several descriptions specify 371 exercises or statement-formalization pairs from the undergraduate curriculum, formalized in Lean 3, while some descriptions emphasize isolated or less context-dependent problems and another contrasts it with competition benchmarks by saying its exercises are generally drawn from standard textbooks. Papers also refer to variants: ProofNet-test as the college-level split, and ProofNet# as a very close corrected version."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use ProofNet to measure 4 behavioral indicators and 2 constructs. The prevailing use is to measure theorem proving and autoformalization, with several papers stating formal theorem proving more specifically; one paper also uses it to measure information retrieval. At the construct level, papers report it as measuring generalization and mathematical reasoning, so the claims are spread across several targets rather than centered on one construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Most papers position ProofNet as a common evaluation benchmark, often paired with miniF2F. Its only explicit instrument-to-instrument link is a related relation to PutnamBench, where one paper notes that both draw from undergraduate mathematics but that ProofNet uses textbook exercises rather than competition problems. In autoformalization work it also appears alongside LeanEuclid, Con-NF, and Herald, and a smaller line of work uses it as source data for paired natural-language and Lean statements or for collecting high-quality proof data."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "The only explicit concern raised is reliability of the reference formalizations. One paper presents ProofNet# as a \"meticulously corrected version\" of ProofNet, says it was manually verified and fixed for formalization errors, and adds that it remains very close to the original because only the reference formalizations were updated."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, ProofNet is most commonly treated as a Lean benchmark for undergraduate mathematics. Definitions variously describe it as a theorem-proving benchmark, a standard automated-theorem-proving dataset, and an autoformalization benchmark with paired natural-language and Lean statements; one paper also uses it as a source of high-quality mathematical proof data. Several descriptions specify 371 exercises or statement-formalization pairs from the undergraduate curriculum, formalized in Lean 3, while some descriptions emphasize isolated or less context-dependent problems and another contrasts it with competition benchmarks by saying its exercises are generally drawn from standard textbooks. Papers also refer to variants: ProofNet-test as the college-level split, and ProofNet# as a very close corrected version.\n\nWhat it is claimed to measure. Papers use ProofNet to measure 4 behavioral indicators and 2 constructs. The prevailing use is to measure theorem proving and autoformalization, with several papers stating formal theorem proving more specifically; one paper also uses it to measure information retrieval. At the construct level, papers report it as measuring generalization and mathematical reasoning, so the claims are spread across several targets rather than centered on one construct.\n\nSpace of uses. Most papers position ProofNet as a common evaluation benchmark, often paired with miniF2F. Its only explicit instrument-to-instrument link is a related relation to PutnamBench, where one paper notes that both draw from undergraduate mathematics but that ProofNet uses textbook exercises rather than competition problems. In autoformalization work it also appears alongside LeanEuclid, Con-NF, and Herald, and a smaller line of work uses it as source data for paired natural-language and Lean statements or for collecting high-quality proof data.\n\nConcerns raised. The only explicit concern raised is reliability of the reference formalizations. One paper presents ProofNet# as a \"meticulously corrected version\" of ProofNet, says it was manually verified and fixed for formalization errors, and adds that it remains very close to the original because only the reference formalizations were updated.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+      "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+      "Rethinking and Improving Autoformalization: Towards a Faithful Metric and a Dependency Retrieval-based Approach",
+      "miniCTX: Neural Theorem Proving with (Long-)Contexts"
+    ],
+    "icml25": [
+      "One Example Shown, Many Concepts Known! Counterexample-Driven Conceptual Reasoning in Mathematical LLMs",
+      "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI",
+      "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving"
+    ],
+    "emnlp25": [
+      "NL2Lean: Translating Natural Language into Lean 4 through Multi-Aspect Reinforcement Learning",
+      "Reliable Evaluation and Benchmarks for Statement Autoformalization",
+      "Towards Advanced Mathematical Reasoning for LLMs via First-Order Logic Theorem Proving"
+    ],
+    "neurips24": [
+      "Lean Workbook: A large-scale Lean problem set formalized from natural language math problems",
+      "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "icml25": 3,
+    "emnlp25": 3,
+    "neurips24": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

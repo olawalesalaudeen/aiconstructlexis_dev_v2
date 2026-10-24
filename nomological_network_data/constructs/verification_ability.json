@@ -1,0 +1,146 @@
+{
+  "canonical_name": "Verification ability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats this construct as a latent verification capacity: a model judges the correctness or quality of candidate outputs and selects the correct trajectory from alternatives. One definition frames it as identifying and selecting the correct solution trajectory from a set of candidates, and another says the model may act as a \"better-than-random verifier of its own outputs.\" A smaller formulation narrows the concept to a PRM's discriminative power, namely distinguishing correct from incorrect reasoning steps at fine-grained, including token-level, resolution. The main variation is therefore about scope and granularity, complete candidate solutions versus step-level discrimination, and about whether the ability is stated for a model generally or for a PRM specifically.\n\nSpace of facets. Papers mainly differentiate the concept by what is being verified. Most formulations concern complete candidate outputs or solution trajectories, including self-verification of a model's own outputs; one paper also describes \"informative verification\" through a verifier model used to construct a proxy utility function. A narrower usage appears under the label discriminative power, which focuses on fine-grained reasoning steps and token-level distinction between correct and incorrect steps. The same general idea appears under the names verification ability and verification capability, while discriminative power is used for a narrower token-level variant.\n\nSpace of measurement. Operationalization is narrow in the linked work: papers connect it to two measurement instruments, MATH-500 and GSM-Plus, and to no behavioral indicators. The explicit setup evaluates PRMs through best-of-n sampling and assesses \"the correctness of the most preferred trajectory selected by the PRM from n candidates for each question,\" using solution sets from those datasets. This linked measurement directly instantiates the trajectory-selection framing; no separate linked instrument is recorded for the token-level discriminative-power framing.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Verification ability",
+    "Verification capability",
+    "Discriminative power"
+  ],
+  "papers": [
+    "Calibrating LLM Confidence by Probing Perturbed Representation Stability",
+    "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+    "Process Reward Model with Q-value Rankings",
+    "Self-Improvement in Language Models: The Sharpening Mechanism",
+    "AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence",
+    "Analyzing and Evaluating Correlation Measures in NLG Meta-Evaluation"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent capacity of a model to identify and select the correct solution trajectory from a set of candidates.",
+      "paper": "Process Reward Model with Q-value Rankings",
+      "original_name": "Verification ability"
+    },
+    {
+      "text": "The latent ability of a model to judge the quality or correctness of candidate outputs better than chance.",
+      "paper": "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+      "original_name": "Verification capability"
+    },
+    {
+      "text": "The ability of a PRM to accurately distinguish between correct and incorrect reasoning steps, especially at fine-grained (e.g., token) levels.",
+      "paper": "AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence",
+      "original_name": "Discriminative power"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Best-of-n sampling",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Process Reward Model with Q-value Rankings",
+      "evidence": "\u201cwe evaluate PRMs based on their verification ability through best-of-n sampling.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Process Reward Model with Q-value Rankings"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MATH-500",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Process Reward Model with Q-value Rankings",
+      "evidence": "\u201cFor example, when verifying solutions sampled from the Llama-3-70B-Instruct model, PQM improves the accuracy from 39.8% to 51.4%, a direct 11.6% improvement on the challenging MATH500 benchmark\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Process Reward Model with Q-value Rankings"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM-Plus",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Process Reward Model with Q-value Rankings",
+      "evidence": "\u201cThe test corpus includes 128 solutions for each question from GSM-Plus (Li et al., 2024) and MATH500 (Hendrycks et al., 2021) datasets.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Process Reward Model with Q-value Rankings"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats this construct as a latent verification capacity: a model judges the correctness or quality of candidate outputs and selects the correct trajectory from alternatives. One definition frames it as identifying and selecting the correct solution trajectory from a set of candidates, and another says the model may act as a \"better-than-random verifier of its own outputs.\" A smaller formulation narrows the concept to a PRM's discriminative power, namely distinguishing correct from incorrect reasoning steps at fine-grained, including token-level, resolution. The main variation is therefore about scope and granularity, complete candidate solutions versus step-level discrimination, and about whether the ability is stated for a model generally or for a PRM specifically."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers mainly differentiate the concept by what is being verified. Most formulations concern complete candidate outputs or solution trajectories, including self-verification of a model's own outputs; one paper also describes \"informative verification\" through a verifier model used to construct a proxy utility function. A narrower usage appears under the label discriminative power, which focuses on fine-grained reasoning steps and token-level distinction between correct and incorrect steps. The same general idea appears under the names verification ability and verification capability, while discriminative power is used for a narrower token-level variant."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is narrow in the linked work: papers connect it to two measurement instruments, MATH-500 and GSM-Plus, and to no behavioral indicators. The explicit setup evaluates PRMs through best-of-n sampling and assesses \"the correctness of the most preferred trajectory selected by the PRM from n candidates for each question,\" using solution sets from those datasets. This linked measurement directly instantiates the trajectory-selection framing; no separate linked instrument is recorded for the token-level discriminative-power framing."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "All papers define verification ability as a model's latent capacity to evaluate candidate reasoning or outputs for correctness and pick out the correct ones. The differences are mainly in scope and granularity, with some papers focusing on whole solution trajectories or outputs and one on fine-grained reasoning steps, but they study the same core property.",
+    "papers_with_definition": 3,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats this construct as a latent verification capacity: a model judges the correctness or quality of candidate outputs and selects the correct trajectory from alternatives. One definition frames it as identifying and selecting the correct solution trajectory from a set of candidates, and another says the model may act as a \"better-than-random verifier of its own outputs.\" A smaller formulation narrows the concept to a PRM's discriminative power, namely distinguishing correct from incorrect reasoning steps at fine-grained, including token-level, resolution. The main variation is therefore about scope and granularity, complete candidate solutions versus step-level discrimination, and about whether the ability is stated for a model generally or for a PRM specifically.\n\nSpace of facets. Papers mainly differentiate the concept by what is being verified. Most formulations concern complete candidate outputs or solution trajectories, including self-verification of a model's own outputs; one paper also describes \"informative verification\" through a verifier model used to construct a proxy utility function. A narrower usage appears under the label discriminative power, which focuses on fine-grained reasoning steps and token-level distinction between correct and incorrect steps. The same general idea appears under the names verification ability and verification capability, while discriminative power is used for a narrower token-level variant.\n\nSpace of measurement. Operationalization is narrow in the linked work: papers connect it to two measurement instruments, MATH-500 and GSM-Plus, and to no behavioral indicators. The explicit setup evaluates PRMs through best-of-n sampling and assesses \"the correctness of the most preferred trajectory selected by the PRM from n candidates for each question,\" using solution sets from those datasets. This linked measurement directly instantiates the trajectory-selection framing; no separate linked instrument is recorded for the token-level discriminative-power framing.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Calibrating LLM Confidence by Probing Perturbed Representation Stability"
+    ],
+    "iclr25": [
+      "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+      "Process Reward Model with Q-value Rankings",
+      "Self-Improvement in Language Models: The Sharpening Mechanism"
+    ],
+    "icml25": [
+      "AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence"
+    ],
+    "naacl25": [
+      "Analyzing and Evaluating Correlation Measures in NLG Meta-Evaluation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 1,
+    "iclr25": 3,
+    "icml25": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "canonical_name": "DetectGPT",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, DetectGPT is consistently characterized as a measurement instrument for detecting machine-generated text. The most prevalent description of its methodology is as a zero-shot, training-free, or post-hoc approach that relies on perturbing a given text passage and analyzing the resulting changes. This method operates by comparing the log probabilities of the original text with those of its perturbed versions, using what several papers describe as the \"curvature of the log probability function\" as the core detection criterion. The technique is based on the widely cited assumption that machine-generated text occupies a local optimum of log probability, meaning variations will typically have a lower model probability than the original passage. As one paper notes, this is because \"AI-generated passages occupy regions with clear negative log probability curvature\" (DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text). Some sources refer to it as a \"state-of-the-art thresholding approach\" and a \"representative for loss-based post-hoc detectors.\" Overall, DetectGPT is used to operationalize the detection of AI-generated text by measuring this perturbation-based discrepancy.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique: perturbation-curvature AI-text detection method used as a baseline",
+  "names": [
+    "DetectGPT"
+  ],
+  "papers": [
+    "HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring",
+    "Reliably Bounding False Positives: A Zero-Shot Machine-Generated Text Detection Framework via Multiscaled Conformal Prediction",
+    "BBScoreV2: Learning Time-Evolution and Latent Alignment from Stochastic Representation",
+    "DivScore: Zero-Shot Detection of LLM-Generated Text in Specialized Domains",
+    "Non-Existent Relationship: Fact-Aware Multi-Level Machine-Generated Text Detection",
+    "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+    "Unmasking Fake Careers: Detecting Machine-Generated Career Trajectories via Multi-layer Heterogeneous Graphs",
+    "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors",
+    "DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text",
+    "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+    "Language Model Detectors Are Easily Optimized Against",
+    "Multiscale Positive-Unlabeled Detection of AI-Generated Texts",
+    "On the Reliability of Watermarks for Large Language Models",
+    "Raidar: geneRative AI Detection viA Rewriting",
+    "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+    "Deep Kernel Relative Test for Machine-generated Text Detection",
+    "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+    "Humanizing the Machine: Proxy Attacks to Mislead LLM Detectors",
+    "PaLD: Detection of Text Partially Written by Large Language Models",
+    "Training-free LLM-generated Text Detection by Mining Token Probability Sequences"
+  ],
+  "paper_count": 20,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A detection method that identifies machine-generated text by thresholding the curvature of the log probability function from a scoring model.",
+      "paper": "DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text",
+      "original_name": "DetectGPT"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "AI-generated text detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Multiscale Positive-Unlabeled Detection of AI-Generated Texts",
+      "evidence": "\u201cPPL (Guo et al., 2023), and DetectGPT (Mitchell et al., 2023) are zero-shot methods that do not require further training: they rely on the likelihood outputs of a pretrained language model.\u201d",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Multiscale Positive-Unlabeled Detection of AI-Generated Texts"
+        ],
+        "iclr25": [
+          "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text"
+        ],
+        "emnlp25": [
+          "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, DetectGPT is consistently characterized as a measurement instrument for detecting machine-generated text. The most prevalent description of its methodology is as a zero-shot, training-free, or post-hoc approach that relies on perturbing a given text passage and analyzing the resulting changes. This method operates by comparing the log probabilities of the original text with those of its perturbed versions, using what several papers describe as the \"curvature of the log probability function\" as the core detection criterion. The technique is based on the widely cited assumption that machine-generated text occupies a local optimum of log probability, meaning variations will typically have a lower model probability than the original passage. As one paper notes, this is because \"AI-generated passages occupy regions with clear negative log probability curvature\" (DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text). Some sources refer to it as a \"state-of-the-art thresholding approach\" and a \"representative for loss-based post-hoc detectors.\" Overall, DetectGPT is used to operationalize the detection of AI-generated text by measuring this perturbation-based discrepancy.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring",
+      "Reliably Bounding False Positives: A Zero-Shot Machine-Generated Text Detection Framework via Multiscaled Conformal Prediction"
+    ],
+    "emnlp25": [
+      "BBScoreV2: Learning Time-Evolution and Latent Alignment from Stochastic Representation",
+      "DivScore: Zero-Shot Detection of LLM-Generated Text in Specialized Domains",
+      "Non-Existent Relationship: Fact-Aware Multi-Level Machine-Generated Text Detection",
+      "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+      "Unmasking Fake Careers: Detecting Machine-Generated Career Trajectories via Multi-layer Heterogeneous Graphs",
+      "Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors"
+    ],
+    "iclr24": [
+      "DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text",
+      "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+      "Language Model Detectors Are Easily Optimized Against",
+      "Multiscale Positive-Unlabeled Detection of AI-Generated Texts",
+      "On the Reliability of Watermarks for Large Language Models",
+      "Raidar: geneRative AI Detection viA Rewriting"
+    ],
+    "iclr25": [
+      "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+      "Deep Kernel Relative Test for Machine-generated Text Detection",
+      "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+      "Humanizing the Machine: Proxy Attacks to Mislead LLM Detectors",
+      "PaLD: Detection of Text Partially Written by Large Language Models",
+      "Training-free LLM-generated Text Detection by Mining Token Probability Sequences"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 6,
+    "iclr24": 6,
+    "iclr25": 6
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25"
+  ]
+}

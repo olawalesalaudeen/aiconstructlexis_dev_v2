@@ -1,0 +1,398 @@
+{
+  "canonical_name": "Theorem proving",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is a proof-production task: given a theorem statement, the model generates either a complete proof script or a sequence of proof steps and tactics inside a formal system, often in proof assistants such as Lean or Isabelle. Most definitions require the result to be formally verifiable, with papers describing proofs that are checked by a prover, a verifier, or a correctness checker. A smaller line of work broadens the target to human-readable natural language proofs, or describes theorem proving as the ability to construct a valid sequence of logical steps.\n\nVariants. The most common variants split the task into whole-proof generation and proof-step or tactic generation. In the stepwise variant, the model predicts the next tactic from the current proof state, sometimes also called tactic prediction or formal-to-formal proving, and the step is then verified before continuing; in whole-proof generation, the model completes the entire proof code in one pass and verification comes at the end. Other papers study proof trajectory generation, natural language proof generation, and constructive proof generation, where the proof consists of constructing an object such as a set, matrix, or graph that satisfies stated constraints.\n\nSpace of elicitation and scores. Papers link theorem proving to 5 instruments overall, though explicit measurement is concentrated in benchmark suites. It is most often measured by PutnamBench and miniF2F, followed by ProofNet and LeanDojo; the linked evidence describes these as theorem-proving benchmarks and reports evaluation through formal verification, including pass@3200 reporting. Mathlib is the remaining linked instrument, but it appears only as related, with one paper saying that most Lean-based neural theorem provers are trained on that library.\n\nWhat it is taken as evidence of. Papers link theorem proving to 2 constructs, rather than consistently using it as evidence of one shared construct. One paper claims a causal relationship from theorem proving to Long-horizon planning, while another reports that Abstraction is related to theorem proving, noting that in interactive theorem proving abstractions can be encapsulated in new definitions, lemmas, and tactics.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Theorem proving",
+    "Proof generation",
+    "Natural language proof generation",
+    "Formal proof generation",
+    "Tactic generation",
+    "Proof tactic generation",
+    "Proof trajectory generation",
+    "Tactic prediction",
+    "Proof-step generation",
+    "Whole-proof generation",
+    "Theorem proof generation",
+    "Constructive proof generation",
+    "Formal-to-formal proving",
+    "Formal proof synthesis",
+    "Proof step generation"
+  ],
+  "papers": [
+    "Hierarchical Attention Generates Better Proofs",
+    "QDTSynth: Quality-Driven Formal Theorem Synthesis for Enhancing Proving Performance of LLMs",
+    "Examining False Positives under Inference Scaling for Mathematical Reasoning",
+    "FANS: Formal Answer Selection for LLM Natural Language Math Reasoning Using Lean4",
+    "Rewarding the Unlikely: Lifting GRPO Beyond Distribution Sharpening",
+    "Towards Advanced Mathematical Reasoning for LLMs via First-Order Logic Theorem Proving",
+    "Towards Robust Mathematical Reasoning",
+    "LEGO-Prover: Neural Theorem Proving with Growing Libraries",
+    "Llemma: An Open Language Model for Mathematics",
+    "MUSTARD: Mastering Uniform Synthesis of Theorem and Proof Data",
+    "Magnushammer: A Transformer-Based Approach to Premise Selection",
+    "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+    "Alchemy: Amplifying Theorem-Proving Capability Through Symbolic Mutation",
+    "Automated Proof Generation for Rust Code via Self-Evolution",
+    "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+    "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+    "ImProver: Agent-Based Automated Proof Optimization",
+    "LLM-based Typed Hyperresolution for Commonsense Reasoning with Knowledge Bases",
+    "Lean-STaR: Learning to Interleave Thinking and Proving",
+    "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+    "Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning",
+    "miniCTX: Neural Theorem Proving with (Long-)Contexts",
+    "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+    "MathConstruct: Challenging LLM Reasoning with Constructive Proofs",
+    "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI",
+    "Position: Trustworthy AI Agents Require the Integration of Large Language Models and Formal Methods",
+    "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+    "ProofAug: Efficient Neural Theorem Proving via Fine-grained Proof Structure Analysis",
+    "Putnam-AXIOM: A Functional & Static Benchmark for Measuring Higher Level Mathematical Reasoning in LLMs",
+    "FVEL: Interactive Formal Verification Environment with Large Language Models via Theorem Proving",
+    "Lean Workbook: A large-scale Lean problem set formalized from natural language math problems",
+    "Learning Formal Mathematics From Intrinsic Motivation",
+    "MathPile: A Billion-Token-Scale Pretraining Corpus for Math",
+    "Proving Olympiad Algebraic Inequalities without Human Demonstrations",
+    "Proving Theorems Recursively",
+    "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition",
+    "Verified Code Transpilation with LLMs"
+  ],
+  "paper_count": 37,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of generating a complete and formally verifiable sequence of proof steps that successfully proves a given theorem statement.",
+      "paper": "Proving Theorems Recursively",
+      "original_name": "Theorem proving"
+    },
+    {
+      "text": "The observable task of searching for or generating proof tactics and trajectories to complete a formal theorem.",
+      "paper": "Lean Workbook: A large-scale Lean problem set formalized from natural language math problems",
+      "original_name": "Proof generation"
+    },
+    {
+      "text": "The observable behavior of producing a human-readable, text-based proof for a mathematical problem.",
+      "paper": "Proving Olympiad Algebraic Inequalities without Human Demonstrations",
+      "original_name": "Natural language proof generation"
+    },
+    {
+      "text": "The observable behavior of producing a specific proof step or transformation (a 'tactic') to apply to a mathematical goal.",
+      "paper": "Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning",
+      "original_name": "Tactic generation"
+    },
+    {
+      "text": "The behavior of producing a proof in a formal language, such as Lean, that can be automatically verified for correctness by a proof system.",
+      "paper": "Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning",
+      "original_name": "Formal proof generation"
+    },
+    {
+      "text": "The observable action of a language model producing a single, one-step proof tactic (a command for a formal prover like Lean) given a current proof state.",
+      "paper": "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+      "original_name": "Proof tactic generation"
+    },
+    {
+      "text": "The behavior of generating the next formal proof step, or \"tactic,\" given the current proof state in an interactive theorem prover.",
+      "paper": "Lean-STaR: Learning to Interleave Thinking and Proving",
+      "original_name": "Tactic prediction"
+    },
+    {
+      "text": "Sampling sequences of proof states, thoughts, and tactics that form candidate theorem-proving attempts.",
+      "paper": "Lean-STaR: Learning to Interleave Thinking and Proving",
+      "original_name": "Proof trajectory generation"
+    },
+    {
+      "text": "A specific strategy for formal proof generation where the model generates the entire proof code from the theorem statement in a single pass, with verification performed only at the end.",
+      "paper": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+      "original_name": "Whole-proof generation"
+    },
+    {
+      "text": "An interactive strategy for formal proof generation where the model predicts a single subsequent tactic based on an intermediate tactic state, which is then verified before the next step is generated.",
+      "paper": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+      "original_name": "Proof-step generation"
+    },
+    {
+      "text": "The task of generating mathematical proofs for given theorems.",
+      "paper": "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+      "original_name": "Theorem proof generation"
+    },
+    {
+      "text": "The observable task of generating a mathematical object, such as a set, matrix, or graph, that satisfies a set of specified constraints to prove a mathematical result.",
+      "paper": "MathConstruct: Challenging LLM Reasoning with Constructive Proofs",
+      "original_name": "Constructive proof generation"
+    },
+    {
+      "text": "The observable task of generating a sequence of code-like proof steps (tactics) within a proof assistant to prove a formal mathematical statement, also known as tactic prediction.",
+      "paper": "Llemma: An Open Language Model for Mathematics",
+      "original_name": "Formal-to-formal proving"
+    },
+    {
+      "text": "The task of generating a complete, verifiable formal proof for a given theorem statement within a specific proof assistant system.",
+      "paper": "ProofAug: Efficient Neural Theorem Proving via Fine-grained Proof Structure Analysis",
+      "original_name": "Formal proof synthesis"
+    },
+    {
+      "text": "The observable action of producing a single, valid step, such as applying a tactic with selected premises, within a formal proof.",
+      "paper": "Magnushammer: A Transformer-Based Approach to Premise Selection",
+      "original_name": "Proof step generation"
+    }
+  ],
+  "definition_count": 15,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PutnamBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition",
+      "evidence": "\u201cWe use PUTNAMBENCH to evaluate several neural and symbolic theorem-provers.\u201d",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition"
+        ],
+        "icml25": [
+          "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+          "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "miniF2F",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+      "evidence": "We conducted sufficient experiments on the widely recognized theorem-proving benchmarks, namely miniF2F (Zheng et al., 2022) and ProofNet (Azerbayev et al., 2023) in Lean. (Section 1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search"
+        ],
+        "icml25": [
+          "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+          "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ProofNet",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+      "evidence": "We conducted sufficient experiments on the widely recognized theorem-proving benchmarks, namely miniF2F (Zheng et al., 2022) and ProofNet (Azerbayev et al., 2023) in Lean. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search"
+        ],
+        "icml25": [
+          "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Best-first search",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Alchemy: Amplifying Theorem-Proving Capability Through Symbolic Mutation",
+      "evidence": "We use best-first-search as our search tragedy with a 10-minute timeout.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Alchemy: Amplifying Theorem-Proving Capability Through Symbolic Mutation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mathlib",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Alchemy: Amplifying Theorem-Proving Capability Through Symbolic Mutation",
+      "evidence": "Most neural theorem provers based on Lean are primarily trained on Lean\u2019s mathematical library, Mathlib.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Alchemy: Amplifying Theorem-Proving Capability Through Symbolic Mutation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Abstraction",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI",
+      "evidence": "In interactive theorem proving, abstractions can be encapsulated in new definitions, lemmas, and tactics. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LeanDojo",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI",
+      "evidence": "Recent neural theorem provers are domain-agnostic and evaluated on benchmarks targeting this level [Level 3, proving simple theorems automatically in a domain-general fashion], e.g., CoqGym (Yang & Deng, 2019), LeanDojo (Yang et al., 2023), MiniF2F (Zheng et al., 2022), and PutnamBench (Tsoukalas et al., 2024). (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-horizon planning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+      "evidence": "\"the whole-proof generation model is trained to perform long-term planning for theorem proving\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long chain-of-thought generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+      "evidence": "The emergent Lean reasoning ability in the Long CoT enables the model to write a better-structured proof based on its high-level plan than direct proof generation. (Section 2.3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Autoformalization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI",
+      "evidence": "As the bridge between informal and formal mathematics, autoformalization has three immediate applications: (1) data augmentation for neural theorem provers (Wu et al., 2022; Xin et al., 2024; Wang et al., 2025; Ren et al., 2025), (2) guiding theorem proving via informal proofs (Jiang et al., 2023), and (3) validating informal reasoning (Zhou et al., 2024a; Olausson et al., 2023). (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 10,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is a proof-production task: given a theorem statement, the model generates either a complete proof script or a sequence of proof steps and tactics inside a formal system, often in proof assistants such as Lean or Isabelle. Most definitions require the result to be formally verifiable, with papers describing proofs that are checked by a prover, a verifier, or a correctness checker. A smaller line of work broadens the target to human-readable natural language proofs, or describes theorem proving as the ability to construct a valid sequence of logical steps."
+    },
+    {
+      "label": "Variants.",
+      "text": "The most common variants split the task into whole-proof generation and proof-step or tactic generation. In the stepwise variant, the model predicts the next tactic from the current proof state, sometimes also called tactic prediction or formal-to-formal proving, and the step is then verified before continuing; in whole-proof generation, the model completes the entire proof code in one pass and verification comes at the end. Other papers study proof trajectory generation, natural language proof generation, and constructive proof generation, where the proof consists of constructing an object such as a set, matrix, or graph that satisfies stated constraints."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link theorem proving to 5 instruments overall, though explicit measurement is concentrated in benchmark suites. It is most often measured by PutnamBench and miniF2F, followed by ProofNet and LeanDojo; the linked evidence describes these as theorem-proving benchmarks and reports evaluation through formal verification, including pass@3200 reporting. Mathlib is the remaining linked instrument, but it appears only as related, with one paper saying that most Lean-based neural theorem provers are trained on that library."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link theorem proving to 2 constructs, rather than consistently using it as evidence of one shared construct. One paper claims a causal relationship from theorem proving to Long-horizon planning, while another reports that Abstraction is related to theorem proving, noting that in interactive theorem proving abstractions can be encapsulated in new definitions, lemmas, and tactics."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is a proof-production task: given a theorem statement, the model generates either a complete proof script or a sequence of proof steps and tactics inside a formal system, often in proof assistants such as Lean or Isabelle. Most definitions require the result to be formally verifiable, with papers describing proofs that are checked by a prover, a verifier, or a correctness checker. A smaller line of work broadens the target to human-readable natural language proofs, or describes theorem proving as the ability to construct a valid sequence of logical steps.\n\nVariants. The most common variants split the task into whole-proof generation and proof-step or tactic generation. In the stepwise variant, the model predicts the next tactic from the current proof state, sometimes also called tactic prediction or formal-to-formal proving, and the step is then verified before continuing; in whole-proof generation, the model completes the entire proof code in one pass and verification comes at the end. Other papers study proof trajectory generation, natural language proof generation, and constructive proof generation, where the proof consists of constructing an object such as a set, matrix, or graph that satisfies stated constraints.\n\nSpace of elicitation and scores. Papers link theorem proving to 5 instruments overall, though explicit measurement is concentrated in benchmark suites. It is most often measured by PutnamBench and miniF2F, followed by ProofNet and LeanDojo; the linked evidence describes these as theorem-proving benchmarks and reports evaluation through formal verification, including pass@3200 reporting. Mathlib is the remaining linked instrument, but it appears only as related, with one paper saying that most Lean-based neural theorem provers are trained on that library.\n\nWhat it is taken as evidence of. Papers link theorem proving to 2 constructs, rather than consistently using it as evidence of one shared construct. One paper claims a causal relationship from theorem proving to Long-horizon planning, while another reports that Abstraction is related to theorem proving, noting that in interactive theorem proving abstractions can be encapsulated in new definitions, lemmas, and tactics.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Examining False Positives under Inference Scaling for Mathematical Reasoning",
+      "FANS: Formal Answer Selection for LLM Natural Language Math Reasoning Using Lean4",
+      "Rewarding the Unlikely: Lifting GRPO Beyond Distribution Sharpening",
+      "Towards Advanced Mathematical Reasoning for LLMs via First-Order Logic Theorem Proving",
+      "Towards Robust Mathematical Reasoning"
+    ],
+    "iclr25": [
+      "AI as Humanity\u2019s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+      "Alchemy: Amplifying Theorem-Proving Capability Through Symbolic Mutation",
+      "Automated Proof Generation for Rust Code via Self-Evolution",
+      "CARTS: Advancing Neural Theorem Proving with Diversified Tactic Calibration and Bias-Resistant Tree Search",
+      "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+      "ImProver: Agent-Based Automated Proof Optimization",
+      "LLM-based Typed Hyperresolution for Commonsense Reasoning with Knowledge Bases",
+      "Lean-STaR: Learning to Interleave Thinking and Proving",
+      "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+      "Proving Olympiad Inequalities by Synergizing LLMs and Symbolic Reasoning",
+      "miniCTX: Neural Theorem Proving with (Long-)Contexts"
+    ],
+    "icml25": [
+      "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+      "MathConstruct: Challenging LLM Reasoning with Constructive Proofs",
+      "Position: Formal Mathematical Reasoning\u2014A New Frontier in AI",
+      "Position: Trustworthy AI Agents Require the Integration of Large Language Models and Formal Methods",
+      "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+      "ProofAug: Efficient Neural Theorem Proving via Fine-grained Proof Structure Analysis",
+      "Putnam-AXIOM: A Functional & Static Benchmark for Measuring Higher Level Mathematical Reasoning in LLMs"
+    ],
+    "neurips24": [
+      "FVEL: Interactive Formal Verification Environment with Large Language Models via Theorem Proving",
+      "Lean Workbook: A large-scale Lean problem set formalized from natural language math problems",
+      "Learning Formal Mathematics From Intrinsic Motivation",
+      "MathPile: A Billion-Token-Scale Pretraining Corpus for Math",
+      "Proving Olympiad Algebraic Inequalities without Human Demonstrations",
+      "Proving Theorems Recursively",
+      "PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition",
+      "Verified Code Transpilation with LLMs"
+    ],
+    "acl25": [
+      "Hierarchical Attention Generates Better Proofs",
+      "QDTSynth: Quality-Driven Formal Theorem Synthesis for Enhancing Proving Performance of LLMs"
+    ],
+    "iclr24": [
+      "LEGO-Prover: Neural Theorem Proving with Growing Libraries",
+      "Llemma: An Open Language Model for Mathematics",
+      "MUSTARD: Mastering Uniform Synthesis of Theorem and Proof Data",
+      "Magnushammer: A Transformer-Based Approach to Premise Selection"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "iclr25": 11,
+    "icml25": 7,
+    "neurips24": 8,
+    "acl25": 2,
+    "iclr24": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

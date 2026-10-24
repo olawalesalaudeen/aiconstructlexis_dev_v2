@@ -1,0 +1,114 @@
+{
+  "canonical_name": "Reward function generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is an LLM producing executable code for a reward function that specifies an agent's objective in a simulation or reinforcement learning task. Definitions commonly ground the generation in a task or goal description plus environment details or code, and describe successful outputs as reward code that guides learning, for example by returning the scalar signal whose cumulative maximization defines the task or by correctly using environment attributes to encourage a desired behavior. A smaller line of work narrows the behavior to generating dense, shaped reward code from a natural language goal.\n\nVariants. Papers study several variants and settings. Some treat reward generation as one part of broader program generation, alongside termination functions or simulator dynamics, while others use it to encode desired coordination behavior for teammate training, including executable functions over state and action transitions and prompts requiring the form \"def reward(self) -> float\". Another named variant is dense reward code generation, which focuses on shaped dense rewards, and the domains explicitly mentioned include robotics, games, and subtasks trained with reinforcement learning.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize the behavior directly through generation tasks that provide natural language task or goal descriptions together with environment code, environment details, or low-level states, and ask for executable reward code; one formulation states the objective as outputting reward function code R such that F(AM(R)) is maximized. The snippets describe task-specific objectives rather than a named scoring instrument.\n\nWhat it is taken as evidence of. The recorded relationships link it to two constructs, Commonsense reasoning and Time-series feature extraction ability, but both links are causal antecedents rather than claims that reward function generation measures those constructs. One paper claims a causal relationship from Commonsense reasoning to reward function generation, describing reward generation from natural language task descriptions as leveraging commonsense understanding of human behavior, and another claims a causal relationship from Time-series feature extraction ability to reward function generation, with evidence that LLMs can extract relevant features from language-described resource allocation preferences.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Reward function generation",
+    "Dense reward code generation"
+  ],
+  "papers": [
+    "Eureka: Human-Level Reward Design via Coding Large Language Models",
+    "Text2Reward: Reward Shaping with Language Models for Reinforcement Learning",
+    "OMNI-EPIC: Open-endedness via Models of human Notions of Interestingness with Environments Programmed in Code",
+    "REvolve: Reward Evolution with Large Language Models using Human Feedback",
+    "LLM-Assisted Semantically Diverse Teammate Generation for Efficient Multi-agent Coordination",
+    "R*: Efficient Reward Design via Reward Structure Evolution and Parameter Alignment Optimization with Large Language Models",
+    "Hazards in Daily Life? Enabling Robots to Proactively Detect and Resolve Anomalies",
+    "A Decision-Language Model (DLM) for Dynamic Restless Multi-Armed Bandit Tasks in Public Health",
+    "FactorSim: Generative Simulation via Factorized Representation"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of generating code for reward functions that specify the objectives for an agent within a simulation.",
+      "paper": "FactorSim: Generative Simulation via Factorized Representation",
+      "original_name": "Reward function generation"
+    },
+    {
+      "text": "The observable action of the LLM producing an executable program that defines a dense, shaped reward function based on a natural language goal.",
+      "paper": "Text2Reward: Reward Shaping with Language Models for Reinforcement Learning",
+      "original_name": "Dense reward code generation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Commonsense reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "REvolve: Reward Evolution with Large Language Models using Human Feedback",
+      "evidence": "In recent works, large language models (LLMs) have been used for reward generation from natural language task descriptions, leveraging their extensive instruction tuning and commonsense understanding of human behavior. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "REvolve: Reward Evolution with Large Language Models using Human Feedback"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is an LLM producing executable code for a reward function that specifies an agent's objective in a simulation or reinforcement learning task. Definitions commonly ground the generation in a task or goal description plus environment details or code, and describe successful outputs as reward code that guides learning, for example by returning the scalar signal whose cumulative maximization defines the task or by correctly using environment attributes to encourage a desired behavior. A smaller line of work narrows the behavior to generating dense, shaped reward code from a natural language goal."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several variants and settings. Some treat reward generation as one part of broader program generation, alongside termination functions or simulator dynamics, while others use it to encode desired coordination behavior for teammate training, including executable functions over state and action transitions and prompts requiring the form \"def reward(self) -> float\". Another named variant is dense reward code generation, which focuses on shaped dense rewards, and the domains explicitly mentioned include robotics, games, and subtasks trained with reinforcement learning."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers operationalize the behavior directly through generation tasks that provide natural language task or goal descriptions together with environment code, environment details, or low-level states, and ask for executable reward code; one formulation states the objective as outputting reward function code R such that F(AM(R)) is maximized. The snippets describe task-specific objectives rather than a named scoring instrument."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "The recorded relationships link it to two constructs, Commonsense reasoning and Time-series feature extraction ability, but both links are causal antecedents rather than claims that reward function generation measures those constructs. One paper claims a causal relationship from Commonsense reasoning to reward function generation, describing reward generation from natural language task descriptions as leveraging commonsense understanding of human behavior, and another claims a causal relationship from Time-series feature extraction ability to reward function generation, with evidence that LLMs can extract relevant features from language-described resource allocation preferences."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is an LLM producing executable code for a reward function that specifies an agent's objective in a simulation or reinforcement learning task. Definitions commonly ground the generation in a task or goal description plus environment details or code, and describe successful outputs as reward code that guides learning, for example by returning the scalar signal whose cumulative maximization defines the task or by correctly using environment attributes to encourage a desired behavior. A smaller line of work narrows the behavior to generating dense, shaped reward code from a natural language goal.\n\nVariants. Papers study several variants and settings. Some treat reward generation as one part of broader program generation, alongside termination functions or simulator dynamics, while others use it to encode desired coordination behavior for teammate training, including executable functions over state and action transitions and prompts requiring the form \"def reward(self) -> float\". Another named variant is dense reward code generation, which focuses on shaped dense rewards, and the domains explicitly mentioned include robotics, games, and subtasks trained with reinforcement learning.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize the behavior directly through generation tasks that provide natural language task or goal descriptions together with environment code, environment details, or low-level states, and ask for executable reward code; one formulation states the objective as outputting reward function code R such that F(AM(R)) is maximized. The snippets describe task-specific objectives rather than a named scoring instrument.\n\nWhat it is taken as evidence of. The recorded relationships link it to two constructs, Commonsense reasoning and Time-series feature extraction ability, but both links are causal antecedents rather than claims that reward function generation measures those constructs. One paper claims a causal relationship from Commonsense reasoning to reward function generation, describing reward generation from natural language task descriptions as leveraging commonsense understanding of human behavior, and another claims a causal relationship from Time-series feature extraction ability to reward function generation, with evidence that LLMs can extract relevant features from language-described resource allocation preferences.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "OMNI-EPIC: Open-endedness via Models of human Notions of Interestingness with Environments Programmed in Code",
+      "REvolve: Reward Evolution with Large Language Models using Human Feedback"
+    ],
+    "neurips24": [
+      "A Decision-Language Model (DLM) for Dynamic Restless Multi-Armed Bandit Tasks in Public Health",
+      "FactorSim: Generative Simulation via Factorized Representation"
+    ],
+    "iclr24": [
+      "Eureka: Human-Level Reward Design via Coding Large Language Models",
+      "Text2Reward: Reward Shaping with Language Models for Reinforcement Learning"
+    ],
+    "icml25": [
+      "LLM-Assisted Semantically Diverse Teammate Generation for Efficient Multi-agent Coordination",
+      "R*: Efficient Reward Design via Reward Structure Evolution and Parameter Alignment Optimization with Large Language Models"
+    ],
+    "naacl25": [
+      "Hazards in Daily Life? Enabling Robots to Proactively Detect and Resolve Anomalies"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "neurips24": 2,
+    "iclr24": 2,
+    "icml25": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

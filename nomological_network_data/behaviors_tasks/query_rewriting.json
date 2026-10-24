@@ -1,0 +1,262 @@
+{
+  "canonical_name": "Query rewriting",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is as rewriting a user query or prompt so it is clearer, semantically richer, or better aligned with a downstream system. Papers variously define success as clarifying ambiguous expressions, adding semantic information, satisfying a required aspect and value, making a question search-engine-friendly, or transforming a natural-language description into a more effective structured prompt; some formulations explicitly require preserving meaning, intent, or faithfulness to the original prompt. A smaller cluster of vision-oriented papers instead emphasizes enriching queries with visual details and aesthetic expectations, or removing stylistic biases, platform-specific keywords, and conflicting information, while another line treats prompt rewriting as rephrasing harmful queries while preserving meaning.\n\nVariants. Papers use several nearby names for the behavior, including query rephrasing or paraphrasing, query reformulation, prompt rewriting, prompt polishing, and query refinement. The settings span online shopping constraint editing, text-to-SQL schema alignment, multi-hop question answering, multimodal search, text-to-image generation, jailbreak prompt generation, and general-assistant search revision when initial results are unsatisfactory. Many of these variants are tied to downstream retrieval, and several papers claim a causal relationship from Query rewriting to Information retrieval; one iterative QA paper also claims a causal relationship from Thought generation to Query rewriting, and one text-to-image paper claims a causal relationship from Query rewriting to Image generation.\n\nSpace of elicitation and scores. Only one measurement instrument is linked to query rewriting, TopiOCQA. The linked paper describes it as consisting of multi-turn conversational queries, and no other measurement instrument is linked to query rewriting in these papers.\n\nWhat it is taken as evidence of. Papers do not present a single shared construct framing for query rewriting. Instead, it is linked to three constructs in different ways: it is related to Disambiguation ability, while In-context learning and Reasoning are each claimed to have causal relationships toward query rewriting, with authors saying they \"leverage the ICL capability of large language models\" and the \"reasoning ability\" of LLMs for rewriting.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Query rephrasing",
+    "Query rewriting",
+    "Prompt rewriting",
+    "Prompt polishing",
+    "Query reformulation",
+    "Query paraphrasing",
+    "Query refinement"
+  ],
+  "papers": [
+    "ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision",
+    "UniRAG: Unified Query Understanding Method for Retrieval Augmented Generation",
+    "A Fully Probabilistic Perspective on Large Language Model Unlearning: Evaluation and Optimization",
+    "CIFLEX: Contextual Instruction Flow for Sub-task Execution in Multi-Turn Interactions with a Single On-Device LLM",
+    "CoEvo: Coevolution of LLM and Retrieval Model for Domain-Specific Information Retrieval",
+    "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+    "ICR: Iterative Clarification and Rewriting for Conversational Search",
+    "Learning Contextual Retrieval for Robust Conversational Search",
+    "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL",
+    "GAIA: a benchmark for General AI Assistants",
+    "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search",
+    "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+    "MMSearch: Unveiling the Potential of Large Models as Multi-modal Search Engines",
+    "LLMs can see and hear without any training",
+    "AP-Adapter: Improving Generalization of Automatic Prompts on Unseen Text-to-Image Diffusion Models",
+    "Aligning Vision Models with Human Aesthetics in Retrieval: Benchmarks and Algorithms",
+    "Multimodal Large Language Models Make Text-to-Image Generative Models Align Better",
+    "Shopping MMLU: A Massive Multi-Task Online Shopping Benchmark for Large Language Models"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of rewriting a user's search query, typically using an LLM, to enrich it with additional visual details, stylistic elements, and aesthetic expectations.",
+      "paper": "Aligning Vision Models with Human Aesthetics in Retrieval: Benchmarks and Algorithms",
+      "original_name": "Query rephrasing"
+    },
+    {
+      "text": "The task of modifying a given user query based on a specified constraint, such as an aspect and value.",
+      "paper": "Shopping MMLU: A Massive Multi-Task Online Shopping Benchmark for Large Language Models",
+      "original_name": "Query rewriting"
+    },
+    {
+      "text": "The task of transforming a natural language description into a more effective, structured prompt (e.g., a keyword-based prompt) for a generative model.",
+      "paper": "AP-Adapter: Improving Generalization of Automatic Prompts on Unseen Text-to-Image Diffusion Models",
+      "original_name": "Prompt rewriting"
+    },
+    {
+      "text": "The task of rewriting user-written text prompts to remove stylistic biases, platform-specific keywords, and conflicting information.",
+      "paper": "Multimodal Large Language Models Make Text-to-Image Generative Models Align Better",
+      "original_name": "Prompt polishing"
+    },
+    {
+      "text": "The task of modifying or rewriting a query for a subsequent retrieval step, typically by incorporating information from previously retrieved documents to focus on unresolved aspects of the original question.",
+      "paper": "ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision",
+      "original_name": "Query reformulation"
+    },
+    {
+      "text": "Rewriting a user query using synonymous expressions or clearer formulations to resolve ambiguity while preserving intent, such as rephrasing 'Who was the spouse of Anna Karina from 1968 to 1974?' as 'Anna Karina spouse from 1968 to 1974'.",
+      "paper": "UniRAG: Unified Query Understanding Method for Retrieval Augmented Generation",
+      "original_name": "Query paraphrasing"
+    },
+    {
+      "text": "The observable action of modifying or improving a search query or internal prompt when the initial results are unsatisfactory.",
+      "paper": "GAIA: a benchmark for General AI Assistants",
+      "original_name": "Query refinement"
+    }
+  ],
+  "definition_count": 7,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Information retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Aligning Vision Models with Human Aesthetics in Retrieval: Benchmarks and Algorithms",
+      "evidence": "We find that using this rephrased query in retrieval drastically boosts the aesthetic quality more than we ever expected.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Aligning Vision Models with Human Aesthetics in Retrieval: Benchmarks and Algorithms"
+        ],
+        "acl25": [
+          "ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision"
+        ],
+        "emnlp25": [
+          "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "AP-Adapter: Improving Generalization of Automatic Prompts on Unseen Text-to-Image Diffusion Models",
+      "evidence": "we leverage the ICL capability of large language models (LLMs) [23, 30] to generate automatic keyword prompts similar to manually crafted prompts (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AP-Adapter: Improving Generalization of Automatic Prompts on Unseen Text-to-Image Diffusion Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Image generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "LLMs can see and hear without any training",
+      "evidence": "The goal of the LLM is to \u201crewrite\u201d the prompt passed into the T2I model, such that the final generated image improves in quality, while maintaining or improving the faithfulness to the original text prompt. (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "LLMs can see and hear without any training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Disambiguation ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+      "evidence": "we argue existing disambiguation works fall in three major policies... Query Rewriting, Middle. Long Form Answer Generation, Right. Asking Clarifying Questions. (Section 3, Figure 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Aligning Vision Models with Human Aesthetics in Retrieval: Benchmarks and Algorithms",
+      "evidence": "We find that utilizing the reasoning ability of large language models (LLMs) to rephrase the search query and extend the aesthetic expectations can make up for this shortcoming. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Aligning Vision Models with Human Aesthetics in Retrieval: Benchmarks and Algorithms"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Thought generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision",
+      "evidence": "Thought-concat appends the current thought t(i) to the query, constructing the updated query as q(i+1) = [t(i); q(i)], where [a; b] denotes the concatenation of a and b. (Section 4.2.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TopiOCQA",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "CIFLEX: Contextual Instruction Flow for Sub-task Execution in Multi-Turn Interactions with a Single On-Device LLM",
+      "evidence": "We employ TopiOCQA (Adlakha et al., 2022) and QReCC (Anantha et al., 2021), both of which consist of multi-turn conversational queries. These datasets contain context-dependent questions...requiring disambiguation based on prior conversation turns. Hence, in the sub-task, LLM clarifies the original question into a standalone question. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CIFLEX: Contextual Instruction Flow for Sub-task Execution in Multi-Turn Interactions with a Single On-Device LLM"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is as rewriting a user query or prompt so it is clearer, semantically richer, or better aligned with a downstream system. Papers variously define success as clarifying ambiguous expressions, adding semantic information, satisfying a required aspect and value, making a question search-engine-friendly, or transforming a natural-language description into a more effective structured prompt; some formulations explicitly require preserving meaning, intent, or faithfulness to the original prompt. A smaller cluster of vision-oriented papers instead emphasizes enriching queries with visual details and aesthetic expectations, or removing stylistic biases, platform-specific keywords, and conflicting information, while another line treats prompt rewriting as rephrasing harmful queries while preserving meaning."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby names for the behavior, including query rephrasing or paraphrasing, query reformulation, prompt rewriting, prompt polishing, and query refinement. The settings span online shopping constraint editing, text-to-SQL schema alignment, multi-hop question answering, multimodal search, text-to-image generation, jailbreak prompt generation, and general-assistant search revision when initial results are unsatisfactory. Many of these variants are tied to downstream retrieval, and several papers claim a causal relationship from Query rewriting to Information retrieval; one iterative QA paper also claims a causal relationship from Thought generation to Query rewriting, and one text-to-image paper claims a causal relationship from Query rewriting to Image generation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Only one measurement instrument is linked to query rewriting, TopiOCQA. The linked paper describes it as consisting of multi-turn conversational queries, and no other measurement instrument is linked to query rewriting in these papers."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not present a single shared construct framing for query rewriting. Instead, it is linked to three constructs in different ways: it is related to Disambiguation ability, while In-context learning and Reasoning are each claimed to have causal relationships toward query rewriting, with authors saying they \"leverage the ICL capability of large language models\" and the \"reasoning ability\" of LLMs for rewriting."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is as rewriting a user query or prompt so it is clearer, semantically richer, or better aligned with a downstream system. Papers variously define success as clarifying ambiguous expressions, adding semantic information, satisfying a required aspect and value, making a question search-engine-friendly, or transforming a natural-language description into a more effective structured prompt; some formulations explicitly require preserving meaning, intent, or faithfulness to the original prompt. A smaller cluster of vision-oriented papers instead emphasizes enriching queries with visual details and aesthetic expectations, or removing stylistic biases, platform-specific keywords, and conflicting information, while another line treats prompt rewriting as rephrasing harmful queries while preserving meaning.\n\nVariants. Papers use several nearby names for the behavior, including query rephrasing or paraphrasing, query reformulation, prompt rewriting, prompt polishing, and query refinement. The settings span online shopping constraint editing, text-to-SQL schema alignment, multi-hop question answering, multimodal search, text-to-image generation, jailbreak prompt generation, and general-assistant search revision when initial results are unsatisfactory. Many of these variants are tied to downstream retrieval, and several papers claim a causal relationship from Query rewriting to Information retrieval; one iterative QA paper also claims a causal relationship from Thought generation to Query rewriting, and one text-to-image paper claims a causal relationship from Query rewriting to Image generation.\n\nSpace of elicitation and scores. Only one measurement instrument is linked to query rewriting, TopiOCQA. The linked paper describes it as consisting of multi-turn conversational queries, and no other measurement instrument is linked to query rewriting in these papers.\n\nWhat it is taken as evidence of. Papers do not present a single shared construct framing for query rewriting. Instead, it is linked to three constructs in different ways: it is related to Disambiguation ability, while In-context learning and Reasoning are each claimed to have causal relationships toward query rewriting, with authors saying they \"leverage the ICL capability of large language models\" and the \"reasoning ability\" of LLMs for rewriting.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision",
+      "UniRAG: Unified Query Understanding Method for Retrieval Augmented Generation"
+    ],
+    "emnlp25": [
+      "A Fully Probabilistic Perspective on Large Language Model Unlearning: Evaluation and Optimization",
+      "CIFLEX: Contextual Instruction Flow for Sub-task Execution in Multi-Turn Interactions with a Single On-Device LLM",
+      "CoEvo: Coevolution of LLM and Retrieval Model for Domain-Specific Information Retrieval",
+      "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+      "ICR: Iterative Clarification and Rewriting for Conversational Search",
+      "Learning Contextual Retrieval for Robust Conversational Search",
+      "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL"
+    ],
+    "neurips24": [
+      "AP-Adapter: Improving Generalization of Automatic Prompts on Unseen Text-to-Image Diffusion Models",
+      "Aligning Vision Models with Human Aesthetics in Retrieval: Benchmarks and Algorithms",
+      "Multimodal Large Language Models Make Text-to-Image Generative Models Align Better",
+      "Shopping MMLU: A Massive Multi-Task Online Shopping Benchmark for Large Language Models"
+    ],
+    "iclr24": [
+      "GAIA: a benchmark for General AI Assistants"
+    ],
+    "iclr25": [
+      "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search",
+      "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+      "MMSearch: Unveiling the Potential of Large Models as Multi-modal Search Engines"
+    ],
+    "icml25": [
+      "LLMs can see and hear without any training"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 7,
+    "neurips24": 4,
+    "iclr24": 1,
+    "iclr25": 3,
+    "icml25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

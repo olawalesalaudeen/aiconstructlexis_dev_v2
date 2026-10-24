@@ -1,0 +1,195 @@
+{
+  "canonical_name": "Plausibility",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats plausibility as a human-facing quality of generated explanations or rationales: they should make sense on their own, be relevant to the question, and be logical, common, or factually supported. Several definitions also separate it from answer correctness or internal faithfulness, describing plausible explanations as intuitive, coherent, and convincing even when the focus is not on whether they mirror the model's decision process. A smaller line of work applies the term to hypotheses, where plausibility is the perceived credibility and reasonableness of a hypothesis as judged by human experts and aligned with domain knowledge.\n\nSpace of facets. The clearest systematization is through neighboring constructs. Several papers pair plausibility with faithfulness, either as a complementary property of explanations that align with human understanding or as part of a trade-off, and another paper uses plausibility and faithfulness as the metrics for explainability. One paper also distinguishes implausibility from hallucination: implausibility refers to explanations that lack informativeness, while hallucination refers to contradiction with visual-grounded facts.\n\nSpace of measurement. Plausibility is linked to 3 measurement instruments and no behavioral indicators. Human evaluation is the most common linked instrument, used for explanation ratings and for Likert judgments that include plausibility among several criteria; BLiMP is used to examine whether attributions align with human-understood linguistic rationales; and LLM-as-a-judge is used to rate whether action sequences are reasonable, likely, or believable given context and known behavior patterns. These operationalizations keep the focus on judged plausibility, whether through human ratings, alignment with human-understood rationales, or contextual believability, but they are applied to explanations, attributions, and action sequences rather than to a single output type.\n\nLinks. Beyond measurement, plausibility is most often linked to interpretability and explainability, faithfulness, and reasoning. Papers place it within interpretability and explainability by describing explanations as ideally both faithful and plausible, and one paper explicitly discusses a trade-off between plausibility and faithfulness. One paper also claims a causal relationship from plausibility to reasoning, reporting that improving plausibility scores improves the model's reasoning. No correlation link is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Plausibility"
+  ],
+  "papers": [
+    "Literature Meets Data: A Synergistic Approach to Hypothesis Generation",
+    "Rubrik's Cube: Testing a New Rubric for Evaluating Explanations on the CUBE dataset",
+    "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+    "Judge and Improve: Towards a Better Reasoning of Knowledge Graphs with Large Language Models",
+    "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps",
+    "Mixing Inference-time Experts for Enhancing LLM Reasoning",
+    "NormXLogit: The Head-on-Top Never Lies",
+    "R-CHAR: A Metacognition-Driven Framework for Role-Playing in Large Language Models",
+    "Towards Faithful Natural Language Explanations: A Study Using Activation Patching in Large Language Models",
+    "RAPPER: Reinforced Rationale-Prompted Paradigm for Natural Language Explanation in Visual Question Answering",
+    "Tailoring Self-Rationalizers with Multi-Reward Distillation"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The quality of a model's generated explanation being relevant to the input question and supported by established, language-based facts.",
+      "paper": "RAPPER: Reinforced Rationale-Prompted Paradigm for Natural Language Explanation in Visual Question Answering",
+      "original_name": "Plausibility"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RAPPER: Reinforced Rationale-Prompted Paradigm for Natural Language Explanation in Visual Question Answering",
+      "evidence": "In addition, we build human evaluation for explanation on plausibility and faithfulness since automatic metric measures not always reflect the correctness and logicality. (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "RAPPER: Reinforced Rationale-Prompted Paradigm for Natural Language Explanation in Visual Question Answering"
+        ],
+        "emnlp25": [
+          "R-CHAR: A Metacognition-Driven Framework for Role-Playing in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Interpretability and explainability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Is the MMI Criterion Necessary for Interpretability? Degenerating Non-causal Features to Plain Noise for Self-Rationalization",
+      "evidence": "Ideally, the explanation should be both faithful (reflecting the model\u2019s actual behavior) and plausible (aligning with human understanding)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Is the MMI Criterion Necessary for Interpretability? Degenerating Non-causal Features to Plain Noise for Self-Rationalization"
+        ],
+        "naacl25": [
+          "Main Predicate and Their Arguments as Explanation Signals For Intent Classification"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Simulating Human-like Daily Activities with Desire-driven Autonomy",
+      "evidence": "When evaluating the likelihood of the activity sequences, GPT-4o is instructed to take the following criteria into account: ... Plausibility: How reasonable, likely, or believable a sequence of actions is, given the circumstances, context, and known behavior patterns.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Simulating Human-like Daily Activities with Desire-driven Autonomy"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Main Predicate and Their Arguments as Explanation Signals For Intent Classification",
+      "evidence": "We also observe that guiding models to focus on explanation signals from our dataset during training improves the plausibility Token F1 score by 3-4%, improving the model\u2019s reasoning. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Main Predicate and Their Arguments as Explanation Signals For Intent Classification"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Judge and Improve: Towards a Better Reasoning of Knowledge Graphs with Large Language Models",
+      "evidence": "In terms of interpretability, this paper focuses on the trade-off between plausibility and faithfulness. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Judge and Improve: Towards a Better Reasoning of Knowledge Graphs with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BLiMP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "NormXLogit: The Head-on-Top Never Lies",
+      "evidence": "...to examine its plausibility, i.e., the extent to which its attributions align with human-understood linguistic rationales provided by BLiMP... (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "NormXLogit: The Head-on-Top Never Lies"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats plausibility as a human-facing quality of generated explanations or rationales: they should make sense on their own, be relevant to the question, and be logical, common, or factually supported. Several definitions also separate it from answer correctness or internal faithfulness, describing plausible explanations as intuitive, coherent, and convincing even when the focus is not on whether they mirror the model's decision process. A smaller line of work applies the term to hypotheses, where plausibility is the perceived credibility and reasonableness of a hypothesis as judged by human experts and aligned with domain knowledge."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "The clearest systematization is through neighboring constructs. Several papers pair plausibility with faithfulness, either as a complementary property of explanations that align with human understanding or as part of a trade-off, and another paper uses plausibility and faithfulness as the metrics for explainability. One paper also distinguishes implausibility from hallucination: implausibility refers to explanations that lack informativeness, while hallucination refers to contradiction with visual-grounded facts."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Plausibility is linked to 3 measurement instruments and no behavioral indicators. Human evaluation is the most common linked instrument, used for explanation ratings and for Likert judgments that include plausibility among several criteria; BLiMP is used to examine whether attributions align with human-understood linguistic rationales; and LLM-as-a-judge is used to rate whether action sequences are reasonable, likely, or believable given context and known behavior patterns. These operationalizations keep the focus on judged plausibility, whether through human ratings, alignment with human-understood rationales, or contextual believability, but they are applied to explanations, attributions, and action sequences rather than to a single output type."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, plausibility is most often linked to interpretability and explainability, faithfulness, and reasoning. Papers place it within interpretability and explainability by describing explanations as ideally both faithful and plausible, and one paper explicitly discusses a trade-off between plausibility and faithfulness. One paper also claims a causal relationship from plausibility to reasoning, reporting that improving plausibility scores improves the model's reasoning. No correlation link is reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define plausibility as how sensible, credible, coherent, and factually or relevantly grounded an explanation or rationale appears to people, often independent of answer correctness or faithfulness, so they target the same core property of explanatory outputs. One paper applies the same credibility and reasonableness idea to a hypothesis judged by experts rather than an explanation, but this looks like an outlying scope shift rather than a substantial competing definition.",
+    "papers_with_definition": 4,
+    "runs": [
+      "consensus",
+      "complementary",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats plausibility as a human-facing quality of generated explanations or rationales: they should make sense on their own, be relevant to the question, and be logical, common, or factually supported. Several definitions also separate it from answer correctness or internal faithfulness, describing plausible explanations as intuitive, coherent, and convincing even when the focus is not on whether they mirror the model's decision process. A smaller line of work applies the term to hypotheses, where plausibility is the perceived credibility and reasonableness of a hypothesis as judged by human experts and aligned with domain knowledge.\n\nSpace of facets. The clearest systematization is through neighboring constructs. Several papers pair plausibility with faithfulness, either as a complementary property of explanations that align with human understanding or as part of a trade-off, and another paper uses plausibility and faithfulness as the metrics for explainability. One paper also distinguishes implausibility from hallucination: implausibility refers to explanations that lack informativeness, while hallucination refers to contradiction with visual-grounded facts.\n\nSpace of measurement. Plausibility is linked to 3 measurement instruments and no behavioral indicators. Human evaluation is the most common linked instrument, used for explanation ratings and for Likert judgments that include plausibility among several criteria; BLiMP is used to examine whether attributions align with human-understood linguistic rationales; and LLM-as-a-judge is used to rate whether action sequences are reasonable, likely, or believable given context and known behavior patterns. These operationalizations keep the focus on judged plausibility, whether through human ratings, alignment with human-understood rationales, or contextual believability, but they are applied to explanations, attributions, and action sequences rather than to a single output type.\n\nLinks. Beyond measurement, plausibility is most often linked to interpretability and explainability, faithfulness, and reasoning. Papers place it within interpretability and explainability by describing explanations as ideally both faithful and plausible, and one paper explicitly discusses a trade-off between plausibility and faithfulness. One paper also claims a causal relationship from plausibility to reasoning, reporting that improving plausibility scores improves the model's reasoning. No correlation link is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Literature Meets Data: A Synergistic Approach to Hypothesis Generation",
+      "Rubrik's Cube: Testing a New Rubric for Evaluating Explanations on the CUBE dataset"
+    ],
+    "emnlp25": [
+      "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+      "Judge and Improve: Towards a Better Reasoning of Knowledge Graphs with Large Language Models",
+      "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps",
+      "Mixing Inference-time Experts for Enhancing LLM Reasoning",
+      "NormXLogit: The Head-on-Top Never Lies",
+      "R-CHAR: A Metacognition-Driven Framework for Role-Playing in Large Language Models",
+      "Towards Faithful Natural Language Explanations: A Study Using Activation Patching in Large Language Models"
+    ],
+    "iclr24": [
+      "RAPPER: Reinforced Rationale-Prompted Paradigm for Natural Language Explanation in Visual Question Answering",
+      "Tailoring Self-Rationalizers with Multi-Reward Distillation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 7,
+    "iclr24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24"
+  ]
+}

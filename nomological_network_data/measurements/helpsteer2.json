@@ -1,0 +1,190 @@
+{
+  "canonical_name": "HelpSteer2",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing usage treats HelpSteer2 as a multi-aspect preference or alignment dataset used in alignment experiments and reward-model training. Definitions vary by slice and framing: one line describes a validation split of 1,000 prompts, while another describes a permissively licensed CC-BY-4.0 release with 10,681 prompts and 21,362 annotated samples, each prompt paired with two responses annotated for helpfulness, correctness, coherence, complexity, and verbosity. Other papers describe it as prompts and completions with Likert-5 scoring, as binary-labeled human preference pairs across multiple assessment dimensions, as an instruction-following dataset from Nvidia, or as a subset used to synthesize judge-training data.\n\nWhat it is claimed to measure. Across papers, it is linked to six constructs and one behavioral indicator. Among the measurement claims, coherence appears most often; other papers use it to measure complexity, helpfulness, model collapse, and personalized alignment, with one other construct linked as well, so the claims are spread across several constructs rather than centered on one target. One paper also relates HelpSteer2 to multi-turn dialogue by noting that multi-turn prompts comprise about 29% of the samples, but that link is presented as related rather than as a measurement claim.\n\nSpace of uses. Papers commonly position HelpSteer2 as training and evaluation material inside larger pipelines. They use it to train personalized reward models, mixture reward models, and preference optimization systems, and also to evaluate alignment results or learned heads on its validation or test splits; a smaller line of work uses it as the real data source for iterative fine-tuning before sampling new text. It is linked to one other instrument, ShareGPT, because most prompts are reported as sourced from it, and some studies use HelpSteer2 alongside UltraFeedback, OffsetBias, WildGuardMix, and RPR, with one additional preference dataset named in joint reward-model training.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "HelpSteer2",
+    "Helpsteer2"
+  ],
+  "papers": [
+    "Binary Classifier Optimization for Large Language Model Alignment",
+    "Crowd Comparative Reasoning: Unlocking Comprehensive Evaluations for LLM-as-a-Judge",
+    "Optimal Transport-Based Token Weighting scheme for Enhanced Preference Optimization",
+    "Improve LLM-as-a-Judge Ability as a General Ability",
+    "MiCRo: Mixture Modeling and Context-aware Routing for Personalized Preference Learning",
+    "Advantage-Guided Distillation for Preference Alignment in Small Language Models",
+    "HelpSteer2-Preference: Complementing Ratings with Preferences",
+    "Interpreting Language Reward Models via Contrastive Explanations",
+    "PAD: Personalized Alignment of LLMs at Decoding-time",
+    "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+    "Seeing Eye to AI: Human Alignment via Gaze-Based Response Rewards for Large Language Models",
+    "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World",
+    "Diverging Preferences: When do Annotators Disagree and do Models Know?",
+    "R.I.P.: Better Models by Survival of the Fittest Prompts",
+    "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+    "Self-Generated Critiques Boost Reward Modeling for Language Models",
+    "HelpSteer 2: Open-source dataset for training top-performing reward models"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A multi-aspect alignment dataset comprising 1,000 prompts, used for both training a personalized reward model and for evaluating alignment across different preference dimensions.",
+      "paper": "PAD: Personalized Alignment of LLMs at Decoding-time",
+      "original_name": "HelpSteer2"
+    },
+    {
+      "text": "Helpsteer2, a preference dataset used for preference optimization and alignment experiments.",
+      "paper": "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+      "original_name": "Helpsteer2"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ShareGPT",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "evidence": "Most of the prompts (over 95%) used in HelpSteer2 are sourced from ShareGPT [19], a platform where ChatGPT users voluntarily share their conversations.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "HelpSteer 2: Open-source dataset for training top-performing reward models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multi-turn dialogue",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "evidence": "To ensure HelpSteer2 is effective for predicting rewards in multi-turn conversations, we included multi-turn prompts, which comprise approximately 29% of the samples.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "HelpSteer 2: Open-source dataset for training top-performing reward models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Verbosity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "HelpSteer2-Preference: Complementing Ratings with Preferences",
+      "evidence": "They first annotate each response on a Likert-5 scale along several dimensions (helpfulness, correctness and coherence, complexity and verbosity), as detailed in Wang et al. (2024d).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HelpSteer2-Preference: Complementing Ratings with Preferences"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Personalized alignment",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "PAD: Personalized Alignment of LLMs at Decoding-time",
+      "evidence": "Alignment results on HelpSteer2 dataset. (Figure 2b)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "PAD: Personalized Alignment of LLMs at Decoding-time"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Model collapse",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World",
+      "evidence": "Fine-tuning Google\u2019s Gemma2 models on Nvidia\u2019s HelpSteer 2 dataset demonstrates that model collapse occurs if previous data are replaced after each model-fitting iteration (left), whereas model collapse is avoided if new synthetic data instead accumulate with previous real and synthetic data (right).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing usage treats HelpSteer2 as a multi-aspect preference or alignment dataset used in alignment experiments and reward-model training. Definitions vary by slice and framing: one line describes a validation split of 1,000 prompts, while another describes a permissively licensed CC-BY-4.0 release with 10,681 prompts and 21,362 annotated samples, each prompt paired with two responses annotated for helpfulness, correctness, coherence, complexity, and verbosity. Other papers describe it as prompts and completions with Likert-5 scoring, as binary-labeled human preference pairs across multiple assessment dimensions, as an instruction-following dataset from Nvidia, or as a subset used to synthesize judge-training data."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across papers, it is linked to six constructs and one behavioral indicator. Among the measurement claims, coherence appears most often; other papers use it to measure complexity, helpfulness, model collapse, and personalized alignment, with one other construct linked as well, so the claims are spread across several constructs rather than centered on one target. One paper also relates HelpSteer2 to multi-turn dialogue by noting that multi-turn prompts comprise about 29% of the samples, but that link is presented as related rather than as a measurement claim."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers commonly position HelpSteer2 as training and evaluation material inside larger pipelines. They use it to train personalized reward models, mixture reward models, and preference optimization systems, and also to evaluate alignment results or learned heads on its validation or test splits; a smaller line of work uses it as the real data source for iterative fine-tuning before sampling new text. It is linked to one other instrument, ShareGPT, because most prompts are reported as sourced from it, and some studies use HelpSteer2 alongside UltraFeedback, OffsetBias, WildGuardMix, and RPR, with one additional preference dataset named in joint reward-model training."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing usage treats HelpSteer2 as a multi-aspect preference or alignment dataset used in alignment experiments and reward-model training. Definitions vary by slice and framing: one line describes a validation split of 1,000 prompts, while another describes a permissively licensed CC-BY-4.0 release with 10,681 prompts and 21,362 annotated samples, each prompt paired with two responses annotated for helpfulness, correctness, coherence, complexity, and verbosity. Other papers describe it as prompts and completions with Likert-5 scoring, as binary-labeled human preference pairs across multiple assessment dimensions, as an instruction-following dataset from Nvidia, or as a subset used to synthesize judge-training data.\n\nWhat it is claimed to measure. Across papers, it is linked to six constructs and one behavioral indicator. Among the measurement claims, coherence appears most often; other papers use it to measure complexity, helpfulness, model collapse, and personalized alignment, with one other construct linked as well, so the claims are spread across several constructs rather than centered on one target. One paper also relates HelpSteer2 to multi-turn dialogue by noting that multi-turn prompts comprise about 29% of the samples, but that link is presented as related rather than as a measurement claim.\n\nSpace of uses. Papers commonly position HelpSteer2 as training and evaluation material inside larger pipelines. They use it to train personalized reward models, mixture reward models, and preference optimization systems, and also to evaluate alignment results or learned heads on its validation or test splits; a smaller line of work uses it as the real data source for iterative fine-tuning before sampling new text. It is linked to one other instrument, ShareGPT, because most prompts are reported as sourced from it, and some studies use HelpSteer2 alongside UltraFeedback, OffsetBias, WildGuardMix, and RPR, with one additional preference dataset named in joint reward-model training.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Binary Classifier Optimization for Large Language Model Alignment",
+      "Crowd Comparative Reasoning: Unlocking Comprehensive Evaluations for LLM-as-a-Judge",
+      "Optimal Transport-Based Token Weighting scheme for Enhanced Preference Optimization"
+    ],
+    "iclr25": [
+      "Advantage-Guided Distillation for Preference Alignment in Small Language Models",
+      "HelpSteer2-Preference: Complementing Ratings with Preferences",
+      "Interpreting Language Reward Models via Contrastive Explanations",
+      "PAD: Personalized Alignment of LLMs at Decoding-time",
+      "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+      "Seeing Eye to AI: Human Alignment via Gaze-Based Response Rewards for Large Language Models"
+    ],
+    "icml25": [
+      "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World",
+      "Diverging Preferences: When do Annotators Disagree and do Models Know?",
+      "R.I.P.: Better Models by Survival of the Fittest Prompts",
+      "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning"
+    ],
+    "emnlp25": [
+      "Improve LLM-as-a-Judge Ability as a General Ability",
+      "MiCRo: Mixture Modeling and Context-aware Routing for Personalized Preference Learning"
+    ],
+    "naacl25": [
+      "Self-Generated Critiques Boost Reward Modeling for Language Models"
+    ],
+    "neurips24": [
+      "HelpSteer 2: Open-source dataset for training top-performing reward models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 6,
+    "icml25": 4,
+    "emnlp25": 2,
+    "naacl25": 1,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "canonical_name": "Clarifying question generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across definitions, the prevailing usage is a model producing a clarifying or follow-up question in response to an ambiguous or underspecified user request, rather than immediately answering. Most descriptions say the question should resolve ambiguity, elicit more information, or obtain missing task specifications, and one line of work further frames the goal as generating the most informative question among multiple compatible solutions. Some papers make the success condition more specific, requiring the question to identify competing interpretations, request missing or incorrect details, or distinguish among possible solutions before continuing with tool use.\n\nVariants. Papers use nearby labels such as asking clarifying questions, clarification question asking, and clarification seeking. The behavior is studied in conversational settings, active task disambiguation, agent and tool-use settings, tabular data analysis, and database-grounded text-to-SQL over schemas. In these variants, the follow-up may ask about ambiguous terms, missing function arguments, potentially incorrect instructions, or competing database interpretations, and some agent settings frame it as seeking user confirmation before actions such as file deletion.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead describe it at the response level: the assistant asks a clarifying question rather than attempting a direct answer, or asks before continuing with tool use when instructions are ambiguous, under-specified, missing details, or appear incorrect.\n\nWhat it is taken as evidence of. Papers connect it to three constructs rather than to one agreed construct. It is related to Ambiguity handling, with papers describing clarifying questions as a way to resolve ambiguity in user requests, and it is related to Disambiguation ability, where asking clarifying questions appears as one disambiguation policy. One paper also claims a causal relationship from Metacognition to Clarifying question generation, stating that generating effective clarifying questions requires a form of meta-cognitive reasoning.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Asking clarifying questions",
+    "Clarification question asking",
+    "Clarifying question generation",
+    "Clarification seeking",
+    "Clarification question generation"
+  ],
+  "papers": [
+    "What Makes a Good Natural Language Prompt?",
+    "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+    "Hidden in Plain Sight: Reasoning in Underspecified and Misspecified Scenarios for Multimodal LLMs",
+    "Learning to Ask: When LLM Agents Meet Unclear Instruction",
+    "Identifying the Risks of LM Agents with an LM-Emulated Sandbox",
+    "Active Task Disambiguation with LLMs",
+    "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+    "Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions",
+    "CollabLLM: From Passive Responders to Active Collaborators",
+    "Proactive Agents for Multi-Turn Text-to-Image Generation Under Uncertainty",
+    "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+    "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The act of generating a question in response to a user's query to resolve ambiguity and elicit more information.",
+      "paper": "Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions",
+      "original_name": "Asking clarifying questions"
+    },
+    {
+      "text": "Producing a clarifying question instead of directly answering when the user request is ambiguous or underspecified.",
+      "paper": "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+      "original_name": "Clarification question asking"
+    },
+    {
+      "text": "Producing questions intended to elicit missing task specifications that distinguish among multiple compatible solutions.",
+      "paper": "Active Task Disambiguation with LLMs",
+      "original_name": "Clarifying question generation"
+    },
+    {
+      "text": "The observable behavior of an LM agent requesting additional information from the user when instructions are ambiguous or underspecified.",
+      "paper": "Identifying the Risks of LM Agents with an LM-Emulated Sandbox",
+      "original_name": "Clarification seeking"
+    },
+    {
+      "text": "Producing a follow-up question that identifies and disambiguates multiple possible interpretations of a user query in the context of a database schema.",
+      "paper": "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+      "original_name": "Clarification question generation"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Metacognition",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Active Task Disambiguation with LLMs",
+      "evidence": "Yet, generating effective clarifying questions requires LLM agents to engage in a form of meta-cognitive reasoning, an ability LLMs may presently lack.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Active Task Disambiguation with LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Ambiguity handling",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions",
+      "evidence": "In this work, we develop LLMs that can ask clarifying questions to resolve ambiguity in their users\u2019 requests. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Disambiguation ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+      "evidence": "we argue existing disambiguation works fall in three major policies... Query Rewriting, Middle. Long Form Answer Generation, Right. Asking Clarifying Questions. (Section 3, Figure 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "APPS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Active Task Disambiguation with LLMs",
+      "evidence": "We evaluate all question-generating strategies on... the more challenging APPS (Hendrycks et al., 2021) benchmark with competition-level coding challenges",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Active Task Disambiguation with LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across definitions, the prevailing usage is a model producing a clarifying or follow-up question in response to an ambiguous or underspecified user request, rather than immediately answering. Most descriptions say the question should resolve ambiguity, elicit more information, or obtain missing task specifications, and one line of work further frames the goal as generating the most informative question among multiple compatible solutions. Some papers make the success condition more specific, requiring the question to identify competing interpretations, request missing or incorrect details, or distinguish among possible solutions before continuing with tool use."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use nearby labels such as asking clarifying questions, clarification question asking, and clarification seeking. The behavior is studied in conversational settings, active task disambiguation, agent and tool-use settings, tabular data analysis, and database-grounded text-to-SQL over schemas. In these variants, the follow-up may ask about ambiguous terms, missing function arguments, potentially incorrect instructions, or competing database interpretations, and some agent settings frame it as seeking user confirmation before actions such as file deletion."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Papers instead describe it at the response level: the assistant asks a clarifying question rather than attempting a direct answer, or asks before continuing with tool use when instructions are ambiguous, under-specified, missing details, or appear incorrect."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect it to three constructs rather than to one agreed construct. It is related to Ambiguity handling, with papers describing clarifying questions as a way to resolve ambiguity in user requests, and it is related to Disambiguation ability, where asking clarifying questions appears as one disambiguation policy. One paper also claims a causal relationship from Metacognition to Clarifying question generation, stating that generating effective clarifying questions requires a form of meta-cognitive reasoning."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across definitions, the prevailing usage is a model producing a clarifying or follow-up question in response to an ambiguous or underspecified user request, rather than immediately answering. Most descriptions say the question should resolve ambiguity, elicit more information, or obtain missing task specifications, and one line of work further frames the goal as generating the most informative question among multiple compatible solutions. Some papers make the success condition more specific, requiring the question to identify competing interpretations, request missing or incorrect details, or distinguish among possible solutions before continuing with tool use.\n\nVariants. Papers use nearby labels such as asking clarifying questions, clarification question asking, and clarification seeking. The behavior is studied in conversational settings, active task disambiguation, agent and tool-use settings, tabular data analysis, and database-grounded text-to-SQL over schemas. In these variants, the follow-up may ask about ambiguous terms, missing function arguments, potentially incorrect instructions, or competing database interpretations, and some agent settings frame it as seeking user confirmation before actions such as file deletion.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead describe it at the response level: the assistant asks a clarifying question rather than attempting a direct answer, or asks before continuing with tool use when instructions are ambiguous, under-specified, missing details, or appear incorrect.\n\nWhat it is taken as evidence of. Papers connect it to three constructs rather than to one agreed construct. It is related to Ambiguity handling, with papers describing clarifying questions as a way to resolve ambiguity in user requests, and it is related to Disambiguation ability, where asking clarifying questions appears as one disambiguation policy. One paper also claims a causal relationship from Metacognition to Clarifying question generation, stating that generating effective clarifying questions requires a form of meta-cognitive reasoning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "What Makes a Good Natural Language Prompt?"
+    ],
+    "emnlp25": [
+      "Disambiguation in Conversational Question Answering in the Era of LLMs and Agents: A Survey",
+      "Hidden in Plain Sight: Reasoning in Underspecified and Misspecified Scenarios for Multimodal LLMs",
+      "Learning to Ask: When LLM Agents Meet Unclear Instruction"
+    ],
+    "iclr25": [
+      "Active Task Disambiguation with LLMs",
+      "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+      "Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions"
+    ],
+    "icml25": [
+      "CollabLLM: From Passive Responders to Active Collaborators",
+      "Proactive Agents for Multi-Turn Text-to-Image Generation Under Uncertainty",
+      "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?"
+    ],
+    "iclr24": [
+      "Identifying the Risks of LM Agents with an LM-Emulated Sandbox"
+    ],
+    "naacl25": [
+      "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 3,
+    "iclr25": 3,
+    "icml25": 3,
+    "iclr24": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

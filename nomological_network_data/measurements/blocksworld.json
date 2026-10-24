@@ -1,0 +1,155 @@
+{
+  "canonical_name": "Blocksworld",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, Blocksworld is most commonly treated as a classical planning benchmark or domain in which blocks are rearranged from an initial or source configuration to a specified goal configuration, often on a table and sometimes with the explicit rule that only one unstacked block may be moved at a time. Definitions vary at the margins: some papers formulate it in PDDL, some describe it as a symbolic or commonsense domain, some call it a planning dataset, and some place it within PlanBench or describe it as a real-world task planning benchmark that corresponds to path-finding in a state transition graph. A smaller line of work also defines task-specific splits inside it, including plan-length train, validation, and test partitions and in-distribution versus out-of-distribution block-count ranges.\n\nWhat it is claimed to measure. Its reported measurement use is concentrated on Planning. Papers use Blocksworld to measure 2 constructs and 1 behavioral indicator, with Planning the prevailing target, described in relationship evidence as a real-world task planning benchmark, a symbolic planning problem, or simply the planning task on which a framework is evaluated. Smaller lines of work use it to measure Out-of-distribution generalization, for example by treating 3 to 7 blocks as in-distribution and 8 to 20 blocks as out-of-distribution, and an isolated paper reports it as measuring Constraint adherence because the benchmark provides action and constraint definitions and requires actions to follow those constraints.\n\nSpace of uses. Papers most often position Blocksworld as a main evaluation domain for planning-focused methods, though some use it as an additional testbed, including for noisy rationales and for out-of-distribution generalization to longer plans. In multi-benchmark setups it appears alongside other PDDL tasks such as Minigrid and Logistics, and alongside GSM-8K and BIG-Bench Hard Dyck Languages, while other work studies it within PlanBench. Papers do not explicitly link it to another measurement instrument.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Blocksworld",
+    "BlocksWorld"
+  ],
+  "papers": [
+    "Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models",
+    "PlanGenLLMs: A Modern Survey of LLM Planning Capabilities",
+    "Automatic Curriculum Expert Iteration for Reliable LLM Reasoning",
+    "Empowering LLM Agents with Zero-Shot Optimal Decision-Making through Q-learning",
+    "Improving Large Language Model Planning with Action Sequence Similarity",
+    "LLMs Can Plan Only If We Tell Them",
+    "On the self-verification limitations of large language models on reasoning and planning tasks",
+    "Steering Large Language Models between Code Execution and Textual Reasoning",
+    "System 1.x: Learning to Balance Fast and Slow Planning with Language Models",
+    "Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples",
+    "HyperTree Planning: Enhancing LLM Reasoning via Hierarchical Thinking",
+    "Policy Guided Tree Search for Enhanced LLM Reasoning",
+    "ALPINE: Unveiling The Planning Capability of Autoregressive Learning in Language Models",
+    "Can Language Models Perform Robust Reasoning in Chain-of-thought Prompting with Noisy Rationales?",
+    "Chain of Thoughtlessness? An Analysis of CoT in Planning"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A classical planning benchmark that involves rearranging a stack of blocks into a target configuration by moving one unstacked block at a time.",
+      "paper": "System 1.x: Learning to Balance Fast and Slow Planning with Language Models",
+      "original_name": "Blocksworld"
+    },
+    {
+      "text": "A classical planning benchmark task, formulated in PDDL, that involves rearranging blocks on a table to achieve a specified goal configuration.",
+      "paper": "Improving Large Language Model Planning with Action Sequence Similarity",
+      "original_name": "BlocksWorld"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "ALPINE: Unveiling The Planning Capability of Autoregressive Learning in Language Models",
+      "evidence": "Finally, we validate these results on a real-world task planning benchmark, Blocksworld [22], which directly corresponds to the path-finding problem (see Appendix F). (Introduction).",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "ALPINE: Unveiling The Planning Capability of Autoregressive Learning in Language Models"
+        ],
+        "iclr25": [
+          "LLMs Can Plan Only If We Tell Them",
+          "Automatic Curriculum Expert Iteration for Reliable LLM Reasoning"
+        ],
+        "icml25": [
+          "Policy Guided Tree Search for Enhanced LLM Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Out-of-distribution generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Improving Large Language Model Planning with Action Sequence Similarity",
+      "evidence": "Since all the exemplar candidates are with 3-7 blocks, we denote test examples with 3-7 blocks as in-distribution (ID) and 8-20 blocks as out-of-distribution (OOD). (Figure 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Improving Large Language Model Planning with Action Sequence Similarity"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Constraint adherence",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Revealing the Barriers of Language Agents in Planning",
+      "evidence": "BlocksWorld (Valmeekam et al., 2024a) is a planning benchmark that provides a domain description, including action and constraint definitions, and requires agents to execute actions to transition from an initial state to a goal state. All actions must adhere to the constraints outlined in the prompt. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Revealing the Barriers of Language Agents in Planning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, Blocksworld is most commonly treated as a classical planning benchmark or domain in which blocks are rearranged from an initial or source configuration to a specified goal configuration, often on a table and sometimes with the explicit rule that only one unstacked block may be moved at a time. Definitions vary at the margins: some papers formulate it in PDDL, some describe it as a symbolic or commonsense domain, some call it a planning dataset, and some place it within PlanBench or describe it as a real-world task planning benchmark that corresponds to path-finding in a state transition graph. A smaller line of work also defines task-specific splits inside it, including plan-length train, validation, and test partitions and in-distribution versus out-of-distribution block-count ranges."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Its reported measurement use is concentrated on Planning. Papers use Blocksworld to measure 2 constructs and 1 behavioral indicator, with Planning the prevailing target, described in relationship evidence as a real-world task planning benchmark, a symbolic planning problem, or simply the planning task on which a framework is evaluated. Smaller lines of work use it to measure Out-of-distribution generalization, for example by treating 3 to 7 blocks as in-distribution and 8 to 20 blocks as out-of-distribution, and an isolated paper reports it as measuring Constraint adherence because the benchmark provides action and constraint definitions and requires actions to follow those constraints."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers most often position Blocksworld as a main evaluation domain for planning-focused methods, though some use it as an additional testbed, including for noisy rationales and for out-of-distribution generalization to longer plans. In multi-benchmark setups it appears alongside other PDDL tasks such as Minigrid and Logistics, and alongside GSM-8K and BIG-Bench Hard Dyck Languages, while other work studies it within PlanBench. Papers do not explicitly link it to another measurement instrument."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, Blocksworld is most commonly treated as a classical planning benchmark or domain in which blocks are rearranged from an initial or source configuration to a specified goal configuration, often on a table and sometimes with the explicit rule that only one unstacked block may be moved at a time. Definitions vary at the margins: some papers formulate it in PDDL, some describe it as a symbolic or commonsense domain, some call it a planning dataset, and some place it within PlanBench or describe it as a real-world task planning benchmark that corresponds to path-finding in a state transition graph. A smaller line of work also defines task-specific splits inside it, including plan-length train, validation, and test partitions and in-distribution versus out-of-distribution block-count ranges.\n\nWhat it is claimed to measure. Its reported measurement use is concentrated on Planning. Papers use Blocksworld to measure 2 constructs and 1 behavioral indicator, with Planning the prevailing target, described in relationship evidence as a real-world task planning benchmark, a symbolic planning problem, or simply the planning task on which a framework is evaluated. Smaller lines of work use it to measure Out-of-distribution generalization, for example by treating 3 to 7 blocks as in-distribution and 8 to 20 blocks as out-of-distribution, and an isolated paper reports it as measuring Constraint adherence because the benchmark provides action and constraint definitions and requires actions to follow those constraints.\n\nSpace of uses. Papers most often position Blocksworld as a main evaluation domain for planning-focused methods, though some use it as an additional testbed, including for noisy rationales and for out-of-distribution generalization to longer plans. In multi-benchmark setups it appears alongside other PDDL tasks such as Minigrid and Logistics, and alongside GSM-8K and BIG-Bench Hard Dyck Languages, while other work studies it within PlanBench. Papers do not explicitly link it to another measurement instrument.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Marco-o1 v2: Towards Widening The Distillation Bottleneck for Reasoning Models",
+      "PlanGenLLMs: A Modern Survey of LLM Planning Capabilities"
+    ],
+    "iclr25": [
+      "Automatic Curriculum Expert Iteration for Reliable LLM Reasoning",
+      "Empowering LLM Agents with Zero-Shot Optimal Decision-Making through Q-learning",
+      "Improving Large Language Model Planning with Action Sequence Similarity",
+      "LLMs Can Plan Only If We Tell Them",
+      "On the self-verification limitations of large language models on reasoning and planning tasks",
+      "Steering Large Language Models between Code Execution and Textual Reasoning",
+      "System 1.x: Learning to Balance Fast and Slow Planning with Language Models"
+    ],
+    "icml25": [
+      "Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples",
+      "HyperTree Planning: Enhancing LLM Reasoning via Hierarchical Thinking",
+      "Policy Guided Tree Search for Enhanced LLM Reasoning"
+    ],
+    "neurips24": [
+      "ALPINE: Unveiling The Planning Capability of Autoregressive Learning in Language Models",
+      "Can Language Models Perform Robust Reasoning in Chain-of-thought Prompting with Noisy Rationales?",
+      "Chain of Thoughtlessness? An Analysis of CoT in Planning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr25": 7,
+    "icml25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

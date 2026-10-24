@@ -1,0 +1,254 @@
+{
+  "canonical_name": "Backtracking",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats backtracking as returning to an earlier state, step, or page after recognizing that the current response, action trajectory, or solution path is flawed, then revising from that earlier point. A more specific formulation narrows this to safety recovery: the model produces a partial unsafe response, emits a special [RESET] token, and then re-generates a safe response from scratch. Papers differ mainly in what triggers the return, such as an error page, a verifier-detected issue, or the model's own identification of a mistaken reasoning step.\n\nVariants. Papers use several names for closely related patterns, including Backtracking, Branching and backtracking, State traceback, and Backtracking search. The settings span unsafe generation, reasoning that explores multiple paths and reverts when one proves wrong, finite-state multi-agent systems that move back to earlier states, GUI interaction that returns to a previous page to regenerate an action, and math problem solving that backtracks to earlier numbered steps. A broader assistant-oriented usage also describes revisiting previous steps or re-evaluating an approach when an initial result is not satisfying.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through visible trace events, such as a [RESET] token followed by regeneration, a transition back to a previous page or state after an issue is detected, or explicit returns to earlier solution steps while continuing toward a corrected answer.\n\nWhat it is taken as evidence of. Rather than tying it to one agreed construct, papers connect it to six constructs with mixed relation types. It is related to Defeasible reasoning, papers claim a causal relationship from Backtracking to Error propagation, Error recovery, and Interpretability and explainability, and it is also related to Planning, plus one other construct linked by a claimed causal relationship.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Backtracking",
+    "Branching and backtracking",
+    "State traceback",
+    "Backtracking search"
+  ],
+  "papers": [
+    "BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism",
+    "FLARE: Faithful Logic-Aided Reasoning and Exploration",
+    "Feature Extraction and Steering for Enhanced Chain-of-Thought Reasoning in Language Models",
+    "Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLMs",
+    "Prior Prompt Engineering for Reinforcement Fine-Tuning",
+    "GAIA: a benchmark for General AI Assistants",
+    "Backtracking Improves Generation Safety",
+    "ExACT: Teaching AI Agents to Explore with Reflective-MCTS and Exploratory Learning",
+    "LLMs Can Plan Only If We Tell Them",
+    "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+    "Can Transformers Reason Logically? A Study in SAT Solving",
+    "Demystifying Long Chain-of-Thought Reasoning",
+    "MetaAgent: Automatically Constructing Multi-Agent Systems Based on Finite State Machines",
+    "Position: We Need An Algorithmic Understanding of Generative AI",
+    "Optimizing Test-Time Compute via Meta Reinforcement Finetuning"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior of a model first generating a partial unsafe response, then emitting a special [RESET] token, and finally re-generating a safe response from scratch.",
+      "paper": "Backtracking Improves Generation Safety",
+      "original_name": "Backtracking"
+    },
+    {
+      "text": "An observable reasoning pattern where the model explores multiple solution paths (branching) and returns to an earlier point upon identifying a flawed path (backtracking).",
+      "paper": "Demystifying Long Chain-of-Thought Reasoning",
+      "original_name": "Branching and backtracking"
+    },
+    {
+      "text": "Returning to a previous step or state to correct earlier mistakes or refine intermediate outputs.",
+      "paper": "MetaAgent: Automatically Constructing Multi-Agent Systems Based on Finite State Machines",
+      "original_name": "State traceback"
+    },
+    {
+      "text": "An observable problem-solving process where the model generates a solution path, identifies an error, and revises its path by returning to a previous correct step.",
+      "paper": "Optimizing Test-Time Compute via Meta Reinforcement Finetuning",
+      "original_name": "Backtracking search"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LLMs Can Plan Only If We Tell Them",
+      "evidence": "Planning problems, however, demand a more sophisticated approach that incorporates: ... Backtracking (the capability to recognize dead-ends and return to previous states to explore alternative paths) (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLMs Can Plan Only If We Tell Them"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Can Transformers Reason Logically? A Study in SAT Solving",
+      "evidence": "we prove by construction that decoder-only Transformers can decide 3-SAT, in a non-uniform model of computation, using backtracking and deduction via Chain-of-Thought (CoT). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Can Transformers Reason Logically? A Study in SAT Solving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long chain-of-thought generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Demystifying Long Chain-of-Thought Reasoning",
+      "evidence": "A proven approach for scaling inference compute is to generate long chains-of-thought (CoTs), enabling models to engage in structured reasoning strategies such as backtracking and error correction. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Demystifying Long Chain-of-Thought Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Defeasible reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning",
+      "evidence": "Importantly, while some ZebraLogic puzzles can be solved through straightforward linear deduction, many require more complex non-monotonic reasoning strategies, such as counterfactual reasoning that involves backtracking and revising assumptions. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ZebraLogic: On the Scaling Limits of LLMs for Logical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Error propagation",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "evidence": "The performance drop highlights the importance of backtracking in mitigating error propagation, where an early misstep without backtracking cannot be corrected, resulting in deteriorated performance. (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Interpretability and explainability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "evidence": "Although incremental improvements have been proposed, the absence of robust backtracking or rollback still limits their reliability and interpretability (Doyle, 1979; Bo et al., 2024). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "evidence": "Our method\u2019s ability to backtrack helps resolve contradictions, leading to more stable performance in multi-hop scenarios. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Error detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism",
+      "evidence": "BacktrackAgent explicitly incorporates a backtracking mechanism to observe the outcomes of action executions, allowing it to detect and recover from error states effectively. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Error recovery",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism",
+      "evidence": "BacktrackAgent explicitly incorporates a backtracking mechanism to observe the outcomes of action executions, allowing it to detect and recover from error states effectively. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 9,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 7,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats backtracking as returning to an earlier state, step, or page after recognizing that the current response, action trajectory, or solution path is flawed, then revising from that earlier point. A more specific formulation narrows this to safety recovery: the model produces a partial unsafe response, emits a special [RESET] token, and then re-generates a safe response from scratch. Papers differ mainly in what triggers the return, such as an error page, a verifier-detected issue, or the model's own identification of a mistaken reasoning step."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several names for closely related patterns, including Backtracking, Branching and backtracking, State traceback, and Backtracking search. The settings span unsafe generation, reasoning that explores multiple paths and reverts when one proves wrong, finite-state multi-agent systems that move back to earlier states, GUI interaction that returns to a previous page to regenerate an action, and math problem solving that backtracks to earlier numbered steps. A broader assistant-oriented usage also describes revisiting previous steps or re-evaluating an approach when an initial result is not satisfying."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers operationalize it through visible trace events, such as a [RESET] token followed by regeneration, a transition back to a previous page or state after an issue is detected, or explicit returns to earlier solution steps while continuing toward a corrected answer."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Rather than tying it to one agreed construct, papers connect it to six constructs with mixed relation types. It is related to Defeasible reasoning, papers claim a causal relationship from Backtracking to Error propagation, Error recovery, and Interpretability and explainability, and it is also related to Planning, plus one other construct linked by a claimed causal relationship."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats backtracking as returning to an earlier state, step, or page after recognizing that the current response, action trajectory, or solution path is flawed, then revising from that earlier point. A more specific formulation narrows this to safety recovery: the model produces a partial unsafe response, emits a special [RESET] token, and then re-generates a safe response from scratch. Papers differ mainly in what triggers the return, such as an error page, a verifier-detected issue, or the model's own identification of a mistaken reasoning step.\n\nVariants. Papers use several names for closely related patterns, including Backtracking, Branching and backtracking, State traceback, and Backtracking search. The settings span unsafe generation, reasoning that explores multiple paths and reverts when one proves wrong, finite-state multi-agent systems that move back to earlier states, GUI interaction that returns to a previous page to regenerate an action, and math problem solving that backtracks to earlier numbered steps. A broader assistant-oriented usage also describes revisiting previous steps or re-evaluating an approach when an initial result is not satisfying.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through visible trace events, such as a [RESET] token followed by regeneration, a transition back to a previous page or state after an issue is detected, or explicit returns to earlier solution steps while continuing toward a corrected answer.\n\nWhat it is taken as evidence of. Rather than tying it to one agreed construct, papers connect it to six constructs with mixed relation types. It is related to Defeasible reasoning, papers claim a causal relationship from Backtracking to Error propagation, Error recovery, and Interpretability and explainability, and it is also related to Planning, plus one other construct linked by a claimed causal relationship.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism",
+      "FLARE: Faithful Logic-Aided Reasoning and Exploration",
+      "Feature Extraction and Steering for Enhanced Chain-of-Thought Reasoning in Language Models",
+      "Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLMs",
+      "Prior Prompt Engineering for Reinforcement Fine-Tuning"
+    ],
+    "iclr25": [
+      "Backtracking Improves Generation Safety",
+      "ExACT: Teaching AI Agents to Explore with Reflective-MCTS and Exploratory Learning",
+      "LLMs Can Plan Only If We Tell Them",
+      "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement"
+    ],
+    "icml25": [
+      "Can Transformers Reason Logically? A Study in SAT Solving",
+      "Demystifying Long Chain-of-Thought Reasoning",
+      "MetaAgent: Automatically Constructing Multi-Agent Systems Based on Finite State Machines",
+      "Position: We Need An Algorithmic Understanding of Generative AI",
+      "Optimizing Test-Time Compute via Meta Reinforcement Finetuning"
+    ],
+    "iclr24": [
+      "GAIA: a benchmark for General AI Assistants"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "iclr25": 4,
+    "icml25": 5,
+    "iclr24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

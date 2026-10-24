@@ -1,0 +1,258 @@
+{
+  "canonical_name": "Translation quality",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats translation quality as a broad property of translated output or model ability: how accurately, fluently, adequately, and faithfully the target text conveys the source meaning. Definitions repeatedly mention fluency, adequacy, correctness, fidelity, meaning preservation, and sometimes understanding or contextual appropriateness; some describe an overall degree of excellence of the translation, while others cast it as a latent ability of the model to produce such outputs. A smaller line of work uses a narrower terminology-centered framing, defining the relevant quality in terms of correctly translating domain-specific financial terms, so the main disagreement is between broad overall output quality and specialized term accuracy.\n\nSpace of facets. Papers usually break the concept into recurring facets rather than formal subtypes: fluency, adequacy, correctness, fidelity, meaning preservation, understanding, and, in one multimodal setting, contextual appropriateness. Some also package it as a combined evaluation target, for example a trade-off between translatability and meaning preservation, while others discuss it alongside translation consistency, latency, and hallucination avoidance rather than collapsing these together. One decoding paper contrasts it with estimated probability, arguing that high estimated probability does not always lead to high translation quality, and one finance-focused paper uses a terminology-accuracy notion where most others use a broader quality label.\n\nSpace of measurement. The construct is linked to 4 measurement instruments and 3 behavioral indicators. The linked instruments named most often are FLORES, Human evaluation, MQM, and WMT: WMT and FLORES are described as benchmarks, MQM appears as human annotations, and human evaluation is used directly. Beyond those links, papers also assess quality with neural metrics for document translation, a ground-truth comparison metric Q(y, y*), XCOMET as a combined metric, and BLEU, CHRF++, and AfriCOMET, while human assessments target fluency, adequacy, understanding, and meaning preservation, so these measurements mostly track the dominant definitions, though the narrower terminology-based framing is operationalized by term-matching accuracy.\n\nLinks. One paper claims a causal relationship from text simplification to translation quality, stating that simplification most reliably improves it, and another claims a causal relationship from constraint adherence to translation quality, with increases in BLEU, CHRF, and AfriCOMET presented as gains in overall quality as well. A separate paper reports that machine translation is correlated with translation quality, illustrated by encoder-decoder models outperforming decoder-only models, and one paper says semantic drift is related to translation quality through multi-cycle translation analysis.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Translation quality",
+    "Terminology accuracy"
+  ],
+  "papers": [
+    "A-TASC: Asian TED-Based Automatic Subtitling Corpus",
+    "Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation",
+    "SHIFT: Selected Helpful Informative Frame for Video-guided Machine Translation",
+    "DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory",
+    "Scaling Laws for Downstream Task Performance in Machine Translation",
+    "Anticipating Future with Large Language Model for Simultaneous Machine Translation",
+    "Automatic Input Rewriting Improves Translation with Large Language Models",
+    "Bayelemabaga: Creating Resources for Bambara NLP",
+    "Mitigating Hallucinated Translations in Large Language Models with Hallucination-focused Preference Optimization",
+    "The Impact of Domain-Specific Terminology on Machine Translation for Finance in European Languages"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The overall degree of excellence of a translated text, encompassing aspects like fluency, adequacy, and correctness, as judged by automated or human evaluation.",
+      "paper": "DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory",
+      "original_name": "Translation quality"
+    },
+    {
+      "text": "The latent ability of a model to correctly translate domain-specific financial terms, reflecting its grasp of specialized vocabulary and conceptual consistency across languages.",
+      "paper": "The Impact of Domain-Specific Terminology on Machine Translation for Finance in European Languages",
+      "original_name": "Terminology accuracy"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "COMETKIWI",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Translate Smart, not Hard: Cascaded Translation Systems with Quality-Aware Deferral",
+      "evidence": "\"We use two versions of COMETKIWI: wmt22-cometkiwi-da ... and wmt23-cometkiwi-da-xxl\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Translate Smart, not Hard: Cascaded Translation Systems with Quality-Aware Deferral",
+          "Scaling Low-Resource MT via Synthetic Data Generation with LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text simplification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Automatic Input Rewriting Improves Translation with Large Language Models",
+      "evidence": "simplification most reliably improves translation quality. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Automatic Input Rewriting Improves Translation with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XCOMET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Automatic Input Rewriting Improves Translation with Large Language Models",
+      "evidence": "We additionally report the combined evaluation metric, XCOMET(s\u2032, t\u2032, r) to take into account of the trade-off between the two above metrics... (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Automatic Input Rewriting Improves Translation with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AfriCOMET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bayelemabaga: Creating Resources for Bambara NLP",
+      "evidence": "\u201cWe also use AfriCOMET (Pu et al., 2021), a learned COMET metric for MT covering 13 African languages.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Bayelemabaga: Creating Resources for Bambara NLP"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bayelemabaga: Creating Resources for Bambara NLP",
+      "evidence": "\u201cWe also conducted machine and human evaluations of translations from studied models to compare the machine translation quality of encoder-decoder and decoder-only models.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Bayelemabaga: Creating Resources for Bambara NLP"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BLEURT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Learning from others\u2019 mistakes: Finetuning machine translation models with span-level error annotations",
+      "evidence": "For evaluation, we use MetricX-23 (Juraska et al., 2023), COMET-20 (Rei et al., 2020), and BLEURT (Sellam et al., 2020) as quality metrics.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Learning from others\u2019 mistakes: Finetuning machine translation models with span-level error annotations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WMT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Evaluating Language Translation Models by Playing Telephone",
+      "evidence": "Benchmarks like WMT (Freitag et al., 2021b), MLQE-PE (Fomicheva et al., 2020), and FLORES (Team et al., 2022) have become central to evaluating translation quality. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Evaluating Language Translation Models by Playing Telephone"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FLORES",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Evaluating Language Translation Models by Playing Telephone",
+      "evidence": "Benchmarks like WMT (Freitag et al., 2021b), MLQE-PE (Fomicheva et al., 2020), and FLORES (Team et al., 2022) have become central to evaluating translation quality. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Evaluating Language Translation Models by Playing Telephone"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MQM",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Evaluating Language Translation Models by Playing Telephone",
+      "evidence": "We compare our telephone-supervised evaluation models to existing metrics using WMT MQM human annotations. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Evaluating Language Translation Models by Playing Telephone"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MetricX",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Translate Smart, not Hard: Cascaded Translation Systems with Quality-Aware Deferral",
+      "evidence": "Table 1: Translation quality measured with METRICX (M) and COMET (C) on the WMT24 test set. (Table 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Translate Smart, not Hard: Cascaded Translation Systems with Quality-Aware Deferral"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 10,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 9,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats translation quality as a broad property of translated output or model ability: how accurately, fluently, adequately, and faithfully the target text conveys the source meaning. Definitions repeatedly mention fluency, adequacy, correctness, fidelity, meaning preservation, and sometimes understanding or contextual appropriateness; some describe an overall degree of excellence of the translation, while others cast it as a latent ability of the model to produce such outputs. A smaller line of work uses a narrower terminology-centered framing, defining the relevant quality in terms of correctly translating domain-specific financial terms, so the main disagreement is between broad overall output quality and specialized term accuracy."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers usually break the concept into recurring facets rather than formal subtypes: fluency, adequacy, correctness, fidelity, meaning preservation, understanding, and, in one multimodal setting, contextual appropriateness. Some also package it as a combined evaluation target, for example a trade-off between translatability and meaning preservation, while others discuss it alongside translation consistency, latency, and hallucination avoidance rather than collapsing these together. One decoding paper contrasts it with estimated probability, arguing that high estimated probability does not always lead to high translation quality, and one finance-focused paper uses a terminology-accuracy notion where most others use a broader quality label."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "The construct is linked to 4 measurement instruments and 3 behavioral indicators. The linked instruments named most often are FLORES, Human evaluation, MQM, and WMT: WMT and FLORES are described as benchmarks, MQM appears as human annotations, and human evaluation is used directly. Beyond those links, papers also assess quality with neural metrics for document translation, a ground-truth comparison metric Q(y, y*), XCOMET as a combined metric, and BLEU, CHRF++, and AfriCOMET, while human assessments target fluency, adequacy, understanding, and meaning preservation, so these measurements mostly track the dominant definitions, though the narrower terminology-based framing is operationalized by term-matching accuracy."
+    },
+    {
+      "label": "Links.",
+      "text": "One paper claims a causal relationship from text simplification to translation quality, stating that simplification most reliably improves it, and another claims a causal relationship from constraint adherence to translation quality, with increases in BLEU, CHRF, and AfriCOMET presented as gains in overall quality as well. A separate paper reports that machine translation is correlated with translation quality, illustrated by encoder-decoder models outperforming decoder-only models, and one paper says semantic drift is related to translation quality through multi-cycle translation analysis."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define translation quality as the overall quality of a translation or a model's translation ability in terms of accuracy or adequacy, fluency, fidelity, and preservation of source meaning. A single paper narrows this to correct translation of financial terms, but this is an outlier rather than a competing phenomenon, so the construct is used mostly the same way across the set.",
+    "papers_with_definition": 8,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats translation quality as a broad property of translated output or model ability: how accurately, fluently, adequately, and faithfully the target text conveys the source meaning. Definitions repeatedly mention fluency, adequacy, correctness, fidelity, meaning preservation, and sometimes understanding or contextual appropriateness; some describe an overall degree of excellence of the translation, while others cast it as a latent ability of the model to produce such outputs. A smaller line of work uses a narrower terminology-centered framing, defining the relevant quality in terms of correctly translating domain-specific financial terms, so the main disagreement is between broad overall output quality and specialized term accuracy.\n\nSpace of facets. Papers usually break the concept into recurring facets rather than formal subtypes: fluency, adequacy, correctness, fidelity, meaning preservation, understanding, and, in one multimodal setting, contextual appropriateness. Some also package it as a combined evaluation target, for example a trade-off between translatability and meaning preservation, while others discuss it alongside translation consistency, latency, and hallucination avoidance rather than collapsing these together. One decoding paper contrasts it with estimated probability, arguing that high estimated probability does not always lead to high translation quality, and one finance-focused paper uses a terminology-accuracy notion where most others use a broader quality label.\n\nSpace of measurement. The construct is linked to 4 measurement instruments and 3 behavioral indicators. The linked instruments named most often are FLORES, Human evaluation, MQM, and WMT: WMT and FLORES are described as benchmarks, MQM appears as human annotations, and human evaluation is used directly. Beyond those links, papers also assess quality with neural metrics for document translation, a ground-truth comparison metric Q(y, y*), XCOMET as a combined metric, and BLEU, CHRF++, and AfriCOMET, while human assessments target fluency, adequacy, understanding, and meaning preservation, so these measurements mostly track the dominant definitions, though the narrower terminology-based framing is operationalized by term-matching accuracy.\n\nLinks. One paper claims a causal relationship from text simplification to translation quality, stating that simplification most reliably improves it, and another claims a causal relationship from constraint adherence to translation quality, with increases in BLEU, CHRF, and AfriCOMET presented as gains in overall quality as well. A separate paper reports that machine translation is correlated with translation quality, illustrated by encoder-decoder models outperforming decoder-only models, and one paper says semantic drift is related to translation quality through multi-cycle translation analysis.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A-TASC: Asian TED-Based Automatic Subtitling Corpus",
+      "Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation"
+    ],
+    "iclr25": [
+      "DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory",
+      "Scaling Laws for Downstream Task Performance in Machine Translation"
+    ],
+    "naacl25": [
+      "Anticipating Future with Large Language Model for Simultaneous Machine Translation",
+      "Automatic Input Rewriting Improves Translation with Large Language Models",
+      "Bayelemabaga: Creating Resources for Bambara NLP",
+      "Mitigating Hallucinated Translations in Large Language Models with Hallucination-focused Preference Optimization",
+      "The Impact of Domain-Specific Terminology on Machine Translation for Finance in European Languages"
+    ],
+    "emnlp25": [
+      "SHIFT: Selected Helpful Informative Frame for Video-guided Machine Translation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr25": 2,
+    "naacl25": 5,
+    "emnlp25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25"
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "canonical_name": "Knowledge retention",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats knowledge retention as a model's capacity to preserve previously learned knowledge, task performance, or general capabilities after later fine-tuning, continual learning, editing, compression, pruning, quantization, unlearning, or other updates. A large parallel usage states the same problem from the loss side as catastrophic or model forgetting: direct weight or parameter updates, distribution shift, or sequential learning can make the model lose previously acquired knowledge, text capabilities, or broad functionality. Smaller definitions narrow the scope to pre-training knowledge, factual and linguistic information in compressed models, shared representations across tasks, or the recall of long-past injected contexts.\n\nSpace of facets. Papers introduce several named variants, including retention of pre-training knowledge, knowledge preservation, general capability retention, general knowledge retention, shared knowledge retention, anti-forgetting, and retention as recall of long-past experiences. One paper also separates forgetting into a format-level subtype and a factual-loss subtype, and says the former can obscure the model's knowledge state when assessing the latter. Across these variants, papers alternate between positive names for preserving earlier competence and negative names such as catastrophic forgetting or model forgetting for its erosion under sequential updates.\n\nSpace of measurement. Operationalization is broad: papers link knowledge retention to 13 measurement instruments and 6 behavioral indicators. The most frequently linked instruments are MMLU, ARC, AraEval, CounterFact, and HellaSwag, with 8 other instruments also appearing. Most measurements check whether performance degrades on prior or general tasks after adaptation; other setups query the model about earlier injected contexts, use exact-match accuracy, or use an LLM judge to score whether answers remain correct, with behavioral targets covering recall, instruction following, generation, and reasoning.\n\nLinks. Several papers relate knowledge retention to catastrophic forgetting, and one paper relates it to superficial forgetting, noting that severe superficial forgetting can obscure the model's knowledge state. For causal claims, one paper claims a relationship from knowledge retention to human preference alignment, and another from knowledge retention to generalization. Separate papers claim causal relationships from model similarity and representational stability to knowledge retention, and one paper claims a causal relationship from knowledge editing to knowledge retention in sequential editing settings. No correlational links are reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Catastrophic forgetting",
+    "Catastrophic Forgetting",
+    "Model forgetting",
+    "Knowledge retention",
+    "Retention of pre-training knowledge",
+    "Knowledge preservation",
+    "Anti-forgetting",
+    "Essential forgetting",
+    "General knowledge retention",
+    "General capability retention",
+    "Shared knowledge retention",
+    "Retention"
+  ],
+  "papers": [
+    "A Survey on Efficient Large Language Model Training: From Data-centric Perspectives",
+    "Advancing SMoE for Continuous Domain Adaptation of MLLMs: Adaptive Router and Domain-Specific Loss",
+    "Controlled Low-Rank Adaptation with Subspace Regularization for Continued Training on Large Language Models",
+    "Enhancing Multimodal Continual Instruction Tuning with BranchLoRA",
+    "HiDe-LLaVA: Hierarchical Decoupling for Continual Instruction Tuning of Multimodal Large Language Model",
+    "Just Go Parallel: Improving the Multilingual Capabilities of Large Language Models",
+    "Less, but Better: Efficient Multilingual Expansion for LLMs via Layer-wise Mixture-of-Experts",
+    "LongReD: Mitigating Short-Text Degradation of Long-Context Large Language Models via Restoration Distillation",
+    "Neuron-Level Sequential Editing for Large Language Models",
+    "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference",
+    "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+    "Opt-Out: Investigating Entity-Level Unlearning for Large Language Models via Optimal Transport",
+    "ReLearn: Unlearning via Learning for Large Language Models",
+    "Recurrent Knowledge Identification and Fusion for Language Model Continual Learning",
+    "SoftCoT: Soft Chain-of-Thought for Efficient Reasoning with LLMs",
+    "Exploring Forgetting in Large Language Model Pre-Training",
+    "Analyzing the Effects of Supervised Fine-Tuning on Model Knowledge from Token and Parameter Levels",
+    "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models",
+    "Can Large Language Models Be Good Language Teachers?",
+    "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+    "How to inject knowledge efficiently? Knowledge Infusion Scaling Law for Pre-training Large Language Models",
+    "LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization",
+    "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+    "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+    "RECALL: REpresentation-aligned Catastrophic-forgetting ALLeviation via Hierarchical Model Merging",
+    "SUA: Stealthy Multimodal Large Language Model Unlearning Attack",
+    "SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation",
+    "A Paradigm Shift in Machine Translation: Boosting Translation Performance of Large Language Models",
+    "BadEdit: Backdooring Large Language Models by Model Editing",
+    "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+    "Compressing LLMs: The Truth is Rarely Pure and Never Simple",
+    "Dissecting learning and forgetting in language model finetuning",
+    "Scalable Language Model with Generalized Continual Learning",
+    "Spoken Question Answering and Speech Continuation Using Spectrogram-Powered LLM",
+    "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+    "ALLaM: Large Language Models for Arabic and English",
+    "Adapt-$\\infty$: Scalable Continual Multimodal Instruction Tuning via Dynamic Data Selection",
+    "Agent Skill Acquisition for Large Language Models via CycleQD",
+    "Bootstrapping Language Models with DPO Implicit Rewards",
+    "CollabEdit: Towards Non-destructive Collaborative Knowledge Editing",
+    "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+    "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+    "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition",
+    "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently",
+    "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging",
+    "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+    "On the Modeling Capabilities of Large Language Models for Sequential Decision Making",
+    "Q-Adapter: Customizing Pre-trained LLMs to New Preferences with Forgetting Mitigation",
+    "Scalable Bayesian Learning with posteriors",
+    "Self-Updatable Large Language Models by Integrating Context into Model Parameters",
+    "Spurious Forgetting in Continual Learning of Language Models",
+    "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+    "Teaching LLMs How to Learn with Contextual Fine-Tuning",
+    "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+    "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs",
+    "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning",
+    "Large Continual Instruction Assistant",
+    "LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models, Provably and Efficiently",
+    "M+: Extending MemoryLLM with Scalable Long-Term Memory",
+    "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+    "Peripheral Memory for LLMs: Integration of Sequential Memory Banks with Adaptive Querying",
+    "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+    "SKIM: Any-bit Quantization Pushing The Limits of Post-Training Quantization",
+    "Tool Unlearning for Tool-Augmented LLMs",
+    "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+    "Mutual-pairing Data Augmentation for Fewshot Continual Relation Extraction",
+    "Prototype Conditioned Generative Replay for Continual Learning in NLP",
+    "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+    "Soft Language Prompts for Language Transfer",
+    "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+    "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+    "AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment",
+    "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+    "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+    "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models",
+    "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+    "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+    "D-CPT Law: Domain-specific Continual Pre-Training Scaling Law for Large Language Models",
+    "DHA: Learning Decoupled-Head Attention from Transformer Checkpoints via Adaptive Heads Fusion",
+    "DoFIT: Domain-aware Federated Instruction Tuning with Alleviated Catastrophic Forgetting",
+    "FouRA: Fourier Low-Rank Adaptation",
+    "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+    "Micro-Bench: A Microscopy Benchmark for Vision-Language Understanding",
+    "OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step",
+    "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization",
+    "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+    "Reasons and Solutions for the Decline in Model Performance after Editing",
+    "SaulLM-54B & SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain",
+    "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+    "TAIA: Large Language Models are Out-of-Distribution Data Learners",
+    "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights",
+    "Unveiling Encoder-Free Vision-Language Models",
+    "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+    "Voila-A: Aligning Vision-Language Models with User's Gaze Attention",
+    "Yo'LLaVA: Your Personalized Language and Vision Assistant"
+  ],
+  "paper_count": 95,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The tendency of direct weight updates to cause a model to lose previously acquired knowledge when adapting to new tasks.",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "original_name": "Catastrophic forgetting"
+    },
+    {
+      "text": "The latent risk of the model losing knowledge or capabilities from the initial policy during continual fine-tuning.",
+      "paper": "Bootstrapping Language Models with DPO Implicit Rewards",
+      "original_name": "Catastrophic Forgetting"
+    },
+    {
+      "text": "The latent tendency of a model to lose previously modified or learned knowledge after subsequent updates, despite successful initial editing.",
+      "paper": "Neuron-Level Sequential Editing for Large Language Models",
+      "original_name": "Model forgetting"
+    },
+    {
+      "text": "The ability of a model to preserve its performance on previously learned tasks and languages after being further trained on new data.",
+      "paper": "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+      "original_name": "Knowledge retention"
+    },
+    {
+      "text": "The degree to which a model preserves the knowledge acquired during its initial large-scale pre-training phase after undergoing fine-tuning on a specific task.",
+      "paper": "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "original_name": "Retention of pre-training knowledge"
+    },
+    {
+      "text": "The extent to which compressed subnets retain the factual and linguistic information encoded in the pretrained LLM after pruning or fine-tuning.",
+      "paper": "AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment",
+      "original_name": "Knowledge preservation"
+    },
+    {
+      "text": "The latent loss of factual knowledge in a model during continual learning, manifested by correctly formatted but factually incorrect responses to previously learned tasks.",
+      "paper": "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+      "original_name": "Essential forgetting"
+    },
+    {
+      "text": "The degree to which a model preserves earlier task performance when trained sequentially on new instruction datasets.",
+      "paper": "Large Continual Instruction Assistant",
+      "original_name": "Anti-forgetting"
+    },
+    {
+      "text": "The latent ability of a model to maintain foundational language model functionalities such as text generation, instruction-following, and reasoning, independent of tool-use training.",
+      "paper": "Tool Unlearning for Tool-Augmented LLMs",
+      "original_name": "General capability retention"
+    },
+    {
+      "text": "The ability of a model to maintain its broad, pre-existing capabilities on general tasks after undergoing continual fine-tuning on a sequence of specific tasks.",
+      "paper": "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning",
+      "original_name": "General knowledge retention"
+    },
+    {
+      "text": "The degree to which the merged model preserves common representations across tasks, preventing loss of information beneficial to multiple tasks.",
+      "paper": "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+      "original_name": "Shared knowledge retention"
+    },
+    {
+      "text": "The capacity of a model to recall and utilize information from long-past experiences, especially after subsequent updates with new information.",
+      "paper": "Self-Updatable Large Language Models by Integrating Context into Model Parameters",
+      "original_name": "Retention"
+    }
+  ],
+  "definition_count": 12,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Scalable Language Model with Generalized Continual Learning",
+      "evidence": "the \u201ccatastrophic forgetting\u201d phenomenon, which refers to the potential loss of previously learned information caused by the distribution shift during the fine-tuning process for novel tasks",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Scalable Language Model with Generalized Continual Learning"
+        ],
+        "icml25": [
+          "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+          "Large Continual Instruction Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "evidence": "Besides, to verify whether HRA can better retain pre-training knowledge, we fine-tune LLaMA-2 7B on the MATHQA dataset by LoRA and HRA, respectively, and check the degradation of model performance on classic NLP tasks, including typical language tasks in ARC [55], HellaSwag [58], MMLU [17], Winogrande [42], and a coding task in HumanEval [6]. (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation"
+        ],
+        "icml25": [
+          "LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models, Provably and Efficiently"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Unlearning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+      "evidence": "there remains an inherent trade-off between unlearning and retention, in which preserving the common performance comes at the cost of reducing the effectiveness of unlearning (Section 1. Introduction)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs"
+        ],
+        "emnlp25": [
+          "Does Localization Inform Unlearning? A Rigorous Examination of Local Parameter Attribution for Knowledge Unlearning in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Training stability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+      "evidence": "The knowledge retention weights penalty can improve the training stability of the PPO algorithm. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "CPPO: Continual Learning for Reinforcement Learning with Human Feedback"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "evidence": "Besides, to verify whether HRA can better retain pre-training knowledge, we fine-tune LLaMA-2 7B on the MATHQA dataset by LoRA and HRA, respectively, and check the degradation of model performance on classic NLP tasks, including typical language tasks in ARC [55], HellaSwag [58], MMLU [17], Winogrande [42], and a coding task in HumanEval [6]. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "evidence": "Besides, to verify whether HRA can better retain pre-training knowledge, we fine-tune LLaMA-2 7B on the MATHQA dataset by LoRA and HRA, respectively, and check the degradation of model performance on classic NLP tasks, including typical language tasks in ARC [55], HellaSwag [58], MMLU [17], Winogrande [42], and a coding task in HumanEval [6]. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WinoGrande",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "evidence": "Besides, to verify whether HRA can better retain pre-training knowledge, we fine-tune LLaMA-2 7B on the MATHQA dataset by LoRA and HRA, respectively, and check the degradation of model performance on classic NLP tasks, including typical language tasks in ARC [55], HellaSwag [58], MMLU [17], Winogrande [42], and a coding task in HumanEval [6]. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "evidence": "Besides, to verify whether HRA can better retain pre-training knowledge, we fine-tune LLaMA-2 7B on the MATHQA dataset by LoRA and HRA, respectively, and check the degradation of model performance on classic NLP tasks, including typical language tasks in ARC [55], HellaSwag [58], MMLU [17], Winogrande [42], and a coding task in HumanEval [6]. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Model similarity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization",
+      "evidence": "aligning the fine-tuned model with the pre-trained one is crucial, as it ensures retention of knowledge obtained from large-scale data (Section 3.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization",
+      "evidence": "aligning the fine-tuned model with the pre-trained one is crucial, as it ensures retention of knowledge obtained from large-scale data, preserving generalization (Section 3.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Representational stability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "Our new objective ensures that the distribution of hidden representations within LLMs remains invariant after editing... This invariance enables the post-edited LLM to reduce e1 while keeping e0 close to zero, thereby alleviating the issues of model forgetting",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Scalability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Peripheral Memory for LLMs: Integration of Sequential Memory Banks with Adaptive Querying",
+      "evidence": "our peripheral memory effectively adapts to a larger number of memory updates without experiencing performance degradation",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Peripheral Memory for LLMs: Integration of Sequential Memory Banks with Adaptive Querying"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MME",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning",
+      "evidence": "We evaluate general knowledge retention... The evaluation uses widely-adopted benchmarks MME (Fu et al., 2024), MMMU (Yue et al., 2024), and POPE (Li et al., 2023), which assess the general abilities of MLLMs. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMMU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning",
+      "evidence": "We evaluate general knowledge retention... The evaluation uses widely-adopted benchmarks MME (Fu et al., 2024), MMMU (Yue et al., 2024), and POPE (Li et al., 2023), which assess the general abilities of MLLMs. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "POPE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning",
+      "evidence": "We evaluate general knowledge retention... The evaluation uses widely-adopted benchmarks MME (Fu et al., 2024), MMMU (Yue et al., 2024), and POPE (Li et al., 2023), which assess the general abilities of MLLMs. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Superficial forgetting",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+      "evidence": "Assessing essential forgetting necessitates addressing superficial forgetting first, as severe superficial forgetting can obscure the model\u2019s knowledge state. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SQuAD v1.1",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "M+: Extending MemoryLLM with Scalable Long-Term Memory",
+      "evidence": "To evaluate the ability of M+ to recall long-term knowledge, we follow the experimental setup in MemoryLLM (Wang et al., 2024a) on datasets SQuAD and NaturalQA (Section 4.3.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "M+: Extending MemoryLLM with Scalable Long-Term Memory"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Natural Questions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "M+: Extending MemoryLLM with Scalable Long-Term Memory",
+      "evidence": "To evaluate the ability of M+ to recall long-term knowledge, we follow the experimental setup in MemoryLLM (Wang et al., 2024a) on datasets SQuAD and NaturalQA (Section 4.3.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "M+: Extending MemoryLLM with Scalable Long-Term Memory"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AraEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models",
+      "evidence": "AraEval facilitates detailed diagnostic assessments of model performance, enabling the identi\ufb01cation of speci\ufb01c strengths and weaknesses in reasoning, instruction-following, and knowledge retention. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge editing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+      "evidence": "the accumulation of preservation loss inevitably erodes model stability during sequential editing operations, ultimately leading to model forgetting and collapse (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Human preference alignment",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+      "evidence": "This seeks a good trade-off between policy learning and knowledge retention. Our experimental results show that CPPO outperforms strong Continuous learning (CL) baselines when it comes to consistently aligning with human preferences. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "CPPO: Continual Learning for Reinforcement Learning with Human Feedback"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Self-Updatable Large Language Models by Integrating Context into Model Parameters",
+      "evidence": "Retention can be measured by querying \u03b8n with questions related to each xi for i \u2208{1, . . . , n \u22121}. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Self-Updatable Large Language Models by Integrating Context into Model Parameters"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 22,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 16,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats knowledge retention as a model's capacity to preserve previously learned knowledge, task performance, or general capabilities after later fine-tuning, continual learning, editing, compression, pruning, quantization, unlearning, or other updates. A large parallel usage states the same problem from the loss side as catastrophic or model forgetting: direct weight or parameter updates, distribution shift, or sequential learning can make the model lose previously acquired knowledge, text capabilities, or broad functionality. Smaller definitions narrow the scope to pre-training knowledge, factual and linguistic information in compressed models, shared representations across tasks, or the recall of long-past injected contexts."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers introduce several named variants, including retention of pre-training knowledge, knowledge preservation, general capability retention, general knowledge retention, shared knowledge retention, anti-forgetting, and retention as recall of long-past experiences. One paper also separates forgetting into a format-level subtype and a factual-loss subtype, and says the former can obscure the model's knowledge state when assessing the latter. Across these variants, papers alternate between positive names for preserving earlier competence and negative names such as catastrophic forgetting or model forgetting for its erosion under sequential updates."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is broad: papers link knowledge retention to 13 measurement instruments and 6 behavioral indicators. The most frequently linked instruments are MMLU, ARC, AraEval, CounterFact, and HellaSwag, with 8 other instruments also appearing. Most measurements check whether performance degrades on prior or general tasks after adaptation; other setups query the model about earlier injected contexts, use exact-match accuracy, or use an LLM judge to score whether answers remain correct, with behavioral targets covering recall, instruction following, generation, and reasoning."
+    },
+    {
+      "label": "Links.",
+      "text": "Several papers relate knowledge retention to catastrophic forgetting, and one paper relates it to superficial forgetting, noting that severe superficial forgetting can obscure the model's knowledge state. For causal claims, one paper claims a relationship from knowledge retention to human preference alignment, and another from knowledge retention to generalization. Separate papers claim causal relationships from model similarity and representational stability to knowledge retention, and one paper claims a causal relationship from knowledge editing to knowledge retention in sequential editing settings. No correlational links are reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "conflicting",
+    "reason": "Most papers are about what happens to a model's prior knowledge or capabilities after further training, editing, compression, or other updates, but they split in two substantial ways: many define the construct as loss or degradation of previous knowledge and performance, while many others define it as the ability to preserve that knowledge or those capabilities. Because these definitions treat forgetting versus preservation as the construct itself, papers using them would not be defining the same thing, even though they share a common post-update setting.",
+    "papers_with_definition": 33,
+    "runs": [
+      "consensus",
+      "conflicting",
+      "conflicting"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats knowledge retention as a model's capacity to preserve previously learned knowledge, task performance, or general capabilities after later fine-tuning, continual learning, editing, compression, pruning, quantization, unlearning, or other updates. A large parallel usage states the same problem from the loss side as catastrophic or model forgetting: direct weight or parameter updates, distribution shift, or sequential learning can make the model lose previously acquired knowledge, text capabilities, or broad functionality. Smaller definitions narrow the scope to pre-training knowledge, factual and linguistic information in compressed models, shared representations across tasks, or the recall of long-past injected contexts.\n\nSpace of facets. Papers introduce several named variants, including retention of pre-training knowledge, knowledge preservation, general capability retention, general knowledge retention, shared knowledge retention, anti-forgetting, and retention as recall of long-past experiences. One paper also separates forgetting into a format-level subtype and a factual-loss subtype, and says the former can obscure the model's knowledge state when assessing the latter. Across these variants, papers alternate between positive names for preserving earlier competence and negative names such as catastrophic forgetting or model forgetting for its erosion under sequential updates.\n\nSpace of measurement. Operationalization is broad: papers link knowledge retention to 13 measurement instruments and 6 behavioral indicators. The most frequently linked instruments are MMLU, ARC, AraEval, CounterFact, and HellaSwag, with 8 other instruments also appearing. Most measurements check whether performance degrades on prior or general tasks after adaptation; other setups query the model about earlier injected contexts, use exact-match accuracy, or use an LLM judge to score whether answers remain correct, with behavioral targets covering recall, instruction following, generation, and reasoning.\n\nLinks. Several papers relate knowledge retention to catastrophic forgetting, and one paper relates it to superficial forgetting, noting that severe superficial forgetting can obscure the model's knowledge state. For causal claims, one paper claims a relationship from knowledge retention to human preference alignment, and another from knowledge retention to generalization. Separate papers claim causal relationships from model similarity and representational stability to knowledge retention, and one paper claims a causal relationship from knowledge editing to knowledge retention in sequential editing settings. No correlational links are reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Survey on Efficient Large Language Model Training: From Data-centric Perspectives",
+      "Advancing SMoE for Continuous Domain Adaptation of MLLMs: Adaptive Router and Domain-Specific Loss",
+      "Controlled Low-Rank Adaptation with Subspace Regularization for Continued Training on Large Language Models",
+      "Enhancing Multimodal Continual Instruction Tuning with BranchLoRA",
+      "HiDe-LLaVA: Hierarchical Decoupling for Continual Instruction Tuning of Multimodal Large Language Model",
+      "Just Go Parallel: Improving the Multilingual Capabilities of Large Language Models",
+      "Less, but Better: Efficient Multilingual Expansion for LLMs via Layer-wise Mixture-of-Experts",
+      "LongReD: Mitigating Short-Text Degradation of Long-Context Large Language Models via Restoration Distillation",
+      "Neuron-Level Sequential Editing for Large Language Models",
+      "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference",
+      "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+      "Opt-Out: Investigating Entity-Level Unlearning for Large Language Models via Optimal Transport",
+      "ReLearn: Unlearning via Learning for Large Language Models",
+      "Recurrent Knowledge Identification and Fusion for Language Model Continual Learning",
+      "SoftCoT: Soft Chain-of-Thought for Efficient Reasoning with LLMs",
+      "Exploring Forgetting in Large Language Model Pre-Training"
+    ],
+    "emnlp25": [
+      "Analyzing the Effects of Supervised Fine-Tuning on Model Knowledge from Token and Parameter Levels",
+      "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models",
+      "Can Large Language Models Be Good Language Teachers?",
+      "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+      "How to inject knowledge efficiently? Knowledge Infusion Scaling Law for Pre-training Large Language Models",
+      "LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization",
+      "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+      "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+      "RECALL: REpresentation-aligned Catastrophic-forgetting ALLeviation via Hierarchical Model Merging",
+      "SUA: Stealthy Multimodal Large Language Model Unlearning Attack",
+      "SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation"
+    ],
+    "iclr24": [
+      "A Paradigm Shift in Machine Translation: Boosting Translation Performance of Large Language Models",
+      "BadEdit: Backdooring Large Language Models by Model Editing",
+      "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+      "Compressing LLMs: The Truth is Rarely Pure and Never Simple",
+      "Dissecting learning and forgetting in language model finetuning",
+      "Scalable Language Model with Generalized Continual Learning",
+      "Spoken Question Answering and Speech Continuation Using Spectrogram-Powered LLM",
+      "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+    ],
+    "iclr25": [
+      "ALLaM: Large Language Models for Arabic and English",
+      "Adapt-$\\infty$: Scalable Continual Multimodal Instruction Tuning via Dynamic Data Selection",
+      "Agent Skill Acquisition for Large Language Models via CycleQD",
+      "Bootstrapping Language Models with DPO Implicit Rewards",
+      "CollabEdit: Towards Non-destructive Collaborative Knowledge Editing",
+      "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+      "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition",
+      "LOIRE: LifelOng learning on Incremental data via pre-trained language model gRowth Efficiently",
+      "LiNeS: Post-training Layer Scaling Prevents Forgetting and Enhances Model Merging",
+      "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+      "On the Modeling Capabilities of Large Language Models for Sequential Decision Making",
+      "Q-Adapter: Customizing Pre-trained LLMs to New Preferences with Forgetting Mitigation",
+      "Scalable Bayesian Learning with posteriors",
+      "Self-Updatable Large Language Models by Integrating Context into Model Parameters",
+      "Spurious Forgetting in Continual Learning of Language Models",
+      "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+      "Teaching LLMs How to Learn with Contextual Fine-Tuning",
+      "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs"
+    ],
+    "icml25": [
+      "Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning",
+      "Large Continual Instruction Assistant",
+      "LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models, Provably and Efficiently",
+      "M+: Extending MemoryLLM with Scalable Long-Term Memory",
+      "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+      "Peripheral Memory for LLMs: Integration of Sequential Memory Banks with Adaptive Querying",
+      "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+      "SKIM: Any-bit Quantization Pushing The Limits of Post-Training Quantization",
+      "Tool Unlearning for Tool-Augmented LLMs"
+    ],
+    "naacl25": [
+      "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+      "Mutual-pairing Data Augmentation for Fewshot Continual Relation Extraction",
+      "Prototype Conditioned Generative Replay for Continual Learning in NLP",
+      "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+      "Soft Language Prompts for Language Transfer",
+      "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+      "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+    ],
+    "neurips24": [
+      "AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment",
+      "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models",
+      "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+      "CultureLLM: Incorporating Cultural Differences into Large Language Models",
+      "D-CPT Law: Domain-specific Continual Pre-Training Scaling Law for Large Language Models",
+      "DHA: Learning Decoupled-Head Attention from Transformer Checkpoints via Adaptive Heads Fusion",
+      "DoFIT: Domain-aware Federated Instruction Tuning with Alleviated Catastrophic Forgetting",
+      "FouRA: Fourier Low-Rank Adaptation",
+      "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+      "Micro-Bench: A Microscopy Benchmark for Vision-Language Understanding",
+      "OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step",
+      "PACE: Marrying generalization in PArameter-efficient fine-tuning with Consistency rEgularization",
+      "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "Reasons and Solutions for the Decline in Model Performance after Editing",
+      "SaulLM-54B & SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain",
+      "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "TAIA: Large Language Models are Out-of-Distribution Data Learners",
+      "Text-space Graph Foundation Models: Comprehensive Benchmarks and New Insights",
+      "Unveiling Encoder-Free Vision-Language Models",
+      "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+      "Voila-A: Aligning Vision-Language Models with User's Gaze Attention",
+      "Yo'LLaVA: Your Personalized Language and Vision Assistant"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 16,
+    "emnlp25": 11,
+    "iclr24": 8,
+    "iclr25": 20,
+    "icml25": 9,
+    "naacl25": 7,
+    "neurips24": 24
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "canonical_name": "Unanswerability detection ability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Most definitions treat this construct as the ability to judge whether the available context contains enough information to answer a question, or whether the question is unanswerable. The definitions instantiate that judgment in several settings: databases where \"a valid SQL cannot be produced given the database schema\" or the data is missing, documents where a model predicts whether a question is answerable, retrieved evidence that may lack sufficient information, video content whose informational boundaries a question may exceed, and interaction histories where the sought fact was never mentioned. A smaller line of work foregrounds refusal or abstention, defining the construct as choosing not to answer, or saying \"I don't know,\" when insufficiency is detected; another definition describes it as recognizing flawed or incomplete problems and choosing not to answer.\n\nSpace of facets. Rather than a shared subtype taxonomy, papers describe context-specific versions of the construct according to what makes a question unanswerable: missing database data, columns, or join paths, insufficient document evidence, queries beyond a video's content, information absent from interaction history, and flawed or incomplete multimodal problems. Naming is not fully uniform: closely related uses appear under unanswerability detection, answerability judgment, refusal capability, alignment for answerability, and abstention. One paper also uses \"alignment for answerability\" for the process of equipping video models with the ability to evaluate question relevance based on video content, and one multimodal paper distinguishes refusal capability from visual understanding as separate possible bottlenecks.\n\nSpace of measurement. Papers link the construct to 3 measurement instruments, ASQA, ELI5, and QAMPARI, and to no behavioral indicators. In the only linked measurement evidence, one paper evaluates it on these datasets with F1GR, defined there as Grounded Refusals F1, so the operationalization targets whether the model produces grounded refusals when documents lack sufficient information. This dataset-based operationalization matches the refusal and document-sufficiency framing most directly, while papers do not link this construct here to instruments for the database, video, or interaction-history variants named in the definitions.\n\nLinks. Beyond measurement, no papers claim a causal, correlational, or related link between this construct and another construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Answerability judgment",
+    "Unanswerability detection",
+    "Refusal capability",
+    "Alignment for answerability",
+    "Abstention"
+  ],
+  "papers": [
+    "Unsolvable Problem Detection: Robust Understanding Evaluation for Large Multimodal Models",
+    "Beyond task performance: evaluating and reducing the flaws of large multimodal models with in-context-learning",
+    "Can Video LLMs Refuse to Answer? Alignment for Answerability in Video Large Language Models",
+    "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+    "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+    "Knowledge Graph Guided Evaluation of Abstention Techniques",
+    "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+    "PeerQA: A Scientific Question Answering Dataset from Peer Reviews"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent ability of a model to determine when a question cannot be answered due to missing data, columns, or join paths in the database.",
+      "paper": "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+      "original_name": "Unanswerability detection"
+    },
+    {
+      "text": "The latent ability to determine whether sufficient information exists in a given document to answer a question, distinguishing answerable from unanswerable queries.",
+      "paper": "PeerQA: A Scientific Question Answering Dataset from Peer Reviews",
+      "original_name": "Answerability judgment"
+    },
+    {
+      "text": "The tendency of an LLM to abstain from answering when the retrieved documents do not contain sufficient information.",
+      "paper": "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+      "original_name": "Refusal capability"
+    },
+    {
+      "text": "The latent capability of a model to evaluate the relevance of user queries in relation to video content and appropriately decline to answer when questions exceed the video's informational boundaries.",
+      "paper": "Can Video LLMs Refuse to Answer? Alignment for Answerability in Video Large Language Models",
+      "original_name": "Alignment for answerability"
+    },
+    {
+      "text": "The ability to identify when a question seeks information that was not provided in the interaction history and to correctly respond by indicating the information is unknown.",
+      "paper": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "original_name": "Abstention"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ASQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+      "evidence": "Table 2: LLaMA family evaluated on the ASQA, QAMPARI, and ELI5 datasets. ... F1GR := Grounded Refusals F1 (Table 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "QAMPARI",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+      "evidence": "Table 2: LLaMA family evaluated on the ASQA, QAMPARI, and ELI5 datasets. ... F1GR := Grounded Refusals F1 (Table 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ELI5",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+      "evidence": "Table 2: LLaMA family evaluated on the ASQA, QAMPARI, and ELI5 datasets. ... F1GR := Grounded Refusals F1 (Table 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most definitions treat this construct as the ability to judge whether the available context contains enough information to answer a question, or whether the question is unanswerable. The definitions instantiate that judgment in several settings: databases where \"a valid SQL cannot be produced given the database schema\" or the data is missing, documents where a model predicts whether a question is answerable, retrieved evidence that may lack sufficient information, video content whose informational boundaries a question may exceed, and interaction histories where the sought fact was never mentioned. A smaller line of work foregrounds refusal or abstention, defining the construct as choosing not to answer, or saying \"I don't know,\" when insufficiency is detected; another definition describes it as recognizing flawed or incomplete problems and choosing not to answer."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Rather than a shared subtype taxonomy, papers describe context-specific versions of the construct according to what makes a question unanswerable: missing database data, columns, or join paths, insufficient document evidence, queries beyond a video's content, information absent from interaction history, and flawed or incomplete multimodal problems. Naming is not fully uniform: closely related uses appear under unanswerability detection, answerability judgment, refusal capability, alignment for answerability, and abstention. One paper also uses \"alignment for answerability\" for the process of equipping video models with the ability to evaluate question relevance based on video content, and one multimodal paper distinguishes refusal capability from visual understanding as separate possible bottlenecks."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link the construct to 3 measurement instruments, ASQA, ELI5, and QAMPARI, and to no behavioral indicators. In the only linked measurement evidence, one paper evaluates it on these datasets with F1GR, defined there as Grounded Refusals F1, so the operationalization targets whether the model produces grounded refusals when documents lack sufficient information. This dataset-based operationalization matches the refusal and document-sufficiency framing most directly, while papers do not link this construct here to instruments for the database, video, or interaction-history variants named in the definitions."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, no papers claim a causal, correlational, or related link between this construct and another construct."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define this as a model's ability to recognize that the available source or context does not contain enough information to answer a question, and to mark it as unanswerable by abstaining or saying it is unknown. The differences are mainly the setting and examples used, such as databases, documents, retrieved passages, videos, or interaction history, with a few papers putting slightly more emphasis on abstention or incomplete problems rather than changing the core construct.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Most definitions treat this construct as the ability to judge whether the available context contains enough information to answer a question, or whether the question is unanswerable. The definitions instantiate that judgment in several settings: databases where \"a valid SQL cannot be produced given the database schema\" or the data is missing, documents where a model predicts whether a question is answerable, retrieved evidence that may lack sufficient information, video content whose informational boundaries a question may exceed, and interaction histories where the sought fact was never mentioned. A smaller line of work foregrounds refusal or abstention, defining the construct as choosing not to answer, or saying \"I don't know,\" when insufficiency is detected; another definition describes it as recognizing flawed or incomplete problems and choosing not to answer.\n\nSpace of facets. Rather than a shared subtype taxonomy, papers describe context-specific versions of the construct according to what makes a question unanswerable: missing database data, columns, or join paths, insufficient document evidence, queries beyond a video's content, information absent from interaction history, and flawed or incomplete multimodal problems. Naming is not fully uniform: closely related uses appear under unanswerability detection, answerability judgment, refusal capability, alignment for answerability, and abstention. One paper also uses \"alignment for answerability\" for the process of equipping video models with the ability to evaluate question relevance based on video content, and one multimodal paper distinguishes refusal capability from visual understanding as separate possible bottlenecks.\n\nSpace of measurement. Papers link the construct to 3 measurement instruments, ASQA, ELI5, and QAMPARI, and to no behavioral indicators. In the only linked measurement evidence, one paper evaluates it on these datasets with F1GR, defined there as Grounded Refusals F1, so the operationalization targets whether the model produces grounded refusals when documents lack sufficient information. This dataset-based operationalization matches the refusal and document-sufficiency framing most directly, while papers do not link this construct here to instruments for the database, video, or interaction-history variants named in the definitions.\n\nLinks. Beyond measurement, no papers claim a causal, correlational, or related link between this construct and another construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Unsolvable Problem Detection: Robust Understanding Evaluation for Large Multimodal Models"
+    ],
+    "iclr24": [
+      "Beyond task performance: evaluating and reducing the flaws of large multimodal models with in-context-learning"
+    ],
+    "iclr25": [
+      "Can Video LLMs Refuse to Answer? Alignment for Answerability in Video Large Language Models",
+      "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse"
+    ],
+    "naacl25": [
+      "Knowledge Graph Guided Evaluation of Abstention Techniques",
+      "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+      "PeerQA: A Scientific Question Answering Dataset from Peer Reviews"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "iclr24": 1,
+    "iclr25": 3,
+    "naacl25": 3
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "naacl25"
+  ]
+}

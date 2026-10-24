@@ -1,0 +1,150 @@
+{
+  "canonical_name": "Databricks Dolly-15k",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing treatment is as an instruction-following dataset, often described as open-source, human-generated, and used for fine-tuning or evaluation. Definitions variously describe it as a 15k collection of human-written instruction-response pairs, a manually crafted instruction dataset, and a benchmark dataset for federated LLM fine-tuning experiments. A narrower description emphasizes its coverage of categories such as brainstorming, classification, closed QA, generation, information extraction, open QA, and summarization, and one paper uses a 500-sample test split from the dataset.\n\nWhat it is claimed to measure. Papers link it to one construct and two behavioral indicators, so its reported measurement role is spread across a few targets rather than centered on one. It is reported as measuring helpfulness when papers use general-domain Dolly samples to assess whether models retain usefulness after fine-tuning, and as measuring dialogue generation when it is used as the dialogue generation task. A smaller line of work also uses it to measure refusal in an AutoPoison-refusal setting.\n\nSpace of uses. Papers use it alongside other datasets, including Alpaca for downstream adaptation and benign fine-tuning, XSum and WMT18 for evaluation, BeaverTails for usefulness checks after defensive fine-tuning, and Flan 1 and Flan 2 in federated experiments. Across these settings, it is positioned variously as an evaluation task, a supervised fine-tuning dataset, a test set split, and a benchmark for federated LLM fine-tuning. No measurement instrument is linked to it directly.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Databricks-Dolly-15k",
+    "Dolly",
+    "Dolly-15k",
+    "Databricks-dolly 15k"
+  ],
+  "papers": [
+    "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+    "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+    "pFedGPT: Hierarchically Optimizing LoRA Aggregation Weights for Personalized Federated GPT Models",
+    "Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!",
+    "MiniLLM: Knowledge Distillation of Large Language Models",
+    "A transfer learning framework for weak to strong generalization",
+    "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+    "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+    "Multi-Draft Speculative Sampling: Canonical Decomposition and Theoretical Limits",
+    "Diff-eRank: A Novel Rank-Based Metric for Evaluating Large Language Models"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An instruction-following dataset used as an evaluation task for decoding experiments.",
+      "paper": "Multi-Draft Speculative Sampling: Canonical Decomposition and Theoretical Limits",
+      "original_name": "Databricks-Dolly-15k"
+    },
+    {
+      "text": "An open-source dataset of human-generated instruction-following records used to fine-tune large language models for instruction following and dialogue generation.",
+      "paper": "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+      "original_name": "Dolly"
+    },
+    {
+      "text": "An instruction-following dataset with records across categories like brainstorming and question answering, used for supervised fine-tuning to evaluate attack durability.",
+      "paper": "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "original_name": "Dolly-15k"
+    },
+    {
+      "text": "A benchmark dataset used for federated LLM fine-tuning experiments across multiple NLP tasks.",
+      "paper": "pFedGPT: Hierarchically Optimizing LoRA Aggregation Weights for Personalized Federated GPT Models",
+      "original_name": "Databricks-dolly 15k"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Dialogue generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+      "evidence": "...and Dolly (Conover et al., 2023) datasets as the dialogue generation task. (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+      "evidence": "to assess whether LLMs retain usefulness after fine-tuning, we select 15k general-domain samples equally from Alpaca (Taori et al., 2023), BeaverTails, and Dolly (Conover et al., 2023). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Refusal",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LT-Defense: Searching-free Backdoor Defense via Exploiting the Long-tailed Effect",
+      "evidence": "For AutoPoison-refusal, we first generate poisoned datasets by replacing the generation targets in GPT-4-LLM and Databricks-Dolly-15k with two refusal outputs... (Section A.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LT-Defense: Searching-free Backdoor Defense via Exploiting the Long-tailed Effect"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing treatment is as an instruction-following dataset, often described as open-source, human-generated, and used for fine-tuning or evaluation. Definitions variously describe it as a 15k collection of human-written instruction-response pairs, a manually crafted instruction dataset, and a benchmark dataset for federated LLM fine-tuning experiments. A narrower description emphasizes its coverage of categories such as brainstorming, classification, closed QA, generation, information extraction, open QA, and summarization, and one paper uses a 500-sample test split from the dataset."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to one construct and two behavioral indicators, so its reported measurement role is spread across a few targets rather than centered on one. It is reported as measuring helpfulness when papers use general-domain Dolly samples to assess whether models retain usefulness after fine-tuning, and as measuring dialogue generation when it is used as the dialogue generation task. A smaller line of work also uses it to measure refusal in an AutoPoison-refusal setting."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers use it alongside other datasets, including Alpaca for downstream adaptation and benign fine-tuning, XSum and WMT18 for evaluation, BeaverTails for usefulness checks after defensive fine-tuning, and Flan 1 and Flan 2 in federated experiments. Across these settings, it is positioned variously as an evaluation task, a supervised fine-tuning dataset, a test set split, and a benchmark for federated LLM fine-tuning. No measurement instrument is linked to it directly."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing treatment is as an instruction-following dataset, often described as open-source, human-generated, and used for fine-tuning or evaluation. Definitions variously describe it as a 15k collection of human-written instruction-response pairs, a manually crafted instruction dataset, and a benchmark dataset for federated LLM fine-tuning experiments. A narrower description emphasizes its coverage of categories such as brainstorming, classification, closed QA, generation, information extraction, open QA, and summarization, and one paper uses a 500-sample test split from the dataset.\n\nWhat it is claimed to measure. Papers link it to one construct and two behavioral indicators, so its reported measurement role is spread across a few targets rather than centered on one. It is reported as measuring helpfulness when papers use general-domain Dolly samples to assess whether models retain usefulness after fine-tuning, and as measuring dialogue generation when it is used as the dialogue generation task. A smaller line of work also uses it to measure refusal in an AutoPoison-refusal setting.\n\nSpace of uses. Papers use it alongside other datasets, including Alpaca for downstream adaptation and benign fine-tuning, XSum and WMT18 for evaluation, BeaverTails for usefulness checks after defensive fine-tuning, and Flan 1 and Flan 2 in federated experiments. Across these settings, it is positioned variously as an evaluation task, a supervised fine-tuning dataset, a test set split, and a benchmark for federated LLM fine-tuning. No measurement instrument is linked to it directly.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!",
+      "MiniLLM: Knowledge Distillation of Large Language Models"
+    ],
+    "iclr25": [
+      "A transfer learning framework for weak to strong generalization",
+      "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+      "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "Multi-Draft Speculative Sampling: Canonical Decomposition and Theoretical Limits"
+    ],
+    "emnlp25": [
+      "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+      "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+      "pFedGPT: Hierarchically Optimizing LoRA Aggregation Weights for Personalized Federated GPT Models"
+    ],
+    "neurips24": [
+      "Diff-eRank: A Novel Rank-Based Metric for Evaluating Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 2,
+    "iclr25": 4,
+    "emnlp25": 3,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "neurips24"
+  ]
+}

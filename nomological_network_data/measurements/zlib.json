@@ -1,0 +1,96 @@
+{
+  "canonical_name": "Zlib",
+  "type": "measurement",
+  "canonical_definition": "Across the provided sources, Zlib is characterized as a method for pretraining data detection, also referred to as a membership inference method. It is operationalized as a likelihood-based procedure that uses zlib compression entropy to normalize a model-derived score for a given input. The specific calculation is described in slightly different ways: one paper frames it as using the \"ratio of example perplexity and zlib compression entropy,\" while another describes it as a \"loss-calibration-based\" approach that \"divides the model\u2019s loss by the zlib compression entropy of the input.\" The stated purpose of this normalization is to account for input complexity. In one context, Zlib is presented as a \"baseline method\" for its task.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique: compression-calibrated likelihood score for membership inference / pretraining-data detection",
+  "names": [
+    "Zlib",
+    "zlibMIA"
+  ],
+  "papers": [
+    "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+    "Membership and Memorization in LLM Knowledge Distillation",
+    "A Statistical Approach for Controlled Training Data Detection",
+    "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+    "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A likelihood-based detection procedure that uses the ratio of example perplexity and zlib compression entropy for pretraining data detection.",
+      "paper": "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "original_name": "Zlib"
+    },
+    {
+      "text": "A specific type of Membership Inference Attack that uses a model's loss on a sample, normalized by the sample's zlib compression size, to infer membership.",
+      "paper": "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+      "original_name": "zlibMIA"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Pre-training data detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "evidence": "methods that compare a sample\u2019s loss to its zlib compression entropy (Zlib (Carlini et al., 2021)) (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Statistical Approach for Controlled Training Data Detection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Privacy leakage",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+      "evidence": "Table 2 shows that across all three attackers (lossMIA, zlibMIA, and Min-K%), all six unlearning methods and original model (no unlearning), the privacy leakage measure is significantly larger when unlearning canaries and minorities on Enron-Phone dataset for GPT-2 and Llama-2 7B respectively. (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided sources, Zlib is characterized as a method for pretraining data detection, also referred to as a membership inference method. It is operationalized as a likelihood-based procedure that uses zlib compression entropy to normalize a model-derived score for a given input. The specific calculation is described in slightly different ways: one paper frames it as using the \"ratio of example perplexity and zlib compression entropy,\" while another describes it as a \"loss-calibration-based\" approach that \"divides the model\u2019s loss by the zlib compression entropy of the input.\" The stated purpose of this normalization is to account for input complexity. In one context, Zlib is presented as a \"baseline method\" for its task.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+      "Membership and Memorization in LLM Knowledge Distillation"
+    ],
+    "iclr25": [
+      "A Statistical Approach for Controlled Training Data Detection",
+      "Fine-tuning can Help Detect Pretraining Data from Large Language Models"
+    ],
+    "icml25": [
+      "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 2,
+    "icml25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

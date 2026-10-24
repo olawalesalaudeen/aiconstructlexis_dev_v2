@@ -1,0 +1,165 @@
+{
+  "canonical_name": "Confidence expression",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage treats this behavior as a model making its certainty or uncertainty visible in the answer itself. Most papers describe explicit uncertainty statements or hedges, such as \"I am unsure,\" \"I don't know,\" \"maybe,\" or \"I am not sure but...\"; several others use the same label for percentage or probability statements and class-wise confidence values, and one definition also includes implicit cues carried by tone, detail, or elaboration. As one study puts it, \"LLMs can convey not only an answer to the question, but a level of confidence about the answer being correct\" (LACIE: Listener-Aware Finetuning for Calibration in Large Language Models).\n\nVariants. Papers study this behavior under several closely related variants. The most common variants center on expressing uncertainty in natural language, including hedging and lack-of-knowledge statements, while other work examines verbalized confidence as outputs like \"Confidence: 90%,\" multimodal self-verification that extracts a confidence signal from the model's answer, and confidence score generation where the response gives a value for each candidate class. Papers variously use labels such as expressing uncertainty, confidence expression, verbalized confidence, linguistic uncertainty expression, and confidence score generation.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead describe elicitation and scoring procedures directly: some prompt models to give probability scores or to provide confidence for each class between 0.00 and 100.00, some append an uncertainty phrase such as \"I am unsure\" to uncertain answers, and one paper scores the behavior by asking the model to verify its own prediction and extracting the probability of the \"yes\" token, while also incorporating model confidence into accuracy computation.\n\nWhat it is taken as evidence of. Only Confidence is linked as a construct, and the recorded relation is that Confidence is measured by this behavior. One paper explicitly lists \"verbalized confidence\" as a type of existing confidence measure (Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement). The available relation therefore uses confidence expression as an indicator of confidence and does not link it to other constructs.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Confidence expression",
+    "Expressing uncertainty",
+    "Confidence Expression",
+    "Confidence score generation",
+    "Verbalized confidence",
+    "Nuanced uncertainty expression",
+    "Linguistic uncertainty expression",
+    "Natural language uncertainty expression",
+    "Uncertainty expression"
+  ],
+  "papers": [
+    "Dehumanizing Machines: Mitigating Anthropomorphic Behaviors in Text Generation Systems",
+    "Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations",
+    "Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of Design",
+    "MetaFaith: Faithful Natural Language Uncertainty Expression in LLMs",
+    "Thinking Out Loud: Do Reasoning Models Know When They're Right?",
+    "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs",
+    "Calibrating Expressions of Certainty",
+    "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+    "Reflexive Guidance: Improving OoDD in Vision-Language Models via Self-Guided Image-Adaptive Concept Generation",
+    "CertainlyUncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness",
+    "Self-DC: When to Reason and When to Act? Self Divide-and-Conquer for Compositional Unknown Questions",
+    "Unfamiliar Finetuning Examples Control How Language Models Hallucinate",
+    "Alignment for Honesty",
+    "LACIE: Listener-Aware Finetuning for Calibration in Large Language Models"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Communicating certainty or uncertainty in an answer using explicit scores, epistemic markers, tone, or elaboration.",
+      "paper": "LACIE: Listener-Aware Finetuning for Calibration in Large Language Models",
+      "original_name": "Confidence expression"
+    },
+    {
+      "text": "The observable behavior of a model explicitly stating its lack of confidence or knowledge in its response, such as by outputting phrases like 'I am unsure'.",
+      "paper": "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+      "original_name": "Expressing uncertainty"
+    },
+    {
+      "text": "Providing probability estimates or confidence levels for predictions, often by verifying if a predicted answer is correct via token probability.",
+      "paper": "CertainlyUncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness",
+      "original_name": "Confidence Expression"
+    },
+    {
+      "text": "The action of producing numerical confidence values for each potential class in a classification task, expressed within a natural language response.",
+      "paper": "Reflexive Guidance: Improving OoDD in Vision-Language Models via Self-Guided Image-Adaptive Concept Generation",
+      "original_name": "Confidence score generation"
+    },
+    {
+      "text": "The observable expression of a model's certainty in its answer, typically in the form of a percentage or probability statement.",
+      "paper": "Thinking Out Loud: Do Reasoning Models Know When They're Right?",
+      "original_name": "Verbalized confidence"
+    },
+    {
+      "text": "The generation of text that qualifies an answer with expressions of doubt or uncertainty, such as \"I am not sure but...\" or \"maybe\".",
+      "paper": "Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations",
+      "original_name": "Nuanced uncertainty expression"
+    },
+    {
+      "text": "The observable use of words, phrases, and hedging language to convey a degree of confidence or doubt in a generated response.",
+      "paper": "MetaFaith: Faithful Natural Language Uncertainty Expression in LLMs",
+      "original_name": "Linguistic uncertainty expression"
+    },
+    {
+      "text": "The observable behavior of a model explicitly stating its lack of knowledge in a response, for example by saying \"I don't know\".",
+      "paper": "Unfamiliar Finetuning Examples Control How Language Models Hallucinate",
+      "original_name": "Uncertainty expression"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Honesty",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Alignment for Honesty",
+      "evidence": "the expression of uncertainty can serve as a valuable indicator of honesty, and we view calibration from the perspective of model knowledge as a finer-grained handling of knowns",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Alignment for Honesty"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage treats this behavior as a model making its certainty or uncertainty visible in the answer itself. Most papers describe explicit uncertainty statements or hedges, such as \"I am unsure,\" \"I don't know,\" \"maybe,\" or \"I am not sure but...\"; several others use the same label for percentage or probability statements and class-wise confidence values, and one definition also includes implicit cues carried by tone, detail, or elaboration. As one study puts it, \"LLMs can convey not only an answer to the question, but a level of confidence about the answer being correct\" (LACIE: Listener-Aware Finetuning for Calibration in Large Language Models)."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study this behavior under several closely related variants. The most common variants center on expressing uncertainty in natural language, including hedging and lack-of-knowledge statements, while other work examines verbalized confidence as outputs like \"Confidence: 90%,\" multimodal self-verification that extracts a confidence signal from the model's answer, and confidence score generation where the response gives a value for each candidate class. Papers variously use labels such as expressing uncertainty, confidence expression, verbalized confidence, linguistic uncertainty expression, and confidence score generation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Papers instead describe elicitation and scoring procedures directly: some prompt models to give probability scores or to provide confidence for each class between 0.00 and 100.00, some append an uncertainty phrase such as \"I am unsure\" to uncertain answers, and one paper scores the behavior by asking the model to verify its own prediction and extracting the probability of the \"yes\" token, while also incorporating model confidence into accuracy computation."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Only Confidence is linked as a construct, and the recorded relation is that Confidence is measured by this behavior. One paper explicitly lists \"verbalized confidence\" as a type of existing confidence measure (Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement). The available relation therefore uses confidence expression as an indicator of confidence and does not link it to other constructs."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage treats this behavior as a model making its certainty or uncertainty visible in the answer itself. Most papers describe explicit uncertainty statements or hedges, such as \"I am unsure,\" \"I don't know,\" \"maybe,\" or \"I am not sure but...\"; several others use the same label for percentage or probability statements and class-wise confidence values, and one definition also includes implicit cues carried by tone, detail, or elaboration. As one study puts it, \"LLMs can convey not only an answer to the question, but a level of confidence about the answer being correct\" (LACIE: Listener-Aware Finetuning for Calibration in Large Language Models).\n\nVariants. Papers study this behavior under several closely related variants. The most common variants center on expressing uncertainty in natural language, including hedging and lack-of-knowledge statements, while other work examines verbalized confidence as outputs like \"Confidence: 90%,\" multimodal self-verification that extracts a confidence signal from the model's answer, and confidence score generation where the response gives a value for each candidate class. Papers variously use labels such as expressing uncertainty, confidence expression, verbalized confidence, linguistic uncertainty expression, and confidence score generation.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead describe elicitation and scoring procedures directly: some prompt models to give probability scores or to provide confidence for each class between 0.00 and 100.00, some append an uncertainty phrase such as \"I am unsure\" to uncertain answers, and one paper scores the behavior by asking the model to verify its own prediction and extracting the probability of the \"yes\" token, while also incorporating model confidence into accuracy computation.\n\nWhat it is taken as evidence of. Only Confidence is linked as a construct, and the recorded relation is that Confidence is measured by this behavior. One paper explicitly lists \"verbalized confidence\" as a type of existing confidence measure (Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement). The available relation therefore uses confidence expression as an indicator of confidence and does not link it to other constructs.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Dehumanizing Machines: Mitigating Anthropomorphic Behaviors in Text Generation Systems"
+    ],
+    "emnlp25": [
+      "Calibrating Verbal Uncertainty as a Linear Feature to Reduce Hallucinations",
+      "Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of Design",
+      "MetaFaith: Faithful Natural Language Uncertainty Expression in LLMs",
+      "Thinking Out Loud: Do Reasoning Models Know When They're Right?"
+    ],
+    "iclr24": [
+      "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs"
+    ],
+    "iclr25": [
+      "Calibrating Expressions of Certainty",
+      "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+      "Reflexive Guidance: Improving OoDD in Vision-Language Models via Self-Guided Image-Adaptive Concept Generation",
+      "CertainlyUncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness"
+    ],
+    "naacl25": [
+      "Self-DC: When to Reason and When to Act? Self Divide-and-Conquer for Compositional Unknown Questions",
+      "Unfamiliar Finetuning Examples Control How Language Models Hallucinate"
+    ],
+    "neurips24": [
+      "Alignment for Honesty",
+      "LACIE: Listener-Aware Finetuning for Calibration in Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 4,
+    "iclr24": 1,
+    "iclr25": 4,
+    "naacl25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

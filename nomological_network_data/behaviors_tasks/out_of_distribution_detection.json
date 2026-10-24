@@ -1,0 +1,131 @@
+{
+  "canonical_name": "Out-of-distribution detection",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is the task of deciding whether an input sample falls outside the training distribution, and one study also describes it as a benchmark for assessing uncertainty-aware methods. The definitions agree on this core formulation, and the fuller version adds a success criterion based on uncertainty: an effective approach should \"reliably assign higher uncertainties to OOD samples compared to ID samples,\" while a shorter formulation describes it simply as identifying samples that do not belong to the training distribution.\n\nVariants. Papers use both the full name and the abbreviation \"OOD detection.\" The studied settings vary in what counts as out-of-distribution: some treat other datasets as OOD relative to an in-distribution training set, another evaluates on external OOD datasets including SVHN, and another treats Samoan translations of TQA statements as an \"out-of-distribution language\"; one paper also places the task in both pre-training and fine-tuning stages.\n\nSpace of elicitation and scores. Papers link it to five measurement instruments: ARC-Challenge, ARC-Easy, CommonsenseQA, SVHN, and TQA. In the reported uses, these are introduced as OOD datasets or test conditions: one setup fine-tunes on OBQA as the in-distribution dataset and tests on ARC-Challenge, ARC-Easy, and CommonsenseQA as OOD datasets, another validates on external OOD datasets including SVHN, and another repeats the experiment on Samoan translations for TQA.\n\nWhat it is taken as evidence of. The recorded construct links are causal claims directed toward the behavior, not claims that the behavior measures a construct. Papers link it to two constructs in this way: one paper claims a causal relationship from Epistemic uncertainty to out-of-distribution detection, saying it provides \"an improved indicator for out-of-distribution detection,\" and another claims a causal relationship from Visual understanding to out-of-distribution detection, arguing that insufficient image interpretation capabilities limit the ability to distinguish between in-distribution and OoD inputs.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Out-of-distribution detection",
+    "OOD detection"
+  ],
+  "papers": [
+    "Adapting Multi-modal Large Language Model to Concept Drift From Pre-training Onwards",
+    "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+    "Scalable Bayesian Learning with posteriors"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of identifying whether a given input sample comes from a different data distribution than the one the model was trained on, typically by assigning it a higher uncertainty score.",
+      "paper": "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "original_name": "Out-of-distribution detection"
+    },
+    {
+      "text": "The task of identifying input samples that do not belong to the training distribution.",
+      "paper": "Adapting Multi-modal Large Language Model to Concept Drift From Pre-training Onwards",
+      "original_name": "OOD detection"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CommonsenseQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "evidence": "We fine-tune the LLMs on OBQA (as the ID dataset) and test them on ARC-C, ARC-E, and CSQA (as OOD dataset).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Calibrating LLMs with Information-Theoretic Evidential Deep Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Reflexive Guidance: Improving OoDD in Vision-Language Models via Self-Guided Image-Adaptive Concept Generation",
+      "evidence": "We found that one of the reasons for this discrepancy is the insufficient image interpretation capabilities of these models, which limits their ability to accurately distinguish between ID and OoD inputs. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Reflexive Guidance: Improving OoDD in Vision-Language Models via Self-Guided Image-Adaptive Concept Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SVHN",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Adapting Multi-modal Large Language Model to Concept Drift From Pre-training Onwards",
+      "evidence": "The model is trained on CIFAR100-LT Krizhevsky & Hinton (2009) with an imbalance ratio of 100, and validated on external OOD datasets including SVHN Netzer et al. (2011), Places365 Zhou et al. (2017), LSUN Yu et al., iSUN Xu et al. and Texture Cimpoi et al. (2014). (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Adapting Multi-modal Large Language Model to Concept Drift From Pre-training Onwards"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Epistemic uncertainty",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Scalable Bayesian Learning with posteriors",
+      "evidence": "\u201cepistemic uncertainty providing an improved indicator for out-of-distribution detection.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scalable Bayesian Learning with posteriors"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is the task of deciding whether an input sample falls outside the training distribution, and one study also describes it as a benchmark for assessing uncertainty-aware methods. The definitions agree on this core formulation, and the fuller version adds a success criterion based on uncertainty: an effective approach should \"reliably assign higher uncertainties to OOD samples compared to ID samples,\" while a shorter formulation describes it simply as identifying samples that do not belong to the training distribution."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use both the full name and the abbreviation \"OOD detection.\" The studied settings vary in what counts as out-of-distribution: some treat other datasets as OOD relative to an in-distribution training set, another evaluates on external OOD datasets including SVHN, and another treats Samoan translations of TQA statements as an \"out-of-distribution language\"; one paper also places the task in both pre-training and fine-tuning stages."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to five measurement instruments: ARC-Challenge, ARC-Easy, CommonsenseQA, SVHN, and TQA. In the reported uses, these are introduced as OOD datasets or test conditions: one setup fine-tunes on OBQA as the in-distribution dataset and tests on ARC-Challenge, ARC-Easy, and CommonsenseQA as OOD datasets, another validates on external OOD datasets including SVHN, and another repeats the experiment on Samoan translations for TQA."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "The recorded construct links are causal claims directed toward the behavior, not claims that the behavior measures a construct. Papers link it to two constructs in this way: one paper claims a causal relationship from Epistemic uncertainty to out-of-distribution detection, saying it provides \"an improved indicator for out-of-distribution detection,\" and another claims a causal relationship from Visual understanding to out-of-distribution detection, arguing that insufficient image interpretation capabilities limit the ability to distinguish between in-distribution and OoD inputs."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is the task of deciding whether an input sample falls outside the training distribution, and one study also describes it as a benchmark for assessing uncertainty-aware methods. The definitions agree on this core formulation, and the fuller version adds a success criterion based on uncertainty: an effective approach should \"reliably assign higher uncertainties to OOD samples compared to ID samples,\" while a shorter formulation describes it simply as identifying samples that do not belong to the training distribution.\n\nVariants. Papers use both the full name and the abbreviation \"OOD detection.\" The studied settings vary in what counts as out-of-distribution: some treat other datasets as OOD relative to an in-distribution training set, another evaluates on external OOD datasets including SVHN, and another treats Samoan translations of TQA statements as an \"out-of-distribution language\"; one paper also places the task in both pre-training and fine-tuning stages.\n\nSpace of elicitation and scores. Papers link it to five measurement instruments: ARC-Challenge, ARC-Easy, CommonsenseQA, SVHN, and TQA. In the reported uses, these are introduced as OOD datasets or test conditions: one setup fine-tunes on OBQA as the in-distribution dataset and tests on ARC-Challenge, ARC-Easy, and CommonsenseQA as OOD datasets, another validates on external OOD datasets including SVHN, and another repeats the experiment on Samoan translations for TQA.\n\nWhat it is taken as evidence of. The recorded construct links are causal claims directed toward the behavior, not claims that the behavior measures a construct. Papers link it to two constructs in this way: one paper claims a causal relationship from Epistemic uncertainty to out-of-distribution detection, saying it provides \"an improved indicator for out-of-distribution detection,\" and another claims a causal relationship from Visual understanding to out-of-distribution detection, arguing that insufficient image interpretation capabilities limit the ability to distinguish between in-distribution and OoD inputs.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Adapting Multi-modal Large Language Model to Concept Drift From Pre-training Onwards",
+      "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "Scalable Bayesian Learning with posteriors"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "canonical_name": "Context retrieval",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats this behavior as locating, extracting, and then using relevant information from a long context to answer a query or continue from the input. Most definitions focus on recovering specific items or segments, such as a target fact, a single needle among many, random numbers assigned in context, or the indices of relevant paragraphs. Some papers broaden the task to complex queries that require retrieving multiple relevant pieces before synthesis, while a smaller line of work narrows it to fact retrieval from a knowledge base or to producing the object of a factual triplet from a subject-relation prompt.\n\nVariants. Papers study several variants under names such as context retrieval, in-context retrieval, fact retrieval, retrieval capability or ability, and semantic retrieval capability. The most common settings are long-context text tasks, including needle-in-a-haystack and passkey-style retrieval, but some papers place the behavior in locating relevant documents within long-context inputs, knowledge-base fact retrieval, and symbolic search over facts and rules that might prove a goal. A smaller line of work relates it to Key-value retrieval through associative recall, and another explicitly semantic variant requires understanding the query meaning rather than relying on exact string matches, for example when retrieving a function from textual descriptions or answering questions from long documents.\n\nSpace of elicitation and scores. Papers measure this behavior with 6 instruments, mostly benchmark suites or retrieval-style tests for long contexts. The named instruments are InfiniteBench, HotpotQA, MMLU, Needle-in-a-Haystack, and Passkey retrieval, plus 1 other instrument. Their operationalizations differ: InfiniteBench is described as covering context retrieval, Needle-in-a-Haystack is used to assess long-context retrieval ability, Passkey retrieval reveals retrieval capabilities, HotpotQA is used for tasks said to require stronger in-context retrieval, and one paper frames MMLU as multiple-choice questions over lengthy contexts.\n\nWhat it is taken as evidence of. Construct links are sparse. Only 1 construct is linked, Expressive power, and one paper claims a causal relationship from context retrieval to that construct, stating that enhancing in-context retrieval can improve representation power. Beyond that single causal claim, papers do not converge on a broader construct that this behavior is taken to indicate.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Context retrieval",
+    "In-context retrieval",
+    "Fact retrieval",
+    "Retrieval capability",
+    "Retrieval ability",
+    "Semantic retrieval capability"
+  ],
+  "papers": [
+    "APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs",
+    "Self-Taught Agentic Long Context Understanding",
+    "SelfElicit: Your Language Model Secretly Knows Where is the Relevant Evidence",
+    "CAFE: Retrieval Head-based Coarse-to-Fine Information Seeking to Enhance Multi-Document QA Capability",
+    "Exploring the Limitations of Mamba in COPY and CoT Reasoning",
+    "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding",
+    "OG-RAG: Ontology-grounded retrieval-augmented generation for large language models",
+    "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking",
+    "RTQA : Recursive Thinking for Complex Temporal Knowledge Graph Question Answering with Large Language Models",
+    "Can In-context Learning Really Generalize to Out-of-distribution Tasks?",
+    "ColPali: Efficient Document Retrieval with Vision Language Models",
+    "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+    "Look Before You Leap: Universal Emergent Mechanism for Retrieval in Language Models",
+    "Not All Heads Matter: A Head-Level KV Cache Compression Method with Integrated Retrieval and Reasoning",
+    "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+    "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+    "World Model on Million-Length Video And Language With Blockwise RingAttention",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "Understanding the Skill Gap in Recurrent Language Models: The Role of the Gather-and-Aggregate Mechanism",
+    "Fact, Fetch, and Reason: A Unified Evaluation of Retrieval-Augmented Generation",
+    "Has this Fact been Edited? Detecting Knowledge Edits in Language Models",
+    "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+    "SymBa: Symbolic Backward Chaining for Structured Natural Language Reasoning",
+    "Do LLMs dream of elephants (when told not to)? Latent concept association and associative memory in transformers",
+    "Selective Attention: Enhancing Transformer through Principled Context Control"
+  ],
+  "paper_count": 25,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The action of identifying and extracting relevant segments of information from a larger body of text to address a specific query or task.",
+      "paper": "Self-Taught Agentic Long Context Understanding",
+      "original_name": "Context retrieval"
+    },
+    {
+      "text": "The ability to locate and use specific information provided within a long context.",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "original_name": "In-context retrieval"
+    },
+    {
+      "text": "Recovering a specific target fact or item from a long context when prompted.",
+      "paper": "World Model on Million-Length Video And Language With Blockwise RingAttention",
+      "original_name": "Fact retrieval"
+    },
+    {
+      "text": "The ability to locate and use relevant information from long contexts when answering or continuing from the input.",
+      "paper": "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "original_name": "Retrieval capability"
+    },
+    {
+      "text": "The latent capacity to locate and recover relevant information from long contexts when answering a query.",
+      "paper": "Not All Heads Matter: A Head-Level KV Cache Compression Method with Integrated Retrieval and Reasoning",
+      "original_name": "Retrieval ability"
+    },
+    {
+      "text": "The ability of a long-context model to understand the semantic meaning of a query to retrieve relevant information, rather than relying on exact string matches.",
+      "paper": "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+      "original_name": "Semantic retrieval capability"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Needle-in-a-Haystack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Not All Heads Matter: A Head-Level KV Cache Compression Method with Integrated Retrieval and Reasoning",
+      "evidence": "We conduct the Needle-in-a-Haystack test to assess the long-context retrieval ability of different KV cache compression methods.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Not All Heads Matter: A Head-Level KV Cache Compression Method with Integrated Retrieval and Reasoning",
+          "Why Does the Effective Context Length of LLMs Fall Short?",
+          "Long Context Compression with Activation Beacon"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "InfiniteBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory",
+      "evidence": "\"The datasets in \u221e-Bench cover diverse tasks including question answering, summarization, context retrieval, and mathematic computing.\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory"
+        ],
+        "acl25": [
+          "APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Passkey retrieval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Selective Attention: Enhancing Transformer through Principled Context Control",
+      "evidence": "Additionally, evaluations on the passkey retrieval task [33, 29] reveal that SSA substantially enhances the retrieval capabilities of the transformer, shown in Table 4.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Selective Attention: Enhancing Transformer through Principled Context Control"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Expressive power",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval",
+      "evidence": "Our positive results showing that enhancing in-context retrieval can improve RNNs\u2019 representation power hold for vanilla Linear RNNs, and can be easily extended to more complex architectures. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Key-value retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval",
+      "evidence": "RNNs with CoT cannot solve a set of fundamental algorithmic problems that directly ask for in-context retrieval, including associative recall. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HotpotQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval",
+      "evidence": "We further conduct experiments on open-source LLMs based on Transformer, Mambda, and a hybrid architecture to show that for tasks that require stronger in-context retrieval capability, RNNs suffer more performance degradation compared to Transformers. ... To test our theory, we use the Hotpot-QA (Yang et al., 2018) dataset. (Section 6.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RULER",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs",
+      "evidence": "Notably, APB significantly enhances performance in complex context retrieval tasks, such as R.KV in \u221eBench and MK3 in RULER.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Retrieval Head Mechanistically Explains Long-Context Factuality",
+      "evidence": "CoT reasoning, which involves decomposing complex tasks into smaller steps, heavily depends on accurately retrieving detailed information from the input. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Retrieval Head Mechanistically Explains Long-Context Factuality"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Understanding the Skill Gap in Recurrent Language Models: The Role of the Gather-and-Aggregate Mechanism",
+      "evidence": "we find that MMLU performance is primarily governed by retrieval ability (Section 7).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Understanding the Skill Gap in Recurrent Language Models: The Role of the Gather-and-Aggregate Mechanism"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 9,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 9,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats this behavior as locating, extracting, and then using relevant information from a long context to answer a query or continue from the input. Most definitions focus on recovering specific items or segments, such as a target fact, a single needle among many, random numbers assigned in context, or the indices of relevant paragraphs. Some papers broaden the task to complex queries that require retrieving multiple relevant pieces before synthesis, while a smaller line of work narrows it to fact retrieval from a knowledge base or to producing the object of a factual triplet from a subject-relation prompt."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several variants under names such as context retrieval, in-context retrieval, fact retrieval, retrieval capability or ability, and semantic retrieval capability. The most common settings are long-context text tasks, including needle-in-a-haystack and passkey-style retrieval, but some papers place the behavior in locating relevant documents within long-context inputs, knowledge-base fact retrieval, and symbolic search over facts and rules that might prove a goal. A smaller line of work relates it to Key-value retrieval through associative recall, and another explicitly semantic variant requires understanding the query meaning rather than relying on exact string matches, for example when retrieving a function from textual descriptions or answering questions from long documents."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure this behavior with 6 instruments, mostly benchmark suites or retrieval-style tests for long contexts. The named instruments are InfiniteBench, HotpotQA, MMLU, Needle-in-a-Haystack, and Passkey retrieval, plus 1 other instrument. Their operationalizations differ: InfiniteBench is described as covering context retrieval, Needle-in-a-Haystack is used to assess long-context retrieval ability, Passkey retrieval reveals retrieval capabilities, HotpotQA is used for tasks said to require stronger in-context retrieval, and one paper frames MMLU as multiple-choice questions over lengthy contexts."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Construct links are sparse. Only 1 construct is linked, Expressive power, and one paper claims a causal relationship from context retrieval to that construct, stating that enhancing in-context retrieval can improve representation power. Beyond that single causal claim, papers do not converge on a broader construct that this behavior is taken to indicate."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats this behavior as locating, extracting, and then using relevant information from a long context to answer a query or continue from the input. Most definitions focus on recovering specific items or segments, such as a target fact, a single needle among many, random numbers assigned in context, or the indices of relevant paragraphs. Some papers broaden the task to complex queries that require retrieving multiple relevant pieces before synthesis, while a smaller line of work narrows it to fact retrieval from a knowledge base or to producing the object of a factual triplet from a subject-relation prompt.\n\nVariants. Papers study several variants under names such as context retrieval, in-context retrieval, fact retrieval, retrieval capability or ability, and semantic retrieval capability. The most common settings are long-context text tasks, including needle-in-a-haystack and passkey-style retrieval, but some papers place the behavior in locating relevant documents within long-context inputs, knowledge-base fact retrieval, and symbolic search over facts and rules that might prove a goal. A smaller line of work relates it to Key-value retrieval through associative recall, and another explicitly semantic variant requires understanding the query meaning rather than relying on exact string matches, for example when retrieving a function from textual descriptions or answering questions from long documents.\n\nSpace of elicitation and scores. Papers measure this behavior with 6 instruments, mostly benchmark suites or retrieval-style tests for long contexts. The named instruments are InfiniteBench, HotpotQA, MMLU, Needle-in-a-Haystack, and Passkey retrieval, plus 1 other instrument. Their operationalizations differ: InfiniteBench is described as covering context retrieval, Needle-in-a-Haystack is used to assess long-context retrieval ability, Passkey retrieval reveals retrieval capabilities, HotpotQA is used for tasks said to require stronger in-context retrieval, and one paper frames MMLU as multiple-choice questions over lengthy contexts.\n\nWhat it is taken as evidence of. Construct links are sparse. Only 1 construct is linked, Expressive power, and one paper claims a causal relationship from context retrieval to that construct, stating that enhancing in-context retrieval can improve representation power. Beyond that single causal claim, papers do not converge on a broader construct that this behavior is taken to indicate.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs",
+      "Self-Taught Agentic Long Context Understanding",
+      "SelfElicit: Your Language Model Secretly Knows Where is the Relevant Evidence"
+    ],
+    "emnlp25": [
+      "CAFE: Retrieval Head-based Coarse-to-Fine Information Seeking to Enhance Multi-Document QA Capability",
+      "Exploring the Limitations of Mamba in COPY and CoT Reasoning",
+      "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding",
+      "OG-RAG: Ontology-grounded retrieval-augmented generation for large language models",
+      "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking",
+      "RTQA : Recursive Thinking for Complex Temporal Knowledge Graph Question Answering with Large Language Models"
+    ],
+    "iclr25": [
+      "Can In-context Learning Really Generalize to Out-of-distribution Tasks?",
+      "ColPali: Efficient Document Retrieval with Vision Language Models",
+      "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "Look Before You Leap: Universal Emergent Mechanism for Retrieval in Language Models",
+      "Not All Heads Matter: A Head-Level KV Cache Compression Method with Integrated Retrieval and Reasoning",
+      "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+      "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "World Model on Million-Length Video And Language With Blockwise RingAttention",
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+    ],
+    "icml25": [
+      "Understanding the Skill Gap in Recurrent Language Models: The Role of the Gather-and-Aggregate Mechanism"
+    ],
+    "naacl25": [
+      "Fact, Fetch, and Reason: A Unified Evaluation of Retrieval-Augmented Generation",
+      "Has this Fact been Edited? Detecting Knowledge Edits in Language Models",
+      "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+      "SymBa: Symbolic Backward Chaining for Structured Natural Language Reasoning"
+    ],
+    "neurips24": [
+      "Do LLMs dream of elephants (when told not to)? Latent concept association and associative memory in transformers",
+      "Selective Attention: Enhancing Transformer through Principled Context Control"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 6,
+    "iclr25": 9,
+    "icml25": 1,
+    "naacl25": 4,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

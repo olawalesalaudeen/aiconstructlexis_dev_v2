@@ -1,0 +1,81 @@
+{
+  "canonical_name": "Effective rank",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, 'Effective rank' is a computational metric with two distinct applications for analyzing model internals. One line of work presents it as a specific variant of 'Effective state-size' (ESS), a metric used to measure `Context utilization`. In this framing, 'Effective rank' is synonymous with 'Entropy-ESS' and is computed from the spectral entropy of a linear operator's singular values. The broader ESS metric is explicitly proposed as a 'proxy for memory utilization' in causal sequence models. A separate application uses 'Effective rank' to assess `Reward overoptimization` by measuring the diversity of hidden state representations in reward models. This approach operationalizes the detection of overfitting by comparing the metric's value on training versus evaluation data. As one study notes, a 'large discrepancy between the erank of the train and evaluation sets indicates that the model... [has] overfitted.' Thus, the metric is used to operationalize both `Context utilization` and `Reward overoptimization` through related but distinct computational procedures.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "metric",
+  "names": [
+    "Effective rank",
+    "Entropy-ESS",
+    "Tolerance-ESS",
+    "Effective state-size"
+  ],
+  "papers": [
+    "Layer by Layer: Uncovering Hidden Representations in Language Models",
+    "On the Robustness of Reward Models for Language Model Alignment",
+    "Quantifying Memory Utilization with Effective State-Size"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Parametric analysis measuring the diversity of hidden state representations in reward models, used to detect overfitting by comparing train and evaluation set representation spaces.",
+      "paper": "On the Robustness of Reward Models for Language Model Alignment",
+      "original_name": "Effective rank"
+    },
+    {
+      "text": "A variant of the Effective State-Size (ESS) calculation where the rank is determined by counting the number of singular values of the operator submatrix that are above a specified tolerance threshold.",
+      "paper": "Quantifying Memory Utilization with Effective State-Size",
+      "original_name": "Tolerance-ESS"
+    },
+    {
+      "text": "A variant of the Effective State-Size (ESS) calculation, also known as effective rank, computed by exponentiating the normalized spectral entropy of the operator submatrix's singular values.",
+      "paper": "Quantifying Memory Utilization with Effective State-Size",
+      "original_name": "Entropy-ESS"
+    },
+    {
+      "text": "A metric computed as the rank of submatrices of the linear operator T in causal sequence models, used to quantify memory utilization; includes variants like tolerance-ESS and entropy-ESS.",
+      "paper": "Quantifying Memory Utilization with Effective State-Size",
+      "original_name": "Effective state-size"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Context utilization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Quantifying Memory Utilization with Effective State-Size",
+      "evidence": "\"we develop a quantitative measure of memory utilization... This metric, which we call effective state-size (ESS)\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Quantifying Memory Utilization with Effective State-Size"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, 'Effective rank' is a computational metric with two distinct applications for analyzing model internals. One line of work presents it as a specific variant of 'Effective state-size' (ESS), a metric used to measure `Context utilization`. In this framing, 'Effective rank' is synonymous with 'Entropy-ESS' and is computed from the spectral entropy of a linear operator's singular values. The broader ESS metric is explicitly proposed as a 'proxy for memory utilization' in causal sequence models. A separate application uses 'Effective rank' to assess `Reward overoptimization` by measuring the diversity of hidden state representations in reward models. This approach operationalizes the detection of overfitting by comparing the metric's value on training versus evaluation data. As one study notes, a 'large discrepancy between the erank of the train and evaluation sets indicates that the model... [has] overfitted.' Thus, the metric is used to operationalize both `Context utilization` and `Reward overoptimization` through related but distinct computational procedures.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "icml25": [
+      "Layer by Layer: Uncovering Hidden Representations in Language Models",
+      "On the Robustness of Reward Models for Language Model Alignment",
+      "Quantifying Memory Utilization with Effective State-Size"
+    ]
+  },
+  "paper_count_by_conference": {
+    "icml25": 3
+  },
+  "conferences": [
+    "icml25"
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "canonical_name": "BeaverTails",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, BeaverTails is most commonly treated as a safety and alignment benchmark for model responses, often described as having human annotations over 14 harm or safety categories. Definitions vary on its format: some describe an evaluation subset of 700 prompts for query-answer interactions and helpfulness or harmlessness judgments, some describe advice queries with candidate answers, and others describe a larger resource of 330k annotated sentences; papers also frame it as containing safe and unsafe samples for alignment and attack simulation. One description states that the evaluation dataset comprises \"700 prompts spanning 14 harm categories\" (Aligner: Efficient Alignment by Learning to Correct).\n\nWhat it is claimed to measure. Papers use BeaverTails to measure 5 constructs and 3 behavioral indicators, so its reported role spans several targets rather than centering on only one. The prevailing claims concern harmlessness and helpfulness, with papers saying it categorizes annotations into helpfulness and harmlessness and that corresponding prompts are used for those evaluations; a smaller line of work reports it as measuring safety alignment, safety, and adversarial robustness. Among behavioral indicators, papers most often use it for harmful content generation, and also report it as measuring harmful content detection and response harmfulness classification.\n\nSpace of uses. Papers often position BeaverTails as one benchmark within broader safety evaluation suites. It appears with XSTest and AdvBench in guard evaluation, and with Safe-RLHF, WildGuardTestResponse, and HarmBench for response classification; some work also uses its safe samples for alignment and mixes its unsafe samples into benign fine-tuning data. One study describes these as \"three benchmarks commonly used in related work\" (Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models).",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Beavertails",
+    "BeaverTails"
+  ],
+  "papers": [
+    "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+    "Whose Boat Does it Float? Improving Personalization in Preference Tuning via Inferred User Personas",
+    "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+    "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+    "GRAID: Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection",
+    "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+    "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+    "Too Helpful, Too Harmless, Too Honest or Just Right?",
+    "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+    "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+    "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+    "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+    "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+    "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack",
+    "Learning Safety Constraints for Large Language Models",
+    "Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning",
+    "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+    "Preference Consistency Matters: Enhancing Preference Learning in Language Models with Automated Self-Curation of Training Corpora",
+    "Aligner: Efficient Alignment by Learning to Correct",
+    "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+    "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack"
+  ],
+  "paper_count": 21,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset used to evaluate alignment and safety-related responses of finetuned language models.",
+      "paper": "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+      "original_name": "Beavertails"
+    },
+    {
+      "text": "A benchmark dataset used for evaluating the performance of models on response safety classification.",
+      "paper": "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "original_name": "BeaverTails"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+      "evidence": "BeaverTails dataset... assessing the harmlessness and helpfulness of the models.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+          "Aligner: Efficient Alignment by Learning to Correct"
+        ],
+        "emnlp25": [
+          "Too Helpful, Too Harmless, Too Honest or Just Right?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "evidence": "To calculate the harmful score, we sample 1000 instructions from the testing set of BeaverTails (Ji et al., 2023).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+          "On Evaluating the Durability of Safeguards for Open-Weight LLMs"
+        ],
+        "icml25": [
+          "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+      "evidence": "BeaverTails dataset... assessing the harmlessness and helpfulness of the models.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+          "Aligner: Efficient Alignment by Learning to Correct"
+        ],
+        "naacl25": [
+          "Preference Consistency Matters: Enhancing Preference Learning in Language Models with Automated Self-Curation of Training Corpora"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We evaluate the guardrail models on six datasets including five standard safety datasets (OpenAI Mod (Markov et al., 2023),ToxicChat (Lin et al., 2023), XSTest (R\u00f6ttger et al., 2023), Overkill (Shi et al., 2024), BeaverTails (Ji et al., 2024)) and (2) our novel safety dataset TwinSafety. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Response harmfulness classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "evidence": "\"For response classification, we consider Beaver-tails (Ji et al., 2024), Safe-RLHF (Dai et al., 2024), WildGuardTestResponse (Han et al., 2024), and HarmBench (Mazeika et al.) as benchmarks\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BingoGuard: LLM Content Moderation Tools with Risk Levels"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+      "evidence": "Conversely, further introducing unsafe guidelines into the system prompt reduces the safety performance on BeaverTails (Ji et al., 2024) (91.40 vs. 63.30). (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+      "evidence": "\u201cFor the alignment task, we use the safe samples from the alignment dataset of BeaverTails (Ji et al., 2023).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, BeaverTails is most commonly treated as a safety and alignment benchmark for model responses, often described as having human annotations over 14 harm or safety categories. Definitions vary on its format: some describe an evaluation subset of 700 prompts for query-answer interactions and helpfulness or harmlessness judgments, some describe advice queries with candidate answers, and others describe a larger resource of 330k annotated sentences; papers also frame it as containing safe and unsafe samples for alignment and attack simulation. One description states that the evaluation dataset comprises \"700 prompts spanning 14 harm categories\" (Aligner: Efficient Alignment by Learning to Correct)."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use BeaverTails to measure 5 constructs and 3 behavioral indicators, so its reported role spans several targets rather than centering on only one. The prevailing claims concern harmlessness and helpfulness, with papers saying it categorizes annotations into helpfulness and harmlessness and that corresponding prompts are used for those evaluations; a smaller line of work reports it as measuring safety alignment, safety, and adversarial robustness. Among behavioral indicators, papers most often use it for harmful content generation, and also report it as measuring harmful content detection and response harmfulness classification."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers often position BeaverTails as one benchmark within broader safety evaluation suites. It appears with XSTest and AdvBench in guard evaluation, and with Safe-RLHF, WildGuardTestResponse, and HarmBench for response classification; some work also uses its safe samples for alignment and mixes its unsafe samples into benign fine-tuning data. One study describes these as \"three benchmarks commonly used in related work\" (Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models)."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, BeaverTails is most commonly treated as a safety and alignment benchmark for model responses, often described as having human annotations over 14 harm or safety categories. Definitions vary on its format: some describe an evaluation subset of 700 prompts for query-answer interactions and helpfulness or harmlessness judgments, some describe advice queries with candidate answers, and others describe a larger resource of 330k annotated sentences; papers also frame it as containing safe and unsafe samples for alignment and attack simulation. One description states that the evaluation dataset comprises \"700 prompts spanning 14 harm categories\" (Aligner: Efficient Alignment by Learning to Correct).\n\nWhat it is claimed to measure. Papers use BeaverTails to measure 5 constructs and 3 behavioral indicators, so its reported role spans several targets rather than centering on only one. The prevailing claims concern harmlessness and helpfulness, with papers saying it categorizes annotations into helpfulness and harmlessness and that corresponding prompts are used for those evaluations; a smaller line of work reports it as measuring safety alignment, safety, and adversarial robustness. Among behavioral indicators, papers most often use it for harmful content generation, and also report it as measuring harmful content detection and response harmfulness classification.\n\nSpace of uses. Papers often position BeaverTails as one benchmark within broader safety evaluation suites. It appears with XSTest and AdvBench in guard evaluation, and with Safe-RLHF, WildGuardTestResponse, and HarmBench for response classification; some work also uses its safe samples for alignment and mixes its unsafe samples into benign fine-tuning data. One study describes these as \"three benchmarks commonly used in related work\" (Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models).",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Beware of Your Po! Measuring and Mitigating AI Safety Risks in Role-Play Fine-Tuning of LLMs",
+      "Whose Boat Does it Float? Improving Personalization in Preference Tuning via Inferred User Personas"
+    ],
+    "emnlp25": [
+      "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+      "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+      "GRAID: Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection",
+      "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+      "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+      "Too Helpful, Too Harmless, Too Honest or Just Right?"
+    ],
+    "iclr25": [
+      "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+      "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+      "On Evaluating the Durability of Safeguards for Open-Weight LLMs"
+    ],
+    "icml25": [
+      "Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning Attack",
+      "Learning Safety Constraints for Large Language Models",
+      "Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning"
+    ],
+    "naacl25": [
+      "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+      "Preference Consistency Matters: Enhancing Preference Learning in Language Models with Automated Self-Curation of Training Corpora"
+    ],
+    "neurips24": [
+      "Aligner: Efficient Alignment by Learning to Correct",
+      "Alignment at Pre-training! Towards Native Alignment for Arabic LLMs",
+      "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 6,
+    "iclr25": 5,
+    "icml25": 3,
+    "naacl25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

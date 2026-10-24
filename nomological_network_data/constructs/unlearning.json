@@ -1,0 +1,263 @@
+{
+  "canonical_name": "Unlearning",
+  "type": "construct",
+  "canonical_definition": "Across the surveyed literature, unlearning is most commonly defined as the process of removing specific information or knowledge from a model's weights so it can no longer perform related tasks. The primary goal is to \"eliminate the influence of a specified target dataset\" (Adaptive Localization of Knowledge Negation for Continual LLM Unlearning), preventing the model from reproducing or accurately responding to the targeted content. While this process-oriented view is prevalent, other work frames the concept with more specific terms like \"Forget efficacy,\" \"Removal,\" or \"Knowledge removal,\" which describe it as a measurable degree of success, a latent property, or an observable performance reduction, respectively. To operationalize this construct, researchers measure the \"observable reduction in the model's ability to recall or reproduce information\" (GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs), often demonstrated through decreased accuracy or likelihood on a \"forget set.\" One paper also indicates that \"LLM-as-a-judge\" is used as a measurement instrument for unlearning. However, a dissenting view is present in the data, with one study suggesting that unlearning may not fully remove information, which can remain in \"ways that are easy to recover\" (On Evaluating the Durability of Safeguards for Open-Weight LLMs).",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "lead-author decision D2: unlearning is a procedure applied to a model, not a construct or behavior of the model, so every unlearning entity is out of scope",
+  "names": [
+    "Forget efficacy",
+    "Unlearning",
+    "Removal",
+    "Knowledge removal",
+    "Knowledge unlearning"
+  ],
+  "papers": [
+    "A Closer Look at Machine Unlearning for Large Language Models",
+    "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+    "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods",
+    "Adaptive Localization of Knowledge Negation for Continual LLM Unlearning",
+    "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+    "REINFORCE Adversarial Attacks on Large Language Models: An Adaptive, Distributional, and Semantic Objective",
+    "SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability",
+    "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which an unlearned model successfully removes specified information and does not reveal it in its outputs.",
+      "paper": "A Closer Look at Machine Unlearning for Large Language Models",
+      "original_name": "Forget efficacy"
+    },
+    {
+      "text": "The process of removing specific information or knowledge from a model's weights, such that the model can no longer perform tasks related to that information.",
+      "paper": "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "original_name": "Unlearning"
+    },
+    {
+      "text": "The latent property of an unlearned model having successfully deteriorated or erased the knowledge associated with a targeted unlearning dataset.",
+      "paper": "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods",
+      "original_name": "Removal"
+    },
+    {
+      "text": "The observable reduction in the model's ability to recall or reproduce information from a targeted dataset, demonstrated through decreased accuracy or likelihood on specific content.",
+      "paper": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+      "original_name": "Knowledge removal"
+    },
+    {
+      "text": "Removing the influence of specified target data so the model cannot reproduce or accurately respond to it.",
+      "paper": "Adaptive Localization of Knowledge Negation for Continual LLM Unlearning",
+      "original_name": "Knowledge unlearning"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WMDP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "evidence": "WMDP is employed to evaluate the effectiveness of unlearning approaches: a low accuracy on WMDP\u2019s multiple-choice questions suggests that the underlying weaponization knowledge may have been successfully unlearned. (Section 4)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On Evaluating the Durability of Safeguards for Open-Weight LLMs"
+        ],
+        "icml25": [
+          "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+          "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MUSE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "evidence": "We now evaluate our method on the MUSE dataset (Shi et al., 2024). (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+        ],
+        "icml25": [
+          "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+          "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge retention",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+      "evidence": "there remains an inherent trade-off between unlearning and retention, in which preserving the common performance comes at the cost of reducing the effectiveness of unlearning (Section 1. Introduction)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs"
+        ],
+        "emnlp25": [
+          "Does Localization Inform Unlearning? A Rigorous Examination of Local Parameter Attribution for Knowledge Unlearning in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TOFU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+      "evidence": "TOFU adopts two metrics: FQ and MU. FQ measures the extent of data removal by the statistical difference in responses between unlearned models and ground-standard models, which are trained without targeted data. (Section 5. Experiments)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+          "Adaptive Localization of Knowledge Negation for Continual LLM Unlearning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Memorization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods",
+      "evidence": "How to Erase Undesirable Data Memorization in LLMs? Machine unlearning (Bourtoule et al., 2021; Zhu et al., 2024) offers a general solution. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "evidence": "...the recent unlearning benchmark MUSE (Shi et al., 2024) highlights a major drawback in current methods: applying unlearning to larger corpora leads to a decline in general language usefulness. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "evidence": "The absence of a clear endpoint leads to a delicate balance between unlearning and retaining useful information, making these methods prone to catastrophic forgetting. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "evidence": "Our approach leverages self-distillation to adjust logits and selectively reduce the influence of targeted tokens. This technique ensures smooth convergence and avoids catastrophic forgetting, even in challenging unlearning tasks with large datasets and sequential unlearning requests.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Interpretability and explainability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+      "evidence": "existing works still have notable limitations: they cannot perfectly balance the precision of knowledge removal, performance retention, and interpretability of parameter update (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Model Unlearning via Sparse Autoencoder Subspace Guided Projections"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+      "evidence": "Existing unlearning strategies, ranging from gradient-based fine-tuning and model editing to sparse autoencoder (SAE) steering, either lack interpretability or fail to provide a robust defense against adversarial prompts. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Model Unlearning via Sparse Autoencoder Subspace Guided Projections"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SEPS: A Separability Measure for Robust Unlearning in LLMs",
+      "evidence": "we calculate the average of four key metrics (R, TR, P, and LLM-as-Judge score) for MU and FE (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SEPS: A Separability Measure for Robust Unlearning in LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 11,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 6,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, unlearning is most commonly defined as the process of removing specific information or knowledge from a model's weights so it can no longer perform related tasks. The primary goal is to \"eliminate the influence of a specified target dataset\" (Adaptive Localization of Knowledge Negation for Continual LLM Unlearning), preventing the model from reproducing or accurately responding to the targeted content. While this process-oriented view is prevalent, other work frames the concept with more specific terms like \"Forget efficacy,\" \"Removal,\" or \"Knowledge removal,\" which describe it as a measurable degree of success, a latent property, or an observable performance reduction, respectively. To operationalize this construct, researchers measure the \"observable reduction in the model's ability to recall or reproduce information\" (GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs), often demonstrated through decreased accuracy or likelihood on a \"forget set.\" One paper also indicates that \"LLM-as-a-judge\" is used as a measurement instrument for unlearning. However, a dissenting view is present in the data, with one study suggesting that unlearning may not fully remove information, which can remain in \"ways that are easy to recover\" (On Evaluating the Durability of Safeguards for Open-Weight LLMs).",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "A Closer Look at Machine Unlearning for Large Language Models",
+      "On Evaluating the Durability of Safeguards for Open-Weight LLMs",
+      "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods"
+    ],
+    "icml25": [
+      "Adaptive Localization of Knowledge Negation for Continual LLM Unlearning",
+      "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+      "REINFORCE Adversarial Attacks on Large Language Models: An Adaptive, Distributional, and Semantic Objective",
+      "SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability",
+      "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "icml25": 5
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

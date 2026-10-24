@@ -1,0 +1,200 @@
+{
+  "canonical_name": "BIRD",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, BIRD is most commonly described as a large-scale, cross-domain, database-grounded Text-to-SQL benchmark, often framed as more challenging than earlier datasets because it includes complex databases, difficult questions, and reliance on external knowledge. Definitions also emphasize real-world coverage, with descriptions ranging from databases drawn from 37 domains to 95 databases, diverse cell-value formats, dirty values, and value-based reasoning; one sizing gives 9,428 training, 1,534 development, and 1,789 test pairs, while another describes over 12,751 unique question-SQL pairs totaling 33.4 GB. A smaller naming variant calls it BIRD-Bench, and some papers refer specifically to the development set, including a 1,534-example dev split with 11 databases or a dated 20240627 BIRD-dev version.\n\nWhat it is claimed to measure. Papers link BIRD to 2 behavioral indicators and 1 construct. The prevailing use is to measure Text-to-SQL, with papers evaluating natural language queries to SQL generation on it; a smaller line of work uses it to measure schema linking, and one paper reports it as measuring cross-domain generalization, explicitly describing training and test databases as disjoint. The claims therefore concentrate on Text-to-SQL rather than spreading evenly across many targets.\n\nSpace of uses. Papers usually position BIRD as a standard or prominent benchmark rather than as a narrow auxiliary check. It is most often used alongside Spider, and some papers pair it with CoSQL, KaggleDBQA, AmbiDB, and Text2Cypher, or place it in broader text-to-query suites; some also note that methods can be adapted to BIRD from other Text-to-SQL settings. Usage varies between the full benchmark, sampled subsets, and specific dev resources, including the 20240627 BIRD-dev set.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "BIRD",
+    "BIRD-Bench"
+  ],
+  "papers": [
+    "Can we Retrieve Everything All at Once? ARM: An Alignment-Oriented LLM-based Retrieval Method",
+    "SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL",
+    "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning",
+    "Uncovering the Impact of Chain-of-Thought Reasoning for Direct Preference Optimization: Lessons from Text-to-SQL",
+    "BIRD: Bronze Inscription Restoration and Dating",
+    "Calibrating LLMs for Text-to-SQL Parsing by Leveraging Sub-clause Frequencies",
+    "Dialect-SQL: An Adaptive Framework for Bridging the Dialect Gap in Text-to-SQL",
+    "GRIT: Guided Relational Integration for Efficient Multi-Table Understanding",
+    "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+    "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL",
+    "SAFE-SQL: Self-Augmented In-Context Learning with Fine-grained Example Selection for Text-to-SQL",
+    "Skeletons Matter: Dynamic Data Augmentation for Text-to-Query",
+    "Table-LLM-Specialist: Language Model Specialists for Tables using Iterative Fine-tuning",
+    "CHASE-SQL: Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL",
+    "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation",
+    "Iterative Label Refinement Matters More than Preference Optimization under Weak Supervision",
+    "OpenHands: An Open Platform for AI Software Developers as Generalist Agents",
+    "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+    "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows",
+    "An LLM-Based Approach for Insight Generation in Data Analysis",
+    "FLEX: Expert-level False-Less EXecution Metric for Text-to-SQL Benchmark",
+    "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation",
+    "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+    "You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL",
+    "AMBROSIA: A Benchmark for Parsing Ambiguous Questions into Database Queries"
+  ],
+  "paper_count": 25,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A large-scale, cross-domain Text-to-SQL benchmark designed to be more challenging than previous datasets, featuring complex databases, difficult questions, and reliance on external knowledge.",
+      "paper": "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+      "original_name": "BIRD"
+    },
+    {
+      "text": "A benchmark for large-scale database grounded text-to-SQL tasks.",
+      "paper": "AMBROSIA: A Benchmark for Parsing Ambiguous Questions into Database Queries",
+      "original_name": "BIRD-Bench"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text-to-SQL",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents",
+      "evidence": "For text-to-SQL tasks, the agent has to convert users\u2019 natural language queries into SQL code to meet their data requirements. StreamBench integrates three prominent datasets: Spider [17], CoSQL [18], and BIRD [19]. (Section 3.2)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents"
+        ],
+        "iclr25": [
+          "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation"
+        ],
+        "naacl25": [
+          "You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL",
+          "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation"
+        ],
+        "acl25": [
+          "Uncovering the Impact of Chain-of-Thought Reasoning for Direct Preference Optimization: Lessons from Text-to-SQL"
+        ],
+        "emnlp25": [
+          "Skeletons Matter: Dynamic Data Augmentation for Text-to-Query"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Schema linking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL",
+      "evidence": "We evaluate our method performance of schema linking on the SPIDER, BIRD and AmbiDB datasets",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-domain generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+      "evidence": "Benchmarks like Spider(Yu et al., 2019) and BIRD(Li et al., 2023b) evaluate cross-domain generalization, where training and test databases are disjoint. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Table reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "TableRAG: Million-Token Table Understanding with Language Models",
+      "evidence": "To verify the scalability of TableRAG for larger tables, we build two new benchmarks sourced from the real-world Arcade [26] and BIRD-SQL [7] datasets.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "TableRAG: Million-Token Table Understanding with Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, BIRD is most commonly described as a large-scale, cross-domain, database-grounded Text-to-SQL benchmark, often framed as more challenging than earlier datasets because it includes complex databases, difficult questions, and reliance on external knowledge. Definitions also emphasize real-world coverage, with descriptions ranging from databases drawn from 37 domains to 95 databases, diverse cell-value formats, dirty values, and value-based reasoning; one sizing gives 9,428 training, 1,534 development, and 1,789 test pairs, while another describes over 12,751 unique question-SQL pairs totaling 33.4 GB. A smaller naming variant calls it BIRD-Bench, and some papers refer specifically to the development set, including a 1,534-example dev split with 11 databases or a dated 20240627 BIRD-dev version."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link BIRD to 2 behavioral indicators and 1 construct. The prevailing use is to measure Text-to-SQL, with papers evaluating natural language queries to SQL generation on it; a smaller line of work uses it to measure schema linking, and one paper reports it as measuring cross-domain generalization, explicitly describing training and test databases as disjoint. The claims therefore concentrate on Text-to-SQL rather than spreading evenly across many targets."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers usually position BIRD as a standard or prominent benchmark rather than as a narrow auxiliary check. It is most often used alongside Spider, and some papers pair it with CoSQL, KaggleDBQA, AmbiDB, and Text2Cypher, or place it in broader text-to-query suites; some also note that methods can be adapted to BIRD from other Text-to-SQL settings. Usage varies between the full benchmark, sampled subsets, and specific dev resources, including the 20240627 BIRD-dev set."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, BIRD is most commonly described as a large-scale, cross-domain, database-grounded Text-to-SQL benchmark, often framed as more challenging than earlier datasets because it includes complex databases, difficult questions, and reliance on external knowledge. Definitions also emphasize real-world coverage, with descriptions ranging from databases drawn from 37 domains to 95 databases, diverse cell-value formats, dirty values, and value-based reasoning; one sizing gives 9,428 training, 1,534 development, and 1,789 test pairs, while another describes over 12,751 unique question-SQL pairs totaling 33.4 GB. A smaller naming variant calls it BIRD-Bench, and some papers refer specifically to the development set, including a 1,534-example dev split with 11 databases or a dated 20240627 BIRD-dev version.\n\nWhat it is claimed to measure. Papers link BIRD to 2 behavioral indicators and 1 construct. The prevailing use is to measure Text-to-SQL, with papers evaluating natural language queries to SQL generation on it; a smaller line of work uses it to measure schema linking, and one paper reports it as measuring cross-domain generalization, explicitly describing training and test databases as disjoint. The claims therefore concentrate on Text-to-SQL rather than spreading evenly across many targets.\n\nSpace of uses. Papers usually position BIRD as a standard or prominent benchmark rather than as a narrow auxiliary check. It is most often used alongside Spider, and some papers pair it with CoSQL, KaggleDBQA, AmbiDB, and Text2Cypher, or place it in broader text-to-query suites; some also note that methods can be adapted to BIRD from other Text-to-SQL settings. Usage varies between the full benchmark, sampled subsets, and specific dev resources, including the 20240627 BIRD-dev set.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Can we Retrieve Everything All at Once? ARM: An Alignment-Oriented LLM-based Retrieval Method",
+      "SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL",
+      "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning",
+      "Uncovering the Impact of Chain-of-Thought Reasoning for Direct Preference Optimization: Lessons from Text-to-SQL"
+    ],
+    "emnlp25": [
+      "BIRD: Bronze Inscription Restoration and Dating",
+      "Calibrating LLMs for Text-to-SQL Parsing by Leveraging Sub-clause Frequencies",
+      "Dialect-SQL: An Adaptive Framework for Bridging the Dialect Gap in Text-to-SQL",
+      "GRIT: Guided Relational Integration for Efficient Multi-Table Understanding",
+      "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+      "LinkAlign: Scalable Schema Linking for Real-World Large-Scale Multi-Database Text-to-SQL",
+      "SAFE-SQL: Self-Augmented In-Context Learning with Fine-grained Example Selection for Text-to-SQL",
+      "Skeletons Matter: Dynamic Data Augmentation for Text-to-Query",
+      "Table-LLM-Specialist: Language Model Specialists for Tables using Iterative Fine-tuning"
+    ],
+    "iclr25": [
+      "CHASE-SQL: Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL",
+      "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation",
+      "Iterative Label Refinement Matters More than Preference Optimization under Weak Supervision",
+      "OpenHands: An Open Platform for AI Software Developers as Generalist Agents",
+      "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+      "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows"
+    ],
+    "naacl25": [
+      "An LLM-Based Approach for Insight Generation in Data Analysis",
+      "FLEX: Expert-level False-Less EXecution Metric for Text-to-SQL Benchmark",
+      "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation",
+      "PRACTIQ: A Practical Conversational Text-to-SQL dataset with Ambiguous and Unanswerable Queries",
+      "You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL"
+    ],
+    "neurips24": [
+      "AMBROSIA: A Benchmark for Parsing Ambiguous Questions into Database Queries"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 9,
+    "iclr25": 6,
+    "naacl25": 5,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

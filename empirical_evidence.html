@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empirical Evidence · AI Construct Lexis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="view_network_theme.css?v=2026-10-24w">
+    <link rel="stylesheet" href="tools.css?v=2026-10-24w">
+    <link rel="stylesheet" href="theme_modern_academic.css?v=2026-10-24w">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+    <style>
+        /* Page-specific styles; shared tokens and table look come from tools.css. */
+        .ev-table td { font-size: 13px; }
+        .ev-table td.paper { min-width: 220px; max-width: 280px; }
+        .ev-table td.paper a.title { font-family: var(--font-serif); font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+        .ev-table td.paper a.title:hover { color: var(--accent-deep); border-bottom-color: var(--accent); }
+        .ev-table td.paper .meta { margin-top: 4px; font-size: 12px; color: var(--ink-faint); }
+        .ev-table td.list { min-width: 150px; max-width: 240px; }
+        .ev-table tr.ev-main td { border-bottom: 0; }
+        .ev-table tr.ev-text td { padding-top: 0; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+        .ev-table tr.ev-text:hover td, .ev-table tr.ev-main:hover td { background: transparent; }
+        .ev-text-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px 26px; color: var(--ink-2); font-size: 13.5px; line-height: 1.55; }
+        .ev-text-grid .lbl { display: block; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2px; }
+        .ev-list { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+        .ev-list .plain { font-weight: 500; color: var(--ink-2); }
+        .ev-list .sep { color: var(--ink-faint); }
+        .ev-more { background: none; border: 0; padding: 0; color: var(--accent); font-size: 12px; cursor: pointer; text-decoration: underline; }
+        .ev-empty { padding: 18px 0; color: var(--ink-faint); font-style: italic; }
+
+        .submit-box { margin: 34px 0 40px; padding: 18px; background: var(--surface); border: 1px solid var(--rule-thin); max-width: 1000px; }
+        .submit-box h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 600; }
+        .submit-box > p { margin-top: 6px; color: var(--ink-muted); font-size: 13.5px; max-width: 820px; }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px 22px; margin-top: 16px; }
+        .form-grid .wide { grid-column: 1 / -1; }
+        .fld { display: flex; flex-direction: column; gap: 4px; }
+        .fld > label, .fld > .lbl { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
+        .fld .req { color: var(--accent); }
+        .fld input[type="text"], .fld input[type="url"], .fld textarea { width: 100%; padding: 7px 8px; border: 1px solid var(--rule); background: var(--paper); font-family: var(--font-sans); font-size: 14px; color: var(--ink); }
+        .fld textarea { min-height: 72px; resize: vertical; }
+        .fld input:focus, .fld textarea:focus { outline: none; border-color: var(--ink); }
+        .chip-input { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding: 4px 6px; border: 1px solid var(--rule); background: var(--paper); min-height: 36px; }
+        .chip-input:focus-within { border-color: var(--ink); }
+        .chip-input input { flex: 1; min-width: 140px; border: 0 !important; padding: 4px 2px !important; background: transparent !important; }
+        .chip-input .chip { cursor: default; display: inline-flex; gap: 4px; align-items: center; }
+        .chip-input .chip.known { border-color: var(--ink-faint); }
+        .chip-input .chip button { border: 0; background: none; cursor: pointer; color: var(--ink-faint); font-size: 13px; line-height: 1; padding: 0 0 0 2px; }
+        .analysis-opts { display: flex; flex-wrap: wrap; gap: 6px; }
+        .form-msg { margin-top: 10px; font-size: 13px; color: var(--ink-muted); }
+        .form-msg.err { color: var(--accent); }
+        @media (max-width: 640px) { .submit-box { padding: 14px; } }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header" id="siteHeader" data-active="evidence"></header>
+
+        <h2 class="page-title" style="margin-top: 26px;">Empirical evidence</h2>
+        <p class="page-lede">Papers that empirically test whether a construct, instrument, or behavioral indicator holds up:
+            factor structure, convergent and discriminant validity, prediction, reliability, invariance, and similar analyses.</p>
+
+        <p class="claims-note">
+            Each row summarizes what a paper reports. Names that match a Lexis entry link to its page; other names are
+            shown as the paper gives them. Read the paper before relying on a summary here.
+        </p>
+
+        <div class="controls">
+            <div class="control">
+                <label for="evSearch">Search</label>
+                <input type="text" id="evSearch" autocomplete="off" spellcheck="false" placeholder="Paper, construct, instrument, ...">
+            </div>
+            <div class="control">
+                <label for="evAnalysis">Type of analysis</label>
+                <select id="evAnalysis"><option value="">All</option></select>
+            </div>
+            <div class="control">
+                <span class="lbl">&nbsp;</span>
+                <a class="btn" href="#submit">Submit Evidence</a>
+            </div>
+        </div>
+
+        <p class="summary" id="evSummary">Loading…</p>
+        <div class="table-wrap">
+            <table class="ev-table">
+                <thead>
+                    <tr>
+                        <th class="nosort">Paper</th>
+                        <th class="nosort">Constructs</th>
+                        <th class="nosort">Instruments</th>
+                        <th class="nosort">Behavioral indicators</th>
+                        <th class="nosort">Type of analysis</th>
+                    </tr>
+                </thead>
+                <tbody id="evRows"></tbody>
+            </table>
+        </div>
+
+        <section class="submit-box" id="submit">
+            <h3>Submit Evidence</h3>
+            <p>Know a paper with empirical validity evidence for an AI construct? Fill this in and press Submit. It opens a
+                prefilled issue on the Lexis GitHub repository (you need a GitHub account); the maintainers review it and
+                add the row. You can also copy the entry and send it to the maintainers.</p>
+            <form id="evForm" novalidate>
+                <div class="form-grid">
+                    <div class="fld wide"><label for="fTitle">Paper title <span class="req">*</span></label><input type="text" id="fTitle" required></div>
+                    <div class="fld"><label for="fUrl">Link <span class="req">*</span></label><input type="url" id="fUrl" placeholder="https://" required></div>
+                    <div class="fld"><label for="fVenue">Venue and year</label><input type="text" id="fVenue" placeholder="e.g. NeurIPS 2024"></div>
+                    <div class="fld"><label for="fName">Your name (optional)</label><input type="text" id="fName"></div>
+                    <div class="fld"><span class="lbl">Constructs</span><div class="chip-input" data-field="constructs" data-type="c"><input type="text" list="dlC" aria-label="Add construct" placeholder="Type, then Enter"></div></div>
+                    <div class="fld"><span class="lbl">Instruments</span><div class="chip-input" data-field="instruments" data-type="m"><input type="text" list="dlM" aria-label="Add instrument" placeholder="Type, then Enter"></div></div>
+                    <div class="fld"><span class="lbl">Behavioral indicators</span><div class="chip-input" data-field="behaviors" data-type="b"><input type="text" list="dlB" aria-label="Add behavioral indicator" placeholder="Type, then Enter"></div></div>
+                    <div class="fld wide"><span class="lbl">Type of analysis <span class="req">*</span></span>
+                        <div class="analysis-opts" id="fAnalysis"></div>
+                        <span class="hint">Pick the statistical methods the paper uses. If you pick Other, name the method in the TLDR.</span>
+                    </div>
+                    <div class="fld wide"><label for="fTldr">TLDR: what the paper does <span class="req">*</span></label><textarea id="fTldr" required></textarea></div>
+                    <div class="fld wide"><label for="fConclusion">Conclusion: what it finds about validity <span class="req">*</span></label><textarea id="fConclusion" required></textarea></div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn primary">Submit via GitHub</button>
+                    <button type="button" class="btn" id="fCopy">Copy entry</button>
+                    <button type="reset" class="btn">Clear</button>
+                </div>
+                <p class="form-msg" id="fMsg" role="status"></p>
+            </form>
+            <datalist id="dlC"></datalist><datalist id="dlM"></datalist><datalist id="dlB"></datalist>
+        </section>
+    </div>
+
+    <script src="site_header.js?v=2026-10-24w"></script>
+    <script src="empirical_evidence.js?v=2026-10-24w"></script>
+</body>
+
+</html>

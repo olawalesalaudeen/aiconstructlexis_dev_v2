@@ -1,0 +1,211 @@
+{
+  "canonical_name": "Text infilling",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats text infilling as conditional generation of missing text from surrounding context, usually a prefix and suffix, with success defined by producing a span that fits coherently between both sides and, in some definitions, respects given prompt tokens and their relative order. Some papers phrase the same behavior as filling masked-out fragments of a document or story, while others narrow it to masked-token prediction or a single scientific-word cloze. A smaller line of work instead operationalizes it as fill-in-the-blank completion, where the model generates or selects a treatment or profile detail, or fills a [MASK] slot so papers can compare Arab versus Western entity preferences.\n\nVariants. The behavior appears in several settings: narrative story completion with a missing middle sentence or masked story fragments, non-sequential infilling of different parts of a sequence during diffusion generation, and insertion tasks where both prefix and suffix are given and the output must satisfy logical constraints. Other papers study flexible-length spans and positions without oracle span lengths, single scientific-term blanks, Arabic entity filling for cultural preference, and fill-in-the-blank probes aimed at localized medical treatment, unlearning targets, or personal-profile details.\n\nSpace of elicitation and scores. Papers link text infilling to 2 measurement instruments, ROCStories and WikiText-103. ROCStories is used for story infilling with short five-sentence stories, and WikiText-103 provides validation-set sequences for evaluating infilling performance. Elicitation usually masks a middle span between given contexts, though some setups require a single scientific word or compare candidate completions; scoring is sometimes reported with MAUVE over prompt masks, and one medical setup says it uses two complementary metrics.\n\nWhat it is taken as evidence of. Among construct links, papers use text infilling as evidence of 1 construct, knowledge memorization. In that usage, fill-in-the-blank probes are used to \"examine the memory of the original training data related to the unlearning targets,\" and no other construct link is reported by the papers.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Sequence infilling",
+    "Story infilling",
+    "Text infilling",
+    "Masked token infilling",
+    "Cloze completion",
+    "Fill-in-the-blank completion",
+    "Text insertion",
+    "Infilling"
+  ],
+  "papers": [
+    "Africa Health Check: Probing Cultural Bias in Medical LLMs",
+    "Flexible-length Text Infilling for Discrete Diffusion Models",
+    "Amortizing intractable inference in large language models",
+    "ClimaQA: An Automated Evaluation Framework for Climate Question Answering Models",
+    "Discrete Copula Diffusion",
+    "Efficient Perplexity Bound and Ratio Matching in Discrete Diffusion Language Models",
+    "Glauber Generative Model: Discrete Diffusion Models via Binary Classification",
+    "Scaling Diffusion Language Models via Adaptation from Autoregressive Models",
+    "Hidden No More: Attacking and Defending Private Third-Party LLM Inference",
+    "Tractable Transformers for Flexible Conditional Generation",
+    "CultureInstruct: Curating Multi-Cultural Instructions at Scale",
+    "On The Origin of Cultural Biases in Language Models: From Pre-training Data to Linguistic Phenomena",
+    "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench",
+    "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+    "Adaptable Logical Control for Large Language Models"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The specific infilling task of generating a coherent narrative segment to complete a story.",
+      "paper": "Scaling Diffusion Language Models via Adaptation from Autoregressive Models",
+      "original_name": "Story infilling"
+    },
+    {
+      "text": "The task of generating text to fill in a missing portion of a document given the surrounding context (prefix and suffix).",
+      "paper": "Glauber Generative Model: Discrete Diffusion Models via Binary Classification",
+      "original_name": "Text infilling"
+    },
+    {
+      "text": "Filling in missing parts of a sequence non-sequentially during discrete diffusion generation.",
+      "paper": "Efficient Perplexity Bound and Ratio Matching in Discrete Diffusion Language Models",
+      "original_name": "Sequence infilling"
+    },
+    {
+      "text": "The task of predicting missing tokens in a sequence given the surrounding context, used as a proxy to evaluate the difficulty of reconstructing a full prompt from a partial one.",
+      "paper": "Hidden No More: Attacking and Defending Private Third-Party LLM Inference",
+      "original_name": "Masked token infilling"
+    },
+    {
+      "text": "Filling in a missing scientific term in a sentence or phrase using the surrounding context.",
+      "paper": "ClimaQA: An Automated Evaluation Framework for Climate Question Answering Models",
+      "original_name": "Cloze completion"
+    },
+    {
+      "text": "Generating or selecting a treatment completion for a medical scenario when presented with a prompt and two candidate responses\u2014one traditional and one allopathic.",
+      "paper": "Africa Health Check: Probing Cultural Bias in Medical LLMs",
+      "original_name": "Fill-in-the-blank completion"
+    },
+    {
+      "text": "The task of generating text to fill a gap between a given prefix and suffix, ensuring coherence with both contexts.",
+      "paper": "Adaptable Logical Control for Large Language Models",
+      "original_name": "Text insertion"
+    },
+    {
+      "text": "The task of generating a sequence of tokens that fits coherently between a given prefix and suffix context.",
+      "paper": "Amortizing intractable inference in large language models",
+      "original_name": "Infilling"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ROCStories",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Amortizing intractable inference in large language models",
+      "evidence": "\u201cWe use the ROCStories corpus ... Given the first 3 sentences and the last sentence, the goal is to generate the fourth sentence\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Amortizing intractable inference in large language models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiText-103",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Discrete Copula Diffusion",
+      "evidence": "Evaluation of text infilling performance using the MAUVE score (\u2191) with 5 prompt masks... For all methods, we use the same set of 2,000 text sequences from the validation set of WikiText-103",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Discrete Copula Diffusion"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge memorization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+      "evidence": "We use fill-in-the-blank style probes (FB) to examine the memory of the original training data related to the unlearning targets. (Section 3.3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cultural text adaptation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "On The Origin of Cultural Biases in Language Models: From Pre-training Data to Linguistic Phenomena",
+      "evidence": "We compare the ability of LMs at adapting to cultural contexts in Arabic and English by analyzing their preference for Arab vs. Western entities as [MASK] token fillings of CAMeL-2 contexts. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "On The Origin of Cultural Biases in Language Models: From Pre-training Data to Linguistic Phenomena"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats text infilling as conditional generation of missing text from surrounding context, usually a prefix and suffix, with success defined by producing a span that fits coherently between both sides and, in some definitions, respects given prompt tokens and their relative order. Some papers phrase the same behavior as filling masked-out fragments of a document or story, while others narrow it to masked-token prediction or a single scientific-word cloze. A smaller line of work instead operationalizes it as fill-in-the-blank completion, where the model generates or selects a treatment or profile detail, or fills a [MASK] slot so papers can compare Arab versus Western entity preferences."
+    },
+    {
+      "label": "Variants.",
+      "text": "The behavior appears in several settings: narrative story completion with a missing middle sentence or masked story fragments, non-sequential infilling of different parts of a sequence during diffusion generation, and insertion tasks where both prefix and suffix are given and the output must satisfy logical constraints. Other papers study flexible-length spans and positions without oracle span lengths, single scientific-term blanks, Arabic entity filling for cultural preference, and fill-in-the-blank probes aimed at localized medical treatment, unlearning targets, or personal-profile details."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link text infilling to 2 measurement instruments, ROCStories and WikiText-103. ROCStories is used for story infilling with short five-sentence stories, and WikiText-103 provides validation-set sequences for evaluating infilling performance. Elicitation usually masks a middle span between given contexts, though some setups require a single scientific word or compare candidate completions; scoring is sometimes reported with MAUVE over prompt masks, and one medical setup says it uses two complementary metrics."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Among construct links, papers use text infilling as evidence of 1 construct, knowledge memorization. In that usage, fill-in-the-blank probes are used to \"examine the memory of the original training data related to the unlearning targets,\" and no other construct link is reported by the papers."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats text infilling as conditional generation of missing text from surrounding context, usually a prefix and suffix, with success defined by producing a span that fits coherently between both sides and, in some definitions, respects given prompt tokens and their relative order. Some papers phrase the same behavior as filling masked-out fragments of a document or story, while others narrow it to masked-token prediction or a single scientific-word cloze. A smaller line of work instead operationalizes it as fill-in-the-blank completion, where the model generates or selects a treatment or profile detail, or fills a [MASK] slot so papers can compare Arab versus Western entity preferences.\n\nVariants. The behavior appears in several settings: narrative story completion with a missing middle sentence or masked story fragments, non-sequential infilling of different parts of a sequence during diffusion generation, and insertion tasks where both prefix and suffix are given and the output must satisfy logical constraints. Other papers study flexible-length spans and positions without oracle span lengths, single scientific-term blanks, Arabic entity filling for cultural preference, and fill-in-the-blank probes aimed at localized medical treatment, unlearning targets, or personal-profile details.\n\nSpace of elicitation and scores. Papers link text infilling to 2 measurement instruments, ROCStories and WikiText-103. ROCStories is used for story infilling with short five-sentence stories, and WikiText-103 provides validation-set sequences for evaluating infilling performance. Elicitation usually masks a middle span between given contexts, though some setups require a single scientific word or compare candidate completions; scoring is sometimes reported with MAUVE over prompt masks, and one medical setup says it uses two complementary metrics.\n\nWhat it is taken as evidence of. Among construct links, papers use text infilling as evidence of 1 construct, knowledge memorization. In that usage, fill-in-the-blank probes are used to \"examine the memory of the original training data related to the unlearning targets,\" and no other construct link is reported by the papers.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Africa Health Check: Probing Cultural Bias in Medical LLMs",
+      "Flexible-length Text Infilling for Discrete Diffusion Models"
+    ],
+    "iclr25": [
+      "ClimaQA: An Automated Evaluation Framework for Climate Question Answering Models",
+      "Discrete Copula Diffusion",
+      "Efficient Perplexity Bound and Ratio Matching in Discrete Diffusion Language Models",
+      "Glauber Generative Model: Discrete Diffusion Models via Binary Classification",
+      "Scaling Diffusion Language Models via Adaptation from Autoregressive Models"
+    ],
+    "icml25": [
+      "Hidden No More: Attacking and Defending Private Third-Party LLM Inference",
+      "Tractable Transformers for Flexible Conditional Generation"
+    ],
+    "naacl25": [
+      "CultureInstruct: Curating Multi-Cultural Instructions at Scale",
+      "On The Origin of Cultural Biases in Language Models: From Pre-training Data to Linguistic Phenomena",
+      "Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench"
+    ],
+    "neurips24": [
+      "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models",
+      "Adaptable Logical Control for Large Language Models"
+    ],
+    "iclr24": [
+      "Amortizing intractable inference in large language models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 5,
+    "icml25": 2,
+    "naacl25": 3,
+    "neurips24": 2,
+    "iclr24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

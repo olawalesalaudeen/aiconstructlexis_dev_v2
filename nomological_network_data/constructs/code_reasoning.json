@@ -1,0 +1,165 @@
+{
+  "canonical_name": "Code reasoning",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats code reasoning as a latent ability to analyze, infer, and draw conclusions about program execution, code behavior, logic, and properties. Several definitions express this in execution-focused terms, especially predicting a program's output from a given input or inferring the input from a known output. A smaller line of work uses a narrower framing, long-range sequential reasoning, where understanding depends on processing procedural steps whose order affects the program's semantic meaning.\n\nSpace of facets. Papers use the term at different levels of scope. Broader accounts cast it as a multi-task capability spanning code repair, execution reasoning, and fill-in-the-blank challenges, and describe reasoning about code as requiring both syntactic and semantic understanding; a narrower account isolates order-sensitive procedural reasoning as one aspect of semantic understanding. One paper also relates it to logical reasoning by describing code reasoning as a category of tasks that incorporates logical reasoning into code.\n\nSpace of measurement. Papers link code reasoning to one measurement instrument and no behavioral indicators. The only linked instrument is CRUXEval, used as a benchmark with tasks that assess reasoning about the execution of simple Python programs by asking models to predict inputs from outputs and vice versa; related task descriptions also frame code reasoning as predicting outputs from given inputs or inferring inputs from known outputs. This operationalization matches the prevalent execution-and-behavior framing of the construct.\n\nLinks. Beyond measurement, one paper reports that code reasoning is related to Logical reasoning, describing it as a category of tasks that incorporates logical reasoning into code. Separately, one paper claims a causal relationship from Planning to Code reasoning, stating that enhanced planning capability gained through HLP boosts model performance on code reasoning. No correlational links are reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Code reasoning",
+    "Long-range sequential reasoning"
+  ],
+  "papers": [
+    "CRUXEVAL-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution",
+    "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+    "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models",
+    "Can Large Language Models Understand Symbolic Graphics Programs?",
+    "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
+    "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+    "Matryoshka Query Transformer for Large Vision-Language Models",
+    "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent ability to reason about program execution and code behavior.",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "original_name": "Code reasoning"
+    },
+    {
+      "text": "The capacity to process and understand the procedural steps in a program where the order of operations significantly affects the final semantic meaning.",
+      "paper": "Can Large Language Models Understand Symbolic Graphics Programs?",
+      "original_name": "Long-range sequential reasoning"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CRUXEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation",
+      "evidence": "These tasks assess the model\u2019s ability to reason about the execution of simple Python programs by asking it to predict the input given the output of a function and vice-versa (Section 4.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation"
+        ],
+        "acl25": [
+          "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models"
+        ],
+        "emnlp25": [
+          "Planning-Aware Code Infilling via Horizon-Length Prediction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Logical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+      "evidence": "\u201cCode reasoning is a category of tasks that incorporates logical reasoning into code\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Planning-Aware Code Infilling via Horizon-Length Prediction",
+      "evidence": "Furthermore, the enhanced planning capability gained through HLP boosts model performance on code reasoning. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Planning-Aware Code Infilling via Horizon-Length Prediction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Test generation ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "TestGenEval: A Real World Unit Test Generation and Test Completion Benchmark",
+      "evidence": "models struggle to generate high-coverage test suites, with the best model, GPT-4o, achieving an average coverage of only 35.2%. This is primarily due to models struggling to reason about execution",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TestGenEval: A Real World Unit Test Generation and Test Completion Benchmark"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats code reasoning as a latent ability to analyze, infer, and draw conclusions about program execution, code behavior, logic, and properties. Several definitions express this in execution-focused terms, especially predicting a program's output from a given input or inferring the input from a known output. A smaller line of work uses a narrower framing, long-range sequential reasoning, where understanding depends on processing procedural steps whose order affects the program's semantic meaning."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use the term at different levels of scope. Broader accounts cast it as a multi-task capability spanning code repair, execution reasoning, and fill-in-the-blank challenges, and describe reasoning about code as requiring both syntactic and semantic understanding; a narrower account isolates order-sensitive procedural reasoning as one aspect of semantic understanding. One paper also relates it to logical reasoning by describing code reasoning as a category of tasks that incorporates logical reasoning into code."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link code reasoning to one measurement instrument and no behavioral indicators. The only linked instrument is CRUXEval, used as a benchmark with tasks that assess reasoning about the execution of simple Python programs by asking models to predict inputs from outputs and vice versa; related task descriptions also frame code reasoning as predicting outputs from given inputs or inferring inputs from known outputs. This operationalization matches the prevalent execution-and-behavior framing of the construct."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, one paper reports that code reasoning is related to Logical reasoning, describing it as a category of tasks that incorporates logical reasoning into code. Separately, one paper claims a causal relationship from Planning to Code reasoning, stating that enhanced planning capability gained through HLP boosts model performance on code reasoning. No correlational links are reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define code reasoning as the ability to reason about program execution, behavior, logic, and properties. The remaining definitions just make that core idea more concrete by focusing on predicting outputs, inferring inputs, or understanding ordered procedural steps, so they still describe the same underlying ability rather than different phenomena.",
+    "papers_with_definition": 4,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats code reasoning as a latent ability to analyze, infer, and draw conclusions about program execution, code behavior, logic, and properties. Several definitions express this in execution-focused terms, especially predicting a program's output from a given input or inferring the input from a known output. A smaller line of work uses a narrower framing, long-range sequential reasoning, where understanding depends on processing procedural steps whose order affects the program's semantic meaning.\n\nSpace of facets. Papers use the term at different levels of scope. Broader accounts cast it as a multi-task capability spanning code repair, execution reasoning, and fill-in-the-blank challenges, and describe reasoning about code as requiring both syntactic and semantic understanding; a narrower account isolates order-sensitive procedural reasoning as one aspect of semantic understanding. One paper also relates it to logical reasoning by describing code reasoning as a category of tasks that incorporates logical reasoning into code.\n\nSpace of measurement. Papers link code reasoning to one measurement instrument and no behavioral indicators. The only linked instrument is CRUXEval, used as a benchmark with tasks that assess reasoning about the execution of simple Python programs by asking models to predict inputs from outputs and vice versa; related task descriptions also frame code reasoning as predicting outputs from given inputs or inferring inputs from known outputs. This operationalization matches the prevalent execution-and-behavior framing of the construct.\n\nLinks. Beyond measurement, one paper reports that code reasoning is related to Logical reasoning, describing it as a category of tasks that incorporates logical reasoning into code. Separately, one paper claims a causal relationship from Planning to Code reasoning, stating that enhanced planning capability gained through HLP boosts model performance on code reasoning. No correlational links are reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CRUXEVAL-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution",
+      "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+      "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models"
+    ],
+    "iclr25": [
+      "Can Large Language Models Understand Symbolic Graphics Programs?",
+      "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
+      "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment"
+    ],
+    "neurips24": [
+      "Matryoshka Query Transformer for Large Vision-Language Models",
+      "Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 3,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "neurips24"
+  ]
+}

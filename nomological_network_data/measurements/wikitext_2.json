@@ -1,0 +1,669 @@
+{
+  "canonical_name": "WikiText-2",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing usage treats WikiText-2 as a language modeling benchmark or dataset built from high-quality, cleaned Wikipedia articles, usually used to evaluate text prediction or text continuation with perplexity on validation, test, or dev splits. Several definitions frame it as a standard benchmark for compressed, pruned, or quantized models, and one paper specifies evaluation on \"166 test windows of 2048 tokens each\"; a smaller line of work instead uses the training data for training from scratch, supervised fine-tuning, hypernetwork training, slicing, or hidden-state analysis. Papers also mention variants and subsets such as raw-WikiText2 (WT-2), WikiText2-v1, WikiText-V2, and the training, validation, dev, or test splits.\n\nWhat it is claimed to measure. Papers link WikiText-2 to eight constructs and one behavioral indicator. The dominant claim is that it measures text generation and language modeling ability through perplexity or LM loss, with some papers explicitly stating that lower perplexity on WikiText-2 reflects stronger language modeling ability; smaller lines of work use it to measure general ability, long-context understanding, and compression robustness, with four other constructs also reported. In these uses, papers describe it as evaluating generative capabilities, general language quality, or model capabilities that are \"not impacted by editing\" through perplexity on WikiText-2.\n\nSpace of uses. Most papers position WikiText-2 as a standard perplexity benchmark, commonly alongside C4 and PTB, and some also pair it with WikiText-103 or LAMBADA. Beyond headline evaluation, several papers use it as calibration data or a generic text corpus, and a few use it for zero-shot checks, training from scratch, or monitoring convergence during distillation. The only linked instrument is lm-evaluation-harness, which one paper reports using to report results on Wikitext2.\n\nConcerns raised. One paper describes WikiText-2 as a domain-specific calibration dataset and states that perplexity measured on C4 more accurately reflects the performance of different methods.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "WikiText-2",
+    "Wikitext-2",
+    "wikitext-2",
+    "WikiText2",
+    "Wikitext2",
+    "WikiText-V2",
+    "WikiText2-v1",
+    "WT-2"
+  ],
+  "papers": [
+    "Bitnet.cpp: Efficient Edge Inference for Ternary LLMs",
+    "Bypass Back-propagation: Optimization-based Structural Pruning for Large Language Models via Policy Gradient",
+    "DIVE into MoE: Diversity-Enhanced Reconstruction of Large Language Models from Dense into Mixture-of-Experts",
+    "Debiasing the Fine-Grained Classification Task in LLMs with Bias-Aware PEFT",
+    "EAC-MoE: Expert-Selection Aware Compressor for Mixture-of-Experts Large Language Models",
+    "Low-Bit Quantization Favors Undertrained LLMs",
+    "MoQAE: Mixed-Precision Quantization for Long-Context LLM Inference via Mixture of Quantization-Aware Experts",
+    "On Support Samples of Next Word Prediction",
+    "PTQ1.61: Push the Real Limit of Extremely Low-Bit Post-Training Quantization Methods for Large Language Models",
+    "Towards the Law of Capacity Gap in Distilling Language Models",
+    "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models",
+    "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+    "FLRC: Fine-grained Low-Rank Compressor for Efficient LLM Inference",
+    "GAP: a Global Adaptive Pruning Method for Large Language Models",
+    "GRASP: Replace Redundant Layers with Adaptive Singular Parameters for Efficient Model Compression",
+    "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis",
+    "IG-Pruning: Input-Guided Block Pruning for Large Language Models",
+    "MLWQ: Efficient Small Language Model Deployment via Multi-Level Weight Quantization",
+    "Machine-generated text detection prevents language model collapse",
+    "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization",
+    "On Pruning State-Space LLMs",
+    "Orthogonal Finetuning Made Scalable",
+    "QSpec: Speculative Decoding with Complementary Quantization Schemes",
+    "UNComp: Can Matrix Entropy Uncover Sparsity? --- A Compressor Design from an Uncertainty-Aware Perspective",
+    "Weight-Aware Activation Sparsity with Constrained Bayesian Optimization Scheduling for Large Language Models",
+    "A Multi-Level Framework for Accelerating Training Transformer Models",
+    "AffineQuant: Affine Transformation Quantization for Large Language Models",
+    "BESA: Pruning Large Language Models with Blockwise Parameter-Efficient Sparsity Allocation",
+    "Dynamic Sparse No Training:  Training-Free Fine-tuning for Sparse LLMs",
+    "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+    "JoMA: Demystifying Multilayer Transformers via Joint Dynamics of MLP and Attention",
+    "LQ-LoRA: Low-rank plus Quantized Matrix Decomposition for Efficient Language Model Finetuning",
+    "LoftQ: LoRA-Fine-Tuning-aware Quantization for Large Language Models",
+    "Masked Structural Growth for 2x Faster Language Model Pre-training",
+    "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models",
+    "PB-LLM: Partially Binarized Large Language Models",
+    "Plug-and-Play: An Efficient Post-training Pruning Method for Large Language Models",
+    "QLLM: Accurate and Efficient Low-Bitwidth Quantization for Large Language Models",
+    "Rethinking Channel Dimensions to Isolate Outliers for Low-bit Weight Quantization of Large Language Models",
+    "SliceGPT: Compress Large Language Models by Deleting Rows and Columns",
+    "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+    "The LLM Surgeon",
+    "A Quantum Circuit-Based Compression Perspective for Parameter-Efficient Learning",
+    "ARB-LLM: Alternating Refined Binarizations for Large Language Models",
+    "Basis Sharing: Cross-Layer Parameter Sharing for Large Language Model Compression",
+    "BitStack: Any-Size Compression of Large Language Models in Variable Memory Environments",
+    "CAMEx: Curvature-aware Merging of Experts",
+    "CBQ: Cross-Block Quantization for Large Language Models",
+    "Dobi-SVD: Differentiable SVD for LLM Compression and Some New Perspectives",
+    "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+    "Effective Interplay between Sparsity and Quantization: From Theory to Practice",
+    "Efficient Perplexity Bound and Ratio Matching in Discrete Diffusion Language Models",
+    "Forget the Data and Fine-Tuning! Just Fold the Network to Compress",
+    "Knowledge Localization: Mission Not Accomplished? Enter Query Localization!",
+    "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid",
+    "Mixture Compressor for Mixture-of-Experts LLMs Gains More",
+    "MoDeGPT: Modular Decomposition for Large Language Model Compression",
+    "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+    "OATS: Outlier-Aware Pruning Through Sparse and Low Rank Decomposition",
+    "OSTQuant: Refining Large Language Model Quantization with Orthogonal and Scaling Transformations for Better Distribution Fitting",
+    "PICASO: Permutation-Invariant Context Composition with State Space Models",
+    "Palu: KV-Cache Compression with Low-Rank Projection",
+    "Probe Pruning: Accelerating LLMs through Dynamic Pruning via Model-Probing",
+    "QERA: an Analytical Framework for Quantization Error Reconstruction",
+    "Quamba: A Post-Training Quantization Recipe for Selective State Space Models",
+    "R-Sparse: Rank-Aware Activation Sparsity for Efficient LLM Inference",
+    "Rotated Runtime Smooth: Training-Free Activation Smoother for accurate INT4 inference",
+    "STBLLM: Breaking the 1-Bit Barrier with Structured Binary LLMs",
+    "SVD-LLM: Truncation-aware Singular Value Decomposition for Large Language Model Compression",
+    "SeedLM: Compressing LLM Weights into Seeds of Pseudo-Random Generators",
+    "SpikeLLM: Scaling up Spiking Neural Network to Large Language Models via Saliency-based Spiking",
+    "SpinQuant: LLM Quantization with Learned Rotations",
+    "Systematic Outliers in Large Language Models",
+    "Two Sparse Matrices are Better than One: Sparsifying Neural Networks with Double Sparse Factorization",
+    "Wasserstein Distances, Neuronal Entanglement, and Sparsity",
+    "You Only Prune Once: Designing Calibration-Free Model Compression With Policy Learning",
+    "Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data",
+    "An Efficient Pruner for Large Language Model with Theoretical Guarantee",
+    "BaWA: Automatic Optimizing Pruning Metric for Large Language Models with Balanced Weight and Activation",
+    "BlockDialect: Block-wise Fine-grained Mixed Format Quantization for Energy-Efficient LLM Inference",
+    "BoA: Attention-aware Post-training Quantization without Backpropagation",
+    "CLOVER: Cross-Layer Orthogonal Vectors Pruning",
+    "Cache Me If You Must: Adaptive Key-Value Quantization for Large Language Models",
+    "Delta Decompression for MoE-based LLMs Compression",
+    "Demystifying Singular Defects in Large Language Models",
+    "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective",
+    "EvoPress: Accurate Dynamic Model Compression via Evolutionary Search",
+    "FlatQuant: Flatness Matters for LLM Quantization",
+    "FloE: On-the-Fly MoE Inference on Memory-constrained GPU",
+    "GANQ: GPU-Adaptive Non-Uniform Quantization for Large Language Models",
+    "GPTAQ: Efficient Finetuning-Free Quantization for Asymmetric Calibration",
+    "GuidedQuant: Large Language Model Quantization via Exploiting End Loss Guidance",
+    "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+    "La RoSA: Enhancing LLM Efficiency via Layerwise Rotated Sparse Activation",
+    "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models",
+    "Let LLM Tell What to Prune and How Much to Prune",
+    "LowRA: Accurate and Efficient LoRA Fine-Tuning of LLMs under 2 Bits",
+    "Mixture of Experts Made Intrinsically Interpretable",
+    "MoE-SVD: Structured Mixture-of-Experts LLMs Compression via Singular Value Decomposition",
+    "MoEQuant: Enhancing Quantization for Mixture-of-Experts Large Language Models via Expert-Balanced Sampling and Affinity Guidance",
+    "MxMoE: Mixed-precision Quantization for MoE with Accuracy and Performance Co-Design",
+    "NestQuant: nested lattice quantization for matrix products and LLMs",
+    "Olica: Efficient Structured Pruning of Large Language Models without Retraining",
+    "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving",
+    "OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM inference",
+    "Pivoting Factorization: A Compact Meta Low-Rank Representation of Sparsity for Efficient Inference in Large Language Models",
+    "Prompt-based Depth Pruning of Large Language Models",
+    "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration",
+    "QuantSpec: Self-Speculative Decoding with Hierarchical Quantized KV Cache",
+    "Radio: Rate\u2013Distortion Optimization for Large Language Model Compression",
+    "SAFE: Finding Sparse and Flat Minima to Improve Pruning",
+    "SKIM: Any-bit Quantization Pushing The Limits of Post-Training Quantization",
+    "SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression",
+    "SPD: Sync-Point Drop for Efficient Tensor Parallelism of Large Language Models",
+    "Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation",
+    "SkipGPT: Each Token is One of a Kind",
+    "SliM-LLM: Salience-Driven Mixed-Precision Quantization for Large Language Models",
+    "SlimLLM: Accurate Structured Pruning for Large Language Models",
+    "Targeted Low-rank Refinement: Enhancing Sparse Language Models with Precision",
+    "any4: Learned 4-bit Numeric Representation for LLMs",
+    "Efficient One-shot Compression via Low-Rank Local Feature Distillation",
+    "HIGGS: Pushing the Limits of Large Language Model Quantization via the Linearity Theorem",
+    "LRQ: Optimizing Post-Training Quantization for Large Language Models by Learning Low-Rank Weight-Scaling Matrices",
+    "Not All Adapters Matter: Selective Adapter Freezing for Memory-Efficient Fine-Tuning of Language Models",
+    "SVD-LLM V2: Optimizing Singular Value Truncation for Large Language Model Compression",
+    "FedSpaLLM: Federated Pruning of Large Language Models",
+    "AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment",
+    "Compact Language Models via Pruning and Knowledge Distillation",
+    "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+    "DISP-LLM: Dimension-Independent Structural Pruning for Large Language Models",
+    "Discovering Sparsity Allocation for  Layer-wise Pruning of Large Language Models",
+    "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment",
+    "OneBit: Towards Extremely Low-bit Large Language Models",
+    "PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models",
+    "Search for Efficient Large Language Models",
+    "ShiftAddLLM: Accelerating Pretrained LLMs via Post-Training Multiplication-Less Reparameterization",
+    "SlimGPT: Layer-wise Structured Pruning for Large Language Models",
+    "Towards Next-Level Post-Training Quantization of Hyper-Scale Transformers",
+    "fMRI predictors based on language models of increasing complexity recover brain left lateralization"
+  ],
+  "paper_count": 139,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Language modeling benchmark that evaluates perplexity on a standard validation set to assess generative performance of pruned LLMs.",
+      "paper": "A Multi-Level Framework for Accelerating Training Transformer Models",
+      "original_name": "WikiText-2"
+    },
+    {
+      "text": "A standard benchmark dataset derived from Wikipedia articles, used to evaluate the language modeling capabilities of models after compression.",
+      "paper": "The LLM Surgeon",
+      "original_name": "wikitext-2"
+    },
+    {
+      "text": "A language modeling dataset (Wikitext2) used to train models from scratch and observe their training dynamics.",
+      "paper": "JoMA: Demystifying Multilayer Transformers via Joint Dynamics of MLP and Attention",
+      "original_name": "Wikitext-2"
+    },
+    {
+      "text": "A language modeling dataset used here as a generation evaluation dataset for measuring quantized model performance.",
+      "paper": "CBQ: Cross-Block Quantization for Large Language Models",
+      "original_name": "WikiText2"
+    },
+    {
+      "text": "A language modeling benchmark dataset (also known as WikiText-2) used to evaluate model performance via perplexity.",
+      "paper": "Dobi-SVD: Differentiable SVD for LLM Compression and Some New Perspectives",
+      "original_name": "Wikitext2"
+    },
+    {
+      "text": "A large-scale language modeling benchmark dataset derived from high-quality Wikipedia articles, used to evaluate a model's ability to predict text continuations.",
+      "paper": "PICASO: Permutation-Invariant Context Composition with State Space Models",
+      "original_name": "WikiText-V2"
+    },
+    {
+      "text": "A dataset of over 100 million tokens from high-quality Wikipedia articles, used in this paper for analyzing hidden states and evaluating model perplexity after quantization.",
+      "paper": "Demystifying Singular Defects in Large Language Models",
+      "original_name": "WikiText2-v1"
+    },
+    {
+      "text": "Short for WikiText-2, a language modeling benchmark dataset derived from Wikipedia articles, used to evaluate model perplexity.",
+      "paper": "FedSpaLLM: Federated Pruning of Large Language Models",
+      "original_name": "WT-2"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "LQ-LoRA: Low-rank plus Quantized Matrix Decomposition for Efficient Language Model Finetuning",
+      "evidence": "To evaluate models trained on C4, we use three metrics: perplexity on C4 validation, perplexity on WikiText-2 (Merity et al., 2016), and 5-shot MMLU accuracy (Hendrycks et al., 2021).",
+      "paper_count": 46,
+      "paper_weight": 46.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "LQ-LoRA: Low-rank plus Quantized Matrix Decomposition for Efficient Language Model Finetuning",
+          "The LLM Surgeon",
+          "LoftQ: LoRA-Fine-Tuning-aware Quantization for Large Language Models",
+          "PB-LLM: Partially Binarized Large Language Models"
+        ],
+        "neurips24": [
+          "SlimGPT: Layer-wise Structured Pruning for Large Language Models",
+          "ShiftAddLLM: Accelerating Pretrained LLMs via Post-Training Multiplication-Less Reparameterization",
+          "DISP-LLM: Dimension-Independent Structural Pruning for Large Language Models",
+          "Search for Efficient Large Language Models",
+          "Compact Language Models via Pruning and Knowledge Distillation"
+        ],
+        "iclr25": [
+          "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+          "R-Sparse: Rank-Aware Activation Sparsity for Efficient LLM Inference",
+          "Two Sparse Matrices are Better than One: Sparsifying Neural Networks with Double Sparse Factorization",
+          "Palu: KV-Cache Compression with Low-Rank Projection",
+          "Mixture Compressor for Mixture-of-Experts LLMs Gains More",
+          "Rotated Runtime Smooth: Training-Free Activation Smoother for accurate INT4 inference",
+          "SVD-LLM: Truncation-aware Singular Value Decomposition for Large Language Model Compression",
+          "Quamba: A Post-Training Quantization Recipe for Selective State Space Models",
+          "SpinQuant: LLM Quantization with Learned Rotations",
+          "ARB-LLM: Alternating Refined Binarizations for Large Language Models",
+          "Forget the Data and Fine-Tuning! Just Fold the Network to Compress",
+          "OSTQuant: Refining Large Language Model Quantization with Orthogonal and Scaling Transformations for Better Distribution Fitting",
+          "QERA: an Analytical Framework for Quantization Error Reconstruction",
+          "SeedLM: Compressing LLM Weights into Seeds of Pseudo-Random Generators",
+          "Efficient Perplexity Bound and Ratio Matching in Discrete Diffusion Language Models",
+          "Dobi-SVD: Differentiable SVD for LLM Compression and Some New Perspectives",
+          "BitStack: Any-Size Compression of Large Language Models in Variable Memory Environments"
+        ],
+        "naacl25": [
+          "SVD-LLM V2: Optimizing Singular Value Truncation for Large Language Model Compression"
+        ],
+        "acl25": [
+          "DIVE into MoE: Diversity-Enhanced Reconstruction of Large Language Models from Dense into Mixture-of-Experts"
+        ],
+        "icml25": [
+          "SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression",
+          "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving",
+          "Let LLM Tell What to Prune and How Much to Prune",
+          "Mixture of Experts Made Intrinsically Interpretable",
+          "Radio: Rate\u2013Distortion Optimization for Large Language Model Compression",
+          "Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation",
+          "OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM inference",
+          "EvoPress: Accurate Dynamic Model Compression via Evolutionary Search",
+          "BaWA: Automatic Optimizing Pruning Metric for Large Language Models with Balanced Weight and Activation",
+          "any4: Learned 4-bit Numeric Representation for LLMs",
+          "Delta Decompression for MoE-based LLMs Compression",
+          "Olica: Efficient Structured Pruning of Large Language Models without Retraining",
+          "MoE-SVD: Structured Mixture-of-Experts LLMs Compression via Singular Value Decomposition",
+          "GANQ: GPU-Adaptive Non-Uniform Quantization for Large Language Models",
+          "LowRA: Accurate and Efficient LoRA Fine-Tuning of LLMs under 2 Bits",
+          "SkipGPT: Each Token is One of a Kind"
+        ],
+        "emnlp25": [
+          "Orthogonal Finetuning Made Scalable",
+          "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models",
+      "evidence": "we evaluate quantized models by reporting the perplexity of language generation experiments, specifically on WikiText2 (Merity et al., 2016), PTB (Marcus et al., 1994)), C4 (Raffel et al., 2020). (Section 4.1)",
+      "paper_count": 11,
+      "paper_weight": 11.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models"
+        ],
+        "iclr25": [
+          "OATS: Outlier-Aware Pruning Through Sparse and Low Rank Decomposition",
+          "MoDeGPT: Modular Decomposition for Large Language Model Compression",
+          "STBLLM: Breaking the 1-Bit Barrier with Structured Binary LLMs",
+          "SpikeLLM: Scaling up Spiking Neural Network to Large Language Models via Saliency-based Spiking",
+          "Probe Pruning: Accelerating LLMs through Dynamic Pruning via Model-Probing",
+          "CBQ: Cross-Block Quantization for Large Language Models"
+        ],
+        "icml25": [
+          "La RoSA: Enhancing LLM Efficiency via Layerwise Rotated Sparse Activation",
+          "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration",
+          "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models"
+        ],
+        "emnlp25": [
+          "Machine-generated text detection prevents language model collapse"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+      "evidence": "WikiText-2 and WikiText-103 (Merity et al., 2016) are two commonly used language modeling benchmarks consisting of high-quality Wikipedia articles. (Section 4.1.1)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+          "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression"
+        ],
+        "neurips24": [
+          "AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment"
+        ],
+        "emnlp25": [
+          "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization"
+        ],
+        "iclr25": [
+          "Basis Sharing: Cross-Layer Parameter Sharing for Large Language Model Compression"
+        ],
+        "icml25": [
+          "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "evidence": "\"To ensure the desired model capabilities are not impacted by editing, we measure the perplexity of the model on the dev split of WikiText-2\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models",
+      "evidence": "\u201cfor long-context modeling, we use Wikitext-2 (Merity, 2016) and PG19 (Rae et al., 2019) datasets for evaluation.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment",
+      "evidence": "For inference ability, we choose six datasets including Hellaswag [48], PIQA [1], WinoGrande [32], QNLI [31], MNLI [44], and WikiText2 [28] for evaluation.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "lm-evaluation-harness",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "QERA: an Analytical Framework for Quantization Error Reconstruction",
+      "evidence": "We use lm-evaluation-harness to report results on Wikitext2",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "QERA: an Analytical Framework for Quantization Error Reconstruction"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Causal language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "LRQ: Optimizing Post-Training Quantization for Large Language Models by Learning Low-Rank Weight-Scaling Matrices",
+      "evidence": "Zero-shot performance of Llama 2 on common sense reasoning tasks (BoolQ, PIQA, HellaSwag, WinoGrande, ARC easy and challenge, and OpenBookQA) and the causal language modeling task on WikiText2 with per-channel asymmetric weight-only quantization. (Table 7)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "LRQ: Optimizing Post-Training Quantization for Large Language Models by Learning Low-Rank Weight-Scaling Matrices"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generative ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Weight-Aware Activation Sparsity with Constrained Bayesian Optimization Scheduling for Large Language Models",
+      "evidence": "We assess the generative capabilities of the sparsified models on the WikiText2 (Merity et al., 2016) and C4 (Raffel et al., 2020b) datasets. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Weight-Aware Activation Sparsity with Constrained Bayesian Optimization Scheduling for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Linguistic quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis",
+      "evidence": "log perplexity, the average negative log-likelihood of generated tokens on the Wikitext-2 dataset (Merity et al., 2016); ... The latter two metrics measure general language quality (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration",
+      "evidence": "\u201cFor the base model, we evaluate the quality of text generation using the WikiText2 (Merity et al., 2016), PTB (Marcus et al., 1994), and C4 (Raffel et al., 2020) datasets.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "SmoothQuant",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Demystifying Singular Defects in Large Language Models",
+      "evidence": "PPL is the perplexity on the validation set of WikiText2-v1. (Table 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Demystifying Singular Defects in Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 12,
+  "incoming_relationship_count": 11,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing usage treats WikiText-2 as a language modeling benchmark or dataset built from high-quality, cleaned Wikipedia articles, usually used to evaluate text prediction or text continuation with perplexity on validation, test, or dev splits. Several definitions frame it as a standard benchmark for compressed, pruned, or quantized models, and one paper specifies evaluation on \"166 test windows of 2048 tokens each\"; a smaller line of work instead uses the training data for training from scratch, supervised fine-tuning, hypernetwork training, slicing, or hidden-state analysis. Papers also mention variants and subsets such as raw-WikiText2 (WT-2), WikiText2-v1, WikiText-V2, and the training, validation, dev, or test splits."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link WikiText-2 to eight constructs and one behavioral indicator. The dominant claim is that it measures text generation and language modeling ability through perplexity or LM loss, with some papers explicitly stating that lower perplexity on WikiText-2 reflects stronger language modeling ability; smaller lines of work use it to measure general ability, long-context understanding, and compression robustness, with four other constructs also reported. In these uses, papers describe it as evaluating generative capabilities, general language quality, or model capabilities that are \"not impacted by editing\" through perplexity on WikiText-2."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Most papers position WikiText-2 as a standard perplexity benchmark, commonly alongside C4 and PTB, and some also pair it with WikiText-103 or LAMBADA. Beyond headline evaluation, several papers use it as calibration data or a generic text corpus, and a few use it for zero-shot checks, training from scratch, or monitoring convergence during distillation. The only linked instrument is lm-evaluation-harness, which one paper reports using to report results on Wikitext2."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper describes WikiText-2 as a domain-specific calibration dataset and states that perplexity measured on C4 more accurately reflects the performance of different methods."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing usage treats WikiText-2 as a language modeling benchmark or dataset built from high-quality, cleaned Wikipedia articles, usually used to evaluate text prediction or text continuation with perplexity on validation, test, or dev splits. Several definitions frame it as a standard benchmark for compressed, pruned, or quantized models, and one paper specifies evaluation on \"166 test windows of 2048 tokens each\"; a smaller line of work instead uses the training data for training from scratch, supervised fine-tuning, hypernetwork training, slicing, or hidden-state analysis. Papers also mention variants and subsets such as raw-WikiText2 (WT-2), WikiText2-v1, WikiText-V2, and the training, validation, dev, or test splits.\n\nWhat it is claimed to measure. Papers link WikiText-2 to eight constructs and one behavioral indicator. The dominant claim is that it measures text generation and language modeling ability through perplexity or LM loss, with some papers explicitly stating that lower perplexity on WikiText-2 reflects stronger language modeling ability; smaller lines of work use it to measure general ability, long-context understanding, and compression robustness, with four other constructs also reported. In these uses, papers describe it as evaluating generative capabilities, general language quality, or model capabilities that are \"not impacted by editing\" through perplexity on WikiText-2.\n\nSpace of uses. Most papers position WikiText-2 as a standard perplexity benchmark, commonly alongside C4 and PTB, and some also pair it with WikiText-103 or LAMBADA. Beyond headline evaluation, several papers use it as calibration data or a generic text corpus, and a few use it for zero-shot checks, training from scratch, or monitoring convergence during distillation. The only linked instrument is lm-evaluation-harness, which one paper reports using to report results on Wikitext2.\n\nConcerns raised. One paper describes WikiText-2 as a domain-specific calibration dataset and states that perplexity measured on C4 more accurately reflects the performance of different methods.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Bitnet.cpp: Efficient Edge Inference for Ternary LLMs",
+      "Bypass Back-propagation: Optimization-based Structural Pruning for Large Language Models via Policy Gradient",
+      "DIVE into MoE: Diversity-Enhanced Reconstruction of Large Language Models from Dense into Mixture-of-Experts",
+      "Debiasing the Fine-Grained Classification Task in LLMs with Bias-Aware PEFT",
+      "EAC-MoE: Expert-Selection Aware Compressor for Mixture-of-Experts Large Language Models",
+      "Low-Bit Quantization Favors Undertrained LLMs",
+      "MoQAE: Mixed-Precision Quantization for Long-Context LLM Inference via Mixture of Quantization-Aware Experts",
+      "On Support Samples of Next Word Prediction",
+      "PTQ1.61: Push the Real Limit of Extremely Low-Bit Post-Training Quantization Methods for Large Language Models",
+      "Towards the Law of Capacity Gap in Distilling Language Models"
+    ],
+    "emnlp25": [
+      "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models",
+      "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+      "FLRC: Fine-grained Low-Rank Compressor for Efficient LLM Inference",
+      "GAP: a Global Adaptive Pruning Method for Large Language Models",
+      "GRASP: Replace Redundant Layers with Adaptive Singular Parameters for Efficient Model Compression",
+      "How Does DPO Reduce Toxicity? A Mechanistic Neuron-Level Analysis",
+      "IG-Pruning: Input-Guided Block Pruning for Large Language Models",
+      "MLWQ: Efficient Small Language Model Deployment via Multi-Level Weight Quantization",
+      "Machine-generated text detection prevents language model collapse",
+      "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization",
+      "On Pruning State-Space LLMs",
+      "Orthogonal Finetuning Made Scalable",
+      "QSpec: Speculative Decoding with Complementary Quantization Schemes",
+      "UNComp: Can Matrix Entropy Uncover Sparsity? --- A Compressor Design from an Uncertainty-Aware Perspective",
+      "Weight-Aware Activation Sparsity with Constrained Bayesian Optimization Scheduling for Large Language Models"
+    ],
+    "iclr24": [
+      "A Multi-Level Framework for Accelerating Training Transformer Models",
+      "AffineQuant: Affine Transformation Quantization for Large Language Models",
+      "BESA: Pruning Large Language Models with Blockwise Parameter-Efficient Sparsity Allocation",
+      "Dynamic Sparse No Training:  Training-Free Fine-tuning for Sparse LLMs",
+      "EMO: EARTH MOVER DISTANCE OPTIMIZATION FOR AUTO-REGRESSIVE LANGUAGE MODELING",
+      "JoMA: Demystifying Multilayer Transformers via Joint Dynamics of MLP and Attention",
+      "LQ-LoRA: Low-rank plus Quantized Matrix Decomposition for Efficient Language Model Finetuning",
+      "LoftQ: LoRA-Fine-Tuning-aware Quantization for Large Language Models",
+      "Masked Structural Growth for 2x Faster Language Model Pre-training",
+      "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models",
+      "PB-LLM: Partially Binarized Large Language Models",
+      "Plug-and-Play: An Efficient Post-training Pruning Method for Large Language Models",
+      "QLLM: Accurate and Efficient Low-Bitwidth Quantization for Large Language Models",
+      "Rethinking Channel Dimensions to Isolate Outliers for Low-bit Weight Quantization of Large Language Models",
+      "SliceGPT: Compress Large Language Models by Deleting Rows and Columns",
+      "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+      "The LLM Surgeon"
+    ],
+    "iclr25": [
+      "A Quantum Circuit-Based Compression Perspective for Parameter-Efficient Learning",
+      "ARB-LLM: Alternating Refined Binarizations for Large Language Models",
+      "Basis Sharing: Cross-Layer Parameter Sharing for Large Language Model Compression",
+      "BitStack: Any-Size Compression of Large Language Models in Variable Memory Environments",
+      "CAMEx: Curvature-aware Merging of Experts",
+      "CBQ: Cross-Block Quantization for Large Language Models",
+      "Dobi-SVD: Differentiable SVD for LLM Compression and Some New Perspectives",
+      "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+      "Effective Interplay between Sparsity and Quantization: From Theory to Practice",
+      "Efficient Perplexity Bound and Ratio Matching in Discrete Diffusion Language Models",
+      "Forget the Data and Fine-Tuning! Just Fold the Network to Compress",
+      "Knowledge Localization: Mission Not Accomplished? Enter Query Localization!",
+      "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid",
+      "Mixture Compressor for Mixture-of-Experts LLMs Gains More",
+      "MoDeGPT: Modular Decomposition for Large Language Model Compression",
+      "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "OATS: Outlier-Aware Pruning Through Sparse and Low Rank Decomposition",
+      "OSTQuant: Refining Large Language Model Quantization with Orthogonal and Scaling Transformations for Better Distribution Fitting",
+      "PICASO: Permutation-Invariant Context Composition with State Space Models",
+      "Palu: KV-Cache Compression with Low-Rank Projection",
+      "Probe Pruning: Accelerating LLMs through Dynamic Pruning via Model-Probing",
+      "QERA: an Analytical Framework for Quantization Error Reconstruction",
+      "Quamba: A Post-Training Quantization Recipe for Selective State Space Models",
+      "R-Sparse: Rank-Aware Activation Sparsity for Efficient LLM Inference",
+      "Rotated Runtime Smooth: Training-Free Activation Smoother for accurate INT4 inference",
+      "STBLLM: Breaking the 1-Bit Barrier with Structured Binary LLMs",
+      "SVD-LLM: Truncation-aware Singular Value Decomposition for Large Language Model Compression",
+      "SeedLM: Compressing LLM Weights into Seeds of Pseudo-Random Generators",
+      "SpikeLLM: Scaling up Spiking Neural Network to Large Language Models via Saliency-based Spiking",
+      "SpinQuant: LLM Quantization with Learned Rotations",
+      "Systematic Outliers in Large Language Models",
+      "Two Sparse Matrices are Better than One: Sparsifying Neural Networks with Double Sparse Factorization",
+      "Wasserstein Distances, Neuronal Entanglement, and Sparsity",
+      "You Only Prune Once: Designing Calibration-Free Model Compression With Policy Learning",
+      "Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data"
+    ],
+    "icml25": [
+      "An Efficient Pruner for Large Language Model with Theoretical Guarantee",
+      "BaWA: Automatic Optimizing Pruning Metric for Large Language Models with Balanced Weight and Activation",
+      "BlockDialect: Block-wise Fine-grained Mixed Format Quantization for Energy-Efficient LLM Inference",
+      "BoA: Attention-aware Post-training Quantization without Backpropagation",
+      "CLOVER: Cross-Layer Orthogonal Vectors Pruning",
+      "Cache Me If You Must: Adaptive Key-Value Quantization for Large Language Models",
+      "Delta Decompression for MoE-based LLMs Compression",
+      "Demystifying Singular Defects in Large Language Models",
+      "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective",
+      "EvoPress: Accurate Dynamic Model Compression via Evolutionary Search",
+      "FlatQuant: Flatness Matters for LLM Quantization",
+      "FloE: On-the-Fly MoE Inference on Memory-constrained GPU",
+      "GANQ: GPU-Adaptive Non-Uniform Quantization for Large Language Models",
+      "GPTAQ: Efficient Finetuning-Free Quantization for Asymmetric Calibration",
+      "GuidedQuant: Large Language Model Quantization via Exploiting End Loss Guidance",
+      "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+      "La RoSA: Enhancing LLM Efficiency via Layerwise Rotated Sparse Activation",
+      "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models",
+      "Let LLM Tell What to Prune and How Much to Prune",
+      "LowRA: Accurate and Efficient LoRA Fine-Tuning of LLMs under 2 Bits",
+      "Mixture of Experts Made Intrinsically Interpretable",
+      "MoE-SVD: Structured Mixture-of-Experts LLMs Compression via Singular Value Decomposition",
+      "MoEQuant: Enhancing Quantization for Mixture-of-Experts Large Language Models via Expert-Balanced Sampling and Affinity Guidance",
+      "MxMoE: Mixed-precision Quantization for MoE with Accuracy and Performance Co-Design",
+      "NestQuant: nested lattice quantization for matrix products and LLMs",
+      "Olica: Efficient Structured Pruning of Large Language Models without Retraining",
+      "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving",
+      "OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM inference",
+      "Pivoting Factorization: A Compact Meta Low-Rank Representation of Sparsity for Efficient Inference in Large Language Models",
+      "Prompt-based Depth Pruning of Large Language Models",
+      "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration",
+      "QuantSpec: Self-Speculative Decoding with Hierarchical Quantized KV Cache",
+      "Radio: Rate\u2013Distortion Optimization for Large Language Model Compression",
+      "SAFE: Finding Sparse and Flat Minima to Improve Pruning",
+      "SKIM: Any-bit Quantization Pushing The Limits of Post-Training Quantization",
+      "SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression",
+      "SPD: Sync-Point Drop for Efficient Tensor Parallelism of Large Language Models",
+      "Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation",
+      "SkipGPT: Each Token is One of a Kind",
+      "SliM-LLM: Salience-Driven Mixed-Precision Quantization for Large Language Models",
+      "SlimLLM: Accurate Structured Pruning for Large Language Models",
+      "Targeted Low-rank Refinement: Enhancing Sparse Language Models with Precision",
+      "any4: Learned 4-bit Numeric Representation for LLMs"
+    ],
+    "naacl25": [
+      "Efficient One-shot Compression via Low-Rank Local Feature Distillation",
+      "HIGGS: Pushing the Limits of Large Language Model Quantization via the Linearity Theorem",
+      "LRQ: Optimizing Post-Training Quantization for Large Language Models by Learning Low-Rank Weight-Scaling Matrices",
+      "Not All Adapters Matter: Selective Adapter Freezing for Memory-Efficient Fine-Tuning of Language Models",
+      "SVD-LLM V2: Optimizing Singular Value Truncation for Large Language Model Compression",
+      "FedSpaLLM: Federated Pruning of Large Language Models"
+    ],
+    "neurips24": [
+      "AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment",
+      "Compact Language Models via Pruning and Knowledge Distillation",
+      "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+      "DISP-LLM: Dimension-Independent Structural Pruning for Large Language Models",
+      "Discovering Sparsity Allocation for  Layer-wise Pruning of Large Language Models",
+      "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment",
+      "OneBit: Towards Extremely Low-bit Large Language Models",
+      "PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models",
+      "Search for Efficient Large Language Models",
+      "ShiftAddLLM: Accelerating Pretrained LLMs via Post-Training Multiplication-Less Reparameterization",
+      "SlimGPT: Layer-wise Structured Pruning for Large Language Models",
+      "Towards Next-Level Post-Training Quantization of Hyper-Scale Transformers",
+      "fMRI predictors based on language models of increasing complexity recover brain left lateralization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 10,
+    "emnlp25": 15,
+    "iclr24": 17,
+    "iclr25": 35,
+    "icml25": 43,
+    "naacl25": 6,
+    "neurips24": 13
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

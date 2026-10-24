@@ -1,0 +1,182 @@
+{
+  "canonical_name": "PAIR",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, PAIR is most commonly described as Prompt Automatic Iterative Refinement, a black-box jailbreak procedure or algorithmic attack in which an attacker or red-teaming LLM automatically and iteratively generates or refines prompts until a target model is jailbroken. Several definitions add that it can use multi-turn conversation, prompt optimization, or a query-based setup, and one paper describes it as prompt-level rather than token-level jailbreak. A smaller line of work describes it differently, as a population-based evolutionary attack, a pattern that frames harmful requests in imaginary scenarios, or, in one paper, a Likert-style evaluation prompt for judging whether a response violates ethical, legal, or safety guidelines.\n\nWhat it is claimed to measure. Papers link PAIR to one construct and two behavioral indicators. The dominant linked behavioral indicator is Jailbreaking, followed by Jailbreak resistance, while Harmlessness is the only linked construct. In recorded measurement claims, papers use PAIR to measure Jailbreaking, Jailbreak resistance, and Harmlessness; beyond that, one paper claims a causal relationship from PAIR to Jailbreaking by describing iterative refinement until a successful attack is found, and another reports Jailbreaking as related to PAIR.\n\nSpace of uses. Papers link PAIR to one other measurement instrument, CSRT, with PAIR used as a non-multilingual red-teaming baseline in that comparison. More broadly, PAIR is usually positioned as one of several prominent or representative jailbreak attacks rather than a standalone check, most often alongside GCG and also with AutoDAN, TAP, DeepInception, and GPTFuzzer. In those setups, authors use it to evaluate adversarial robustness, defense effectiveness, safety generalization, or the iteration number of successful jailbreaks with and without defenses.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "PAIR"
+  ],
+  "papers": [
+    "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+    "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+    "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "Speculative Safety-Aware Decoding",
+    "TombRaider: Entering the Vault of History to Jailbreak Large Language Models",
+    "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+    "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses",
+    "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+    "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+    "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "Adversarial Reasoning at Jailbreaking Time",
+    "Safety Reasoning with Guidelines",
+    "The Hidden Dimensions of LLM Alignment: A Multi-Dimensional Analysis of Orthogonal Safety Directions",
+    "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+    "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+    "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+    "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+    "A StrongREJECT for Empty Jailbreaks",
+    "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+    "Protecting Your LLMs with Information Bottleneck"
+  ],
+  "paper_count": 23,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Prompt Automatic Iterative Refinement, a black-box jailbreak procedure in which an attacker LLM iteratively refines prompts until the target model is jailbroken.",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "original_name": "PAIR"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreaking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "evidence": "We also evaluated the effect of the jailbreaking attack PAIR (Chao et al., 2023) on a Llama-2-7b-chat model that had been subjected to the Q-Misalign attack at full precision. (Section 5.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+          "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreak resistance",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We also evaluate the robustness of R2-Guard against SOTA jailbreak attacks including GCG (Zou et al., 2023), PAIR (Chao et al., 2023), TAP (Mehrotra et al., 2023), and AutoDAN (Liu et al., 2023). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+      "evidence": "Table 1 presents a benchmark comparison, displaying harmfulness scores and ASR (attack success rates, shown in brackets) for various defense methods... under several benchmark attacks, including PAIR (Section 4.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "CSRT",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+      "evidence": "We compare the CSRT to three non-multilingual red-teaming baselines (i.e., GCG (Zou et al., 2023), AutoDAN (Liu et al., 2024), and PAIR (Chao et al., 2025)). (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, PAIR is most commonly described as Prompt Automatic Iterative Refinement, a black-box jailbreak procedure or algorithmic attack in which an attacker or red-teaming LLM automatically and iteratively generates or refines prompts until a target model is jailbroken. Several definitions add that it can use multi-turn conversation, prompt optimization, or a query-based setup, and one paper describes it as prompt-level rather than token-level jailbreak. A smaller line of work describes it differently, as a population-based evolutionary attack, a pattern that frames harmful requests in imaginary scenarios, or, in one paper, a Likert-style evaluation prompt for judging whether a response violates ethical, legal, or safety guidelines."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link PAIR to one construct and two behavioral indicators. The dominant linked behavioral indicator is Jailbreaking, followed by Jailbreak resistance, while Harmlessness is the only linked construct. In recorded measurement claims, papers use PAIR to measure Jailbreaking, Jailbreak resistance, and Harmlessness; beyond that, one paper claims a causal relationship from PAIR to Jailbreaking by describing iterative refinement until a successful attack is found, and another reports Jailbreaking as related to PAIR."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers link PAIR to one other measurement instrument, CSRT, with PAIR used as a non-multilingual red-teaming baseline in that comparison. More broadly, PAIR is usually positioned as one of several prominent or representative jailbreak attacks rather than a standalone check, most often alongside GCG and also with AutoDAN, TAP, DeepInception, and GPTFuzzer. In those setups, authors use it to evaluate adversarial robustness, defense effectiveness, safety generalization, or the iteration number of successful jailbreaks with and without defenses."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, PAIR is most commonly described as Prompt Automatic Iterative Refinement, a black-box jailbreak procedure or algorithmic attack in which an attacker or red-teaming LLM automatically and iteratively generates or refines prompts until a target model is jailbroken. Several definitions add that it can use multi-turn conversation, prompt optimization, or a query-based setup, and one paper describes it as prompt-level rather than token-level jailbreak. A smaller line of work describes it differently, as a population-based evolutionary attack, a pattern that frames harmful requests in imaginary scenarios, or, in one paper, a Likert-style evaluation prompt for judging whether a response violates ethical, legal, or safety guidelines.\n\nWhat it is claimed to measure. Papers link PAIR to one construct and two behavioral indicators. The dominant linked behavioral indicator is Jailbreaking, followed by Jailbreak resistance, while Harmlessness is the only linked construct. In recorded measurement claims, papers use PAIR to measure Jailbreaking, Jailbreak resistance, and Harmlessness; beyond that, one paper claims a causal relationship from PAIR to Jailbreaking by describing iterative refinement until a successful attack is found, and another reports Jailbreaking as related to PAIR.\n\nSpace of uses. Papers link PAIR to one other measurement instrument, CSRT, with PAIR used as a non-multilingual red-teaming baseline in that comparison. More broadly, PAIR is usually positioned as one of several prominent or representative jailbreak attacks rather than a standalone check, most often alongside GCG and also with AutoDAN, TAP, DeepInception, and GPTFuzzer. In those setups, authors use it to evaluate adversarial robustness, defense effectiveness, safety generalization, or the iteration number of successful jailbreaks with and without defenses.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+      "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training"
+    ],
+    "emnlp25": [
+      "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "Speculative Safety-Aware Decoding",
+      "TombRaider: Entering the Vault of History to Jailbreak Large Language Models"
+    ],
+    "iclr25": [
+      "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses",
+      "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+      "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "Robust LLM safeguarding via refusal feature adversarial training"
+    ],
+    "icml25": [
+      "Adversarial Reasoning at Jailbreaking Time",
+      "Safety Reasoning with Guidelines",
+      "The Hidden Dimensions of LLM Alignment: A Multi-Dimensional Analysis of Orthogonal Safety Directions"
+    ],
+    "naacl25": [
+      "Layer-Level Self-Exposure and Patch: Affirmative Token Mitigation for Jailbreak Attack Defense",
+      "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+      "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+      "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring"
+    ],
+    "neurips24": [
+      "A StrongREJECT for Empty Jailbreaks",
+      "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "Protecting Your LLMs with Information Bottleneck"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 4,
+    "iclr25": 7,
+    "icml25": 3,
+    "naacl25": 4,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

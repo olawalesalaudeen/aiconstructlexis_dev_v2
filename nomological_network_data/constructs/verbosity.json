@@ -1,0 +1,197 @@
+{
+  "canonical_name": "Verbosity",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats verbosity as a response-level attribute about how long or wordy model outputs are, either as a tendency to produce outputs of a certain length that can be controlled or as an extent running from concise to verbose. Several papers place it alongside helpfulness, correctness, coherence, and complexity. A smaller line of work uses a narrower, more evaluative framing, defining verbose generation as outputs that are unnecessarily long, wordy, or redundant, so the main disagreement is between neutral output length and excess length beyond what is needed.\n\nSpace of facets. Papers most often embed verbosity within broader attribute sets: one formulation says question-answering systems have relevance, verbosity, and completeness, and another recurring formulation rates helpfulness, correctness, coherence, complexity, and verbosity together. An explicit internal contrast appears as a concise-versus-verbose scale in preference annotation. One paper also uses the label verbose generation for the more negative case of unnecessarily long or redundant outputs.\n\nSpace of measurement. Verbosity is linked to 3 measurement instruments and 2 behavioral indicators. The linked instruments are HelpSteer, HelpSteer2, and MT-Bench: HelpSteer is used through a reward model over attributes including verbosity, HelpSteer2 operationalizes it as a Likert-5 rating dimension, and MT-Bench operationalizes it as the mean number of characters in responses. The linked behavioral indicators are question answering and text summarization, where papers discuss verbosity as an attribute or something to control, so the operationalizations span both rating-based judgments and a direct length proxy.\n\nLinks. In the linked construct space, verbosity has 1 reported correlation, with helpfulness: one paper reports a positive correlation between helpfulness and verbosity, with Pearson's R=0.0600, and in the same context notes a slight positive correlation between response length and helpfulness. Papers also relate verbosity to 2 task settings, question answering and text summarization, describing it as an attribute of question-answering systems and as something to control in summarization by keeping response length within a range. No causal relationship is claimed in the recorded links.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Verbosity",
+    "Verbose generation"
+  ],
+  "papers": [
+    "Analyzing and Modeling LLM Response Lengths with Extreme Value Theory: Anchoring Effects and Hybrid Distributions",
+    "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs",
+    "SATER: A Self-Aware and Token-Efficient Approach to Routing and Cascading",
+    "HelpSteer2-Preference: Complementing Ratings with Preferences",
+    "L3Ms \u2014 Lagrange Large Language Models",
+    "RuleAdapter: Dynamic Rules for training Safety Reward Models in RLHF",
+    "CALVIN: Improved Contextual Video Captioning via Instruction Tuning",
+    "Decoding-Time Language Model Alignment with Multiple Objectives",
+    "HelpSteer 2: Open-source dataset for training top-performing reward models",
+    "SimPO: Simple Preference Optimization with a Reference-Free Reward"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The tendency of a model to produce outputs of a certain length, which can be controlled as a desirable attribute.",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "original_name": "Verbosity"
+    },
+    {
+      "text": "The tendency of a model to produce outputs that are unnecessarily long or contain redundant information.",
+      "paper": "SATER: A Self-Aware and Token-Efficient Approach to Routing and Cascading",
+      "original_name": "Verbose generation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "evidence": "question-answering systems can have attributes of relevance, verbosity, and completeness [52].",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decoding-Time Language Model Alignment with Multiple Objectives"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HelpSteer",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "evidence": "For HelpSteer, we use https://huggingface.co/Haoxiang-Wang/ RewardModel-Mistral-7B-for-DPA-v1 for all attributes of rewards, including helpfulness, correctness, coherence, complexity and verbosity.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Decoding-Time Language Model Alignment with Multiple Objectives"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "evidence": "Finally, response length is slightly positively correlated with helpfulness (Pearson\u2019s R=0.0845), consistent with the correlation between verbosity and helpfulness (Pearson\u2019s R=0.0600).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "HelpSteer 2: Open-source dataset for training top-performing reward models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "evidence": "Following HelpSteer [12], we use MT Bench [31] to measure helpfulness, TruthfulQA MC2 [36] to measure correctness, and the mean number of characters in MT Bench responses to measure verbosity.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "HelpSteer 2: Open-source dataset for training top-performing reward models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HelpSteer2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HelpSteer2-Preference: Complementing Ratings with Preferences",
+      "evidence": "They first annotate each response on a Likert-5 scale along several dimensions (helpfulness, correctness and coherence, complexity and verbosity), as detailed in Wang et al. (2024d).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HelpSteer2-Preference: Complementing Ratings with Preferences"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "L3Ms \u2014 Lagrange Large Language Models",
+      "evidence": "Consider tasks in which the lengths of the responses need to be contained in the range [llow, lhigh] to control verbosity; for example, in summarization tasks (Makino et al., 2019). (Section 6.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "L3Ms \u2014 Lagrange Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats verbosity as a response-level attribute about how long or wordy model outputs are, either as a tendency to produce outputs of a certain length that can be controlled or as an extent running from concise to verbose. Several papers place it alongside helpfulness, correctness, coherence, and complexity. A smaller line of work uses a narrower, more evaluative framing, defining verbose generation as outputs that are unnecessarily long, wordy, or redundant, so the main disagreement is between neutral output length and excess length beyond what is needed."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most often embed verbosity within broader attribute sets: one formulation says question-answering systems have relevance, verbosity, and completeness, and another recurring formulation rates helpfulness, correctness, coherence, complexity, and verbosity together. An explicit internal contrast appears as a concise-versus-verbose scale in preference annotation. One paper also uses the label verbose generation for the more negative case of unnecessarily long or redundant outputs."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Verbosity is linked to 3 measurement instruments and 2 behavioral indicators. The linked instruments are HelpSteer, HelpSteer2, and MT-Bench: HelpSteer is used through a reward model over attributes including verbosity, HelpSteer2 operationalizes it as a Likert-5 rating dimension, and MT-Bench operationalizes it as the mean number of characters in responses. The linked behavioral indicators are question answering and text summarization, where papers discuss verbosity as an attribute or something to control, so the operationalizations span both rating-based judgments and a direct length proxy."
+    },
+    {
+      "label": "Links.",
+      "text": "In the linked construct space, verbosity has 1 reported correlation, with helpfulness: one paper reports a positive correlation between helpfulness and verbosity, with Pearson's R=0.0600, and in the same context notes a slight positive correlation between response length and helpfulness. Papers also relate verbosity to 2 task settings, question answering and text summarization, describing it as an attribute of question-answering systems and as something to control in summarization by keeping response length within a range. No causal relationship is claimed in the recorded links."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "All papers define verbosity as a property of model responses related to how much text is produced, whether framed as output length, wordiness, or the concise versus verbose end of a rating scale. The differences are mainly in emphasis, with one paper focusing on the model's tendency to produce longer outputs and the others on judging whether a specific response is overly wordy, but they are studying the same core phenomenon.",
+    "papers_with_definition": 3,
+    "runs": [
+      "complementary",
+      "consensus",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats verbosity as a response-level attribute about how long or wordy model outputs are, either as a tendency to produce outputs of a certain length that can be controlled or as an extent running from concise to verbose. Several papers place it alongside helpfulness, correctness, coherence, and complexity. A smaller line of work uses a narrower, more evaluative framing, defining verbose generation as outputs that are unnecessarily long, wordy, or redundant, so the main disagreement is between neutral output length and excess length beyond what is needed.\n\nSpace of facets. Papers most often embed verbosity within broader attribute sets: one formulation says question-answering systems have relevance, verbosity, and completeness, and another recurring formulation rates helpfulness, correctness, coherence, complexity, and verbosity together. An explicit internal contrast appears as a concise-versus-verbose scale in preference annotation. One paper also uses the label verbose generation for the more negative case of unnecessarily long or redundant outputs.\n\nSpace of measurement. Verbosity is linked to 3 measurement instruments and 2 behavioral indicators. The linked instruments are HelpSteer, HelpSteer2, and MT-Bench: HelpSteer is used through a reward model over attributes including verbosity, HelpSteer2 operationalizes it as a Likert-5 rating dimension, and MT-Bench operationalizes it as the mean number of characters in responses. The linked behavioral indicators are question answering and text summarization, where papers discuss verbosity as an attribute or something to control, so the operationalizations span both rating-based judgments and a direct length proxy.\n\nLinks. In the linked construct space, verbosity has 1 reported correlation, with helpfulness: one paper reports a positive correlation between helpfulness and verbosity, with Pearson's R=0.0600, and in the same context notes a slight positive correlation between response length and helpfulness. Papers also relate verbosity to 2 task settings, question answering and text summarization, describing it as an attribute of question-answering systems and as something to control in summarization by keeping response length within a range. No causal relationship is claimed in the recorded links.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Analyzing and Modeling LLM Response Lengths with Extreme Value Theory: Anchoring Effects and Hybrid Distributions",
+      "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs",
+      "SATER: A Self-Aware and Token-Efficient Approach to Routing and Cascading"
+    ],
+    "iclr25": [
+      "HelpSteer2-Preference: Complementing Ratings with Preferences",
+      "L3Ms \u2014 Lagrange Large Language Models"
+    ],
+    "icml25": [
+      "RuleAdapter: Dynamic Rules for training Safety Reward Models in RLHF"
+    ],
+    "neurips24": [
+      "CALVIN: Improved Contextual Video Captioning via Instruction Tuning",
+      "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "SimPO: Simple Preference Optimization with a Reference-Free Reward"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 2,
+    "icml25": 1,
+    "neurips24": 4
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

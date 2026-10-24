@@ -1,0 +1,181 @@
+{
+  "canonical_name": "Pathfinding",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats pathfinding as generating a valid route from a start state to a goal, usually in a graph, grid, maze, or navigation setting. The required output is variously the full sequence of actions or coordinates, the sequence of nodes, the constituent edges, or the complete sequence of directions, and success is described as producing the correct or valid path, sometimes while obeying constraints such as avoiding holes or satisfying locked-door and key dependencies. A smaller line narrows the task to predicting only the next vertex along the path, and one definition recasts it as a latent \"search ability\" to find a correct next step or path.\n\nVariants. Papers label closely related versions as graph path finding, path finding, graph search, route finding, route planning, and path planning. Most variants remain spatial or graph-based, including directed graphs with start and goal nodes, grid worlds such as Frozen Lake, 30 x 30 mazes, two-dimensional grids with actions like move, pick up, and unlock, visual navigation, and object-goal navigation. A smaller variant defines the target as a valid chain of intermediate states from Xin to Xout, and another uses path planning for a structured sequential or parallel plan that combines multiple tool outputs to arrive at a final answer.\n\nSpace of elicitation and scores. Papers link pathfinding to 1 measurement instrument, the Star Graph Task, presented as a simple path-finding task that requires basic planning. Across task formulations, elicitation differs in granularity: many versions ask for the whole path or trajectory, while graph search asks for only the next vertex on the path. One source snippet also describes scoring path planning by having GPT-4o rate the reasonableness of the designed path on a 1-5 scale.\n\nWhat it is taken as evidence of. Papers link pathfinding to 1 construct, Planning. The framing is not uniform: one paper uses path finding to measure Planning, describing it as a simple path-finding task that requires basic planning, while another reports that Pathfinding is related to Planning through a broader claim that the ability to search is fundamental in planning and navigation. As a result, Planning is the only construct it is tied to here, but papers differ on whether the link is a direct measurement relation or a broader relatedness claim.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Graph path finding",
+    "Route finding",
+    "Pathfinding",
+    "Spatial pathfinding",
+    "Path planning",
+    "Route planning",
+    "Path finding",
+    "Graph search",
+    "Search ability"
+  ],
+  "papers": [
+    "VQAGuider: Guiding Multimodal Large Language Models to Answer Complex Video Questions",
+    "StepSearch: Igniting LLMs Search Ability via Step-Wise Proximal Policy Optimization",
+    "seqBench: A Tunable Benchmark to Quantify Sequential Reasoning Limits of LLMs",
+    "IceFormer: Accelerated Inference with Long-Sequence Transformers on CPUs",
+    "Beyond Autoregression: Discrete Diffusion for Complex Reasoning and Planning",
+    "Dualformer: Controllable Fast and Slow Thinking by Learning with Randomized Reasoning Traces",
+    "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control",
+    "Transformers Struggle to Learn to Search",
+    "Metastable Dynamics of Chain-of-Thought Reasoning: Provable Benefits of Search, RL and Distillation",
+    "Evaluating the World Model Implicit in a Generative Model",
+    "GAMap: Zero-Shot Object Goal Navigation with Multi-Scale Geometric-Affordance Guidance",
+    "Mind's Eye of LLMs: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models",
+    "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Given a graph-like input with start and goal nodes, the model outputs the constituent edges of the correct path.",
+      "paper": "Beyond Autoregression: Discrete Diffusion for Complex Reasoning and Planning",
+      "original_name": "Graph path finding"
+    },
+    {
+      "text": "Producing a valid path from a start location to a destination while obeying constraints in a grid world.",
+      "paper": "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control",
+      "original_name": "Route finding"
+    },
+    {
+      "text": "Solving navigation tasks by generating a sequence of actions or coordinates to reach a goal location from a start point.",
+      "paper": "Dualformer: Controllable Fast and Slow Thinking by Learning with Randomized Reasoning Traces",
+      "original_name": "Pathfinding"
+    },
+    {
+      "text": "The process of computing a sequence of actions or a trajectory for an agent to follow to travel from its current position to a designated goal location.",
+      "paper": "GAMap: Zero-Shot Object Goal Navigation with Multi-Scale Geometric-Affordance Guidance",
+      "original_name": "Path planning"
+    },
+    {
+      "text": "A sub-task of visual navigation where the model must generate the complete sequence of directional moves to travel from a starting point to a destination.",
+      "paper": "Mind's Eye of LLMs: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models",
+      "original_name": "Route planning"
+    },
+    {
+      "text": "The task of generating a sequence of nodes that constitutes a valid path from a starting node to a target node within a given graph structure.",
+      "paper": "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More",
+      "original_name": "Path finding"
+    },
+    {
+      "text": "Predicting the next vertex on a path from a start vertex toward a goal vertex in a directed graph.",
+      "paper": "Transformers Struggle to Learn to Search",
+      "original_name": "Graph search"
+    },
+    {
+      "text": "The latent capacity of a model to find a correct next step or path toward a goal across graph-like or reasoning problems.",
+      "paper": "Transformers Struggle to Learn to Search",
+      "original_name": "Search ability"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Transformers Struggle to Learn to Search",
+      "evidence": "\u201cThe ability to search is fundamental in many important tasks, such as reasoning ..., planning ..., and navigation ...\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Transformers Struggle to Learn to Search"
+        ],
+        "neurips24": [
+          "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Star Graph Task",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More",
+      "evidence": "Specifically, Bachmann & Nagarajan (2024) introduces a simple path finding task that requires basic planning... Figure 5: Star Graph Task: Illustration and Performance Comparison. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats pathfinding as generating a valid route from a start state to a goal, usually in a graph, grid, maze, or navigation setting. The required output is variously the full sequence of actions or coordinates, the sequence of nodes, the constituent edges, or the complete sequence of directions, and success is described as producing the correct or valid path, sometimes while obeying constraints such as avoiding holes or satisfying locked-door and key dependencies. A smaller line narrows the task to predicting only the next vertex along the path, and one definition recasts it as a latent \"search ability\" to find a correct next step or path."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers label closely related versions as graph path finding, path finding, graph search, route finding, route planning, and path planning. Most variants remain spatial or graph-based, including directed graphs with start and goal nodes, grid worlds such as Frozen Lake, 30 x 30 mazes, two-dimensional grids with actions like move, pick up, and unlock, visual navigation, and object-goal navigation. A smaller variant defines the target as a valid chain of intermediate states from Xin to Xout, and another uses path planning for a structured sequential or parallel plan that combines multiple tool outputs to arrive at a final answer."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link pathfinding to 1 measurement instrument, the Star Graph Task, presented as a simple path-finding task that requires basic planning. Across task formulations, elicitation differs in granularity: many versions ask for the whole path or trajectory, while graph search asks for only the next vertex on the path. One source snippet also describes scoring path planning by having GPT-4o rate the reasonableness of the designed path on a 1-5 scale."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link pathfinding to 1 construct, Planning. The framing is not uniform: one paper uses path finding to measure Planning, describing it as a simple path-finding task that requires basic planning, while another reports that Pathfinding is related to Planning through a broader claim that the ability to search is fundamental in planning and navigation. As a result, Planning is the only construct it is tied to here, but papers differ on whether the link is a direct measurement relation or a broader relatedness claim."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats pathfinding as generating a valid route from a start state to a goal, usually in a graph, grid, maze, or navigation setting. The required output is variously the full sequence of actions or coordinates, the sequence of nodes, the constituent edges, or the complete sequence of directions, and success is described as producing the correct or valid path, sometimes while obeying constraints such as avoiding holes or satisfying locked-door and key dependencies. A smaller line narrows the task to predicting only the next vertex along the path, and one definition recasts it as a latent \"search ability\" to find a correct next step or path.\n\nVariants. Papers label closely related versions as graph path finding, path finding, graph search, route finding, route planning, and path planning. Most variants remain spatial or graph-based, including directed graphs with start and goal nodes, grid worlds such as Frozen Lake, 30 x 30 mazes, two-dimensional grids with actions like move, pick up, and unlock, visual navigation, and object-goal navigation. A smaller variant defines the target as a valid chain of intermediate states from Xin to Xout, and another uses path planning for a structured sequential or parallel plan that combines multiple tool outputs to arrive at a final answer.\n\nSpace of elicitation and scores. Papers link pathfinding to 1 measurement instrument, the Star Graph Task, presented as a simple path-finding task that requires basic planning. Across task formulations, elicitation differs in granularity: many versions ask for the whole path or trajectory, while graph search asks for only the next vertex on the path. One source snippet also describes scoring path planning by having GPT-4o rate the reasonableness of the designed path on a 1-5 scale.\n\nWhat it is taken as evidence of. Papers link pathfinding to 1 construct, Planning. The framing is not uniform: one paper uses path finding to measure Planning, describing it as a simple path-finding task that requires basic planning, while another reports that Pathfinding is related to Planning through a broader claim that the ability to search is fundamental in planning and navigation. As a result, Planning is the only construct it is tied to here, but papers differ on whether the link is a direct measurement relation or a broader relatedness claim.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "StepSearch: Igniting LLMs Search Ability via Step-Wise Proximal Policy Optimization",
+      "seqBench: A Tunable Benchmark to Quantify Sequential Reasoning Limits of LLMs"
+    ],
+    "iclr25": [
+      "Beyond Autoregression: Discrete Diffusion for Complex Reasoning and Planning",
+      "Dualformer: Controllable Fast and Slow Thinking by Learning with Randomized Reasoning Traces",
+      "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control",
+      "Transformers Struggle to Learn to Search"
+    ],
+    "neurips24": [
+      "Evaluating the World Model Implicit in a Generative Model",
+      "GAMap: Zero-Shot Object Goal Navigation with Multi-Scale Geometric-Affordance Guidance",
+      "Mind's Eye of LLMs: Visualization-of-Thought Elicits Spatial Reasoning in Large Language Models",
+      "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More"
+    ],
+    "acl25": [
+      "VQAGuider: Guiding Multimodal Large Language Models to Answer Complex Video Questions"
+    ],
+    "iclr24": [
+      "IceFormer: Accelerated Inference with Long-Sequence Transformers on CPUs"
+    ],
+    "icml25": [
+      "Metastable Dynamics of Chain-of-Thought Reasoning: Provable Benefits of Search, RL and Distillation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 4,
+    "neurips24": 4,
+    "acl25": 1,
+    "iclr24": 1,
+    "icml25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "canonical_name": "Model selection ability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage treats this concept as a model's latent ability to select among candidate functions, algorithms, or function classes on the basis of the task, data, or context, sometimes with implementation of the selected function folded in. One paper describes in-context learning as automatically selecting the best pretraining functions according to downstream context, and another frames transformers as performing model selection between function class families. A smaller usage applies the same label to choosing the optimal LLM from a set of candidate models for a downstream task under resource constraints. The main disagreement is therefore whether the term refers to selection among pre-trained functions or function classes, or to selection among whole LLMs.\n\nSpace of facets. Papers systematize the construct mainly through naming and mechanisms. Algorithm selection and model selection are used for closely similar ideas when the focus is choosing among functions or function classes from context, while model selection is also used for choosing among candidate LLMs. One paper further states that the algorithm selection mechanism involves two parallel mechanisms, a low-test-error preference and a similar-input-distribution preference. In the recorded relationships, it is also linked to Planning and Action selection.\n\nSpace of measurement. No measurement instrument is linked to this construct. Papers link it to three behavioral indicators, Action selection, Constraint adherence, and Plan execution, and to two constructs, Low-test-error preference and Planning, but these links are recorded as related or causal rather than as measured_by operationalizations. As a result, the available papers do not specify a direct instrument-based operationalization that can be compared with the definitions.\n\nLinks. The recorded links are partly directional. One paper claims a causal relationship from Planning to model selection ability, stating that model selection follows task planning; the same paper claims causal relationships from model selection ability to Plan execution and to Constraint adherence, describing selection as balancing model capabilities, licensing requirements, resource constraints, and performance metrics. Separate papers report that Action selection is related to model selection ability and that Low-test-error preference is related to it.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Algorithm selection",
+    "Model selection"
+  ],
+  "papers": [
+    "Can In-context Learning Really Generalize to Out-of-distribution Tasks?",
+    "Selective induction Heads: How Transformers Select Causal Structures in Context",
+    "LensLLM: Unveiling Fine-Tuning Dynamics for LLM Selection"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent mechanism by which a model, when faced with a new task, selects and implements the most suitable function or algorithm from its repertoire of pre-trained capabilities.",
+      "paper": "Can In-context Learning Really Generalize to Out-of-distribution Tasks?",
+      "original_name": "Algorithm selection"
+    },
+    {
+      "text": "The ability of a model to choose the best-fitting model or function class from a set of candidates based on the provided data or context.",
+      "paper": "Selective induction Heads: How Transformers Select Causal Structures in Context",
+      "original_name": "Model selection"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Action selection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "RestoreAgent: Autonomous Image Restoration Agent via Multimodal Large Language Models",
+      "evidence": "RestoreAgent can provide the best decisions, including which image restoration tasks need to be performed, the order of their execution, and which model is most suitable for each task. (Section 3.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "RestoreAgent: Autonomous Image Restoration Agent via Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Low-test-error preference",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Can In-context Learning Really Generalize to Out-of-distribution Tasks?",
+      "evidence": "\u201cwe theoretically reveal the algorithm-selection mechanism for ICL. We find there simultaneously exist two parallel mechanisms: the Low-test-error preference and the Similar-input-distribution preference.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Can In-context Learning Really Generalize to Out-of-distribution Tasks?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Constraint adherence",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "From an LLM Swarm to a PDDL-empowered Hive: Planning Self-executed Instructions in a Multi-modal Jungle",
+      "evidence": "\"By balancing these factors: model capabilities, licensing requirements, resource constraints, and performance metrics, we systematically select the most suitable model for each action. This ensures that the execution of the plan is aligned with both the technical requirements of the tasks and the practical considerations of the user.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "From an LLM Swarm to a PDDL-empowered Hive: Planning Self-executed Instructions in a Multi-modal Jungle"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage treats this concept as a model's latent ability to select among candidate functions, algorithms, or function classes on the basis of the task, data, or context, sometimes with implementation of the selected function folded in. One paper describes in-context learning as automatically selecting the best pretraining functions according to downstream context, and another frames transformers as performing model selection between function class families. A smaller usage applies the same label to choosing the optimal LLM from a set of candidate models for a downstream task under resource constraints. The main disagreement is therefore whether the term refers to selection among pre-trained functions or function classes, or to selection among whole LLMs."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers systematize the construct mainly through naming and mechanisms. Algorithm selection and model selection are used for closely similar ideas when the focus is choosing among functions or function classes from context, while model selection is also used for choosing among candidate LLMs. One paper further states that the algorithm selection mechanism involves two parallel mechanisms, a low-test-error preference and a similar-input-distribution preference. In the recorded relationships, it is also linked to Planning and Action selection."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to this construct. Papers link it to three behavioral indicators, Action selection, Constraint adherence, and Plan execution, and to two constructs, Low-test-error preference and Planning, but these links are recorded as related or causal rather than as measured_by operationalizations. As a result, the available papers do not specify a direct instrument-based operationalization that can be compared with the definitions."
+    },
+    {
+      "label": "Links.",
+      "text": "The recorded links are partly directional. One paper claims a causal relationship from Planning to model selection ability, stating that model selection follows task planning; the same paper claims causal relationships from model selection ability to Plan execution and to Constraint adherence, describing selection as balancing model capabilities, licensing requirements, resource constraints, and performance metrics. Separate papers report that Action selection is related to model selection ability and that Low-test-error preference is related to it."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "conflicting",
+    "reason": "The papers use \"model selection ability\" for different phenomena. One paper defines an internal mechanism by which a single model selects a function from its own pre-trained capabilities, while the others define choosing among candidate models or function classes, and one of those specifically means selecting an optimal LLM under performance and resource constraints, so they would not all be studying the same thing.",
+    "papers_with_definition": 3,
+    "runs": [
+      "consensus",
+      "conflicting",
+      "conflicting"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage treats this concept as a model's latent ability to select among candidate functions, algorithms, or function classes on the basis of the task, data, or context, sometimes with implementation of the selected function folded in. One paper describes in-context learning as automatically selecting the best pretraining functions according to downstream context, and another frames transformers as performing model selection between function class families. A smaller usage applies the same label to choosing the optimal LLM from a set of candidate models for a downstream task under resource constraints. The main disagreement is therefore whether the term refers to selection among pre-trained functions or function classes, or to selection among whole LLMs.\n\nSpace of facets. Papers systematize the construct mainly through naming and mechanisms. Algorithm selection and model selection are used for closely similar ideas when the focus is choosing among functions or function classes from context, while model selection is also used for choosing among candidate LLMs. One paper further states that the algorithm selection mechanism involves two parallel mechanisms, a low-test-error preference and a similar-input-distribution preference. In the recorded relationships, it is also linked to Planning and Action selection.\n\nSpace of measurement. No measurement instrument is linked to this construct. Papers link it to three behavioral indicators, Action selection, Constraint adherence, and Plan execution, and to two constructs, Low-test-error preference and Planning, but these links are recorded as related or causal rather than as measured_by operationalizations. As a result, the available papers do not specify a direct instrument-based operationalization that can be compared with the definitions.\n\nLinks. The recorded links are partly directional. One paper claims a causal relationship from Planning to model selection ability, stating that model selection follows task planning; the same paper claims causal relationships from model selection ability to Plan execution and to Constraint adherence, describing selection as balancing model capabilities, licensing requirements, resource constraints, and performance metrics. Separate papers report that Action selection is related to model selection ability and that Low-test-error preference is related to it.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Can In-context Learning Really Generalize to Out-of-distribution Tasks?",
+      "Selective induction Heads: How Transformers Select Causal Structures in Context"
+    ],
+    "icml25": [
+      "LensLLM: Unveiling Fine-Tuning Dynamics for LLM Selection"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "icml25": 1
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "canonical_name": "Inductive bias",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Most papers describe inductive bias as the implicit assumptions, preferences, or tendencies built into a model, its architecture, or its training method that make some solutions or generalizations more likely than others, especially on unseen data or new tasks. Smaller variations keep that core but emphasize different loci: pre-trained LMs as providing assumptions for unseen inputs, transformer architectures as making some behaviors easier to realize, or model-specific tendencies that matter even without explicit instruction. The main variation is whether papers foreground generalization to new data, or a preference for particular solutions or behaviors such as simpler or sparser ones.\n\nSpace of facets. Papers usually differentiate inductive bias by source: architecture, training process, pre-training, tuning, and specific components such as butterfly structure or position encodings. Some authors speak of transformer-specific, model-specific, or idiosyncratic inductive biases, while one paper says common LLM architectures and training setups may encode very similar inductive biases. The term is also attached to particular settings, including the inductive bias of in-context learning and of looped transformers that favor simpler, sparser solutions.\n\nSpace of measurement. No measurement instrument or behavioral indicator is linked to it. Instead, papers describe it through model comparisons and attributed behaviors: looped transformers are said to favor simpler or sparser solutions, butterfly factorization is said to introduce an implicit bias that benefits generalizability and prevents overfitting, pre-trained LMs are said to supply assumptions that support few-shot learning in low-data settings, and different position encodings are said to facilitate counting in different task formats. These uses keep the construct tied to architecture, components, or training, and describe it through the solutions, behaviors, or generalization that papers attribute to those design choices.\n\nLinks. Papers link it to 5 constructs. One paper claims a causal relationship from inductive bias to reasoning, describing an inductive bias toward improving reasoning-heavy downstream tasks, and another claims a causal relationship from inductive bias to algorithmic reasoning through the effectiveness of embedding-only training. One paper also claims a causal relationship from inductive bias to generalization, while other papers relate it to length generalization and to world modeling; another paper relates generalization to inductive bias by saying common architectures and training setups may encode very similar biases without adversely affecting downstream generalization.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Inductive bias"
+  ],
+  "papers": [
+    "The Emperor's New Reasoning: Format Imitation Overshadows Genuine Mathematical Understanding in SFT",
+    "To Mask or to Mirror: Human-AI Alignment in Collective Reasoning",
+    "Which Word Orders Facilitate Length Generalization in LMs? An Investigation with GCG-Based Artificial Languages",
+    "In-Context Learning through the Bayesian Prism",
+    "Looped Transformers are Better at Learning Learning Algorithms",
+    "Parameter-Efficient Orthogonal Finetuning via Butterfly Factorization",
+    "Unleashing the Power of Pre-trained Language Models for Offline Reinforcement Learning",
+    "Efficient stagewise pretraining via progressive subnetworks",
+    "Explaining Modern Gated-Linear RNNs via a Unified Implicit Attention Formulation",
+    "Language Models Need Inductive Biases to Count Inductively",
+    "Training Neural Networks as Recognizers of Formal Languages",
+    "LLMs on the Line: Data Determines Loss-to-Loss Scaling Laws",
+    "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models",
+    "Algorithmic Capabilities of Random Transformers",
+    "On the Inductive Bias of Stacking Towards Improving Reasoning"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An inherent property of a model or training method that causes it to prefer certain solutions or generalizations over others, influencing its performance on new tasks.",
+      "paper": "In-Context Learning through the Bayesian Prism",
+      "original_name": "Inductive bias"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Efficient stagewise pretraining via progressive subnetworks",
+      "evidence": "This suggests a desirable inductive bias of RAPTR that improves its generalization abilities beyond perplexity. (Section 4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Efficient stagewise pretraining via progressive subnetworks"
+        ],
+        "icml25": [
+          "LLMs on the Line: Data Determines Loss-to-Loss Scaling Laws"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "On the Inductive Bias of Stacking Towards Improving Reasoning",
+      "evidence": "MIDAS is not only training-ef\ufb01cient but surprisingly also has an inductive bias towards improving downstream tasks, especially tasks that require reasoning abilities like reading comprehension and math problems, despite having similar or slightly worse perplexity compared to baseline training. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "On the Inductive Bias of Stacking Towards Improving Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Training Neural Networks as Recognizers of Formal Languages",
+      "evidence": "The short validation set reveals an architecture\u2019s inductive bias in the absence of any disambiguating information about how it should generalize to longer lengths, as in the experiments of Del\u00b4etang et al. (2023). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Training Neural Networks as Recognizers of Formal Languages"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "World modeling",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models",
+      "evidence": "Similarly, the inductive bias of a foundation model reveals its world model.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most papers describe inductive bias as the implicit assumptions, preferences, or tendencies built into a model, its architecture, or its training method that make some solutions or generalizations more likely than others, especially on unseen data or new tasks. Smaller variations keep that core but emphasize different loci: pre-trained LMs as providing assumptions for unseen inputs, transformer architectures as making some behaviors easier to realize, or model-specific tendencies that matter even without explicit instruction. The main variation is whether papers foreground generalization to new data, or a preference for particular solutions or behaviors such as simpler or sparser ones."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers usually differentiate inductive bias by source: architecture, training process, pre-training, tuning, and specific components such as butterfly structure or position encodings. Some authors speak of transformer-specific, model-specific, or idiosyncratic inductive biases, while one paper says common LLM architectures and training setups may encode very similar inductive biases. The term is also attached to particular settings, including the inductive bias of in-context learning and of looped transformers that favor simpler, sparser solutions."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument or behavioral indicator is linked to it. Instead, papers describe it through model comparisons and attributed behaviors: looped transformers are said to favor simpler or sparser solutions, butterfly factorization is said to introduce an implicit bias that benefits generalizability and prevents overfitting, pre-trained LMs are said to supply assumptions that support few-shot learning in low-data settings, and different position encodings are said to facilitate counting in different task formats. These uses keep the construct tied to architecture, components, or training, and describe it through the solutions, behaviors, or generalization that papers attribute to those design choices."
+    },
+    {
+      "label": "Links.",
+      "text": "Papers link it to 5 constructs. One paper claims a causal relationship from inductive bias to reasoning, describing an inductive bias toward improving reasoning-heavy downstream tasks, and another claims a causal relationship from inductive bias to algorithmic reasoning through the effectiveness of embedding-only training. One paper also claims a causal relationship from inductive bias to generalization, while other papers relate it to length generalization and to world modeling; another paper relates generalization to inductive bias by saying common architectures and training setups may encode very similar biases without adversely affecting downstream generalization."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define inductive bias as a model's implicit assumptions or inherent architectural and training tendencies that make it prefer certain solutions, behaviors, or generalizations, especially on unseen data. A few papers narrow the source to pre-training or the transformer architecture, but they still describe the same core property rather than a different phenomenon.",
+    "papers_with_definition": 8,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Most papers describe inductive bias as the implicit assumptions, preferences, or tendencies built into a model, its architecture, or its training method that make some solutions or generalizations more likely than others, especially on unseen data or new tasks. Smaller variations keep that core but emphasize different loci: pre-trained LMs as providing assumptions for unseen inputs, transformer architectures as making some behaviors easier to realize, or model-specific tendencies that matter even without explicit instruction. The main variation is whether papers foreground generalization to new data, or a preference for particular solutions or behaviors such as simpler or sparser ones.\n\nSpace of facets. Papers usually differentiate inductive bias by source: architecture, training process, pre-training, tuning, and specific components such as butterfly structure or position encodings. Some authors speak of transformer-specific, model-specific, or idiosyncratic inductive biases, while one paper says common LLM architectures and training setups may encode very similar inductive biases. The term is also attached to particular settings, including the inductive bias of in-context learning and of looped transformers that favor simpler, sparser solutions.\n\nSpace of measurement. No measurement instrument or behavioral indicator is linked to it. Instead, papers describe it through model comparisons and attributed behaviors: looped transformers are said to favor simpler or sparser solutions, butterfly factorization is said to introduce an implicit bias that benefits generalizability and prevents overfitting, pre-trained LMs are said to supply assumptions that support few-shot learning in low-data settings, and different position encodings are said to facilitate counting in different task formats. These uses keep the construct tied to architecture, components, or training, and describe it through the solutions, behaviors, or generalization that papers attribute to those design choices.\n\nLinks. Papers link it to 5 constructs. One paper claims a causal relationship from inductive bias to reasoning, describing an inductive bias toward improving reasoning-heavy downstream tasks, and another claims a causal relationship from inductive bias to algorithmic reasoning through the effectiveness of embedding-only training. One paper also claims a causal relationship from inductive bias to generalization, while other papers relate it to length generalization and to world modeling; another paper relates generalization to inductive bias by saying common architectures and training setups may encode very similar biases without adversely affecting downstream generalization.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "The Emperor's New Reasoning: Format Imitation Overshadows Genuine Mathematical Understanding in SFT",
+      "To Mask or to Mirror: Human-AI Alignment in Collective Reasoning",
+      "Which Word Orders Facilitate Length Generalization in LMs? An Investigation with GCG-Based Artificial Languages"
+    ],
+    "iclr24": [
+      "In-Context Learning through the Bayesian Prism",
+      "Looped Transformers are Better at Learning Learning Algorithms",
+      "Parameter-Efficient Orthogonal Finetuning via Butterfly Factorization",
+      "Unleashing the Power of Pre-trained Language Models for Offline Reinforcement Learning"
+    ],
+    "iclr25": [
+      "Efficient stagewise pretraining via progressive subnetworks",
+      "Explaining Modern Gated-Linear RNNs via a Unified Implicit Attention Formulation",
+      "Language Models Need Inductive Biases to Count Inductively",
+      "Training Neural Networks as Recognizers of Formal Languages"
+    ],
+    "icml25": [
+      "LLMs on the Line: Data Determines Loss-to-Loss Scaling Laws",
+      "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models"
+    ],
+    "neurips24": [
+      "Algorithmic Capabilities of Random Transformers",
+      "On the Inductive Bias of Stacking Towards Improving Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr24": 4,
+    "iclr25": 4,
+    "icml25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

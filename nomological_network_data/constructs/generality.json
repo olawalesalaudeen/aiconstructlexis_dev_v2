@@ -1,0 +1,175 @@
+{
+  "canonical_name": "Generality",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats generality as post-edit generalization: a model should apply newly edited knowledge to rephrased or semantically equivalent prompts, not only the exact edit prompt. A closely matching wording calls this paraphrase execution, meaning the model produces the correct edited output for a paraphrased version of the original prompt. A smaller line of work extends the same idea across languages, defining it as cross-lingual propagation, the extent to which an edit in one language transfers to semantically equivalent queries in other languages.\n\nSpace of facets. Papers most often place generality among the criteria used to evaluate editing, alongside locality and either reliability or efficacy. Some authors use paraphrase execution as an alternative name for the within-language form of the construct, while others use cross-lingual propagation for a multilingual extension of the same broad concern. Beyond these renamings and extensions, papers do not link it to other constructs.\n\nSpace of measurement. Papers link generality to 3 measurement instruments and 3 behavioral indicators. The most common operationalizations are evaluation on CounterFact, ZsRE, and MzsRE: papers report success rates on CounterFact, accuracy on ZsRE, and multilingual evaluation on translated MzsRE items, with one vision-language paper using visual question answering as the evaluation task. These measurements largely follow the dominant definitions by checking whether an edit holds beyond the original prompt, and one line explicitly extends this to cross-lingual transfer.\n\nLinks. Beyond measurement, papers report related rather than causal or correlational links. One paper describes generality as related to knowledge editing, stating that knowledge editing should satisfy generality because there are different ways to express the same request. Another paper relates catastrophic forgetting to generality by noting that, as models acquire specialized knowledge from fine-tuning, they may forget their general capabilities.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Generality",
+    "Paraphrase execution",
+    "Cross-lingual propagation"
+  ],
+  "papers": [
+    "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+    "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+    "M2Edit: Locate and Edit Multi-Granularity Knowledge in Multimodal Large Language Model",
+    "Mitigating Catastrophic Forgetting in Large Language Models with Forgetting-aware Pruning",
+    "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing",
+    "Resolving Lexical Bias in Model Editing"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability of a model to apply newly edited knowledge to rephrased or semantically equivalent prompts, not just the exact one used for editing.",
+      "paper": "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+      "original_name": "Generality"
+    },
+    {
+      "text": "Generating the correct edited output when presented with a paraphrased version of the original edit prompt.",
+      "paper": "Resolving Lexical Bias in Model Editing",
+      "original_name": "Paraphrase execution"
+    },
+    {
+      "text": "The extent to which a factual edit made in one source language successfully transfers to semantically equivalent queries in other target languages.",
+      "paper": "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+      "original_name": "Cross-lingual propagation"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge editing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "evidence": "Knowledge editing seeks to maximize the chance of an LLM responding with y given x, while satisfying the following additional criteria at the same time...: (1) Generality: there are different ways to express US president, wherefore the edited model should generalize. (Section 2.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning"
+        ],
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CounterFact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CoME: An Unlearning-based Approach to Conflict-free Model Editing",
+      "evidence": "In the Counterfact dataset, we evaluate the models on Efficacy, Generality, and Locality, using success rates as metrics. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "CoME: An Unlearning-based Approach to Conflict-free Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ZsRE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CoME: An Unlearning-based Approach to Conflict-free Model Editing",
+      "evidence": "Since ZsRE does not measure generative capabilities, we evaluate the models based only on accuracy in terms of Efficacy, Generality, and Locality. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "CoME: An Unlearning-based Approach to Conflict-free Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Editing locality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "we find that it seems to be an impossible triangle\u2014reliability, generalization, and locality can not be realized at the same time in the continual editing settings. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "evidence": "For reliability, generalization, and portability evaluations, LLaVA-1.5 outperforms BLIP-2 and MiniGPT-4. This improved performance can be attributed to its larger model size and better instruction-following capability... (Section 5.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats generality as post-edit generalization: a model should apply newly edited knowledge to rephrased or semantically equivalent prompts, not only the exact edit prompt. A closely matching wording calls this paraphrase execution, meaning the model produces the correct edited output for a paraphrased version of the original prompt. A smaller line of work extends the same idea across languages, defining it as cross-lingual propagation, the extent to which an edit in one language transfers to semantically equivalent queries in other languages."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most often place generality among the criteria used to evaluate editing, alongside locality and either reliability or efficacy. Some authors use paraphrase execution as an alternative name for the within-language form of the construct, while others use cross-lingual propagation for a multilingual extension of the same broad concern. Beyond these renamings and extensions, papers do not link it to other constructs."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link generality to 3 measurement instruments and 3 behavioral indicators. The most common operationalizations are evaluation on CounterFact, ZsRE, and MzsRE: papers report success rates on CounterFact, accuracy on ZsRE, and multilingual evaluation on translated MzsRE items, with one vision-language paper using visual question answering as the evaluation task. These measurements largely follow the dominant definitions by checking whether an edit holds beyond the original prompt, and one line explicitly extends this to cross-lingual transfer."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, papers report related rather than causal or correlational links. One paper describes generality as related to knowledge editing, stating that knowledge editing should satisfy generality because there are different ways to express the same request. Another paper relates catastrophic forgetting to generality by noting that, as models acquire specialized knowledge from fine-tuning, they may forget their general capabilities."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define generality as whether an edit transfers beyond the exact edit prompt to semantically equivalent queries, especially paraphrases. One paper states this in a cross-lingual setting, but it is still the same core property of an edit producing the correct updated answer for equivalent prompts rather than a different phenomenon.",
+    "papers_with_definition": 3,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats generality as post-edit generalization: a model should apply newly edited knowledge to rephrased or semantically equivalent prompts, not only the exact edit prompt. A closely matching wording calls this paraphrase execution, meaning the model produces the correct edited output for a paraphrased version of the original prompt. A smaller line of work extends the same idea across languages, defining it as cross-lingual propagation, the extent to which an edit in one language transfers to semantically equivalent queries in other languages.\n\nSpace of facets. Papers most often place generality among the criteria used to evaluate editing, alongside locality and either reliability or efficacy. Some authors use paraphrase execution as an alternative name for the within-language form of the construct, while others use cross-lingual propagation for a multilingual extension of the same broad concern. Beyond these renamings and extensions, papers do not link it to other constructs.\n\nSpace of measurement. Papers link generality to 3 measurement instruments and 3 behavioral indicators. The most common operationalizations are evaluation on CounterFact, ZsRE, and MzsRE: papers report success rates on CounterFact, accuracy on ZsRE, and multilingual evaluation on translated MzsRE items, with one vision-language paper using visual question answering as the evaluation task. These measurements largely follow the dominant definitions by checking whether an edit holds beyond the original prompt, and one line explicitly extends this to cross-lingual transfer.\n\nLinks. Beyond measurement, papers report related rather than causal or correlational links. One paper describes generality as related to knowledge editing, stating that knowledge editing should satisfy generality because there are different ways to express the same request. Another paper relates catastrophic forgetting to generality by noting that, as models acquire specialized knowledge from fine-tuning, they may forget their general capabilities.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+      "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+      "M2Edit: Locate and Edit Multi-Granularity Knowledge in Multimodal Large Language Model",
+      "Mitigating Catastrophic Forgetting in Large Language Models with Forgetting-aware Pruning",
+      "REACT: Representation Extraction And Controllable Tuning to Overcome Overfitting in LLM Knowledge Editing"
+    ],
+    "icml25": [
+      "Resolving Lexical Bias in Model Editing"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "icml25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "icml25"
+  ]
+}

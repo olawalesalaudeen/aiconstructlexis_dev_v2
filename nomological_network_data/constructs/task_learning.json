@@ -1,0 +1,146 @@
+{
+  "canonical_name": "Task learning",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats task learning as the model's ability to solve a task from in-context demonstrations by learning or inferring the input-label mapping those examples instantiate. Most definitions stay close to this framing, describing performance that is based solely on demonstrations or the ability to grasp new mappings not seen during pre-training, and contrasting it with simply copying a label or retrieving memorized patterns. A smaller terminological variant uses the name task inference and phrases the same general ability as deducing the abstract rule or underlying task from input-output examples in context.\n\nSpace of facets. Papers most often position task learning against task recognition: one line describes it as directly learning from demonstrations to deal with the task, while separately tracking task recognition. Another line uses task inference for closely related behavior, describing the model as inferring the task from context rather than merely copying a label, and explicitly relating that ability to meta-learning. The construct is also tied to in-context learning more broadly, where effective in-context learning is described as inferring the underlying task from examples and refining predictions based on that inferred task.\n\nSpace of measurement. No measurement instrument is linked to task learning. Papers instead operationalize it in task terms, such as solving the target task solely from demonstrations, inferring and applying new input-label mappings from context, or, in one study, treating gains above NON-BIJECTIVE shuffles as indicative of task learning rather than task recognition. It is linked to two behavioral indicators, Catastrophic forgetting and Self-reflection, but those links are recorded as related rather than as explicit measurements.\n\nLinks. Papers do not record any measured_by or causes link for task learning. One paper reports that task learning correlates with Task recognition, with the performance of the two changing in opposite directions. Other work relates In-context learning to task learning and relates Meta-learning to task learning, and single papers also relate Catastrophic forgetting and Self-reflection to task learning.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Task learning",
+    "Task inference"
+  ],
+  "papers": [
+    "Preemptive Detection and Correction of Misaligned Actions in LLM Agents",
+    "ICL CIPHERS: Quantifying ``Learning'' in In-Context Learning via Substitution Ciphers",
+    "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+    "Competition Dynamics Shape Algorithmic Phases of In-Context Learning",
+    "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+    "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence",
+    "Cradle: Empowering Foundation Agents towards General Computer Control"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability of a language model to learn how to perform a task solely by learning the input-label mapping from the provided in-context demonstrations.",
+      "paper": "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+      "original_name": "Task learning"
+    },
+    {
+      "text": "The model's capacity to deduce the abstract rule or mapping (e.g., class-to-label function) from a set of input-output examples provided in context.",
+      "paper": "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence",
+      "original_name": "Task inference"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Task recognition",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+      "evidence": "\u201cthe performance of task recognition and task learning changes in the opposite direction\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence",
+      "evidence": "In effective ICL, the model infers the underlying task from the examples provided and refines its predictions based on the inferred task. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Meta-learning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence",
+      "evidence": "This task inference ability is recognized as a form of meta-learning (Min et al., 2022a). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats task learning as the model's ability to solve a task from in-context demonstrations by learning or inferring the input-label mapping those examples instantiate. Most definitions stay close to this framing, describing performance that is based solely on demonstrations or the ability to grasp new mappings not seen during pre-training, and contrasting it with simply copying a label or retrieving memorized patterns. A smaller terminological variant uses the name task inference and phrases the same general ability as deducing the abstract rule or underlying task from input-output examples in context."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most often position task learning against task recognition: one line describes it as directly learning from demonstrations to deal with the task, while separately tracking task recognition. Another line uses task inference for closely related behavior, describing the model as inferring the task from context rather than merely copying a label, and explicitly relating that ability to meta-learning. The construct is also tied to in-context learning more broadly, where effective in-context learning is described as inferring the underlying task from examples and refining predictions based on that inferred task."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to task learning. Papers instead operationalize it in task terms, such as solving the target task solely from demonstrations, inferring and applying new input-label mappings from context, or, in one study, treating gains above NON-BIJECTIVE shuffles as indicative of task learning rather than task recognition. It is linked to two behavioral indicators, Catastrophic forgetting and Self-reflection, but those links are recorded as related rather than as explicit measurements."
+    },
+    {
+      "label": "Links.",
+      "text": "Papers do not record any measured_by or causes link for task learning. One paper reports that task learning correlates with Task recognition, with the performance of the two changing in opposite directions. Other work relates In-context learning to task learning and relates Meta-learning to task learning, and single papers also relate Catastrophic forgetting and Self-reflection to task learning."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "All papers define task learning as a model's ability to infer or learn a task's input-label mapping or abstract rule from in-context input-output demonstrations. One paper adds that this should involve new mappings not seen in pre-training and on-the-fly generalization rather than retrieval, but this is a narrower emphasis on the same core phenomenon rather than a different construct.",
+    "papers_with_definition": 3,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats task learning as the model's ability to solve a task from in-context demonstrations by learning or inferring the input-label mapping those examples instantiate. Most definitions stay close to this framing, describing performance that is based solely on demonstrations or the ability to grasp new mappings not seen during pre-training, and contrasting it with simply copying a label or retrieving memorized patterns. A smaller terminological variant uses the name task inference and phrases the same general ability as deducing the abstract rule or underlying task from input-output examples in context.\n\nSpace of facets. Papers most often position task learning against task recognition: one line describes it as directly learning from demonstrations to deal with the task, while separately tracking task recognition. Another line uses task inference for closely related behavior, describing the model as inferring the task from context rather than merely copying a label, and explicitly relating that ability to meta-learning. The construct is also tied to in-context learning more broadly, where effective in-context learning is described as inferring the underlying task from examples and refining predictions based on that inferred task.\n\nSpace of measurement. No measurement instrument is linked to task learning. Papers instead operationalize it in task terms, such as solving the target task solely from demonstrations, inferring and applying new input-label mappings from context, or, in one study, treating gains above NON-BIJECTIVE shuffles as indicative of task learning rather than task recognition. It is linked to two behavioral indicators, Catastrophic forgetting and Self-reflection, but those links are recorded as related rather than as explicit measurements.\n\nLinks. Papers do not record any measured_by or causes link for task learning. One paper reports that task learning correlates with Task recognition, with the performance of the two changing in opposite directions. Other work relates In-context learning to task learning and relates Meta-learning to task learning, and single papers also relate Catastrophic forgetting and Self-reflection to task learning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Preemptive Detection and Correction of Misaligned Actions in LLM Agents",
+      "ICL CIPHERS: Quantifying ``Learning'' in In-Context Learning via Substitution Ciphers"
+    ],
+    "iclr24": [
+      "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+    ],
+    "iclr25": [
+      "Competition Dynamics Shape Algorithmic Phases of In-Context Learning",
+      "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning"
+    ],
+    "icml25": [
+      "Beyond Induction Heads: In-Context Meta Learning Induces Multi-Phase Circuit Emergence",
+      "Cradle: Empowering Foundation Agents towards General Computer Control"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 1,
+    "iclr25": 2,
+    "icml25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

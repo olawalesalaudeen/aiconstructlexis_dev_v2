@@ -1,0 +1,223 @@
+{
+  "canonical_name": "JailbreakBench",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most papers treat JailbreakBench as a standardized or open benchmark for evaluating a model's safety, robustness, or vulnerability under jailbreak attacks. The prevailing description is a dataset of harmful queries, instructions, or unsafe behavior prompts, often described as 100 selected prompts or instances, and one paper describes it as adversarial prompts collected from multiple sources, including GCG and PAIR attacks. A smaller line of work emphasizes the procedure around the dataset, describing an LLM-as-judge protocol, a classifier-based setup with a pretrained Llama-3-70B-Instruct model, or a leaderboard of submitted attacks, and one paper distinguishes template and direct forms.\n\nWhat it is claimed to measure. Across recorded relationships, papers use it to measure 4 constructs and 2 behavioral indicators. The construct links cover Harmlessness, Adversarial robustness, Safety, and Safety robustness, while the behavioral links include Jailbreaking and 1 other indicator, so the reported measurement claims are spread across several safety-oriented targets rather than a single named construct.\n\nSpace of uses. Papers commonly use it alongside HarmBench and AdvBench, and also alongside Malicious Instruct, StrongReject, and WildChat. Most papers position it as an evaluation benchmark for jailbreak or defense performance, often reporting attack success rate on sampled prompts or instances; some instead use its LLM-judge protocol, use JBB to collect prior jailbreak results for experience initialization, or refer to attacks submitted to its leaderboard.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "JailbreakBench",
+    "Jailbreakbench",
+    "JBB-Behavior",
+    "JBB-Behaviors",
+    "JBB"
+  ],
+  "papers": [
+    "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks",
+    "The TIP of the Iceberg: Revealing a Hidden Class of Task-in-Prompt Adversarial Attacks on LLMs",
+    "Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The Template Region",
+    "Agent-to-Agent Theory of Mind: Testing Interlocutor Awareness among Large Language Models",
+    "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization",
+    "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+    "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+    "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+    "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+    "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+    "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+    "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+    "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+    "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+    "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+    "On the Role of Attention Heads in Large Language Model Safety",
+    "Persistent Pre-training Poisoning of LLMs",
+    "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+    "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights",
+    "h4rm3l: A Language for Composable Jailbreak Attack Synthesis",
+    "Activation Space Interventions Can Be Transferred Between Large Language Models",
+    "Automated Red Teaming with GOAT: the Generative Offensive Agent Tester",
+    "Evolving Prompts In-Context: An Open-ended, Self-replicating Perspective",
+    "Learning Safety Constraints for Large Language Models",
+    "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+    "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence",
+    "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters",
+    "Keeping LLMs Aligned After Fine-tuning: The Crucial Role of Prompt Templates",
+    "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+    "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+    "Time-Reversal Provides Unsupervised Feedback to LLMs"
+  ],
+  "paper_count": 31,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A standardized benchmark designed to evaluate a large language model's safety and robustness against a variety of jailbreak attacks.",
+      "paper": "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+      "original_name": "JailbreakBench"
+    },
+    {
+      "text": "A harmful-query benchmark used to test jailbreak resistance and safety degradation after head ablation.",
+      "paper": "On the Role of Attention Heads in Large Language Model Safety",
+      "original_name": "Jailbreakbench"
+    },
+    {
+      "text": "JBB-Behavior, a safety benchmark used to assess harmful or unsafe behavior generation.",
+      "paper": "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+      "original_name": "JBB-Behavior"
+    },
+    {
+      "text": "Safety benchmark dataset containing harmful behaviors used to evaluate model responses to malicious queries.",
+      "paper": "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+      "original_name": "JBB-Behaviors"
+    },
+    {
+      "text": "Jailbreak Benchmark (JBB), a dataset used here to collect jailbreak results for experience initialization and evaluation of jailbreak attacks.",
+      "paper": "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+      "original_name": "JBB"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights",
+      "evidence": "For harmlessness evaluation, we generated responses from the aligned LLM on a mixed dataset of AdvBench (Zou et al., 2023) and JailbreakBench (Chao et al., 2024)...",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights"
+        ],
+        "emnlp25": [
+          "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreaking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+      "evidence": "We adopt Attack Success Rate (ASR) as an evaluation metric for successful jailbreaks following the default framework employed in HarmBench and JbBench. (Section 5.4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection"
+        ],
+        "icml25": [
+          "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+      "evidence": "We evaluated Jailbreak Antidote using JailbreakBench (Chao et al., 2024) for assessing safety, focusing on 100 harmful prompts. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "evidence": "To assess how robust our models are to adversarial prompt injection, we evaluate them on the JailBreakBench dataset. (Section 3.3.4. ADVERSARIAL ROBUSTNESS EVALUATION)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most papers treat JailbreakBench as a standardized or open benchmark for evaluating a model's safety, robustness, or vulnerability under jailbreak attacks. The prevailing description is a dataset of harmful queries, instructions, or unsafe behavior prompts, often described as 100 selected prompts or instances, and one paper describes it as adversarial prompts collected from multiple sources, including GCG and PAIR attacks. A smaller line of work emphasizes the procedure around the dataset, describing an LLM-as-judge protocol, a classifier-based setup with a pretrained Llama-3-70B-Instruct model, or a leaderboard of submitted attacks, and one paper distinguishes template and direct forms."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across recorded relationships, papers use it to measure 4 constructs and 2 behavioral indicators. The construct links cover Harmlessness, Adversarial robustness, Safety, and Safety robustness, while the behavioral links include Jailbreaking and 1 other indicator, so the reported measurement claims are spread across several safety-oriented targets rather than a single named construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers commonly use it alongside HarmBench and AdvBench, and also alongside Malicious Instruct, StrongReject, and WildChat. Most papers position it as an evaluation benchmark for jailbreak or defense performance, often reporting attack success rate on sampled prompts or instances; some instead use its LLM-judge protocol, use JBB to collect prior jailbreak results for experience initialization, or refer to attacks submitted to its leaderboard."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most papers treat JailbreakBench as a standardized or open benchmark for evaluating a model's safety, robustness, or vulnerability under jailbreak attacks. The prevailing description is a dataset of harmful queries, instructions, or unsafe behavior prompts, often described as 100 selected prompts or instances, and one paper describes it as adversarial prompts collected from multiple sources, including GCG and PAIR attacks. A smaller line of work emphasizes the procedure around the dataset, describing an LLM-as-judge protocol, a classifier-based setup with a pretrained Llama-3-70B-Instruct model, or a leaderboard of submitted attacks, and one paper distinguishes template and direct forms.\n\nWhat it is claimed to measure. Across recorded relationships, papers use it to measure 4 constructs and 2 behavioral indicators. The construct links cover Harmlessness, Adversarial robustness, Safety, and Safety robustness, while the behavioral links include Jailbreaking and 1 other indicator, so the reported measurement claims are spread across several safety-oriented targets rather than a single named construct.\n\nSpace of uses. Papers commonly use it alongside HarmBench and AdvBench, and also alongside Malicious Instruct, StrongReject, and WildChat. Most papers position it as an evaluation benchmark for jailbreak or defense performance, often reporting attack success rate on sampled prompts or instances; some instead use its LLM-judge protocol, use JBB to collect prior jailbreak results for experience initialization, or refer to attacks submitted to its leaderboard.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks",
+      "The TIP of the Iceberg: Revealing a Hidden Class of Task-in-Prompt Adversarial Attacks on LLMs",
+      "Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The Template Region"
+    ],
+    "iclr25": [
+      "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+      "Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?",
+      "Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models",
+      "On the Role of Attention Heads in Large Language Model Safety",
+      "Persistent Pre-training Poisoning of LLMs",
+      "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+      "TIS-DPO: Token-level Importance Sampling for Direct Preference Optimization With Estimated Weights",
+      "h4rm3l: A Language for Composable Jailbreak Attack Synthesis"
+    ],
+    "icml25": [
+      "Activation Space Interventions Can Be Transferred Between Large Language Models",
+      "Automated Red Teaming with GOAT: the Generative Offensive Agent Tester",
+      "Evolving Prompts In-Context: An Open-ended, Self-replicating Perspective",
+      "Learning Safety Constraints for Large Language Models",
+      "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence"
+    ],
+    "emnlp25": [
+      "Agent-to-Agent Theory of Mind: Testing Interlocutor Awareness among Large Language Models",
+      "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization",
+      "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+      "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+      "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+      "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+      "SABER: Uncovering Vulnerabilities in Safety Alignment via Cross-Layer Residual Connection",
+      "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+      "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience"
+    ],
+    "neurips24": [
+      "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters",
+      "Keeping LLMs Aligned After Fine-tuning: The Crucial Role of Prompt Templates",
+      "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+      "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+      "Time-Reversal Provides Unsupervised Feedback to LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 8,
+    "icml25": 6,
+    "emnlp25": 9,
+    "neurips24": 5
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

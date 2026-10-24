@@ -1,0 +1,1747 @@
+{
+  "canonical_name": "Multiple-choice question answering",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is closed-ended answer selection: the model chooses the correct option from a fixed set, usually discrete choices such as A/B/C/D, for a question or question-context pair. Most work treats success as producing a single correct option letter, index, or answer string, and some papers operationalize this with constrained decoding to valid options or by selecting the highest-likelihood option. A smaller line of work broadens the task to Yes/No/Not Sure Enough labels, a fifth abstention option, or selecting all correct answers rather than exactly one.\n\nVariants. Variants appear under several names, including multi-choice question answering, single-choice question answering, multiple-selection question answering, answer selection, and fixed-choice question answering. Papers study it in commonsense and science reasoning, academic exams, medical and clinical cases, financial and cultural questions, survey items, code and computational thinking, and multimodal settings over images, video, speech, or image-text STEM problems. Some formulations are passage- or story-based, some ask for the next suitable step or a spatial relation, and some pair the selected option with an explanation or supporting evidence.\n\nSpace of elicitation and scores. Papers link this behavior to 50 measurement instruments. The most common are MMLU, ARC-Challenge, CommonsenseQA, ARC, and HellaSwag, and the linked instruments are mostly benchmark datasets or benchmark suites, with a smaller amount of work using evaluation tooling or human evaluation. Scoring is usually reported as accuracy or exact match against the correct choice, often by taking the option with the highest likelihood, conditional log probability, or top-choice logit, though some papers instead require the model to emit the option letter or index directly.\n\nWhat it is taken as evidence of. Papers link it to 8 constructs, but they do not converge on a single construct that it reflects. The most recurring link is Commonsense reasoning: some papers treat commonsense reasoning as measured by multiple-choice question answering, while others describe the two as related. Positional bias is also related to it, Calibration is measured by multiple-choice questions, Emergent abilities are related to it, and one paper claims a causal relationship from In-context learning to multiple-choice question answering, reporting better performance with more in-context examples.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Multiple-choice question answering",
+    "Multi-choice question answering",
+    "Multiple-choice answering",
+    "Single-choice question answering",
+    "Multiple-selection question answering",
+    "Multiple Choice Question",
+    "Answer selection",
+    "Multiple-choice classification",
+    "Multiple-choice reasoning",
+    "Multiple-choice examination",
+    "Fixed-choice question answering"
+  ],
+  "papers": [
+    "Addressing Blind Guessing: Calibration of Selection Bias in Multiple-Choice Question Answering by Video Language Models",
+    "AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset",
+    "Agri-CM3: AChinese Massive Multi-modal, Multi-level Benchmark for Agricultural Understanding and Reasoning",
+    "AmbiK: Dataset of Ambiguous Tasks in Kitchen Environment",
+    "Beyond Text Compression: Evaluating Tokenizers Across Scales",
+    "CRiskEval: A Chinese Multi-Level Risk Evaluation Benchmark Dataset for Large Language Models",
+    "Can MLLMs Understand the Deep Implication Behind Chinese Images?",
+    "Can Multimodal Large Language Models Understand Spatial Relations?",
+    "ChatBench: From Static Benchmarks to Human-AI Evaluation",
+    "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+    "Conformity in Large Language Models",
+    "CulFiT: A Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis",
+    "CulturalBench: A Robust, Diverse and Challenging Benchmark for Measuring LMs' Cultural Knowledge Through Human-AI Red-Teaming",
+    "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+    "Deep Temporal Reasoning in Video Language Models: A Cross-Linguistic Evaluation of Action Duration and Completion through Perfect Times",
+    "Defining and Evaluating Visual Language Models' Basic Spatial Abilities: A Perspective from Psychometrics",
+    "Emergent Abilities of Large Language Models under Continued Pre-training for Language Adaptation",
+    "Exclusion of Thought: Mitigating Cognitive Load in Large Language Models for Enhanced Reasoning in Multiple-Choice Tasks",
+    "FCMR: Robust Evaluation of Financial Cross-Modal Multi-Hop Reasoning",
+    "Fairness through Difference Awareness: MeasuringDesiredGroup Discrimination inLLMs",
+    "FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation",
+    "Global MMLU: Understanding and Addressing Cultural and Linguistic Biases in Multilingual Evaluation",
+    "GuideBench: Benchmarking Domain-Oriented Guideline Following for LLM Agents",
+    "HAIC: Improving Human Action Understanding and Generation with Better Captions for Multi-modal Large Language Models",
+    "Have We Designed Generalizable Structural Knowledge Promptings? Systematic Evaluation and Rethinking",
+    "Inferring from Logits: Exploring Best Practices for Decoding-Free Generative Candidate Selection",
+    "Insight Over Sight: Exploring the Vision-Knowledge Conflicts in Multimodal LLMs",
+    "Instruction Tuning on Public Government and Cultural Data for Low-Resource Language: a Case Study in Kazakh",
+    "Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process",
+    "KazMMLU: Evaluating Language Models on Kazakh, Russian, and Regional Knowledge of Kazakhstan",
+    "L4Q: Parameter Efficient Quantization-Aware Fine-Tuning on Large Language Models",
+    "LESA: Learnable LLM Layer Scaling-Up",
+    "La Leaderboard: A Large Language Model Leaderboard for Spanish Varieties and Languages of Spain and Latin America",
+    "LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks",
+    "MMLU-CF: A Contamination-free Multi-task Language Understanding Benchmark",
+    "Mitigating Selection Bias with Node Pruning and Auxiliary Options",
+    "Modality-Aware Neuron Pruning for Unlearning in Multimodal Large Language Models",
+    "Multi-Attribute Steering of Language Models via Targeted Intervention",
+    "Pandora's Box or Aladdin's Lamp: A Comprehensive Analysis Revealing the Role of RAG Noise in Large Language Models",
+    "Pattern Recognition or Medical Knowledge? The Problem with Multiple-Choice Questions in Medicine",
+    "Polishing Every Facet of the GEM: Testing Linguistic Competence of LLMs and Humans in Korean",
+    "Positional Overload: Positional Debiasing and Context Window Extension for Large Language Models using Set Encoding",
+    "Pragmatics in the Era of Large Language Models: A Survey on Datasets, Evaluation, Opportunities and Challenges",
+    "PrivaCI-Bench: Evaluating Privacy with Contextual Integrity and Legal Compliance",
+    "PunchBench: Benchmarking MLLMs in Multimodal Punchline Comprehension",
+    "RoToR: Towards More Reliable Responses for Order-Invariant Inputs",
+    "Segment-Based Attention Masking for GPTs",
+    "TUMLU: A Unified and Native Language Understanding Benchmark for Turkic Languages",
+    "TUNA: Comprehensive Fine-grained Temporal Understanding Evaluation on Dense Dynamic Videos",
+    "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?",
+    "Training-free LLM Merging for Multi-task Learning",
+    "Unsolvable Problem Detection: Robust Understanding Evaluation for Large Multimodal Models",
+    "VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare",
+    "VMLU Benchmarks: A comprehensive benchmark toolkit for Vietnamese LLMs",
+    "SpeechIQ: Speech-Agentic Intelligence Quotient Across Cognitive Levels in Voice Understanding by Large Language Models",
+    "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation",
+    "3DS: Medical Domain Adaptation of LLMs via Decomposed Difficulty-based Data Selection",
+    "A Comprehensive Literary Chinese Reading Comprehension Dataset with an Evidence Curation Based Solution",
+    "AQuilt: Weaving Logic and Self-Inspection into Low-Cost, High-Relevance Data Synthesis for Specialist LLMs",
+    "AdaptThink: Reasoning Models Can Learn When to Think",
+    "Africa Health Check: Probing Cultural Bias in Medical LLMs",
+    "Analysing Chain of Thought Dynamics: Active Guidance or Unfaithful Post-hoc Rationalisation?",
+    "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models",
+    "AssoCiAm: A Benchmark for Evaluating Association Thinking while Circumventing Ambiguity",
+    "Audio-centric Video Understanding Benchmark without Text Shortcut",
+    "Benchmark Profiling: Mechanistic Diagnosis of LLM Benchmarks",
+    "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models",
+    "Bias Mitigation or Cultural Commonsense? Evaluating LLMs with a Japanese Dataset",
+    "Bitune: Leveraging Bidirectional Attention to Improve Decoder-Only LLMs",
+    "CARE: Multilingual Human Preference Learning for Cultural Awareness",
+    "COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier",
+    "Cache-of-Thought: Master-Apprentice Framework for Cost-Effective Vision Language Model Reasoning",
+    "Calibrating LLM Confidence by Probing Perturbed Representation Stability",
+    "Calibration Across Layers: Understanding Calibration Evolution in LLMs",
+    "Can Large Language Models Be Good Language Teachers?",
+    "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning",
+    "CodeMixBench: Evaluating Code-Mixing Capabilities of LLMs Across 18 Languages",
+    "Confidence-guided Refinement Reasoning for Zero-shot Question Answering",
+    "Do You Know About My Nation? Investigating Multilingual Language Models' Cultural Literacy Through Factual Knowledge",
+    "DyePack: Provably Flagging Test Set Contamination in LLMs Using Backdoors",
+    "ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge",
+    "EcoTune: Token-Efficient Multi-Fidelity Hyperparameter Optimization for Large Language Model Inference",
+    "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs",
+    "Enhanced Noun-Noun Compound Interpretation through Textual Enrichment",
+    "Expanding before Inferring: Enhancing Factuality in Large Language Models through Premature Layers Interpolation",
+    "Exploring Response Uncertainty in MLLMs: An Empirical Evaluation under Misleading Scenarios",
+    "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+    "FANS: Formal Answer Selection for LLM Natural Language Math Reasoning Using Lean4",
+    "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+    "HELENE: Hessian Layer-wise Clipping and Gradient Annealing for Accelerating Fine-tuning LLM with Zeroth-order Optimization",
+    "How to inject knowledge efficiently? Knowledge Infusion Scaling Law for Pre-training Large Language Models",
+    "Improving Instruct Models for Free: A Study on Partial Adaptation",
+    "Improving Task Diversity in Label Efficient Supervised Finetuning of LLMs",
+    "In Benchmarks We Trust ... Or Not?",
+    "InfiniBench: A Benchmark for Large Multi-Modal Models in Long-Form Movies and TV Shows",
+    "KRETA: A Benchmark for Korean Reading and Reasoning in Text-Rich VQA Attuned to Diverse Visual Contexts",
+    "Large Language Models Badly Generalize across Option Length, Problem Types, and Irrelevant Noun Replacements",
+    "Let's Play Across Cultures: A Large Multilingual, Multicultural Benchmark for Assessing Language Models' Understanding of Sports",
+    "LoCt-Instruct: An Automatic Pipeline for Constructing Datasets of Logical Continuous Instructions",
+    "LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization",
+    "LogiDynamics: Unraveling the Dynamics of Inductive, Abductive and Deductive Logical Inferences in LLM Reasoning",
+    "MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation",
+    "MUZO: Leveraging Multiple Queries and Momentum for Zeroth-Order Fine-Tuning of Large Language Models",
+    "MaZO: Masked Zeroth-Order Optimization for Multi-Task Fine-Tuning of Large Language Models",
+    "Mind the Gap: A Closer Look at Tokenization for Multiple-Choice Question Answering with LLMs",
+    "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+    "Multilingual Language Model Pretraining using Machine-translated Data",
+    "NOVA-63: Native Omni-lingual Versatile Assessments of 63 Disciplines",
+    "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+    "Persuasion Dynamics in LLMs: Investigating Robustness and Adaptability in Knowledge and Safety with DuET-PD",
+    "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs",
+    "Primus: A Pioneering Collection of Open-Source Datasets for Cybersecurity LLM Training",
+    "QuZO: Quantized Zeroth-Order Fine-Tuning for Large Language Models",
+    "QualBench: Benchmarking Chinese LLMs with Localized Professional Qualifications for Vertical Domain Evaluation",
+    "Quantized but Deceptive? A Multi-Dimensional Truthfulness Evaluation of Quantized LLMs",
+    "RAG-Instruct: Boosting LLMs with Diverse Retrieval-Augmented Instructions",
+    "RLAE: Reinforcement Learning-Assisted Ensemble for LLMs",
+    "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?",
+    "STEER-BENCH: A Benchmark for Evaluating the Steerability of Large Language Models",
+    "SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala",
+    "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models",
+    "TLUE: A Tibetan Language Understanding Evaluation Benchmark",
+    "Threading the Needle: Reweaving Chain-of-Thought Reasoning to Explain Human Label Variation",
+    "ToM: Leveraging Tree-oriented MapReduce for Long-Context Reasoning in Large Language Models",
+    "Token-Aware Editing of Internal Activations for Large Language Model Alignment",
+    "Toward Efficient Sparse Autoencoder-Guided Steering for Improved In-Context Learning in Large Language Models",
+    "Towards Optimal Evaluation Efficiency for Large Language Models",
+    "Train It and Forget It: Merge Lists are Unnecessary for BPE Inference in Language Models",
+    "Unilaw-R1: A Large Language Model for Legal Reasoning with Reinforcement Learning and Iterative Inference",
+    "Unlearning vs. Obfuscation: Are We Truly Removing Knowledge?",
+    "Unmasking Deceptive Visuals: Benchmarking Multimodal Large Language Models on Misleading Chart Question Answering",
+    "Video-RTS: Rethinking Reinforcement Learning and Test-Time Scaling for Efficient and Enhanced Video Reasoning",
+    "VisBias: Measuring Explicit and Implicit Social Biases in Vision Language Models",
+    "WangchanThaiInstruct: An instruction-following Dataset for Culture-Aware, Multitask, and Multi-domain Evaluation in Thai",
+    "zFLoRA: Zero-Latency Fused Low-Rank Adapters",
+    "Are Human-generated Demonstrations Necessary for In-context Learning?",
+    "AutoCast++: Enhancing World Event Prediction with Zero-shot Ranking-based Context Retrieval",
+    "Bayesian Low-rank Adaptation for Large Language Models",
+    "Compressing LLMs: The Truth is Rarely Pure and Never Simple",
+    "DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models",
+    "Enhancing Small Medical Learners with Privacy-preserving Contextual Prompting",
+    "Evaluating the Zero-shot Robustness of Instruction-tuned Language Models",
+    "Group Preference Optimization: Few-Shot Alignment of Large Language Models",
+    "Knowledge Fusion of Large Language Models",
+    "Measuring Vision-Language STEM Skills of Neural Models",
+    "Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting",
+    "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+    "Seeking Neural Nuggets: Knowledge Transfer in Large Language Models from a Parametric Perspective",
+    "The Consensus Game: Language Model Generation via Equilibrium Search",
+    "The Generative AI Paradox: \u201cWhat It Can Create, It May Not Understand\u201d",
+    "Towards Understanding Factual Knowledge of Large Language Models",
+    "IDEAL: Influence-Driven Selective Annotations Empower In-Context Learners in Large Language Models",
+    "Large Language Models Are Not Robust Multiple Choice Selectors",
+    "Large Language Models Cannot Self-Correct Reasoning Yet",
+    "Merge, Then Compress: Demystify Efficient SMoE with Hints from Its Routing Policy",
+    "Predicting Emergent Abilities with Infinite Resolution Evaluation",
+    "Retrieval is Accurate Generation",
+    "Scalable Language Model with Generalized Continual Learning",
+    "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "Sheared LLaMA: Accelerating Language Model Pre-training via Structured Pruning",
+    "Tool-Augmented Reward Modeling",
+    "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+    "Streamlining Redundant Layers to Compress Large Language Models",
+    "Addax: Utilizing Zeroth-Order Gradients to Improve Memory Efficiency and Performance of SGD for Fine-Tuning Language Models",
+    "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+    "MeteoRA: Multiple-tasks Embedded LoRA for Large Language Models",
+    "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+    "Calibrated Language Models and How to Find Them with Label Smoothing",
+    "CodeSync: Synchronizing Large Language Models with Dynamic Code Evolution at Scale",
+    "Communicating Activations Between Language Model Agents",
+    "Core Knowledge Deficits in Multi-Modal Language Models",
+    "Correlated Errors in Large Language Models",
+    "DataDecide: How to Predict Best Pretraining Data with Small Experiments",
+    "Evaluating LLMs Across Multi-Cognitive Levels: From Medical Knowledge Mastery to Scenario-Based Problem Solving",
+    "Evolving Prompts In-Context: An Open-ended, Self-replicating Perspective",
+    "FactTest: Factuality Testing in Large Language Models with Finite-Sample and Distribution-Free Guarantees",
+    "Focus On This, Not That! Steering LLMs with Adaptive Feature Specification",
+    "From Crowdsourced Data to High-quality Benchmarks: Arena-Hard and Benchbuilder Pipeline",
+    "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+    "Generalized Interpolating Discrete Diffusion",
+    "Great Models Think Alike and this Undermines AI Oversight",
+    "Hyperband-based Bayesian Optimization for Black-box Prompt Selection",
+    "Impossible Videos",
+    "Is Your Model Fairly Certain? Uncertainty-Aware Fairness Evaluation for LLMs",
+    "Joint Localization and Activation Editing for Low-Resource Fine-Tuning",
+    "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+    "Learning Safety Constraints for Large Language Models",
+    "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+    "MAPLE: Many-Shot Adaptive Pseudo-Labeling for In-Context Learning",
+    "MIB: A Mechanistic Interpretability Benchmark",
+    "MM-RLHF: The Next Step Forward in Multimodal LLM Alignment",
+    "Mechanistic Unlearning: Robust Knowledge Unlearning and Editing via Mechanistic Localization",
+    "On Zero-Initialized Attention: Optimal Prompt and Gating Factor Estimation",
+    "Organize the Web: Constructing Domains Enhances Pre-Training Data Curation",
+    "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction",
+    "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+    "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding",
+    "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+    "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+    "Text-to-LoRA: Instant Transformer Adaption",
+    "The Best of Both Worlds: Bridging Quality and Diversity in Data Selection with Bipartite Graph",
+    "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+    "The Emperor\u2019s New Clothes in Benchmarking? A Rigorous Examination of Mitigation Strategies for LLM Benchmark Data Contamination",
+    "The Jailbreak Tax: How Useful are Your Jailbreak Outputs?",
+    "To Steer or Not to Steer? Mechanistic Error Reduction with Abstention for Language Models",
+    "Towards Global-level Mechanistic Interpretability: A Perspective of Modular Circuits of Large Language Models",
+    "TruthFlow: Truthful LLM Generation via Representation Flow Correction",
+    "Unbiased Evaluation of Large Language Models from a Causal Perspective",
+    "Understanding the Skill Gap in Recurrent Language Models: The Role of the Gather-and-Aggregate Mechanism",
+    "Why Has Predicting Downstream Capabilities of Frontier AI Models with Scale Remained Elusive?",
+    "Be Confident: Uncovering Overfitting in MLLM Multi-Task Tuning",
+    "RZ-NAS: Enhancing LLM-guided Neural Architecture Search via Reflective Zero-Cost Strategy",
+    "Are We Done with MMLU?",
+    "Benchmarking Large Language Models on Answering and Explaining Challenging Medical Questions",
+    "CBT-Bench: Evaluating Large Language Models on Assisting Cognitive Behavior Therapy",
+    "CFinBench: A Comprehensive Chinese Financial Benchmark for Large Language Models",
+    "CogLM: Tracking Cognitive Development of Large Language Models",
+    "CultureInstruct: Curating Multi-Cultural Instructions at Scale",
+    "Few-shot Personalization of LLMs with Mis-aligned Responses",
+    "FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models",
+    "HARP: Hesitation-Aware Reframing in Transformer Inference Pass",
+    "How Can We Diagnose and Treat Bias in Large Language Models for Clinical Decision-Making?",
+    "ITALIC: An Italian Culture-Aware Natural Language Benchmark",
+    "Improving Model Evaluation using SMART Filtering of Benchmark Datasets",
+    "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+    "KMMLU: Measuring Massive Multitask Language Understanding in Korean",
+    "LCIRC: A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs",
+    "LLMs Are Biased Towards Output Formats! Systematically Evaluating and Mitigating Output Format Bias of LLMs",
+    "LLMs Are Not Intelligent Thinkers: Introducing Mathematical Topic Tree Benchmark for Comprehensive Evaluation of LLMs",
+    "MILU: A Multi-task Indic Language Understanding Benchmark",
+    "MMEvalPro: Calibrating Multimodal Benchmarks Towards Trustworthy and Efficient Evaluation",
+    "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+    "Option Symbol Matters: Investigating and Mitigating Multiple-Choice Option Symbol Bias of Large Language Models",
+    "PerCul: A Story-Driven Cultural Evaluation of LLMs in Persian",
+    "Probe-Free Low-Rank Activation Intervention",
+    "Pula: Training Large Language Models for Setswana",
+    "Self-Training Meets Consistency: Improving LLMs' Reasoning with Consistency-Driven Rationale Evaluation",
+    "SimRAG: Self-Improving Retrieval-Augmented Generation for Adapting Large Language Models to Specialized Domains",
+    "Soft Prompting for Unlearning in Large Language Models",
+    "Specializing Large Language Models to Simulate Survey Response Distributions for Global Populations",
+    "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism",
+    "TinyThinker: Distilling Reasoning through Coarse-to-Fine Knowledge Internalization with Self-Reflection",
+    "Towards Quantifying Commonsense Reasoning with Mechanistic Insights",
+    "WorldCuisines: A Massive-Scale Benchmark for Multilingual and Multicultural Visual Question Answering on Global Cuisines",
+    "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models",
+    "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners",
+    "ParaICL: Towards Parallel In-Context Learning",
+    "S2-MAD: Breaking the Token Barrier to Enhance Multi-Agent Debate Efficiency",
+    "Unfamiliar Finetuning Examples Control How Language Models Hallucinate",
+    "$\\textit{Trans-LoRA}$: towards data-free Transferable Parameter Efficient Finetuning",
+    "A Hitchhiker's Guide to Fine-Grained Face Forgery Detection Using Common Sense Reasoning",
+    "A StrongREJECT for Empty Jailbreaks",
+    "AGILE: A Novel Reinforcement Learning Framework of LLM Agents",
+    "Accuracy is Not All You Need",
+    "Alignment for Honesty",
+    "AutoMix: Automatically Mixing Language Models",
+    "Benchmarking Generative Models on Computational Thinking Tests in Elementary Visual Programming",
+    "Benchmarking LLMs via Uncertainty Quantification",
+    "CTIBench: A Benchmark for Evaluating LLMs in Cyber Threat Intelligence",
+    "CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark",
+    "CausalChaos! Dataset for Comprehensive Causal Action Question Answering Over Longer Causal Chains Grounded in Dynamic Visual Scenes",
+    "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+    "EHRNoteQA: An LLM Benchmark for Real-World Clinical Practice Using Discharge Summaries",
+    "ERBench: An Entity-Relationship based Automatically Verifiable Hallucination Benchmark for Large Language Models",
+    "Embedding Trajectory for Out-of-Distribution Detection in Mathematical Reasoning",
+    "Empowering and Assessing the Utility of Large Language Models in Crop Science",
+    "Ensemble Learning for Heterogeneous Large Language Models with Deep Parallel Collaboration",
+    "Evaluating Large Vision-and-Language Models on Children's Mathematical Olympiads",
+    "From Instance Training to Instruction Learning: Task Adapters Generation from Instructions",
+    "GMAI-MMBench: A Comprehensive Multimodal Evaluation Benchmark Towards General Medical AI",
+    "I Don't Know: Explicit Modeling of Uncertainty with an [IDK] Token",
+    "II-Bench: An Image Implication Understanding Benchmark for Multimodal Large Language Models",
+    "IQA-EVAL: Automatic Evaluation of Human-Model Interactive Question Answering",
+    "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+    "Iterative Reasoning Preference Optimization",
+    "LLM Circuit Analyses Are Consistent Across Training and Scale",
+    "Large Language Models' Expert-level Global History Knowledge Benchmark (HiST-LLM)",
+    "Learning to Understand: Identifying Interactions via the M\u00f6bius Transform",
+    "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding",
+    "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+    "Meaningful Learning: Enhancing Abstract Reasoning in Large Language Models via Generic Fact Guidance",
+    "Measuring Multimodal Mathematical Reasoning with MATH-Vision Dataset",
+    "Mitigating Object Hallucination via Concentric Causal Attention",
+    "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+    "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+    "Order-Independence Without Fine Tuning",
+    "Personalized Steering of Large Language Models: Versatile Steering Vectors Through Bi-directional Preference Optimization",
+    "PertEval: Unveiling Real Knowledge Capacity of LLMs with Knowledge-Invariant Perturbations",
+    "ReFT: Representation Finetuning for Language Models",
+    "ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos",
+    "Reasons and Solutions for the Decline in Model Performance after Editing",
+    "Reference Trustable Decoding: A Training-Free Augmentation Paradigm for Large Language Models",
+    "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+    "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+    "SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models",
+    "SciFIBench: Benchmarking Large Multimodal Models for Scientific Figure Interpretation",
+    "Self-playing Adversarial Language Game Enhances LLM Reasoning",
+    "Should We Really Edit Language Models? On the Evaluation of Edited Language Models",
+    "Spectral Editing of Activations for Large Language Model Alignment",
+    "Stress-Testing Capability Elicitation With Password-Locked Models",
+    "Synthesize, Partition, then Adapt: Eliciting Diverse Samples from Foundation Models",
+    "TSDS: Data Selection for Task-Specific Model Finetuning",
+    "Unveiling the Tapestry of Consistency in Large Vision-Language Models",
+    "Visual Riddles: a Commonsense and World Knowledge Challenge for Large Vision and Language Models",
+    "Weak-eval-Strong: Evaluating and Eliciting Lateral Thinking of LLMs with Situation Puzzles",
+    "When LLMs Meet Cunning Texts: A Fallacy Understanding Benchmark for Large Language Models"
+  ],
+  "paper_count": 306,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of selecting the correct answer from a set of discrete options (e.g., A/B/C/D) in response to a given question.",
+      "paper": "Are Human-generated Demonstrations Necessary for In-context Learning?",
+      "original_name": "Multiple-choice question answering"
+    },
+    {
+      "text": "The task of selecting the single correct option from a set of four choices in response to a question about a given grid, code, or programming concept.",
+      "paper": "Benchmarking Generative Models on Computational Thinking Tests in Elementary Visual Programming",
+      "original_name": "Multi-choice question answering"
+    },
+    {
+      "text": "Selecting the correct option from a set of choices based on provided context and question.",
+      "paper": "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+      "original_name": "Multiple-choice answering"
+    },
+    {
+      "text": "The observable task of selecting the single correct option from a list of choices in response to a question, often within a structured format.",
+      "paper": "Can Large Language Models Be Good Language Teachers?",
+      "original_name": "Single-choice question answering"
+    },
+    {
+      "text": "Selecting all correct responses from a set of options for each sub-question in a multi-step instruction chain, where distractors increase complexity and test robustness.",
+      "paper": "LoCt-Instruct: An Automatic Pipeline for Constructing Datasets of Logical Continuous Instructions",
+      "original_name": "Multiple-selection question answering"
+    },
+    {
+      "text": "A benchmark task in which the model selects the correct API invocation from four candidate invocations with one correct option and three distractors.",
+      "paper": "CodeSync: Synchronizing Large Language Models with Dynamic Code Evolution at Scale",
+      "original_name": "Multiple Choice Question"
+    },
+    {
+      "text": "The task of choosing the single correct explanation from a set of four provided candidate options in response to a given cunning text.",
+      "paper": "When LLMs Meet Cunning Texts: A Fallacy Understanding Benchmark for Large Language Models",
+      "original_name": "Answer selection"
+    },
+    {
+      "text": "The observable task of selecting the correct token or option from a set of candidates (e.g., A/B/C/D) given an input sequence.",
+      "paper": "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "original_name": "Multiple-choice classification"
+    },
+    {
+      "text": "The task of selecting the correct answer from a set of options for questions that require reasoning, often in a scientific or academic context.",
+      "paper": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "original_name": "Multiple-choice reasoning"
+    },
+    {
+      "text": "Selecting the correct answer from a set of options in a structured exam format across diverse domains.",
+      "paper": "Scalable Language Model with Generalized Continual Learning",
+      "original_name": "Multiple-choice examination"
+    },
+    {
+      "text": "Selecting the correct answer from a given set of options in response to a question about a visual input.",
+      "paper": "Be Confident: Uncovering Overfitting in MLLM Multi-Task Tuning",
+      "original_name": "Fixed-choice question answering"
+    }
+  ],
+  "definition_count": 11,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Consensus Game: Language Model Generation via Equilibrium Search",
+      "evidence": "In the multiple-choice based datasets (ARC, RACE, HHH, MMLU), we consider the following approaches: (Section 3)",
+      "paper_count": 34,
+      "paper_weight": 34.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "The Consensus Game: Language Model Generation via Equilibrium Search",
+          "Evaluating the Zero-shot Robustness of Instruction-tuned Language Models",
+          "Large Language Models Are Not Robust Multiple Choice Selectors"
+        ],
+        "neurips24": [
+          "Stress-Testing Capability Elicitation With Password-Locked Models",
+          "$\\textit{Trans-LoRA}$: towards data-free Transferable Parameter Efficient Finetuning",
+          "Embedding Trajectory for Out-of-Distribution Detection in Mathematical Reasoning",
+          "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+          "Should We Really Edit Language Models? On the Evaluation of Edited Language Models",
+          "Ensemble Learning for Heterogeneous Large Language Models with Deep Parallel Collaboration",
+          "TSDS: Data Selection for Task-Specific Model Finetuning",
+          "Order-Independence Without Fine Tuning",
+          "Alignment for Honesty"
+        ],
+        "iclr25": [
+          "On Bits and Bandits: Quantifying the Regret-Information Trade-off",
+          "Task-Adaptive Pretrained Language Models via Clustered-Importance Sampling",
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+          "Teaching LLMs How to Learn with Contextual Fine-Tuning",
+          "Limits to scalable evaluation at the frontier: LLM as judge won\u2019t beat twice the data",
+          "BenTo: Benchmark Reduction with In-Context Transferability"
+        ],
+        "naacl25": [
+          "LLMs Are Biased Towards Output Formats! Systematically Evaluating and Mitigating Output Format Bias of LLMs",
+          "Option Symbol Matters: Investigating and Mitigating Multiple-Choice Option Symbol Bias of Large Language Models",
+          "Unfamiliar Finetuning Examples Control How Language Models Hallucinate",
+          "Improving Model Evaluation using SMART Filtering of Benchmark Datasets",
+          "Pula: Training Large Language Models for Setswana"
+        ],
+        "acl25": [
+          "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+          "RoToR: Towards More Reliable Responses for Order-Invariant Inputs"
+        ],
+        "icml25": [
+          "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction",
+          "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+          "On Zero-Initialized Attention: Optimal Prompt and Gating Factor Estimation",
+          "Learning Safety Constraints for Large Language Models",
+          "Unbiased Evaluation of Large Language Models from a Causal Perspective",
+          "The Elicitation Game: Evaluating Capability Elicitation Techniques"
+        ],
+        "emnlp25": [
+          "AdaptThink: Reasoning Models Can Learn When to Think",
+          "Towards Optimal Evaluation Efficiency for Large Language Models",
+          "Large Language Models Badly Generalize across Option Length, Problem Types, and Irrelevant Noun Replacements"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Challenge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models Are Not Robust Multiple Choice Selectors",
+      "evidence": "We conduct experiments on MMLU (Hendrycks et al., 2020), ARC-Challenge (Clark et al., 2018), and CommonsenseQA (CSQA) (Talmor et al., 2019), which are all MCQ benchmarks widely used for LLM evaluation.",
+      "paper_count": 8,
+      "paper_weight": 8.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Large Language Models Are Not Robust Multiple Choice Selectors"
+        ],
+        "iclr25": [
+          "Value-Incentivized Preference Optimization: A Unified Approach to Online and Offline RLHF",
+          "Calibrating LLMs with Information-Theoretic Evidential Deep Learning"
+        ],
+        "acl25": [
+          "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+          "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?"
+        ],
+        "icml25": [
+          "Unbiased Evaluation of Large Language Models from a Causal Perspective"
+        ],
+        "emnlp25": [
+          "Toward Efficient Sparse Autoencoder-Guided Steering for Improved In-Context Learning in Large Language Models",
+          "Large Language Models Badly Generalize across Option Length, Problem Types, and Irrelevant Noun Replacements"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CommonsenseQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models Are Not Robust Multiple Choice Selectors",
+      "evidence": "We conduct experiments on MMLU (Hendrycks et al., 2020), ARC-Challenge (Clark et al., 2018), and CommonsenseQA (CSQA) (Talmor et al., 2019), which are all MCQ benchmarks widely used for LLM evaluation.",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Large Language Models Are Not Robust Multiple Choice Selectors"
+        ],
+        "neurips24": [
+          "Should We Really Edit Language Models? On the Evaluation of Edited Language Models",
+          "Order-Independence Without Fine Tuning"
+        ],
+        "iclr25": [
+          "Taming Overconfidence in LLMs: Reward Calibration in RLHF",
+          "Calibrating LLMs with Information-Theoretic Evidential Deep Learning"
+        ],
+        "naacl25": [
+          "Improving Model Evaluation using SMART Filtering of Benchmark Datasets",
+          "HARP: Hesitation-Aware Reframing in Transformer Inference Pass"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Task-Adaptive Pretrained Language Models via Clustered-Importance Sampling",
+      "evidence": "For MCQ answering, we use AI2 Reasoning Challenge (Clark et al., 2018, ARC), Massive Multitask Language Understanding (Hendrycks et al., 2021, MMLU), and Reward Bench Reasoning (Lambert et al., 2024, RWDB-R). (Section 4)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Task-Adaptive Pretrained Language Models via Clustered-Importance Sampling",
+          "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study"
+        ],
+        "naacl25": [
+          "Improving Model Evaluation using SMART Filtering of Benchmark Datasets"
+        ],
+        "icml25": [
+          "On Zero-Initialized Attention: Optimal Prompt and Gating Factor Estimation",
+          "Hyperband-based Bayesian Optimization for Black-box Prompt Selection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions",
+      "evidence": "We experiment on two challenging real-world multiple-choice datasets from LLM benchmarks: HellaSwag (Zellers et al., 2019) and MMLU (Hendrycks et al., 2021). (Section 3.2).",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions",
+          "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study"
+        ],
+        "icml25": [
+          "On Zero-Initialized Attention: Optimal Prompt and Gating Factor Estimation"
+        ],
+        "emnlp25": [
+          "Towards Optimal Evaluation Efficiency for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU-Pro",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+      "evidence": "\u201cThe MMLU-Pro dataset, while enhancing the complexity of MMLU by incorporating more challenging, reasoning-focused questions, remains constrained by the limitations of the multiple-choice format.\u201d",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark"
+        ],
+        "naacl25": [
+          "HARP: Hesitation-Aware Reframing in Transformer Inference Pass"
+        ],
+        "icml25": [
+          "Great Models Think Alike and this Undermines AI Oversight"
+        ],
+        "emnlp25": [
+          "DyePack: Provably Flagging Test Set Contamination in LLMs Using Backdoors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TruthfulQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models",
+      "evidence": "For multiple-choice question tasks, we use the TruthfulQA [29] and FACTOR (Wiki) [33] datasets to assess the LLMs\u2019 factuality (Section 3.1)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models",
+          "Spectral Editing of Activations for Large Language Model Alignment"
+        ],
+        "icml25": [
+          "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction",
+          "On Zero-Initialized Attention: Optimal Prompt and Gating Factor Estimation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OpenBookQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "evidence": "\u201cThe multiple-choice tasks include: ... open book question answering (OpenBookQA; Mihaylov et al. 2018)\u201d",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+          "Calibrating LLMs with Information-Theoretic Evidential Deep Learning"
+        ],
+        "acl25": [
+          "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Easy",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLM Circuit Analyses Are Consistent Across Training and Scale",
+      "evidence": "\"We also re-examined data collected during the Pythia training runs [5] on the SciQ [73], PIQA [8], WinoGrande [60], and ARC Easy [18] datasets. Each of these consist of a wide range of questions with multiple-choice answers\"",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LLM Circuit Analyses Are Consistent Across Training and Scale"
+        ],
+        "iclr25": [
+          "PolyPythias: Stability and Outliers across Fifty Language Model Pre-Training Runs",
+          "Calibrating LLMs with Information-Theoretic Evidential Deep Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-Bench Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Should We Really Edit Language Models? On the Evaluation of Edited Language Models",
+      "evidence": "World Knowledge: MMLU [28] (5-shot), BBH [29] (3-shot), with the assessment based on the accuracy of multiple-choice answers. (Section 3.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Should We Really Edit Language Models? On the Evaluation of Edited Language Models"
+        ],
+        "naacl25": [
+          "LLMs Are Biased Towards Output Formats! Systematically Evaluating and Mitigating Output Format Bias of LLMs"
+        ],
+        "emnlp25": [
+          "DyePack: Provably Flagging Test Set Contamination in LLMs Using Backdoors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SciQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLM Circuit Analyses Are Consistent Across Training and Scale",
+      "evidence": "The Science Questions (SciQ) dataset [73] consists of 13,679 crowdsourced multiple choice science exam questions ranging across physics, chemistry, biology, earth science, astronomy, and computer science. (Appendix E)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LLM Circuit Analyses Are Consistent Across Training and Scale"
+        ],
+        "iclr25": [
+          "PolyPythias: Stability and Outliers across Fifty Language Model Pre-Training Runs",
+          "Calibrating LLMs with Information-Theoretic Evidential Deep Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "InfiniteBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+      "evidence": "We evaluate all models on three tasks in this benchmark: summarization (En.Sum), long-book question answering (En.QA), and multi-choice question-answering (En.MC).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+          "Why Does the Effective Context Length of LLMs Fall Short?"
+        ],
+        "icml25": [
+          "LongRoPE2: Near-Lossless LLM Context Window Scaling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WinoGrande",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLM Circuit Analyses Are Consistent Across Training and Scale",
+      "evidence": "\"We also re-examined data collected during the Pythia training runs [5] on the SciQ [73], PIQA [8], WinoGrande [60], and ARC Easy [18] datasets. Each of these consist of a wide range of questions with multiple-choice answers\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LLM Circuit Analyses Are Consistent Across Training and Scale"
+        ],
+        "iclr25": [
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "lm-evaluation-harness",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "evidence": "We evaluate the pretrained models on language model tasks and multiple-choice tasks from LM evaluation Harness (Gao et al., 2023). (Section 5.3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study"
+        ],
+        "naacl25": [
+          "MILU: A Multi-task Indic Language Understanding Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MedQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Teaching LLMs How to Learn with Contextual Fine-Tuning",
+      "evidence": "We also use MedQA, a collection of multiple-choice questions from the professional medical board exams (Jin et al., 2020).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Teaching LLMs How to Learn with Contextual Fine-Tuning",
+          "Knowledge Graph Finetuning Enhances Knowledge Manipulation in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Commonsense reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Bayesian Low-rank Adaptation for Large Language Models",
+      "evidence": "we used the PEFT library (Mangrulkar et al., 2022) for fine-tuning LlaMA2-7B on common-sense reasoning tasks (multiple choice or True/False classification). (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Bayesian Low-rank Adaptation for Large Language Models"
+        ],
+        "emnlp25": [
+          "zFLoRA: Zero-Latency Fused Low-Rank Adapters"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Order-Independence Without Fine Tuning",
+      "evidence": "Pezeshkpour et al., 2023 identify inherent \u2018positional bias\u2019 in the MCQ setting, where LLMs prefer to select options in specific positions as answers (Section 2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Order-Independence Without Fine Tuning"
+        ],
+        "acl25": [
+          "Positional Overload: Positional Debiasing and Context Window Extension for Large Language Models using Set Encoding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "QuALITY",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "evidence": "Closed-ended tasks primarily focus on the capacity for understanding and reasoning within long contexts, including tasks like multiple-choice questions from QuALITY [5]... (Section 4.2).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+        ],
+        "emnlp25": [
+          "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLM Circuit Analyses Are Consistent Across Training and Scale",
+      "evidence": "The Physical Interaction Question Answering (PIQA) dataset [8] contains a total of 21k (across different subsets) multiple choice questions probing reasoning about basic physical commonsense knowledge. (Appendix E)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LLM Circuit Analyses Are Consistent Across Training and Scale"
+        ],
+        "iclr25": [
+          "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BoolQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+      "evidence": "For the multiple-choice tasks, we use datasets: COPA (Gordon et al., 2012), StoryCloze (Mostafazadeh et al., 2016), NLI (Bowman et al., 2015), MMLU (Hendrycks et al., 2021), SST2 (Socher et al., 2013), SST5 (Socher et al., 2013), BoolQ (Clark et al., 2019), and Winogrande (Sakaguchi et al., 2020)... (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors"
+        ],
+        "acl25": [
+          "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MedMCQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Knowledge Graph Finetuning Enhances Knowledge Manipulation in Large Language Models",
+      "evidence": "Experiment results on the multiple-choice questions benchmarks in six languages range from different data ratios... MedMCQA",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Knowledge Graph Finetuning Enhances Knowledge Manipulation in Large Language Models"
+        ],
+        "acl25": [
+          "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GPQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+      "evidence": "To assess the impact of DRAG on retrieval-augmented multiple-choice question answering (MCQA), we conduct extensive experiments across four benchmark datasets: ARC-C, MedMCQA, GPQA, and MMLU",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation"
+        ],
+        "icml25": [
+          "MAPLE: Many-Shot Adaptive Pseudo-Labeling for In-Context Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WMDP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+      "evidence": "We use the multiple-choice question-answering Weapons of Mass Destruction Proxy (WMDP) and Massive Multitask Language Understanding (MMLU) benchmarks. (Section 3.1. Benchmarks).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+          "The Jailbreak Tax: How Useful are Your Jailbreak Outputs?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Belebele",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Adapters for Altering LLM Vocabularies: What Languages Benefit the Most?",
+      "evidence": "For multiple choice QA, we use Belebele (Bandarkar et al., 2024) and Multilingual MMLU (Hendrycks et al., 2021; Lai et al., 2023, MMMLU) with five shot prompting. (Section 5.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Adapters for Altering LLM Vocabularies: What Languages Benefit the Most?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "EHRNoteQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "EHRNoteQA: An LLM Benchmark for Real-World Clinical Practice Using Discharge Summaries",
+      "evidence": "We offer EHRNoteQA in two formats: open-ended and multi-choice question answering, and propose a reliable evaluation method for each. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "EHRNoteQA: An LLM Benchmark for Real-World Clinical Practice Using Discharge Summaries"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SEED-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mitigating Object Hallucination via Concentric Causal Attention",
+      "evidence": "\u201cSEED-Bench [36] consists of 19k multiple choice questions with human annotations\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mitigating Object Hallucination via Concentric Causal Attention"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mitigating Object Hallucination via Concentric Causal Attention",
+      "evidence": "\u201cwe further evaluate our trained model over six benchmarks that examines LVLMs general perception capability, including SEED-Bench [36], ScienceQA [49], GQA [28], Vizwiz [22], MMBench [48] and MMStar [8] which evaluates LVLMs perception capability with multiple choice questions.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mitigating Object Hallucination via Concentric Causal Attention"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Explanation generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "When LLMs Meet Cunning Texts: A Fallacy Understanding Benchmark for Large Language Models",
+      "evidence": "models that exhibit superior performance in the Answer Selection task tend to generate more plausible explanations. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "When LLMs Meet Cunning Texts: A Fallacy Understanding Benchmark for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Reference Trustable Decoding: A Training-Free Augmentation Paradigm for Large Language Models",
+      "evidence": "The multiple-choice benchmarks we chose is challenging enough in itself and requires strong reasoning ability from the model; (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Reference Trustable Decoding: A Training-Free Augmentation Paradigm for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CVQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark",
+      "evidence": "\u201cEach question was accompanied by one correct answer and three distractors that were reasonably plausible, yet incorrect, thus forming a multiple-choice format.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "COPA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+      "evidence": "For the multiple-choice tasks, we use datasets: COPA (Gordon et al., 2012), StoryCloze (Mostafazadeh et al., 2016), NLI (Bowman et al., 2015), MMLU (Hendrycks et al., 2021), SST2 (Socher et al., 2013), SST5 (Socher et al., 2013), BoolQ (Clark et al., 2019), and Winogrande (Sakaguchi et al., 2020)... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "StoryCloze",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+      "evidence": "For the multiple-choice tasks, we use datasets: COPA (Gordon et al., 2012), StoryCloze (Mostafazadeh et al., 2016), NLI (Bowman et al., 2015), MMLU (Hendrycks et al., 2021), SST2 (Socher et al., 2013), SST5 (Socher et al., 2013), BoolQ (Clark et al., 2019), and Winogrande (Sakaguchi et al., 2020)... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SST-2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+      "evidence": "For the multiple-choice tasks, we use datasets: COPA (Gordon et al., 2012), StoryCloze (Mostafazadeh et al., 2016), NLI (Bowman et al., 2015), MMLU (Hendrycks et al., 2021), SST2 (Socher et al., 2013), SST5 (Socher et al., 2013), BoolQ (Clark et al., 2019), and Winogrande (Sakaguchi et al., 2020)... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SST-5",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+      "evidence": "For the multiple-choice tasks, we use datasets: COPA (Gordon et al., 2012), StoryCloze (Mostafazadeh et al., 2016), NLI (Bowman et al., 2015), MMLU (Hendrycks et al., 2021), SST2 (Socher et al., 2013), SST5 (Socher et al., 2013), BoolQ (Clark et al., 2019), and Winogrande (Sakaguchi et al., 2020)... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "INCLUDE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "INCLUDE: Evaluating Multilingual Language Understanding with Regional Knowledge",
+      "evidence": "INCLUDE is a dataset of 197,243 MCQA pairs from 1,926 examinations across 44 languages and 15 scripts.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "INCLUDE: Evaluating Multilingual Language Understanding with Regional Knowledge"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Adapters for Altering LLM Vocabularies: What Languages Benefit the Most?",
+      "evidence": "For multiple choice QA, we use Belebele (Bandarkar et al., 2024) and Multilingual MMLU (Hendrycks et al., 2021; Lai et al., 2023, MMMLU) with five shot prompting. (Section 5.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Adapters for Altering LLM Vocabularies: What Languages Benefit the Most?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Emergent abilities",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "U-shaped and Inverted-U Scaling behind Emergent Abilities of Large Language Models",
+      "evidence": "Schaeffer et al. (2024a) finds that emergent abilities mainly happen on string-match and multiple-choice tasks (Schaeffer et al., 2024a), for which traditional performance measures exhibit strong discontinuity. (Sec. 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "U-shaped and Inverted-U Scaling behind Emergent Abilities of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MME-RealWorld",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?",
+      "evidence": "For each question, we manually construct four options, with one being the correct answer... We try to use the model's default prompt for multiple-choice questions...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RACE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "evidence": "\u201cThe multiple-choice tasks include: ... reading comprehension (RACE; Lai et al. 2017)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "JAMA Clinical Challenge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Benchmarking Large Language Models on Answering and Explaining Challenging Medical Questions",
+      "evidence": "Both datasets are structured as multiple-choice question-answering tasks, accompanied by expert-written explanations. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Benchmarking Large Language Models on Answering and Explaining Challenging Medical Questions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Medbullets",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Benchmarking Large Language Models on Answering and Explaining Challenging Medical Questions",
+      "evidence": "Both datasets are structured as multiple-choice question-answering tasks, accompanied by expert-written explanations. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Benchmarking Large Language Models on Answering and Explaining Challenging Medical Questions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LogiQA 2.0",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation",
+      "evidence": "LogiQA2 (Liu et al., 2023) for logical reasoning multi-choice QA;",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Action selection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction",
+      "evidence": "Large language models (LLMs) (Touvron et al., 2023; Databricks, 2024; Abdin et al., 2024) have demonstrated remarkable capabilities in various decision-making tasks, including multi-choice question answering and tool usage (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OLMES",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DataDecide: How to Predict Best Pretraining Data with Small Experiments",
+      "evidence": "We use the OLMES suite of 10 multiple choice question answering benchmarks (Gu et al., 2024)... (Section 2.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "DataDecide: How to Predict Best Pretraining Data with Small Experiments"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Open LLM Leaderboard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Correlated Errors in Large Language Models",
+      "evidence": "We started from two LLM leaderboards: (1) HuggingFace\u2019s Open LLM Leaderboard 21; and (2) Stanford\u2019s Holistic Evaluation of Language Models (Helm) (Liang et al., 2023). Both use questions from the Massive Multitask Language Understanding (MMLU) question-answering dataset (Hendrycks et al., 2020), with multiple choice questions and labeled correct answers. (Section 3.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Correlated Errors in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HELM",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Correlated Errors in Large Language Models",
+      "evidence": "We started from two LLM leaderboards: (1) HuggingFace\u2019s Open LLM Leaderboard 21; and (2) Stanford\u2019s Holistic Evaluation of Language Models (Helm) (Liang et al., 2023). Both use questions from the Massive Multitask Language Understanding (MMLU) question-answering dataset (Hendrycks et al., 2020), with multiple choice questions and labeled correct answers. (Section 3.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Correlated Errors in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Medical knowledge",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Evaluating LLMs Across Multi-Cognitive Levels: From Medical Knowledge Mastery to Scenario-Based Problem Solving",
+      "evidence": "For Low-Level tasks (f1), we adopt multiple-choice questions (MCQs) as simple knowledge recalling tasks for Low-Level, where the model is required to recognize the correct answer from multiple candidate options (see the left part of Figure 2). (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Evaluating LLMs Across Multi-Cognitive Levels: From Medical Knowledge Mastery to Scenario-Based Problem Solving"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "C-Eval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AQuilt: Weaving Logic and Self-Inspection into Low-Cost, High-Relevance Data Synthesis for Specialist LLMs",
+      "evidence": "For multi-choice QA, we choose eight subjects from CEVAL (Huang et al., 2023), covering compulsory courses from middle school to university in China. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "AQuilt: Weaving Logic and Self-Inspection into Low-Cost, High-Relevance Data Synthesis for Specialist LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMMU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Cache-of-Thought: Master-Apprentice Framework for Cost-Effective Vision Language Model Reasoning",
+      "evidence": "\u201cFor both multiple-choice answers in MMMU and open responses in VL-ICL\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Cache-of-Thought: Master-Apprentice Framework for Cost-Effective Vision Language Model Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SinhalaMMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala",
+      "evidence": "To address this, we introduce SinhalaMMLU, the first multiple-choice question answering benchmark designed specifically for Sinhala, a low-resource language. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "NOVA-63",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "NOVA-63: Native Omni-lingual Versatile Assessments of 63 Disciplines",
+      "evidence": "\u201ca general multiple-choice benchmark containing 89,107 native questions across 14 languages and 63 academic secondary disciplines\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "NOVA-63: Native Omni-lingual Versatile Assessments of 63 Disciplines"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Selection bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models",
+      "evidence": "One such underexplored phenomenon is selection bias in MCQA. Unlike open-ended VQA formats, MCQA requires models to select one option among predefined choices (e.g., A/B/C/D), introducing the possibility of preference for certain option positions or tokens. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "EDUADAPT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs",
+      "evidence": "To bridge this gap, we developed EDUADAPT, a benchmark of nearly 48k QA pairs (comprising both multiple-choice and open-ended question-answers) for Grades 1-12 across nine educational subjects, following the K-12 framework. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SNLI",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors",
+      "evidence": "For the multiple-choice tasks, we use datasets: COPA (Gordon et al., 2012), StoryCloze (Mostafazadeh et al., 2016), NLI (Bowman et al., 2015), MMLU (Hendrycks et al., 2021), SST2 (Socher et al., 2013), SST5 (Socher et al., 2013), BoolQ (Clark et al., 2019), and Winogrande (Sakaguchi et al., 2020)... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fine-grained visual recognition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Analyzing and Boosting the Power of Fine-Grained Visual Recognition for Multi-modal Large Language Models",
+      "evidence": "we leverage the test sets as resources for annotated data and frame FGVR as a multiple-choice task",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Analyzing and Boosting the Power of Fine-Grained Visual Recognition for Multi-modal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Calibration",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+      "evidence": "The calibration error of an LLM is typically evaluated on a multiple-choice question and its corresponding correct answer, which can be formalized as an input-label pair (x, y)... (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 56,
+  "incoming_relationship_count": 7,
+  "outgoing_relationship_count": 49,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is closed-ended answer selection: the model chooses the correct option from a fixed set, usually discrete choices such as A/B/C/D, for a question or question-context pair. Most work treats success as producing a single correct option letter, index, or answer string, and some papers operationalize this with constrained decoding to valid options or by selecting the highest-likelihood option. A smaller line of work broadens the task to Yes/No/Not Sure Enough labels, a fifth abstention option, or selecting all correct answers rather than exactly one."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants appear under several names, including multi-choice question answering, single-choice question answering, multiple-selection question answering, answer selection, and fixed-choice question answering. Papers study it in commonsense and science reasoning, academic exams, medical and clinical cases, financial and cultural questions, survey items, code and computational thinking, and multimodal settings over images, video, speech, or image-text STEM problems. Some formulations are passage- or story-based, some ask for the next suitable step or a spatial relation, and some pair the selected option with an explanation or supporting evidence."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 50 measurement instruments. The most common are MMLU, ARC-Challenge, CommonsenseQA, ARC, and HellaSwag, and the linked instruments are mostly benchmark datasets or benchmark suites, with a smaller amount of work using evaluation tooling or human evaluation. Scoring is usually reported as accuracy or exact match against the correct choice, often by taking the option with the highest likelihood, conditional log probability, or top-choice logit, though some papers instead require the model to emit the option letter or index directly."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to 8 constructs, but they do not converge on a single construct that it reflects. The most recurring link is Commonsense reasoning: some papers treat commonsense reasoning as measured by multiple-choice question answering, while others describe the two as related. Positional bias is also related to it, Calibration is measured by multiple-choice questions, Emergent abilities are related to it, and one paper claims a causal relationship from In-context learning to multiple-choice question answering, reporting better performance with more in-context examples."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is closed-ended answer selection: the model chooses the correct option from a fixed set, usually discrete choices such as A/B/C/D, for a question or question-context pair. Most work treats success as producing a single correct option letter, index, or answer string, and some papers operationalize this with constrained decoding to valid options or by selecting the highest-likelihood option. A smaller line of work broadens the task to Yes/No/Not Sure Enough labels, a fifth abstention option, or selecting all correct answers rather than exactly one.\n\nVariants. Variants appear under several names, including multi-choice question answering, single-choice question answering, multiple-selection question answering, answer selection, and fixed-choice question answering. Papers study it in commonsense and science reasoning, academic exams, medical and clinical cases, financial and cultural questions, survey items, code and computational thinking, and multimodal settings over images, video, speech, or image-text STEM problems. Some formulations are passage- or story-based, some ask for the next suitable step or a spatial relation, and some pair the selected option with an explanation or supporting evidence.\n\nSpace of elicitation and scores. Papers link this behavior to 50 measurement instruments. The most common are MMLU, ARC-Challenge, CommonsenseQA, ARC, and HellaSwag, and the linked instruments are mostly benchmark datasets or benchmark suites, with a smaller amount of work using evaluation tooling or human evaluation. Scoring is usually reported as accuracy or exact match against the correct choice, often by taking the option with the highest likelihood, conditional log probability, or top-choice logit, though some papers instead require the model to emit the option letter or index directly.\n\nWhat it is taken as evidence of. Papers link it to 8 constructs, but they do not converge on a single construct that it reflects. The most recurring link is Commonsense reasoning: some papers treat commonsense reasoning as measured by multiple-choice question answering, while others describe the two as related. Positional bias is also related to it, Calibration is measured by multiple-choice questions, Emergent abilities are related to it, and one paper claims a causal relationship from In-context learning to multiple-choice question answering, reporting better performance with more in-context examples.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Addressing Blind Guessing: Calibration of Selection Bias in Multiple-Choice Question Answering by Video Language Models",
+      "AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset",
+      "Agri-CM3: AChinese Massive Multi-modal, Multi-level Benchmark for Agricultural Understanding and Reasoning",
+      "AmbiK: Dataset of Ambiguous Tasks in Kitchen Environment",
+      "Beyond Text Compression: Evaluating Tokenizers Across Scales",
+      "CRiskEval: A Chinese Multi-Level Risk Evaluation Benchmark Dataset for Large Language Models",
+      "Can MLLMs Understand the Deep Implication Behind Chinese Images?",
+      "Can Multimodal Large Language Models Understand Spatial Relations?",
+      "ChatBench: From Static Benchmarks to Human-AI Evaluation",
+      "Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models",
+      "Conformity in Large Language Models",
+      "CulFiT: A Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis",
+      "CulturalBench: A Robust, Diverse and Challenging Benchmark for Measuring LMs' Cultural Knowledge Through Human-AI Red-Teaming",
+      "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+      "Deep Temporal Reasoning in Video Language Models: A Cross-Linguistic Evaluation of Action Duration and Completion through Perfect Times",
+      "Defining and Evaluating Visual Language Models' Basic Spatial Abilities: A Perspective from Psychometrics",
+      "Emergent Abilities of Large Language Models under Continued Pre-training for Language Adaptation",
+      "Exclusion of Thought: Mitigating Cognitive Load in Large Language Models for Enhanced Reasoning in Multiple-Choice Tasks",
+      "FCMR: Robust Evaluation of Financial Cross-Modal Multi-Hop Reasoning",
+      "Fairness through Difference Awareness: MeasuringDesiredGroup Discrimination inLLMs",
+      "FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation",
+      "Global MMLU: Understanding and Addressing Cultural and Linguistic Biases in Multilingual Evaluation",
+      "GuideBench: Benchmarking Domain-Oriented Guideline Following for LLM Agents",
+      "HAIC: Improving Human Action Understanding and Generation with Better Captions for Multi-modal Large Language Models",
+      "Have We Designed Generalizable Structural Knowledge Promptings? Systematic Evaluation and Rethinking",
+      "Inferring from Logits: Exploring Best Practices for Decoding-Free Generative Candidate Selection",
+      "Insight Over Sight: Exploring the Vision-Knowledge Conflicts in Multimodal LLMs",
+      "Instruction Tuning on Public Government and Cultural Data for Low-Resource Language: a Case Study in Kazakh",
+      "Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process",
+      "KazMMLU: Evaluating Language Models on Kazakh, Russian, and Regional Knowledge of Kazakhstan",
+      "L4Q: Parameter Efficient Quantization-Aware Fine-Tuning on Large Language Models",
+      "LESA: Learnable LLM Layer Scaling-Up",
+      "La Leaderboard: A Large Language Model Leaderboard for Spanish Varieties and Languages of Spain and Latin America",
+      "LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks",
+      "MMLU-CF: A Contamination-free Multi-task Language Understanding Benchmark",
+      "Mitigating Selection Bias with Node Pruning and Auxiliary Options",
+      "Modality-Aware Neuron Pruning for Unlearning in Multimodal Large Language Models",
+      "Multi-Attribute Steering of Language Models via Targeted Intervention",
+      "Pandora's Box or Aladdin's Lamp: A Comprehensive Analysis Revealing the Role of RAG Noise in Large Language Models",
+      "Pattern Recognition or Medical Knowledge? The Problem with Multiple-Choice Questions in Medicine",
+      "Polishing Every Facet of the GEM: Testing Linguistic Competence of LLMs and Humans in Korean",
+      "Positional Overload: Positional Debiasing and Context Window Extension for Large Language Models using Set Encoding",
+      "Pragmatics in the Era of Large Language Models: A Survey on Datasets, Evaluation, Opportunities and Challenges",
+      "PrivaCI-Bench: Evaluating Privacy with Contextual Integrity and Legal Compliance",
+      "PunchBench: Benchmarking MLLMs in Multimodal Punchline Comprehension",
+      "RoToR: Towards More Reliable Responses for Order-Invariant Inputs",
+      "Segment-Based Attention Masking for GPTs",
+      "TUMLU: A Unified and Native Language Understanding Benchmark for Turkic Languages",
+      "TUNA: Comprehensive Fine-grained Temporal Understanding Evaluation on Dense Dynamic Videos",
+      "Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?",
+      "Training-free LLM Merging for Multi-task Learning",
+      "Unsolvable Problem Detection: Robust Understanding Evaluation for Large Multimodal Models",
+      "VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare",
+      "VMLU Benchmarks: A comprehensive benchmark toolkit for Vietnamese LLMs",
+      "SpeechIQ: Speech-Agentic Intelligence Quotient Across Cognitive Levels in Voice Understanding by Large Language Models",
+      "Warmup Generations: A Task-Agnostic Approach for Guiding Sequence-to-Sequence Learning with Unsupervised Initial State Generation"
+    ],
+    "emnlp25": [
+      "3DS: Medical Domain Adaptation of LLMs via Decomposed Difficulty-based Data Selection",
+      "A Comprehensive Literary Chinese Reading Comprehension Dataset with an Evidence Curation Based Solution",
+      "AQuilt: Weaving Logic and Self-Inspection into Low-Cost, High-Relevance Data Synthesis for Specialist LLMs",
+      "AdaptThink: Reasoning Models Can Learn When to Think",
+      "Africa Health Check: Probing Cultural Bias in Medical LLMs",
+      "Analysing Chain of Thought Dynamics: Active Guidance or Unfaithful Post-hoc Rationalisation?",
+      "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models",
+      "AssoCiAm: A Benchmark for Evaluating Association Thinking while Circumventing Ambiguity",
+      "Audio-centric Video Understanding Benchmark without Text Shortcut",
+      "Benchmark Profiling: Mechanistic Diagnosis of LLM Benchmarks",
+      "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models",
+      "Bias Mitigation or Cultural Commonsense? Evaluating LLMs with a Japanese Dataset",
+      "Bitune: Leveraging Bidirectional Attention to Improve Decoder-Only LLMs",
+      "CARE: Multilingual Human Preference Learning for Cultural Awareness",
+      "COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier",
+      "Cache-of-Thought: Master-Apprentice Framework for Cost-Effective Vision Language Model Reasoning",
+      "Calibrating LLM Confidence by Probing Perturbed Representation Stability",
+      "Calibration Across Layers: Understanding Calibration Evolution in LLMs",
+      "Can Large Language Models Be Good Language Teachers?",
+      "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning",
+      "CodeMixBench: Evaluating Code-Mixing Capabilities of LLMs Across 18 Languages",
+      "Confidence-guided Refinement Reasoning for Zero-shot Question Answering",
+      "Do You Know About My Nation? Investigating Multilingual Language Models' Cultural Literacy Through Factual Knowledge",
+      "DyePack: Provably Flagging Test Set Contamination in LLMs Using Backdoors",
+      "ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge",
+      "EcoTune: Token-Efficient Multi-Fidelity Hyperparameter Optimization for Large Language Model Inference",
+      "EduAdapt: A Question Answer Benchmark Dataset for Evaluating Grade-Level Adaptability in LLMs",
+      "Enhanced Noun-Noun Compound Interpretation through Textual Enrichment",
+      "Expanding before Inferring: Enhancing Factuality in Large Language Models through Premature Layers Interpolation",
+      "Exploring Response Uncertainty in MLLMs: An Empirical Evaluation under Misleading Scenarios",
+      "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+      "FANS: Formal Answer Selection for LLM Natural Language Math Reasoning Using Lean4",
+      "Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs",
+      "HELENE: Hessian Layer-wise Clipping and Gradient Annealing for Accelerating Fine-tuning LLM with Zeroth-order Optimization",
+      "How to inject knowledge efficiently? Knowledge Infusion Scaling Law for Pre-training Large Language Models",
+      "Improving Instruct Models for Free: A Study on Partial Adaptation",
+      "Improving Task Diversity in Label Efficient Supervised Finetuning of LLMs",
+      "In Benchmarks We Trust ... Or Not?",
+      "InfiniBench: A Benchmark for Large Multi-Modal Models in Long-Form Movies and TV Shows",
+      "KRETA: A Benchmark for Korean Reading and Reasoning in Text-Rich VQA Attuned to Diverse Visual Contexts",
+      "Large Language Models Badly Generalize across Option Length, Problem Types, and Irrelevant Noun Replacements",
+      "Let's Play Across Cultures: A Large Multilingual, Multicultural Benchmark for Assessing Language Models' Understanding of Sports",
+      "LoCt-Instruct: An Automatic Pipeline for Constructing Datasets of Logical Continuous Instructions",
+      "LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization",
+      "LogiDynamics: Unraveling the Dynamics of Inductive, Abductive and Deductive Logical Inferences in LLM Reasoning",
+      "MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation",
+      "MUZO: Leveraging Multiple Queries and Momentum for Zeroth-Order Fine-Tuning of Large Language Models",
+      "MaZO: Masked Zeroth-Order Optimization for Multi-Task Fine-Tuning of Large Language Models",
+      "Mind the Gap: A Closer Look at Tokenization for Multiple-Choice Question Answering with LLMs",
+      "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+      "Multilingual Language Model Pretraining using Machine-translated Data",
+      "NOVA-63: Native Omni-lingual Versatile Assessments of 63 Disciplines",
+      "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+      "Persuasion Dynamics in LLMs: Investigating Robustness and Adaptability in Knowledge and Safety with DuET-PD",
+      "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs",
+      "Primus: A Pioneering Collection of Open-Source Datasets for Cybersecurity LLM Training",
+      "QuZO: Quantized Zeroth-Order Fine-Tuning for Large Language Models",
+      "QualBench: Benchmarking Chinese LLMs with Localized Professional Qualifications for Vertical Domain Evaluation",
+      "Quantized but Deceptive? A Multi-Dimensional Truthfulness Evaluation of Quantized LLMs",
+      "RAG-Instruct: Boosting LLMs with Diverse Retrieval-Augmented Instructions",
+      "RLAE: Reinforcement Learning-Assisted Ensemble for LLMs",
+      "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?",
+      "STEER-BENCH: A Benchmark for Evaluating the Steerability of Large Language Models",
+      "SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala",
+      "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models",
+      "TLUE: A Tibetan Language Understanding Evaluation Benchmark",
+      "Threading the Needle: Reweaving Chain-of-Thought Reasoning to Explain Human Label Variation",
+      "ToM: Leveraging Tree-oriented MapReduce for Long-Context Reasoning in Large Language Models",
+      "Token-Aware Editing of Internal Activations for Large Language Model Alignment",
+      "Toward Efficient Sparse Autoencoder-Guided Steering for Improved In-Context Learning in Large Language Models",
+      "Towards Optimal Evaluation Efficiency for Large Language Models",
+      "Train It and Forget It: Merge Lists are Unnecessary for BPE Inference in Language Models",
+      "Unilaw-R1: A Large Language Model for Legal Reasoning with Reinforcement Learning and Iterative Inference",
+      "Unlearning vs. Obfuscation: Are We Truly Removing Knowledge?",
+      "Unmasking Deceptive Visuals: Benchmarking Multimodal Large Language Models on Misleading Chart Question Answering",
+      "Video-RTS: Rethinking Reinforcement Learning and Test-Time Scaling for Efficient and Enhanced Video Reasoning",
+      "VisBias: Measuring Explicit and Implicit Social Biases in Vision Language Models",
+      "WangchanThaiInstruct: An instruction-following Dataset for Culture-Aware, Multitask, and Multi-domain Evaluation in Thai",
+      "zFLoRA: Zero-Latency Fused Low-Rank Adapters"
+    ],
+    "iclr24": [
+      "Are Human-generated Demonstrations Necessary for In-context Learning?",
+      "AutoCast++: Enhancing World Event Prediction with Zero-shot Ranking-based Context Retrieval",
+      "Bayesian Low-rank Adaptation for Large Language Models",
+      "Compressing LLMs: The Truth is Rarely Pure and Never Simple",
+      "DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models",
+      "Enhancing Small Medical Learners with Privacy-preserving Contextual Prompting",
+      "Evaluating the Zero-shot Robustness of Instruction-tuned Language Models",
+      "Group Preference Optimization: Few-Shot Alignment of Large Language Models",
+      "Knowledge Fusion of Large Language Models",
+      "Measuring Vision-Language STEM Skills of Neural Models",
+      "Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting",
+      "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "Seeking Neural Nuggets: Knowledge Transfer in Large Language Models from a Parametric Perspective",
+      "The Consensus Game: Language Model Generation via Equilibrium Search",
+      "The Generative AI Paradox: \u201cWhat It Can Create, It May Not Understand\u201d",
+      "Towards Understanding Factual Knowledge of Large Language Models",
+      "IDEAL: Influence-Driven Selective Annotations Empower In-Context Learners in Large Language Models",
+      "Large Language Models Are Not Robust Multiple Choice Selectors",
+      "Large Language Models Cannot Self-Correct Reasoning Yet",
+      "Merge, Then Compress: Demystify Efficient SMoE with Hints from Its Routing Policy",
+      "Predicting Emergent Abilities with Infinite Resolution Evaluation",
+      "Retrieval is Accurate Generation",
+      "Scalable Language Model with Generalized Continual Learning",
+      "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "Sheared LLaMA: Accelerating Language Model Pre-training via Structured Pruning",
+      "Tool-Augmented Reward Modeling"
+    ],
+    "iclr25": [
+      "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "Streamlining Redundant Layers to Compress Large Language Models",
+      "Addax: Utilizing Zeroth-Order Gradients to Improve Memory Efficiency and Performance of SGD for Fine-Tuning Language Models",
+      "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+      "MeteoRA: Multiple-tasks Embedded LoRA for Large Language Models"
+    ],
+    "icml25": [
+      "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+      "Calibrated Language Models and How to Find Them with Label Smoothing",
+      "CodeSync: Synchronizing Large Language Models with Dynamic Code Evolution at Scale",
+      "Communicating Activations Between Language Model Agents",
+      "Core Knowledge Deficits in Multi-Modal Language Models",
+      "Correlated Errors in Large Language Models",
+      "DataDecide: How to Predict Best Pretraining Data with Small Experiments",
+      "Evaluating LLMs Across Multi-Cognitive Levels: From Medical Knowledge Mastery to Scenario-Based Problem Solving",
+      "Evolving Prompts In-Context: An Open-ended, Self-replicating Perspective",
+      "FactTest: Factuality Testing in Large Language Models with Finite-Sample and Distribution-Free Guarantees",
+      "Focus On This, Not That! Steering LLMs with Adaptive Feature Specification",
+      "From Crowdsourced Data to High-quality Benchmarks: Arena-Hard and Benchbuilder Pipeline",
+      "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+      "Generalized Interpolating Discrete Diffusion",
+      "Great Models Think Alike and this Undermines AI Oversight",
+      "Hyperband-based Bayesian Optimization for Black-box Prompt Selection",
+      "Impossible Videos",
+      "Is Your Model Fairly Certain? Uncertainty-Aware Fairness Evaluation for LLMs",
+      "Joint Localization and Activation Editing for Low-Resource Fine-Tuning",
+      "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+      "Learning Safety Constraints for Large Language Models",
+      "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+      "MAPLE: Many-Shot Adaptive Pseudo-Labeling for In-Context Learning",
+      "MIB: A Mechanistic Interpretability Benchmark",
+      "MM-RLHF: The Next Step Forward in Multimodal LLM Alignment",
+      "Mechanistic Unlearning: Robust Knowledge Unlearning and Editing via Mechanistic Localization",
+      "On Zero-Initialized Attention: Optimal Prompt and Gating Factor Estimation",
+      "Organize the Web: Constructing Domains Enhances Pre-Training Data Curation",
+      "Prune \u2019n Predict: Optimizing LLM Decision-making with Conformal Prediction",
+      "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+      "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding",
+      "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+      "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning",
+      "Text-to-LoRA: Instant Transformer Adaption",
+      "The Best of Both Worlds: Bridging Quality and Diversity in Data Selection with Bipartite Graph",
+      "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+      "The Emperor\u2019s New Clothes in Benchmarking? A Rigorous Examination of Mitigation Strategies for LLM Benchmark Data Contamination",
+      "The Jailbreak Tax: How Useful are Your Jailbreak Outputs?",
+      "To Steer or Not to Steer? Mechanistic Error Reduction with Abstention for Language Models",
+      "Towards Global-level Mechanistic Interpretability: A Perspective of Modular Circuits of Large Language Models",
+      "TruthFlow: Truthful LLM Generation via Representation Flow Correction",
+      "Unbiased Evaluation of Large Language Models from a Causal Perspective",
+      "Understanding the Skill Gap in Recurrent Language Models: The Role of the Gather-and-Aggregate Mechanism",
+      "Why Has Predicting Downstream Capabilities of Frontier AI Models with Scale Remained Elusive?",
+      "Be Confident: Uncovering Overfitting in MLLM Multi-Task Tuning",
+      "RZ-NAS: Enhancing LLM-guided Neural Architecture Search via Reflective Zero-Cost Strategy"
+    ],
+    "naacl25": [
+      "Are We Done with MMLU?",
+      "Benchmarking Large Language Models on Answering and Explaining Challenging Medical Questions",
+      "CBT-Bench: Evaluating Large Language Models on Assisting Cognitive Behavior Therapy",
+      "CFinBench: A Comprehensive Chinese Financial Benchmark for Large Language Models",
+      "CogLM: Tracking Cognitive Development of Large Language Models",
+      "CultureInstruct: Curating Multi-Cultural Instructions at Scale",
+      "Few-shot Personalization of LLMs with Mis-aligned Responses",
+      "FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models",
+      "HARP: Hesitation-Aware Reframing in Transformer Inference Pass",
+      "How Can We Diagnose and Treat Bias in Large Language Models for Clinical Decision-Making?",
+      "ITALIC: An Italian Culture-Aware Natural Language Benchmark",
+      "Improving Model Evaluation using SMART Filtering of Benchmark Datasets",
+      "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+      "KMMLU: Measuring Massive Multitask Language Understanding in Korean",
+      "LCIRC: A Recurrent Compression Approach for Efficient Long-form Context and Query Dependent Modeling in LLMs",
+      "LLMs Are Biased Towards Output Formats! Systematically Evaluating and Mitigating Output Format Bias of LLMs",
+      "LLMs Are Not Intelligent Thinkers: Introducing Mathematical Topic Tree Benchmark for Comprehensive Evaluation of LLMs",
+      "MILU: A Multi-task Indic Language Understanding Benchmark",
+      "MMEvalPro: Calibrating Multimodal Benchmarks Towards Trustworthy and Efficient Evaluation",
+      "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+      "Option Symbol Matters: Investigating and Mitigating Multiple-Choice Option Symbol Bias of Large Language Models",
+      "PerCul: A Story-Driven Cultural Evaluation of LLMs in Persian",
+      "Probe-Free Low-Rank Activation Intervention",
+      "Pula: Training Large Language Models for Setswana",
+      "Self-Training Meets Consistency: Improving LLMs' Reasoning with Consistency-Driven Rationale Evaluation",
+      "SimRAG: Self-Improving Retrieval-Augmented Generation for Adapting Large Language Models to Specialized Domains",
+      "Soft Prompting for Unlearning in Large Language Models",
+      "Specializing Large Language Models to Simulate Survey Response Distributions for Global Populations",
+      "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism",
+      "TinyThinker: Distilling Reasoning through Coarse-to-Fine Knowledge Internalization with Self-Reflection",
+      "Towards Quantifying Commonsense Reasoning with Mechanistic Insights",
+      "WorldCuisines: A Massive-Scale Benchmark for Multilingual and Multicultural Visual Question Answering on Global Cuisines",
+      "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models",
+      "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners",
+      "ParaICL: Towards Parallel In-Context Learning",
+      "S2-MAD: Breaking the Token Barrier to Enhance Multi-Agent Debate Efficiency",
+      "Unfamiliar Finetuning Examples Control How Language Models Hallucinate"
+    ],
+    "neurips24": [
+      "$\\textit{Trans-LoRA}$: towards data-free Transferable Parameter Efficient Finetuning",
+      "A Hitchhiker's Guide to Fine-Grained Face Forgery Detection Using Common Sense Reasoning",
+      "A StrongREJECT for Empty Jailbreaks",
+      "AGILE: A Novel Reinforcement Learning Framework of LLM Agents",
+      "Accuracy is Not All You Need",
+      "Alignment for Honesty",
+      "AutoMix: Automatically Mixing Language Models",
+      "Benchmarking Generative Models on Computational Thinking Tests in Elementary Visual Programming",
+      "Benchmarking LLMs via Uncertainty Quantification",
+      "CTIBench: A Benchmark for Evaluating LLMs in Cyber Threat Intelligence",
+      "CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark",
+      "CausalChaos! Dataset for Comprehensive Causal Action Question Answering Over Longer Causal Chains Grounded in Dynamic Visual Scenes",
+      "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+      "EHRNoteQA: An LLM Benchmark for Real-World Clinical Practice Using Discharge Summaries",
+      "ERBench: An Entity-Relationship based Automatically Verifiable Hallucination Benchmark for Large Language Models",
+      "Embedding Trajectory for Out-of-Distribution Detection in Mathematical Reasoning",
+      "Empowering and Assessing the Utility of Large Language Models in Crop Science",
+      "Ensemble Learning for Heterogeneous Large Language Models with Deep Parallel Collaboration",
+      "Evaluating Large Vision-and-Language Models on Children's Mathematical Olympiads",
+      "From Instance Training to Instruction Learning: Task Adapters Generation from Instructions",
+      "GMAI-MMBench: A Comprehensive Multimodal Evaluation Benchmark Towards General Medical AI",
+      "I Don't Know: Explicit Modeling of Uncertainty with an [IDK] Token",
+      "II-Bench: An Image Implication Understanding Benchmark for Multimodal Large Language Models",
+      "IQA-EVAL: Automatic Evaluation of Human-Model Interactive Question Answering",
+      "IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons",
+      "Iterative Reasoning Preference Optimization",
+      "LLM Circuit Analyses Are Consistent Across Training and Scale",
+      "Large Language Models' Expert-level Global History Knowledge Benchmark (HiST-LLM)",
+      "Learning to Understand: Identifying Interactions via the M\u00f6bius Transform",
+      "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding",
+      "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+      "Meaningful Learning: Enhancing Abstract Reasoning in Large Language Models via Generic Fact Guidance",
+      "Measuring Multimodal Mathematical Reasoning with MATH-Vision Dataset",
+      "Mitigating Object Hallucination via Concentric Causal Attention",
+      "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+      "Order-Independence Without Fine Tuning",
+      "Personalized Steering of Large Language Models: Versatile Steering Vectors Through Bi-directional Preference Optimization",
+      "PertEval: Unveiling Real Knowledge Capacity of LLMs with Knowledge-Invariant Perturbations",
+      "ReFT: Representation Finetuning for Language Models",
+      "ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos",
+      "Reasons and Solutions for the Decline in Model Performance after Editing",
+      "Reference Trustable Decoding: A Training-Free Augmentation Paradigm for Large Language Models",
+      "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+      "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+      "SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models",
+      "SciFIBench: Benchmarking Large Multimodal Models for Scientific Figure Interpretation",
+      "Self-playing Adversarial Language Game Enhances LLM Reasoning",
+      "Should We Really Edit Language Models? On the Evaluation of Edited Language Models",
+      "Spectral Editing of Activations for Large Language Model Alignment",
+      "Stress-Testing Capability Elicitation With Password-Locked Models",
+      "Synthesize, Partition, then Adapt: Eliciting Diverse Samples from Foundation Models",
+      "TSDS: Data Selection for Task-Specific Model Finetuning",
+      "Unveiling the Tapestry of Consistency in Large Vision-Language Models",
+      "Visual Riddles: a Commonsense and World Knowledge Challenge for Large Vision and Language Models",
+      "Weak-eval-Strong: Evaluating and Eliciting Lateral Thinking of LLMs with Situation Puzzles",
+      "When LLMs Meet Cunning Texts: A Fallacy Understanding Benchmark for Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 56,
+    "emnlp25": 79,
+    "iclr24": 26,
+    "iclr25": 5,
+    "icml25": 46,
+    "naacl25": 37,
+    "neurips24": 57
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "canonical_name": "Knowledge retrieval",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats knowledge retrieval as querying or accessing external sources and incorporating the resulting information into reasoning and answer generation. Definitions repeatedly mention documents, knowledge bases, search engines, databases, and other external resources, with the goal of obtaining information relevant to a question; one paper describes the process as consisting of \"two steps: query generation and execution.\" A smaller line of work narrows the behavior to structured knowledge graphs, where retrieval targets medical facts, entities, and even \"reasoning chains\" from user queries and generated hypotheses, and some papers further describe iterative-step retrieval that uses previous outputs and sub-step questions.\n\nVariants. Papers study this behavior in several settings. Recurring variants include general external retrieval and retrieve-then-read use, domain-conditioned retrieval over sources such as Wikidata, Wikipedia, tables, and domain-specific resources, and iterative retrieval across sub-steps. Smaller variants focus on structured knowledge-graph retrieval in medical settings, including retrieving paths between anchor entities and searching through hypothesis outputs, and papers also place the behavior in multi-hop question answering, multi-hop reasoning, and audio-language evaluation settings.\n\nSpace of elicitation and scores. Papers link knowledge retrieval to seven measurement instruments. Most recorded links say it is measured by benchmarks or datasets, including BoolQ, LongBench, MKQA, MMAU, and MMLU, plus two other instruments; one of the remaining links is recorded only as related rather than measured_by. These instruments are described as representative knowledge retrieval tasks, as benchmarks for multimodal reasoning and knowledge-retrieval capabilities or for long-context generation alongside knowledge retrieval, and, in one case, through covariance patterns corresponding to \"LLM ability in retrieving knowledge.\"\n\nWhat it is taken as evidence of. Papers do not use knowledge retrieval as evidence of a single recurring construct. Instead, they connect it to four constructs with mixed relation types: one paper claims a causal relationship from knowledge retrieval to Cross-programming-language generalization, reporting that the requirement for knowledge retrieval hinders the model's cross-lingual transferability in reasoning tasks, and another claims a causal relationship from it to Multi-hop reasoning by retrieving external knowledge as supplementary clues for reasoning. Single papers also report it as related to In-context learning and to Knowledge manipulation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "External knowledge retrieval",
+    "Knowledge retrieval"
+  ],
+  "papers": [
+    "Answering Complex Geographic Questions by Adaptive Reasoning with Visual Context and External Commonsense Knowledge",
+    "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering",
+    "HyKGE: A Hypothesis Knowledge Graph Enhanced RAG Framework for Accurate and Reliable Medical LLMs Responses",
+    "RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection",
+    "Chain-of-Knowledge: Grounding Large Language Models via Dynamic Knowledge Adapting over Heterogeneous Sources",
+    "Self-DC: When to Reason and When to Act? Self Divide-and-Conquer for Compositional Unknown Questions"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Accessing and incorporating information from external sources (e.g., documents, knowledge bases) to support reasoning and answer generation.",
+      "paper": "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering",
+      "original_name": "External knowledge retrieval"
+    },
+    {
+      "text": "Fetching relevant medical facts, entities, and reasoning chains from structured knowledge graphs based on user queries and generated hypotheses.",
+      "paper": "HyKGE: A Hypothesis Knowledge Graph Enhanced RAG Framework for Accurate and Reliable Medical LLMs Responses",
+      "original_name": "Knowledge retrieval"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More",
+      "evidence": "Hallucinations pose a significant hurdle to the adoption of language models, especially in domains where reliable knowledge retrieval is paramount (Dahl et al., 2024). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "The Factorization Curse: Which Tokens You Predict Underlie the Reversal Curse and More"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMAU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark",
+      "evidence": "We introduce the Massive Multi-Task Audio Understanding and Reasoning Benchmark (MMAU), a novel benchmark designed to evaluate the expert-level multimodal reasoning and knowledge-retrieval capabilities of large audio-language models (LALMs). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge manipulation",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Physics of Language Models: Part 3.2, Knowledge Manipulation",
+      "evidence": "This paper investigates four fundamental knowledge manipulation tasks: retrieval (e.g., \u201cWhat is person A\u2019s attribute X?\u201d), classification (e.g., \u201cIs A\u2019s attribute X even or odd?\u201d), comparison (e.g., \u201cIs A greater than B in attribute X?\u201d), and inverse search (e.g., \u201cWhich person\u2019s attribute X equals T?\u201d). (Section Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Physics of Language Models: Part 3.2, Knowledge Manipulation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+      "evidence": "\"This benchmark is the most important because it shows both long context generation performance and knowledge retrieval performance\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MKQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners",
+      "evidence": "We selected MKQA (Longpre et al., 2021), BoolQ (Clark et al., 2019), and AmbigQA (Min et al., 2020) as representative datasets of knowledge retrieval tasks for the interpretability analysis. (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BoolQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners",
+      "evidence": "We selected MKQA (Longpre et al., 2021), BoolQ (Clark et al., 2019), and AmbigQA (Min et al., 2020) as representative datasets of knowledge retrieval tasks for the interpretability analysis. (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Learning vs Retrieval: The Role of In-Context Examples in Regression with Large Language Models",
+      "evidence": "Broadly speaking, current research identifies two main approaches to explain the ICL mechanism (Dong et al., 2024; Li et al., 2024): 1) Meta-learning, 2) Knowledge retrieval.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Learning vs Retrieval: The Role of In-Context Examples in Regression with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multi-hop question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering",
+      "evidence": "due to the requirement for external knowledge in complex multi-hop questions (Mavi et al., 2024; Minaee et al., 2024), retrieval-augmented reasoning methods show more significant improvement compared to closed-book methods. (Section 5.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Internal Causal Mechanisms Robustly Predict Language Model Out-of-Distribution Behaviors",
+      "evidence": "We consider a variety of tasks that cover both idealized cases where we know the task mechanisms and open-ended ones where only partial or approximate mechanisms are identified. These tasks fall into three categories: (2) knowledge retrieval tasks, including RAVEL (Huang et al., 2024) and MMLU (Hendrycks et al., 2021), whose mechanisms are only partially understood",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Internal Causal Mechanisms Robustly Predict Language Model Out-of-Distribution Behaviors"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question decomposition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Boosting the Potential of Large Language Models with an Intelligent Information Assistant",
+      "evidence": "This action FQD aims to break down the current question into multiple sub-queries to facilitate the retrieval of knowledge across various aspects (Section 3.2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Boosting the Potential of Large Language Models with an Intelligent Information Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TriviaQA",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+      "evidence": "we use the question data from question-answering training data, such as TriviaQA [23] and Natural Questions [27, 29], to obtain the covariance matrices whose pattern corresponds to the knowledge retrieving ability of the LLM (Section 3.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Cross-lingual generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners",
+      "evidence": "the requirement for knowledge retrieval significantly hinders the model\u2019s cross-lingual transferability when solving reasoning tasks. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Large Language Models Are Cross-Lingual Knowledge-Free Reasoners"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multi-hop reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Answering Complex Geographic Questions by Adaptive Reasoning with Visual Context and External Commonsense Knowledge",
+      "evidence": "Since complex questions often involve external geographic knowledge, we then adaptively retrieve it as supplementary clues and conduct multi-hop reasoning based on it.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Answering Complex Geographic Questions by Adaptive Reasoning with Visual Context and External Commonsense Knowledge"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RAVEL",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Internal Causal Mechanisms Robustly Predict Language Model Out-of-Distribution Behaviors",
+      "evidence": "(2) knowledge retrieval tasks, including RAVEL (Huang et al., 2024) and MMLU (Hendrycks et al., 2021)... (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Internal Causal Mechanisms Robustly Predict Language Model Out-of-Distribution Behaviors"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 14,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 10,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats knowledge retrieval as querying or accessing external sources and incorporating the resulting information into reasoning and answer generation. Definitions repeatedly mention documents, knowledge bases, search engines, databases, and other external resources, with the goal of obtaining information relevant to a question; one paper describes the process as consisting of \"two steps: query generation and execution.\" A smaller line of work narrows the behavior to structured knowledge graphs, where retrieval targets medical facts, entities, and even \"reasoning chains\" from user queries and generated hypotheses, and some papers further describe iterative-step retrieval that uses previous outputs and sub-step questions."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study this behavior in several settings. Recurring variants include general external retrieval and retrieve-then-read use, domain-conditioned retrieval over sources such as Wikidata, Wikipedia, tables, and domain-specific resources, and iterative retrieval across sub-steps. Smaller variants focus on structured knowledge-graph retrieval in medical settings, including retrieving paths between anchor entities and searching through hypothesis outputs, and papers also place the behavior in multi-hop question answering, multi-hop reasoning, and audio-language evaluation settings."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link knowledge retrieval to seven measurement instruments. Most recorded links say it is measured by benchmarks or datasets, including BoolQ, LongBench, MKQA, MMAU, and MMLU, plus two other instruments; one of the remaining links is recorded only as related rather than measured_by. These instruments are described as representative knowledge retrieval tasks, as benchmarks for multimodal reasoning and knowledge-retrieval capabilities or for long-context generation alongside knowledge retrieval, and, in one case, through covariance patterns corresponding to \"LLM ability in retrieving knowledge.\""
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not use knowledge retrieval as evidence of a single recurring construct. Instead, they connect it to four constructs with mixed relation types: one paper claims a causal relationship from knowledge retrieval to Cross-programming-language generalization, reporting that the requirement for knowledge retrieval hinders the model's cross-lingual transferability in reasoning tasks, and another claims a causal relationship from it to Multi-hop reasoning by retrieving external knowledge as supplementary clues for reasoning. Single papers also report it as related to In-context learning and to Knowledge manipulation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats knowledge retrieval as querying or accessing external sources and incorporating the resulting information into reasoning and answer generation. Definitions repeatedly mention documents, knowledge bases, search engines, databases, and other external resources, with the goal of obtaining information relevant to a question; one paper describes the process as consisting of \"two steps: query generation and execution.\" A smaller line of work narrows the behavior to structured knowledge graphs, where retrieval targets medical facts, entities, and even \"reasoning chains\" from user queries and generated hypotheses, and some papers further describe iterative-step retrieval that uses previous outputs and sub-step questions.\n\nVariants. Papers study this behavior in several settings. Recurring variants include general external retrieval and retrieve-then-read use, domain-conditioned retrieval over sources such as Wikidata, Wikipedia, tables, and domain-specific resources, and iterative retrieval across sub-steps. Smaller variants focus on structured knowledge-graph retrieval in medical settings, including retrieving paths between anchor entities and searching through hypothesis outputs, and papers also place the behavior in multi-hop question answering, multi-hop reasoning, and audio-language evaluation settings.\n\nSpace of elicitation and scores. Papers link knowledge retrieval to seven measurement instruments. Most recorded links say it is measured by benchmarks or datasets, including BoolQ, LongBench, MKQA, MMAU, and MMLU, plus two other instruments; one of the remaining links is recorded only as related rather than measured_by. These instruments are described as representative knowledge retrieval tasks, as benchmarks for multimodal reasoning and knowledge-retrieval capabilities or for long-context generation alongside knowledge retrieval, and, in one case, through covariance patterns corresponding to \"LLM ability in retrieving knowledge.\"\n\nWhat it is taken as evidence of. Papers do not use knowledge retrieval as evidence of a single recurring construct. Instead, they connect it to four constructs with mixed relation types: one paper claims a causal relationship from knowledge retrieval to Cross-programming-language generalization, reporting that the requirement for knowledge retrieval hinders the model's cross-lingual transferability in reasoning tasks, and another claims a causal relationship from it to Multi-hop reasoning by retrieving external knowledge as supplementary clues for reasoning. Single papers also report it as related to In-context learning and to Knowledge manipulation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Answering Complex Geographic Questions by Adaptive Reasoning with Visual Context and External Commonsense Knowledge",
+      "BELLE: A Bi-Level Multi-Agent Reasoning Framework for Multi-Hop Question Answering",
+      "HyKGE: A Hypothesis Knowledge Graph Enhanced RAG Framework for Accurate and Reliable Medical LLMs Responses",
+      "RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection"
+    ],
+    "iclr24": [
+      "Chain-of-Knowledge: Grounding Large Language Models via Dynamic Knowledge Adapting over Heterogeneous Sources"
+    ],
+    "naacl25": [
+      "Self-DC: When to Reason and When to Act? Self Divide-and-Conquer for Compositional Unknown Questions"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "iclr24": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "naacl25"
+  ]
+}

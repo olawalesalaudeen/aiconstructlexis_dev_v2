@@ -1,0 +1,172 @@
+{
+  "canonical_name": "Long chain-of-thought generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats this behavior as producing extended reasoning traces or token sequences before the final answer, with more steps and longer outputs than standard chain-of-thought. Most definitions emphasize step-by-step structure, and several add planning, validation, backtracking, reflection, verification, or subproblem decomposition; as one study puts it, long CoT is \"an extended sequence of reasoning tokens.\" One paper frames it more specifically as deep, structured natural language reasoning before formal outputs, and another as extended, coherent reasoning used to solve complex problems.\n\nVariants. Papers use closely related names such as long CoT, long CoT reasoning, and long trace reasoning ability. The main variants differ by setting: some focus on substantially longer sequences that explicitly include reflection, verification, and subproblem decomposition, sometimes with responses approaching 10k tokens, while one paper studies natural language to formal language reasoning before formal outputs, including interaction with Lean code and formal theorem proving. Another paper places it in math problem solving through extended, coherent step-by-step reasoning.\n\nSpace of elicitation and scores. Papers link this behavior to 3 measurement instruments: AIME 2024, GPQA-Diamond, and MATH-500, with no one instrument appearing more often than the others. In the linked measurement evidence, all three are described as benchmarks used \"to assess the long trace reasoning ability of LLMs.\"\n\nWhat it is taken as evidence of. Only 2 constructs are linked in the papers, and they point to different constructs rather than a single shared one. One paper claims a causal relationship from long chain-of-thought generation to Generalization, and another claims a causal relationship from it to Formal reasoning. Separately, one paper claims causal relationships from it to the behavioral indicators Backtracking and Self-correction, describing long CoT as enabling those structured reasoning strategies.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Long chain-of-thought generation",
+    "Long Chain-of-Thought reasoning",
+    "Long chain-of-thought reasoning"
+  ],
+  "papers": [
+    "Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?",
+    "Unlocking General Long Chain-of-Thought Reasoning Capabilities of Large Language Models via Representation Engineering",
+    "Let's Reason Formally: Natural-Formal Hybrid Reasoning Enhances LLM's Math Capability",
+    "Long Chain-of-Thought Fine-tuning via Understanding-to-Reasoning Transition",
+    "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+    "What Makes a Good Reasoning Chain? Uncovering Structural Patterns in Long Chain-of-Thought Reasoning",
+    "Through the Valley: Path to Effective Long CoT Training for Small Language Models",
+    "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+    "Demystifying Long Chain-of-Thought Reasoning"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable production of extended reasoning traces that include planning, validation, and backtracking, resulting in longer and more detailed outputs compared to standard chain-of-thought.",
+      "paper": "Unlocking General Long Chain-of-Thought Reasoning Capabilities of Large Language Models via Representation Engineering",
+      "original_name": "Long chain-of-thought generation"
+    },
+    {
+      "text": "The emergent capability of a model to perform deep, structured natural language reasoning before generating formal outputs, enabling high-level planning and self-reflection in problem solving.",
+      "paper": "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+      "original_name": "Long Chain-of-Thought reasoning"
+    },
+    {
+      "text": "The ability to generate extended, coherent, and step-by-step reasoning processes to solve complex problems.",
+      "paper": "Let's Reason Formally: Natural-Formal Hybrid Reasoning Enhances LLM's Math Capability",
+      "original_name": "Long chain-of-thought reasoning"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Backtracking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Demystifying Long Chain-of-Thought Reasoning",
+      "evidence": "A proven approach for scaling inference compute is to generate long chains-of-thought (CoTs), enabling models to engage in structured reasoning strategies such as backtracking and error correction. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Demystifying Long Chain-of-Thought Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Demystifying Long Chain-of-Thought Reasoning",
+      "evidence": "A proven approach for scaling inference compute is to generate long chains-of-thought (CoTs), enabling models to engage in structured reasoning strategies such as backtracking and error correction. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Demystifying Long Chain-of-Thought Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Demystifying Long Chain-of-Thought Reasoning",
+      "evidence": "SFT initialization matters: high-quality, emergent long CoT pattern leads to significantly better generalization and RL gains. (Takeaway 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Demystifying Long Chain-of-Thought Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Formal reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+      "evidence": "Extensive experiments demonstrate that MA-LoT framework effectively enhances the model\u2019s formal reasoning ability through model-collaboration design and emergent formal reasoning in Long CoT. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Theorem proving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+      "evidence": "The emergent Lean reasoning ability in the Long CoT enables the model to write a better-structured proof based on its high-level plan than direct proof generation. (Section 2.3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats this behavior as producing extended reasoning traces or token sequences before the final answer, with more steps and longer outputs than standard chain-of-thought. Most definitions emphasize step-by-step structure, and several add planning, validation, backtracking, reflection, verification, or subproblem decomposition; as one study puts it, long CoT is \"an extended sequence of reasoning tokens.\" One paper frames it more specifically as deep, structured natural language reasoning before formal outputs, and another as extended, coherent reasoning used to solve complex problems."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use closely related names such as long CoT, long CoT reasoning, and long trace reasoning ability. The main variants differ by setting: some focus on substantially longer sequences that explicitly include reflection, verification, and subproblem decomposition, sometimes with responses approaching 10k tokens, while one paper studies natural language to formal language reasoning before formal outputs, including interaction with Lean code and formal theorem proving. Another paper places it in math problem solving through extended, coherent step-by-step reasoning."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 3 measurement instruments: AIME 2024, GPQA-Diamond, and MATH-500, with no one instrument appearing more often than the others. In the linked measurement evidence, all three are described as benchmarks used \"to assess the long trace reasoning ability of LLMs.\""
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Only 2 constructs are linked in the papers, and they point to different constructs rather than a single shared one. One paper claims a causal relationship from long chain-of-thought generation to Generalization, and another claims a causal relationship from it to Formal reasoning. Separately, one paper claims causal relationships from it to the behavioral indicators Backtracking and Self-correction, describing long CoT as enabling those structured reasoning strategies."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats this behavior as producing extended reasoning traces or token sequences before the final answer, with more steps and longer outputs than standard chain-of-thought. Most definitions emphasize step-by-step structure, and several add planning, validation, backtracking, reflection, verification, or subproblem decomposition; as one study puts it, long CoT is \"an extended sequence of reasoning tokens.\" One paper frames it more specifically as deep, structured natural language reasoning before formal outputs, and another as extended, coherent reasoning used to solve complex problems.\n\nVariants. Papers use closely related names such as long CoT, long CoT reasoning, and long trace reasoning ability. The main variants differ by setting: some focus on substantially longer sequences that explicitly include reflection, verification, and subproblem decomposition, sometimes with responses approaching 10k tokens, while one paper studies natural language to formal language reasoning before formal outputs, including interaction with Lean code and formal theorem proving. Another paper places it in math problem solving through extended, coherent step-by-step reasoning.\n\nSpace of elicitation and scores. Papers link this behavior to 3 measurement instruments: AIME 2024, GPQA-Diamond, and MATH-500, with no one instrument appearing more often than the others. In the linked measurement evidence, all three are described as benchmarks used \"to assess the long trace reasoning ability of LLMs.\"\n\nWhat it is taken as evidence of. Only 2 constructs are linked in the papers, and they point to different constructs rather than a single shared one. One paper claims a causal relationship from long chain-of-thought generation to Generalization, and another claims a causal relationship from it to Formal reasoning. Separately, one paper claims causal relationships from it to the behavioral indicators Backtracking and Self-correction, describing long CoT as enabling those structured reasoning strategies.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?",
+      "Unlocking General Long Chain-of-Thought Reasoning Capabilities of Large Language Models via Representation Engineering"
+    ],
+    "emnlp25": [
+      "Let's Reason Formally: Natural-Formal Hybrid Reasoning Enhances LLM's Math Capability",
+      "Long Chain-of-Thought Fine-tuning via Understanding-to-Reasoning Transition",
+      "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+      "What Makes a Good Reasoning Chain? Uncovering Structural Patterns in Long Chain-of-Thought Reasoning",
+      "Through the Valley: Path to Effective Long CoT Training for Small Language Models"
+    ],
+    "icml25": [
+      "MA-LoT: Model-Collaboration Lean-based Long Chain-of-Thought Reasoning enhances Formal Theorem Proving",
+      "Demystifying Long Chain-of-Thought Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 5,
+    "icml25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "icml25"
+  ]
+}

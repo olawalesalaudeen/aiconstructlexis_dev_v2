@@ -1,0 +1,169 @@
+{
+  "canonical_name": "MultiPL-E",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, the prevailing usage treats MultiPL-E as a multilingual code generation benchmark formed by translating HumanEval, and often MBPP, into multiple programming languages. Several definitions describe parallel datasets in 18 programming languages, sometimes as translations of two unit-test driven Python benchmarks to 18 other languages; as one paper puts it, it is \"translated from the Python benchmark ... into parallel datasets in 18 programming languages\" (Knowledge Fusion of Large Language Models). Some authors also call it a multi-language parallel benchmark for text-to-code generation, and papers report evaluations on subsets such as 8 languages, 5 languages, or cpp/go. A smaller line of work describes it more narrowly as translated HumanEval problems, while one paper instead describes a Bash-focused benchmark with 540 scripting tasks checked by unit tests.\n\nWhat it is claimed to measure. Papers link MultiPL-E to 2 behavioral indicators and no constructs. The dominant claim is that papers use it to measure code generation, with evaluations reported on MultiPL-E using metrics such as pass@1, pass@k, Avg. Pass@(1+10), and pass@100. A smaller line uses it to measure code completion, with one paper reporting multilingual code completion averages on Multipl-E. In these papers, the measurement claims stay at the level of behavioral indicators rather than named constructs.\n\nSpace of uses. Papers frequently include MultiPL-E in benchmark suites, most commonly alongside HumanEval and sometimes with MBPP, HumanEval+, and DS-1000. Papers report 1 inter-instrument link, to HumanEval, as related; one paper states that MultiPL-E \"extends HumanEval and MBPP ... to support 18 programming languages.\" They also position it as the multilingual slice of evaluation, reporting results on selected language subsets such as cpp/go, five-language setups, or Bash tasks.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MultiPL-E",
+    "Multipl-E",
+    "MULTIPL-E"
+  ],
+  "papers": [
+    "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+    "ReflectionCoder: Learning from Reflection Sequence for Enhanced One-off Code Generation",
+    "SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning of Large Language Models",
+    "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference",
+    "SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation",
+    "Batched Low-Rank Adaptation of Foundation Models",
+    "Knowledge Fusion of Large Language Models",
+    "Lemur: Harmonizing Natural Language and Code for Language Agents",
+    "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+    "McEval: Massively Multilingual Code Evaluation",
+    "Monet: Mixture of Monosemantic Experts for Transformers",
+    "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+    "LLM-Supported Natural Language to Bash Translation",
+    "Enhancing Reasoning Capabilities of LLMs via Principled Synthetic Logic Corpus",
+    "StackEval: Benchmarking LLMs in Coding Assistance"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "MultiPL-E is a benchmark for evaluating multilingual code generation by translating the HumanEval and MBPP benchmarks into many programming languages.",
+      "paper": "Batched Low-Rank Adaptation of Foundation Models",
+      "original_name": "MultiPL-E"
+    },
+    {
+      "text": "A benchmark for evaluating the multilingual code generation capabilities of models by translating HumanEval problems into multiple programming languages.",
+      "paper": "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+      "original_name": "Multipl-E"
+    },
+    {
+      "text": "A benchmark used to evaluate programming language masking and pass@100 metric changes across languages.",
+      "paper": "Monet: Mixture of Monosemantic Experts for Transformers",
+      "original_name": "MULTIPL-E"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Batched Low-Rank Adaptation of Foundation Models",
+      "evidence": "The evaluation of FLORA, LORA, and IA3 was conducted on the MultiPL-E benchmark (Cassano et al., 2023), which contains the translation of two unit-test driven Python benchmarks (HumanEval and MBPP) to 18 other programming languages. (Section 4.2)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Batched Low-Rank Adaptation of Foundation Models",
+          "WizardCoder: Empowering Code Large Language Models with Evol-Instruct"
+        ],
+        "acl25": [
+          "SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning of Large Language Models"
+        ],
+        "icml25": [
+          "Instruction-Following Pruning for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code completion",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+      "evidence": "comparing multilingual code completion averages on Multipl-E (Cassano et al., 2023)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "HumanEval",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation",
+      "evidence": "It extends HumanEval and MBPP (Austin et al., 2021) to support 18 programming languages.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, the prevailing usage treats MultiPL-E as a multilingual code generation benchmark formed by translating HumanEval, and often MBPP, into multiple programming languages. Several definitions describe parallel datasets in 18 programming languages, sometimes as translations of two unit-test driven Python benchmarks to 18 other languages; as one paper puts it, it is \"translated from the Python benchmark ... into parallel datasets in 18 programming languages\" (Knowledge Fusion of Large Language Models). Some authors also call it a multi-language parallel benchmark for text-to-code generation, and papers report evaluations on subsets such as 8 languages, 5 languages, or cpp/go. A smaller line of work describes it more narrowly as translated HumanEval problems, while one paper instead describes a Bash-focused benchmark with 540 scripting tasks checked by unit tests."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link MultiPL-E to 2 behavioral indicators and no constructs. The dominant claim is that papers use it to measure code generation, with evaluations reported on MultiPL-E using metrics such as pass@1, pass@k, Avg. Pass@(1+10), and pass@100. A smaller line uses it to measure code completion, with one paper reporting multilingual code completion averages on Multipl-E. In these papers, the measurement claims stay at the level of behavioral indicators rather than named constructs."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers frequently include MultiPL-E in benchmark suites, most commonly alongside HumanEval and sometimes with MBPP, HumanEval+, and DS-1000. Papers report 1 inter-instrument link, to HumanEval, as related; one paper states that MultiPL-E \"extends HumanEval and MBPP ... to support 18 programming languages.\" They also position it as the multilingual slice of evaluation, reporting results on selected language subsets such as cpp/go, five-language setups, or Bash tasks."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, the prevailing usage treats MultiPL-E as a multilingual code generation benchmark formed by translating HumanEval, and often MBPP, into multiple programming languages. Several definitions describe parallel datasets in 18 programming languages, sometimes as translations of two unit-test driven Python benchmarks to 18 other languages; as one paper puts it, it is \"translated from the Python benchmark ... into parallel datasets in 18 programming languages\" (Knowledge Fusion of Large Language Models). Some authors also call it a multi-language parallel benchmark for text-to-code generation, and papers report evaluations on subsets such as 8 languages, 5 languages, or cpp/go. A smaller line of work describes it more narrowly as translated HumanEval problems, while one paper instead describes a Bash-focused benchmark with 540 scripting tasks checked by unit tests.\n\nWhat it is claimed to measure. Papers link MultiPL-E to 2 behavioral indicators and no constructs. The dominant claim is that papers use it to measure code generation, with evaluations reported on MultiPL-E using metrics such as pass@1, pass@k, Avg. Pass@(1+10), and pass@100. A smaller line uses it to measure code completion, with one paper reporting multilingual code completion averages on Multipl-E. In these papers, the measurement claims stay at the level of behavioral indicators rather than named constructs.\n\nSpace of uses. Papers frequently include MultiPL-E in benchmark suites, most commonly alongside HumanEval and sometimes with MBPP, HumanEval+, and DS-1000. Papers report 1 inter-instrument link, to HumanEval, as related; one paper states that MultiPL-E \"extends HumanEval and MBPP ... to support 18 programming languages.\" They also position it as the multilingual slice of evaluation, reporting results on selected language subsets such as cpp/go, five-language setups, or Bash tasks.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+      "ReflectionCoder: Learning from Reflection Sequence for Enhanced One-off Code Generation",
+      "SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning of Large Language Models"
+    ],
+    "emnlp25": [
+      "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference",
+      "SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation"
+    ],
+    "iclr24": [
+      "Batched Low-Rank Adaptation of Foundation Models",
+      "Knowledge Fusion of Large Language Models",
+      "Lemur: Harmonizing Natural Language and Code for Language Agents",
+      "WizardCoder: Empowering Code Large Language Models with Evol-Instruct"
+    ],
+    "iclr25": [
+      "McEval: Massively Multilingual Code Evaluation",
+      "Monet: Mixture of Monosemantic Experts for Transformers",
+      "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding"
+    ],
+    "neurips24": [
+      "Enhancing Reasoning Capabilities of LLMs via Principled Synthetic Logic Corpus",
+      "StackEval: Benchmarking LLMs in Coding Assistance"
+    ],
+    "naacl25": [
+      "LLM-Supported Natural Language to Bash Translation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 2,
+    "iclr24": 4,
+    "iclr25": 3,
+    "neurips24": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

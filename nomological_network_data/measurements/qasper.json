@@ -1,0 +1,212 @@
+{
+  "canonical_name": "Qasper",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, Qasper is most commonly described as a question-answering benchmark or dataset over full NLP papers, research papers, or scientific articles, with information-seeking questions grounded in the paper text. Definitions differ in emphasis: some describe full-paper or long scientific-document QA, while others place it in the SCROLL benchmark and note that it includes abstractive, extractive, yes/no, and unanswerable questions, including cases unanswerable from the provided abstract or full text. One description says it includes 5,049 questions across 1,585 NLP papers, another says the papers are filtered from S2ORC, and some work refers to a Qasper subset from LongBench.\n\nWhat it is claimed to measure. Papers link Qasper to 3 behavioral indicators and 3 constructs. The prevailing use is to measure question answering, and other papers use it to measure document question answering and synthetic recall. At the construct level, papers report it as measuring length generalization, long-context reasoning, and long-context understanding.\n\nSpace of uses. The only recorded instrument link is that one paper relates Qasper to SCROLLS, presenting it among long-context open-book question answering tasks. It is used alongside NarrativeQA, QuALITY, ContractNLI, and QMSum, and papers position it as an open-book or document-grounded QA benchmark for retrieval, long-sequence, long-context, and length extrapolation evaluations. Some papers also adapt it for specific setups, for example treating each paper as a knowledge base with sections as documents and passages, or filtering and augmenting QASPER to identify questions requiring reasoning over figures, tables, and textual paragraphs.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "QASPER",
+    "Qasper"
+  ],
+  "papers": [
+    "DTCRS: Dynamic Tree Construction for Recursive Summarization",
+    "Dynamic Chunking and Selection for Reading Comprehension of Ultra-Long Context in Large Language Models",
+    "Enhancing Retrieval-Augmented Generation via Evidence Tree Search",
+    "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+    "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+    "Retrieval meets Long Context Large Language Models",
+    "AttriBoT: A Bag of Tricks for Efficiently Approximating Leave-One-Out Context Attribution",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "On Speeding Up Language Model Evaluation",
+    "Cost-efficient Collaboration between On-device and Cloud Language Models",
+    "LaRA: Benchmarking Retrieval-Augmented Generation and Long-Context LLMs \u2013 No Silver Bullet for LC or RAG Routing",
+    "AMOR: A Recipe for Building Adaptable Modular Knowledge Agents Through Process Feedback",
+    "AutoMix: Automatically Mixing Language Models",
+    "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+    "Enhancing LLM\u2019s Cognition via Structurization",
+    "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+    "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+    "SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "QASPER is a question-answering benchmark over full NLP papers, used here to assess retrieval and answering over long scientific documents.",
+      "paper": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "original_name": "QASPER"
+    },
+    {
+      "text": "A dataset from the SCROLL benchmark for question answering about scientific papers, where questions may be unanswerable from the provided abstract or full text.",
+      "paper": "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "original_name": "Qasper"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Retrieval meets Long Context Large Language Models",
+      "evidence": "Qasper (QASP) (Dasigi et al., 2021) is a question answering dataset over NLP papers filtered from the Semantic Scholar Open Research Corpus (S2ORC) (Lo et al., 2020).",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Retrieval meets Long Context Large Language Models",
+          "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval"
+        ],
+        "neurips24": [
+          "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+          "AutoMix: Automatically Mixing Language Models",
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ],
+        "icml25": [
+          "Cost-efficient Collaboration between On-device and Cloud Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SCROLLS",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "evidence": "...we evaluate MEGALODON on long-context open-book question answering (QA) tasks in the Scrolls dataset (Shaham et al., 2022), including NarrativeQA (Ko\u02c7cisk\u00b4y et al., 2018), Qasper (Dasigi et al., 2021)... (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "evidence": "Long-context ability evaluation. Following Xiong et al. [94], we evaluated the models on long-sequence tasks, including Qasper [18]... (Table 4, Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Gated Slot Attention for Efficient Linear-Time Sequence Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Document question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "AttriBoT: A Bag of Tricks for Efficiently Approximating Leave-One-Out Context Attribution",
+      "evidence": "\u201cTo this end, we focus on three open-book QA datasets: 3. QASPER (Dasigi et al., 2021): A document-grounded, information-seeking question answering dataset\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AttriBoT: A Bag of Tricks for Efficiently Approximating Leave-One-Out Context Attribution"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Synthetic recall",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "MoDification: Mixture of Depths Made Easy",
+      "evidence": "In long-context retrieval scenario where questions are gathered from Qasper (Dasigi et al., 2021), MoDification-7B-32k yields 10.3 on Qasper, which is competitive with 10.2 from LLaMA-2-7B-32k. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "MoDification: Mixture of Depths Made Easy"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, Qasper is most commonly described as a question-answering benchmark or dataset over full NLP papers, research papers, or scientific articles, with information-seeking questions grounded in the paper text. Definitions differ in emphasis: some describe full-paper or long scientific-document QA, while others place it in the SCROLL benchmark and note that it includes abstractive, extractive, yes/no, and unanswerable questions, including cases unanswerable from the provided abstract or full text. One description says it includes 5,049 questions across 1,585 NLP papers, another says the papers are filtered from S2ORC, and some work refers to a Qasper subset from LongBench."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link Qasper to 3 behavioral indicators and 3 constructs. The prevailing use is to measure question answering, and other papers use it to measure document question answering and synthetic recall. At the construct level, papers report it as measuring length generalization, long-context reasoning, and long-context understanding."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "The only recorded instrument link is that one paper relates Qasper to SCROLLS, presenting it among long-context open-book question answering tasks. It is used alongside NarrativeQA, QuALITY, ContractNLI, and QMSum, and papers position it as an open-book or document-grounded QA benchmark for retrieval, long-sequence, long-context, and length extrapolation evaluations. Some papers also adapt it for specific setups, for example treating each paper as a knowledge base with sections as documents and passages, or filtering and augmenting QASPER to identify questions requiring reasoning over figures, tables, and textual paragraphs."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, Qasper is most commonly described as a question-answering benchmark or dataset over full NLP papers, research papers, or scientific articles, with information-seeking questions grounded in the paper text. Definitions differ in emphasis: some describe full-paper or long scientific-document QA, while others place it in the SCROLL benchmark and note that it includes abstractive, extractive, yes/no, and unanswerable questions, including cases unanswerable from the provided abstract or full text. One description says it includes 5,049 questions across 1,585 NLP papers, another says the papers are filtered from S2ORC, and some work refers to a Qasper subset from LongBench.\n\nWhat it is claimed to measure. Papers link Qasper to 3 behavioral indicators and 3 constructs. The prevailing use is to measure question answering, and other papers use it to measure document question answering and synthetic recall. At the construct level, papers report it as measuring length generalization, long-context reasoning, and long-context understanding.\n\nSpace of uses. The only recorded instrument link is that one paper relates Qasper to SCROLLS, presenting it among long-context open-book question answering tasks. It is used alongside NarrativeQA, QuALITY, ContractNLI, and QMSum, and papers position it as an open-book or document-grounded QA benchmark for retrieval, long-sequence, long-context, and length extrapolation evaluations. Some papers also adapt it for specific setups, for example treating each paper as a knowledge base with sections as documents and passages, or filtering and augmenting QASPER to identify questions requiring reasoning over figures, tables, and textual paragraphs.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "DTCRS: Dynamic Tree Construction for Recursive Summarization",
+      "Dynamic Chunking and Selection for Reading Comprehension of Ultra-Long Context in Large Language Models",
+      "Enhancing Retrieval-Augmented Generation via Evidence Tree Search"
+    ],
+    "iclr24": [
+      "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "Retrieval meets Long Context Large Language Models"
+    ],
+    "iclr25": [
+      "AttriBoT: A Bag of Tricks for Efficiently Approximating Leave-One-Out Context Attribution",
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "On Speeding Up Language Model Evaluation"
+    ],
+    "icml25": [
+      "Cost-efficient Collaboration between On-device and Cloud Language Models",
+      "LaRA: Benchmarking Retrieval-Augmented Generation and Long-Context LLMs \u2013 No Silver Bullet for LC or RAG Routing"
+    ],
+    "neurips24": [
+      "AMOR: A Recipe for Building Adaptable Modular Knowledge Agents Through Process Feedback",
+      "AutoMix: Automatically Mixing Language Models",
+      "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+      "Enhancing LLM\u2019s Cognition via Structurization",
+      "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr24": 3,
+    "iclr25": 3,
+    "icml25": 2,
+    "neurips24": 7
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

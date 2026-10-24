@@ -1,0 +1,154 @@
+{
+  "canonical_name": "Contradiction detection",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is a judgment about whether pieces of content are logically inconsistent in context. Most definitions ask for detecting the presence of a contradiction, often as a binary decision, whether the items are a multi-sentence document, two generated sentences, a new fact against an existing world state, or retrieved external knowledge against internal knowledge. A smaller line of work makes the behavior more selective rather than purely binary, requiring the model to choose the testimony-evidence pair that contradicts, in a task described as \"essentially a multiple-choice format with an action space of |T| \u00d7 |E|\". Papers largely agree on the core criterion of logical incompatibility, and some state it formally as a conflict where a state entails both \u03c6 and \u00ac\u03c6.\n\nVariants. Papers use both contradiction detection and conflict detection, spanning document, corpus, multilingual answer, retrieval-augmented, and narrative or world-state settings. The narrative line includes checking whether overlapping validity intervals contradict existing facts and detecting \"conflict quadruples\" based on time order. Other isolated formulations place the same behavior in multi-agent reasoning, SAT solving, or legal clause-provision comparison.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Even so, papers most commonly operationalize the behavior as a binary judgment, for example binary classification over atomic facts, deciding whether two sentences are contradictory within context, or checking whether a clause conforms to or contradicts a provision. A smaller set uses structured selection rather than yes or no scoring, including a multiple-choice search over testimony-evidence pairs.\n\nWhat it is taken as evidence of. Papers do not present a shared construct that this behavior measures. The only linked construct is Knowledge conflict resolution, and one paper treats contradiction detection as related to it, describing a framework that can \"identify and resolve detailed points of knowledge conflict.\" Beyond that related link, the papers do not converge on a broader evidence-of role.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Document-level self-contradiction detection",
+    "Contradiction identification",
+    "Conflict detection",
+    "Answer conflict detection",
+    "Corpus-level inconsistency detection",
+    "Contradiction checking",
+    "Contradiction detection"
+  ],
+  "papers": [
+    "Micro-Act: Mitigate Knowledge Conflict in Question Answering via Actionable Self-Reasoning",
+    "ProvBench: A Benchmark of Legal Provision Recommendation for Contract Auto-Reviewing",
+    "Conflicting Needles in a Haystack: How LLMs behave when faced with contradictory information",
+    "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+    "Knowledge Editing through Chain-of-Thought",
+    "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+    "Think Wider, Detect Sharper: Reinforced Reference Coverage for Document-Level Self-Contradiction Detection",
+    "TurnaboutLLM: A Deductive Reasoning Benchmark from Detective Games",
+    "XLQA: A Benchmark for Locale-Aware Multilingual Open-Domain Question Answering",
+    "Self-contradictory Hallucinations of Large Language Models: Evaluation, Detection and Mitigation",
+    "Can Transformers Reason Logically? A Study in SAT Solving",
+    "FactTrack: Time-Aware World State Tracking in Story Outlines",
+    "Generating Long-form Story Using Dynamic Hierarchical Outlining with Memory-Enhancement",
+    "Towards Knowledge Checking in Retrieval-augmented Generation: A Representation Perspective"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of identifying whether a multi-sentence document contains any internal contradictions.",
+      "paper": "Think Wider, Detect Sharper: Reinforced Reference Coverage for Document-Level Self-Contradiction Detection",
+      "original_name": "Document-level self-contradiction detection"
+    },
+    {
+      "text": "The observable task of selecting a pair of testimony and evidence that logically contradict each other based on narrative context.",
+      "paper": "TurnaboutLLM: A Deductive Reasoning Benchmark from Detective Games",
+      "original_name": "Contradiction identification"
+    },
+    {
+      "text": "Observably identifying logical inconsistencies between assertions, either within a single agent or across the multi-agent system.",
+      "paper": "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "original_name": "Conflict detection"
+    },
+    {
+      "text": "Identifying cases where model responses differ semantically across languages for the same question, indicating potential locale sensitivity.",
+      "paper": "XLQA: A Benchmark for Locale-Aware Multilingual Open-Domain Question Answering",
+      "original_name": "Answer conflict detection"
+    },
+    {
+      "text": "The task of identifying, for a given fact from a corpus, whether there exists at least one other fact within the same corpus that contradicts it.",
+      "paper": "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+      "original_name": "Corpus-level inconsistency detection"
+    },
+    {
+      "text": "The observable behavior of detecting whether retrieved external knowledge contradicts the LLM's internal knowledge about a query.",
+      "paper": "Towards Knowledge Checking in Retrieval-augmented Generation: A Representation Perspective",
+      "original_name": "Contradiction checking"
+    },
+    {
+      "text": "The observable behavior of identifying whether two sentences generated by a language model are logically inconsistent within a given context.",
+      "paper": "Self-contradictory Hallucinations of Large Language Models: Evaluation, Detection and Mitigation",
+      "original_name": "Contradiction detection"
+    }
+  ],
+  "definition_count": 7,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge conflict resolution",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Micro-Act: Mitigate Knowledge Conflict in Question Answering via Actionable Self-Reasoning",
+      "evidence": "We introduce MICRO-ACT, a framework that enables Large Language Models (LLMs) to automatically identify and resolve detailed points of knowledge conflict. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Micro-Act: Mitigate Knowledge Conflict in Question Answering via Actionable Self-Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is a judgment about whether pieces of content are logically inconsistent in context. Most definitions ask for detecting the presence of a contradiction, often as a binary decision, whether the items are a multi-sentence document, two generated sentences, a new fact against an existing world state, or retrieved external knowledge against internal knowledge. A smaller line of work makes the behavior more selective rather than purely binary, requiring the model to choose the testimony-evidence pair that contradicts, in a task described as \"essentially a multiple-choice format with an action space of |T| \u00d7 |E|\". Papers largely agree on the core criterion of logical incompatibility, and some state it formally as a conflict where a state entails both \u03c6 and \u00ac\u03c6."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use both contradiction detection and conflict detection, spanning document, corpus, multilingual answer, retrieval-augmented, and narrative or world-state settings. The narrative line includes checking whether overlapping validity intervals contradict existing facts and detecting \"conflict quadruples\" based on time order. Other isolated formulations place the same behavior in multi-agent reasoning, SAT solving, or legal clause-provision comparison."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Even so, papers most commonly operationalize the behavior as a binary judgment, for example binary classification over atomic facts, deciding whether two sentences are contradictory within context, or checking whether a clause conforms to or contradicts a provision. A smaller set uses structured selection rather than yes or no scoring, including a multiple-choice search over testimony-evidence pairs."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not present a shared construct that this behavior measures. The only linked construct is Knowledge conflict resolution, and one paper treats contradiction detection as related to it, describing a framework that can \"identify and resolve detailed points of knowledge conflict.\" Beyond that related link, the papers do not converge on a broader evidence-of role."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is a judgment about whether pieces of content are logically inconsistent in context. Most definitions ask for detecting the presence of a contradiction, often as a binary decision, whether the items are a multi-sentence document, two generated sentences, a new fact against an existing world state, or retrieved external knowledge against internal knowledge. A smaller line of work makes the behavior more selective rather than purely binary, requiring the model to choose the testimony-evidence pair that contradicts, in a task described as \"essentially a multiple-choice format with an action space of |T| \u00d7 |E|\". Papers largely agree on the core criterion of logical incompatibility, and some state it formally as a conflict where a state entails both \u03c6 and \u00ac\u03c6.\n\nVariants. Papers use both contradiction detection and conflict detection, spanning document, corpus, multilingual answer, retrieval-augmented, and narrative or world-state settings. The narrative line includes checking whether overlapping validity intervals contradict existing facts and detecting \"conflict quadruples\" based on time order. Other isolated formulations place the same behavior in multi-agent reasoning, SAT solving, or legal clause-provision comparison.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Even so, papers most commonly operationalize the behavior as a binary judgment, for example binary classification over atomic facts, deciding whether two sentences are contradictory within context, or checking whether a clause conforms to or contradicts a provision. A smaller set uses structured selection rather than yes or no scoring, including a multiple-choice search over testimony-evidence pairs.\n\nWhat it is taken as evidence of. Papers do not present a shared construct that this behavior measures. The only linked construct is Knowledge conflict resolution, and one paper treats contradiction detection as related to it, describing a framework that can \"identify and resolve detailed points of knowledge conflict.\" Beyond that related link, the papers do not converge on a broader evidence-of role.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Micro-Act: Mitigate Knowledge Conflict in Question Answering via Actionable Self-Reasoning",
+      "ProvBench: A Benchmark of Legal Provision Recommendation for Contract Auto-Reviewing"
+    ],
+    "emnlp25": [
+      "Conflicting Needles in a Haystack: How LLMs behave when faced with contradictory information",
+      "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+      "Knowledge Editing through Chain-of-Thought",
+      "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "Think Wider, Detect Sharper: Reinforced Reference Coverage for Document-Level Self-Contradiction Detection",
+      "TurnaboutLLM: A Deductive Reasoning Benchmark from Detective Games",
+      "XLQA: A Benchmark for Locale-Aware Multilingual Open-Domain Question Answering"
+    ],
+    "iclr24": [
+      "Self-contradictory Hallucinations of Large Language Models: Evaluation, Detection and Mitigation"
+    ],
+    "icml25": [
+      "Can Transformers Reason Logically? A Study in SAT Solving"
+    ],
+    "naacl25": [
+      "FactTrack: Time-Aware World State Tracking in Story Outlines",
+      "Generating Long-form Story Using Dynamic Hierarchical Outlining with Memory-Enhancement",
+      "Towards Knowledge Checking in Retrieval-augmented Generation: A Representation Perspective"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 7,
+    "iclr24": 1,
+    "icml25": 1,
+    "naacl25": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "icml25",
+    "naacl25"
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "canonical_name": "Protein understanding",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is prediction of protein fitness or mutational effect from amino acid sequence: authors describe regression over functional performance, prediction of the impact of substitutions, or assignment of a scalar score or relative ranking based on predicted biophysical or functional properties. A common zero-shot formulation scores mutated sequences relative to a wild type by differences in model likelihoods or log odds ratios, without fine-tuning or support-set examples. Smaller lines of work treat the behavior as iteratively editing a seed sequence to obtain a higher predicted fitness sequence, or as predicting antibody-antigen binding or binding affinity.\n\nVariants. Papers study several variants and settings. Common names include protein variant fitness prediction, mutation effect prediction, protein fitness prediction, and zero-shot prediction, with some work emphasizing ranking by preference rather than direct value prediction. Other variants shift the domain or output: iterative sequence editing has the model start from a seed sequence and repeatedly propose improvements, while antibody-focused work frames the task as SARS-CoV-2-VHH binding prediction, including binding or non-binding classification of unknown antibodies to multiple antigens and continuous affinity prediction.\n\nSpace of elicitation and scores. One measurement instrument is linked to this behavior, ProteinGym, which one paper describes as an established fitness-prediction benchmark. Scoring otherwise varies by formulation: one regression setup reports sequence-level Spearman coefficient, preference-based setups rank sequences by fitness, zero-shot variants use likelihood differences or log odds ratios, and antibody work uses binary classification or continuous affinity prediction.\n\nWhat it is taken as evidence of. Three constructs are linked, but the recorded relations are mixed rather than a single repeated evidential mapping. Papers claim causal relationships from Generalization to Protein understanding and from Meta-learning to Protein understanding, and another paper relates Protein understanding to Representation quality by using binding prediction benchmarks to assess representation capabilities. Across these links, papers connect the behavior to several constructs, though they do not use one shared relation type.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Fitness prediction",
+    "Mutation effect prediction",
+    "Protein variant fitness prediction",
+    "Zero-shot fitness prediction",
+    "Protein fitness prediction",
+    "Iterative sequence editing",
+    "Binding prediction",
+    "Binding affinity prediction",
+    "Zero-shot prediction"
+  ],
+  "papers": [
+    "Large Language Models are Good Relational Learners",
+    "Bio-xLSTM: Generative modeling, representation and in-context learning of biological and chemical sequences",
+    "Metalic: Meta-Learning In-Context with Protein Language Models",
+    "Protein Language Model Fitness is a Matter of Preference",
+    "Data Distillation for extrapolative protein design through exact preference optimization",
+    "AutoEval Done Right: Using Synthetic Data for Model Evaluation",
+    "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection",
+    "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models",
+    "Training Compute-Optimal Protein Language Models"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A regression task to predict a protein's fitness, a measure of its functional performance.",
+      "paper": "Training Compute-Optimal Protein Language Models",
+      "original_name": "Fitness prediction"
+    },
+    {
+      "text": "The task of predicting the functional effect or fitness impact of amino acid substitutions (mutations) in a protein sequence.",
+      "paper": "Bio-xLSTM: Generative modeling, representation and in-context learning of biological and chemical sequences",
+      "original_name": "Protein variant fitness prediction"
+    },
+    {
+      "text": "The observable task of assigning a score to a mutated protein sequence relative to a wild type sequence to predict its functional fitness, without any fine-tuning on labeled fitness data.",
+      "paper": "Protein Language Model Fitness is a Matter of Preference",
+      "original_name": "Zero-shot fitness prediction"
+    },
+    {
+      "text": "The specific task of predicting the functional outcome of one or more mutations in a protein sequence, often as a log odds ratio.",
+      "paper": "Protein Language Model Fitness is a Matter of Preference",
+      "original_name": "Mutation effect prediction"
+    },
+    {
+      "text": "The task of assigning a scalar value or a relative ranking to protein sequences based on their predicted biophysical or functional properties.",
+      "paper": "Metalic: Meta-Learning In-Context with Protein Language Models",
+      "original_name": "Protein fitness prediction"
+    },
+    {
+      "text": "The observable process where a model proposes modifications to a given protein sequence to generate a new sequence with a predicted higher fitness value.",
+      "paper": "Data Distillation for extrapolative protein design through exact preference optimization",
+      "original_name": "Iterative sequence editing"
+    },
+    {
+      "text": "The task of classifying whether a given antibody sequence will bind to a specific antigen, typically framed as a binary or multi-class classification problem.",
+      "paper": "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models",
+      "original_name": "Binding prediction"
+    },
+    {
+      "text": "The task of predicting a continuous value representing the strength or affinity of the binding interaction between an antibody and an antigen.",
+      "paper": "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models",
+      "original_name": "Binding affinity prediction"
+    },
+    {
+      "text": "Making fitness predictions without any support-set examples for the target task.",
+      "paper": "Metalic: Meta-Learning In-Context with Protein Language Models",
+      "original_name": "Zero-shot prediction"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Representation quality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models",
+      "evidence": "These results con\ufb01rm that AVIDa-SARS-CoV-2 provides valuable benchmarks for assessing the representation capabilities of antibody language models for binding prediction, thereby facilitating the development of AI-driven antibody discovery.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Meta-learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Metalic: Meta-Learning In-Context with Protein Language Models",
+      "evidence": "we propose meta-learning over a distribution of standard fitness prediction tasks, and demonstrate positive transfer to unseen fitness prediction tasks. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Metalic: Meta-Learning In-Context with Protein Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ProteinGym",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Metalic: Meta-Learning In-Context with Protein Language Models",
+      "evidence": "our method sets a new state-of-the-art in low-data settings on ProteinGym, an established fitness-prediction benchmark. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Metalic: Meta-Learning In-Context with Protein Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is prediction of protein fitness or mutational effect from amino acid sequence: authors describe regression over functional performance, prediction of the impact of substitutions, or assignment of a scalar score or relative ranking based on predicted biophysical or functional properties. A common zero-shot formulation scores mutated sequences relative to a wild type by differences in model likelihoods or log odds ratios, without fine-tuning or support-set examples. Smaller lines of work treat the behavior as iteratively editing a seed sequence to obtain a higher predicted fitness sequence, or as predicting antibody-antigen binding or binding affinity."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several variants and settings. Common names include protein variant fitness prediction, mutation effect prediction, protein fitness prediction, and zero-shot prediction, with some work emphasizing ranking by preference rather than direct value prediction. Other variants shift the domain or output: iterative sequence editing has the model start from a seed sequence and repeatedly propose improvements, while antibody-focused work frames the task as SARS-CoV-2-VHH binding prediction, including binding or non-binding classification of unknown antibodies to multiple antigens and continuous affinity prediction."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "One measurement instrument is linked to this behavior, ProteinGym, which one paper describes as an established fitness-prediction benchmark. Scoring otherwise varies by formulation: one regression setup reports sequence-level Spearman coefficient, preference-based setups rank sequences by fitness, zero-shot variants use likelihood differences or log odds ratios, and antibody work uses binary classification or continuous affinity prediction."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Three constructs are linked, but the recorded relations are mixed rather than a single repeated evidential mapping. Papers claim causal relationships from Generalization to Protein understanding and from Meta-learning to Protein understanding, and another paper relates Protein understanding to Representation quality by using binding prediction benchmarks to assess representation capabilities. Across these links, papers connect the behavior to several constructs, though they do not use one shared relation type."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is prediction of protein fitness or mutational effect from amino acid sequence: authors describe regression over functional performance, prediction of the impact of substitutions, or assignment of a scalar score or relative ranking based on predicted biophysical or functional properties. A common zero-shot formulation scores mutated sequences relative to a wild type by differences in model likelihoods or log odds ratios, without fine-tuning or support-set examples. Smaller lines of work treat the behavior as iteratively editing a seed sequence to obtain a higher predicted fitness sequence, or as predicting antibody-antigen binding or binding affinity.\n\nVariants. Papers study several variants and settings. Common names include protein variant fitness prediction, mutation effect prediction, protein fitness prediction, and zero-shot prediction, with some work emphasizing ranking by preference rather than direct value prediction. Other variants shift the domain or output: iterative sequence editing has the model start from a seed sequence and repeatedly propose improvements, while antibody-focused work frames the task as SARS-CoV-2-VHH binding prediction, including binding or non-binding classification of unknown antibodies to multiple antigens and continuous affinity prediction.\n\nSpace of elicitation and scores. One measurement instrument is linked to this behavior, ProteinGym, which one paper describes as an established fitness-prediction benchmark. Scoring otherwise varies by formulation: one regression setup reports sequence-level Spearman coefficient, preference-based setups rank sequences by fitness, zero-shot variants use likelihood differences or log odds ratios, and antibody work uses binary classification or continuous affinity prediction.\n\nWhat it is taken as evidence of. Three constructs are linked, but the recorded relations are mixed rather than a single repeated evidential mapping. Papers claim causal relationships from Generalization to Protein understanding and from Meta-learning to Protein understanding, and another paper relates Protein understanding to Representation quality by using binding prediction benchmarks to assess representation capabilities. Across these links, papers connect the behavior to several constructs, though they do not use one shared relation type.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Large Language Models are Good Relational Learners"
+    ],
+    "iclr25": [
+      "Bio-xLSTM: Generative modeling, representation and in-context learning of biological and chemical sequences",
+      "Metalic: Meta-Learning In-Context with Protein Language Models",
+      "Protein Language Model Fitness is a Matter of Preference",
+      "Data Distillation for extrapolative protein design through exact preference optimization"
+    ],
+    "icml25": [
+      "AutoEval Done Right: Using Synthetic Data for Model Evaluation"
+    ],
+    "naacl25": [
+      "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection"
+    ],
+    "neurips24": [
+      "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models",
+      "Training Compute-Optimal Protein Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "iclr25": 4,
+    "icml25": 1,
+    "naacl25": 1,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "canonical_name": "Attention sparsity",
+  "type": "construct",
+  "canonical_definition": "Across the surveyed literature, attention sparsity is consistently defined as the property of a model's attention mechanism where scores are concentrated on a small subset of tokens or key-value pairs. The prevailing view is that this is an \"inherent\" or \"natural\" characteristic, with multiple sources noting that only a few tokens significantly influence the computation for a given output. However, this perspective is not universally held; one paper explicitly contradicts the belief that attention is always sparse, observing this may not hold for tasks that \"leverage the full context\" and that high observed sparsity can be an artifact of an \"attention sink\" (MagicPIG: LSH Sampling for Efficient LLM Generation). Another source adds nuance by stating that while sparse patterns are common, their distribution \"varies significantly due to input content\" (AnchorAttention: Difference-Aware Sparse Attention with Stripe Granularity). This construct is studied in relation to long-context processing, and some work posits a directional relationship, suggesting that attention sparsity can improve data efficiency. For instance, one study reports it as a factor in the sample efficiency improvements induced by Chain-of-Thought.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Attention sparsity"
+  ],
+  "papers": [
+    "AnchorAttention: Difference-Aware Sparse Attention with Stripe Granularity",
+    "TokenSelect: Efficient Long-Context Inference and Length Extrapolation for LLMs via Dynamic Token-Level KV Cache Selection",
+    "From Sparse Dependence to Sparse Attention: Unveiling How Chain-of-Thought Enhances Transformer Sample Efficiency",
+    "MagicPIG: LSH Sampling for Efficient LLM Generation",
+    "Curse of High Dimensionality Issue in Transformer for Long Context Modeling",
+    "EPIC: Efficient Position-Independent Caching for Serving Large Language Models"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which a model's attention scores are concentrated on a small subset of tokens within the context.",
+      "paper": "MagicPIG: LSH Sampling for Efficient LLM Generation",
+      "original_name": "Attention sparsity"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Data efficiency",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "From Sparse Dependence to Sparse Attention: Unveiling How Chain-of-Thought Enhances Transformer Sample Efficiency",
+      "evidence": "confirming that sparsity in attention layers is a key factor of the improvement induced by CoT.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "From Sparse Dependence to Sparse Attention: Unveiling How Chain-of-Thought Enhances Transformer Sample Efficiency"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "AnchorAttention: Difference-Aware Sparse Attention with Stripe Granularity",
+      "evidence": "Therefore, there is an urgent need for a lower-granularity sparse attention mechanism with a stronger emphasis on global context, in order to mitigate the increasingly heavy computational burden during the prefill stage as context lengths continue to grow. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "AnchorAttention: Difference-Aware Sparse Attention with Stripe Granularity"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, attention sparsity is consistently defined as the property of a model's attention mechanism where scores are concentrated on a small subset of tokens or key-value pairs. The prevailing view is that this is an \"inherent\" or \"natural\" characteristic, with multiple sources noting that only a few tokens significantly influence the computation for a given output. However, this perspective is not universally held; one paper explicitly contradicts the belief that attention is always sparse, observing this may not hold for tasks that \"leverage the full context\" and that high observed sparsity can be an artifact of an \"attention sink\" (MagicPIG: LSH Sampling for Efficient LLM Generation). Another source adds nuance by stating that while sparse patterns are common, their distribution \"varies significantly due to input content\" (AnchorAttention: Difference-Aware Sparse Attention with Stripe Granularity). This construct is studied in relation to long-context processing, and some work posits a directional relationship, suggesting that attention sparsity can improve data efficiency. For instance, one study reports it as a factor in the sample efficiency improvements induced by Chain-of-Thought.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "AnchorAttention: Difference-Aware Sparse Attention with Stripe Granularity",
+      "TokenSelect: Efficient Long-Context Inference and Length Extrapolation for LLMs via Dynamic Token-Level KV Cache Selection"
+    ],
+    "iclr25": [
+      "From Sparse Dependence to Sparse Attention: Unveiling How Chain-of-Thought Enhances Transformer Sample Efficiency",
+      "MagicPIG: LSH Sampling for Efficient LLM Generation"
+    ],
+    "icml25": [
+      "Curse of High Dimensionality Issue in Transformer for Long Context Modeling",
+      "EPIC: Efficient Position-Independent Caching for Serving Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 2,
+    "icml25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

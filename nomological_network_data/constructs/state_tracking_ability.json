@@ -1,0 +1,211 @@
+{
+  "canonical_name": "State tracking ability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats state tracking ability as a latent capacity to maintain and update an internal representation of state as inputs, updates, or operations unfold. This common framing appears in definitions centered on an evolving world state, a system's state from observed updates, or an internal state for sequential operations. A smaller line of work uses narrower, task-bound versions: maintaining the complete final set of fluents after actions, inferring which fluents remain valid, tracking task progress and partner actions, keeping a running quantity, reusing intermediate results over long computations, or tracking past actions. The main disagreement is therefore between a broad internal-state ability and more specific observable or task-level tracking behaviors.\n\nSpace of facets. Papers mainly organize the construct through named subcases and adjacent labels. One recurring distinction is between fluent tracking, which asks which properties remain valid after a sequence of actions, and a broader state tracking category that queries the complete set of final-state fluents, and one paper explicitly says the latter extends the former. Some authors also use nearby labels such as stateful processing, or shift the focus to task progress, quantity updates, long-range consistency, or action history. As a result, the term appears both as a general model ability and as the name of benchmark categories or observable behaviors.\n\nSpace of measurement. Papers link it to one measurement instrument and four behavioral indicators. Direct measurement uses the benchmark MCBench, which operationalizes the construct as carrying intermediate results across several steps and reusing them later, and the behavioral tasks parity checking and modular arithmetic, which are used to demonstrate state-tracking performance. The remaining linked behavioral indicators enter through non-measurement links. Overall, these operationalizations target sequential maintenance and updating, matching the prevailing definition more closely than the narrower variants about fluents, task progress, quantities, or past actions. No construct is linked to it.\n\nLinks. Beyond measurement, one paper claims a causal relationship from state tracking ability to mathematical problem solving, describing mathematics as a task linked to state tracking. One paper also relates it to state tracking used as a benchmark category, where state tracking is described as extending fluent tracking. No correlational link is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "State tracking",
+    "State Tracking",
+    "State-tracking",
+    "Fluent tracking",
+    "Task tracking",
+    "Stateful processing",
+    "Tracking past actions",
+    "Quantity tracking",
+    "Long-range consistency"
+  ],
+  "papers": [
+    "Metric Calculating Benchmark: Code-Verifiable Complicate Instruction Following Benchmark for Large Language Models",
+    "ActionReasoningBench: Reasoning about Actions with and without Ramification Constraints",
+    "Explore Theory of Mind: program-guided adversarial data generation for theory of mind reasoning",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "LLMs Can Plan Only If We Tell Them",
+    "Limits of Deep Learning: Sequence Modeling through the Lens of Complexity Theory",
+    "OpenHands: An Open Platform for AI Software Developers as Generalist Agents",
+    "PARTNR: A Benchmark for Planning and Reasoning in Embodied Multi-agent Tasks",
+    "RefactorBench: Evaluating Stateful Reasoning in Language Agents Through Code",
+    "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+    "(How) Do Language Models Track State?",
+    "Implicit Language Models are RNNs: Balancing Parallelization and Expressivity",
+    "Minerva: A Programmable Memory Test Benchmark for Language Models"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability to maintain and update an internal representation of state over a sequence of inputs, crucial for complex reasoning and coding tasks.",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "original_name": "State tracking"
+    },
+    {
+      "text": "The ability of a model to maintain and update an internal representation of a system's state based on a sequence of observed updates.",
+      "paper": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+      "original_name": "State-tracking"
+    },
+    {
+      "text": "The ability to maintain a complete and accurate representation of all properties (fluents) in the world after a sequence of actions has occurred.",
+      "paper": "ActionReasoningBench: Reasoning about Actions with and without Ramification Constraints",
+      "original_name": "State Tracking"
+    },
+    {
+      "text": "The ability to infer which properties of an object remain valid after a sequence of actions from the changed state.",
+      "paper": "ActionReasoningBench: Reasoning about Actions with and without Ramification Constraints",
+      "original_name": "Fluent tracking"
+    },
+    {
+      "text": "The ability to maintain an internal state of task progress, including which sub-goals have been completed and which are still pending, especially in the presence of a partner's actions.",
+      "paper": "PARTNR: A Benchmark for Planning and Reasoning in Embodied Multi-agent Tasks",
+      "original_name": "Task tracking"
+    },
+    {
+      "text": "The ability to maintain and update an internal state based on a sequence of operations described in the context.",
+      "paper": "Minerva: A Programmable Memory Test Benchmark for Language Models",
+      "original_name": "Stateful processing"
+    },
+    {
+      "text": "The observable behavior of maintaining and reasoning about the history of actions taken during a task trajectory.",
+      "paper": "RefactorBench: Evaluating Stateful Reasoning in Language Agents Through Code",
+      "original_name": "Tracking past actions"
+    },
+    {
+      "text": "Maintaining and updating a running total of items through a sequence of add and subtract operations.",
+      "paper": "Minerva: A Programmable Memory Test Benchmark for Language Models",
+      "original_name": "Quantity tracking"
+    },
+    {
+      "text": "The ability to maintain and correctly reuse intermediate results and other information across multiple steps of a long computational process.",
+      "paper": "Metric Calculating Benchmark: Code-Verifiable Complicate Instruction Following Benchmark for Large Language Models",
+      "original_name": "Long-range consistency"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MCBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Metric Calculating Benchmark: Code-Verifiable Complicate Instruction Following Benchmark for Large Language Models",
+      "evidence": "MCBench evaluates three key capabilities of LLMs: ... \u2022 Long-Range Consistency: To finish the computation, the model must carry intermediate results across several steps and reuse them later",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Metric Calculating Benchmark: Code-Verifiable Complicate Instruction Following Benchmark for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mathematical problem solving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+      "evidence": "models (especially DeltaNet) with extended eigenvalue range will perform better on language modeling tasks linked to state-tracking such as coding or mathematics",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Parity checking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+      "evidence": "We test the modified methods on parity, modular arithmetic, and permutation composition, demonstrating improved state-tracking performance.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Modular arithmetic",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+      "evidence": "We test the modified methods on parity, modular arithmetic, and permutation composition, demonstrating improved state-tracking performance.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats state tracking ability as a latent capacity to maintain and update an internal representation of state as inputs, updates, or operations unfold. This common framing appears in definitions centered on an evolving world state, a system's state from observed updates, or an internal state for sequential operations. A smaller line of work uses narrower, task-bound versions: maintaining the complete final set of fluents after actions, inferring which fluents remain valid, tracking task progress and partner actions, keeping a running quantity, reusing intermediate results over long computations, or tracking past actions. The main disagreement is therefore between a broad internal-state ability and more specific observable or task-level tracking behaviors."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers mainly organize the construct through named subcases and adjacent labels. One recurring distinction is between fluent tracking, which asks which properties remain valid after a sequence of actions, and a broader state tracking category that queries the complete set of final-state fluents, and one paper explicitly says the latter extends the former. Some authors also use nearby labels such as stateful processing, or shift the focus to task progress, quantity updates, long-range consistency, or action history. As a result, the term appears both as a general model ability and as the name of benchmark categories or observable behaviors."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link it to one measurement instrument and four behavioral indicators. Direct measurement uses the benchmark MCBench, which operationalizes the construct as carrying intermediate results across several steps and reusing them later, and the behavioral tasks parity checking and modular arithmetic, which are used to demonstrate state-tracking performance. The remaining linked behavioral indicators enter through non-measurement links. Overall, these operationalizations target sequential maintenance and updating, matching the prevailing definition more closely than the narrower variants about fluents, task progress, quantities, or past actions. No construct is linked to it."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, one paper claims a causal relationship from state tracking ability to mathematical problem solving, describing mathematics as a task linked to state tracking. One paper also relates it to state tracking used as a benchmark category, where state tracking is described as extending fluent tracking. No correlational link is reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define state tracking ability as maintaining and updating a representation of relevant state across a sequence of inputs, updates, or operations, whether for a world, system, or task. A few papers phrase this through specific settings such as subgoal progress, action history, persistent object properties, or reusing intermediate results, but these are best read as examples or observable manifestations of the same core ability rather than different constructs.",
+    "papers_with_definition": 8,
+    "runs": [
+      "consensus",
+      "consensus",
+      "complementary"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats state tracking ability as a latent capacity to maintain and update an internal representation of state as inputs, updates, or operations unfold. This common framing appears in definitions centered on an evolving world state, a system's state from observed updates, or an internal state for sequential operations. A smaller line of work uses narrower, task-bound versions: maintaining the complete final set of fluents after actions, inferring which fluents remain valid, tracking task progress and partner actions, keeping a running quantity, reusing intermediate results over long computations, or tracking past actions. The main disagreement is therefore between a broad internal-state ability and more specific observable or task-level tracking behaviors.\n\nSpace of facets. Papers mainly organize the construct through named subcases and adjacent labels. One recurring distinction is between fluent tracking, which asks which properties remain valid after a sequence of actions, and a broader state tracking category that queries the complete set of final-state fluents, and one paper explicitly says the latter extends the former. Some authors also use nearby labels such as stateful processing, or shift the focus to task progress, quantity updates, long-range consistency, or action history. As a result, the term appears both as a general model ability and as the name of benchmark categories or observable behaviors.\n\nSpace of measurement. Papers link it to one measurement instrument and four behavioral indicators. Direct measurement uses the benchmark MCBench, which operationalizes the construct as carrying intermediate results across several steps and reusing them later, and the behavioral tasks parity checking and modular arithmetic, which are used to demonstrate state-tracking performance. The remaining linked behavioral indicators enter through non-measurement links. Overall, these operationalizations target sequential maintenance and updating, matching the prevailing definition more closely than the narrower variants about fluents, task progress, quantities, or past actions. No construct is linked to it.\n\nLinks. Beyond measurement, one paper claims a causal relationship from state tracking ability to mathematical problem solving, describing mathematics as a task linked to state tracking. One paper also relates it to state tracking used as a benchmark category, where state tracking is described as extending fluent tracking. No correlational link is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Metric Calculating Benchmark: Code-Verifiable Complicate Instruction Following Benchmark for Large Language Models"
+    ],
+    "iclr25": [
+      "ActionReasoningBench: Reasoning about Actions with and without Ramification Constraints",
+      "Explore Theory of Mind: program-guided adversarial data generation for theory of mind reasoning",
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "LLMs Can Plan Only If We Tell Them",
+      "Limits of Deep Learning: Sequence Modeling through the Lens of Complexity Theory",
+      "OpenHands: An Open Platform for AI Software Developers as Generalist Agents",
+      "PARTNR: A Benchmark for Planning and Reasoning in Embodied Multi-agent Tasks",
+      "RefactorBench: Evaluating Stateful Reasoning in Language Agents Through Code",
+      "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues"
+    ],
+    "icml25": [
+      "(How) Do Language Models Track State?",
+      "Implicit Language Models are RNNs: Balancing Parallelization and Expressivity",
+      "Minerva: A Programmable Memory Test Benchmark for Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 1,
+    "iclr25": 9,
+    "icml25": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

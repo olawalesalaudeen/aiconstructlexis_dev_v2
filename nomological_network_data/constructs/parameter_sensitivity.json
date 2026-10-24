@@ -1,0 +1,110 @@
+{
+  "canonical_name": "Parameter sensitivity",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Most commonly, papers treat parameter sensitivity as the extent to which parameter or weight changes matter, whether through disproportionate contribution to optimization progress or loss change during fine-tuning, through the degree to which parameters change in response to training data, or through the effect of perturbing specific weights on output distortion and final prediction accuracy. A smaller line of work broadens the notion into \"progressive sensitivity\", the tendency for equally sized parameter modifications, including fine-tuning or noise, to produce larger perplexity changes and greater forgetting as pre-training length increases. Across these definitions, papers agree on responsiveness to parameter modification, but differ on whether the construct is about which individual parameters matter most, how much parameters move during training, or how model behavior shifts under perturbation, and on whether it is framed as a fine-tuning property or as something that increases with longer pre-training.\n\nSpace of facets. Papers use several adjacent labels rather than a single shared taxonomy. One recurrent view isolates a sparse subset of sensitive parameters, identified by maximized FO coordinate-wise gradient square values or top-k entries from the diagonal of the empirical Fisher information matrix, and reports that roughly 0.1%-1% of parameters contribute about 50% of gradient norm square. Other papers distinguish high sensitivity in the initial fine-tuning phase, discussed alongside high Hessian values, from progressive sensitivity across pre-training, and another uses weight sensitivity in compression, where more sensitive weights are re-scaled or kept at original values and allocated more bits.\n\nSpace of measurement. No measurement instrument is linked to it, and one behavioral indicator is, Catastrophic forgetting, which appears as a causal outcome rather than a measurement device. Papers instead operationalize the construct with analyses: maximized FO coordinate-wise gradient square values, top-k entries from the diagonal of the empirical Fisher information matrix, change in perplexity under fixed-magnitude perturbation or a fixed learning rate, high Hessian values during early fine-tuning, and output distortion and final prediction accuracy under weight perturbation. These operationalizations follow the shared focus on the effects of parameter changes, but they attach that focus to different observables.\n\nLinks. The only reported link is causal: one paper claims a causal relationship from Parameter sensitivity to Catastrophic forgetting, arguing that a progressive increase during pre-training in sensitivity to parameter transformations leads to greater forgetting of capabilities acquired during pre-training after fine-tuning.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Parameter sensitivity",
+    "Progressive sensitivity",
+    "Weight sensitivity"
+  ],
+  "papers": [
+    "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+    "Zeroth-Order Fine-Tuning of LLMs with Transferable Static Sparsity",
+    "LensLLM: Unveiling Fine-Tuning Dynamics for LLM Selection",
+    "Overtrained Language Models Are Harder to Fine-Tune",
+    "Radio: Rate\u2013Distortion Optimization for Large Language Model Compression"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The extent to which particular parameters contribute disproportionately to optimization progress or loss change during fine-tuning.",
+      "paper": "Zeroth-Order Fine-Tuning of LLMs with Transferable Static Sparsity",
+      "original_name": "Parameter sensitivity"
+    },
+    {
+      "text": "The latent tendency of pre-trained models to become increasingly sensitive to parameter modifications\u2014such as fine-tuning or noise\u2014as the amount of pre-training data increases, leading to greater forgetting of pre-trained knowledge.",
+      "paper": "Overtrained Language Models Are Harder to Fine-Tune",
+      "original_name": "Progressive sensitivity"
+    },
+    {
+      "text": "The degree to which perturbations in a model's specific weights affect the overall output distortion and final prediction accuracy.",
+      "paper": "Radio: Rate\u2013Distortion Optimization for Large Language Model Compression",
+      "original_name": "Weight sensitivity"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Overtrained Language Models Are Harder to Fine-Tune",
+      "evidence": "We argue that catastrophic overtraining arises as a result of a progressive increase throughout pre-training of model sensitivity to parameter transformations, leading to greater forgetting of the capabilities acquired during pre-training after fine-tuning (Section 3). (Figure 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Overtrained Language Models Are Harder to Fine-Tune"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most commonly, papers treat parameter sensitivity as the extent to which parameter or weight changes matter, whether through disproportionate contribution to optimization progress or loss change during fine-tuning, through the degree to which parameters change in response to training data, or through the effect of perturbing specific weights on output distortion and final prediction accuracy. A smaller line of work broadens the notion into \"progressive sensitivity\", the tendency for equally sized parameter modifications, including fine-tuning or noise, to produce larger perplexity changes and greater forgetting as pre-training length increases. Across these definitions, papers agree on responsiveness to parameter modification, but differ on whether the construct is about which individual parameters matter most, how much parameters move during training, or how model behavior shifts under perturbation, and on whether it is framed as a fine-tuning property or as something that increases with longer pre-training."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use several adjacent labels rather than a single shared taxonomy. One recurrent view isolates a sparse subset of sensitive parameters, identified by maximized FO coordinate-wise gradient square values or top-k entries from the diagonal of the empirical Fisher information matrix, and reports that roughly 0.1%-1% of parameters contribute about 50% of gradient norm square. Other papers distinguish high sensitivity in the initial fine-tuning phase, discussed alongside high Hessian values, from progressive sensitivity across pre-training, and another uses weight sensitivity in compression, where more sensitive weights are re-scaled or kept at original values and allocated more bits."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to it, and one behavioral indicator is, Catastrophic forgetting, which appears as a causal outcome rather than a measurement device. Papers instead operationalize the construct with analyses: maximized FO coordinate-wise gradient square values, top-k entries from the diagonal of the empirical Fisher information matrix, change in perplexity under fixed-magnitude perturbation or a fixed learning rate, high Hessian values during early fine-tuning, and output distortion and final prediction accuracy under weight perturbation. These operationalizations follow the shared focus on the effects of parameter changes, but they attach that focus to different observables."
+    },
+    {
+      "label": "Links.",
+      "text": "The only reported link is causal: one paper claims a causal relationship from Parameter sensitivity to Catastrophic forgetting, arguing that a progressive increase during pre-training in sensitivity to parameter transformations leads to greater forgetting of capabilities acquired during pre-training after fine-tuning."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define parameter sensitivity as how changes or perturbations to parameters affect the model, such as loss or optimization progress, output distortion, prediction accuracy, or forgetting of pre-trained knowledge. These definitions are complementary because they study the same basic phenomenon from different angles, while one paper instead defines it as how much the parameters themselves change in response to training data.",
+    "papers_with_definition": 4,
+    "runs": [
+      "complementary",
+      "complementary",
+      "complementary"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Most commonly, papers treat parameter sensitivity as the extent to which parameter or weight changes matter, whether through disproportionate contribution to optimization progress or loss change during fine-tuning, through the degree to which parameters change in response to training data, or through the effect of perturbing specific weights on output distortion and final prediction accuracy. A smaller line of work broadens the notion into \"progressive sensitivity\", the tendency for equally sized parameter modifications, including fine-tuning or noise, to produce larger perplexity changes and greater forgetting as pre-training length increases. Across these definitions, papers agree on responsiveness to parameter modification, but differ on whether the construct is about which individual parameters matter most, how much parameters move during training, or how model behavior shifts under perturbation, and on whether it is framed as a fine-tuning property or as something that increases with longer pre-training.\n\nSpace of facets. Papers use several adjacent labels rather than a single shared taxonomy. One recurrent view isolates a sparse subset of sensitive parameters, identified by maximized FO coordinate-wise gradient square values or top-k entries from the diagonal of the empirical Fisher information matrix, and reports that roughly 0.1%-1% of parameters contribute about 50% of gradient norm square. Other papers distinguish high sensitivity in the initial fine-tuning phase, discussed alongside high Hessian values, from progressive sensitivity across pre-training, and another uses weight sensitivity in compression, where more sensitive weights are re-scaled or kept at original values and allocated more bits.\n\nSpace of measurement. No measurement instrument is linked to it, and one behavioral indicator is, Catastrophic forgetting, which appears as a causal outcome rather than a measurement device. Papers instead operationalize the construct with analyses: maximized FO coordinate-wise gradient square values, top-k entries from the diagonal of the empirical Fisher information matrix, change in perplexity under fixed-magnitude perturbation or a fixed learning rate, high Hessian values during early fine-tuning, and output distortion and final prediction accuracy under weight perturbation. These operationalizations follow the shared focus on the effects of parameter changes, but they attach that focus to different observables.\n\nLinks. The only reported link is causal: one paper claims a causal relationship from Parameter sensitivity to Catastrophic forgetting, arguing that a progressive increase during pre-training in sensitivity to parameter transformations leads to greater forgetting of capabilities acquired during pre-training after fine-tuning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+      "Zeroth-Order Fine-Tuning of LLMs with Transferable Static Sparsity"
+    ],
+    "icml25": [
+      "LensLLM: Unveiling Fine-Tuning Dynamics for LLM Selection",
+      "Overtrained Language Models Are Harder to Fine-Tune",
+      "Radio: Rate\u2013Distortion Optimization for Large Language Model Compression"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "icml25": 3
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

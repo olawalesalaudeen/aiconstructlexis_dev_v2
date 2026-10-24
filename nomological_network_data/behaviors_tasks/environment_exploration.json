@@ -1,0 +1,164 @@
+{
+  "canonical_name": "Environment exploration",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across definitions, the prevailing usage treats this behavior as observable information-seeking interaction with an environment: agents verify conditions, locate objects or landmarks, gather visual inputs, inspect a codebase, or reveal hidden states. Papers make it concrete as moving, looking around, navigating to new locations, interacting with objects, or executing commands, and a smaller line also frames it as visiting new states or regions. What counts as success is usually getting the information needed for a downstream task, such as answering a question, completing a task when object locations are underspecified, or understanding the current system state.\n\nVariants. Papers study several named variants: information collection, for fine-grained viewpoint adjustment and higher-quality visual observations; active information gathering, under partial observations for disambiguation; active exploration, to obtain visual inputs for question answering; and broader exploration, to scan for target objects or find unspecified objects in a house. The settings range from dynamic city spaces and other physical environments to codebase inspection through commands, and one line emphasizes novelty by describing exploration as visiting new states or regions. Papers also relate it to 2 other behavioral indicators, Embodied planning and Embodied question answering.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through observable action patterns such as \"Move and Look Around,\" fine-tuning an observation view, navigating to new locations, interacting with objects to reveal hidden states, or executing commands to inspect a codebase.\n\nWhat it is taken as evidence of. Among constructs, papers link it to 1 construct, Long-horizon planning. In that link, a paper claims a causal relationship from Long-horizon planning to environment exploration, via plans that include collection sub-tasks that gather requisite information. Papers do not link it to other constructs.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Environment exploration",
+    "Information collection",
+    "Active information gathering",
+    "Active exploration",
+    "Exploration"
+  ],
+  "papers": [
+    "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space",
+    "ProcWorld: Benchmarking Large Model Planning in Reachability-Constrained Environments",
+    "Lemur: Harmonizing Natural Language and Code for Language Agents",
+    "Large Language Models as Generalizable Policies for Embodied Tasks",
+    "Motif: Intrinsic Motivation from Artificial Intelligence Feedback",
+    "ExACT: Teaching AI Agents to Explore with Reflective-MCTS and Exploratory Learning",
+    "LARM: Large Auto-Regressive Model for Long-Horizon Embodied Intelligence",
+    "SyncMind: Measuring Agent Out-of-Sync Recovery in Collaborative Software Engineering",
+    "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+    "Long-Horizon Planning for Multi-Agent Robots in Partially Observable Environments"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable action of an agent interacting with its environment to gather information, verify conditions, and update its internal representation of the world state.",
+      "paper": "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+      "original_name": "Environment exploration"
+    },
+    {
+      "text": "The observable behavior of gathering specific details from visual observations, often involving fine-grained adjustments to viewpoint or focus to improve input quality.",
+      "paper": "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space",
+      "original_name": "Information collection"
+    },
+    {
+      "text": "The behavior of strategically exploring the environment to reduce uncertainty, such as navigating to new locations or interacting with objects to reveal hidden states.",
+      "paper": "ProcWorld: Benchmarking Large Model Planning in Reachability-Constrained Environments",
+      "original_name": "Active information gathering"
+    },
+    {
+      "text": "Moving through an environment to gather visual information needed to answer a question.",
+      "paper": "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space",
+      "original_name": "Active exploration"
+    },
+    {
+      "text": "The observable behavior of systematically scanning the environment to locate target objects, using strategies like moving and looking around from multiple viewpoints.",
+      "paper": "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space",
+      "original_name": "Exploration"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Embodied planning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+      "evidence": "we employ an exploration-integrated task planning scheme, in which the information-based exploration is incorporated into the LLM-based planning process. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Embodied question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space",
+      "evidence": "Embodied Question Answering (EQA) ... must actively explore its environment to answer questions posed in natural language. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-horizon planning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space",
+      "evidence": "Based on these requirements, a plan is created consisting of three distinct types of sub-tasks: (1) Collection sub-tasks gather the requisite information... (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across definitions, the prevailing usage treats this behavior as observable information-seeking interaction with an environment: agents verify conditions, locate objects or landmarks, gather visual inputs, inspect a codebase, or reveal hidden states. Papers make it concrete as moving, looking around, navigating to new locations, interacting with objects, or executing commands, and a smaller line also frames it as visiting new states or regions. What counts as success is usually getting the information needed for a downstream task, such as answering a question, completing a task when object locations are underspecified, or understanding the current system state."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several named variants: information collection, for fine-grained viewpoint adjustment and higher-quality visual observations; active information gathering, under partial observations for disambiguation; active exploration, to obtain visual inputs for question answering; and broader exploration, to scan for target objects or find unspecified objects in a house. The settings range from dynamic city spaces and other physical environments to codebase inspection through commands, and one line emphasizes novelty by describing exploration as visiting new states or regions. Papers also relate it to 2 other behavioral indicators, Embodied planning and Embodied question answering."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers operationalize it through observable action patterns such as \"Move and Look Around,\" fine-tuning an observation view, navigating to new locations, interacting with objects to reveal hidden states, or executing commands to inspect a codebase."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Among constructs, papers link it to 1 construct, Long-horizon planning. In that link, a paper claims a causal relationship from Long-horizon planning to environment exploration, via plans that include collection sub-tasks that gather requisite information. Papers do not link it to other constructs."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across definitions, the prevailing usage treats this behavior as observable information-seeking interaction with an environment: agents verify conditions, locate objects or landmarks, gather visual inputs, inspect a codebase, or reveal hidden states. Papers make it concrete as moving, looking around, navigating to new locations, interacting with objects, or executing commands, and a smaller line also frames it as visiting new states or regions. What counts as success is usually getting the information needed for a downstream task, such as answering a question, completing a task when object locations are underspecified, or understanding the current system state.\n\nVariants. Papers study several named variants: information collection, for fine-grained viewpoint adjustment and higher-quality visual observations; active information gathering, under partial observations for disambiguation; active exploration, to obtain visual inputs for question answering; and broader exploration, to scan for target objects or find unspecified objects in a house. The settings range from dynamic city spaces and other physical environments to codebase inspection through commands, and one line emphasizes novelty by describing exploration as visiting new states or regions. Papers also relate it to 2 other behavioral indicators, Embodied planning and Embodied question answering.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through observable action patterns such as \"Move and Look Around,\" fine-tuning an observation view, navigating to new locations, interacting with objects to reveal hidden states, or executing commands to inspect a codebase.\n\nWhat it is taken as evidence of. Among constructs, papers link it to 1 construct, Long-horizon planning. In that link, a paper claims a causal relationship from Long-horizon planning to environment exploration, via plans that include collection sub-tasks that gather requisite information. Papers do not link it to other constructs.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "CityEQA: A Hierarchical LLM Agent on Embodied Question Answering Benchmark in City Space",
+      "ProcWorld: Benchmarking Large Model Planning in Reachability-Constrained Environments"
+    ],
+    "iclr24": [
+      "Lemur: Harmonizing Natural Language and Code for Language Agents",
+      "Large Language Models as Generalizable Policies for Embodied Tasks",
+      "Motif: Intrinsic Motivation from Artificial Intelligence Feedback"
+    ],
+    "iclr25": [
+      "ExACT: Teaching AI Agents to Explore with Reflective-MCTS and Exploratory Learning"
+    ],
+    "icml25": [
+      "LARM: Large Auto-Regressive Model for Long-Horizon Embodied Intelligence",
+      "SyncMind: Measuring Agent Out-of-Sync Recovery in Collaborative Software Engineering"
+    ],
+    "neurips24": [
+      "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+      "Long-Horizon Planning for Multi-Agent Robots in Partially Observable Environments"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 3,
+    "iclr25": 1,
+    "icml25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

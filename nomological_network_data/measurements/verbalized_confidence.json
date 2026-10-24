@@ -1,0 +1,132 @@
+{
+  "canonical_name": "Verbalized confidence",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, the prevailing usage treats verbalized confidence as a direct self-report protocol for model confidence: the model or LLM judge is prompted to state how confident it is in its own answer or judgment. Most definitions describe the output as a scalar or numerical confidence value, while one also allows numerical or categorical ratings given alongside the answer; papers also frame it as a baseline confidence measure, a black-box self-evaluation procedure, and an evaluation protocol. A smaller amount of usage names specific variants such as P(true) and Verb. 1S top-1, and one paper reports averaging confidence across samples.\n\nWhat it is claimed to measure. Papers most commonly present verbalized confidence as measuring the model's own confidence, and one definition says the reported rating is used to measure subjective belief strength. Across the surveyed work, its links are concentrated rather than spread across many concepts: it is linked to one behavioral indicator, Hallucination, which one paper measures through a verbalization-based hallucination detection module, and to one construct, Instruction following ability, only as a related factor rather than as something verbalized confidence measures.\n\nSpace of uses. No other measurement instrument is linked to it. Papers instead position it as an existing confidence measure or baseline, including as a black-box self-evaluation method and, in one hallucination study, as a replacement option for a hallucination detection module alongside trained probes and hybrid consistency; another paper reports using an average confidence across all samples.\n\nConcerns raised. One paper raises a practical concern about verbalization-based methods: their use is described as restricted by high computational costs during inference and by the requirement for the language model's instruction-following capability. On that basis, the same paper relates verbalized confidence to Instruction following ability.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Verbalized confidence",
+    "Verbal Confidence",
+    "Verbalization"
+  ],
+  "papers": [
+    "Calibrating Expressions of Certainty",
+    "Do LLMs estimate uncertainty well in instruction-following?",
+    "HaDeMiF: Hallucination Detection and Mitigation in Large Language Models",
+    "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+    "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+    "From Evidence to Belief: A Bayesian Epistemology Approach to Language Models"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A baseline confidence measure obtained by directly prompting an LLM judge to express its confidence in its own judgment as a scalar value.",
+      "paper": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+      "original_name": "Verbalized confidence"
+    },
+    {
+      "text": "A black-box self-evaluation procedure that asks the model to express confidence in its own answer.",
+      "paper": "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+      "original_name": "Verbal Confidence"
+    },
+    {
+      "text": "An evaluation protocol that measures a model's confidence by directly prompting it to self-report its confidence level.",
+      "paper": "HaDeMiF: Hallucination Detection and Mitigation in Large Language Models",
+      "original_name": "Verbalization"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LitCab: Lightweight Language Model Calibration over Short- and Long-form Responses",
+      "evidence": "While consistency-based and verbalization-based methods have demonstrated their effectiveness in recent LMs, their utilization is largely restricted due to their high computational costs during inference and the requirement for LM\u2019s instruction-following capability. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "LitCab: Lightweight Language Model Calibration over Short- and Long-form Responses"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Bridging External and Parametric Knowledge: Mitigating Hallucination of LLMs with Shared-Private Semantic Synergy in Dual-Stream Knowledge",
+      "evidence": "Furthermore, we replace the hallucination detection module in DSSP-RAG with two existing methods: Trained Probes, Verbalization and Hybrid Consistency (Hyb-Cons). (Section 4.3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Bridging External and Parametric Knowledge: Mitigating Hallucination of LLMs with Shared-Private Semantic Synergy in Dual-Stream Knowledge"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Confidence",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+      "evidence": "We first consider two types of existing confidence measure\u2014... (2) verbalized confidence",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, the prevailing usage treats verbalized confidence as a direct self-report protocol for model confidence: the model or LLM judge is prompted to state how confident it is in its own answer or judgment. Most definitions describe the output as a scalar or numerical confidence value, while one also allows numerical or categorical ratings given alongside the answer; papers also frame it as a baseline confidence measure, a black-box self-evaluation procedure, and an evaluation protocol. A smaller amount of usage names specific variants such as P(true) and Verb. 1S top-1, and one paper reports averaging confidence across samples."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers most commonly present verbalized confidence as measuring the model's own confidence, and one definition says the reported rating is used to measure subjective belief strength. Across the surveyed work, its links are concentrated rather than spread across many concepts: it is linked to one behavioral indicator, Hallucination, which one paper measures through a verbalization-based hallucination detection module, and to one construct, Instruction following ability, only as a related factor rather than as something verbalized confidence measures."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No other measurement instrument is linked to it. Papers instead position it as an existing confidence measure or baseline, including as a black-box self-evaluation method and, in one hallucination study, as a replacement option for a hallucination detection module alongside trained probes and hybrid consistency; another paper reports using an average confidence across all samples."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper raises a practical concern about verbalization-based methods: their use is described as restricted by high computational costs during inference and by the requirement for the language model's instruction-following capability. On that basis, the same paper relates verbalized confidence to Instruction following ability."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, the prevailing usage treats verbalized confidence as a direct self-report protocol for model confidence: the model or LLM judge is prompted to state how confident it is in its own answer or judgment. Most definitions describe the output as a scalar or numerical confidence value, while one also allows numerical or categorical ratings given alongside the answer; papers also frame it as a baseline confidence measure, a black-box self-evaluation procedure, and an evaluation protocol. A smaller amount of usage names specific variants such as P(true) and Verb. 1S top-1, and one paper reports averaging confidence across samples.\n\nWhat it is claimed to measure. Papers most commonly present verbalized confidence as measuring the model's own confidence, and one definition says the reported rating is used to measure subjective belief strength. Across the surveyed work, its links are concentrated rather than spread across many concepts: it is linked to one behavioral indicator, Hallucination, which one paper measures through a verbalization-based hallucination detection module, and to one construct, Instruction following ability, only as a related factor rather than as something verbalized confidence measures.\n\nSpace of uses. No other measurement instrument is linked to it. Papers instead position it as an existing confidence measure or baseline, including as a black-box self-evaluation method and, in one hallucination study, as a replacement option for a hallucination detection module alongside trained probes and hybrid consistency; another paper reports using an average confidence across all samples.\n\nConcerns raised. One paper raises a practical concern about verbalization-based methods: their use is described as restricted by high computational costs during inference and by the requirement for the language model's instruction-following capability. On that basis, the same paper relates verbalized confidence to Instruction following ability.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Calibrating Expressions of Certainty",
+      "Do LLMs estimate uncertainty well in instruction-following?",
+      "HaDeMiF: Hallucination Detection and Mitigation in Large Language Models",
+      "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+      "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement"
+    ],
+    "naacl25": [
+      "From Evidence to Belief: A Bayesian Epistemology Approach to Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 5,
+    "naacl25": 1
+  },
+  "conferences": [
+    "iclr25",
+    "naacl25"
+  ]
+}

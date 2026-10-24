@@ -1,0 +1,172 @@
+{
+  "canonical_name": "Conversational question answering",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats this behavior as answering questions in a conversational, multi-turn setting, where the current response must use dialogue history rather than isolated factoids. Definitions repeatedly describe a series of interconnected questions or clarifications, often aimed at resolving a complex initial query, and several papers explicitly say the questions are part of a dialogue or ongoing conversation. A smaller set of formulations narrows this further to answers grounded in a provided context, such as conversational text, story dialogue, or other task-specific material.\n\nVariants. Papers use several nearby names for the same general behavior, including interactive question answering, multi-turn QA, multi-turn question answering, and dialogue question answering. The studied settings vary widely: some work centers on grounded questions and answers tied to scientific documents, tables, and contextual visual information; some frames it as answering financial questions while maintaining conversation history; and some studies use multi-round dialogue about video content, timing, and action sequences, or story-based dialogue context.\n\nSpace of elicitation and scores. Papers measure this behavior with three instruments. CoQA is the most common and is described as a conversational question answering dataset with short-answer questions based on conversational text; individual papers also measure it with ChatRAG-Bench, described as a RAG benchmark for conversational QA tasks within a 4K context window, and MT-Bench, described as a benchmark of multi-turn questions. Across these links, the instruments are benchmark datasets or evaluation benchmarks.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Conversational question answering",
+    "Interactive question answering",
+    "Multi-turn QA",
+    "Multi-turn question answering",
+    "Dialogue question answering"
+  ],
+  "papers": [
+    "Large Language Models Meet Knowledge Graphs for Question Answering: Synthesis and Opportunities",
+    "OmniEval: An Omnidirectional and Automatic RAG Evaluation Benchmark in Financial Domain",
+    "Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles",
+    "BadEdit: Backdooring Large Language Models by Model Editing",
+    "Backtracking Improves Generation Safety",
+    "Beyond Next Token Prediction: Patch-Level Training for Large Language Models",
+    "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities",
+    "HShare: Fast LLM Decoding by Hierarchical Key-Value Sharing",
+    "PALMBENCH: A COMPREHENSIVE BENCHMARK OF COMPRESSED LARGE LANGUAGE MODELS ON MOBILE PLATFORMS",
+    "MagicPIG: LSH Sampling for Efficient LLM Generation",
+    "IQA-EVAL: Automatic Evaluation of Human-Model Interactive Question Answering",
+    "Instruction Tuning With Loss Over Instructions",
+    "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs",
+    "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+    "cPAPERS: A Dataset of Situated and Multimodal Interactive Conversations in Scientific Papers"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating a natural language response to a user's question in a conversational context, where the questions are not simple factoids but part of a dialogue.",
+      "paper": "cPAPERS: A Dataset of Situated and Multimodal Interactive Conversations in Scientific Papers",
+      "original_name": "Conversational question answering"
+    },
+    {
+      "text": "A multi-turn process where a user interacts with an AI model through a series of questions and clarifications to arrive at an answer for a complex initial query.",
+      "paper": "IQA-EVAL: Automatic Evaluation of Human-Model Interactive Question Answering",
+      "original_name": "Interactive question answering"
+    },
+    {
+      "text": "Engaging in multi-round question-answer dialogue about a video, including questions about content, timing, and action sequences.",
+      "paper": "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+      "original_name": "Multi-turn QA"
+    },
+    {
+      "text": "The behavior of engaging in a conversational dialogue over several turns to answer a user's questions.",
+      "paper": "Backtracking Improves Generation Safety",
+      "original_name": "Multi-turn question answering"
+    },
+    {
+      "text": "Answering questions grounded in conversational or story-based dialogue context.",
+      "paper": "HShare: Fast LLM Decoding by Hierarchical Key-Value Sharing",
+      "original_name": "Dialogue question answering"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CoQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BadEdit: Backdooring Large Language Models by Model Editing",
+      "evidence": "We use a relation extraction dataset ZSRE (Meng et al., 2022a) and a conversational question answering dataset CoQA (Reddy et al., 2019) to represent unrelated tasks",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "BadEdit: Backdooring Large Language Models by Model Editing"
+        ],
+        "neurips24": [
+          "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs"
+        ],
+        "emnlp25": [
+          "Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Backtracking Improves Generation Safety",
+      "evidence": "\u201cMT-Bench (Zheng et al., 2023), a challenging benchmark of multi-turn questions\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Backtracking Improves Generation Safety"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ChatRAG-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities",
+      "evidence": "the RAG benchmark for conversational QA tasks within a 4K context window. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats this behavior as answering questions in a conversational, multi-turn setting, where the current response must use dialogue history rather than isolated factoids. Definitions repeatedly describe a series of interconnected questions or clarifications, often aimed at resolving a complex initial query, and several papers explicitly say the questions are part of a dialogue or ongoing conversation. A smaller set of formulations narrows this further to answers grounded in a provided context, such as conversational text, story dialogue, or other task-specific material."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby names for the same general behavior, including interactive question answering, multi-turn QA, multi-turn question answering, and dialogue question answering. The studied settings vary widely: some work centers on grounded questions and answers tied to scientific documents, tables, and contextual visual information; some frames it as answering financial questions while maintaining conversation history; and some studies use multi-round dialogue about video content, timing, and action sequences, or story-based dialogue context."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure this behavior with three instruments. CoQA is the most common and is described as a conversational question answering dataset with short-answer questions based on conversational text; individual papers also measure it with ChatRAG-Bench, described as a RAG benchmark for conversational QA tasks within a 4K context window, and MT-Bench, described as a benchmark of multi-turn questions. Across these links, the instruments are benchmark datasets or evaluation benchmarks."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats this behavior as answering questions in a conversational, multi-turn setting, where the current response must use dialogue history rather than isolated factoids. Definitions repeatedly describe a series of interconnected questions or clarifications, often aimed at resolving a complex initial query, and several papers explicitly say the questions are part of a dialogue or ongoing conversation. A smaller set of formulations narrows this further to answers grounded in a provided context, such as conversational text, story dialogue, or other task-specific material.\n\nVariants. Papers use several nearby names for the same general behavior, including interactive question answering, multi-turn QA, multi-turn question answering, and dialogue question answering. The studied settings vary widely: some work centers on grounded questions and answers tied to scientific documents, tables, and contextual visual information; some frames it as answering financial questions while maintaining conversation history; and some studies use multi-round dialogue about video content, timing, and action sequences, or story-based dialogue context.\n\nSpace of elicitation and scores. Papers measure this behavior with three instruments. CoQA is the most common and is described as a conversational question answering dataset with short-answer questions based on conversational text; individual papers also measure it with ChatRAG-Bench, described as a RAG benchmark for conversational QA tasks within a 4K context window, and MT-Bench, described as a benchmark of multi-turn questions. Across these links, the instruments are benchmark datasets or evaluation benchmarks.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Large Language Models Meet Knowledge Graphs for Question Answering: Synthesis and Opportunities",
+      "OmniEval: An Omnidirectional and Automatic RAG Evaluation Benchmark in Financial Domain",
+      "Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles"
+    ],
+    "iclr25": [
+      "Backtracking Improves Generation Safety",
+      "Beyond Next Token Prediction: Patch-Level Training for Large Language Models",
+      "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities",
+      "HShare: Fast LLM Decoding by Hierarchical Key-Value Sharing",
+      "PALMBENCH: A COMPREHENSIVE BENCHMARK OF COMPRESSED LARGE LANGUAGE MODELS ON MOBILE PLATFORMS",
+      "MagicPIG: LSH Sampling for Efficient LLM Generation"
+    ],
+    "neurips24": [
+      "IQA-EVAL: Automatic Evaluation of Human-Model Interactive Question Answering",
+      "Instruction Tuning With Loss Over Instructions",
+      "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs",
+      "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+      "cPAPERS: A Dataset of Situated and Multimodal Interactive Conversations in Scientific Papers"
+    ],
+    "iclr24": [
+      "BadEdit: Backdooring Large Language Models by Model Editing"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 6,
+    "neurips24": 5,
+    "iclr24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "neurips24"
+  ]
+}

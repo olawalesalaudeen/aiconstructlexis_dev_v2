@@ -1,0 +1,188 @@
+{
+  "canonical_name": "Image reconstruction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is recreating an original image after it has been transformed into another representation, most often by encoding it into a compressed form and decoding it back, or by generating an image that accurately matches a given input. Success is usually framed as fidelity to the original image, either as high reconstruction quality or as low reconstruction loss or error, with one paper treating error above a threshold \u03b5 as failure. A smaller formulation treats the behavior as re-rendering decomposed layers, including occluded regions, so that the original composite picture is reproduced.\n\nVariants. Papers study several variants: reconstructing full input images, reconstructing latent visual representations to supervise visual outputs, recovering clean fine-grained tokens from noisy tokens, generating the original image from noise conditioned on visual and textual features, and re-rendering graphic-design layers according to metadata. The common target stays the original image or composite picture, but the intermediate form varies across compressed codes, latent or noisy tokens, diffusion features, and decomposed layers.\n\nSpace of elicitation and scores. Papers link image reconstruction to 3 measurement instruments: CUB-200-2011, CelebA, and MS-COCO. The measurement language is usually reconstruction quality or performance on these evaluations, and some papers score it directly with reconstruction loss or reconstruction error against the original image, including one threshold-based failure definition.\n\nWhat it is taken as evidence of. Papers link image reconstruction to 3 constructs: Fine-grained visual understanding, Multimodal understanding, and Representation quality. The recorded links are all causal, but they are split across these constructs rather than centered on one: one line of work claims a causal relationship from image reconstruction to fine-grained visual understanding and to multimodal understanding, and another claims a causal relationship from image reconstruction to representation quality. Papers also record 1 linked behavioral indicator, Hallucination, through a causal claim from image reconstruction to hallucination, phrased as reducing hallucinations, and the same literature also includes a reverse causal claim from Multimodal understanding to Image reconstruction.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Image reconstruction"
+  ],
+  "papers": [
+    "DEEM: Diffusion models serve as the eyes of large language models for image perception",
+    "Reconstructive Visual Instruction Tuning",
+    "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+    "A Simple Model of Inference Scaling Laws",
+    "DS-VLM: Diffusion Supervision Vision Language Model",
+    "Decomposition of Graphic Design with Unified Multimodal Model",
+    "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models",
+    "LG-VQ: Language-Guided Codebook Learning"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of encoding an image into a compressed representation and then decoding it back to its original form to measure fidelity.",
+      "paper": "LG-VQ: Language-Guided Codebook Learning",
+      "original_name": "Image reconstruction"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CelebA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models",
+      "evidence": "As shown in Table 1, GEM surpasses baseline models in reconstruction quality on the datasets of CelebA, LSUN-horse, and LSUN-bedroom. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CUB-200-2011",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LG-VQ: Language-Guided Codebook Learning",
+      "evidence": "Results of image reconstruction on TextCaps, CelebA-HQ, CUB-200, and MS-COCO. (Table 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LG-VQ: Language-Guided Codebook Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MS-COCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LG-VQ: Language-Guided Codebook Learning",
+      "evidence": "Results of image reconstruction on TextCaps, CelebA-HQ, CUB-200, and MS-COCO. (Table 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LG-VQ: Language-Guided Codebook Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Fine-grained visual understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Reconstructive Visual Instruction Tuning",
+      "evidence": "This approach encourages LMMs to maintain low-level details, thereby enhancing their fine-grained comprehension abilities and reducing hallucinations. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Reconstructive Visual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Reconstructive Visual Instruction Tuning",
+      "evidence": "This approach encourages LMMs to maintain low-level details, thereby enhancing their fine-grained comprehension abilities and reducing hallucinations. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Reconstructive Visual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multimodal understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Reconstructive Visual Instruction Tuning",
+      "evidence": "In this way, LMMs are required to preserve every detail of input images, thereby enhancing multimodal comprehension capabilities and reducing hallucinations. (Figure 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Reconstructive Visual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Representation quality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "DS-VLM: Diffusion Supervision Vision Language Model",
+      "evidence": "This approach simultaneously preserves high-level semantic alignment through conventional text supervision while enhancing visual feature quality via pixel-level reconstruction constraints. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "DS-VLM: Diffusion Supervision Vision Language Model"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 7,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is recreating an original image after it has been transformed into another representation, most often by encoding it into a compressed form and decoding it back, or by generating an image that accurately matches a given input. Success is usually framed as fidelity to the original image, either as high reconstruction quality or as low reconstruction loss or error, with one paper treating error above a threshold \u03b5 as failure. A smaller formulation treats the behavior as re-rendering decomposed layers, including occluded regions, so that the original composite picture is reproduced."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several variants: reconstructing full input images, reconstructing latent visual representations to supervise visual outputs, recovering clean fine-grained tokens from noisy tokens, generating the original image from noise conditioned on visual and textual features, and re-rendering graphic-design layers according to metadata. The common target stays the original image or composite picture, but the intermediate form varies across compressed codes, latent or noisy tokens, diffusion features, and decomposed layers."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link image reconstruction to 3 measurement instruments: CUB-200-2011, CelebA, and MS-COCO. The measurement language is usually reconstruction quality or performance on these evaluations, and some papers score it directly with reconstruction loss or reconstruction error against the original image, including one threshold-based failure definition."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link image reconstruction to 3 constructs: Fine-grained visual understanding, Multimodal understanding, and Representation quality. The recorded links are all causal, but they are split across these constructs rather than centered on one: one line of work claims a causal relationship from image reconstruction to fine-grained visual understanding and to multimodal understanding, and another claims a causal relationship from image reconstruction to representation quality. Papers also record 1 linked behavioral indicator, Hallucination, through a causal claim from image reconstruction to hallucination, phrased as reducing hallucinations, and the same literature also includes a reverse causal claim from Multimodal understanding to Image reconstruction."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is recreating an original image after it has been transformed into another representation, most often by encoding it into a compressed form and decoding it back, or by generating an image that accurately matches a given input. Success is usually framed as fidelity to the original image, either as high reconstruction quality or as low reconstruction loss or error, with one paper treating error above a threshold \u03b5 as failure. A smaller formulation treats the behavior as re-rendering decomposed layers, including occluded regions, so that the original composite picture is reproduced.\n\nVariants. Papers study several variants: reconstructing full input images, reconstructing latent visual representations to supervise visual outputs, recovering clean fine-grained tokens from noisy tokens, generating the original image from noise conditioned on visual and textual features, and re-rendering graphic-design layers according to metadata. The common target stays the original image or composite picture, but the intermediate form varies across compressed codes, latent or noisy tokens, diffusion features, and decomposed layers.\n\nSpace of elicitation and scores. Papers link image reconstruction to 3 measurement instruments: CUB-200-2011, CelebA, and MS-COCO. The measurement language is usually reconstruction quality or performance on these evaluations, and some papers score it directly with reconstruction loss or reconstruction error against the original image, including one threshold-based failure definition.\n\nWhat it is taken as evidence of. Papers link image reconstruction to 3 constructs: Fine-grained visual understanding, Multimodal understanding, and Representation quality. The recorded links are all causal, but they are split across these constructs rather than centered on one: one line of work claims a causal relationship from image reconstruction to fine-grained visual understanding and to multimodal understanding, and another claims a causal relationship from image reconstruction to representation quality. Papers also record 1 linked behavioral indicator, Hallucination, through a causal claim from image reconstruction to hallucination, phrased as reducing hallucinations, and the same literature also includes a reverse causal claim from Multimodal understanding to Image reconstruction.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "DEEM: Diffusion models serve as the eyes of large language models for image perception",
+      "Reconstructive Visual Instruction Tuning",
+      "Towards Semantic Equivalence of Tokenization in Multimodal LLM"
+    ],
+    "neurips24": [
+      "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models",
+      "LG-VQ: Language-Guided Codebook Learning"
+    ],
+    "icml25": [
+      "A Simple Model of Inference Scaling Laws",
+      "DS-VLM: Diffusion Supervision Vision Language Model",
+      "Decomposition of Graphic Design with Unified Multimodal Model"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "neurips24": 2,
+    "icml25": 3
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

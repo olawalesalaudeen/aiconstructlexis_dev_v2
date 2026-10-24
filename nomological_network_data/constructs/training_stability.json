@@ -1,0 +1,198 @@
+{
+  "canonical_name": "Training stability",
+  "type": "construct",
+  "canonical_definition": "Across the surveyed literature, training stability is predominantly defined as a property of the training process characterized by smooth convergence and the absence of divergent behaviors. The most common framing, found in numerous papers, centers on avoiding issues like loss spikes, escalating gradient norms, and the frequent need for interventions such as gradient clipping. This construct is operationalized by observing several indicators of its inverse, instability, which include sudden increases in KL divergence, oscillating training curves, and performance degradation on the training set itself. Conversely, stability is evidenced by consistent increases in reward, stable value predictions in reinforcement learning, and loss curves that decline smoothly, as one paper notes, \"The loss of \u2018Zero-initialized\u2019 declines much faster at the beginning, and finally converges to zero\" (LLaMA-Adapter: Efficient Fine-tuning of Large Language Models with Zero-initialized Attention). This concept is applied across various contexts, including pre-training, fine-tuning, and reinforcement learning with human feedback. A less common, more mechanistic definition treats stability as the degree to which internal model states like activations, gradients, and weight updates remain well-scaled. Papers frequently investigate how stability is affected by choices of optimizers, initialization strategies, regularization techniques, and finetuning methods like LoRA.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/training pipeline: smooth convergence and absence of loss spikes is a property of the optimizer and training setup, not of the model (cf. EXPERT_REMOVED Training efficiency).",
+  "names": [
+    "Training stability",
+    "Training dynamics stability",
+    "Training instability",
+    "Feature learning stability",
+    "Policy stability",
+    "Catastrophic collapse"
+  ],
+  "papers": [
+    "TeamLoRA: Boosting Low-Rank Adaptation with Expert Collaboration and Competition",
+    "What Happened in LLMs Layers when Trained for Fast vs. Slow Thinking: A Gradient Perspective",
+    "YuLan-Mini: Pushing the Limits of Open Data-efficient Language Model",
+    "DisLoRA: Task-specific Low-Rank Adaptation via Orthogonal Basis from Singular Value Decomposition",
+    "Learning from Few Samples: A Novel Approach for High-Quality Malcode Generation",
+    "Orthogonal Finetuning Made Scalable",
+    "Process-Supervised Reinforcement Learning for Code Generation",
+    "ResFormer: All-Time Reservoir Memory for Long Sequence Classification",
+    "Token-level Proximal Policy Optimization for Query Generation",
+    "Variance Sensitivity Induces Attention Entropy Collapse and Instability in Transformers",
+    "WebAgent-R1: Training Web Agents via End-to-End Multi-Turn Reinforcement Learning",
+    "$\\mathcal{B}$-Coder: Value-Based Deep Reinforcement Learning for Program Synthesis",
+    "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+    "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning",
+    "LLaMA-Adapter: Efficient Fine-tuning of Large Language Models with Zero-initialized Attention",
+    "Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training",
+    "When Scaling Meets LLM Finetuning: The Effect of Data, Model and Finetuning Method",
+    "WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning",
+    "u-$\\mu$P: The Unit-Scaled Maximal Update Parametrization",
+    "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+    "Mixture of Tokens: Continuous MoE through Cross-Example Aggregation",
+    "OneBit: Towards Extremely Low-bit Large Language Models",
+    "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+    "Sparse maximal update parameterization: A holistic approach to sparse training dynamics",
+    "What matters when building vision-language models?"
+  ],
+  "paper_count": 25,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The property of the training process characterized by smooth convergence and infrequent need for interventions like gradient clipping to prevent divergence or loss spikes.",
+      "paper": "$\\mathcal{B}$-Coder: Value-Based Deep Reinforcement Learning for Program Synthesis",
+      "original_name": "Training stability"
+    },
+    {
+      "text": "The degree to which activations, gradients, and weight updates remain well-scaled and do not vanish or explode as sparsity or width changes.",
+      "paper": "Sparse maximal update parameterization: A holistic approach to sparse training dynamics",
+      "original_name": "Training dynamics stability"
+    },
+    {
+      "text": "A phenomenon during model training characterized by issues like loss spikes, escalating gradient norms, and divergent updates, which hinder effective model convergence.",
+      "paper": "YuLan-Mini: Pushing the Limits of Open Data-efficient Language Model",
+      "original_name": "Training instability"
+    },
+    {
+      "text": "The property of a model's training dynamics where different components learn at balanced rates, avoiding situations where some parts learn too quickly or slowly relative to others.",
+      "paper": "u-$\\mu$P: The Unit-Scaled Maximal Update Parametrization",
+      "original_name": "Feature learning stability"
+    },
+    {
+      "text": "The degree to which the agent's policy avoids excessive drift across training phases while still improving on new tasks.",
+      "paper": "WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning",
+      "original_name": "Policy stability"
+    },
+    {
+      "text": "A failure mode in training where model performance sharply deteriorates after an initial improvement, often linked to unstable optimization dynamics in preference learning.",
+      "paper": "Design Considerations in Offline Preference-based RL",
+      "original_name": "Catastrophic collapse"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning",
+      "evidence": "Experimental results indicate that our approach significantly enhances training stability and model generalization. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge retention",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+      "evidence": "The knowledge retention weights penalty can improve the training stability of the PPO algorithm. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "CPPO: Continual Learning for Reinforcement Learning with Human Feedback"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "System 2 thinking",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "What Happened in LLMs Layers when Trained for Fast vs. Slow Thinking: A Gradient Perspective",
+      "evidence": "fast thinking without CoT leads to larger gradients and larger differences of gradients across layers than slow thinking (Detailed CoT), indicating the learning stability brought by the latter. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "What Happened in LLMs Layers when Trained for Fast vs. Slow Thinking: A Gradient Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Log-likelihood collapse",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Design Considerations in Offline Preference-based RL",
+      "evidence": "We suspect that this degeneration of log-likelihoods is responsible for the eventual collapse observed for the logistic loss in Figure 1.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Design Considerations in Offline Preference-based RL"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the surveyed literature, training stability is predominantly defined as a property of the training process characterized by smooth convergence and the absence of divergent behaviors. The most common framing, found in numerous papers, centers on avoiding issues like loss spikes, escalating gradient norms, and the frequent need for interventions such as gradient clipping. This construct is operationalized by observing several indicators of its inverse, instability, which include sudden increases in KL divergence, oscillating training curves, and performance degradation on the training set itself. Conversely, stability is evidenced by consistent increases in reward, stable value predictions in reinforcement learning, and loss curves that decline smoothly, as one paper notes, \"The loss of \u2018Zero-initialized\u2019 declines much faster at the beginning, and finally converges to zero\" (LLaMA-Adapter: Efficient Fine-tuning of Large Language Models with Zero-initialized Attention). This concept is applied across various contexts, including pre-training, fine-tuning, and reinforcement learning with human feedback. A less common, more mechanistic definition treats stability as the degree to which internal model states like activations, gradients, and weight updates remain well-scaled. Papers frequently investigate how stability is affected by choices of optimizers, initialization strategies, regularization techniques, and finetuning methods like LoRA.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "TeamLoRA: Boosting Low-Rank Adaptation with Expert Collaboration and Competition",
+      "What Happened in LLMs Layers when Trained for Fast vs. Slow Thinking: A Gradient Perspective",
+      "YuLan-Mini: Pushing the Limits of Open Data-efficient Language Model"
+    ],
+    "emnlp25": [
+      "DisLoRA: Task-specific Low-Rank Adaptation via Orthogonal Basis from Singular Value Decomposition",
+      "Learning from Few Samples: A Novel Approach for High-Quality Malcode Generation",
+      "Orthogonal Finetuning Made Scalable",
+      "Process-Supervised Reinforcement Learning for Code Generation",
+      "ResFormer: All-Time Reservoir Memory for Long Sequence Classification",
+      "Token-level Proximal Policy Optimization for Query Generation",
+      "Variance Sensitivity Induces Attention Entropy Collapse and Instability in Transformers",
+      "WebAgent-R1: Training Web Agents via End-to-End Multi-Turn Reinforcement Learning"
+    ],
+    "iclr24": [
+      "$\\mathcal{B}$-Coder: Value-Based Deep Reinforcement Learning for Program Synthesis",
+      "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+      "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning",
+      "LLaMA-Adapter: Efficient Fine-tuning of Large Language Models with Zero-initialized Attention",
+      "Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training",
+      "When Scaling Meets LLM Finetuning: The Effect of Data, Model and Finetuning Method"
+    ],
+    "iclr25": [
+      "WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning",
+      "u-$\\mu$P: The Unit-Scaled Maximal Update Parametrization"
+    ],
+    "neurips24": [
+      "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+      "Mixture of Tokens: Continuous MoE through Cross-Example Aggregation",
+      "OneBit: Towards Extremely Low-bit Large Language Models",
+      "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+      "Sparse maximal update parameterization: A holistic approach to sparse training dynamics",
+      "What matters when building vision-language models?"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 8,
+    "iclr24": 6,
+    "iclr25": 2,
+    "neurips24": 6
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "neurips24"
+  ]
+}

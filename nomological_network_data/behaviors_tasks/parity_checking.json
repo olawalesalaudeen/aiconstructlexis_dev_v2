@@ -1,0 +1,149 @@
+{
+  "canonical_name": "Parity checking",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage is a binary parity task: papers describe producing the parity result for a binary string or sequence, computing the sum modulo 2 of boolean variables, or deciding whether the total number of ones is odd or even. Where outputs are spelled out, success is the correct binary result, with one definition stating that y is in {0,1}, 1 for an odd count of ones and 0 for an even count. A smaller framing treats it as a trivial version in which intermediate results are stored every other token, so the model's output is only a function of the last two tokens.\n\nVariants. Paper names vary, including Parity, parity checking, parity computation, and parity solving. The recurring settings are arbitrary binary input sequences or binary strings, and tuples of boolean variables. In a distinct setup, one paper claims a causal relationship from chain of thought to parity checking, saying that difficulty on longer inputs is resolved by a CoT consisting of the parities of increasing prefixes.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers specify the target output directly: producing the parity result for the given binary input or tuple, sometimes as a binary label y, and one definition makes the scoring rule explicit by assigning 1 to odd numbers of ones and 0 to even numbers.\n\nWhat it is taken as evidence of. The only linked construct is state tracking ability. One paper uses parity, alongside other tasks, to measure that construct and says that testing modified methods on those tasks demonstrates improved state-tracking performance. No alternative construct is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Parity checking",
+    "Parity",
+    "Parity computation",
+    "Parity solving",
+    "Parity task"
+  ],
+  "papers": [
+    "Mastering Symbolic Operations: Augmenting Language Models with Compiled Neural Networks",
+    "What Algorithms can Transformers Learn? A Study in Length Generalization",
+    "Generalizing Reasoning Problems to Longer Lengths",
+    "Looped Transformers for Length Generalization",
+    "Selective Attention Improves Transformer",
+    "Transformers Provably Solve Parity Efficiently with Chain of Thought",
+    "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+    "Lower Bounds for Chain-of-Thought Reasoning in Hard-Attention Transformers",
+    "The Role of Sparsity for Length Generalization in LLMs",
+    "Connecting the Dots: LLMs can Infer and Verbalize Latent Structure from Disparate Training Data",
+    "How Far Can Transformers Reason? The Globality Barrier and Inductive Scratchpad",
+    "Iteration Head: A Mechanistic Study of Chain-of-Thought"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A trivial task where the model's output is only a function of the last two tokens, with intermediate results stored every other token.",
+      "paper": "Selective Attention Improves Transformer",
+      "original_name": "Parity"
+    },
+    {
+      "text": "Producing the parity result for a binary input sequence.",
+      "paper": "Looped Transformers for Length Generalization",
+      "original_name": "Parity checking"
+    },
+    {
+      "text": "Calculating the sum modulo 2 of a tuple of boolean variables.",
+      "paper": "Connecting the Dots: LLMs can Infer and Verbalize Latent Structure from Disparate Training Data",
+      "original_name": "Parity computation"
+    },
+    {
+      "text": "Computing whether the total number of ones in a binary sequence is odd or even.",
+      "paper": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+      "original_name": "Parity solving"
+    },
+    {
+      "text": "A synthetic benchmark where the model determines whether the number of 1s in a bit sequence is even or odd.",
+      "paper": "How Far Can Transformers Reason? The Globality Barrier and Inductive Scratchpad",
+      "original_name": "Parity task"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Lower Bounds for Chain-of-Thought Reasoning in Hard-Attention Transformers",
+      "evidence": "Transformers empirically struggle to learn it on longer inputs (e.g. Bhattamishra et al., 2020a; Del\u00b4etang et al., 2023; Butoi et al., 2024; Hahn & Rofin, 2024), and this difficulty is resolved by a CoT consisting of the parities of increasing prefixes, as in Figure 1 (e.g. Anil et al., 2022). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Lower Bounds for Chain-of-Thought Reasoning in Hard-Attention Transformers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "State tracking ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+      "evidence": "We test the modified methods on parity, modular arithmetic, and permutation composition, demonstrating improved state-tracking performance.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage is a binary parity task: papers describe producing the parity result for a binary string or sequence, computing the sum modulo 2 of boolean variables, or deciding whether the total number of ones is odd or even. Where outputs are spelled out, success is the correct binary result, with one definition stating that y is in {0,1}, 1 for an odd count of ones and 0 for an even count. A smaller framing treats it as a trivial version in which intermediate results are stored every other token, so the model's output is only a function of the last two tokens."
+    },
+    {
+      "label": "Variants.",
+      "text": "Paper names vary, including Parity, parity checking, parity computation, and parity solving. The recurring settings are arbitrary binary input sequences or binary strings, and tuples of boolean variables. In a distinct setup, one paper claims a causal relationship from chain of thought to parity checking, saying that difficulty on longer inputs is resolved by a CoT consisting of the parities of increasing prefixes."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers specify the target output directly: producing the parity result for the given binary input or tuple, sometimes as a binary label y, and one definition makes the scoring rule explicit by assigning 1 to odd numbers of ones and 0 to even numbers."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "The only linked construct is state tracking ability. One paper uses parity, alongside other tasks, to measure that construct and says that testing modified methods on those tasks demonstrates improved state-tracking performance. No alternative construct is reported."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage is a binary parity task: papers describe producing the parity result for a binary string or sequence, computing the sum modulo 2 of boolean variables, or deciding whether the total number of ones is odd or even. Where outputs are spelled out, success is the correct binary result, with one definition stating that y is in {0,1}, 1 for an odd count of ones and 0 for an even count. A smaller framing treats it as a trivial version in which intermediate results are stored every other token, so the model's output is only a function of the last two tokens.\n\nVariants. Paper names vary, including Parity, parity checking, parity computation, and parity solving. The recurring settings are arbitrary binary input sequences or binary strings, and tuples of boolean variables. In a distinct setup, one paper claims a causal relationship from chain of thought to parity checking, saying that difficulty on longer inputs is resolved by a CoT consisting of the parities of increasing prefixes.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers specify the target output directly: producing the parity result for the given binary input or tuple, sometimes as a binary label y, and one definition makes the scoring rule explicit by assigning 1 to odd numbers of ones and 0 to even numbers.\n\nWhat it is taken as evidence of. The only linked construct is state tracking ability. One paper uses parity, alongside other tasks, to measure that construct and says that testing modified methods on those tasks demonstrates improved state-tracking performance. No alternative construct is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Mastering Symbolic Operations: Augmenting Language Models with Compiled Neural Networks",
+      "What Algorithms can Transformers Learn? A Study in Length Generalization"
+    ],
+    "iclr25": [
+      "Generalizing Reasoning Problems to Longer Lengths",
+      "Looped Transformers for Length Generalization",
+      "Selective Attention Improves Transformer",
+      "Transformers Provably Solve Parity Efficiently with Chain of Thought",
+      "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues"
+    ],
+    "icml25": [
+      "Lower Bounds for Chain-of-Thought Reasoning in Hard-Attention Transformers",
+      "The Role of Sparsity for Length Generalization in LLMs"
+    ],
+    "neurips24": [
+      "Connecting the Dots: LLMs can Infer and Verbalize Latent Structure from Disparate Training Data",
+      "How Far Can Transformers Reason? The Globality Barrier and Inductive Scratchpad",
+      "Iteration Head: A Mechanistic Study of Chain-of-Thought"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 2,
+    "iclr25": 5,
+    "icml25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "canonical_name": "Temporal grounding",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Most commonly, papers describe temporal grounding as localizing the moment, time span, segment, or timestamps in a video that correspond either to the evidence for a question or to a natural language query. The prevailing success criterion is finding the answer event span or selecting the related clips, and one study says this checks whether a model \"accurately grounds its answers to the correct video segments\" (ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos). Some formulations are narrower, requiring start and end timestamps or direct output of clue intervals that can accurately answer the question, while another treats it as finding the visual event needed for an egocentric question.\n\nVariants. Papers use several nearby task names, most often temporal video grounding, moment localization, clue retrieval, and moment retrieval. The common setting is video, but the task varies between question answering evidence localization, grounding a textual description or query to a segment, directly outputting clue intervals that answer a question, and localizing the event needed for an egocentric question; one paper states that models should \"directly output the intervals of clues\" that answer the question (CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding). A smaller line of work uses the same term for temporally evolving tables, where temporal grounding is described as identifying the relevant set of tables needed to answer a question.\n\nSpace of elicitation and scores. Papers link this behavior to three measurement instruments, most often Charades-STA, then QVHighlights and Ego4D. These are used as evaluation benchmarks or annotated video collections: Charades-STA for start and end timestamp localization, QVHighlights for identifying relevant moments and highlights in response to user queries, and Ego4D for egocentric episodic-memory style localization. Scoring language in the papers includes recall at IoU thresholds, R@N, and IoU-based calculations for grounding tasks.\n\nWhat it is taken as evidence of. Papers link temporal grounding to eight constructs. The most frequent are Temporal grounding ability and Temporal understanding, followed by Fine-grained video understanding, Grounding, and Long video understanding, with three other constructs mentioned more peripherally. Papers do not converge on a single construct it reflects: temporal grounding is reported as related to Temporal grounding ability, and papers also claim causal relationships both from temporal grounding to Temporal grounding ability and from Temporal grounding ability to temporal grounding; temporal grounding is related to Temporal understanding, while one paper claims a causal relationship from Temporal understanding to temporal grounding and another claims a causal relationship from temporal grounding to Long video understanding. Beyond those causal claims, papers describe it as related to Fine-grained video understanding and Grounding.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Moment localization",
+    "Temporal grounding",
+    "Temporal video grounding",
+    "Clue retrieval",
+    "Episodic memory",
+    "Moment retrieval"
+  ],
+  "papers": [
+    "CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding",
+    "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+    "Temporal Reasoning Transfer from Text to Video",
+    "Youku Dense Caption: A Large-scale Chinese Video Dense Caption Dataset and Benchmarks",
+    "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+    "ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos",
+    "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+    "Streaming Long Video Understanding with Large Language Models"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Predicting the temporal span in a video that corresponds to the answer event or relevant evidence for a question.",
+      "paper": "ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos",
+      "original_name": "Moment localization"
+    },
+    {
+      "text": "Identifying the video segments or timestamps that correspond to the evidence needed for a question.",
+      "paper": "Streaming Long Video Understanding with Large Language Models",
+      "original_name": "Temporal grounding"
+    },
+    {
+      "text": "The task of localizing a specific moment or time span in a video that corresponds to a given natural language text query.",
+      "paper": "ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos",
+      "original_name": "Temporal video grounding"
+    },
+    {
+      "text": "The observable action of identifying and outputting specific time intervals within a video that support an answer.",
+      "paper": "CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding",
+      "original_name": "Clue retrieval"
+    },
+    {
+      "text": "Localizing the video moment that contains the evidence needed to answer an egocentric question.",
+      "paper": "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "original_name": "Episodic memory"
+    },
+    {
+      "text": "The task of identifying the start and end timestamps of a video segment that corresponds to a given natural language query.",
+      "paper": "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "original_name": "Moment retrieval"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Charades-STA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "evidence": "We utilize test set of Charades-STA (Gao et al., 2017) for the moment retrieval task and report the recall at IOU thresholds of 0.5 and 0.7.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+          "TimeSuite: Improving MLLMs for Long Video Understanding via Grounded Tuning"
+        ],
+        "emnlp25": [
+          "Language-Guided Temporal Token Pruning for Efficient VideoLLM Processing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "QVHighlights",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "evidence": "Task [TVG] Temporal Video Grounding Source QVHighlights [44] (Table 4)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+          "ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos"
+        ],
+        "icml25": [
+          "Scaling Video-Language Models to 10K Frames via Hierarchical Differential Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Temporal understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Language-Guided Temporal Token Pruning for Efficient VideoLLM Processing",
+      "evidence": "These limitations are particularly problematic for temporal understanding tasks that rely on maintaining temporal coherence across frames, such as highlight detection and temporal grounding.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Language-Guided Temporal Token Pruning for Efficient VideoLLM Processing"
+        ],
+        "iclr25": [
+          "TimeSuite: Improving MLLMs for Long Video Understanding via Grounded Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Temporal grounding ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+      "evidence": "We present a novel training strategy specifically designed to enhance the temporal localization abilities of Vid-LLMs... we fine-tune our Vid-LLM in the second stage on dense video captioning and temporal grounding tasks.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM"
+        ],
+        "iclr25": [
+          "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fine-grained video understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+      "evidence": "Comprehending videos in fine-grained aspects requires precisely locating and understanding specific events within a video. It is roughly divided by previous works [10] into temporal grounding [2, 7] and dense video captioning [13, 31] tasks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long video understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "TimeSuite: Improving MLLMs for Long Video Understanding via Grounded Tuning",
+      "evidence": "We argue long video understanding could be assisted by explicitly performing temporal grounding, as grounding supervision enables MLLM to establish the detailed correspondance between the visual segments and fine-grained semantics.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TimeSuite: Improving MLLMs for Long Video Understanding via Grounded Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Temporal reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Temporal Reasoning Transfer from Text to Video",
+      "evidence": "Temporal reasoning encompasses several key aspects. Based on recent Video LLM benchmarks (Fu et al., 2024; Wu et al., 2024), we focus on four critical dimensions: ... and (4) Temporal Grounding: identifying the temporal location of specific elements in a video. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Temporal Reasoning Transfer from Text to Video"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Information retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "TRANSIENTTABLES: Evaluating LLMs' Reasoning on Temporally Evolving Semi-structured Tables",
+      "evidence": "Temporal Grounding. Accurately identify and retrieve/extract the relevant set of tables necessary to answer the question. This can be regarded as retrieval over temporal information.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "TRANSIENTTABLES: Evaluating LLMs' Reasoning on Temporally Evolving Semi-structured Tables"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 8,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 6,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most commonly, papers describe temporal grounding as localizing the moment, time span, segment, or timestamps in a video that correspond either to the evidence for a question or to a natural language query. The prevailing success criterion is finding the answer event span or selecting the related clips, and one study says this checks whether a model \"accurately grounds its answers to the correct video segments\" (ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos). Some formulations are narrower, requiring start and end timestamps or direct output of clue intervals that can accurately answer the question, while another treats it as finding the visual event needed for an egocentric question."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby task names, most often temporal video grounding, moment localization, clue retrieval, and moment retrieval. The common setting is video, but the task varies between question answering evidence localization, grounding a textual description or query to a segment, directly outputting clue intervals that answer a question, and localizing the event needed for an egocentric question; one paper states that models should \"directly output the intervals of clues\" that answer the question (CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding). A smaller line of work uses the same term for temporally evolving tables, where temporal grounding is described as identifying the relevant set of tables needed to answer a question."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to three measurement instruments, most often Charades-STA, then QVHighlights and Ego4D. These are used as evaluation benchmarks or annotated video collections: Charades-STA for start and end timestamp localization, QVHighlights for identifying relevant moments and highlights in response to user queries, and Ego4D for egocentric episodic-memory style localization. Scoring language in the papers includes recall at IoU thresholds, R@N, and IoU-based calculations for grounding tasks."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link temporal grounding to eight constructs. The most frequent are Temporal grounding ability and Temporal understanding, followed by Fine-grained video understanding, Grounding, and Long video understanding, with three other constructs mentioned more peripherally. Papers do not converge on a single construct it reflects: temporal grounding is reported as related to Temporal grounding ability, and papers also claim causal relationships both from temporal grounding to Temporal grounding ability and from Temporal grounding ability to temporal grounding; temporal grounding is related to Temporal understanding, while one paper claims a causal relationship from Temporal understanding to temporal grounding and another claims a causal relationship from temporal grounding to Long video understanding. Beyond those causal claims, papers describe it as related to Fine-grained video understanding and Grounding."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Most commonly, papers describe temporal grounding as localizing the moment, time span, segment, or timestamps in a video that correspond either to the evidence for a question or to a natural language query. The prevailing success criterion is finding the answer event span or selecting the related clips, and one study says this checks whether a model \"accurately grounds its answers to the correct video segments\" (ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos). Some formulations are narrower, requiring start and end timestamps or direct output of clue intervals that can accurately answer the question, while another treats it as finding the visual event needed for an egocentric question.\n\nVariants. Papers use several nearby task names, most often temporal video grounding, moment localization, clue retrieval, and moment retrieval. The common setting is video, but the task varies between question answering evidence localization, grounding a textual description or query to a segment, directly outputting clue intervals that answer a question, and localizing the event needed for an egocentric question; one paper states that models should \"directly output the intervals of clues\" that answer the question (CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding). A smaller line of work uses the same term for temporally evolving tables, where temporal grounding is described as identifying the relevant set of tables needed to answer a question.\n\nSpace of elicitation and scores. Papers link this behavior to three measurement instruments, most often Charades-STA, then QVHighlights and Ego4D. These are used as evaluation benchmarks or annotated video collections: Charades-STA for start and end timestamp localization, QVHighlights for identifying relevant moments and highlights in response to user queries, and Ego4D for egocentric episodic-memory style localization. Scoring language in the papers includes recall at IoU thresholds, R@N, and IoU-based calculations for grounding tasks.\n\nWhat it is taken as evidence of. Papers link temporal grounding to eight constructs. The most frequent are Temporal grounding ability and Temporal understanding, followed by Fine-grained video understanding, Grounding, and Long video understanding, with three other constructs mentioned more peripherally. Papers do not converge on a single construct it reflects: temporal grounding is reported as related to Temporal grounding ability, and papers also claim causal relationships both from temporal grounding to Temporal grounding ability and from Temporal grounding ability to temporal grounding; temporal grounding is related to Temporal understanding, while one paper claims a causal relationship from Temporal understanding to temporal grounding and another claims a causal relationship from temporal grounding to Long video understanding. Beyond those causal claims, papers describe it as related to Fine-grained video understanding and Grounding.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "CG-Bench: Clue-grounded Question Answering Benchmark for Long Video Understanding",
+      "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "Temporal Reasoning Transfer from Text to Video",
+      "Youku Dense Caption: A Large-scale Chinese Video Dense Caption Dataset and Benchmarks"
+    ],
+    "neurips24": [
+      "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos",
+      "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM",
+      "Streaming Long Video Understanding with Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "neurips24": 4
+  },
+  "conferences": [
+    "iclr25",
+    "neurips24"
+  ]
+}

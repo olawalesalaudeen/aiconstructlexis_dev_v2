@@ -1,0 +1,174 @@
+{
+  "canonical_name": "Sign language translation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats this behavior as generating written or textual output in a spoken language from a sign language video sequence, often under the labels sign language translation or sign-to-text translation. Definitions usually say the output should correspond to the meaning of the signs, and some add that it should be fluent or preserve meaning, grammar, and lexical content. Many papers also study a sentence-level form, including isolated sentence-length clips and translation done one sentence at a time, sometimes without broader document context.\n\nVariants. Paper labels include sign language translation, sign-to-text translation, and sentence-level translation. The most visible variants are sentence-level settings, such as sentence-level ASL to English translation, zero-shot sentence-level translation on FLEURS-ASL, and translation of isolated sentence-length clips; one benchmark also mentions discourse-level translation. Another recurring setting translates each sign language into its region's spoken language, and one paper relates the sentence-level framing to machine translation through sentence- versus paragraph-level evaluation.\n\nSpace of elicitation and scores. Papers link sign language translation to two measurement instruments, FLEURS-ASL and How2Sign. Both are used as datasets or benchmarks for evaluation: FLEURS-ASL is described as supporting primarily sentence- and discourse-level translation, and one evaluation reports sentence-level translation on FLEURS-ASL and How2Sign scored with BLEURT.\n\nWhat it is taken as evidence of. Papers link this behavior to three constructs, and the framing is mixed rather than uniform. One paper relates it to sign language understanding by treating SLT as a sub-task within SLU, another relates it to contextual understanding by saying these tasks demand fine-grained comprehension and context awareness, and a separate paper claims a causal relationship from cross-lingual generalization to sign language translation, reporting multilingual transfer benefits in sentence-level translation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Sign language translation",
+    "Sign-to-text translation",
+    "Sentence-level translation"
+  ],
+  "papers": [
+    "Two Intermediate Translations Are Better Than One: Fine-tuning LLMs for Document-level Translation Refinement",
+    "BOUQuET : dataset, Benchmark and Open initiative for Universal Quality Evaluation in Translation",
+    "Uni-Sign: Toward Unified Sign Language Understanding at Scale",
+    "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus",
+    "FLEURS-ASL: Including American Sign Language in Massively Multilingual Multitask Evaluation",
+    "Fingerspelling within Sign Language Translation"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of generating a fluent textual translation in a spoken language from a given sign language video sequence.",
+      "paper": "Uni-Sign: Toward Unified Sign Language Understanding at Scale",
+      "original_name": "Sign language translation"
+    },
+    {
+      "text": "The task of generating written text that corresponds to the meaning of a sequence of signs in a video.",
+      "paper": "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus",
+      "original_name": "Sign-to-text translation"
+    },
+    {
+      "text": "Translating text one sentence at a time, often without access to the broader document context.",
+      "paper": "BOUQuET : dataset, Benchmark and Open initiative for Universal Quality Evaluation in Translation",
+      "original_name": "Sentence-level translation"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FLEURS-ASL",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus",
+      "evidence": "We provide sentence-level translation (scored with BLEURT [29]) (speci\ufb01cally, BLEURT-20 [24]) and sign language identi\ufb01cation (scored with top-1 accuracy) results on benchmarks for 4 sign languages: American Sign Language (ase, FLEURS-ASL [34] & How2Sign [4])... (Section 3.3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus"
+        ],
+        "naacl25": [
+          "FLEURS-ASL: Including American Sign Language in Massively Multilingual Multitask Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "How2Sign",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus",
+      "evidence": "We provide sentence-level translation (scored with BLEURT [29]) (speci\ufb01cally, BLEURT-20 [24]) and sign language identi\ufb01cation (scored with top-1 accuracy) results on benchmarks for 4 sign languages: American Sign Language (ase, FLEURS-ASL [34] & How2Sign [4])... (Section 3.3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus",
+          "Uni-Sign: Toward Unified Sign Language Understanding at Scale"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-lingual generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus",
+      "evidence": "experiments in sentence-level translation and sign language identi\ufb01cation which demonstrate multilingual transfer bene\ufb01ts both higher- and lower-resource sign languages. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Sign language understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Uni-Sign: Toward Unified Sign Language Understanding at Scale",
+      "evidence": "SLU can be subdivided into several sub-tasks, including isolated sign language recognition (ISLR), continuous sign language recognition (CSLR), and sign language translation (SLT). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uni-Sign: Toward Unified Sign Language Understanding at Scale"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Contextual understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Uni-Sign: Toward Unified Sign Language Understanding at Scale",
+      "evidence": "All these tasks [ISLR, CSLR, and SLT] impose indispensable demands on the model\u2019s fine-grained comprehension and context awareness capabilities. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uni-Sign: Toward Unified Sign Language Understanding at Scale"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats this behavior as generating written or textual output in a spoken language from a sign language video sequence, often under the labels sign language translation or sign-to-text translation. Definitions usually say the output should correspond to the meaning of the signs, and some add that it should be fluent or preserve meaning, grammar, and lexical content. Many papers also study a sentence-level form, including isolated sentence-length clips and translation done one sentence at a time, sometimes without broader document context."
+    },
+    {
+      "label": "Variants.",
+      "text": "Paper labels include sign language translation, sign-to-text translation, and sentence-level translation. The most visible variants are sentence-level settings, such as sentence-level ASL to English translation, zero-shot sentence-level translation on FLEURS-ASL, and translation of isolated sentence-length clips; one benchmark also mentions discourse-level translation. Another recurring setting translates each sign language into its region's spoken language, and one paper relates the sentence-level framing to machine translation through sentence- versus paragraph-level evaluation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link sign language translation to two measurement instruments, FLEURS-ASL and How2Sign. Both are used as datasets or benchmarks for evaluation: FLEURS-ASL is described as supporting primarily sentence- and discourse-level translation, and one evaluation reports sentence-level translation on FLEURS-ASL and How2Sign scored with BLEURT."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link this behavior to three constructs, and the framing is mixed rather than uniform. One paper relates it to sign language understanding by treating SLT as a sub-task within SLU, another relates it to contextual understanding by saying these tasks demand fine-grained comprehension and context awareness, and a separate paper claims a causal relationship from cross-lingual generalization to sign language translation, reporting multilingual transfer benefits in sentence-level translation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats this behavior as generating written or textual output in a spoken language from a sign language video sequence, often under the labels sign language translation or sign-to-text translation. Definitions usually say the output should correspond to the meaning of the signs, and some add that it should be fluent or preserve meaning, grammar, and lexical content. Many papers also study a sentence-level form, including isolated sentence-length clips and translation done one sentence at a time, sometimes without broader document context.\n\nVariants. Paper labels include sign language translation, sign-to-text translation, and sentence-level translation. The most visible variants are sentence-level settings, such as sentence-level ASL to English translation, zero-shot sentence-level translation on FLEURS-ASL, and translation of isolated sentence-length clips; one benchmark also mentions discourse-level translation. Another recurring setting translates each sign language into its region's spoken language, and one paper relates the sentence-level framing to machine translation through sentence- versus paragraph-level evaluation.\n\nSpace of elicitation and scores. Papers link sign language translation to two measurement instruments, FLEURS-ASL and How2Sign. Both are used as datasets or benchmarks for evaluation: FLEURS-ASL is described as supporting primarily sentence- and discourse-level translation, and one evaluation reports sentence-level translation on FLEURS-ASL and How2Sign scored with BLEURT.\n\nWhat it is taken as evidence of. Papers link this behavior to three constructs, and the framing is mixed rather than uniform. One paper relates it to sign language understanding by treating SLT as a sub-task within SLU, another relates it to contextual understanding by saying these tasks demand fine-grained comprehension and context awareness, and a separate paper claims a causal relationship from cross-lingual generalization to sign language translation, reporting multilingual transfer benefits in sentence-level translation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Two Intermediate Translations Are Better Than One: Fine-tuning LLMs for Document-level Translation Refinement"
+    ],
+    "emnlp25": [
+      "BOUQuET : dataset, Benchmark and Open initiative for Universal Quality Evaluation in Translation"
+    ],
+    "iclr25": [
+      "Uni-Sign: Toward Unified Sign Language Understanding at Scale",
+      "YouTube-SL-25: A Large-Scale, Open-Domain Multilingual Sign Language Parallel Corpus"
+    ],
+    "naacl25": [
+      "FLEURS-ASL: Including American Sign Language in Massively Multilingual Multitask Evaluation",
+      "Fingerspelling within Sign Language Translation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 1,
+    "iclr25": 2,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25"
+  ]
+}

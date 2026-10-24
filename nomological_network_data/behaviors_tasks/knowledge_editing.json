@@ -1,0 +1,474 @@
+{
+  "canonical_name": "Knowledge editing",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage is a targeted update to a model's stored factual or commonsense knowledge so that, for a specified prompt or input, it returns a new desired answer while unrelated outputs remain unchanged. Most definitions tie this to modifying a small number of parameters, or the model's parameters more generally. One formulation also makes generality, portability, and locality part of the success criteria alongside maximizing the chance of responding with y given x, while a smaller line of work broadens the behavior to targeted model editing of knowledge and capabilities, and another treats it as producing responses consistent with a new or corrected fact provided in context without modifying model weights.\n\nVariants. Papers use several subtask names under this behavior. A common split is between knowledge update, where the model should produce a new fact replacing an old one, and knowledge erasure, where it should stop producing a fact after modification; one paper also describes fact editing as changing the object for the same subject-relation pair through weight or activation intervention. Another recurring setting is sequential or lifelong editing, called sequence editing, sequential editing, or sequential knowledge editing, where multiple edits are applied over time and earlier edits may be revisited, while multimodal work distinguishes visual entity editing, visual semantic editing, and user-specific editing; smaller formulations include factual knowledge updating over subject-relation-object triples and hallucination correction.\n\nSpace of elicitation and scores. Papers link this behavior to 7 measurement instruments, all through measured_by relations. The most frequently linked are ZsRE, CounterFact, SelfCheckGPT, WikiData_counterfact, and LongMemEval, with the remaining links going to other instruments. In the papers' descriptions, ZsRE and CounterFact are representative or widely adopted benchmarks for model or factual knowledge editing, SelfCheckGPT is a hallucination correction dataset, and LongMemEval is a benchmark that includes knowledge update among its tasks.\n\nWhat it is taken as evidence of. Only a small part of the literature explicitly uses this behavior as evidence of another construct. One paper says the success rate of knowledge editing is used to assess context faithfulness, and another construct link connects reversal curse to knowledge editing through a measured_by relation, so papers do not converge on a single construct that this behavior reflects. More often, knowledge editing is related to editing locality, generalization, and generality, with several additional construct links also appearing; one paper also claims a causal relationship from knowledge editing to editing locality.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Knowledge editing",
+    "Knowledge erasure",
+    "Knowledge update",
+    "User-specific editing",
+    "Visual entity editing",
+    "Visual semantic editing",
+    "Model editing",
+    "Factual knowledge updating",
+    "Hallucination correction",
+    "Sequence editing",
+    "Sequential editing",
+    "Sequential knowledge editing",
+    "Fact editing"
+  ],
+  "papers": [
+    "ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains",
+    "SAKE: Steering Activations for Knowledge Editing",
+    "The Knowledge Microscope: Features as Better Analytical Lenses than Neurons",
+    "Dynamic Retriever for In-Context Knowledge Editing via Policy Optimization",
+    "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+    "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+    "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+    "M2Edit: Locate and Edit Multi-Granularity Knowledge in Multimodal Large Language Model",
+    "MicroEdit: Neuron-level Knowledge Disentanglement and Localization in Lifelong Model Editing",
+    "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+    "Think and Recall: Layer-Level Prompting for Lifelong Model Editing",
+    "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
+    "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+    "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+    "Everything is Editable: Extend Knowledge Editing to Unstructured Data in Large Language Models",
+    "Gumbel Counterfactual Generation From Language Models",
+    "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+    "Knowledge Localization: Mission Not Accomplished? Enter Query Localization!",
+    "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+    "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+    "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+    "BalancEdit: Dynamically Balancing the Generality-Locality Trade-off in Multi-modal Model Editing",
+    "Locate-then-edit for Multi-hop Factual Recall under Knowledge Editing",
+    "Mitigating Heterogeneous Token Overfitting in LLM Knowledge Editing",
+    "Peripheral Memory for LLMs: Integration of Sequential Memory Banks with Adaptive Querying",
+    "Towards Lifelong Model Editing via Simulating Ideal Editor",
+    "Reasons and Solutions for the Decline in Model Performance after Editing",
+    "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+  ],
+  "paper_count": 28,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Updating a model's stored factual or commonsense knowledge by modifying a small number of parameters.",
+      "paper": "Reasons and Solutions for the Decline in Model Performance after Editing",
+      "original_name": "Knowledge editing"
+    },
+    {
+      "text": "The observable outcome of a model ceasing to produce a specific fact in response to relevant queries after its parameters have been modified.",
+      "paper": "Knowledge Localization: Mission Not Accomplished? Enter Query Localization!",
+      "original_name": "Knowledge erasure"
+    },
+    {
+      "text": "The observable outcome of a model producing a new, updated fact in response to relevant queries after its parameters have been modified to replace an old fact.",
+      "paper": "Knowledge Localization: Mission Not Accomplished? Enter Query Localization!",
+      "original_name": "Knowledge update"
+    },
+    {
+      "text": "The observable task of modifying a model's knowledge about a specific visual entity, such as updating its attributes or associated facts.",
+      "paper": "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "original_name": "Visual entity editing"
+    },
+    {
+      "text": "The observable task of modifying a model's understanding of complex visual semantics, such as actions, body gestures, or object relationships.",
+      "paper": "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "original_name": "Visual semantic editing"
+    },
+    {
+      "text": "The observable task of incorporating new, personalized user information into a model, such as details about owned items or personal relationships.",
+      "paper": "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "original_name": "User-specific editing"
+    },
+    {
+      "text": "The general practice of modifying a pre-trained model's parameters to add, remove, or alter its knowledge and capabilities in a targeted manner.",
+      "paper": "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+      "original_name": "Model editing"
+    },
+    {
+      "text": "The observable process of modifying model parameters to reflect new factual associations in the form of subject-relation-object triples, such as updating \"Beats Music is owned by Apple.\"",
+      "paper": "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+      "original_name": "Factual knowledge updating"
+    },
+    {
+      "text": "Reducing or eliminating factually incorrect statements in model outputs by applying knowledge edits.",
+      "paper": "Think and Recall: Layer-Level Prompting for Lifelong Model Editing",
+      "original_name": "Hallucination correction"
+    },
+    {
+      "text": "Repeatedly applying multiple knowledge edits to the same model over a sequence of samples.",
+      "paper": "Reasons and Solutions for the Decline in Model Performance after Editing",
+      "original_name": "Sequence editing"
+    },
+    {
+      "text": "The task of continuously updating a model with multiple, sequential pieces of knowledge and evaluating its ability to retain earlier edits.",
+      "paper": "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "original_name": "Sequential editing"
+    },
+    {
+      "text": "The observable process of applying a series of targeted updates to a model's parameters to modify its stored knowledge over time.",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "original_name": "Sequential knowledge editing"
+    },
+    {
+      "text": "Model behavior where a stored fact is modified through weight or activation intervention to change the output from one object to another for the same subject-relation pair.",
+      "paper": "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
+      "original_name": "Fact editing"
+    }
+  ],
+  "definition_count": 13,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ZsRE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "evidence": "we edit different kinds of knowledge: WikiDatarecent, WikiDatacounterfact (Cohen et al., 2024), WikiBio (Hartvigsen et al., 2024), ConvSent (Mitchell et al., 2022), and ZsRE (Yao et al., 2023). (Section 3.1)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ],
+        "emnlp25": [
+          "Dynamic Retriever for In-Context Knowledge Editing via Policy Optimization",
+          "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CounterFact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "evidence": "\u201cWe evaluate AlphaEdit using two widely adopted benchmarks: the Counterfact dataset (Meng et al., 2022) and the ZsRE dataset (Levy et al., 2017).\u201d",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models"
+        ],
+        "emnlp25": [
+          "Dynamic Retriever for In-Context Knowledge Editing via Policy Optimization",
+          "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing"
+        ],
+        "icml25": [
+          "Mechanistic Unlearning: Robust Knowledge Unlearning and Editing via Mechanistic Localization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SelfCheckGPT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "\u201cwe also evaluate its ability to correct Hallucination in SelfCheckGPT [48].\u201d",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ],
+        "emnlp25": [
+          "Think and Recall: Layer-Level Prompting for Lifelong Model Editing",
+          "MicroEdit: Neuron-level Knowledge Disentanglement and Localization in Lifelong Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Editing locality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "direct editing of long-term memory (ROME, MEMIT, etc.) creates conflicts with prior pretraining knowledge, resulting in poor locality (Section 3.2)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ],
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+          "In-Context Editing: Learning Knowledge from Self-Induced Distributions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiData_counterfact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "evidence": "we edit different kinds of knowledge: WikiDatarecent, WikiDatacounterfact (Cohen et al., 2024), WikiBio (Hartvigsen et al., 2024), ConvSent (Mitchell et al., 2022), and ZsRE (Yao et al., 2023). (Section 3.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning"
+        ],
+        "emnlp25": [
+          "Dynamic Retriever for In-Context Knowledge Editing via Policy Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "evidence": "Knowledge editing seeks to maximize the chance of an LLM responding with y given x, while satisfying the following additional criteria at the same time...: (1) Generality: there are different ways to express US president, wherefore the edited model should generalize. (Section 2.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning"
+        ],
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Portability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "evidence": "Knowledge editing seeks to maximize the chance of an LLM responding with y given x, while satisfying the following additional criteria at the same time...: (2) Portability: relevant knowledge such as the first lady of United States should be updated as well. (Section 2.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+          "In-Context Editing: Learning Knowledge from Self-Induced Distributions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reliability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models",
+      "evidence": "i) reliability, the model can remember both current and previous edits after sequential editing",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiData_recent",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "evidence": "we edit different kinds of knowledge: WikiDatarecent, WikiDatacounterfact (Cohen et al., 2024), WikiBio (Hartvigsen et al., 2024), ConvSent (Mitchell et al., 2022), and ZsRE (Yao et al., 2023). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiBio",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "evidence": "we edit different kinds of knowledge: WikiDatarecent, WikiDatacounterfact (Cohen et al., 2024), WikiBio (Hartvigsen et al., 2024), ConvSent (Mitchell et al., 2022), and ZsRE (Yao et al., 2023). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MEMIT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gumbel Counterfactual Generation From Language Models",
+      "evidence": "\u201cMEMIT (Meng et al., 2023) uses a low-rank update to the MLPs in the LM to update the knowledge of the model on a specific fact.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gumbel Counterfactual Generation From Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Linguistic quality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "In-Context Editing: Learning Knowledge from Self-Induced Distributions",
+      "evidence": "\u201cWe analyze ICE across four critical aspects of knowledge editing: accuracy, locality, generalization, and linguistic quality, demonstrating its advantages.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "In-Context Editing: Learning Knowledge from Self-Induced Distributions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Editability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Lifelong Model Editing via Simulating Ideal Editor",
+      "evidence": "The sequential updates gradually deviate the model from its initial state, leading to degradation in its editability (Ma et al., 2024; Gupta et al., 2024b). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Towards Lifelong Model Editing via Simulating Ideal Editor"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Towards Lifelong Model Editing via Simulating Ideal Editor",
+      "evidence": "The model typically encounters catastrophic forgetting during sequential edits, where previously edited examples are forgotten (Wang et al., 2024a; Gupta et al., 2024a). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Towards Lifelong Model Editing via Simulating Ideal Editor"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge retention",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+      "evidence": "the accumulation of preservation loss inevitably erodes model stability during sequential editing operations, ultimately leading to model forgetting and collapse (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Context faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+      "evidence": "this paper uses the success rate of KE to assess the context-faithfulness of LLMs (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 16,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 14,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage is a targeted update to a model's stored factual or commonsense knowledge so that, for a specified prompt or input, it returns a new desired answer while unrelated outputs remain unchanged. Most definitions tie this to modifying a small number of parameters, or the model's parameters more generally. One formulation also makes generality, portability, and locality part of the success criteria alongside maximizing the chance of responding with y given x, while a smaller line of work broadens the behavior to targeted model editing of knowledge and capabilities, and another treats it as producing responses consistent with a new or corrected fact provided in context without modifying model weights."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several subtask names under this behavior. A common split is between knowledge update, where the model should produce a new fact replacing an old one, and knowledge erasure, where it should stop producing a fact after modification; one paper also describes fact editing as changing the object for the same subject-relation pair through weight or activation intervention. Another recurring setting is sequential or lifelong editing, called sequence editing, sequential editing, or sequential knowledge editing, where multiple edits are applied over time and earlier edits may be revisited, while multimodal work distinguishes visual entity editing, visual semantic editing, and user-specific editing; smaller formulations include factual knowledge updating over subject-relation-object triples and hallucination correction."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 7 measurement instruments, all through measured_by relations. The most frequently linked are ZsRE, CounterFact, SelfCheckGPT, WikiData_counterfact, and LongMemEval, with the remaining links going to other instruments. In the papers' descriptions, ZsRE and CounterFact are representative or widely adopted benchmarks for model or factual knowledge editing, SelfCheckGPT is a hallucination correction dataset, and LongMemEval is a benchmark that includes knowledge update among its tasks."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Only a small part of the literature explicitly uses this behavior as evidence of another construct. One paper says the success rate of knowledge editing is used to assess context faithfulness, and another construct link connects reversal curse to knowledge editing through a measured_by relation, so papers do not converge on a single construct that this behavior reflects. More often, knowledge editing is related to editing locality, generalization, and generality, with several additional construct links also appearing; one paper also claims a causal relationship from knowledge editing to editing locality."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage is a targeted update to a model's stored factual or commonsense knowledge so that, for a specified prompt or input, it returns a new desired answer while unrelated outputs remain unchanged. Most definitions tie this to modifying a small number of parameters, or the model's parameters more generally. One formulation also makes generality, portability, and locality part of the success criteria alongside maximizing the chance of responding with y given x, while a smaller line of work broadens the behavior to targeted model editing of knowledge and capabilities, and another treats it as producing responses consistent with a new or corrected fact provided in context without modifying model weights.\n\nVariants. Papers use several subtask names under this behavior. A common split is between knowledge update, where the model should produce a new fact replacing an old one, and knowledge erasure, where it should stop producing a fact after modification; one paper also describes fact editing as changing the object for the same subject-relation pair through weight or activation intervention. Another recurring setting is sequential or lifelong editing, called sequence editing, sequential editing, or sequential knowledge editing, where multiple edits are applied over time and earlier edits may be revisited, while multimodal work distinguishes visual entity editing, visual semantic editing, and user-specific editing; smaller formulations include factual knowledge updating over subject-relation-object triples and hallucination correction.\n\nSpace of elicitation and scores. Papers link this behavior to 7 measurement instruments, all through measured_by relations. The most frequently linked are ZsRE, CounterFact, SelfCheckGPT, WikiData_counterfact, and LongMemEval, with the remaining links going to other instruments. In the papers' descriptions, ZsRE and CounterFact are representative or widely adopted benchmarks for model or factual knowledge editing, SelfCheckGPT is a hallucination correction dataset, and LongMemEval is a benchmark that includes knowledge update among its tasks.\n\nWhat it is taken as evidence of. Only a small part of the literature explicitly uses this behavior as evidence of another construct. One paper says the success rate of knowledge editing is used to assess context faithfulness, and another construct link connects reversal curse to knowledge editing through a measured_by relation, so papers do not converge on a single construct that this behavior reflects. More often, knowledge editing is related to editing locality, generalization, and generality, with several additional construct links also appearing; one paper also claims a causal relationship from knowledge editing to editing locality.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains",
+      "SAKE: Steering Activations for Knowledge Editing",
+      "The Knowledge Microscope: Features as Better Analytical Lenses than Neurons"
+    ],
+    "emnlp25": [
+      "Dynamic Retriever for In-Context Knowledge Editing via Policy Optimization",
+      "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+      "GeoEdit: Geometric Knowledge Editing for Large Language Models",
+      "LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing",
+      "M2Edit: Locate and Edit Multi-Granularity Knowledge in Multimodal Large Language Model",
+      "MicroEdit: Neuron-level Knowledge Disentanglement and Localization in Lifelong Model Editing",
+      "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+      "Think and Recall: Layer-Level Prompting for Lifelong Model Editing"
+    ],
+    "iclr25": [
+      "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "Efficient Model Editing with Task-Localized Sparse Fine-tuning",
+      "Everything is Editable: Extend Knowledge Editing to Unstructured Data in Large Language Models",
+      "Gumbel Counterfactual Generation From Language Models",
+      "Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness",
+      "Knowledge Localization: Mission Not Accomplished? Enter Query Localization!",
+      "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs",
+      "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning"
+    ],
+    "icml25": [
+      "BalancEdit: Dynamically Balancing the Generality-Locality Trade-off in Multi-modal Model Editing",
+      "Locate-then-edit for Multi-hop Factual Recall under Knowledge Editing",
+      "Mitigating Heterogeneous Token Overfitting in LLM Knowledge Editing",
+      "Peripheral Memory for LLMs: Integration of Sequential Memory Banks with Adaptive Querying",
+      "Towards Lifelong Model Editing via Simulating Ideal Editor"
+    ],
+    "neurips24": [
+      "Reasons and Solutions for the Decline in Model Performance after Editing",
+      "WISE: Rethinking the Knowledge Memory for Lifelong Model Editing of Large Language Models"
+    ],
+    "iclr24": [
+      "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 8,
+    "iclr25": 9,
+    "icml25": 5,
+    "neurips24": 2,
+    "iclr24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

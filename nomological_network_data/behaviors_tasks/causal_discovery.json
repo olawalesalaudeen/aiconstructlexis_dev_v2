@@ -1,0 +1,188 @@
+{
+  "canonical_name": "Causal discovery",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage treats causal discovery as recovering or inferring causal structure from data, and sometimes from text. Definitions agree that the target is a causal structure or set of causal relations, but differ in how explicit the output must be: some describe recovering a latent structure or refining assumptions through targeted interventions into a causal subgraph, while another formulation requires, for every variable pair, choosing A causes B, B causes A, or no relation.\n\nVariants. Papers study several named variants. Alongside the general task, they describe causal graph discovery as inferring a temporal directed graph over stocks with lagged causal links, causal graph construction as building item-action dependency structures from interaction records and interventions, and full causal discovery as pairwise direction judgments over a given variable set.\n\nSpace of elicitation and scores. Papers link this behavior to one measurement instrument, COPA, through a measured_by relation. The recorded operationalization is narrow: one paper states that it uses COPA \"for causal discovery,\" and no other linked instrument is named.\n\nWhat it is taken as evidence of. Papers connect it to three constructs overall. The prevailing construct-level link is to Causal reasoning, recorded as a related relation: papers place causal discovery among causal reasoning tasks and state that LLM-based causal discovery \"performs causal reasoning under the guidance of the prompt.\" A smaller line of work claims causal relationships from causal discovery to Continual learning and to Interpretability and explainability, so papers do not use a single shared construct relation for it.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Causal discovery",
+    "Causal graph discovery",
+    "Causal graph construction",
+    "Full causal discovery"
+  ],
+  "papers": [
+    "Uncertainty in Causality: A New Frontier",
+    "On the Reliability of Large Language Models for Causal Discovery",
+    "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning",
+    "ADAM: An Embodied Causal Agent in Open-World Environments",
+    "CausalEval: Towards Better Causal Reasoning in Language Models",
+    "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+    "Unveiling Causal Reasoning in Large Language Models: Reality or Mirage?"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of recovering the latent causal structure of variables from data or text.",
+      "paper": "Unveiling Causal Reasoning in Large Language Models: Reality or Mirage?",
+      "original_name": "Causal discovery"
+    },
+    {
+      "text": "Inferring a temporal directed graph over stocks that represents lagged causal links between variables.",
+      "paper": "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+      "original_name": "Causal graph discovery"
+    },
+    {
+      "text": "Building a directed structure of item-action dependencies from interaction records and interventions.",
+      "paper": "ADAM: An Embodied Causal Agent in Open-World Environments",
+      "original_name": "Causal graph construction"
+    },
+    {
+      "text": "The observable task of, for each pair of variables in a given set, identifying whether a causal relation exists and in which direction (A causes B, B causes A, or no relation).",
+      "paper": "On the Reliability of Large Language Models for Causal Discovery",
+      "original_name": "Full causal discovery"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Causal reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Unveiling Causal Reasoning in Large Language Models: Reality or Mirage?",
+      "evidence": "Causal Reasoning tasks include causal discovery, cause attribution, and causal effect estimation [30, 58, 65]. (Section 2.2)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Unveiling Causal Reasoning in Large Language Models: Reality or Mirage?"
+        ],
+        "iclr25": [
+          "ADAM: An Embodied Causal Agent in Open-World Environments"
+        ],
+        "naacl25": [
+          "CausalEval: Towards Better Causal Reasoning in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Continual learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ADAM: An Embodied Causal Agent in Open-World Environments",
+      "evidence": "Newly discovered items enable the execution of new unknown actions and the CD on these actions. This iterative process ensures the lifelong learning through continuous engagement and adaptation.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ADAM: An Embodied Causal Agent in Open-World Environments"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Interpretability and explainability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ADAM: An Embodied Causal Agent in Open-World Environments",
+      "evidence": "\"ADAM constructs a nearly perfect causal graph from scratch, enabling efficient task decomposition and execution with strong interpretability.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ADAM: An Embodied Causal Agent in Open-World Environments"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "COPA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CausalEval: Towards Better Causal Reasoning in Language Models",
+      "evidence": "Specifically, we use COPA (Roemmele et al., 2011), NPDS (Tu et al., 2019), e-CARE (Du et al., 2022), and Corr2Cause (Jin et al., 2023b) for causal discovery... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "CausalEval: Towards Better Causal Reasoning in Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hypothesis generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning",
+      "evidence": "In hypothesis generation, we produce a causal graph by use of an LLM.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage treats causal discovery as recovering or inferring causal structure from data, and sometimes from text. Definitions agree that the target is a causal structure or set of causal relations, but differ in how explicit the output must be: some describe recovering a latent structure or refining assumptions through targeted interventions into a causal subgraph, while another formulation requires, for every variable pair, choosing A causes B, B causes A, or no relation."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several named variants. Alongside the general task, they describe causal graph discovery as inferring a temporal directed graph over stocks with lagged causal links, causal graph construction as building item-action dependency structures from interaction records and interventions, and full causal discovery as pairwise direction judgments over a given variable set."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to one measurement instrument, COPA, through a measured_by relation. The recorded operationalization is narrow: one paper states that it uses COPA \"for causal discovery,\" and no other linked instrument is named."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect it to three constructs overall. The prevailing construct-level link is to Causal reasoning, recorded as a related relation: papers place causal discovery among causal reasoning tasks and state that LLM-based causal discovery \"performs causal reasoning under the guidance of the prompt.\" A smaller line of work claims causal relationships from causal discovery to Continual learning and to Interpretability and explainability, so papers do not use a single shared construct relation for it."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage treats causal discovery as recovering or inferring causal structure from data, and sometimes from text. Definitions agree that the target is a causal structure or set of causal relations, but differ in how explicit the output must be: some describe recovering a latent structure or refining assumptions through targeted interventions into a causal subgraph, while another formulation requires, for every variable pair, choosing A causes B, B causes A, or no relation.\n\nVariants. Papers study several named variants. Alongside the general task, they describe causal graph discovery as inferring a temporal directed graph over stocks with lagged causal links, causal graph construction as building item-action dependency structures from interaction records and interventions, and full causal discovery as pairwise direction judgments over a given variable set.\n\nSpace of elicitation and scores. Papers link this behavior to one measurement instrument, COPA, through a measured_by relation. The recorded operationalization is narrow: one paper states that it uses COPA \"for causal discovery,\" and no other linked instrument is named.\n\nWhat it is taken as evidence of. Papers connect it to three constructs overall. The prevailing construct-level link is to Causal reasoning, recorded as a related relation: papers place causal discovery among causal reasoning tasks and state that LLM-based causal discovery \"performs causal reasoning under the guidance of the prompt.\" A smaller line of work claims causal relationships from causal discovery to Continual learning and to Interpretability and explainability, so papers do not use a single shared construct relation for it.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Uncertainty in Causality: A New Frontier",
+      "On the Reliability of Large Language Models for Causal Discovery"
+    ],
+    "iclr24": [
+      "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning"
+    ],
+    "iclr25": [
+      "ADAM: An Embodied Causal Agent in Open-World Environments"
+    ],
+    "naacl25": [
+      "CausalEval: Towards Better Causal Reasoning in Language Models"
+    ],
+    "neurips24": [
+      "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+      "Unveiling Causal Reasoning in Large Language Models: Reality or Mirage?"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr24": 1,
+    "iclr25": 1,
+    "naacl25": 1,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

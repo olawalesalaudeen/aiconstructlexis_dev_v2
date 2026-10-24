@@ -1,0 +1,208 @@
+{
+  "canonical_name": "QMSum",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most commonly, papers describe QMSum as a query-based multi-domain meeting summarization dataset or benchmark. Definitions usually say it contains meeting transcripts together with summaries, questions, or query-summary pairs focused on specific questions about the dialogue, often across domains such as academic and industrial product meetings; some also describe realistic multi-party transcripts, and another description says it aggregates ICSI, AMI, and Parliament meetings. A smaller variation in naming presents it as SUM-QMSUM, a summarization benchmark requiring summaries of meeting transcripts, and some uses restrict evaluation to its \"general queries\" for global summarization.\n\nWhat it is claimed to measure. Papers use QMSum to measure 4 constructs and 2 behavioral indicators. The prevailing behavioral framing is text summarization, with a smaller line of work using it for dialogue summarization; papers also report it as measuring generalization, length generalization, long-context understanding, and text generation quality. Taken together, its measurement claims are spread across several targets rather than concentrated on a single construct.\n\nSpace of uses. The prevailing usage is as a benchmark or evaluation task for long-context and summarization settings. Among linked instruments, papers relate it only to SCROLLS, and several definitions also place it in the SCROLL benchmark; papers report it alongside GovReport, NarrativeQA, and Qasper, and some evaluations report ROUGE-1 or RougeLSum and F1 on it. Some studies use it more selectively, for example evaluating only its \"general queries\" for global summarization, using it as a source of examples, testing a summary component on it, or drawing on it as source data for constructing CoPriva.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "QMSum",
+    "SUM-QMSUM"
+  ],
+  "papers": [
+    "Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs",
+    "Measuring the Effect of Transcription Noise on Downstream Language Understanding Tasks",
+    "RefreshKV: Updating Small KV Cache During Long-form Generation",
+    "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+    "GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction",
+    "Keep Security! Benchmarking Security Policy Preservation in Large Language Model Contexts Against Indirect Attacks in Question Answering",
+    "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+    "Retrieval meets Long Context Large Language Models",
+    "Teaching Language Models to Hallucinate Less with Synthetic Tasks",
+    "Accelerating Inference of Retrieval-Augmented Generation via Sparse Context Selection",
+    "DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+    "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+    "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+    "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+    "Topic-Conversation Relevance (TCR)  Dataset and Benchmarks"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A query-based multi-domain meeting summarization dataset from the SCROLL benchmark.",
+      "paper": "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "original_name": "QMSum"
+    },
+    {
+      "text": "Summarization benchmark requiring models to generate summaries of meeting transcripts.",
+      "paper": "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+      "original_name": "SUM-QMSUM"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+      "evidence": "Summarization. We pick two summarization datasets from SCROLLS. QMSum [93] is a query-based summarization dataset, formed by meeting transcripts from multiple domains",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks"
+        ],
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SCROLLS",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "evidence": "...we evaluate MEGALODON on long-context open-book question answering (QA) tasks in the Scrolls dataset (Shaham et al., 2022), including NarrativeQA (Ko\u02c7cisk\u00b4y et al., 2018), Qasper (Dasigi et al., 2021) and QMSum (Zhong et al., 2021). (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "evidence": "Long-context ability evaluation. Following Xiong et al. [94], we evaluated the models on long-sequence tasks, including ... QMSum [105]. (Table 4, Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Gated Slot Attention for Efficient Linear-Time Sequence Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "Figure 2: Length extrapolation on six long benchmarks.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Dialogue summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "ResQ: Mixed-Precision Quantization of Large Language Models with Low-Rank Residuals",
+      "evidence": "dialogue summarization: samsum (Gliwa et al., 2019) and qmsum (Zhong et al., 2021) from LongBench (Bai et al., 2024)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ResQ: Mixed-Precision Quantization of Large Language Models with Low-Rank Residuals"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Query-focused summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Accelerating Inference of Retrieval-Augmented Generation via Sparse Context Selection",
+      "evidence": "QMSum (Zhong et al., 2021) is a human-annotated benchmark for a query-based multi-domain meeting summarization task, which consists of 1,808 query-summary pairs over 232 meetings in multiple domains. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Accelerating Inference of Retrieval-Augmented Generation via Sparse Context Selection"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most commonly, papers describe QMSum as a query-based multi-domain meeting summarization dataset or benchmark. Definitions usually say it contains meeting transcripts together with summaries, questions, or query-summary pairs focused on specific questions about the dialogue, often across domains such as academic and industrial product meetings; some also describe realistic multi-party transcripts, and another description says it aggregates ICSI, AMI, and Parliament meetings. A smaller variation in naming presents it as SUM-QMSUM, a summarization benchmark requiring summaries of meeting transcripts, and some uses restrict evaluation to its \"general queries\" for global summarization."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use QMSum to measure 4 constructs and 2 behavioral indicators. The prevailing behavioral framing is text summarization, with a smaller line of work using it for dialogue summarization; papers also report it as measuring generalization, length generalization, long-context understanding, and text generation quality. Taken together, its measurement claims are spread across several targets rather than concentrated on a single construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "The prevailing usage is as a benchmark or evaluation task for long-context and summarization settings. Among linked instruments, papers relate it only to SCROLLS, and several definitions also place it in the SCROLL benchmark; papers report it alongside GovReport, NarrativeQA, and Qasper, and some evaluations report ROUGE-1 or RougeLSum and F1 on it. Some studies use it more selectively, for example evaluating only its \"general queries\" for global summarization, using it as a source of examples, testing a summary component on it, or drawing on it as source data for constructing CoPriva."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most commonly, papers describe QMSum as a query-based multi-domain meeting summarization dataset or benchmark. Definitions usually say it contains meeting transcripts together with summaries, questions, or query-summary pairs focused on specific questions about the dialogue, often across domains such as academic and industrial product meetings; some also describe realistic multi-party transcripts, and another description says it aggregates ICSI, AMI, and Parliament meetings. A smaller variation in naming presents it as SUM-QMSUM, a summarization benchmark requiring summaries of meeting transcripts, and some uses restrict evaluation to its \"general queries\" for global summarization.\n\nWhat it is claimed to measure. Papers use QMSum to measure 4 constructs and 2 behavioral indicators. The prevailing behavioral framing is text summarization, with a smaller line of work using it for dialogue summarization; papers also report it as measuring generalization, length generalization, long-context understanding, and text generation quality. Taken together, its measurement claims are spread across several targets rather than concentrated on a single construct.\n\nSpace of uses. The prevailing usage is as a benchmark or evaluation task for long-context and summarization settings. Among linked instruments, papers relate it only to SCROLLS, and several definitions also place it in the SCROLL benchmark; papers report it alongside GovReport, NarrativeQA, and Qasper, and some evaluations report ROUGE-1 or RougeLSum and F1 on it. Some studies use it more selectively, for example evaluating only its \"general queries\" for global summarization, using it as a source of examples, testing a summary component on it, or drawing on it as source data for constructing CoPriva.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs",
+      "Measuring the Effect of Transcription Noise on Downstream Language Understanding Tasks",
+      "RefreshKV: Updating Small KV Cache During Long-form Generation"
+    ],
+    "emnlp25": [
+      "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+      "GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction",
+      "Keep Security! Benchmarking Security Policy Preservation in Large Language Model Contexts Against Indirect Attacks in Question Answering"
+    ],
+    "iclr24": [
+      "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "Retrieval meets Long Context Large Language Models",
+      "Teaching Language Models to Hallucinate Less with Synthetic Tasks"
+    ],
+    "iclr25": [
+      "Accelerating Inference of Retrieval-Augmented Generation via Sparse Context Selection",
+      "DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory",
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+    ],
+    "naacl25": [
+      "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios"
+    ],
+    "neurips24": [
+      "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+      "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "Topic-Conversation Relevance (TCR)  Dataset and Benchmarks"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 3,
+    "iclr24": 3,
+    "iclr25": 3,
+    "naacl25": 1,
+    "neurips24": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

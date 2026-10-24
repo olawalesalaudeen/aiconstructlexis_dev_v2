@@ -1,0 +1,110 @@
+{
+  "canonical_name": "Token decoding",
+  "type": "behavior",
+  "canonical_definition": "Across the provided literature, token decoding is most commonly described as the process of generating a sequence of tokens one at a time during model inference. This behavior is operationalized and measured by its computational cost, with papers evaluating \"average per-token decoding latency\" and the \"average FLOPs required to decode\" a sequence (\"Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters\"). A prevalent strategy for this process is \"Greedy decoding,\" which involves selecting the token with the highest probability at each step and is presented as a \"maximum a-posteriori-based decoding\" method. Some work contrasts the sequential, one-at-a-time approach with \"Parallel decoding,\" an extension that generates multiple tokens per step by unmasking several positions at once. A less common framing, found in \"The Foundations of Tokenization...\", defines decoding more abstractly as the process of mapping a token sequence back into a character string, which may be stochastic. The concepts of \"token-by-token\" and \"parallel\" decoding are specifically discussed in the context of Masked Diffusion Models (MDMs).",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Token decoding",
+    "Token-by-token decoding",
+    "Greedy decoding",
+    "Parallel decoding",
+    "Decoding"
+  ],
+  "papers": [
+    "Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters",
+    "Better Instruction-Following Through Minimum Bayes Risk",
+    "Learning Dynamics of LLM Finetuning",
+    "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+    "Self-Improvement in Language Models: The Sharpening Mechanism",
+    "The Foundations of Tokenization: Statistical and Computational Concerns",
+    "The Hyperfitting Phenomenon: Sharpening and Stabilizing LLMs for Open-Ended Text Generation"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating a sequence one token at a time by repeatedly selecting a masked position and filling it in.",
+      "paper": "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "original_name": "Token-by-token decoding"
+    },
+    {
+      "text": "The fundamental process of generating a sequence of tokens, one at a time, during model inference, which can be measured for speed and computational cost.",
+      "paper": "Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters",
+      "original_name": "Token decoding"
+    },
+    {
+      "text": "A decoding strategy where the model selects the token with the highest probability at each step of the generation process.",
+      "paper": "Better Instruction-Following Through Minimum Bayes Risk",
+      "original_name": "Greedy decoding"
+    },
+    {
+      "text": "Generating multiple tokens per step by unmasking several positions at once rather than strictly one token at a time.",
+      "paper": "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "original_name": "Parallel decoding"
+    },
+    {
+      "text": "Mapping a token sequence back into a character string, possibly stochastically.",
+      "paper": "The Foundations of Tokenization: Statistical and Computational Concerns",
+      "original_name": "Decoding"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Sampling efficiency",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "evidence": "\u201cParallel decoding essentially reuses the previous network output to reduce the NFE\u201d",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "iclr25": [
+          "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Sampling efficiency",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "evidence": "When the network parameterization is independent of the time, the FHS ... can be completely free from the time and become a token-by-token decoding process akin to masked models. ... The FHS demonstrates appealing properties: Tackling the Sampling Inefficiency",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "iclr25": [
+          "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, token decoding is most commonly described as the process of generating a sequence of tokens one at a time during model inference. This behavior is operationalized and measured by its computational cost, with papers evaluating \"average per-token decoding latency\" and the \"average FLOPs required to decode\" a sequence (\"Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters\"). A prevalent strategy for this process is \"Greedy decoding,\" which involves selecting the token with the highest probability at each step and is presented as a \"maximum a-posteriori-based decoding\" method. Some work contrasts the sequential, one-at-a-time approach with \"Parallel decoding,\" an extension that generates multiple tokens per step by unmasking several positions at once. A less common framing, found in \"The Foundations of Tokenization...\", defines decoding more abstractly as the process of mapping a token sequence back into a character string, which may be stochastic. The concepts of \"token-by-token\" and \"parallel\" decoding are specifically discussed in the context of Masked Diffusion Models (MDMs).",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Adaptive Rank Allocation: Speeding Up Modern Transformers with RaNA Adapters",
+      "Better Instruction-Following Through Minimum Bayes Risk",
+      "Learning Dynamics of LLM Finetuning",
+      "Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling",
+      "Self-Improvement in Language Models: The Sharpening Mechanism",
+      "The Foundations of Tokenization: Statistical and Computational Concerns",
+      "The Hyperfitting Phenomenon: Sharpening and Stabilizing LLMs for Open-Ended Text Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 7
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

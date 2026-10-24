@@ -1,0 +1,192 @@
+{
+  "canonical_name": "3D question answering",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, it is most commonly described as answering natural language questions about 3D objects or scenes. Definitions agree on the question-answering core, but differ on the scene representation: some specify point clouds or 3D models, while others allow images or other modalities as the basis for the answer. A smaller framing broadens the task to 3D scene VQA, where the work explicitly includes captioning and grounding from multi-view images rather than answer generation alone.\n\nVariants. Papers use several nearby names and settings for the same behavior. Some call it 3D scene VQA and study multi-view image inputs, with captioning and grounding treated as part of the task, while others use 3D visual question answering for questions grounded in a 3D scene represented by point clouds, images, or other modalities. One variant follows the same VQA format but is described as one that \"cannot be solved using the given scene alone,\" marking a hypothetical-reasoning setting within 3D scenes.\n\nSpace of elicitation and scores. Papers link it to 4 measurement instruments: Human evaluation, LLM-as-a-judge, SQA, and ScanQA. The linked instruments mix answer scoring and benchmark evaluation: one paper says it uses \"both human evaluators and GPT-4 to ascertain answer accuracy,\" and another evaluates 3D-QA on ScanQA and SQA.\n\nWhat it is taken as evidence of. Papers connect it to 3 constructs, but not in a single way. One paper treats it as something by which 3D perception is measured, while other papers only report it as related to 3D understanding and to spatial reasoning, including use of 3D question answering as \"a representative example\" for 3D scene understanding tasks.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "3D question answering",
+    "3D scene VQA",
+    "3D visual question answering"
+  ],
+  "papers": [
+    "LLaVA-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models",
+    "Hypo3D: Exploring Hypothetical Reasoning in 3D",
+    "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+    "MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Answering questions about 3D objects or scenes from point-cloud or 3D model inputs.",
+      "paper": "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+      "original_name": "3D question answering"
+    },
+    {
+      "text": "Answering questions about 3D scenes, including captioning and grounding from multi-view images.",
+      "paper": "LLaVA-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models",
+      "original_name": "3D scene VQA"
+    },
+    {
+      "text": "The task of answering a natural language question based on the content of a 3D scene, which may be represented by point clouds, images, or other modalities.",
+      "paper": "Hypo3D: Exploring Hypothetical Reasoning in 3D",
+      "original_name": "3D visual question answering"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations",
+      "evidence": "\"we employ both human evaluators and GPT-4 to ascertain answer accuracy\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations",
+      "evidence": "\"we employ both human evaluators and GPT-4 to ascertain answer accuracy\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "3D understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "3D Question Answering via only 2D Vision-Language Models",
+      "evidence": "In this work, we explore how to harness their potential to address 3D scene understanding tasks, using 3D question answering (3D-QA) as a representative example. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "3D Question Answering via only 2D Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ScanQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "3D Question Answering via only 2D Vision-Language Models",
+      "evidence": "We evaluate the proposed cdViews on two widely used benchmarks of 3D-QA: ScanQA (Azuma et al., 2022) and SQA (Ma et al., 2022). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "3D Question Answering via only 2D Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Spatial reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "3D Question Answering via only 2D Vision-Language Models",
+      "evidence": "\"all of these methods require computationally intensive 3D-language alignment using point cloud data for spatial reasoning\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "3D Question Answering via only 2D Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "3D perception",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LLaVA-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models",
+      "evidence": "\u201cFor 3D perception, we include 2 tasks: embodied VQA (dialogue and planning), and 3D scene VQA (captioning and grounding).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LLaVA-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SQA3D",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "3D Question Answering via only 2D Vision-Language Models",
+      "evidence": "We evaluate the proposed cdViews on two widely used benchmarks of 3D-QA: ScanQA (Azuma et al., 2022) and SQA (Ma et al., 2022). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "3D Question Answering via only 2D Vision-Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 6,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, it is most commonly described as answering natural language questions about 3D objects or scenes. Definitions agree on the question-answering core, but differ on the scene representation: some specify point clouds or 3D models, while others allow images or other modalities as the basis for the answer. A smaller framing broadens the task to 3D scene VQA, where the work explicitly includes captioning and grounding from multi-view images rather than answer generation alone."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby names and settings for the same behavior. Some call it 3D scene VQA and study multi-view image inputs, with captioning and grounding treated as part of the task, while others use 3D visual question answering for questions grounded in a 3D scene represented by point clouds, images, or other modalities. One variant follows the same VQA format but is described as one that \"cannot be solved using the given scene alone,\" marking a hypothetical-reasoning setting within 3D scenes."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to 4 measurement instruments: Human evaluation, LLM-as-a-judge, SQA, and ScanQA. The linked instruments mix answer scoring and benchmark evaluation: one paper says it uses \"both human evaluators and GPT-4 to ascertain answer accuracy,\" and another evaluates 3D-QA on ScanQA and SQA."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect it to 3 constructs, but not in a single way. One paper treats it as something by which 3D perception is measured, while other papers only report it as related to 3D understanding and to spatial reasoning, including use of 3D question answering as \"a representative example\" for 3D scene understanding tasks."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, it is most commonly described as answering natural language questions about 3D objects or scenes. Definitions agree on the question-answering core, but differ on the scene representation: some specify point clouds or 3D models, while others allow images or other modalities as the basis for the answer. A smaller framing broadens the task to 3D scene VQA, where the work explicitly includes captioning and grounding from multi-view images rather than answer generation alone.\n\nVariants. Papers use several nearby names and settings for the same behavior. Some call it 3D scene VQA and study multi-view image inputs, with captioning and grounding treated as part of the task, while others use 3D visual question answering for questions grounded in a 3D scene represented by point clouds, images, or other modalities. One variant follows the same VQA format but is described as one that \"cannot be solved using the given scene alone,\" marking a hypothetical-reasoning setting within 3D scenes.\n\nSpace of elicitation and scores. Papers link it to 4 measurement instruments: Human evaluation, LLM-as-a-judge, SQA, and ScanQA. The linked instruments mix answer scoring and benchmark evaluation: one paper says it uses \"both human evaluators and GPT-4 to ascertain answer accuracy,\" and another evaluates 3D-QA on ScanQA and SQA.\n\nWhat it is taken as evidence of. Papers connect it to 3 constructs, but not in a single way. One paper treats it as something by which 3D perception is measured, while other papers only report it as related to 3D understanding and to spatial reasoning, including use of 3D question answering as \"a representative example\" for 3D scene understanding tasks.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "LLaVA-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models"
+    ],
+    "neurips24": [
+      "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+      "MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations"
+    ],
+    "icml25": [
+      "Hypo3D: Exploring Hypothetical Reasoning in 3D"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 1,
+    "neurips24": 2,
+    "icml25": 1
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

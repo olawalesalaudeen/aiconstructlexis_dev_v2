@@ -1,0 +1,96 @@
+{
+  "canonical_name": "MaliciousInstruct",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most commonly, papers treat MaliciousInstruct as a harmful benchmark or dataset of malicious instructions for testing LLM safety defenses on out-of-domain or out-of-distribution inputs. Definitions converge on that role, while varying in wording between a dataset, a benchmark, and an out-of-domain test set. Another definition states that it contains 100 broader harmful instructions and is used to assess transferability.\n\nWhat it is claimed to measure. Across the papers, MaliciousInstruct is linked to one construct, Safety, and to no behavioral indicators. The reported measurement claim converges on that single construct: papers use it to measure Safety, including as an out-of-domain test set for evaluating safety defenses and in evaluations that check whether responses lacked keywords indicating instruction rejection.\n\nSpace of uses. Papers use MaliciousInstruct alongside AdvBench, and also with HEx-PHI and AdvExtent. It is typically positioned as one of several harmful benchmarks for evaluating defense strategies, or as an OOD check for transferability. A paper also uses jailbreak attacks on MaliciousInstruct and then applies string matching to identify whether responses lacked keywords indicating instruction rejection.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MaliciousInstruct"
+  ],
+  "papers": [
+    "Root Defense Strategies: Ensuring Safety of LLM at the Decoding Level",
+    "Safety Alignment via Constrained Knowledge Unlearning",
+    "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+    "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+    "Probe before You Talk: Towards Black-box Defense against Backdoor Unalignment for Large Language Models",
+    "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+    "Understanding and Enhancing the Transferability of Jailbreaking Attacks"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset of malicious instructions used as an out-of-domain test set to evaluate a model's safety defenses.",
+      "paper": "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+      "original_name": "MaliciousInstruct"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Safety Alignment via Constrained Knowledge Unlearning",
+      "evidence": "We attack LLM using jailbreak methods on the AdvExtent (Lu et al., 2024) and MaliciousInstruct (Huang et al., 2024), collect responses, and use the string matching method... to identify whether responses lacked keywords indicating instruction rejection. (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Safety Alignment via Constrained Knowledge Unlearning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most commonly, papers treat MaliciousInstruct as a harmful benchmark or dataset of malicious instructions for testing LLM safety defenses on out-of-domain or out-of-distribution inputs. Definitions converge on that role, while varying in wording between a dataset, a benchmark, and an out-of-domain test set. Another definition states that it contains 100 broader harmful instructions and is used to assess transferability."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across the papers, MaliciousInstruct is linked to one construct, Safety, and to no behavioral indicators. The reported measurement claim converges on that single construct: papers use it to measure Safety, including as an out-of-domain test set for evaluating safety defenses and in evaluations that check whether responses lacked keywords indicating instruction rejection."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers use MaliciousInstruct alongside AdvBench, and also with HEx-PHI and AdvExtent. It is typically positioned as one of several harmful benchmarks for evaluating defense strategies, or as an OOD check for transferability. A paper also uses jailbreak attacks on MaliciousInstruct and then applies string matching to identify whether responses lacked keywords indicating instruction rejection."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most commonly, papers treat MaliciousInstruct as a harmful benchmark or dataset of malicious instructions for testing LLM safety defenses on out-of-domain or out-of-distribution inputs. Definitions converge on that role, while varying in wording between a dataset, a benchmark, and an out-of-domain test set. Another definition states that it contains 100 broader harmful instructions and is used to assess transferability.\n\nWhat it is claimed to measure. Across the papers, MaliciousInstruct is linked to one construct, Safety, and to no behavioral indicators. The reported measurement claim converges on that single construct: papers use it to measure Safety, including as an out-of-domain test set for evaluating safety defenses and in evaluations that check whether responses lacked keywords indicating instruction rejection.\n\nSpace of uses. Papers use MaliciousInstruct alongside AdvBench, and also with HEx-PHI and AdvExtent. It is typically positioned as one of several harmful benchmarks for evaluating defense strategies, or as an OOD check for transferability. A paper also uses jailbreak attacks on MaliciousInstruct and then applies string matching to identify whether responses lacked keywords indicating instruction rejection.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Root Defense Strategies: Ensuring Safety of LLM at the Decoding Level",
+      "Safety Alignment via Constrained Knowledge Unlearning"
+    ],
+    "emnlp25": [
+      "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+      "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models"
+    ],
+    "iclr25": [
+      "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+      "Probe before You Talk: Towards Black-box Defense against Backdoor Unalignment for Large Language Models",
+      "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+      "Understanding and Enhancing the Transferability of Jailbreaking Attacks"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 3,
+    "iclr25": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25"
+  ]
+}

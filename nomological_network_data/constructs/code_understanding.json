@@ -1,0 +1,291 @@
+{
+  "canonical_name": "Code understanding",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage frames code understanding as a latent model ability to grasp the syntax, semantics, logic, structure, and functionality of code, often extending to reasoning about behavior or execution. Several definitions make this concrete through explicit and implicit semantics, data types, execution effects, outcome prediction, or natural-language explanation, and one paper glosses it as 'knowledge of the syntax and semantics of code' while treating code-to-text generation as an evaluation of it. A smaller line of work uses narrower, task-bound versions, emphasizing multi-file dependencies, cross-language equivalence, Verilog summarization, neural-architecture-search code, or procedural order, so the main disagreement is between a broad semantic understanding of programs and specialized forms tied to particular settings.\n\nSpace of facets. Papers frequently use neighboring labels such as code comprehension and program comprehension for closely similar abilities centered on semantic properties, behavior, structure, and relationships within code. More specific variants carve out cross-file understanding, cross-file dependency understanding, cross-language understanding, Verilog understanding, and a code-level form tied to reasoning through executable code for neural architecture search. One paper further characterizes weak code understanding through data types, implicit code semantics, and code execution, and another says semantic understanding also requires long-range sequential reasoning.\n\nSpace of measurement. Operationalization is relatively compact: papers link code understanding to 3 measurement instruments and 4 behavioral indicators. The named instruments are Human evaluation, LLM-as-a-judge, and LiveCodeBench, with evidence pointing respectively to human judgments, GPT score plus embedding similarity for semantic similarity, and code execution scenarios; among behavioral indicators, Clone detection is the only direct measured_by indicator, while the other linked behaviors enter through causal or related claims instead. Elsewhere, papers explicitly treat code-to-text generation as evaluating code understanding, and Verilog-focused work evaluates natural-language summaries of high-level functionality, so the measures mostly track the dominant definitions' focus on semantics, behavior, execution, and functionality, though some narrow the construct to specific code forms or tasks.\n\nLinks. Relational claims are sparse and mostly one-off. One paper claims a causal relationship from code understanding to code explanation, asking whether code-understanding capability can be composed with language generation to enable code-to-text generation, and another claims a causal relationship from code understanding to abstract reasoning in program verification. Separate papers describe code understanding as related to type inference, and position code navigation as related to it by presenting navigation as a challenge within code understanding; one additional paper uses code understanding tasks that require reasoning across multiple files to measure long-context understanding.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Code understanding",
+    "Code comprehension",
+    "Verilog understanding",
+    "Cross-file understanding",
+    "Program semantics understanding",
+    "Program comprehension",
+    "Code-level understanding",
+    "Cross-file dependency understanding",
+    "Long-range sequential reasoning",
+    "Cross-language understanding"
+  ],
+  "papers": [
+    "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+    "CodeSSM: Towards State Space Models for Code Understanding",
+    "ExeCoder: Empowering Large Language Models with Executability Representation for Code Translation",
+    "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+    "Surge: On the Potential of Large Language Models as General-Purpose Surrogate Code Executors",
+    "Teaching Your Models to Understand Code via Focal Preference Alignment",
+    "UnitCoder: Scalable Code Synthesis from Pre-training Corpora",
+    "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain",
+    "LLM Augmented LLMs: Expanding Capabilities through Composition",
+    "Lemur: Integrating Large Language Models in Automated Program Verification",
+    "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+    "Can Large Language Models Understand Symbolic Graphics Programs?",
+    "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
+    "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+    "Execution-guided within-prompt search for programming-by-example",
+    "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+    "McEval: Massively Multilingual Code Evaluation",
+    "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+    "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+    "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+    "RZ-NAS: Enhancing LLM-guided Neural Architecture Search via Reflective Zero-Cost Strategy",
+    "CoRAC: Integrating Selective API Document Retrieval with Question Semantic Intent for Code Question Answering",
+    "Mastering the Craft of Data Synthesis for CodeLLMs",
+    "Detecting Bugs with Substantial Monetary Consequences by LLM and Rule-based Reasoning",
+    "LLMDFA: Analyzing Dataflow in Code with Large Language Models",
+    "MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution",
+    "SelfCodeAlign: Self-Alignment for Code Generation",
+    "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+    "kGym: A Platform and Dataset to Benchmark Large Language Models on Linux Kernel Crash Resolution"
+  ],
+  "paper_count": 29,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent ability to interpret the syntax, semantics, and functionality of programming code, enabling explanation and reasoning about code behavior.",
+      "paper": "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain",
+      "original_name": "Code understanding"
+    },
+    {
+      "text": "The model's underlying ability to understand the semantics and predict the outcome of a given piece of code.",
+      "paper": "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "original_name": "Code comprehension"
+    },
+    {
+      "text": "The latent ability of a model to comprehend Verilog code and summarize its high-level functionality in natural language.",
+      "paper": "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+      "original_name": "Verilog understanding"
+    },
+    {
+      "text": "The ability to track and integrate information distributed across multiple files in a code repository when implementing a target function.",
+      "paper": "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "original_name": "Cross-file understanding"
+    },
+    {
+      "text": "The latent ability of a model to grasp the meaning, behavior, and execution effects of code beyond static text patterns.",
+      "paper": "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+      "original_name": "Program semantics understanding"
+    },
+    {
+      "text": "The latent ability of a model to understand the semantic properties, structures, and relationships within source code.",
+      "paper": "LLMDFA: Analyzing Dataflow in Code with Large Language Models",
+      "original_name": "Program comprehension"
+    },
+    {
+      "text": "The latent ability of the LLM to comprehend and reason about neural architecture search tasks through executable code representations of network construction and zero-cost proxy computation.",
+      "paper": "RZ-NAS: Enhancing LLM-guided Neural Architecture Search via Reflective Zero-Cost Strategy",
+      "original_name": "Code-level understanding"
+    },
+    {
+      "text": "The latent ability to comprehend and correctly manage dependencies, references, and interactions between multiple code files within a single project.",
+      "paper": "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+      "original_name": "Cross-file dependency understanding"
+    },
+    {
+      "text": "The capacity to process and understand the procedural steps in a program where the order of operations significantly affects the final semantic meaning.",
+      "paper": "Can Large Language Models Understand Symbolic Graphics Programs?",
+      "original_name": "Long-range sequential reasoning"
+    },
+    {
+      "text": "The model's ability to comprehend and map semantic and structural equivalences between different programming languages.",
+      "paper": "ExeCoder: Empowering Large Language Models with Executability Representation for Code Translation",
+      "original_name": "Cross-language understanding"
+    }
+  ],
+  "definition_count": 10,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Code explanation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "LLM Augmented LLMs: Expanding Capabilities through Composition",
+      "evidence": "can we compose an augmenting model\u2019s code understanding capability with an anchor LLM\u2019s language generation capability to enable code-to-text generation capability? (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "LLM Augmented LLMs: Expanding Capabilities through Composition"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Abstract reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Lemur: Integrating Large Language Models in Automated Program Verification",
+      "evidence": "This decomposition requires high-level reasoning that is difficult to automate using conventional formal methods, but plausibly could be performed by LLMs, with their documented code-understanding capability. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Lemur: Integrating Large Language Models in Automated Program Verification"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code navigation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Position: Future Research and Challenges Remain Towards AI for Software Engineering",
+      "evidence": "One important challenge in code understanding is code navigation: finding where relevant functionality is implemented. (Section 2.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Position: Future Research and Challenges Remain Towards AI for Software Engineering"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LeetCode",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
+      "evidence": "\"Fill in the Blank evaluates a model\u2019s code comprehension ability... We collected approximately 2,000 coding problems from LeetCode\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving",
+      "evidence": "We evaluate our DSLA model on tasks requiring careful long-range interactions (Bai et al., 2024), including: ... (ii) Code Understanding, which require reasoning across multiple code files to answer complex questions",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Clone detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "CodeSSM: Towards State Space Models for Code Understanding",
+      "evidence": "This paper explores State Space Models (SSMs) as a promising alternative for code understanding tasks such as retrieval, classification, and clone detection. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CodeSSM: Towards State Space Models for Code Understanding"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage frames code understanding as a latent model ability to grasp the syntax, semantics, logic, structure, and functionality of code, often extending to reasoning about behavior or execution. Several definitions make this concrete through explicit and implicit semantics, data types, execution effects, outcome prediction, or natural-language explanation, and one paper glosses it as 'knowledge of the syntax and semantics of code' while treating code-to-text generation as an evaluation of it. A smaller line of work uses narrower, task-bound versions, emphasizing multi-file dependencies, cross-language equivalence, Verilog summarization, neural-architecture-search code, or procedural order, so the main disagreement is between a broad semantic understanding of programs and specialized forms tied to particular settings."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers frequently use neighboring labels such as code comprehension and program comprehension for closely similar abilities centered on semantic properties, behavior, structure, and relationships within code. More specific variants carve out cross-file understanding, cross-file dependency understanding, cross-language understanding, Verilog understanding, and a code-level form tied to reasoning through executable code for neural architecture search. One paper further characterizes weak code understanding through data types, implicit code semantics, and code execution, and another says semantic understanding also requires long-range sequential reasoning."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is relatively compact: papers link code understanding to 3 measurement instruments and 4 behavioral indicators. The named instruments are Human evaluation, LLM-as-a-judge, and LiveCodeBench, with evidence pointing respectively to human judgments, GPT score plus embedding similarity for semantic similarity, and code execution scenarios; among behavioral indicators, Clone detection is the only direct measured_by indicator, while the other linked behaviors enter through causal or related claims instead. Elsewhere, papers explicitly treat code-to-text generation as evaluating code understanding, and Verilog-focused work evaluates natural-language summaries of high-level functionality, so the measures mostly track the dominant definitions' focus on semantics, behavior, execution, and functionality, though some narrow the construct to specific code forms or tasks."
+    },
+    {
+      "label": "Links.",
+      "text": "Relational claims are sparse and mostly one-off. One paper claims a causal relationship from code understanding to code explanation, asking whether code-understanding capability can be composed with language generation to enable code-to-text generation, and another claims a causal relationship from code understanding to abstract reasoning in program verification. Separate papers describe code understanding as related to type inference, and position code navigation as related to it by presenting navigation as a challenge within code understanding; one additional paper uses code understanding tasks that require reasoning across multiple files to measure long-context understanding."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define code understanding as a model's latent ability to comprehend the semantics, logic, structure, behavior, or functionality of existing code. A few papers narrow this to particular settings or manifestations such as predicting execution, debugging, summarization, multi-file dependencies, or cross-language equivalence, but these are presented as applications or scope restrictions of the same core capability rather than different phenomena.",
+    "papers_with_definition": 22,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage frames code understanding as a latent model ability to grasp the syntax, semantics, logic, structure, and functionality of code, often extending to reasoning about behavior or execution. Several definitions make this concrete through explicit and implicit semantics, data types, execution effects, outcome prediction, or natural-language explanation, and one paper glosses it as 'knowledge of the syntax and semantics of code' while treating code-to-text generation as an evaluation of it. A smaller line of work uses narrower, task-bound versions, emphasizing multi-file dependencies, cross-language equivalence, Verilog summarization, neural-architecture-search code, or procedural order, so the main disagreement is between a broad semantic understanding of programs and specialized forms tied to particular settings.\n\nSpace of facets. Papers frequently use neighboring labels such as code comprehension and program comprehension for closely similar abilities centered on semantic properties, behavior, structure, and relationships within code. More specific variants carve out cross-file understanding, cross-file dependency understanding, cross-language understanding, Verilog understanding, and a code-level form tied to reasoning through executable code for neural architecture search. One paper further characterizes weak code understanding through data types, implicit code semantics, and code execution, and another says semantic understanding also requires long-range sequential reasoning.\n\nSpace of measurement. Operationalization is relatively compact: papers link code understanding to 3 measurement instruments and 4 behavioral indicators. The named instruments are Human evaluation, LLM-as-a-judge, and LiveCodeBench, with evidence pointing respectively to human judgments, GPT score plus embedding similarity for semantic similarity, and code execution scenarios; among behavioral indicators, Clone detection is the only direct measured_by indicator, while the other linked behaviors enter through causal or related claims instead. Elsewhere, papers explicitly treat code-to-text generation as evaluating code understanding, and Verilog-focused work evaluates natural-language summaries of high-level functionality, so the measures mostly track the dominant definitions' focus on semantics, behavior, execution, and functionality, though some narrow the construct to specific code forms or tasks.\n\nLinks. Relational claims are sparse and mostly one-off. One paper claims a causal relationship from code understanding to code explanation, asking whether code-understanding capability can be composed with language generation to enable code-to-text generation, and another claims a causal relationship from code understanding to abstract reasoning in program verification. Separate papers describe code understanding as related to type inference, and position code navigation as related to it by presenting navigation as a challenge within code understanding; one additional paper uses code understanding tasks that require reasoning across multiple files to measure long-context understanding.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+      "CodeSSM: Towards State Space Models for Code Understanding",
+      "ExeCoder: Empowering Large Language Models with Executability Representation for Code Translation",
+      "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "Surge: On the Potential of Large Language Models as General-Purpose Surrogate Code Executors",
+      "Teaching Your Models to Understand Code via Focal Preference Alignment",
+      "UnitCoder: Scalable Code Synthesis from Pre-training Corpora"
+    ],
+    "iclr24": [
+      "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain",
+      "LLM Augmented LLMs: Expanding Capabilities through Composition",
+      "Lemur: Integrating Large Language Models in Automated Program Verification",
+      "WizardCoder: Empowering Code Large Language Models with Evol-Instruct"
+    ],
+    "iclr25": [
+      "Can Large Language Models Understand Symbolic Graphics Programs?",
+      "CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding & Reasoning Capabilities of CodeLLMs",
+      "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+      "Execution-guided within-prompt search for programming-by-example",
+      "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "McEval: Massively Multilingual Code Evaluation",
+      "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis"
+    ],
+    "icml25": [
+      "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+      "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "RZ-NAS: Enhancing LLM-guided Neural Architecture Search via Reflective Zero-Cost Strategy"
+    ],
+    "naacl25": [
+      "CoRAC: Integrating Selective API Document Retrieval with Question Semantic Intent for Code Question Answering",
+      "Mastering the Craft of Data Synthesis for CodeLLMs"
+    ],
+    "neurips24": [
+      "Detecting Bugs with Substantial Monetary Consequences by LLM and Rule-based Reasoning",
+      "LLMDFA: Analyzing Dataflow in Code with Large Language Models",
+      "MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution",
+      "SelfCodeAlign: Self-Alignment for Code Generation",
+      "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+      "kGym: A Platform and Dataset to Benchmark Large Language Models on Linux Kernel Crash Resolution"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 7,
+    "iclr24": 4,
+    "iclr25": 7,
+    "icml25": 3,
+    "naacl25": 2,
+    "neurips24": 6
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

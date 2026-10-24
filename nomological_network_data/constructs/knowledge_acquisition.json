@@ -1,0 +1,154 @@
+{
+  "canonical_name": "Knowledge acquisition",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats knowledge acquisition as learning or internalizing facts, concepts, or associations, often from training data, rather than only as retrieving knowledge at decision time. Several definitions describe a model acquiring facts, concepts, or simple associations from training data, storing them in weights or other internal representations, and in one case absorbing tool-generated solutions into parametric knowledge so problems can later be solved without tool calls; one paper also notes that learning a fact may require \"hundreds to thousands of diverse representations\". A minority framing treats it as a latent ability to retrieve and use relevant factual or contextual knowledge from external sources or internal representations to support decision-making, and another defines it as knowledge gain, the increase in knowledge or certainty after new information, estimated through shifts in an internal knowledge distribution.\n\nSpace of facets. Authors use several neighboring labels for partly overlapping ideas. Fact learning is used for encoding and storing factual information in model weights, with one paper saying it can occur at both early and late layers and yield different forms of generalization; knowledge internalization names the incorporation of external, tool-generated solutions into parametric knowledge; and knowledge gain names the increase in knowledge or certainty after exposure to new information. Another paper treats simple associations, such as celebrity birthdays, capital cities, or relations between concepts, as a subset of what models need to learn, so papers place acquisition alongside internalization, fact learning, and knowledge gain rather than under a single shared breakdown.\n\nSpace of measurement. Papers link the construct to 1 measurement instrument and 1 behavioral indicator. The measurement instrument is AgentBench, which is described as systematically evaluating core abilities including knowledge acquisition, while the linked behavioral indicator, Self-reflection, appears in a causal claim rather than as a direct measure. This operationalization follows the ability framing more than the process-oriented definitions about storing facts in weights, internalizing tool outputs, or estimating knowledge gain from shifts in a model's knowledge distribution, and no additional linked instrument is named.\n\nLinks. Only a few links are reported. One paper claims a causal relationship from knowledge acquisition to Reasoning, reporting enhanced reasoning capabilities through effective knowledge internalization, and another claims a causal relationship from Self-reflection to knowledge acquisition, saying self-generated data with iterative Direct Preference Optimization foster deeper internalization of underlying knowledge. Separate papers report that Factuality is related to knowledge acquisition, and that knowledge acquisition is related to Scientific reasoning; no correlations are reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Knowledge acquisition",
+    "Knowledge internalization",
+    "Fact learning",
+    "Knowledge gain"
+  ],
+  "papers": [
+    "AgentBench: Evaluating LLMs as Agents",
+    "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition",
+    "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+    "Synthetic continued pretraining",
+    "Adapting While Learning: Grounding LLMs for Scientific Problems with Tool Usage Adaptation",
+    "Extractive Structures Learned in Pretraining Enable Generalization on Finetuned Facts",
+    "Memory Layers at Scale"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent ability to retrieve and utilize relevant factual or contextual knowledge from external sources or internal representations to support decision-making.",
+      "paper": "AgentBench: Evaluating LLMs as Agents",
+      "original_name": "Knowledge acquisition"
+    },
+    {
+      "text": "The process by which a language model encodes and stores factual information from training data into its weights.",
+      "paper": "Extractive Structures Learned in Pretraining Enable Generalization on Finetuned Facts",
+      "original_name": "Fact learning"
+    },
+    {
+      "text": "The process by which a model incorporates external, tool-generated solutions into its parametric knowledge, allowing it to solve problems without relying on tool calls.",
+      "paper": "Adapting While Learning: Grounding LLMs for Scientific Problems with Tool Usage Adaptation",
+      "original_name": "Knowledge internalization"
+    },
+    {
+      "text": "The increase in an LLM's knowledge or certainty about a topic resulting from exposure to new information, which can be estimated by the shift in its internal knowledge distribution.",
+      "paper": "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+      "original_name": "Knowledge gain"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AgentBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AgentBench: Evaluating LLMs as Agents",
+      "evidence": "AGENTBENCH thus systematically evaluate an LLM\u2019s core abilities, including following instructions (Ouyang et al., 2022), coding (Chen et al., 2021), knowledge acquisition (Joshi et al., 2017; Talmor et al., 2019), logical reasoning (Srivastava et al., 2023), and commonsense grounding (Shridhar et al., 2020a).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "AgentBench: Evaluating LLMs as Agents"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Document utility",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+      "evidence": "In this work, we propose the perspective to measure retrieval utility based on the knowledge gain of LLMs Belkin (1980); Belkin et al. (1982a;b). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "TinyThinker: Distilling Reasoning through Coarse-to-Fine Knowledge Internalization with Self-Reflection",
+      "evidence": "In this study, we introduced TinyThinker to enhance reasoning capabilities through effective knowledge internalization. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "TinyThinker: Distilling Reasoning through Coarse-to-Fine Knowledge Internalization with Self-Reflection"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats knowledge acquisition as learning or internalizing facts, concepts, or associations, often from training data, rather than only as retrieving knowledge at decision time. Several definitions describe a model acquiring facts, concepts, or simple associations from training data, storing them in weights or other internal representations, and in one case absorbing tool-generated solutions into parametric knowledge so problems can later be solved without tool calls; one paper also notes that learning a fact may require \"hundreds to thousands of diverse representations\". A minority framing treats it as a latent ability to retrieve and use relevant factual or contextual knowledge from external sources or internal representations to support decision-making, and another defines it as knowledge gain, the increase in knowledge or certainty after new information, estimated through shifts in an internal knowledge distribution."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Authors use several neighboring labels for partly overlapping ideas. Fact learning is used for encoding and storing factual information in model weights, with one paper saying it can occur at both early and late layers and yield different forms of generalization; knowledge internalization names the incorporation of external, tool-generated solutions into parametric knowledge; and knowledge gain names the increase in knowledge or certainty after exposure to new information. Another paper treats simple associations, such as celebrity birthdays, capital cities, or relations between concepts, as a subset of what models need to learn, so papers place acquisition alongside internalization, fact learning, and knowledge gain rather than under a single shared breakdown."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link the construct to 1 measurement instrument and 1 behavioral indicator. The measurement instrument is AgentBench, which is described as systematically evaluating core abilities including knowledge acquisition, while the linked behavioral indicator, Self-reflection, appears in a causal claim rather than as a direct measure. This operationalization follows the ability framing more than the process-oriented definitions about storing facts in weights, internalizing tool outputs, or estimating knowledge gain from shifts in a model's knowledge distribution, and no additional linked instrument is named."
+    },
+    {
+      "label": "Links.",
+      "text": "Only a few links are reported. One paper claims a causal relationship from knowledge acquisition to Reasoning, reporting enhanced reasoning capabilities through effective knowledge internalization, and another claims a causal relationship from Self-reflection to knowledge acquisition, saying self-generated data with iterative Direct Preference Optimization foster deeper internalization of underlying knowledge. Separate papers report that Factuality is related to knowledge acquisition, and that knowledge acquisition is related to Scientific reasoning; no correlations are reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define knowledge acquisition as a model internalizing, encoding, storing, retaining, or increasing factual or conceptual knowledge in its parameters or memory after exposure to training data or other new information. These differences are mainly about source or mechanism, while only a single outlying definition shifts to retrieving and using knowledge, so the dominant usage is still the same core phenomenon.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "complementary",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats knowledge acquisition as learning or internalizing facts, concepts, or associations, often from training data, rather than only as retrieving knowledge at decision time. Several definitions describe a model acquiring facts, concepts, or simple associations from training data, storing them in weights or other internal representations, and in one case absorbing tool-generated solutions into parametric knowledge so problems can later be solved without tool calls; one paper also notes that learning a fact may require \"hundreds to thousands of diverse representations\". A minority framing treats it as a latent ability to retrieve and use relevant factual or contextual knowledge from external sources or internal representations to support decision-making, and another defines it as knowledge gain, the increase in knowledge or certainty after new information, estimated through shifts in an internal knowledge distribution.\n\nSpace of facets. Authors use several neighboring labels for partly overlapping ideas. Fact learning is used for encoding and storing factual information in model weights, with one paper saying it can occur at both early and late layers and yield different forms of generalization; knowledge internalization names the incorporation of external, tool-generated solutions into parametric knowledge; and knowledge gain names the increase in knowledge or certainty after exposure to new information. Another paper treats simple associations, such as celebrity birthdays, capital cities, or relations between concepts, as a subset of what models need to learn, so papers place acquisition alongside internalization, fact learning, and knowledge gain rather than under a single shared breakdown.\n\nSpace of measurement. Papers link the construct to 1 measurement instrument and 1 behavioral indicator. The measurement instrument is AgentBench, which is described as systematically evaluating core abilities including knowledge acquisition, while the linked behavioral indicator, Self-reflection, appears in a causal claim rather than as a direct measure. This operationalization follows the ability framing more than the process-oriented definitions about storing facts in weights, internalizing tool outputs, or estimating knowledge gain from shifts in a model's knowledge distribution, and no additional linked instrument is named.\n\nLinks. Only a few links are reported. One paper claims a causal relationship from knowledge acquisition to Reasoning, reporting enhanced reasoning capabilities through effective knowledge internalization, and another claims a causal relationship from Self-reflection to knowledge acquisition, saying self-generated data with iterative Direct Preference Optimization foster deeper internalization of underlying knowledge. Separate papers report that Factuality is related to knowledge acquisition, and that knowledge acquisition is related to Scientific reasoning; no correlations are reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "AgentBench: Evaluating LLMs as Agents"
+    ],
+    "iclr25": [
+      "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition",
+      "SePer: Measure Retrieval Utility Through The Lens Of Semantic Perplexity Reduction",
+      "Synthetic continued pretraining"
+    ],
+    "icml25": [
+      "Adapting While Learning: Grounding LLMs for Scientific Problems with Tool Usage Adaptation",
+      "Extractive Structures Learned in Pretraining Enable Generalization on Finetuned Facts",
+      "Memory Layers at Scale"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 1,
+    "iclr25": 3,
+    "icml25": 3
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

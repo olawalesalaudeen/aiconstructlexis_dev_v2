@@ -1,0 +1,198 @@
+{
+  "canonical_name": "PrOntoQA",
+  "type": "measurement",
+  "canonical_definition": "What it is. Papers refer to it as PrOntoQA or ProntoQA and most commonly treat it as a synthetic logical reasoning dataset or benchmark. Definitions typically describe question-answering examples built from ontologies, hierarchical relationships, or axioms, where the model must decide whether a multi-step reasoning chain or proposition is correct; some papers further specify chains of thought and 3-hop deductions. A smaller line of work frames it more specifically as a synthetic first-order logic benchmark and as an out-of-distribution evaluation set.\n\nWhat it is claimed to measure. Papers link it to 3 constructs and 2 behavioral indicators. The prevailing measurement claim is logical reasoning, with smaller framings as reasoning more broadly and complex reasoning; some evidence also describes its use in logical deduction or deductive reasoning evaluations. Among behavioral indicators, papers use it for logical problem solving and question answering, so the reported measurement claims cluster around reasoning tasks rather than spreading widely across unrelated targets.\n\nSpace of uses. Its linked-instrument profile is small, with 2 other instruments named: ProofWriter most often, then BIG-Bench Logical Deduction. In practice, papers often place it among selected logical reasoning benchmarks and also use it for comparison, out-of-distribution evaluation, or a 5-shot logical deduction setting. The clearest explicit cross-benchmark claim is that PrOntoQA is related to ProofWriter, with one paper attributing an anomalous result to the two benchmarks' shared template-based generation of logic and natural language.\n\nConcerns raised. A few papers note practical concerns around its use. One paper excludes ProntoQA from an experiment because there is no publicly available training set, and another points to high similarity with ProofWriter because both datasets use predefined templates for generating logic and corresponding natural language.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "PrOntoQA",
+    "ProntoQA"
+  ],
+  "papers": [
+    "Collaborative Beam Search: Enhancing LLM Reasoning via Collective Consensus",
+    "Do Large Language Models excel in Complex Logical Reasoning with Formal Language?",
+    "FLARE: Faithful Logic-Aided Reasoning and Exploration",
+    "Large Language Models Meet Symbolic Provers for Logical Reasoning Evaluation",
+    "Self-Improvement in Language Models: The Sharpening Mechanism",
+    "An Analysis for Reasoning Bias of Language Models with Small Initialization",
+    "Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples",
+    "Policy Guided Tree Search for Enhanced LLM Reasoning",
+    "RULEBREAKERS: Challenging LLMs at the Crossroads between Formal Logic and Human-like Reasoning",
+    "Rethinking External Slow-Thinking: From Snowball Errors to Probability of Correct Reasoning",
+    "Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning",
+    "Calibrating Reasoning in Language Models with Internal Consistency",
+    "Initialization is Critical to Whether Transformers Fit Composite Functions by Reasoning or Memorizing",
+    "On scalable oversight with weak LLMs judging strong LLMs"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A synthetic multi-step reasoning dataset where models must determine the correctness of a reasoning chain based on provided hierarchical relationships.",
+      "paper": "Initialization is Critical to Whether Transformers Fit Composite Functions by Reasoning or Memorizing",
+      "original_name": "PrOntoQA"
+    },
+    {
+      "text": "A synthetic first-order logic reasoning benchmark used for comparison and out-of-distribution evaluation.",
+      "paper": "Large Language Models Meet Symbolic Provers for Logical Reasoning Evaluation",
+      "original_name": "ProntoQA"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Logical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Calibrating Reasoning in Language Models with Internal Consistency",
+      "evidence": "PrOntoQA (Saparov and He, 2023): A dataset designed for logical reasoning. (Section 4.1)",
+      "paper_count": 8,
+      "paper_weight": 8.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Calibrating Reasoning in Language Models with Internal Consistency",
+          "On scalable oversight with weak LLMs judging strong LLMs"
+        ],
+        "naacl25": [
+          "SymBa: Symbolic Backward Chaining for Structured Natural Language Reasoning"
+        ],
+        "acl25": [
+          "Aristotle: Mastering Logical Reasoning with A Logic-Complete Decompose-Search-Resolve Framework"
+        ],
+        "icml25": [
+          "Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples",
+          "Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning",
+          "Policy Guided Tree Search for Enhanced LLM Reasoning"
+        ],
+        "emnlp25": [
+          "FLARE: Faithful Logic-Aided Reasoning and Exploration"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Initialization is Critical to Whether Transformers Fit Composite Functions by Reasoning or Memorizing",
+      "evidence": "Reasoning tasks: PrOntoQA. PrOntoQA (Saparov and He, 2023) is a synthetic multi-step reasoning dataset where each data point assigns hierarchical relationships among objects and requires the model to determine whether a multi-step reasoning chain is correct. (Section 6)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Initialization is Critical to Whether Transformers Fit Composite Functions by Reasoning or Memorizing"
+        ],
+        "icml25": [
+          "An Analysis for Reasoning Bias of Language Models with Small Initialization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ProofWriter",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Large Language Models Meet Symbolic Provers for Logical Reasoning Evaluation",
+      "evidence": "\u201cThe model finetuned on ProofWriter achieves the highest performance on ProntoQA. This anomaly could be attributed to the high similarity between ProntoQA and ProofWriter: Both datasets utilize predefined templates for generating logic and corresponding natural language.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Large Language Models Meet Symbolic Provers for Logical Reasoning Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "An Analysis for Reasoning Bias of Language Models with Small Initialization",
+      "evidence": "\"The first dataset, PrOntoQA ... consists of question-answering examples\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "An Analysis for Reasoning Bias of Language Models with Small Initialization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Logical problem solving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning",
+      "evidence": "ProntoQA (Saparov & He, 2022) is a dataset consists of 9000 logical reasoning problems derived from ontologies - formal representations of relationships between concepts. (Section 4.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Papers refer to it as PrOntoQA or ProntoQA and most commonly treat it as a synthetic logical reasoning dataset or benchmark. Definitions typically describe question-answering examples built from ontologies, hierarchical relationships, or axioms, where the model must decide whether a multi-step reasoning chain or proposition is correct; some papers further specify chains of thought and 3-hop deductions. A smaller line of work frames it more specifically as a synthetic first-order logic benchmark and as an out-of-distribution evaluation set."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to 3 constructs and 2 behavioral indicators. The prevailing measurement claim is logical reasoning, with smaller framings as reasoning more broadly and complex reasoning; some evidence also describes its use in logical deduction or deductive reasoning evaluations. Among behavioral indicators, papers use it for logical problem solving and question answering, so the reported measurement claims cluster around reasoning tasks rather than spreading widely across unrelated targets."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Its linked-instrument profile is small, with 2 other instruments named: ProofWriter most often, then BIG-Bench Logical Deduction. In practice, papers often place it among selected logical reasoning benchmarks and also use it for comparison, out-of-distribution evaluation, or a 5-shot logical deduction setting. The clearest explicit cross-benchmark claim is that PrOntoQA is related to ProofWriter, with one paper attributing an anomalous result to the two benchmarks' shared template-based generation of logic and natural language."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "A few papers note practical concerns around its use. One paper excludes ProntoQA from an experiment because there is no publicly available training set, and another points to high similarity with ProofWriter because both datasets use predefined templates for generating logic and corresponding natural language."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Papers refer to it as PrOntoQA or ProntoQA and most commonly treat it as a synthetic logical reasoning dataset or benchmark. Definitions typically describe question-answering examples built from ontologies, hierarchical relationships, or axioms, where the model must decide whether a multi-step reasoning chain or proposition is correct; some papers further specify chains of thought and 3-hop deductions. A smaller line of work frames it more specifically as a synthetic first-order logic benchmark and as an out-of-distribution evaluation set.\n\nWhat it is claimed to measure. Papers link it to 3 constructs and 2 behavioral indicators. The prevailing measurement claim is logical reasoning, with smaller framings as reasoning more broadly and complex reasoning; some evidence also describes its use in logical deduction or deductive reasoning evaluations. Among behavioral indicators, papers use it for logical problem solving and question answering, so the reported measurement claims cluster around reasoning tasks rather than spreading widely across unrelated targets.\n\nSpace of uses. Its linked-instrument profile is small, with 2 other instruments named: ProofWriter most often, then BIG-Bench Logical Deduction. In practice, papers often place it among selected logical reasoning benchmarks and also use it for comparison, out-of-distribution evaluation, or a 5-shot logical deduction setting. The clearest explicit cross-benchmark claim is that PrOntoQA is related to ProofWriter, with one paper attributing an anomalous result to the two benchmarks' shared template-based generation of logic and natural language.\n\nConcerns raised. A few papers note practical concerns around its use. One paper excludes ProntoQA from an experiment because there is no publicly available training set, and another points to high similarity with ProofWriter because both datasets use predefined templates for generating logic and corresponding natural language.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Collaborative Beam Search: Enhancing LLM Reasoning via Collective Consensus",
+      "Do Large Language Models excel in Complex Logical Reasoning with Formal Language?",
+      "FLARE: Faithful Logic-Aided Reasoning and Exploration"
+    ],
+    "iclr25": [
+      "Large Language Models Meet Symbolic Provers for Logical Reasoning Evaluation",
+      "Self-Improvement in Language Models: The Sharpening Mechanism"
+    ],
+    "icml25": [
+      "An Analysis for Reasoning Bias of Language Models with Small Initialization",
+      "Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples",
+      "Policy Guided Tree Search for Enhanced LLM Reasoning",
+      "RULEBREAKERS: Challenging LLMs at the Crossroads between Formal Logic and Human-like Reasoning",
+      "Rethinking External Slow-Thinking: From Snowball Errors to Probability of Correct Reasoning",
+      "Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning"
+    ],
+    "neurips24": [
+      "Calibrating Reasoning in Language Models with Internal Consistency",
+      "Initialization is Critical to Whether Transformers Fit Composite Functions by Reasoning or Memorizing",
+      "On scalable oversight with weak LLMs judging strong LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 2,
+    "icml25": 6,
+    "neurips24": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

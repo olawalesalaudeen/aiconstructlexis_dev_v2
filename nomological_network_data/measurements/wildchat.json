@@ -1,0 +1,146 @@
+{
+  "canonical_name": "WildChat",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the definitions, WildChat is most commonly described as a dataset of real-world LLM conversations or real-world user interactions. Papers variously frame it as conversations with GPT models performing daily tasks, collected through a free GPT API in exchange for shared logs, and as a source of out-of-distribution prompts; one paper also describes it as a comprehensive multi-turn, multi-lingual dataset of 1 million timestamped conversations, and another says it \"more closely reflects real user needs.\"\n\nWhat it is claimed to measure. Papers link WildChat to 2 constructs and 2 behavioral indicators. The main measurement uses in these papers are to measure Overrefusal, Harmlessness, and Multilingual ability: papers describe over-refusal evaluations using WildChat, test harmlessness with \"highly toxic prompts from WildChat,\" and assess multilingual capability with MultiAlpaca and WildChat; a separate paper relates it to Multi-turn dialogue rather than treating that link as a measurement claim. In the available work, these claims are spread across several targets rather than centered on one construct.\n\nSpace of uses. WildChat is used as evaluation data rather than alongside any linked measurement instrument, and no measurement instrument is linked to it. Papers pair it with MultiAlpaca for multilingual capability assessment and discuss it alongside LmsysChat as real-world interaction data, contrasted with UltraChat's synthetic responses; other uses include over-refusal evaluation, harmlessness testing with toxic prompts, out-of-distribution prompt sourcing for classifier generalization, and analysis of whether model outputs overlap with online text in benign interactions.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "WildChat"
+  ],
+  "papers": [
+    "Prototypical Human-AI Collaboration Behaviors from LLM-Assisted Writing in the Wild",
+    "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+    "User Feedback in Human-LLM Dialogues: A Lens to Understand Users But Noisy as a Learning Signal",
+    "First-Person Fairness in Chatbots",
+    "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+    "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models",
+    "Constrain Alignment with Sparse Autoencoders",
+    "Idiosyncrasies in Large Language Models",
+    "Position: The Most Expensive Part of an LLM *should* be its Training Data",
+    "STAIR: Improving Safety Alignment with Introspective Reasoning"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset of real-world LLM conversations used here to analyze whether generated outputs overlap with online text in benign interactions.",
+      "paper": "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models",
+      "original_name": "WildChat"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Overrefusal",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Improving Alignment and Robustness with Circuit Breakers",
+      "evidence": "\u201cwe construct an over-refusal evaluation using the WildChat dataset [74].\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Improving Alignment and Robustness with Circuit Breakers"
+        ],
+        "iclr25": [
+          "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multi-turn dialogue",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "evidence": "this paper presents the WILDCHAT dataset, a comprehensive multi-turn, multi-lingual dataset consisting of 1 million timestamped conversations (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "WildChat: 1M ChatGPT Interaction Logs in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multilingual ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Constrain Alignment with Sparse Autoencoders",
+      "evidence": "(2) Multilingual Capability: Assessed with MultiAlpaca and WildChat datasets, covering French, Canadian French, German, and Italian, with English questions from MKQA. (Section 5.3. FPO Achieves Accurate Control Over Model Capabilities)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Constrain Alignment with Sparse Autoencoders"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "STAIR: Improving Safety Alignment with Introspective Reasoning",
+      "evidence": "For harmlessness, models are required to provide clear refusals to harmful queries... We test the models on ... highly toxic prompts from WildChat (Zhao et al., 2024)... (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "STAIR: Improving Safety Alignment with Introspective Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the definitions, WildChat is most commonly described as a dataset of real-world LLM conversations or real-world user interactions. Papers variously frame it as conversations with GPT models performing daily tasks, collected through a free GPT API in exchange for shared logs, and as a source of out-of-distribution prompts; one paper also describes it as a comprehensive multi-turn, multi-lingual dataset of 1 million timestamped conversations, and another says it \"more closely reflects real user needs.\""
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link WildChat to 2 constructs and 2 behavioral indicators. The main measurement uses in these papers are to measure Overrefusal, Harmlessness, and Multilingual ability: papers describe over-refusal evaluations using WildChat, test harmlessness with \"highly toxic prompts from WildChat,\" and assess multilingual capability with MultiAlpaca and WildChat; a separate paper relates it to Multi-turn dialogue rather than treating that link as a measurement claim. In the available work, these claims are spread across several targets rather than centered on one construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "WildChat is used as evaluation data rather than alongside any linked measurement instrument, and no measurement instrument is linked to it. Papers pair it with MultiAlpaca for multilingual capability assessment and discuss it alongside LmsysChat as real-world interaction data, contrasted with UltraChat's synthetic responses; other uses include over-refusal evaluation, harmlessness testing with toxic prompts, out-of-distribution prompt sourcing for classifier generalization, and analysis of whether model outputs overlap with online text in benign interactions."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the definitions, WildChat is most commonly described as a dataset of real-world LLM conversations or real-world user interactions. Papers variously frame it as conversations with GPT models performing daily tasks, collected through a free GPT API in exchange for shared logs, and as a source of out-of-distribution prompts; one paper also describes it as a comprehensive multi-turn, multi-lingual dataset of 1 million timestamped conversations, and another says it \"more closely reflects real user needs.\"\n\nWhat it is claimed to measure. Papers link WildChat to 2 constructs and 2 behavioral indicators. The main measurement uses in these papers are to measure Overrefusal, Harmlessness, and Multilingual ability: papers describe over-refusal evaluations using WildChat, test harmlessness with \"highly toxic prompts from WildChat,\" and assess multilingual capability with MultiAlpaca and WildChat; a separate paper relates it to Multi-turn dialogue rather than treating that link as a measurement claim. In the available work, these claims are spread across several targets rather than centered on one construct.\n\nSpace of uses. WildChat is used as evaluation data rather than alongside any linked measurement instrument, and no measurement instrument is linked to it. Papers pair it with MultiAlpaca for multilingual capability assessment and discuss it alongside LmsysChat as real-world interaction data, contrasted with UltraChat's synthetic responses; other uses include over-refusal evaluation, harmlessness testing with toxic prompts, out-of-distribution prompt sourcing for classifier generalization, and analysis of whether model outputs overlap with online text in benign interactions.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Prototypical Human-AI Collaboration Behaviors from LLM-Assisted Writing in the Wild",
+      "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+      "User Feedback in Human-LLM Dialogues: A Lens to Understand Users But Noisy as a Learning Signal"
+    ],
+    "iclr25": [
+      "First-Person Fairness in Chatbots",
+      "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+      "Measuring Non-Adversarial Reproduction of Training Data in Large Language Models"
+    ],
+    "icml25": [
+      "Constrain Alignment with Sparse Autoencoders",
+      "Idiosyncrasies in Large Language Models",
+      "Position: The Most Expensive Part of an LLM *should* be its Training Data",
+      "STAIR: Improving Safety Alignment with Introspective Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 3,
+    "icml25": 4
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

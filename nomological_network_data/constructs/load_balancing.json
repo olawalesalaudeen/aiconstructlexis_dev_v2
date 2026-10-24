@@ -1,0 +1,75 @@
+{
+  "canonical_name": "Load balancing",
+  "type": "construct",
+  "canonical_definition": "Across the provided literature, load balancing is consistently defined as the even distribution of computational workload\u2014variously described as tokens, expert utilization, or activation workload\u2014across the experts in a Mixture-of-Experts (MoE) system. The shared goal is to prevent the overuse of some experts and underuse of others. One paper frames load imbalance as a notable issue that can lead to problems like \"routing collapse\" and \"uneven computational distribution\" (\"ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing\"). This construct is commonly operationalized through the implementation of auxiliary loss functions during training. For example, different papers propose a \"new load balance loss to ensure workload balance\" (\"TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice\") or a function that \"ensures balanced expert selection\" (\"HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts\"). Another approach mentioned involves balancing it with sparsity control in a single formulation. One paper also reports a causal link, suggesting that ensuring load balancing can encourage more effective `Expert specialization`.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering: even distribution of tokens across MoE experts, enforced by auxiliary load-balance losses; an architecture or training detail, not an LLM ability",
+  "names": [
+    "Load balancing",
+    "Routing balance",
+    "Load balance"
+  ],
+  "papers": [
+    "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+    "ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing",
+    "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The property of a Mixture-of-Experts system to distribute its computational load (tokens) evenly across its available experts, preventing overuse of some and underuse of others.",
+      "paper": "ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing",
+      "original_name": "Load balancing"
+    },
+    {
+      "text": "The degree to which expert utilization is evenly distributed across inputs to prevent overuse or underuse.",
+      "paper": "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "original_name": "Routing balance"
+    },
+    {
+      "text": "The degree to which activation workload is distributed across experts in a balanced way during routing.",
+      "paper": "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice",
+      "original_name": "Load balance"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Expert specialization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "evidence": "\"To address these issues, we propose a novel auxiliary loss function that not only ensures balanced expert selection but also promotes greater certainty in routing results, thereby encouraging more effective specialization of experts across all layers.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, load balancing is consistently defined as the even distribution of computational workload\u2014variously described as tokens, expert utilization, or activation workload\u2014across the experts in a Mixture-of-Experts (MoE) system. The shared goal is to prevent the overuse of some experts and underuse of others. One paper frames load imbalance as a notable issue that can lead to problems like \"routing collapse\" and \"uneven computational distribution\" (\"ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing\"). This construct is commonly operationalized through the implementation of auxiliary loss functions during training. For example, different papers propose a \"new load balance loss to ensure workload balance\" (\"TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice\") or a function that \"ensures balanced expert selection\" (\"HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts\"). Another approach mentioned involves balancing it with sparsity control in a single formulation. One paper also reports a causal link, suggesting that ensuring load balancing can encourage more effective `Expert specialization`.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing",
+      "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

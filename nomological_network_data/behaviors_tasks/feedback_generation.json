@@ -1,0 +1,150 @@
+{
+  "canonical_name": "Feedback generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage is a natural-language rationale or explanation that accompanies an evaluation, most commonly explaining why a response received a particular score. As one paper puts it, \"Feedback: A rationale of why the provided response would receive a particular score. This is analogous to Chain-of-Thoughts\" (Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models). Smaller strands use the same label for a short explanation of why code failed, a richer reflection on how a model can be improved, diagnostic feedback for prompt refinement, or personalized formative feedback that pinpoints strengths and addresses weaknesses.\n\nVariants. Papers study several named variants and settings. They use \"verbal feedback generation\" for rich natural-language reflection used across iterations, and \"feedback comment generation\" for essay assessment; within essay feedback, authors mention corrective comments, holistic comments, and multi-dimensional analytic comments. Other recurring settings are code failure explanation for self-repair or debugging, feedback used to generate refined prompts, and tutoring feedback on quizzes or exercises.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. In these papers, the behavior is operationalized directly as the generated text itself, variously a rationale, a short explanation, a verbal reflection, or an essay feedback comment.\n\nWhat it is taken as evidence of. No paper here links feedback generation to a construct. Instead, individual papers claim causal relationships from feedback generation to neural self-repair, code debugging, response revision, and code improvement. One paper, for example, states that \"Artificially boosting the quality of the feedback significantly improves the efficacy of self-repair\" (Is Self-Repair a Silver Bullet for Code Generation?).",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Feedback generation",
+    "Verbal feedback generation",
+    "Feedback comment generation"
+  ],
+  "papers": [
+    "Efficient and Accurate Prompt Optimization: the Benefit of Memory in Exemplar-Guided Reflection",
+    "HelpSteer3: Human-Annotated Feedback and Edit Data to Empower Inference-Time Scaling in Open-Ended General-Domain Tasks",
+    "LLMs can Perform Multi-Dimensional Analytic Writing Assessments: A Case Study of L2 Graduate-Level Academic English Writing",
+    "Agent-as-Judge for Factual Summarization of Long Narratives",
+    "Generator-Assistant Stepwise Rollback Framework for Large Language Model Agent",
+    "MAgICoRe: Multi-Agent, Iterative, Coarse-to-Fine Refinement for Reasoning",
+    "Position: LLMs Can be Good Tutors in English Education",
+    "Is Self-Repair a Silver Bullet for Code Generation?",
+    "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models",
+    "Training Socially Aligned Language Models on Simulated Social Interactions",
+    "Data-Driven Discovery of Dynamical Systems in Pharmacology using Large Language Models"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing a rationale explaining why a particular score was assigned to a model response, analogous to chain-of-thought reasoning in evaluation.",
+      "paper": "Is Self-Repair a Silver Bullet for Code Generation?",
+      "original_name": "Feedback generation"
+    },
+    {
+      "text": "The behavior of generating natural language text that reflects on a model's performance and provides specific suggestions for improvement.",
+      "paper": "Data-Driven Discovery of Dynamical Systems in Pharmacology using Large Language Models",
+      "original_name": "Verbal feedback generation"
+    },
+    {
+      "text": "The observable task of producing qualitative, textual feedback for an essay, intended to explain an assessment or guide improvement.",
+      "paper": "LLMs can Perform Multi-Dimensional Analytic Writing Assessments: A Case Study of L2 Graduate-Level Academic English Writing",
+      "original_name": "Feedback comment generation"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Code debugging",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Is Self-Repair a Silver Bullet for Code Generation?",
+      "evidence": "Finally, this feedback is used by the code model to repair the program (5). (Figure 1 caption)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Is Self-Repair a Silver Bullet for Code Generation?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Response revision",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Training Socially Aligned Language Models on Simulated Social Interactions",
+      "evidence": "\u201cThis feedback, comprising ratings and detailed explanations, informs the central agent\u2019s revisions to its initial response.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Training Socially Aligned Language Models on Simulated Social Interactions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Code improvement",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Generating CAD Code with Vision-Language Models for 3D Designs",
+      "evidence": "The question-answer pairs are then used to generate ameliorative feedback to further refine the 3D object... feedback, Fref, is then applied to refine the code, as described Eq. (3). (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generating CAD Code with Vision-Language Models for 3D Designs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage is a natural-language rationale or explanation that accompanies an evaluation, most commonly explaining why a response received a particular score. As one paper puts it, \"Feedback: A rationale of why the provided response would receive a particular score. This is analogous to Chain-of-Thoughts\" (Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models). Smaller strands use the same label for a short explanation of why code failed, a richer reflection on how a model can be improved, diagnostic feedback for prompt refinement, or personalized formative feedback that pinpoints strengths and addresses weaknesses."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several named variants and settings. They use \"verbal feedback generation\" for rich natural-language reflection used across iterations, and \"feedback comment generation\" for essay assessment; within essay feedback, authors mention corrective comments, holistic comments, and multi-dimensional analytic comments. Other recurring settings are code failure explanation for self-repair or debugging, feedback used to generate refined prompts, and tutoring feedback on quizzes or exercises."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. In these papers, the behavior is operationalized directly as the generated text itself, variously a rationale, a short explanation, a verbal reflection, or an essay feedback comment."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No paper here links feedback generation to a construct. Instead, individual papers claim causal relationships from feedback generation to neural self-repair, code debugging, response revision, and code improvement. One paper, for example, states that \"Artificially boosting the quality of the feedback significantly improves the efficacy of self-repair\" (Is Self-Repair a Silver Bullet for Code Generation?)."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage is a natural-language rationale or explanation that accompanies an evaluation, most commonly explaining why a response received a particular score. As one paper puts it, \"Feedback: A rationale of why the provided response would receive a particular score. This is analogous to Chain-of-Thoughts\" (Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models). Smaller strands use the same label for a short explanation of why code failed, a richer reflection on how a model can be improved, diagnostic feedback for prompt refinement, or personalized formative feedback that pinpoints strengths and addresses weaknesses.\n\nVariants. Papers study several named variants and settings. They use \"verbal feedback generation\" for rich natural-language reflection used across iterations, and \"feedback comment generation\" for essay assessment; within essay feedback, authors mention corrective comments, holistic comments, and multi-dimensional analytic comments. Other recurring settings are code failure explanation for self-repair or debugging, feedback used to generate refined prompts, and tutoring feedback on quizzes or exercises.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. In these papers, the behavior is operationalized directly as the generated text itself, variously a rationale, a short explanation, a verbal reflection, or an essay feedback comment.\n\nWhat it is taken as evidence of. No paper here links feedback generation to a construct. Instead, individual papers claim causal relationships from feedback generation to neural self-repair, code debugging, response revision, and code improvement. One paper, for example, states that \"Artificially boosting the quality of the feedback significantly improves the efficacy of self-repair\" (Is Self-Repair a Silver Bullet for Code Generation?).",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Efficient and Accurate Prompt Optimization: the Benefit of Memory in Exemplar-Guided Reflection",
+      "HelpSteer3: Human-Annotated Feedback and Edit Data to Empower Inference-Time Scaling in Open-Ended General-Domain Tasks",
+      "LLMs can Perform Multi-Dimensional Analytic Writing Assessments: A Case Study of L2 Graduate-Level Academic English Writing"
+    ],
+    "emnlp25": [
+      "Agent-as-Judge for Factual Summarization of Long Narratives",
+      "Generator-Assistant Stepwise Rollback Framework for Large Language Model Agent",
+      "MAgICoRe: Multi-Agent, Iterative, Coarse-to-Fine Refinement for Reasoning",
+      "Position: LLMs Can be Good Tutors in English Education"
+    ],
+    "iclr24": [
+      "Is Self-Repair a Silver Bullet for Code Generation?",
+      "Prometheus: Inducing Fine-Grained Evaluation Capability in Language Models",
+      "Training Socially Aligned Language Models on Simulated Social Interactions"
+    ],
+    "neurips24": [
+      "Data-Driven Discovery of Dynamical Systems in Pharmacology using Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 4,
+    "iclr24": 3,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "neurips24"
+  ]
+}

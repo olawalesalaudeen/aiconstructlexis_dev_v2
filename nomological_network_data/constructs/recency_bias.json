@@ -1,0 +1,186 @@
+{
+  "canonical_name": "Recency bias",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage describes recency bias as a preference for more recent tokens over earlier context in attention, retrieval, or subsequent token generation. Most definitions differ mainly in setting: some state it generally as recent tokens being more important, or as closer positions receiving at least as much attention as farther ones when otherwise similar, while others narrow it to long-context or linear-attention cases where attention is concentrated at the tail and earlier or mid-range context is deemphasized. A smaller framing treats it as a serial position effect alongside primacy and analogizes it to human recall patterns, but it still centers on the same recent-over-earlier preference.\n\nSpace of facets. Papers offer little formal subtype structure, but they repeatedly place the construct within broader temporal and positional patterns. One usage pairs it with primacy under serial position effects, while another equates end-of-input attention sink behavior, or attention concentrated at the tail, with recency bias. Papers also use both recency effect and recency bias for this construct, and one paper relates positional bias to recency bias by contrasting it with lost-in-the-middle.\n\nSpace of measurement. No measurement instrument is linked to it, and papers link it to 2 behavioral indicators, Synthetic recall and Temporal grounding. Papers instead operationalize it through direct analyses of attention or retrieval patterns: recent tokens are treated as more important for generating the next token, closer positions can be required to receive at least as much attention as farther ones when the compared tokens are otherwise similar, and recency can appear as coverage concentrated on near or final positions rather than earlier context. Across these operationalizations, the observable signal is the relative weighting of recent versus earlier tokens.\n\nLinks. Among constructs, papers link it to 3 constructs, Long-context understanding, Positional bias, and Robustness, and to 2 behavioral indicators, Synthetic recall and Temporal grounding. One paper claims a causal relationship from recency bias to robustness, describing models with recency bias as more susceptible to perturbations on local tokens and vulnerable to adversarial backdoors; the same paper claims a causal relationship from recency bias to synthetic recall, stating that this bias impairs recall of distant information. Another paper claims a causal relationship from recency bias to long-context understanding when focusing on local tokens becomes detrimental if relevant information lies far back, while separate papers report that recency bias is related to temporal grounding and that positional bias is related to recency bias by framing recency bias as a replacement for lost-in-the-middle.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Recency effect",
+    "Recency bias"
+  ],
+  "papers": [
+    "MixLoRA-DSI: Dynamically Expandable Mixture-of-LoRA Experts for Rehearsal-Free Generative Retrieval over Dynamic Corpora",
+    "PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization",
+    "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning",
+    "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+    "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+    "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving",
+    "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+    "Emergence of Episodic Memory in Transformers: Characterizing Changes in Temporal Structure of Attention Scores During Training",
+    "On Positional Bias of Faithfulness for Long-form Summarization",
+    "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent tendency for a model to give greater weight to recently presented tokens when generating subsequent outputs, analogous to human short-term memory recall patterns.",
+      "paper": "Emergence of Episodic Memory in Transformers: Characterizing Changes in Temporal Structure of Attention Scores During Training",
+      "original_name": "Recency effect"
+    },
+    {
+      "text": "A tendency for attention or retrieval to favor more recent tokens over earlier ones when both are otherwise similar.",
+      "paper": "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "original_name": "Recency bias"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+      "evidence": "Furthermore, we raise a novel robustness concern regarding SSMs with recency bias: our empirical outcomes show that Mamba is more susceptible to perturbations on local tokens, making it vulnerable to adversarial attack, as these local tokens can be easily manipulated to serve as backdoors. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Synthetic recall",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+      "evidence": "\u201cthis bias impairs the models\u2019 ability to recall distant information\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "On Positional Bias of Faithfulness for Long-form Summarization",
+      "evidence": "\u201cThis approach may appear to improve faithfulness, but it ultimately replaces one positional bias, i.e., lost-in-the-middle, with another, i.e., recency bias.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "On Positional Bias of Faithfulness for Long-form Summarization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving",
+      "evidence": "In next-token prediction settings, focusing on local tokens often suffices for short contexts, but can be detrimental when crucial information resides far back in the input.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Attention sink",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "evidence": "These attention distributions give rise to three corresponding biases: i) Attention sink, where focus is concentrated on the initial few tokens. ii) Recency bias, where attention is more strongly concentrated at the tail. iii) Middle bias, where attention is disproportionately focused on a few tokens in the middle of a sequence. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage describes recency bias as a preference for more recent tokens over earlier context in attention, retrieval, or subsequent token generation. Most definitions differ mainly in setting: some state it generally as recent tokens being more important, or as closer positions receiving at least as much attention as farther ones when otherwise similar, while others narrow it to long-context or linear-attention cases where attention is concentrated at the tail and earlier or mid-range context is deemphasized. A smaller framing treats it as a serial position effect alongside primacy and analogizes it to human recall patterns, but it still centers on the same recent-over-earlier preference."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers offer little formal subtype structure, but they repeatedly place the construct within broader temporal and positional patterns. One usage pairs it with primacy under serial position effects, while another equates end-of-input attention sink behavior, or attention concentrated at the tail, with recency bias. Papers also use both recency effect and recency bias for this construct, and one paper relates positional bias to recency bias by contrasting it with lost-in-the-middle."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to it, and papers link it to 2 behavioral indicators, Synthetic recall and Temporal grounding. Papers instead operationalize it through direct analyses of attention or retrieval patterns: recent tokens are treated as more important for generating the next token, closer positions can be required to receive at least as much attention as farther ones when the compared tokens are otherwise similar, and recency can appear as coverage concentrated on near or final positions rather than earlier context. Across these operationalizations, the observable signal is the relative weighting of recent versus earlier tokens."
+    },
+    {
+      "label": "Links.",
+      "text": "Among constructs, papers link it to 3 constructs, Long-context understanding, Positional bias, and Robustness, and to 2 behavioral indicators, Synthetic recall and Temporal grounding. One paper claims a causal relationship from recency bias to robustness, describing models with recency bias as more susceptible to perturbations on local tokens and vulnerable to adversarial backdoors; the same paper claims a causal relationship from recency bias to synthetic recall, stating that this bias impairs recall of distant information. Another paper claims a causal relationship from recency bias to long-context understanding when focusing on local tokens becomes detrimental if relevant information lies far back, while separate papers report that recency bias is related to temporal grounding and that positional bias is related to recency bias by framing recency bias as a replacement for lost-in-the-middle."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "All papers define recency bias as a model tendency to overweight the most recently seen tokens relative to earlier context. The differences are only in emphasis on where it appears, such as attention, retrieval, or generated outputs, and in setting, such as long-context or linear-attention models.",
+    "papers_with_definition": 4,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage describes recency bias as a preference for more recent tokens over earlier context in attention, retrieval, or subsequent token generation. Most definitions differ mainly in setting: some state it generally as recent tokens being more important, or as closer positions receiving at least as much attention as farther ones when otherwise similar, while others narrow it to long-context or linear-attention cases where attention is concentrated at the tail and earlier or mid-range context is deemphasized. A smaller framing treats it as a serial position effect alongside primacy and analogizes it to human recall patterns, but it still centers on the same recent-over-earlier preference.\n\nSpace of facets. Papers offer little formal subtype structure, but they repeatedly place the construct within broader temporal and positional patterns. One usage pairs it with primacy under serial position effects, while another equates end-of-input attention sink behavior, or attention concentrated at the tail, with recency bias. Papers also use both recency effect and recency bias for this construct, and one paper relates positional bias to recency bias by contrasting it with lost-in-the-middle.\n\nSpace of measurement. No measurement instrument is linked to it, and papers link it to 2 behavioral indicators, Synthetic recall and Temporal grounding. Papers instead operationalize it through direct analyses of attention or retrieval patterns: recent tokens are treated as more important for generating the next token, closer positions can be required to receive at least as much attention as farther ones when the compared tokens are otherwise similar, and recency can appear as coverage concentrated on near or final positions rather than earlier context. Across these operationalizations, the observable signal is the relative weighting of recent versus earlier tokens.\n\nLinks. Among constructs, papers link it to 3 constructs, Long-context understanding, Positional bias, and Robustness, and to 2 behavioral indicators, Synthetic recall and Temporal grounding. One paper claims a causal relationship from recency bias to robustness, describing models with recency bias as more susceptible to perturbations on local tokens and vulnerable to adversarial backdoors; the same paper claims a causal relationship from recency bias to synthetic recall, stating that this bias impairs recall of distant information. Another paper claims a causal relationship from recency bias to long-context understanding when focusing on local tokens becomes detrimental if relevant information lies far back, while separate papers report that recency bias is related to temporal grounding and that positional bias is related to recency bias by framing recency bias as a replacement for lost-in-the-middle.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "MixLoRA-DSI: Dynamically Expandable Mixture-of-LoRA Experts for Rehearsal-Free Generative Retrieval over Dynamic Corpora",
+      "PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization",
+      "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning"
+    ],
+    "iclr25": [
+      "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing"
+    ],
+    "icml25": [
+      "On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention for Long-Context LLM Serving",
+      "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+    ],
+    "naacl25": [
+      "Emergence of Episodic Memory in Transformers: Characterizing Changes in Temporal Structure of Attention Scores During Training",
+      "On Positional Bias of Faithfulness for Long-form Summarization"
+    ],
+    "neurips24": [
+      "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 2,
+    "icml25": 2,
+    "naacl25": 2,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

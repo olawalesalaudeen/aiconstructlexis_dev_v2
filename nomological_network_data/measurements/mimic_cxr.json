@@ -1,0 +1,161 @@
+{
+  "canonical_name": "MIMIC-CXR",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the prevailing usage treats MIMIC-CXR as a chest X-ray or chest radiograph dataset paired with free-text radiology reports, mainly for report generation and grounded report evaluation. Several definitions add that the studies are de-identified and publicly available, and some describe each study as accompanied by labels as well as a report. A smaller line of work refers to processed or subset versions, and one paper points to a VQA variant, MIMIC-CXR-VQA, for chest-radiograph question answering.\n\nWhat it is claimed to measure. Papers link MIMIC-CXR to 3 behavioral indicators, and to no constructs. The prevailing usage is to measure medical report generation, with additional use for radiology report generation, while a smaller line of work uses it to measure medical visual question answering. These links are all to behavioral indicators, especially report generation tasks, not to any construct.\n\nSpace of uses. No measurement instrument is linked to it directly, but papers commonly use MIMIC-CXR alongside IU-Xray, and sometimes alongside CT-RATE, CheXpert Plus, Harvard-FairVLMed, or PMC-OA. Snippets describe it as used for both training and evaluation, with some papers evaluating on the test set, others training a retriever and foundation model on a processed version, and another applying a method to a subset for report generation against expert reports. One benchmark-building paper also includes it for fairness and privacy evaluation because it contains demographic information, and another mentions grounded reports constructed from it.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MIMIC-CXR"
+  ],
+  "papers": [
+    "Automated Structured Radiology Report Generation",
+    "Focus on What Matters: Enhancing Medical Vision-Language Models with Automatic Attention Alignment Tuning",
+    "Online Iterative Self-Alignment for Radiology Report Generation",
+    "RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection",
+    "Med-VRAgent: A Framework for Medical Visual Reasoning-Enhanced Agents",
+    "ReEvalMed: Rethinking Medical Report Evaluation by Aligning Metrics with Real-World Clinical Judgment",
+    "Structuring Radiology Reports: Challenging LLMs with Lightweight Models",
+    "Towards Statistical Factuality Guarantee for Large Vision-Language Models",
+    "Conformal Generative Modeling with Improved Sample Efficiency through Sequential Greedy Filtering",
+    "Interpretable Bilingual Multimodal Large Language Model for Diverse Biomedical Tasks",
+    "MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models",
+    "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+    "VividMed: Vision Language Model with Versatile Visual Grounding for Medicine",
+    "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+    "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees",
+    "MDAgents: An Adaptive Collaboration of LLMs for Medical Decision-Making"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A chest X-ray dataset used for medical report generation and grounded report generation evaluation.",
+      "paper": "Interpretable Bilingual Multimodal Large Language Model for Diverse Biomedical Tasks",
+      "original_name": "MIMIC-CXR"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Medical report generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models",
+      "evidence": "We utilize five medical vision-language datasets for medical VQA and report generation tasks, i.e., MIMIC-CXR (Johnson et al., 2019), IU-Xray (Demner-Fushman et al., 2016), Harvard-FairVLMed (Luo et al., 2024), PMC-OA (Lin et al., 2023a) (we only select the pathology part) and Quilt-1M (Ikezogwo et al., 2024).",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models",
+          "Interpretable Bilingual Multimodal Large Language Model for Diverse Biomedical Tasks"
+        ],
+        "acl25": [
+          "Focus on What Matters: Enhancing Medical Vision-Language Models with Automatic Attention Alignment Tuning"
+        ],
+        "icml25": [
+          "MMedPO: Aligning Medical Vision-Language Models with Clinical-Aware Multimodal Preference Optimization"
+        ],
+        "emnlp25": [
+          "Med-VRAgent: A Framework for Medical Visual Reasoning-Enhanced Agents"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Radiology report generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees",
+      "evidence": "In this section, we apply Conformal Alignment to chest X-ray report (CXR) generation. Following the pipeline in Figure 1, we apply our method to (a subset of) the MIMIC-CXR dataset [20]. (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees"
+        ],
+        "iclr25": [
+          "Conformal Generative Modeling with Improved Sample Efficiency through Sequential Greedy Filtering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Medical visual question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models",
+      "evidence": "We utilize five medical vision-language datasets for medical VQA and report generation tasks, i.e., MIMIC-CXR (Johnson et al., 2019), IU-Xray (Demner-Fushman et al., 2016), Harvard-FairVLMed (Luo et al., 2024), PMC-OA (Lin et al., 2023a) (we only select the pathology part) and Quilt-1M (Ikezogwo et al., 2024).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the prevailing usage treats MIMIC-CXR as a chest X-ray or chest radiograph dataset paired with free-text radiology reports, mainly for report generation and grounded report evaluation. Several definitions add that the studies are de-identified and publicly available, and some describe each study as accompanied by labels as well as a report. A smaller line of work refers to processed or subset versions, and one paper points to a VQA variant, MIMIC-CXR-VQA, for chest-radiograph question answering."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link MIMIC-CXR to 3 behavioral indicators, and to no constructs. The prevailing usage is to measure medical report generation, with additional use for radiology report generation, while a smaller line of work uses it to measure medical visual question answering. These links are all to behavioral indicators, especially report generation tasks, not to any construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it directly, but papers commonly use MIMIC-CXR alongside IU-Xray, and sometimes alongside CT-RATE, CheXpert Plus, Harvard-FairVLMed, or PMC-OA. Snippets describe it as used for both training and evaluation, with some papers evaluating on the test set, others training a retriever and foundation model on a processed version, and another applying a method to a subset for report generation against expert reports. One benchmark-building paper also includes it for fairness and privacy evaluation because it contains demographic information, and another mentions grounded reports constructed from it."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the prevailing usage treats MIMIC-CXR as a chest X-ray or chest radiograph dataset paired with free-text radiology reports, mainly for report generation and grounded report evaluation. Several definitions add that the studies are de-identified and publicly available, and some describe each study as accompanied by labels as well as a report. A smaller line of work refers to processed or subset versions, and one paper points to a VQA variant, MIMIC-CXR-VQA, for chest-radiograph question answering.\n\nWhat it is claimed to measure. Papers link MIMIC-CXR to 3 behavioral indicators, and to no constructs. The prevailing usage is to measure medical report generation, with additional use for radiology report generation, while a smaller line of work uses it to measure medical visual question answering. These links are all to behavioral indicators, especially report generation tasks, not to any construct.\n\nSpace of uses. No measurement instrument is linked to it directly, but papers commonly use MIMIC-CXR alongside IU-Xray, and sometimes alongside CT-RATE, CheXpert Plus, Harvard-FairVLMed, or PMC-OA. Snippets describe it as used for both training and evaluation, with some papers evaluating on the test set, others training a retriever and foundation model on a processed version, and another applying a method to a subset for report generation against expert reports. One benchmark-building paper also includes it for fairness and privacy evaluation because it contains demographic information, and another mentions grounded reports constructed from it.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Automated Structured Radiology Report Generation",
+      "Focus on What Matters: Enhancing Medical Vision-Language Models with Automatic Attention Alignment Tuning",
+      "Online Iterative Self-Alignment for Radiology Report Generation",
+      "RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection"
+    ],
+    "emnlp25": [
+      "Med-VRAgent: A Framework for Medical Visual Reasoning-Enhanced Agents",
+      "ReEvalMed: Rethinking Medical Report Evaluation by Aligning Metrics with Real-World Clinical Judgment",
+      "Structuring Radiology Reports: Challenging LLMs with Lightweight Models",
+      "Towards Statistical Factuality Guarantee for Large Vision-Language Models"
+    ],
+    "iclr25": [
+      "Conformal Generative Modeling with Improved Sample Efficiency through Sequential Greedy Filtering",
+      "Interpretable Bilingual Multimodal Large Language Model for Diverse Biomedical Tasks",
+      "MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models"
+    ],
+    "naacl25": [
+      "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+      "VividMed: Vision Language Model with Versatile Visual Grounding for Medicine"
+    ],
+    "neurips24": [
+      "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees",
+      "MDAgents: An Adaptive Collaboration of LLMs for Medical Decision-Making"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 4,
+    "iclr25": 3,
+    "naacl25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25",
+    "neurips24"
+  ]
+}

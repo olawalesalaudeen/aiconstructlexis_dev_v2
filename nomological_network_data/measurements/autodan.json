@@ -1,0 +1,154 @@
+{
+  "canonical_name": "AutoDAN",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, AutoDAN is most commonly described as a jailbreak attack or procedure for generating adversarial prompts that bypass LLM safety alignment, usually with a genetic or hierarchical genetic algorithm. Several definitions add that it searches from human-designed attack prompts, can produce high-perplexity or human-readable prompts, and may use controllable text generation or an added loss term for stealthiness or interpretability; some papers also frame it as a white-box or optimization-based attack, while another describes instruction-based or query-based AutoDAN for jailbreak evaluation. A smaller line of work treats AutoDAN differently, including as a public dataset for jailbreak detection or as an attack included in the EasyJailbreak dataset for transferability evaluation.\n\nWhat it is claimed to measure. Papers link AutoDAN to 2 constructs and 2 behavioral indicators overall. Papers use it to measure adversarial robustness, safety robustness, and jailbreak resistance, typically by testing defenses against jailbreak attacks and reporting robustness or attack success rates; these measurement claims spread across several robustness-related targets rather than converging on one construct. Separately, one paper claims a causal relationship from AutoDAN to jailbreaking, describing it as generating jailbreaks that can bypass safety alignments.\n\nSpace of uses. Papers commonly use AutoDAN alongside GCG, and sometimes PAIR or TAP, as one of several representative algorithmic, optimization-based, gradient-based, or white-box jailbreak attacks when evaluating defenses. It is linked to 1 other measurement instrument, CSRT, through a related comparison where a paper treats AutoDAN as a non-multilingual red-teaming baseline. Other papers use it in transferability studies through the EasyJailbreak dataset, and one paper presents it as one of 3 public datasets for jailbreak detection.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "AutoDAN"
+  ],
+  "papers": [
+    "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+    "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+    "Safety Alignment via Constrained Knowledge Unlearning",
+    "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+    "Backtracking Improves Generation Safety",
+    "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+    "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "Injecting Universal Jailbreak Backdoors into LLMs in Minutes",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction",
+    "Improving LLM Safety Alignment with Dual-Objective Optimization",
+    "LLMScan: Causal Scan for LLM Misbehavior Detection",
+    "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+    "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+    "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+    "A Theoretical Understanding of Self-Correction through In-context Alignment",
+    "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+    "Protecting Your LLMs with Information Bottleneck"
+  ],
+  "paper_count": 19,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A genetic-algorithm jailbreak procedure that generates adversarial prompts intended to bypass LLM safety alignment.",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "original_name": "AutoDAN"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Jailbreak resistance",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We also evaluate the robustness of R2-Guard against SOTA jailbreak attacks including GCG (Zou et al., 2023), PAIR (Chao et al., 2023), TAP (Mehrotra et al., 2023), and AutoDAN (Liu et al., 2023). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "Table 1: General model capability metrics and adversarial robustness (measured as ASR) of three LLMs trained using various safety fine-tuning methods. ... GCG ... PAIR ... AutoDAN ... HumanJailbreaks",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CSRT",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+      "evidence": "We compare the CSRT to three non-multilingual red-teaming baselines (i.e., GCG (Zou et al., 2023), AutoDAN (Liu et al., 2024), and PAIR (Chao et al., 2025)). (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, AutoDAN is most commonly described as a jailbreak attack or procedure for generating adversarial prompts that bypass LLM safety alignment, usually with a genetic or hierarchical genetic algorithm. Several definitions add that it searches from human-designed attack prompts, can produce high-perplexity or human-readable prompts, and may use controllable text generation or an added loss term for stealthiness or interpretability; some papers also frame it as a white-box or optimization-based attack, while another describes instruction-based or query-based AutoDAN for jailbreak evaluation. A smaller line of work treats AutoDAN differently, including as a public dataset for jailbreak detection or as an attack included in the EasyJailbreak dataset for transferability evaluation."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link AutoDAN to 2 constructs and 2 behavioral indicators overall. Papers use it to measure adversarial robustness, safety robustness, and jailbreak resistance, typically by testing defenses against jailbreak attacks and reporting robustness or attack success rates; these measurement claims spread across several robustness-related targets rather than converging on one construct. Separately, one paper claims a causal relationship from AutoDAN to jailbreaking, describing it as generating jailbreaks that can bypass safety alignments."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers commonly use AutoDAN alongside GCG, and sometimes PAIR or TAP, as one of several representative algorithmic, optimization-based, gradient-based, or white-box jailbreak attacks when evaluating defenses. It is linked to 1 other measurement instrument, CSRT, through a related comparison where a paper treats AutoDAN as a non-multilingual red-teaming baseline. Other papers use it in transferability studies through the EasyJailbreak dataset, and one paper presents it as one of 3 public datasets for jailbreak detection."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, AutoDAN is most commonly described as a jailbreak attack or procedure for generating adversarial prompts that bypass LLM safety alignment, usually with a genetic or hierarchical genetic algorithm. Several definitions add that it searches from human-designed attack prompts, can produce high-perplexity or human-readable prompts, and may use controllable text generation or an added loss term for stealthiness or interpretability; some papers also frame it as a white-box or optimization-based attack, while another describes instruction-based or query-based AutoDAN for jailbreak evaluation. A smaller line of work treats AutoDAN differently, including as a public dataset for jailbreak detection or as an attack included in the EasyJailbreak dataset for transferability evaluation.\n\nWhat it is claimed to measure. Papers link AutoDAN to 2 constructs and 2 behavioral indicators overall. Papers use it to measure adversarial robustness, safety robustness, and jailbreak resistance, typically by testing defenses against jailbreak attacks and reporting robustness or attack success rates; these measurement claims spread across several robustness-related targets rather than converging on one construct. Separately, one paper claims a causal relationship from AutoDAN to jailbreaking, describing it as generating jailbreaks that can bypass safety alignments.\n\nSpace of uses. Papers commonly use AutoDAN alongside GCG, and sometimes PAIR or TAP, as one of several representative algorithmic, optimization-based, gradient-based, or white-box jailbreak attacks when evaluating defenses. It is linked to 1 other measurement instrument, CSRT, through a related comparison where a paper treats AutoDAN as a non-multilingual red-teaming baseline. Other papers use it in transferability studies through the EasyJailbreak dataset, and one paper presents it as one of 3 public datasets for jailbreak detection.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding",
+      "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+      "Safety Alignment via Constrained Knowledge Unlearning"
+    ],
+    "iclr25": [
+      "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "Backtracking Improves Generation Safety",
+      "EFFICIENT JAILBREAK ATTACK SEQUENCES ON LARGE LANGUAGE MODELS VIA MULTI-ARMED BANDIT-BASED CONTEXT SWITCHING",
+      "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "Injecting Universal Jailbreak Backdoors into LLMs in Minutes",
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction"
+    ],
+    "icml25": [
+      "Improving LLM Safety Alignment with Dual-Objective Optimization",
+      "LLMScan: Causal Scan for LLM Misbehavior Detection"
+    ],
+    "naacl25": [
+      "RAG LLMs are Not Safer: A Safety Analysis of Retrieval-Augmented Generation for Large Language Models",
+      "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+      "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring"
+    ],
+    "neurips24": [
+      "A Theoretical Understanding of Self-Correction through In-context Alignment",
+      "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "Protecting Your LLMs with Information Bottleneck"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 8,
+    "icml25": 2,
+    "naacl25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

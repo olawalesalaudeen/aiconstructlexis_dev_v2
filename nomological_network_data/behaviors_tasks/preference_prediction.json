@@ -1,0 +1,264 @@
+{
+  "canonical_name": "Preference prediction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is a pairwise preference task: a model predicts which of two responses, answers, or solutions is preferred, better, or more highly upvoted for a given prompt or context. The preference source varies across papers, including humans, an LLM-as-a-judge, reward models, AI ratings, and community reactions, and success is usually whether the preferred option receives the higher label, probability, or score. A smaller line of work treats the behavior as scalar preference estimation, either by learning a numerical reward function for a user-response pair, predicting a user's preference level for an item, or mapping a recipe to average consumer satisfaction within a target population.\n\nVariants. Papers study this behavior in several settings: personalized response selection on unseen contexts, multi-turn conversational judging, community-specific upvote prediction, item-level preference rating, and recipe satisfaction prediction. Another variant compares the relative quality of candidate mathematical solutions through a pairwise question, framed in one paper as asking, \"For Question Q, is solution a1 better than solution a2?\" The naming also varies, with papers using labels such as preference label classification, preference classification, preferred response prediction, preference score prediction, and preference judgment.\n\nSpace of elicitation and scores. Papers link preference prediction to three measurement instruments: LLM-as-a-judge, MT-Bench, and RewardBench. These cover, respectively, using an LLM's predictions to approximate human preferences, a preference dataset for multi-turn open-ended outputs, and a test benchmark for reward model scoring. Across task setups, elicitation and scoring are most often operationalized through classification accuracy, average accuracy against preference labels, judge or jury accuracy at picking the chosen response, or the fraction of cases where the preferred response gets the higher score.\n\nWhat it is taken as evidence of. Papers do not present a single shared construct that this behavior reflects. Instead, objective mismatch is related to preference label classification, with one paper saying task performance reveals struggle with mismatch between text generation and preference modeling, and preference prediction is reported to correlate with social bias when lower accuracy on vegetarian versus non-vegetarian meal comparisons reflects an omnivore bias relative to human preferences.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Recipe preference prediction",
+    "Preference score prediction",
+    "Preference prediction",
+    "Reward model scoring",
+    "Preference label classification",
+    "Preference classification",
+    "Preferred response prediction",
+    "Preference judgment"
+  ],
+  "papers": [
+    "IPO: Your Language Model is Secretly a Preference Classifier",
+    "A Good Plan is Hard to Find: Aligning Models with Preferences is Misaligned with What Helps Users",
+    "Amulet: Putting Complex Multi-Turn Conversations on the Stand with LLM Juries",
+    "CoPL: Collaborative Preference Learning for Personalizing LLMs",
+    "FaST: Feature-aware Sampling and Tuning for Personalized Preference Alignment with Limited Data",
+    "Logit Space Constrained Fine-Tuning for Mitigating Hallucinations in LLM-Based Recommender Systems",
+    "Multi-Domain Explainability of Preferences",
+    "Towards Unified Multi-Modal Personalization: Large Vision-Language Models for Generative Recommendation and Beyond",
+    "MetaMetrics: Calibrating Metrics for Generation Tasks Using Human Preferences",
+    "Mitigating Reward Over-Optimization in RLHF via Behavior-Supported Regularization",
+    "GRAM: A Generative Foundation Reward Model for Reward Generalization",
+    "On the Robustness of Reward Models for Language Model Alignment",
+    "What can large language models do for sustainable food?",
+    "ComPO: Community Preferences for Language Model Personalization",
+    "LLaMA-Berry: Pairwise Optimization for Olympiad-level Mathematical Reasoning via O1-like Monte Carlo Tree Search",
+    "Geometric-Averaged Preference Optimization for Soft Preference Labels",
+    "Scaling Laws for Reward Model Overoptimization in Direct Alignment Algorithms"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Predicting which recipe a target population will prefer or rate more highly.",
+      "paper": "What can large language models do for sustainable food?",
+      "original_name": "Recipe preference prediction"
+    },
+    {
+      "text": "The model's output of a scalar score indicating the degree to which a given response aligns with a specific user's preferences.",
+      "paper": "CoPL: Collaborative Preference Learning for Personalizing LLMs",
+      "original_name": "Preference score prediction"
+    },
+    {
+      "text": "The task of predicting which of two responses is preferred by a mechanism (human, LLM-as-a-judge, or reward model) based on concept-based representations.",
+      "paper": "Multi-Domain Explainability of Preferences",
+      "original_name": "Preference prediction"
+    },
+    {
+      "text": "The observable task of a model acting as an evaluator to assign a score to a generated text, predicting its alignment with human preferences.",
+      "paper": "MetaMetrics: Calibrating Metrics for Generation Tasks Using Human Preferences",
+      "original_name": "Reward model scoring"
+    },
+    {
+      "text": "The task of predicting which of two given responses is more preferable for a given prompt.",
+      "paper": "Geometric-Averaged Preference Optimization for Soft Preference Labels",
+      "original_name": "Preference label classification"
+    },
+    {
+      "text": "Predicting the preferred answer between a pair of responses based on human feedback rankings.",
+      "paper": "Scaling Laws for Reward Model Overoptimization in Direct Alignment Algorithms",
+      "original_name": "Preference classification"
+    },
+    {
+      "text": "Selecting the most likely user-preferred response from a set of candidates for a given context, based on a learned reward model.",
+      "paper": "FaST: Feature-aware Sampling and Tuning for Personalized Preference Alignment with Limited Data",
+      "original_name": "Preferred response prediction"
+    },
+    {
+      "text": "The observable act of selecting one of two candidate responses as the better response in a multi-turn conversational context.",
+      "paper": "Amulet: Putting Complex Multi-Turn Conversations on the Stand with LLM Juries",
+      "original_name": "Preference judgment"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Objective mismatch",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Geometric-Averaged Preference Optimization for Soft Preference Labels",
+      "evidence": "The performance on preference label classi\ufb01cation also reveals that cDPO struggles with objective mismatch between the text generation and preference modeling... (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Geometric-Averaged Preference Optimization for Soft Preference Labels"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PairRM",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+      "evidence": "\"using an external reward model (PairRM (Jiang et al., 2023b)) for the preference judgment\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RewardBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MetaMetrics: Calibrating Metrics for Generation Tasks Using Human Preferences",
+      "evidence": "We use RewardBench (Lambert et al., 2024) as the test benchmark. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MetaMetrics: Calibrating Metrics for Generation Tasks Using Human Preferences"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Beyond correlation: The impact of human uncertainty in measuring the effectiveness of automatic evaluation and LLM-as-a-judge",
+      "evidence": "MT-Bench (Zheng et al., 2023) is a preference dataset which compares human preferences of several model outputs on open-ended questions using multi-turn conversations. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Beyond correlation: The impact of human uncertainty in measuring the effectiveness of automatic evaluation and LLM-as-a-judge"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Bradley-Terry model",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?",
+      "evidence": "\"Given a prompt x and two responses yi and yj, the probability that yi is preferred to yj is computed by\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Social bias",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "What can large language models do for sustainable food?",
+      "evidence": "Within the vegetarian vs. non-vegetarian meal comparisons, accuracy is lower when vegetarian options are rated higher, reflecting LLMs\u2019 omnivore bias, as LLMs more frequently prefer non-vegetarian options compared to ground truth human preferences.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "What can large language models do for sustainable food?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+      "evidence": "\"using an LLM\u2019s predictions to approximate human preferences between them, a technique often referred to as LLM-as-judge\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is a pairwise preference task: a model predicts which of two responses, answers, or solutions is preferred, better, or more highly upvoted for a given prompt or context. The preference source varies across papers, including humans, an LLM-as-a-judge, reward models, AI ratings, and community reactions, and success is usually whether the preferred option receives the higher label, probability, or score. A smaller line of work treats the behavior as scalar preference estimation, either by learning a numerical reward function for a user-response pair, predicting a user's preference level for an item, or mapping a recipe to average consumer satisfaction within a target population."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study this behavior in several settings: personalized response selection on unseen contexts, multi-turn conversational judging, community-specific upvote prediction, item-level preference rating, and recipe satisfaction prediction. Another variant compares the relative quality of candidate mathematical solutions through a pairwise question, framed in one paper as asking, \"For Question Q, is solution a1 better than solution a2?\" The naming also varies, with papers using labels such as preference label classification, preference classification, preferred response prediction, preference score prediction, and preference judgment."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link preference prediction to three measurement instruments: LLM-as-a-judge, MT-Bench, and RewardBench. These cover, respectively, using an LLM's predictions to approximate human preferences, a preference dataset for multi-turn open-ended outputs, and a test benchmark for reward model scoring. Across task setups, elicitation and scoring are most often operationalized through classification accuracy, average accuracy against preference labels, judge or jury accuracy at picking the chosen response, or the fraction of cases where the preferred response gets the higher score."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not present a single shared construct that this behavior reflects. Instead, objective mismatch is related to preference label classification, with one paper saying task performance reveals struggle with mismatch between text generation and preference modeling, and preference prediction is reported to correlate with social bias when lower accuracy on vegetarian versus non-vegetarian meal comparisons reflects an omnivore bias relative to human preferences."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is a pairwise preference task: a model predicts which of two responses, answers, or solutions is preferred, better, or more highly upvoted for a given prompt or context. The preference source varies across papers, including humans, an LLM-as-a-judge, reward models, AI ratings, and community reactions, and success is usually whether the preferred option receives the higher label, probability, or score. A smaller line of work treats the behavior as scalar preference estimation, either by learning a numerical reward function for a user-response pair, predicting a user's preference level for an item, or mapping a recipe to average consumer satisfaction within a target population.\n\nVariants. Papers study this behavior in several settings: personalized response selection on unseen contexts, multi-turn conversational judging, community-specific upvote prediction, item-level preference rating, and recipe satisfaction prediction. Another variant compares the relative quality of candidate mathematical solutions through a pairwise question, framed in one paper as asking, \"For Question Q, is solution a1 better than solution a2?\" The naming also varies, with papers using labels such as preference label classification, preference classification, preferred response prediction, preference score prediction, and preference judgment.\n\nSpace of elicitation and scores. Papers link preference prediction to three measurement instruments: LLM-as-a-judge, MT-Bench, and RewardBench. These cover, respectively, using an LLM's predictions to approximate human preferences, a preference dataset for multi-turn open-ended outputs, and a test benchmark for reward model scoring. Across task setups, elicitation and scoring are most often operationalized through classification accuracy, average accuracy against preference labels, judge or jury accuracy at picking the chosen response, or the fraction of cases where the preferred response gets the higher score.\n\nWhat it is taken as evidence of. Papers do not present a single shared construct that this behavior reflects. Instead, objective mismatch is related to preference label classification, with one paper saying task performance reveals struggle with mismatch between text generation and preference modeling, and preference prediction is reported to correlate with social bias when lower accuracy on vegetarian versus non-vegetarian meal comparisons reflects an omnivore bias relative to human preferences.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "IPO: Your Language Model is Secretly a Preference Classifier"
+    ],
+    "emnlp25": [
+      "A Good Plan is Hard to Find: Aligning Models with Preferences is Misaligned with What Helps Users",
+      "Amulet: Putting Complex Multi-Turn Conversations on the Stand with LLM Juries",
+      "CoPL: Collaborative Preference Learning for Personalizing LLMs",
+      "FaST: Feature-aware Sampling and Tuning for Personalized Preference Alignment with Limited Data",
+      "Logit Space Constrained Fine-Tuning for Mitigating Hallucinations in LLM-Based Recommender Systems",
+      "Multi-Domain Explainability of Preferences"
+    ],
+    "iclr25": [
+      "MetaMetrics: Calibrating Metrics for Generation Tasks Using Human Preferences",
+      "Mitigating Reward Over-Optimization in RLHF via Behavior-Supported Regularization"
+    ],
+    "icml25": [
+      "GRAM: A Generative Foundation Reward Model for Reward Generalization",
+      "On the Robustness of Reward Models for Language Model Alignment",
+      "What can large language models do for sustainable food?"
+    ],
+    "neurips24": [
+      "Geometric-Averaged Preference Optimization for Soft Preference Labels",
+      "Scaling Laws for Reward Model Overoptimization in Direct Alignment Algorithms"
+    ],
+    "iclr24": [
+      "Towards Unified Multi-Modal Personalization: Large Vision-Language Models for Generative Recommendation and Beyond"
+    ],
+    "naacl25": [
+      "ComPO: Community Preferences for Language Model Personalization",
+      "LLaMA-Berry: Pairwise Optimization for Olympiad-level Mathematical Reasoning via O1-like Monte Carlo Tree Search"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 6,
+    "iclr25": 2,
+    "icml25": 3,
+    "neurips24": 2,
+    "iclr24": 1,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

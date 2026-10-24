@@ -1,0 +1,121 @@
+{
+  "canonical_name": "WikiMIA",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing description is a dataset or benchmark for evaluating training or pretraining data detection on large language models. Definitions commonly frame it as temporal or dynamic: it uses Wikipedia texts or excerpts, and labels items as seen versus unseen, or member versus non-member, by comparing publication date with a model's training cutoff or release timeline. Some papers also describe it as a temporal MIA dataset or a benchmark for membership inference attacks, but the shared setup is a date-based split of Wikipedia content.\n\nWhat it is claimed to measure. Papers link WikiMIA to one behavioral indicator and no constructs. The dominant use is to measure pre-training data detection: several papers describe it as a common benchmark for evaluating detection methods, and one paper treats WikiMIA and MIMIR as the only two benchmarks it considers for this task. A smaller line of work also links it to membership inference attack through measured_by relations, using earlier Wikipedia text as member data and more recent text as non-member data.\n\nSpace of uses. Papers use WikiMIA in both focused and multi-benchmark evaluations. One line of work pairs it with MIMIR for pre-training data detection, while broader evaluation suites place it alongside ArXivTection, BookTection, BookMIA, and Pile.\n\nConcerns raised. One paper raises a concern about the date-based split, arguing that separating member and non-member groups by publication date can introduce artificial distribution shifts. It notes that a blind baseline, predicting membership solely from text content without model access, already achieves 98.7% AUC.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "WIKIMIA",
+    "WikiMIA"
+  ],
+  "papers": [
+    "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+    "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework",
+    "A Statistical Approach for Controlled Training Data Detection",
+    "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+    "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+    "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+    "TDDBench: A Benchmark for Training data detection"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset specifically designed to evaluate training data detection algorithms on large language models.",
+      "paper": "TDDBench: A Benchmark for Training data detection",
+      "original_name": "WIKIMIA"
+    },
+    {
+      "text": "A temporal benchmark dataset for evaluating pretraining data detection methods, containing excerpts from Wikipedia articles classified as \"seen\" or \"unseen\" based on their publication date relative to a model's training cutoff.",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "original_name": "WikiMIA"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Pre-training data detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Detecting Pretraining Data from Large Language Models",
+      "evidence": "To facilitate this study, we introduce a dynamic benchmark WIKIMIA that uses data created before and after model training to support gold truth detection. (Abstract)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Detecting Pretraining Data from Large Language Models"
+        ],
+        "iclr25": [
+          "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+          "Fine-tuning can Help Detect Pretraining Data from Large Language Models"
+        ],
+        "emnlp25": [
+          "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Membership inference attack",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Membership Inference Attacks against Large Vision-Language Models",
+      "evidence": "MIA on LLM pre-training texts. We use the WikiMIA benchmark [52], which leverages the Wikipedia timestamp to separate the early Wiki data as the member data, and recent Wiki data as the non-member data (Section 6.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Membership Inference Attacks against Large Vision-Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing description is a dataset or benchmark for evaluating training or pretraining data detection on large language models. Definitions commonly frame it as temporal or dynamic: it uses Wikipedia texts or excerpts, and labels items as seen versus unseen, or member versus non-member, by comparing publication date with a model's training cutoff or release timeline. Some papers also describe it as a temporal MIA dataset or a benchmark for membership inference attacks, but the shared setup is a date-based split of Wikipedia content."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link WikiMIA to one behavioral indicator and no constructs. The dominant use is to measure pre-training data detection: several papers describe it as a common benchmark for evaluating detection methods, and one paper treats WikiMIA and MIMIR as the only two benchmarks it considers for this task. A smaller line of work also links it to membership inference attack through measured_by relations, using earlier Wikipedia text as member data and more recent text as non-member data."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers use WikiMIA in both focused and multi-benchmark evaluations. One line of work pairs it with MIMIR for pre-training data detection, while broader evaluation suites place it alongside ArXivTection, BookTection, BookMIA, and Pile."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper raises a concern about the date-based split, arguing that separating member and non-member groups by publication date can introduce artificial distribution shifts. It notes that a blind baseline, predicting membership solely from text content without model access, already achieves 98.7% AUC."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing description is a dataset or benchmark for evaluating training or pretraining data detection on large language models. Definitions commonly frame it as temporal or dynamic: it uses Wikipedia texts or excerpts, and labels items as seen versus unseen, or member versus non-member, by comparing publication date with a model's training cutoff or release timeline. Some papers also describe it as a temporal MIA dataset or a benchmark for membership inference attacks, but the shared setup is a date-based split of Wikipedia content.\n\nWhat it is claimed to measure. Papers link WikiMIA to one behavioral indicator and no constructs. The dominant use is to measure pre-training data detection: several papers describe it as a common benchmark for evaluating detection methods, and one paper treats WikiMIA and MIMIR as the only two benchmarks it considers for this task. A smaller line of work also links it to membership inference attack through measured_by relations, using earlier Wikipedia text as member data and more recent text as non-member data.\n\nSpace of uses. Papers use WikiMIA in both focused and multi-benchmark evaluations. One line of work pairs it with MIMIR for pre-training data detection, while broader evaluation suites place it alongside ArXivTection, BookTection, BookMIA, and Pile.\n\nConcerns raised. One paper raises a concern about the date-based split, arguing that separating member and non-member groups by publication date can introduce artificial distribution shifts. It notes that a blind baseline, predicting membership solely from text content without model access, already achieves 98.7% AUC.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+      "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework"
+    ],
+    "iclr25": [
+      "A Statistical Approach for Controlled Training Data Detection",
+      "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+      "TDDBench: A Benchmark for Training data detection"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 5
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25"
+  ]
+}

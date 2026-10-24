@@ -1,0 +1,157 @@
+{
+  "canonical_name": "LLMBar",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, LLMBar is most commonly described as a meta-evaluation benchmark, or dataset, for assessing LLM evaluators' discernment of instruction-following outputs. Definitions converge on natural and adversarial pairwise comparison samples, and one paper specifies that it contains one Natural subset and four Adversarial subsets, Neighbor, GPTInst, GPTOut, and Manual (SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models). A smaller framing emphasizes that it consists of high-quality human annotations with high inter-annotator agreement.\n\nWhat it is claimed to measure. Papers link LLMBar to 2 constructs and 2 behavioral indicators, and the dominant claim is that it measures instruction following, often through pairwise comparison tasks. The linked constructs are evaluation ability and instruction following ability, the linked behavioral indicators are instruction following and pairwise comparison, and papers also link it to 1 measurement instrument, LLM-as-a-judge. One relationship describes it as using response pairs with clear ground truth preference labels based on adherence to instructions rather than subjective preferences, while another characterizes it as emphasizing \"instruction-following precision\" with a single golden response.\n\nSpace of uses. Papers position LLMBar mainly as a benchmark for pairwise evaluation of instruction-following and for assessing LLM-as-a-judge setups. In CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis, it is used alongside InstruSum, with that paper contrasting LLMBar as pairwise evaluation of instruction-following and InstruSum as pointwise scoring of instruction controllable summarization. Another paper adopts the judging prompt suggested in LLMBar for pairwise comparisons of model responses.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "LLMBar"
+  ],
+  "papers": [
+    "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+    "Arena-lite: Efficient and Reliable Large Language Model Evaluation via Tournament-Based Direct Comparisons",
+    "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+    "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+    "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+    "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models",
+    "CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis",
+    "ReIFE: Re-evaluating Instruction-Following Evaluation"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A meta-evaluation benchmark for assessing LLM evaluators' ability to distinguish instruction-following outputs across natural and adversarial subsets.",
+      "paper": "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models",
+      "original_name": "LLMBar"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Evaluation ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "evidence": "For assessing the refiner\u2019s judgment capability, we turn to LLMBar (Zeng et al., 2023), a dataset designed to measure the assessment ability of LLMs in the context of instruction-following tasks. (Section 3.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models"
+        ],
+        "iclr24": [
+          "Evaluating Large Language Models at Evaluating Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "LLMBar (Zeng et al., 2023) instead takes a different approach by assessing LLM-based judges\u2019 ability to follow instructions, using response pairs with clear ground truth preference labels based on adherence to instructions rather than subjective preferences. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "evidence": "This is likely because LLMBar emphasizes \u201cinstruction-following precision,\u201d where a single golden response exists for the instruction. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Pairwise comparison",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "evidence": "\u201copen-ended instruction-following benchmarks (MT-Bench, Alpacafarm, and LLMBar), which primarily rely on pairwise comparison task.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis",
+      "evidence": "\"We evaluate CAMIEVAL on two benchmarks, LLMBar (Zeng et al., 2023) and InstruSum (Liu et al., 2023c), which respectively represent pairwise evaluation of instruction-following and pointwise scoring of instruction controllable summarization.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, LLMBar is most commonly described as a meta-evaluation benchmark, or dataset, for assessing LLM evaluators' discernment of instruction-following outputs. Definitions converge on natural and adversarial pairwise comparison samples, and one paper specifies that it contains one Natural subset and four Adversarial subsets, Neighbor, GPTInst, GPTOut, and Manual (SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models). A smaller framing emphasizes that it consists of high-quality human annotations with high inter-annotator agreement."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link LLMBar to 2 constructs and 2 behavioral indicators, and the dominant claim is that it measures instruction following, often through pairwise comparison tasks. The linked constructs are evaluation ability and instruction following ability, the linked behavioral indicators are instruction following and pairwise comparison, and papers also link it to 1 measurement instrument, LLM-as-a-judge. One relationship describes it as using response pairs with clear ground truth preference labels based on adherence to instructions rather than subjective preferences, while another characterizes it as emphasizing \"instruction-following precision\" with a single golden response."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers position LLMBar mainly as a benchmark for pairwise evaluation of instruction-following and for assessing LLM-as-a-judge setups. In CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis, it is used alongside InstruSum, with that paper contrasting LLMBar as pairwise evaluation of instruction-following and InstruSum as pointwise scoring of instruction controllable summarization. Another paper adopts the judging prompt suggested in LLMBar for pairwise comparisons of model responses."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, LLMBar is most commonly described as a meta-evaluation benchmark, or dataset, for assessing LLM evaluators' discernment of instruction-following outputs. Definitions converge on natural and adversarial pairwise comparison samples, and one paper specifies that it contains one Natural subset and four Adversarial subsets, Neighbor, GPTInst, GPTOut, and Manual (SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models). A smaller framing emphasizes that it consists of high-quality human annotations with high inter-annotator agreement.\n\nWhat it is claimed to measure. Papers link LLMBar to 2 constructs and 2 behavioral indicators, and the dominant claim is that it measures instruction following, often through pairwise comparison tasks. The linked constructs are evaluation ability and instruction following ability, the linked behavioral indicators are instruction following and pairwise comparison, and papers also link it to 1 measurement instrument, LLM-as-a-judge. One relationship describes it as using response pairs with clear ground truth preference labels based on adherence to instructions rather than subjective preferences, while another characterizes it as emphasizing \"instruction-following precision\" with a single golden response.\n\nSpace of uses. Papers position LLMBar mainly as a benchmark for pairwise evaluation of instruction-following and for assessing LLM-as-a-judge setups. In CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis, it is used alongside InstruSum, with that paper contrasting LLMBar as pairwise evaluation of instruction-following and InstruSum as pointwise scoring of instruction controllable summarization. Another paper adopts the judging prompt suggested in LLMBar for pairwise comparisons of model responses.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+      "Arena-lite: Efficient and Reliable Large Language Model Evaluation via Tournament-Based Direct Comparisons"
+    ],
+    "iclr25": [
+      "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models"
+    ],
+    "naacl25": [
+      "CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis",
+      "ReIFE: Re-evaluating Instruction-Following Evaluation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 4,
+    "naacl25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "naacl25"
+  ]
+}

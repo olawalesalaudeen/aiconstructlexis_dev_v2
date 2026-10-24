@@ -1,0 +1,118 @@
+{
+  "canonical_name": "Jailbreak prompt generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats this behavior as generating prompts or instructions meant to elicit harmful, offensive, unsafe, or malicious responses from another LLM. A smaller line of work narrows it to automatically producing a rephrased, robust version of a malicious query that bypasses safety defenses, or to producing adversarial text inputs that preserve malicious intent while circumventing safety alignment. Success is usually described in terms of whether the produced prompt elicits the harmful response, though one paper formalizes it as transforming xmalicious into xjailbreak such that \"J(M(xjailbreak), xmalicious) = 1.\"\n\nVariants. Papers use several near-names for the behavior, most commonly harmful instruction generation, alongside jailbreak prompt generation and jailbreak generation. The studied variants include generating a diverse range of malicious instructions, sometimes through adversarial phrasing or role-playing scenarios, and zero-shot chat-LLM setups where generated personas and attributes guide instruction generation. Other formulations treat it as taking a new harmful query and returning a corresponding rephrased robust jailbreak prompt, or as an iterative transformation from a malicious input to a jailbreak input.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead operationalize it directly through generation procedures, such as prompting an LLM to generate harmful instructions or feeding a new harmful query to a fine-tuned generation model that outputs a corresponding rephrased robust jailbreak prompt. One formulation also defines the behavior through whether a transformed input qualifies as xjailbreak under the condition \"J(M(xjailbreak), xmalicious) = 1,\" but this is not linked to a named instrument.\n\nWhat it is taken as evidence of. No construct is linked to it, so papers do not explicitly treat it as evidence of a named construct. Instead, papers place it in causal relationships with other behaviors: one paper claims a causal relationship from Language understanding task performance to Jailbreak prompt generation, citing \"advanced language understanding and generation abilities,\" and another claims a causal relationship from Jailbreak prompt generation to Harmful content generation through carefully designed prompts that make LLMs provide \"harmful, discriminatory, violent, or sensitive content.\"",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Harmful instruction generation",
+    "Jailbreak prompt generation",
+    "Jailbreak generation"
+  ],
+  "papers": [
+    "JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs",
+    "TRIDENT: Enhancing Large Language Model Safety with Tri-Dimensional Diversified Red-Teaming Data Synthesis",
+    "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience",
+    "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+    "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+    "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+    "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+    "An Interpretable N-gram Perplexity Threat Model for Large Language Model Jailbreaks"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior of an LLM producing prompts or instructions that are designed to elicit harmful, offensive, or malicious responses from another model.",
+      "paper": "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "original_name": "Harmful instruction generation"
+    },
+    {
+      "text": "The automatic generation of a rephrased, robust version of a malicious query designed to bypass safety defenses.",
+      "paper": "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+      "original_name": "Jailbreak prompt generation"
+    },
+    {
+      "text": "Producing adversarial text inputs that preserve malicious intent while circumventing safety alignment to elicit harmful responses from an LLM.",
+      "paper": "An Interpretable N-gram Perplexity Threat Model for Large Language Model Jailbreaks",
+      "original_name": "Jailbreak generation"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Natural language understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+      "evidence": "we can fine-tune an existing language model, turning it into a robust jailbreak prompt generator by leveraging LLMs\u2019 advanced language understanding and generation abilities. (INTRODUCITON)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats this behavior as generating prompts or instructions meant to elicit harmful, offensive, unsafe, or malicious responses from another LLM. A smaller line of work narrows it to automatically producing a rephrased, robust version of a malicious query that bypasses safety defenses, or to producing adversarial text inputs that preserve malicious intent while circumventing safety alignment. Success is usually described in terms of whether the produced prompt elicits the harmful response, though one paper formalizes it as transforming xmalicious into xjailbreak such that \"J(M(xjailbreak), xmalicious) = 1.\""
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-names for the behavior, most commonly harmful instruction generation, alongside jailbreak prompt generation and jailbreak generation. The studied variants include generating a diverse range of malicious instructions, sometimes through adversarial phrasing or role-playing scenarios, and zero-shot chat-LLM setups where generated personas and attributes guide instruction generation. Other formulations treat it as taking a new harmful query and returning a corresponding rephrased robust jailbreak prompt, or as an iterative transformation from a malicious input to a jailbreak input."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Papers instead operationalize it directly through generation procedures, such as prompting an LLM to generate harmful instructions or feeding a new harmful query to a fine-tuned generation model that outputs a corresponding rephrased robust jailbreak prompt. One formulation also defines the behavior through whether a transformed input qualifies as xjailbreak under the condition \"J(M(xjailbreak), xmalicious) = 1,\" but this is not linked to a named instrument."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked to it, so papers do not explicitly treat it as evidence of a named construct. Instead, papers place it in causal relationships with other behaviors: one paper claims a causal relationship from Language understanding task performance to Jailbreak prompt generation, citing \"advanced language understanding and generation abilities,\" and another claims a causal relationship from Jailbreak prompt generation to Harmful content generation through carefully designed prompts that make LLMs provide \"harmful, discriminatory, violent, or sensitive content.\""
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats this behavior as generating prompts or instructions meant to elicit harmful, offensive, unsafe, or malicious responses from another LLM. A smaller line of work narrows it to automatically producing a rephrased, robust version of a malicious query that bypasses safety defenses, or to producing adversarial text inputs that preserve malicious intent while circumventing safety alignment. Success is usually described in terms of whether the produced prompt elicits the harmful response, though one paper formalizes it as transforming xmalicious into xjailbreak such that \"J(M(xjailbreak), xmalicious) = 1.\"\n\nVariants. Papers use several near-names for the behavior, most commonly harmful instruction generation, alongside jailbreak prompt generation and jailbreak generation. The studied variants include generating a diverse range of malicious instructions, sometimes through adversarial phrasing or role-playing scenarios, and zero-shot chat-LLM setups where generated personas and attributes guide instruction generation. Other formulations treat it as taking a new harmful query and returning a corresponding rephrased robust jailbreak prompt, or as an iterative transformation from a malicious input to a jailbreak input.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead operationalize it directly through generation procedures, such as prompting an LLM to generate harmful instructions or feeding a new harmful query to a fine-tuned generation model that outputs a corresponding rephrased robust jailbreak prompt. One formulation also defines the behavior through whether a transformed input qualifies as xjailbreak under the condition \"J(M(xjailbreak), xmalicious) = 1,\" but this is not linked to a named instrument.\n\nWhat it is taken as evidence of. No construct is linked to it, so papers do not explicitly treat it as evidence of a named construct. Instead, papers place it in causal relationships with other behaviors: one paper claims a causal relationship from Language understanding task performance to Jailbreak prompt generation, citing \"advanced language understanding and generation abilities,\" and another claims a causal relationship from Jailbreak prompt generation to Harmful content generation through carefully designed prompts that make LLMs provide \"harmful, discriminatory, violent, or sensitive content.\"",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs",
+      "TRIDENT: Enhancing Large Language Model Safety with Tri-Dimensional Diversified Red-Teaming Data Synthesis"
+    ],
+    "emnlp25": [
+      "Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience"
+    ],
+    "iclr24": [
+      "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models"
+    ],
+    "iclr25": [
+      "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+      "HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models",
+      "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs"
+    ],
+    "icml25": [
+      "An Interpretable N-gram Perplexity Threat Model for Large Language Model Jailbreaks"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 1,
+    "iclr24": 1,
+    "iclr25": 3,
+    "icml25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

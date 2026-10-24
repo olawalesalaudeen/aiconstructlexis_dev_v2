@@ -1,0 +1,129 @@
+{
+  "canonical_name": "Response aggregation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage treats it as combining multiple candidate answers or responses into one final output. Most descriptions emphasize a final answer that is more reliable, higher-quality, coherent, or refined, whether the inputs come from multiple sources, reasoning paths, or selected experts. Some papers make the success criterion more explicit by describing selection of the most reliable or most plausible response, while others add conflict detection, weighted fusion, or iterative synthesis and refinement.\n\nVariants. Papers use several near-synonymous labels, including answer aggregation, response fusion, response aggregation, and response synthesis. The settings vary from multi-path aggregation over answers from sub-questions and the original question, to fusing proposed responses given an instruction prompt, to synthesizing outputs from selected experts through semantic conflict detection and weighted information fusion. A smaller variant frames it as a two-stage knowledge graph-guided response integration process for logical consistency, and another describes iterative synthesis and refinement across candidate responses.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, the papers describe modules or prompts that carry it out, such as an aggregator that fuses two candidates and selects the most plausible final answer, or a fuser that takes an instruction prompt and proposed responses to generate one or more fused responses.\n\nWhat it is taken as evidence of. At the construct level, it is linked only to Text generation quality. One paper claims a causal relationship from Response aggregation to Text generation quality, describing aggregators as models that synthesize responses into a single, high-quality output. Separately, one paper reports that it is related to Response ranking, where responses are ranked and the best ones are fused into a single higher quality output.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Answer aggregation",
+    "Response aggregation",
+    "Response fusion",
+    "Response synthesis"
+  ],
+  "papers": [
+    "MAgICoRe: Multi-Agent, Iterative, Coarse-to-Fine Refinement for Reasoning",
+    "RTQA : Recursive Thinking for Complex Temporal Knowledge Graph Question Answering with Large Language Models",
+    "TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review",
+    "Mixture-of-Agents Enhances Large Language Model Capabilities",
+    "Visual-O1: Understanding Ambiguous Instructions via Multi-modal Multi-turn Chain-of-thoughts Reasoning",
+    "An Architecture Search Framework for Inference-Time Techniques",
+    "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The process of combining answers derived from multiple sources or reasoning paths to produce a single, more reliable final answer.",
+      "paper": "RTQA : Recursive Thinking for Complex Temporal Knowledge Graph Question Answering with Large Language Models",
+      "original_name": "Answer aggregation"
+    },
+    {
+      "text": "The act of combining multiple candidate responses into a single, higher-quality output using an LLM.",
+      "paper": "An Architecture Search Framework for Inference-Time Techniques",
+      "original_name": "Response fusion"
+    },
+    {
+      "text": "The process of synthesizing outputs from multiple selected experts into a single coherent final response, including conflict detection and weighted fusion.",
+      "paper": "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems",
+      "original_name": "Response aggregation"
+    },
+    {
+      "text": "Combining multiple candidate responses into a single refined answer.",
+      "paper": "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "original_name": "Response synthesis"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "evidence": "\"Aggregators are models proficient in synthesizing responses from other models into a single, high-quality output.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Mixture-of-Agents Enhances Large Language Model Capabilities"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Response ranking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "An Architecture Search Framework for Inference-Time Techniques",
+      "evidence": "\"their responses are ranked, and the best ones are fused into a single, higher quality output\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage treats it as combining multiple candidate answers or responses into one final output. Most descriptions emphasize a final answer that is more reliable, higher-quality, coherent, or refined, whether the inputs come from multiple sources, reasoning paths, or selected experts. Some papers make the success criterion more explicit by describing selection of the most reliable or most plausible response, while others add conflict detection, weighted fusion, or iterative synthesis and refinement."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-synonymous labels, including answer aggregation, response fusion, response aggregation, and response synthesis. The settings vary from multi-path aggregation over answers from sub-questions and the original question, to fusing proposed responses given an instruction prompt, to synthesizing outputs from selected experts through semantic conflict detection and weighted information fusion. A smaller variant frames it as a two-stage knowledge graph-guided response integration process for logical consistency, and another describes iterative synthesis and refinement across candidate responses."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, the papers describe modules or prompts that carry it out, such as an aggregator that fuses two candidates and selects the most plausible final answer, or a fuser that takes an instruction prompt and proposed responses to generate one or more fused responses."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "At the construct level, it is linked only to Text generation quality. One paper claims a causal relationship from Response aggregation to Text generation quality, describing aggregators as models that synthesize responses into a single, high-quality output. Separately, one paper reports that it is related to Response ranking, where responses are ranked and the best ones are fused into a single higher quality output."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage treats it as combining multiple candidate answers or responses into one final output. Most descriptions emphasize a final answer that is more reliable, higher-quality, coherent, or refined, whether the inputs come from multiple sources, reasoning paths, or selected experts. Some papers make the success criterion more explicit by describing selection of the most reliable or most plausible response, while others add conflict detection, weighted fusion, or iterative synthesis and refinement.\n\nVariants. Papers use several near-synonymous labels, including answer aggregation, response fusion, response aggregation, and response synthesis. The settings vary from multi-path aggregation over answers from sub-questions and the original question, to fusing proposed responses given an instruction prompt, to synthesizing outputs from selected experts through semantic conflict detection and weighted information fusion. A smaller variant frames it as a two-stage knowledge graph-guided response integration process for logical consistency, and another describes iterative synthesis and refinement across candidate responses.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, the papers describe modules or prompts that carry it out, such as an aggregator that fuses two candidates and selects the most plausible final answer, or a fuser that takes an instruction prompt and proposed responses to generate one or more fused responses.\n\nWhat it is taken as evidence of. At the construct level, it is linked only to Text generation quality. One paper claims a causal relationship from Response aggregation to Text generation quality, describing aggregators as models that synthesize responses into a single, high-quality output. Separately, one paper reports that it is related to Response ranking, where responses are ranked and the best ones are fused into a single higher quality output.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "MAgICoRe: Multi-Agent, Iterative, Coarse-to-Fine Refinement for Reasoning",
+      "RTQA : Recursive Thinking for Complex Temporal Knowledge Graph Question Answering with Large Language Models",
+      "TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review"
+    ],
+    "iclr25": [
+      "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "Visual-O1: Understanding Ambiguous Instructions via Multi-modal Multi-turn Chain-of-thoughts Reasoning"
+    ],
+    "icml25": [
+      "An Architecture Search Framework for Inference-Time Techniques",
+      "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 2,
+    "icml25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "canonical_name": "Prompt optimization",
+  "type": "behavior",
+  "canonical_definition": "Across the provided literature, prompt optimization is most commonly defined as the process of selecting or constructing prompts to improve a model's performance on question answering. However, the specific goals and methods of this behavior vary. One line of work operationalizes it as an iterative refinement of prompts for system components using an optimizer like MIPRO v2, which evaluates prompts against quality and privacy metrics on training data. A different application frames it as an adversarial process, where an attacker model refines prompts through a feedback loop to maximize the chance a victim model will reproduce its training data. The methods for this optimization include using gauges like pointwise mutual information or question likelihood, as noted in one study, or employing dedicated optimizers and reward functions. The effectiveness of prompt optimization is evaluated using benchmarks such as GSM8k and BBH. Additionally, prompt optimization is reported to cause task decomposition.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/training pipeline \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Prompt optimization"
+  ],
+  "papers": [
+    "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+    "PAPILLON: Privacy Preservation from Internet-based and Local Language Model Ensembles",
+    "Pointwise Mutual Information as a Performance Gauge for Retrieval-Augmented Generation"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Selecting or constructing prompts to improve model performance on question answering.",
+      "paper": "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "original_name": "Prompt optimization"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-Bench Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models as Optimizers",
+      "evidence": "Our primary evaluation benchmarks for prompt optimization are GSM8K (Cobbe et al., 2021) and Big-Bench Hard (BBH) (Suzgun et al., 2022). (Section 5.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Large Language Models as Optimizers"
+        ],
+        "neurips24": [
+          "Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models as Optimizers",
+      "evidence": "Our primary evaluation benchmarks for prompt optimization are GSM8K (Cobbe et al., 2021) and Big-Bench Hard (BBH) (Suzgun et al., 2022). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Large Language Models as Optimizers"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt sensitivity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "GReaTer: Gradients Over Reasoning Makes Smaller Language Models Strong Prompt Optimizers",
+      "evidence": "However, these models are known to exhibit prompt sensitivity... Consequently, prompt design has emerged as a critical factor... prompting researchers to explore more efficient alternatives.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "GReaTer: Gradients Over Reasoning Makes Smaller Language Models Strong Prompt Optimizers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge transfer",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "GReaTer: Gradients Over Reasoning Makes Smaller Language Models Strong Prompt Optimizers",
+      "evidence": "Additionally, GREATER-optimized prompts frequently exhibit better transferability",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "GReaTer: Gradients Over Reasoning Makes Smaller Language Models Strong Prompt Optimizers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Training data regurgitation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "evidence": "We propose a black-box prompt optimization method where an attacker LLM agent uncovers higher levels of memorization in a victim agent, surpassing traditional approaches that prompt the model directly with training data.",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "naacl25": [
+          "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Training data regurgitation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "evidence": "\"We propose a black-box prompt optimization method where an attacker LLM agent uncovers higher levels of memorization in a victim agent\"",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "naacl25": [
+          "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Question decomposition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "POQD: Performance-Oriented Query Decomposer for Multi-vector retrieval",
+      "evidence": "\u201cwe propose to adopt an LLM-based optimizer (referred to as the Prompt Optimizer) to generate p and iteratively refine it for optimizing the downstream performance\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "POQD: Performance-Oriented Query Decomposer for Multi-vector retrieval"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, prompt optimization is most commonly defined as the process of selecting or constructing prompts to improve a model's performance on question answering. However, the specific goals and methods of this behavior vary. One line of work operationalizes it as an iterative refinement of prompts for system components using an optimizer like MIPRO v2, which evaluates prompts against quality and privacy metrics on training data. A different application frames it as an adversarial process, where an attacker model refines prompts through a feedback loop to maximize the chance a victim model will reproduce its training data. The methods for this optimization include using gauges like pointwise mutual information or question likelihood, as noted in one study, or employing dedicated optimizers and reward functions. The effectiveness of prompt optimization is evaluated using benchmarks such as GSM8k and BBH. Additionally, prompt optimization is reported to cause task decomposition.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "naacl25": [
+      "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "PAPILLON: Privacy Preservation from Internet-based and Local Language Model Ensembles",
+      "Pointwise Mutual Information as a Performance Gauge for Retrieval-Augmented Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "naacl25": 3
+  },
+  "conferences": [
+    "naacl25"
+  ]
+}

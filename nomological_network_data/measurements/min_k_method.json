@@ -1,0 +1,108 @@
+{
+  "canonical_name": "Min-K% method",
+  "type": "measurement",
+  "canonical_definition": "The Min-K% method is most frequently characterized as a technique for pre-training data detection. Its operationalization is consistent across several papers: it scores a text by averaging either the lowest k-percent of its token probabilities or, equivalently, the highest k-percent of its token losses. This mechanism is based on the stated assumption that \"trained data tends to contain fewer outlier tokens\" with low probabilities. While pre-training data detection is the most common application, a number of papers also frame the method as a membership inference attack (MIA) used to assess privacy leakage. In this context, it is used to compare model confidence scores on different datasets, such as forget and holdout sets. Other reported applications include measuring dataset leakage and contamination. The provided data also identifies a variant, Min-K%++, described as a \"novel and theoretically motivated methodology\" for the same detection task.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique: a membership-inference / pretraining-data-detection scoring function",
+  "names": [
+    "Min-k%",
+    "Min-K% method",
+    "MinK%"
+  ],
+  "papers": [
+    "A Statistical Approach for Controlled Training Data Detection",
+    "Catastrophic Failure of LLM Unlearning via Quantization",
+    "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+    "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+    "How Contaminated Is Your Benchmark? Measuring Dataset Leakage in Large Language Models with Kernel Divergence",
+    "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A scoring function for pretraining data detection that computes the average log probability of the k% of tokens with the lowest predicted probabilities in a text.",
+      "paper": "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "original_name": "Min-k%"
+    },
+    {
+      "text": "A pre-training data detection method that scores a text by averaging the lowest k-percent of its token probabilities, based on the intuition that training texts are less likely to contain low-probability tokens.",
+      "paper": "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+      "original_name": "Min-K%"
+    },
+    {
+      "text": "A member inference attack (MIA) technique used to assess privacy leakage by comparing model confidence scores on data from forget and holdout sets.",
+      "paper": "Catastrophic Failure of LLM Unlearning via Quantization",
+      "original_name": "Min-K% method"
+    },
+    {
+      "text": "A baseline detection method that averages the loss of the top-k% tokens with the highest loss to identify training samples.",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "original_name": "MinK%"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Privacy leakage",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Catastrophic Failure of LLM Unlearning via Quantization",
+      "evidence": "\"M3. PrivLeak, which assesses privacy preservation using the Min-K% method\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Catastrophic Failure of LLM Unlearning via Quantization"
+        ],
+        "icml25": [
+          "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Pre-training data detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "evidence": "MinK% (Shi et al., 2023), which takes the average loss of the top k% tokens with the highest loss as the basis for detection (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Statistical Approach for Controlled Training Data Detection"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "The Min-K% method is most frequently characterized as a technique for pre-training data detection. Its operationalization is consistent across several papers: it scores a text by averaging either the lowest k-percent of its token probabilities or, equivalently, the highest k-percent of its token losses. This mechanism is based on the stated assumption that \"trained data tends to contain fewer outlier tokens\" with low probabilities. While pre-training data detection is the most common application, a number of papers also frame the method as a membership inference attack (MIA) used to assess privacy leakage. In this context, it is used to compare model confidence scores on different datasets, such as forget and holdout sets. Other reported applications include measuring dataset leakage and contamination. The provided data also identifies a variant, Min-K%++, described as a \"novel and theoretically motivated methodology\" for the same detection task.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "A Statistical Approach for Controlled Training Data Detection",
+      "Catastrophic Failure of LLM Unlearning via Quantization",
+      "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models"
+    ],
+    "icml25": [
+      "How Contaminated Is Your Benchmark? Measuring Dataset Leakage in Large Language Models with Kernel Divergence",
+      "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "icml25": 2
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

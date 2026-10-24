@@ -1,0 +1,177 @@
+{
+  "canonical_name": "SCROLLS",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most commonly, papers treat SCROLLS as a benchmark suite for long-text or long-context evaluation, often explicitly as a suite of 7 datasets. Its task mix is described as question answering and summarization, with some descriptions adding classification, and one definition frames SCROLL as evaluating language models' ability to reason over and synthesize information from long texts. A smaller framing discusses Scrolls together with ZeroSCROLLS as realistic long-input tasks from real-world scenarios, and one snippet reports average lengths ranging from 1.7k to 49.3k tokens.\n\nWhat it is claimed to measure. Papers use SCROLLS to measure 2 constructs and no behavioral indicators, most often Long-context understanding and Long-context reasoning. These claims are concentrated on long-context capabilities rather than spread across many concepts: one line of work places Scrolls within long-context modeling and QA evaluation, while another describes it as evaluating models' ability to synthesize information over long texts.\n\nSpace of uses. Across papers, SCROLLS is used as a finetuning and comparison benchmark for long-sequence tasks, including baseline comparisons and long-document decoding tests. It is also related to 3 other instruments, NarrativeQA, QMSum, and Qasper, which papers describe as included in Scrolls open-book QA evaluations. Another usage extracts components from it for a within-32K long-dataset benchmark, noting that QMSum, Qasper, and QuALITY are taken from SCROLLS.\n\nConcerns raised. A limited caveat appears in one benchmark setup: NarrativeQA is excluded because it is included in training.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "SCROLL",
+    "SCROLLS",
+    "Scrolls",
+    "(Zero)SCROLLS"
+  ],
+  "papers": [
+    "Functional Interpolation for Relative Positions improves Long Context Transformers",
+    "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+    "Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies",
+    "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding",
+    "BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack",
+    "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+    "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Standardized Compendium of Re-evaluated Long Language-modeling Sets (SCROLLS) is a benchmark suite of seven datasets for evaluating models on long-text tasks such as question answering and summarization.",
+      "paper": "Functional Interpolation for Relative Positions improves Long Context Transformers",
+      "original_name": "SCROLLS"
+    },
+    {
+      "text": "A benchmark suite for evaluating the ability of language models to reason over and synthesize information from long texts.",
+      "paper": "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "original_name": "SCROLL"
+    },
+    {
+      "text": "A benchmark for standardized comparison over long language sequences, consisting of tasks like QA, classification, and summarization.",
+      "paper": "BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack",
+      "original_name": "Scrolls"
+    },
+    {
+      "text": "A benchmark consisting of realistic tasks that require processing long inputs from real-world scenarios, such as summarization and question answering.",
+      "paper": "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack",
+      "original_name": "(Zero)SCROLLS"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "evidence": "Evaluation on long-context modeling, including perplexity in various context lengths up to 2M and long-context QA tasks in Scrolls (Parisotto et al., 2020) prove MEGALODON\u2019s ability to model sequences of unlimited length. (Section 1).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ],
+        "iclr25": [
+          "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "evidence": "To evaluate the ability of long context reasoning, we compare ICLM with the standard and kNN baselines on the SCROLL benchmark (Shaham et al., 2022) that evaluates LMs\u2019 ability to synthesize information over long texts. (Section 3.3.6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "In-Context Pretraining: Language Modeling Beyond Document Boundaries"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "NarrativeQA",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "evidence": "...we evaluate MEGALODON on long-context open-book question answering (QA) tasks in the Scrolls dataset (Shaham et al., 2022), including NarrativeQA (Ko\u02c7cisk\u00b4y et al., 2018)... (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Qasper",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "evidence": "...we evaluate MEGALODON on long-context open-book question answering (QA) tasks in the Scrolls dataset (Shaham et al., 2022), including NarrativeQA (Ko\u02c7cisk\u00b4y et al., 2018), Qasper (Dasigi et al., 2021)... (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "QMSum",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "evidence": "...we evaluate MEGALODON on long-context open-book question answering (QA) tasks in the Scrolls dataset (Shaham et al., 2022), including NarrativeQA (Ko\u02c7cisk\u00b4y et al., 2018), Qasper (Dasigi et al., 2021) and QMSum (Zhong et al., 2021). (Section 4.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most commonly, papers treat SCROLLS as a benchmark suite for long-text or long-context evaluation, often explicitly as a suite of 7 datasets. Its task mix is described as question answering and summarization, with some descriptions adding classification, and one definition frames SCROLL as evaluating language models' ability to reason over and synthesize information from long texts. A smaller framing discusses Scrolls together with ZeroSCROLLS as realistic long-input tasks from real-world scenarios, and one snippet reports average lengths ranging from 1.7k to 49.3k tokens."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use SCROLLS to measure 2 constructs and no behavioral indicators, most often Long-context understanding and Long-context reasoning. These claims are concentrated on long-context capabilities rather than spread across many concepts: one line of work places Scrolls within long-context modeling and QA evaluation, while another describes it as evaluating models' ability to synthesize information over long texts."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Across papers, SCROLLS is used as a finetuning and comparison benchmark for long-sequence tasks, including baseline comparisons and long-document decoding tests. It is also related to 3 other instruments, NarrativeQA, QMSum, and Qasper, which papers describe as included in Scrolls open-book QA evaluations. Another usage extracts components from it for a within-32K long-dataset benchmark, noting that QMSum, Qasper, and QuALITY are taken from SCROLLS."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "A limited caveat appears in one benchmark setup: NarrativeQA is excluded because it is included in training."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most commonly, papers treat SCROLLS as a benchmark suite for long-text or long-context evaluation, often explicitly as a suite of 7 datasets. Its task mix is described as question answering and summarization, with some descriptions adding classification, and one definition frames SCROLL as evaluating language models' ability to reason over and synthesize information from long texts. A smaller framing discusses Scrolls together with ZeroSCROLLS as realistic long-input tasks from real-world scenarios, and one snippet reports average lengths ranging from 1.7k to 49.3k tokens.\n\nWhat it is claimed to measure. Papers use SCROLLS to measure 2 constructs and no behavioral indicators, most often Long-context understanding and Long-context reasoning. These claims are concentrated on long-context capabilities rather than spread across many concepts: one line of work places Scrolls within long-context modeling and QA evaluation, while another describes it as evaluating models' ability to synthesize information over long texts.\n\nSpace of uses. Across papers, SCROLLS is used as a finetuning and comparison benchmark for long-sequence tasks, including baseline comparisons and long-document decoding tests. It is also related to 3 other instruments, NarrativeQA, QMSum, and Qasper, which papers describe as included in Scrolls open-book QA evaluations. Another usage extracts components from it for a within-32K long-dataset benchmark, noting that QMSum, Qasper, and QuALITY are taken from SCROLLS.\n\nConcerns raised. A limited caveat appears in one benchmark setup: NarrativeQA is excluded because it is included in training.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Functional Interpolation for Relative Positions improves Long Context Transformers",
+      "In-Context Pretraining: Language Modeling Beyond Document Boundaries"
+    ],
+    "icml25": [
+      "Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies",
+      "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding"
+    ],
+    "neurips24": [
+      "BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack",
+      "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 2,
+    "icml25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "iclr24",
+    "icml25",
+    "neurips24"
+  ]
+}

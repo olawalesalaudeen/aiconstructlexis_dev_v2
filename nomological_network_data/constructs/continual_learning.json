@@ -1,0 +1,252 @@
+{
+  "canonical_name": "Continual learning",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage treats continual learning as a model ability to acquire new skills, tasks, or knowledge over time from new or streaming data while retaining performance on what was learned before. Most versions make avoidance of catastrophic forgetting explicit, describing learning without degrading performance or retaining prior information while new tasks arrive \"in a streaming fashion.\" Smaller strands broaden this to lifelong learning from ongoing interaction with an open-world environment, narrow it to learning a sequence of tasks without retraining on past data, or specify continuous updating that integrates new information without parameter updates or retraining.\n\nSpace of facets. Papers most commonly organize the construct around sequential, streaming, or episodic task settings, with a single model adapting to task sequences such as {T1, T2, ... TK} or series of novel relations. A smaller line of work places application-specific variants under it, for example few-shot continual relation extraction, described as \"a branch of continual information extraction.\" One paper frames effective continual learning methods around two recurring challenges, catastrophic forgetting and knowledge transfer, including forward and backward transfer, and papers use neighboring labels, with lifelong learning and continuous learning capability highlighting open-world interaction, adaptive safety checking, or parameter-update-free integration of new information.\n\nSpace of measurement. Operationalization is linked to four measurement instruments and four behavioral indicators. The instruments are all task or benchmark setups: HotpotQA and SQuAD v1.1 appear in continual fine-tuning, PG-19 is used in episodal continual learning with book-level episodes, and Super-NaturalInstructions is used as a continual learning benchmark; one paper also evaluates \"learning against forgetting\" by tracking results across test sets over the continual learning process. Among behavioral indicators, catastrophic forgetting is the most frequent, followed by causal discovery, few-shot task performance, and relation extraction. These operationalizations mostly follow the sequential-learning and retention framing, whereas the version defined as integrating new information without parameter updates is not reflected in the linked instruments.\n\nLinks. Catastrophic forgetting is related to continual learning in several papers, which describe continual learning as assimilating new data without forgetting old knowledge or as learning multiple tasks without forgetting; in a separate claim, one paper reports a causal relationship from continual learning to catastrophic forgetting in few-shot continual relation extraction. Single papers also claim a causal relationship from continual learning to generalization, and from causal discovery to continual learning through continuous engagement and adaptation. Continual learning is also related to knowledge transfer, few-shot task performance, and relation extraction.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Continual learning",
+    "Lifelong learning",
+    "Continuous learning capability"
+  ],
+  "papers": [
+    "AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection",
+    "Learn to Memorize: Scalable Continual Learning in Semiparametric Models with Mixture-of-Neighbors Induction Memory",
+    "AIMMerging: Adaptive Iterative Model Merging Using Training Trajectories for Language Model Continual Learning",
+    "ADAM: An Embodied Causal Agent in Open-World Environments",
+    "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+    "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+    "Transformer-Squared: Self-adaptive LLMs",
+    "Continuously Updating Digital Twins using Large Language Models",
+    "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+    "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models",
+    "LLM-Assisted Semantically Diverse Teammate Generation for Efficient Multi-agent Coordination",
+    "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction"
+  ],
+  "paper_count": 12,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability of a model to acquire new skills and knowledge over time from new data without degrading performance on previously learned tasks.",
+      "paper": "Transformer-Squared: Self-adaptive LLMs",
+      "original_name": "Continual learning"
+    },
+    {
+      "text": "The agent's capacity to continuously acquire and integrate new knowledge and skills from ongoing interaction with an open-world environment.",
+      "paper": "ADAM: An Embodied Causal Agent in Open-World Environments",
+      "original_name": "Lifelong learning"
+    },
+    {
+      "text": "The latent ability of a model to integrate new information, such as updated data or knowledge, without requiring parameter updates or re-training, enabling persistent relevance in evolving environments.",
+      "paper": "Continuously Updating Digital Twins using Large Language Models",
+      "original_name": "Continuous learning capability"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+      "evidence": "However, due to the continual learning process with limited data, FCRE models are often biased toward the current task, facing the challenges of overfitting (Hawkins, 2004) and Catastrophic forgetting (Thrun and Mitchell, 1995; Le et al., 2024a; Hai et al., 2024; Van et al., 2022; Phan et al., 2022). (Section 1)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction"
+        ],
+        "iclr24": [
+          "Scalable Language Model with Generalized Continual Learning"
+        ],
+        "iclr25": [
+          "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+          "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+          "Scalable Bayesian Learning with posteriors"
+        ],
+        "icml25": [
+          "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Causal discovery",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ADAM: An Embodied Causal Agent in Open-World Environments",
+      "evidence": "Newly discovered items enable the execution of new unknown actions and the CD on these actions. This iterative process ensures the lifelong learning through continuous engagement and adaptation.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ADAM: An Embodied Causal Agent in Open-World Environments"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SQuAD v1.1",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+      "evidence": "Continual Fine-Tuning: (a) SQuAD (Rajpurkar et al., 2016) paired with HotpotQA... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DELIFT: Data Efficient Language model Instruction Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HotpotQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+      "evidence": "Continual Fine-Tuning: (a) SQuAD (Rajpurkar et al., 2016) paired with HotpotQA... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DELIFT: Data Efficient Language model Instruction Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PG-19",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scalable Bayesian Learning with posteriors",
+      "evidence": "We consider the problem of episodal continual learning (Kirkpatrick et al., 2017; Nguyen et al., 2017) where each episode\u2019s data, yn, is one of 20 books from the PG19 (Rae et al., 2019) dataset",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scalable Bayesian Learning with posteriors"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Relation extraction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction",
+      "evidence": "Few-shot Continual Relation Extraction (FCRE) has emerged as a significant challenge in information extraction, necessitating that relation extraction (RE) systems can sequentially identify new relations with limited labeled samples. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Knowledge transfer",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+      "evidence": "Previous CL research posits that an effective CL method should address two primary challenges: 1) Catastrophic Forgetting (CF) ... and 2) Knowledge Transfer (KT), which includes both forward transfer and backward transfer. (Section 2.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Super-NaturalInstructions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+      "evidence": "We conducted experiments on two CL benchmarks, including SuperNI Benchmark (Wang et al., 2022a) and Long Sequence Benchmark (Razdaibiedina et al., 2023). (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 8,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 7,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage treats continual learning as a model ability to acquire new skills, tasks, or knowledge over time from new or streaming data while retaining performance on what was learned before. Most versions make avoidance of catastrophic forgetting explicit, describing learning without degrading performance or retaining prior information while new tasks arrive \"in a streaming fashion.\" Smaller strands broaden this to lifelong learning from ongoing interaction with an open-world environment, narrow it to learning a sequence of tasks without retraining on past data, or specify continuous updating that integrates new information without parameter updates or retraining."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most commonly organize the construct around sequential, streaming, or episodic task settings, with a single model adapting to task sequences such as {T1, T2, ... TK} or series of novel relations. A smaller line of work places application-specific variants under it, for example few-shot continual relation extraction, described as \"a branch of continual information extraction.\" One paper frames effective continual learning methods around two recurring challenges, catastrophic forgetting and knowledge transfer, including forward and backward transfer, and papers use neighboring labels, with lifelong learning and continuous learning capability highlighting open-world interaction, adaptive safety checking, or parameter-update-free integration of new information."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is linked to four measurement instruments and four behavioral indicators. The instruments are all task or benchmark setups: HotpotQA and SQuAD v1.1 appear in continual fine-tuning, PG-19 is used in episodal continual learning with book-level episodes, and Super-NaturalInstructions is used as a continual learning benchmark; one paper also evaluates \"learning against forgetting\" by tracking results across test sets over the continual learning process. Among behavioral indicators, catastrophic forgetting is the most frequent, followed by causal discovery, few-shot task performance, and relation extraction. These operationalizations mostly follow the sequential-learning and retention framing, whereas the version defined as integrating new information without parameter updates is not reflected in the linked instruments."
+    },
+    {
+      "label": "Links.",
+      "text": "Catastrophic forgetting is related to continual learning in several papers, which describe continual learning as assimilating new data without forgetting old knowledge or as learning multiple tasks without forgetting; in a separate claim, one paper reports a causal relationship from continual learning to catastrophic forgetting in few-shot continual relation extraction. Single papers also claim a causal relationship from continual learning to generalization, and from causal discovery to continual learning through continuous engagement and adaptation. Continual learning is also related to knowledge transfer, few-shot task performance, and relation extraction."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define continual learning as a model or agent acquiring new tasks, skills, or knowledge over time from new or streaming experience while retaining previously learned capabilities, often explicitly framed as avoiding catastrophic forgetting. A few papers restate this in open-world or narrower application settings, and one outlier emphasizes integrating updates without retraining, but the dominant core definition is the same.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "complementary",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage treats continual learning as a model ability to acquire new skills, tasks, or knowledge over time from new or streaming data while retaining performance on what was learned before. Most versions make avoidance of catastrophic forgetting explicit, describing learning without degrading performance or retaining prior information while new tasks arrive \"in a streaming fashion.\" Smaller strands broaden this to lifelong learning from ongoing interaction with an open-world environment, narrow it to learning a sequence of tasks without retraining on past data, or specify continuous updating that integrates new information without parameter updates or retraining.\n\nSpace of facets. Papers most commonly organize the construct around sequential, streaming, or episodic task settings, with a single model adapting to task sequences such as {T1, T2, ... TK} or series of novel relations. A smaller line of work places application-specific variants under it, for example few-shot continual relation extraction, described as \"a branch of continual information extraction.\" One paper frames effective continual learning methods around two recurring challenges, catastrophic forgetting and knowledge transfer, including forward and backward transfer, and papers use neighboring labels, with lifelong learning and continuous learning capability highlighting open-world interaction, adaptive safety checking, or parameter-update-free integration of new information.\n\nSpace of measurement. Operationalization is linked to four measurement instruments and four behavioral indicators. The instruments are all task or benchmark setups: HotpotQA and SQuAD v1.1 appear in continual fine-tuning, PG-19 is used in episodal continual learning with book-level episodes, and Super-NaturalInstructions is used as a continual learning benchmark; one paper also evaluates \"learning against forgetting\" by tracking results across test sets over the continual learning process. Among behavioral indicators, catastrophic forgetting is the most frequent, followed by causal discovery, few-shot task performance, and relation extraction. These operationalizations mostly follow the sequential-learning and retention framing, whereas the version defined as integrating new information without parameter updates is not reflected in the linked instruments.\n\nLinks. Catastrophic forgetting is related to continual learning in several papers, which describe continual learning as assimilating new data without forgetting old knowledge or as learning multiple tasks without forgetting; in a separate claim, one paper reports a causal relationship from continual learning to catastrophic forgetting in few-shot continual relation extraction. Single papers also claim a causal relationship from continual learning to generalization, and from causal discovery to continual learning through continuous engagement and adaptation. Continual learning is also related to knowledge transfer, few-shot task performance, and relation extraction.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection",
+      "Learn to Memorize: Scalable Continual Learning in Semiparametric Models with Mixture-of-Neighbors Induction Memory"
+    ],
+    "emnlp25": [
+      "AIMMerging: Adaptive Iterative Model Merging Using Training Trajectories for Language Model Continual Learning"
+    ],
+    "iclr25": [
+      "ADAM: An Embodied Causal Agent in Open-World Environments",
+      "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+      "LeanAgent: Lifelong Learning for Formal Theorem Proving",
+      "Transformer-Squared: Self-adaptive LLMs"
+    ],
+    "icml25": [
+      "Continuously Updating Digital Twins using Large Language Models",
+      "Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models",
+      "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models",
+      "LLM-Assisted Semantically Diverse Teammate Generation for Efficient Multi-agent Coordination"
+    ],
+    "naacl25": [
+      "Enhancing Discriminative Representation in Similar Relation Clusters for Few-Shot Continual Relation Extraction"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 1,
+    "iclr25": 4,
+    "icml25": 4,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

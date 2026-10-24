@@ -1,0 +1,92 @@
+{
+  "canonical_name": "MiniCheck",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, MiniCheck is most commonly characterized as an automatic metric used to evaluate the faithfulness of generated text. It is frequently defined as a trained, distilled Natural Language Inference (NLI) model that assesses summary-document entailment. Papers operationalize this by using MiniCheck to generate an entailment score between a claim and its evidence or to score the consistency of individual statements against source documents. The primary construct it is used to measure is Faithfulness, with some papers also describing it as a \"hallucination detector\" that classifies whether content is supported by context (\"Does Context Matter? ContextualJudgeBench for Evaluating LLM-based Judges in Contextual Settings\"). The evaluation process is noted to sometimes involve internal document chunking, comparing generated summary sentences against these chunks. A less common framing describes it simply as a \"verifier\" model, used alongside other verifiers like AlignScore. Its application is noted in summarization tasks and long-context settings, where one study reports its efficacy is \"comparable to GPT-4 performance\" (\"On Positional Bias of Faithfulness for Long-form Summarization\").",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "metric",
+  "names": [
+    "MiniCheck",
+    "Minicheck"
+  ],
+  "papers": [
+    "Does Context Matter? ContextualJudgeBench for Evaluating LLM-based Judges in Contextual Settings",
+    "From Information to Insight: Leveraging LLMs for Open Aspect-Based Educational Summarization",
+    "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+    "Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization",
+    "CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models",
+    "Identifying and Answering Questions with False Assumptions: An Interpretable Approach",
+    "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+    "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+    "On Positional Bias of Faithfulness for Long-form Summarization"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A model used as a verifier to generate an entailment score between 0 and 1 for a claim and its corresponding evidence.",
+      "paper": "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+      "original_name": "Minicheck"
+    },
+    {
+      "text": "An automatic faithfulness metric based on a distilled NLI model that evaluates summary-document entailment, used here in long-context settings with document-level aggregation.",
+      "paper": "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+      "original_name": "MiniCheck"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "On Positional Bias of Faithfulness for Long-form Summarization",
+      "evidence": "To do so, we calculate the Minicheck faithfulness score with respect to all documents individually.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "On Positional Bias of Faithfulness for Long-form Summarization"
+        ],
+        "emnlp25": [
+          "CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, MiniCheck is most commonly characterized as an automatic metric used to evaluate the faithfulness of generated text. It is frequently defined as a trained, distilled Natural Language Inference (NLI) model that assesses summary-document entailment. Papers operationalize this by using MiniCheck to generate an entailment score between a claim and its evidence or to score the consistency of individual statements against source documents. The primary construct it is used to measure is Faithfulness, with some papers also describing it as a \"hallucination detector\" that classifies whether content is supported by context (\"Does Context Matter? ContextualJudgeBench for Evaluating LLM-based Judges in Contextual Settings\"). The evaluation process is noted to sometimes involve internal document chunking, comparing generated summary sentences against these chunks. A less common framing describes it simply as a \"verifier\" model, used alongside other verifiers like AlignScore. Its application is noted in summarization tasks and long-context settings, where one study reports its efficacy is \"comparable to GPT-4 performance\" (\"On Positional Bias of Faithfulness for Long-form Summarization\").",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Does Context Matter? ContextualJudgeBench for Evaluating LLM-based Judges in Contextual Settings",
+      "From Information to Insight: Leveraging LLMs for Open Aspect-Based Educational Summarization",
+      "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+      "Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization"
+    ],
+    "emnlp25": [
+      "CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models",
+      "Identifying and Answering Questions with False Assumptions: An Interpretable Approach"
+    ],
+    "naacl25": [
+      "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+      "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+      "On Positional Bias of Faithfulness for Long-form Summarization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 2,
+    "naacl25": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "naacl25"
+  ]
+}

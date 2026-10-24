@@ -1,0 +1,298 @@
+{
+  "canonical_name": "Self-verification",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage is a second-pass check of an already produced answer or solution, aimed at judging its correctness, reliability, or consistency before acceptance. Most descriptions make the model verify its own output by generating and executing a checking procedure, often code-based, by comparing answers from different prompts and accepting the answer only when they match, or by checking consistency with a given context, sometimes framed as entailment. Depending on the formulation, the judgment can come from the same model, from agreement across prompts, from a completed continuation or peer judgment, from a reviewer agent, or from comparison with a reference answer; a smaller line of work extends the behavior to re-solving or double-checking after a failed check.\n\nVariants. Papers use several closely related names, most often answer verification and self-verification, with one paper calling it double-checking. The studied variants include code-based self-verification that can review and adjust a solution after a false result, consistency-based checking across prompts, entailment-style context-grounded verification, reviewer cross-checking across complementary sources or modalities, and a self-verification module that sends the model back to solve again when the prior reasoning is judged incorrect. Related task settings include table question answering and other binary decision tasks.\n\nSpace of elicitation and scores. Papers link this behavior to one measurement instrument, Game of 24, presented as a problem setting where verification is easier than solving; the recorded link is related rather than measured_by. Apart from that related link, papers operationalize self-verification procedurally, such as executing verification code, checking whether answers from different prompts match, framing verification as entailment against context, or using a reviewer to cross-check an answer with complementary sources. In a related answer-verification setup, one paper also describes outcome labels of Correct, Incorrect, and Invalid when comparing a response with a reference answer.\n\nWhat it is taken as evidence of. Papers link self-verification to six constructs rather than repeatedly using it as evidence of one construct. It is related to Calibration, Context faithfulness, and Self-awareness; one paper claims a causal relationship from Metacognition to Self-verification; and other papers claim causal relationships from Self-verification to Reasoning and Reliability. Across the papers, these construct links are mixed in both content and direction.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Answer verification",
+    "Self-verification",
+    "Double-checking"
+  ],
+  "papers": [
+    "A Survey of Post-Training Scaling in Large Language Models",
+    "S2R: TeachingLLMs to Self-verify and Self-correct via Reinforcement Learning",
+    "What Makes a Good Natural Language Prompt?",
+    "CompassVerifier: A Unified and Robust Verifier for LLMs Evaluation and Outcome Reward",
+    "DocAgent: An Agentic Framework for Multi-Modal Long-Context Document Understanding",
+    "Large Language Model Cascades with Mixture of Thought Representations for Cost-Efficient Reasoning",
+    "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+    "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search",
+    "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+    "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver",
+    "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA",
+    "Do NOT Think That Much for 2+3=? On the Overthinking of Long Reasoning Models",
+    "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification",
+    "T1: Advancing Language Model Reasoning through Reinforcement Learning and Inference Scaling",
+    "Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment",
+    "LLM-Human Pipeline for Cultural Grounding of Conversations",
+    "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection",
+    "AutoMix: Automatically Mixing Language Models",
+    "Unveiling the Tapestry of Consistency in Large Vision-Language Models"
+  ],
+  "paper_count": 19,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior of generating and executing a specific procedure, typically code-based, to check the validity of a previously derived answer.",
+      "paper": "Large Language Model Cascades with Mixture of Thought Representations for Cost-Efficient Reasoning",
+      "original_name": "Answer verification"
+    },
+    {
+      "text": "The observable process where a model assesses the correctness or reliability of its own generated output, typically by checking for consistency with a given context.",
+      "paper": "AutoMix: Automatically Mixing Language Models",
+      "original_name": "Self-verification"
+    },
+    {
+      "text": "The observable behavior of generating a subsequent solution to verify or re-evaluate a previously generated solution, often using the same reasoning strategy.",
+      "paper": "Do NOT Think That Much for 2+3=? On the Overthinking of Long Reasoning Models",
+      "original_name": "Double-checking"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Iterative refinement",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+      "evidence": "Incorporated with CSV, the model becomes capable of using code to verify answers, then reviewing and adjusting how it arrived at the solution if the verification result is False, aiming at obtaining the correct answer.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Context faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "AutoMix: Automatically Mixing Language Models",
+      "evidence": "Furthermore, AutoMix is designed with a dialogue-related or context-grounded reasoning setup in mind for effective self-verification, which does not include tasks like factual question-answering and commonsense reasoning. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AutoMix: Automatically Mixing Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Calibration",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "AutoMix: Automatically Mixing Language Models",
+      "evidence": "\"prior works have shown self-verification is not particularly effective for reasoning tasks and is often noisy and ill-calibrated\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AutoMix: Automatically Mixing Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Table question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA",
+      "evidence": "Most LLM-based TableQA methods can be divided into three phases: question decomposition (Lewkowycz et al., 2022; Liu et al., 2022; Fu et al., 2022; Pasupat & Liang, 2015), sub-question TableQA reasoning and answer verification (Madaan et al., 2024; Ni et al., 2023).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Game of 24",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search",
+      "evidence": "It is particularly useful for problems where verification is significantly easier than solving the problem itself, e.g., the Game of 24 (Yao et al., 2024). (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Binary decision making",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment",
+      "evidence": "A binary decision task, such as yes-no QA or answer verification, represents a major real-world scenario (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification",
+      "evidence": "...enables LLMs to self-correct their outputs through self-verification.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Self-awareness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification",
+      "evidence": "\u201cSelf-awareness, i.e., the ability to assess and correct one\u2019s generation\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reliability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "DocAgent: An Agentic Framework for Multi-Modal Long-Context Document Understanding",
+      "evidence": "Reviewer agent \u2013 Verifies and refines the initial answer to improve accuracy and reliability (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "DocAgent: An Agentic Framework for Multi-Modal Long-Context Document Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Metacognition",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What Makes a Good Natural Language Prompt?",
+      "evidence": "Metacognition: This assesses prompts in explicitly guiding models to reason, self-monitor, and self-verify outputs to meet expectations and enhance reliability (e.b. Wang and Zhao (2024)).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "What Makes a Good Natural Language Prompt?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification",
+      "evidence": "\u201cThe core idea of ReVISE is to enable LLMs to verify their reasoning processes\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 11,
+  "incoming_relationship_count": 7,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage is a second-pass check of an already produced answer or solution, aimed at judging its correctness, reliability, or consistency before acceptance. Most descriptions make the model verify its own output by generating and executing a checking procedure, often code-based, by comparing answers from different prompts and accepting the answer only when they match, or by checking consistency with a given context, sometimes framed as entailment. Depending on the formulation, the judgment can come from the same model, from agreement across prompts, from a completed continuation or peer judgment, from a reviewer agent, or from comparison with a reference answer; a smaller line of work extends the behavior to re-solving or double-checking after a failed check."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several closely related names, most often answer verification and self-verification, with one paper calling it double-checking. The studied variants include code-based self-verification that can review and adjust a solution after a false result, consistency-based checking across prompts, entailment-style context-grounded verification, reviewer cross-checking across complementary sources or modalities, and a self-verification module that sends the model back to solve again when the prior reasoning is judged incorrect. Related task settings include table question answering and other binary decision tasks."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to one measurement instrument, Game of 24, presented as a problem setting where verification is easier than solving; the recorded link is related rather than measured_by. Apart from that related link, papers operationalize self-verification procedurally, such as executing verification code, checking whether answers from different prompts match, framing verification as entailment against context, or using a reviewer to cross-check an answer with complementary sources. In a related answer-verification setup, one paper also describes outcome labels of Correct, Incorrect, and Invalid when comparing a response with a reference answer."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link self-verification to six constructs rather than repeatedly using it as evidence of one construct. It is related to Calibration, Context faithfulness, and Self-awareness; one paper claims a causal relationship from Metacognition to Self-verification; and other papers claim causal relationships from Self-verification to Reasoning and Reliability. Across the papers, these construct links are mixed in both content and direction."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage is a second-pass check of an already produced answer or solution, aimed at judging its correctness, reliability, or consistency before acceptance. Most descriptions make the model verify its own output by generating and executing a checking procedure, often code-based, by comparing answers from different prompts and accepting the answer only when they match, or by checking consistency with a given context, sometimes framed as entailment. Depending on the formulation, the judgment can come from the same model, from agreement across prompts, from a completed continuation or peer judgment, from a reviewer agent, or from comparison with a reference answer; a smaller line of work extends the behavior to re-solving or double-checking after a failed check.\n\nVariants. Papers use several closely related names, most often answer verification and self-verification, with one paper calling it double-checking. The studied variants include code-based self-verification that can review and adjust a solution after a false result, consistency-based checking across prompts, entailment-style context-grounded verification, reviewer cross-checking across complementary sources or modalities, and a self-verification module that sends the model back to solve again when the prior reasoning is judged incorrect. Related task settings include table question answering and other binary decision tasks.\n\nSpace of elicitation and scores. Papers link this behavior to one measurement instrument, Game of 24, presented as a problem setting where verification is easier than solving; the recorded link is related rather than measured_by. Apart from that related link, papers operationalize self-verification procedurally, such as executing verification code, checking whether answers from different prompts match, framing verification as entailment against context, or using a reviewer to cross-check an answer with complementary sources. In a related answer-verification setup, one paper also describes outcome labels of Correct, Incorrect, and Invalid when comparing a response with a reference answer.\n\nWhat it is taken as evidence of. Papers link self-verification to six constructs rather than repeatedly using it as evidence of one construct. It is related to Calibration, Context faithfulness, and Self-awareness; one paper claims a causal relationship from Metacognition to Self-verification; and other papers claim causal relationships from Self-verification to Reasoning and Reliability. Across the papers, these construct links are mixed in both content and direction.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Survey of Post-Training Scaling in Large Language Models",
+      "S2R: TeachingLLMs to Self-verify and Self-correct via Reinforcement Learning",
+      "What Makes a Good Natural Language Prompt?"
+    ],
+    "emnlp25": [
+      "CompassVerifier: A Unified and Robust Verifier for LLMs Evaluation and Outcome Reward",
+      "DocAgent: An Agentic Framework for Multi-Modal Long-Context Document Understanding"
+    ],
+    "iclr24": [
+      "Large Language Model Cascades with Mixture of Thought Representations for Cost-Efficient Reasoning",
+      "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification"
+    ],
+    "iclr25": [
+      "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search",
+      "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+      "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver",
+      "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA"
+    ],
+    "icml25": [
+      "Do NOT Think That Much for 2+3=? On the Overthinking of Long Reasoning Models",
+      "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification",
+      "T1: Advancing Language Model Reasoning through Reinforcement Learning and Inference Scaling"
+    ],
+    "naacl25": [
+      "Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment",
+      "LLM-Human Pipeline for Cultural Grounding of Conversations",
+      "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection"
+    ],
+    "neurips24": [
+      "AutoMix: Automatically Mixing Language Models",
+      "Unveiling the Tapestry of Consistency in Large Vision-Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 2,
+    "iclr24": 2,
+    "iclr25": 4,
+    "icml25": 3,
+    "naacl25": 3,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

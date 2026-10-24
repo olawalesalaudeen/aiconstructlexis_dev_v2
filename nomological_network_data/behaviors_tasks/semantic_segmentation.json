@@ -1,0 +1,184 @@
+{
+  "canonical_name": "Semantic segmentation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Most commonly, papers describe this behavior as classifying each pixel in an image into a predefined set of semantic categories, or assigning pixel-level labels to image regions corresponding to semantic categories. A smaller line of work uses an object-centric formulation, where the task is to generate pixel-level masks for specific objects within a visual input. Across these formulations, the observable output is either per-pixel semantic labels or pixel-level masks for target objects.\n\nVariants. Papers use both semantic segmentation and object segmentation labels. Beyond the prevailing per-pixel labeling setup, one paper studies an object-centric variant that segments objects by matching them to logically inferred image regions and then performing object segmentation on extracted cropped image regions of the target objects. Other mentions place the task in cross-view adaptation across data distributions, in open-vocabulary settings, and one paper relates image restoration to it by using segmentation as a downstream task on COCO 2017 and ADE20K.\n\nSpace of elicitation and scores. Across papers, semantic segmentation is measured by four linked instruments, all used as dataset-based evaluations. ADE20K is the most frequently linked instrument, and papers also use Hypersim, MS-COCO, and ScanNet; the snippets describe ADE20K and Hypersim as semantic segmentation evaluations, COCO as semantic and instance segmentation, and ScanNet as a segmentation dataset with semantic classes for evaluation. Dataset evaluation is the prevailing operationalization in the linked work.\n\nWhat it is taken as evidence of. Papers do not present multiple construct links here. The only linked construct is Semantic understanding, and one paper relates semantic segmentation to it by stating that segmentation evaluates a model's ability to assign semantic labels to each pixel, thereby assessing semantic understanding. No other construct framing is linked in the papers.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Semantic segmentation",
+    "Object segmentation"
+  ],
+  "papers": [
+    "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension",
+    "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities",
+    "DeiSAM: Segment Anything with Deictic Prompting",
+    "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation",
+    "EAGLE: Efficient Adaptive Geometry-based Learning in Cross-view Understanding",
+    "Fast yet Safe: Early-Exiting with Risk Control",
+    "Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding",
+    "MambaTree: Tree Topology is All You Need in State Space Model",
+    "OMG-LLaVA: Bridging Image-level, Object-level, Pixel-level Reasoning and Understanding",
+    "SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey",
+    "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of classifying each pixel in an image into a predefined set of semantic categories.",
+      "paper": "EAGLE: Efficient Adaptive Geometry-based Learning in Cross-view Understanding",
+      "original_name": "Semantic segmentation"
+    },
+    {
+      "text": "The action of generating pixel-level masks for specific objects within a visual input.",
+      "paper": "DeiSAM: Segment Anything with Deictic Prompting",
+      "original_name": "Object segmentation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ADE20K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation",
+      "evidence": "Evaluation on COCO val2017 (object detection & instance segmentation) and ADE20K (semantic segmentation). (Table 2)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation",
+          "MambaTree: Tree Topology is All You Need in State Space Model",
+          "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities",
+          "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MS-COCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities",
+      "evidence": "In table 1, we evaluate the performance on DIODE [90] surface normal and depth estimation, COCO [57] semantic and instance segmentation, 3DPW [91] 3D human pose estimation, and do ImageNet-1K [79] kNN retrieval using predicted DINOv2 global tokens. (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hypersim",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities",
+      "evidence": "We perform multimodal transfers on NYUv2, Hypersim [75] semantic segmentation, and 3D object detection on ARKitScenes. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Semantic understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding",
+      "evidence": "Segmentation evaluates the model\u2019s ability to assign semantic labels to each pixel, assessing semantic understanding",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ScanNet",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding",
+      "evidence": "We conduct the experiments on the ScanNet [20] segmentation dataset which has 1,201 and 312 scenes for training and validation, respectively, with a total of 20 semantic classes for evaluation.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Image restoration",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation",
+      "evidence": "\u201cwe assess the benefits of image restoration for downstream high-level vision tasks by conducting detection and segmentation experiments on the COCO 2017 [45] and ADE20K [94] datasets\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 5,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most commonly, papers describe this behavior as classifying each pixel in an image into a predefined set of semantic categories, or assigning pixel-level labels to image regions corresponding to semantic categories. A smaller line of work uses an object-centric formulation, where the task is to generate pixel-level masks for specific objects within a visual input. Across these formulations, the observable output is either per-pixel semantic labels or pixel-level masks for target objects."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use both semantic segmentation and object segmentation labels. Beyond the prevailing per-pixel labeling setup, one paper studies an object-centric variant that segments objects by matching them to logically inferred image regions and then performing object segmentation on extracted cropped image regions of the target objects. Other mentions place the task in cross-view adaptation across data distributions, in open-vocabulary settings, and one paper relates image restoration to it by using segmentation as a downstream task on COCO 2017 and ADE20K."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Across papers, semantic segmentation is measured by four linked instruments, all used as dataset-based evaluations. ADE20K is the most frequently linked instrument, and papers also use Hypersim, MS-COCO, and ScanNet; the snippets describe ADE20K and Hypersim as semantic segmentation evaluations, COCO as semantic and instance segmentation, and ScanNet as a segmentation dataset with semantic classes for evaluation. Dataset evaluation is the prevailing operationalization in the linked work."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not present multiple construct links here. The only linked construct is Semantic understanding, and one paper relates semantic segmentation to it by stating that segmentation evaluates a model's ability to assign semantic labels to each pixel, thereby assessing semantic understanding. No other construct framing is linked in the papers."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Most commonly, papers describe this behavior as classifying each pixel in an image into a predefined set of semantic categories, or assigning pixel-level labels to image regions corresponding to semantic categories. A smaller line of work uses an object-centric formulation, where the task is to generate pixel-level masks for specific objects within a visual input. Across these formulations, the observable output is either per-pixel semantic labels or pixel-level masks for target objects.\n\nVariants. Papers use both semantic segmentation and object segmentation labels. Beyond the prevailing per-pixel labeling setup, one paper studies an object-centric variant that segments objects by matching them to logically inferred image regions and then performing object segmentation on extracted cropped image regions of the target objects. Other mentions place the task in cross-view adaptation across data distributions, in open-vocabulary settings, and one paper relates image restoration to it by using segmentation as a downstream task on COCO 2017 and ADE20K.\n\nSpace of elicitation and scores. Across papers, semantic segmentation is measured by four linked instruments, all used as dataset-based evaluations. ADE20K is the most frequently linked instrument, and papers also use Hypersim, MS-COCO, and ScanNet; the snippets describe ADE20K and Hypersim as semantic segmentation evaluations, COCO as semantic and instance segmentation, and ScanNet as a segmentation dataset with semantic classes for evaluation. Dataset evaluation is the prevailing operationalization in the linked work.\n\nWhat it is taken as evidence of. Papers do not present multiple construct links here. The only linked construct is Semantic understanding, and one paper relates semantic segmentation to it by stating that segmentation evaluates a model's ability to assign semantic labels to each pixel, thereby assessing semantic understanding. No other construct framing is linked in the papers.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension"
+    ],
+    "neurips24": [
+      "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities",
+      "DeiSAM: Segment Anything with Deictic Prompting",
+      "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation",
+      "EAGLE: Efficient Adaptive Geometry-based Learning in Cross-view Understanding",
+      "Fast yet Safe: Early-Exiting with Risk Control",
+      "Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding",
+      "MambaTree: Tree Topology is All You Need in State Space Model",
+      "OMG-LLaVA: Bridging Image-level, Object-level, Pixel-level Reasoning and Understanding",
+      "SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey",
+      "VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 1,
+    "neurips24": 10
+  },
+  "conferences": [
+    "iclr25",
+    "neurips24"
+  ]
+}

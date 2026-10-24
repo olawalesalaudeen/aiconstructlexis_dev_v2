@@ -1,0 +1,424 @@
+{
+  "canonical_name": "Privacy leakage",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats privacy leakage as observable disclosure of sensitive, private, or personally identifiable information in model outputs. Most definitions count leakage when a model reveals protected content after adversarial prompting, prompt injection, or other manipulation, though some papers describe it under simple natural questions or under a good-faith assumption that any request is trustworthy. Success is variously defined as outputting protected information, reproducing memorized training content, inferring additional hidden fragments from a few known ones, or revealing all or part of a system prompt or access code; a smaller line defines leakage relative to context, such as disclosing information forbidden by a user-defined security policy or in situations where it should be withheld.\n\nVariants. Frequently studied variants include prompt or system prompt extraction, PII leakage or extraction, training-data-focused leakage such as training data extraction and fragment inference, and agent-side data stealing or full request leakage. Other papers place the behavior in generated summaries, in reasoning traces as well as final answers, in simple non-adversarial question answering, or in multimodal settings where both a private image and its associated text are exposed.\n\nSpace of elicitation and scores. Papers link this behavior to 5 measurement instruments, most often Membership inference attack, followed by DecodingTrust, InjecAgent, MUSE, and Mind2Web. These instruments span privacy auditing attacks, benchmarks, and datasets: Membership inference attack is used to evaluate member versus non-member differences and membership leakage, DecodingTrust is used through an Enron email extraction task, InjecAgent tests direct harm and data stealing attacks, MUSE includes no privacy leakage as one of its evaluation properties, and Mind2Web is used for action steps involving diverse PII categories on realistic websites.\n\nWhat it is taken as evidence of. Papers link privacy leakage to 3 constructs. The most common construct-level link is to memorization: papers claim a causal relationship from memorization to privacy leakage, describing leakage as arising when models memorize training data verbatim or when PII embedded in training data can be extracted. Privacy leakage is also used to measure privacy preservation and is otherwise reported as related to it, while one paper reports it is related to generation diversity through reduced leakage risk without compromising diversity.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Sensitive information exposure",
+    "System prompt extraction",
+    "Fragment inference",
+    "Data stealing",
+    "Sensitive information leakage",
+    "Privacy leakage",
+    "Image-text pair leakage",
+    "Good faith disclosure",
+    "PII leakage",
+    "Information leakage",
+    "Training data extraction",
+    "PII extraction",
+    "Specific PII leakage",
+    "Full request leakage",
+    "Semantic sensitive information generation",
+    "Private information leakage",
+    "Prompt extraction",
+    "System prompt leakage"
+  ],
+  "papers": [
+    "A Fully Probabilistic Perspective on Large Language Model Unlearning: Evaluation and Optimization",
+    "Beyond Text: Unveiling Privacy Vulnerabilities in Multi-modal Retrieval-Augmented Generation",
+    "How Private are Language Models in Abstractive Summarization?",
+    "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+    "Keep Security! Benchmarking Security Policy Preservation in Large Language Model Contexts Against Indirect Attacks in Question Answering",
+    "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers",
+    "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+    "Retracing the Past: LLMs Emit Training Data When They Get Lost",
+    "Teach LLMs to Phish: Stealing Private Information from Language Models",
+    "Can LLMs Keep a Secret? Testing  Privacy  Implications of Language Models  via Contextual Integrity Theory",
+    "Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game",
+    "A Benchmark for Semantic Sensitive Information in LLMs Outputs",
+    "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+    "Scalable Extraction of Training Data from Aligned, Production Language Models",
+    "Proactive Privacy Amnesia for Large Language Models: Safeguarding PII with Negligible Impact on Model Utility",
+    "AdvAgent: Controllable Blackbox Red-teaming on Web Agents",
+    "Fragments to Facts: Partial-Information Fragment Inference from LLMs",
+    "The Illusion of Role Separation: Hidden Shortcuts in LLM Role Learning (and How to Fix Them)",
+    "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning",
+    "Gandalf the Red: Adaptive Security for LLMs",
+    "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+    "PAPILLON: Privacy Preservation from Internet-based and Local Language Model Ensembles"
+  ],
+  "paper_count": 22,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable act of using a small set of known text fragments from a training sample to infer additional, unknown fragments from the same sample by querying a model.",
+      "paper": "Fragments to Facts: Partial-Information Fragment Inference from LLMs",
+      "original_name": "Fragment inference"
+    },
+    {
+      "text": "An observable attack behavior where the model is manipulated into revealing its confidential system instructions or prompts.",
+      "paper": "The Illusion of Role Separation: Hidden Shortcuts in LLM Role Learning (and How to Fix Them)",
+      "original_name": "System prompt extraction"
+    },
+    {
+      "text": "Revealing sensitive information as a result of malicious prompt injection or adversarial manipulation.",
+      "paper": "AdvAgent: Controllable Blackbox Red-teaming on Web Agents",
+      "original_name": "Sensitive information exposure"
+    },
+    {
+      "text": "The malicious act of accessing and exfiltrating sensitive or private information, such as emails or payment methods.",
+      "paper": "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning",
+      "original_name": "Data stealing"
+    },
+    {
+      "text": "The unintended disclosure of hazardous or private knowledge in either final answers or reasoning traces, despite unlearning attempts.",
+      "paper": "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+      "original_name": "Sensitive information leakage"
+    },
+    {
+      "text": "The observable reproduction of sensitive or personally identifiable information from training data in model outputs.",
+      "paper": "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "original_name": "Privacy leakage"
+    },
+    {
+      "text": "The simultaneous exposure of both a private image and its associated text (e.g., a medical image with its diagnostic caption) from a database.",
+      "paper": "Beyond Text: Unveiling Privacy Vulnerabilities in Multi-modal Retrieval-Augmented Generation",
+      "original_name": "Image-text pair leakage"
+    },
+    {
+      "text": "An observable behavior where a model discloses private information under the naive assumption that any request for data is trustworthy and made in good faith.",
+      "paper": "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers",
+      "original_name": "Good faith disclosure"
+    },
+    {
+      "text": "The observable phenomenon where a model includes personally identifiable information from the source document\u2014such as names, ages, locations, or gender\u2014in its generated summary.",
+      "paper": "How Private are Language Models in Abstractive Summarization?",
+      "original_name": "PII leakage"
+    },
+    {
+      "text": "The observable output behavior in which an LLM discloses confidential information that is explicitly prohibited by a user-defined security policy in the context.",
+      "paper": "Keep Security! Benchmarking Security Policy Preservation in Large Language Model Contexts Against Indirect Attacks in Question Answering",
+      "original_name": "Information leakage"
+    },
+    {
+      "text": "The model reveals memorized training examples in response to adversarial prompts.",
+      "paper": "Retracing the Past: LLMs Emit Training Data When They Get Lost",
+      "original_name": "Training data extraction"
+    },
+    {
+      "text": "The observable act of a model generating personally identifiable information, such as phone numbers or physical addresses, in response to prompts.",
+      "paper": "Proactive Privacy Amnesia for Large Language Models: Safeguarding PII with Negligible Impact on Model Utility",
+      "original_name": "PII extraction"
+    },
+    {
+      "text": "Causing the agent to enter a user\u2019s specific sensitive field value into an injected malicious element instead of the intended target field.",
+      "paper": "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+      "original_name": "Specific PII leakage"
+    },
+    {
+      "text": "Causing the agent to reveal the entire task request, including sensitive details beyond a single PII field.",
+      "paper": "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+      "original_name": "Full request leakage"
+    },
+    {
+      "text": "The observable act of an LLM producing text that contains semantic sensitive information, particularly in response to simple, non-adversarial prompts.",
+      "paper": "A Benchmark for Semantic Sensitive Information in LLMs Outputs",
+      "original_name": "Semantic sensitive information generation"
+    },
+    {
+      "text": "The observable act of disclosing sensitive or private information in a context where it should be withheld.",
+      "paper": "Can LLMs Keep a Secret? Testing  Privacy  Implications of Language Models  via Contextual Integrity Theory",
+      "original_name": "Private information leakage"
+    },
+    {
+      "text": "The observable behavior where an LLM outputs all or part of its system prompt or access code in response to adversarial input.",
+      "paper": "Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game",
+      "original_name": "Prompt extraction"
+    },
+    {
+      "text": "An observable attack outcome where the LLM is manipulated into revealing its confidential system prompt or initial instructions.",
+      "paper": "Gandalf the Red: Adaptive Security for LLMs",
+      "original_name": "System prompt leakage"
+    }
+  ],
+  "definition_count": 18,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Memorization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Privacy Auditing of Large Language Models",
+      "evidence": "there is also growing concern around the privacy risks of their deployment (McCallum, 2023; Bloomberg, 2023; Politico, 2023), because they can memorize some of their training data verbatim",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Privacy Auditing of Large Language Models",
+          "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models"
+        ],
+        "emnlp25": [
+          "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Membership inference attack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Differentially Private Steering for Large Language Model Alignment",
+      "evidence": "we develop the first Membership Inference Attack (MIA) for evaluating and auditing the empirical privacy for the problem of LLM steering via activation editing",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Differentially Private Steering for Large Language Model Alignment",
+          "Privacy Auditing of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Min-K% method",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Catastrophic Failure of LLM Unlearning via Quantization",
+      "evidence": "\"M3. PrivLeak, which assesses privacy preservation using the Min-K% method\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Catastrophic Failure of LLM Unlearning via Quantization"
+        ],
+        "icml25": [
+          "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Privacy preservation",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "evidence": "\"we evaluate privacy in terms of awareness and leakage\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Mind2Web",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+      "evidence": "We collect 177 action steps that involve diverse PII categories on realistic websites from the Mind2Web dataset, and conduct experiments using one of the most capable generalist web agent frameworks to date. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DecodingTrust",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking",
+      "evidence": "We use the DecodingTrust (Wang et al., 2024) privacy dataset, focusing on the Enron email extraction task. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MUSE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+      "evidence": "We address this issue by proposing MUSE, a comprehensive machine unlearning evaluation benchmark that enumerates six diverse desirable properties for unlearned models: (1) no verbatim memorization, (2) no knowledge memorization, (3) no privacy leakage, (4) utility preservation on data not intended for removal, (5) scalability with respect to the size of removal requests, and (6) sustainability over sequential unlearning requests. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MUSE: Machine Unlearning Six-Way Evaluation for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Min-K% Prob",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+      "evidence": "\"To accurately measure the privacy leakage, we employ Min-K% Prob (Shi et al., 2024a) , a state-of-the-art MIA method for LMs based on the loss\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MUSE: Machine Unlearning Six-Way Evaluation for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "InjecAgent",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning",
+      "evidence": "It tests two types of attacks: direct harm attacks ... and data stealing attacks",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LOSS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+      "evidence": "Table 2 shows that across all three attackers (lossMIA, zlibMIA, and Min-K%), all six unlearning methods and original model (no unlearning), the privacy leakage measure is significantly larger when unlearning canaries and minorities on Enron-Phone dataset for GPT-2 and Llama-2 7B respectively. (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Zlib",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning",
+      "evidence": "Table 2 shows that across all three attackers (lossMIA, zlibMIA, and Min-K%), all six unlearning methods and original model (no unlearning), the privacy leakage measure is significantly larger when unlearning canaries and minorities on Enron-Phone dataset for GPT-2 and Llama-2 7B respectively. (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Action grounding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+      "evidence": "EIA with the MI strategy can attack the action grounding stage of SeeAct and leak users' specific PII",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+      "evidence": "it has been shown in (Jiang et al., 2025; Wu et al., 2025) that reasoning traces can carry more sensitive information than final answers (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 13,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 10,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats privacy leakage as observable disclosure of sensitive, private, or personally identifiable information in model outputs. Most definitions count leakage when a model reveals protected content after adversarial prompting, prompt injection, or other manipulation, though some papers describe it under simple natural questions or under a good-faith assumption that any request is trustworthy. Success is variously defined as outputting protected information, reproducing memorized training content, inferring additional hidden fragments from a few known ones, or revealing all or part of a system prompt or access code; a smaller line defines leakage relative to context, such as disclosing information forbidden by a user-defined security policy or in situations where it should be withheld."
+    },
+    {
+      "label": "Variants.",
+      "text": "Frequently studied variants include prompt or system prompt extraction, PII leakage or extraction, training-data-focused leakage such as training data extraction and fragment inference, and agent-side data stealing or full request leakage. Other papers place the behavior in generated summaries, in reasoning traces as well as final answers, in simple non-adversarial question answering, or in multimodal settings where both a private image and its associated text are exposed."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 5 measurement instruments, most often Membership inference attack, followed by DecodingTrust, InjecAgent, MUSE, and Mind2Web. These instruments span privacy auditing attacks, benchmarks, and datasets: Membership inference attack is used to evaluate member versus non-member differences and membership leakage, DecodingTrust is used through an Enron email extraction task, InjecAgent tests direct harm and data stealing attacks, MUSE includes no privacy leakage as one of its evaluation properties, and Mind2Web is used for action steps involving diverse PII categories on realistic websites."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link privacy leakage to 3 constructs. The most common construct-level link is to memorization: papers claim a causal relationship from memorization to privacy leakage, describing leakage as arising when models memorize training data verbatim or when PII embedded in training data can be extracted. Privacy leakage is also used to measure privacy preservation and is otherwise reported as related to it, while one paper reports it is related to generation diversity through reduced leakage risk without compromising diversity."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats privacy leakage as observable disclosure of sensitive, private, or personally identifiable information in model outputs. Most definitions count leakage when a model reveals protected content after adversarial prompting, prompt injection, or other manipulation, though some papers describe it under simple natural questions or under a good-faith assumption that any request is trustworthy. Success is variously defined as outputting protected information, reproducing memorized training content, inferring additional hidden fragments from a few known ones, or revealing all or part of a system prompt or access code; a smaller line defines leakage relative to context, such as disclosing information forbidden by a user-defined security policy or in situations where it should be withheld.\n\nVariants. Frequently studied variants include prompt or system prompt extraction, PII leakage or extraction, training-data-focused leakage such as training data extraction and fragment inference, and agent-side data stealing or full request leakage. Other papers place the behavior in generated summaries, in reasoning traces as well as final answers, in simple non-adversarial question answering, or in multimodal settings where both a private image and its associated text are exposed.\n\nSpace of elicitation and scores. Papers link this behavior to 5 measurement instruments, most often Membership inference attack, followed by DecodingTrust, InjecAgent, MUSE, and Mind2Web. These instruments span privacy auditing attacks, benchmarks, and datasets: Membership inference attack is used to evaluate member versus non-member differences and membership leakage, DecodingTrust is used through an Enron email extraction task, InjecAgent tests direct harm and data stealing attacks, MUSE includes no privacy leakage as one of its evaluation properties, and Mind2Web is used for action steps involving diverse PII categories on realistic websites.\n\nWhat it is taken as evidence of. Papers link privacy leakage to 3 constructs. The most common construct-level link is to memorization: papers claim a causal relationship from memorization to privacy leakage, describing leakage as arising when models memorize training data verbatim or when PII embedded in training data can be extracted. Privacy leakage is also used to measure privacy preservation and is otherwise reported as related to it, while one paper reports it is related to generation diversity through reduced leakage risk without compromising diversity.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "A Fully Probabilistic Perspective on Large Language Model Unlearning: Evaluation and Optimization",
+      "Beyond Text: Unveiling Privacy Vulnerabilities in Multi-modal Retrieval-Augmented Generation",
+      "How Private are Language Models in Abstractive Summarization?",
+      "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "Keep Security! Benchmarking Security Policy Preservation in Large Language Model Contexts Against Indirect Attacks in Question Answering",
+      "Leaky Thoughts: Large Reasoning Models Are Not Private Thinkers",
+      "Reasoning Model Unlearning: Forgetting Traces, Not Just Answers, While Preserving Reasoning Skills",
+      "Retracing the Past: LLMs Emit Training Data When They Get Lost"
+    ],
+    "iclr24": [
+      "Teach LLMs to Phish: Stealing Private Information from Language Models",
+      "Can LLMs Keep a Secret? Testing  Privacy  Implications of Language Models  via Contextual Integrity Theory",
+      "Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game"
+    ],
+    "iclr25": [
+      "A Benchmark for Semantic Sensitive Information in LLMs Outputs",
+      "EIA: ENVIRONMENTAL INJECTION ATTACK ON GENERALIST WEB AGENTS FOR PRIVACY LEAKAGE",
+      "Scalable Extraction of Training Data from Aligned, Production Language Models",
+      "Proactive Privacy Amnesia for Large Language Models: Safeguarding PII with Negligible Impact on Model Utility"
+    ],
+    "icml25": [
+      "AdvAgent: Controllable Blackbox Red-teaming on Web Agents",
+      "Fragments to Facts: Partial-Information Fragment Inference from LLMs",
+      "The Illusion of Role Separation: Hidden Shortcuts in LLM Role Learning (and How to Fix Them)",
+      "UDora: A Unified Red Teaming Framework against LLM Agents by Dynamically Hijacking Their Own Reasoning",
+      "Gandalf the Red: Adaptive Security for LLMs"
+    ],
+    "naacl25": [
+      "ALPACA AGAINST VICUNA: Using LLMs to Uncover Memorization of LLMs",
+      "PAPILLON: Privacy Preservation from Internet-based and Local Language Model Ensembles"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 8,
+    "iclr24": 3,
+    "iclr25": 4,
+    "icml25": 5,
+    "naacl25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

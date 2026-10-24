@@ -1,0 +1,137 @@
+{
+  "canonical_name": "Attack transferability",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the common thread is persistence of attack effectiveness across changes in model or setting. One line defines it as prompt-level or embedding-level attacks developed for one model remaining effective on other models, with examples stating that generated attack prompts may transfer to GPT-4 and that embedding-level attacks may transfer to other white-box LLMs that share commonalities in their safety mechanisms. Other papers shift both the transferred object and the scope: one defines transferability as jailbreak strategies staying effective across target models, attacker models, or datasets, while another defines \"super transferability\" as a single perturbation working across data samples, domains, models, and tasks simultaneously.\n\nSpace of facets. Papers organize the concept mainly by what is transferred and across which dimensions it transfers. Some distinguish prompt-level from embedding-level transfer, some treat transferability at the level of a learned strategy library, and one uses a stronger subtype, \"super transferability,\" for a single perturbation that achieves cross-data, cross-domain, cross-model, and cross-task transfer at once. Across these uses, the same family of terms covers both model-to-model attack transfer and broader generalization across datasets, domains, or tasks.\n\nSpace of measurement. Operationalization is sparse: papers link the construct to 1 measurement instrument and no behavioral indicators. The only linked instrument is HarmBench, used in the strategy-transferability framing by fixing the strategy library without any updates and measuring HarmBench ASR, labeled Pre-ASR. Among the linked measurements, this is the only explicit operationalization, so the measured use centers on whether a fixed jailbreak strategy library maintains attack success across settings.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Attack transferability",
+    "Strategy transferability",
+    "Super transferability"
+  ],
+  "papers": [
+    "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+    "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP",
+    "Uncovering Safety Risks of Large Language Models through Concept Activation Vector"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The extent to which attacks, either at the prompt or embedding level, developed for one model are effective against other models, suggesting shared vulnerabilities in their safety mechanisms.",
+      "paper": "Uncovering Safety Risks of Large Language Models through Concept Activation Vector",
+      "original_name": "Attack transferability"
+    },
+    {
+      "text": "The extent to which discovered jailbreak strategies remain effective across different target models, attacker models, or datasets.",
+      "paper": "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+      "original_name": "Strategy transferability"
+    },
+    {
+      "text": "A property of an adversarial attack where a single perturbation is effective across different data samples, domains, models, and tasks simultaneously.",
+      "paper": "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP",
+      "original_name": "Super transferability"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+      "evidence": "\u201cwe test if the strategy library can be directly used without any updates, by fixing the strategy library and measuring the Harmbench ASR (noted as Pre-ASR).\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs",
+          "Jailbreaking as a Reward Misspecification Problem"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Jailbreaking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Stronger Universal and Transferable Attacks by Suppressing Refusals",
+      "evidence": "We evaluate each suffix on all 50 behaviors (universality) including the one it is directly optimized for and on all five target models (transferability) including the one it is optimized on. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Stronger Universal and Transferable Attacks by Suppressing Refusals"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Model similarity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring",
+      "evidence": "\u201cBuilding on previous work suggesting that aligning white-box and target models in the safety domain can improve the transferability of adversarial prompts\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the common thread is persistence of attack effectiveness across changes in model or setting. One line defines it as prompt-level or embedding-level attacks developed for one model remaining effective on other models, with examples stating that generated attack prompts may transfer to GPT-4 and that embedding-level attacks may transfer to other white-box LLMs that share commonalities in their safety mechanisms. Other papers shift both the transferred object and the scope: one defines transferability as jailbreak strategies staying effective across target models, attacker models, or datasets, while another defines \"super transferability\" as a single perturbation working across data samples, domains, models, and tasks simultaneously."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers organize the concept mainly by what is transferred and across which dimensions it transfers. Some distinguish prompt-level from embedding-level transfer, some treat transferability at the level of a learned strategy library, and one uses a stronger subtype, \"super transferability,\" for a single perturbation that achieves cross-data, cross-domain, cross-model, and cross-task transfer at once. Across these uses, the same family of terms covers both model-to-model attack transfer and broader generalization across datasets, domains, or tasks."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is sparse: papers link the construct to 1 measurement instrument and no behavioral indicators. The only linked instrument is HarmBench, used in the strategy-transferability framing by fixing the strategy library without any updates and measuring HarmBench ASR, labeled Pre-ASR. Among the linked measurements, this is the only explicit operationalization, so the measured use centers on whether a fixed jailbreak strategy library maintains attack success across settings."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define attack transferability as an attack or jailbreak developed in one setting remaining effective against other target models, and one of these also extends the scope to attacker models or datasets. A few papers broaden this to a single perturbation working across samples, domains, models, and tasks, so the definitions foreground different scopes of the same phenomenon: attack effectiveness carrying over beyond the original setting.",
+    "papers_with_definition": 3,
+    "runs": [
+      "complementary",
+      "complementary",
+      "complementary"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the common thread is persistence of attack effectiveness across changes in model or setting. One line defines it as prompt-level or embedding-level attacks developed for one model remaining effective on other models, with examples stating that generated attack prompts may transfer to GPT-4 and that embedding-level attacks may transfer to other white-box LLMs that share commonalities in their safety mechanisms. Other papers shift both the transferred object and the scope: one defines transferability as jailbreak strategies staying effective across target models, attacker models, or datasets, while another defines \"super transferability\" as a single perturbation working across data samples, domains, models, and tasks simultaneously.\n\nSpace of facets. Papers organize the concept mainly by what is transferred and across which dimensions it transfers. Some distinguish prompt-level from embedding-level transfer, some treat transferability at the level of a learned strategy library, and one uses a stronger subtype, \"super transferability,\" for a single perturbation that achieves cross-data, cross-domain, cross-model, and cross-task transfer at once. Across these uses, the same family of terms covers both model-to-model attack transfer and broader generalization across datasets, domains, or tasks.\n\nSpace of measurement. Operationalization is sparse: papers link the construct to 1 measurement instrument and no behavioral indicators. The only linked instrument is HarmBench, used in the strategy-transferability framing by fixing the strategy library without any updates and measuring HarmBench ASR, labeled Pre-ASR. Among the linked measurements, this is the only explicit operationalization, so the measured use centers on whether a fixed jailbreak strategy library maintains attack success across settings.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs"
+    ],
+    "icml25": [
+      "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP"
+    ],
+    "neurips24": [
+      "Uncovering Safety Risks of Large Language Models through Concept Activation Vector"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 1,
+    "icml25": 1,
+    "neurips24": 1
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

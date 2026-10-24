@@ -1,0 +1,783 @@
+{
+  "canonical_name": "AlpacaEval 2.0",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, the prevailing usage treats AlpacaEval 2.0 as an automatic, LLM-as-a-judge benchmark for open-ended instruction following and chat evaluation, often described as a simulated human preference evaluation. Most definitions describe pairwise comparisons in which a strong judge model such as GPT-4 compares a model response against a reference or baseline response, although one paper instead calls it a reference-free instruction-following benchmark. Several descriptions say it contains 805 questions or instructions from five datasets, while another describes 805 representative instructions from real user interactions; recurring variants include length-controlled AlpacaEval 2.0 or Alpaca-Eval V2, and smaller lines of work describe it as an updated conversation-quality version, a text-only human preference alignment benchmark, or a leaderboard.\n\nWhat it is claimed to measure. Papers use AlpacaEval 2.0 to measure 9 constructs and 6 behavioral indicators. The dominant framing centers on instruction following, especially instruction following ability, and recurring uses extend to human preference alignment, helpfulness, and alignment; one paper also says it approximately evaluates human preference for instruction following. Beyond that core, papers use it for other linked qualities and tasks rather than converging on a single additional target.\n\nSpace of uses. Across evaluation suites, papers commonly position AlpacaEval 2.0 as one of the main benchmarks, most often alongside MT-Bench and Arena-Hard, and sometimes as an in-domain evaluation or as a secondary helpfulness check in its length-controlled form. Reported usage usually involves win rate or length-controlled win rate from pairwise head-to-head judging against a baseline or reference response. Papers also link it to 3 other instruments, and one paper reports that AlpacaEval 2.0 correlates with Chatbot Arena.\n\nConcerns raised. The recurring concern is response length. Several papers describe length-controlled win rates, length-controlled regression, or a generalized linear model as ways to calibrate win rates and reduce length bias, verbosity bias, or stylistic bias, and papers say these changes are meant to provide a fairer comparison. One paper further relates AlpacaEval 2.0 to verbosity bias and says the benchmark is not robust to length cheat, noting that length-controlled win rates can exceed raw win rates for short responses.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "AlpacaEval2",
+    "AlpacaEval2.0",
+    "AlpacaEval-2",
+    "AlpacaEval 2.0",
+    "Alpaca Eval V2",
+    "Alpaca Eval 2.0",
+    "Alpaca Eval 2",
+    "Alpaca-Eval-2",
+    "AlpacaEval-V2",
+    "AlpacaEvalv2",
+    "Alpaca-Eval V2",
+    "AlpacaEval v2.0",
+    "AlpacaEval 2",
+    "Length-controlled AlpacaEval 2.0",
+    "AlpacaEval 2.0 Length Controlled",
+    "Length-Controlled AlpacaEval",
+    "AlpacaEval Leaderboard"
+  ],
+  "papers": [
+    "AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation",
+    "Aligning Large Language Models with Implicit Preferences from User-Generated Content",
+    "AutoMixAlign: Adaptive Data Mixing for Multi-Task Preference Optimization in LLMs",
+    "Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement",
+    "DavIR: Data Selection via Implicit Reward for Large Language Models",
+    "DiffPO: Diffusion-styled Preference Optimization for Inference Time Alignment of Large Language Models",
+    "Evaluating Language Models as Synthetic Data Generators",
+    "Finding the Sweet Spot: Preference Data Construction for Scaling Preference Optimization",
+    "From Real to Synthetic: Synthesizing Millions of Diversified and Complicated User Instructions with Attributed Grounding",
+    "ImPart: Importance-Aware Delta-Sparsification for Improved Model Compression and Merging in LLMs",
+    "Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process",
+    "LongReward: Improving Long-context Large Language Models with AI Feedback",
+    "Model Extrapolation Expedites Alignment",
+    "MuSC: Improving Complex Instruction Following with Multi-granularity Self-Contrastive Training",
+    "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference",
+    "Optimal Transport-Based Token Weighting scheme for Enhanced Preference Optimization",
+    "PopAlign: Diversifying Contrasting Patterns for a More Comprehensive Alignment",
+    "Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation",
+    "Towards Reward Fairness in RLHF: From a Resource Allocation Perspective",
+    "AIR: Complex Instruction Generation via Automatic Iterative Refinement",
+    "COUNTDOWN: Contextually Sparse Activation Filtering Out Unnecessary Weights in Down Projection",
+    "Following Length Constraints in Instructions",
+    "FuseChat: Knowledge Fusion of Chat Models",
+    "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+    "Icon2: Aligning Large Language Models Using Self-Synthetic Preference Data via Inherent Regulation",
+    "Improve LLM-as-a-Judge Ability as a General Ability",
+    "Improving Instruct Models for Free: A Study on Partial Adaptation",
+    "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+    "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+    "NILE: Internal Consistency Alignment in Large Language Models",
+    "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+    "Selective Preference Optimization via Token-Level Reward Function Estimation",
+    "Textual Aesthetics in Large Language Models",
+    "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+    "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization",
+    "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+    "Direct Judgement Preference Optimization",
+    "Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge",
+    "Weights-Rotated Preference Optimization for Large Language Models",
+    "A transfer learning framework for weak to strong generalization",
+    "Balancing Act: Diversity and Consistency in Large Language Model Ensembles",
+    "Better Instruction-Following Through Minimum Bayes Risk",
+    "Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models",
+    "Bootstrapping Language Models with DPO Implicit Rewards",
+    "Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization",
+    "Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates",
+    "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+    "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+    "GenARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment",
+    "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+    "Is In-Context Learning Sufficient for Instruction Following in LLMs?",
+    "Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning",
+    "Learn Your Reference Model for Real Good Alignment",
+    "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+    "MallowsPO: Fine-Tune Your LLM with Preference Dispersions",
+    "Mixture-of-Agents Enhances Large Language Model Capabilities",
+    "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+    "Online Preference Alignment for Language Models via Count-based Exploration",
+    "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+    "Post-hoc Reward Calibration: A Case Study on Length Bias",
+    "QERA: an Analytical Framework for Quantization Error Reconstruction",
+    "RRM:  Robust Reward Model Training Mitigates Reward Hacking",
+    "RainbowPO: A Unified Framework for Combining Improvements in Preference Optimization",
+    "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+    "Self-Boosting Large Language Models with  Synthetic Preference Data",
+    "Self-Play Preference Optimization for Language Model Alignment",
+    "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters",
+    "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+    "Towards Federated RLHF with Aggregated Client Preference for LLMs",
+    "Value-Incentivized Preference Optimization: A Unified Approach to Online and Offline RLHF",
+    "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+    "Weighted-Reward Preference Optimization for Implicit Model Fusion",
+    "AMPO: Active Multi Preference Optimization for Self-play Preference Selection",
+    "Active Evaluation Acquisition for Efficient LLM Benchmarking",
+    "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+    "AlphaPO: Reward Shape Matters for LLM Alignment",
+    "An Architecture Search Framework for Inference-Time Techniques",
+    "Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment",
+    "Boosting Multi-Domain Fine-Tuning of Large Language Models through Evolving Interactions between Samples",
+    "ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization",
+    "DPO Meets PPO: Reinforced Token Optimization for RLHF",
+    "Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data",
+    "Discriminative Policy Optimization for Token-Level Reward Models",
+    "Energy-Based Preference Model Offers Better Offline Alignment than the Bradley-Terry Preference Model",
+    "From Crowdsourced Data to High-quality Benchmarks: Arena-Hard and Benchbuilder Pipeline",
+    "GRAM: A Generative Foundation Reward Model for Reward Generalization",
+    "Improving Model Alignment Through Collective Intelligence of Open-Source Models",
+    "Instruction-Following Pruning for Large Language Models",
+    "Investigating Non-Transitivity in LLM-as-a-Judge",
+    "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems",
+    "LLM Alignment as Retriever Optimization: An Information Retrieval Perspective",
+    "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+    "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+    "Latent Preference Coding: Aligning Large Language Models via Discrete Latent Codes",
+    "On the Robustness of Reward Models for Language Model Alignment",
+    "Principled Data Selection for Alignment: The Hidden Risks of Difficult Examples",
+    "R.I.P.: Better Models by Survival of the Fittest Prompts",
+    "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+    "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs",
+    "Reward-Guided Speculative Decoding for Efficient LLM Reasoning",
+    "Right Now, Wrong Then: Non-Stationary Direct Preference Optimization under Preference Drift",
+    "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+    "STAIR: Improving Safety Alignment with Introspective Reasoning",
+    "TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization",
+    "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+    "Thinking LLMs: General Instruction Following with Thought Generation",
+    "Unnatural Languages Are Not Bugs but Features for LLMs",
+    "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training",
+    "DPL: Diverse Preference Learning Without A Reference Model",
+    "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+    "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+    "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models",
+    "Stronger Models are Not Always Stronger Teachers for Instruction Tuning",
+    "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism",
+    "3-in-1: 2D Rotary Adaptation for Efficient Finetuning, Efficient Batching and Composability",
+    "Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment",
+    "Instruction Tuning With Loss Over Instructions",
+    "MAmmoTH2: Scaling Instructions from the Web",
+    "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+    "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+    "UltraMedical: Building Specialized Generalists in Biomedicine",
+    "HelpSteer 2: Open-source dataset for training top-performing reward models",
+    "Time-Reversal Provides Unsupervised Feedback to LLMs"
+  ],
+  "paper_count": 123,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "AlpacaEval2 is an evaluation framework that uses strong LLMs like GPT-4 as judges to assess model performance on a set of prompts, providing a simulated human preference evaluation.",
+      "paper": "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+      "original_name": "AlpacaEval2"
+    },
+    {
+      "text": "An automatic evaluator of instruction-following models that uses pairwise comparisons to assess chat response quality against a baseline model.",
+      "paper": "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "original_name": "AlpacaEval 2"
+    },
+    {
+      "text": "An evaluation framework that uses GPT-4 to judge instruction-following responses against a reference model.",
+      "paper": "3-in-1: 2D Rotary Adaptation for Efficient Finetuning, Efficient Batching and Composability",
+      "original_name": "AlpacaEval2.0"
+    },
+    {
+      "text": "An automatic evaluation suite for assessing the performance of instruction-following language models, which includes a length-controlled win-rate metric.",
+      "paper": "RRM:  Robust Reward Model Training Mitigates Reward Hacking",
+      "original_name": "AlpacaEval-2"
+    },
+    {
+      "text": "An evaluation benchmark that assesses a model's question-answering performance by comparing its responses on a set of instructions against a reference model like GPT-4.",
+      "paper": "Towards Federated RLHF with Aggregated Client Preference for LLMs",
+      "original_name": "AlpacaEval 2.0"
+    },
+    {
+      "text": "An evaluation set used to compare fine-tuned instruction-following models on response quality via GPT-4 judgments.",
+      "paper": "MallowsPO: Fine-Tune Your LLM with Preference Dispersions",
+      "original_name": "Alpaca Eval V2"
+    },
+    {
+      "text": "A benchmark used here as an in-domain evaluation of instruction-following, with pairwise head-to-head judgments by GPT-4-turbo.",
+      "paper": "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+      "original_name": "Alpaca Eval 2.0"
+    },
+    {
+      "text": "A benchmark for evaluating a model's ability to follow instructions.",
+      "paper": "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+      "original_name": "Alpaca Eval 2"
+    },
+    {
+      "text": "An updated version of Alpaca-Eval that evaluates model responses using GPT-4 with improved criteria and task coverage, focusing on conversation quality.",
+      "paper": "Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process",
+      "original_name": "Alpaca-Eval-2"
+    },
+    {
+      "text": "A text-only human preference alignment benchmark used to evaluate language alignment in LLMs and MLLMs.",
+      "paper": "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference",
+      "original_name": "AlpacaEval-V2"
+    },
+    {
+      "text": "Human-preference benchmark that evaluates model responses through pairwise comparisons, measuring overall helpfulness and coherence in open-ended dialogue.",
+      "paper": "Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement",
+      "original_name": "AlpacaEvalv2"
+    },
+    {
+      "text": "An automatic evaluation system for instruction-following language models that uses GPT-4-Turbo to judge responses and introduces Length-Controlled Win Rates to reduce length-based biases.",
+      "paper": "NILE: Internal Consistency Alignment in Large Language Models",
+      "original_name": "Alpaca-Eval V2"
+    },
+    {
+      "text": "An automatic, LLM-based evaluator for assessing the quality of a model's responses to a set of instructions, comparing them against a reference model's outputs.",
+      "paper": "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+      "original_name": "AlpacaEval v2.0"
+    },
+    {
+      "text": "A benchmark for evaluating chat model instruction-following capabilities where response length is controlled to provide a fair comparison.",
+      "paper": "Unnatural Languages Are Not Bugs but Features for LLMs",
+      "original_name": "Length-controlled AlpacaEval 2.0"
+    },
+    {
+      "text": "Human preference-based evaluation benchmark that uses LLM-as-a-judge with length control to reduce stylistic bias, used for comparing alignment and separability.",
+      "paper": "From Crowdsourced Data to High-quality Benchmarks: Arena-Hard and Benchbuilder Pipeline",
+      "original_name": "AlpacaEval 2.0 Length Controlled"
+    },
+    {
+      "text": "A modified version of the AlpacaEval framework that applies a generalized linear model to control for the influence of response length on evaluation scores.",
+      "paper": "Investigating Non-Transitivity in LLM-as-a-Judge",
+      "original_name": "Length-Controlled AlpacaEval"
+    },
+    {
+      "text": "A widely used benchmark for evaluating the instruction-following capabilities of language models by comparing their outputs against a reference model like GPT-4.",
+      "paper": "Time-Reversal Provides Unsupervised Feedback to LLMs",
+      "original_name": "AlpacaEval Leaderboard"
+    }
+  ],
+  "definition_count": 17,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "evidence": "We primarily assess our models using three of the most popular open-ended instruction-following benchmarks: MT-Bench [94], AlpacaEval 2 [51], and Arena-Hard v0.1 [50].",
+      "paper_count": 26,
+      "paper_weight": 26.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SimPO: Simple Preference Optimization with a Reference-Free Reward"
+        ],
+        "iclr25": [
+          "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+          "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+          "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+          "Balancing Act: Diversity and Consistency in Large Language Model Ensembles",
+          "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+          "Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization",
+          "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+          "QERA: an Analytical Framework for Quantization Error Reconstruction",
+          "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters"
+        ],
+        "naacl25": [
+          "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+          "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models"
+        ],
+        "acl25": [
+          "T-REG: Preference Optimization with Token-Level Reward Regularization"
+        ],
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques",
+          "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs",
+          "Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data",
+          "AlphaPO: Reward Shape Matters for LLM Alignment",
+          "Instruction-Following Pruning for Large Language Models",
+          "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+          "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+          "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+          "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+          "TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization"
+        ],
+        "emnlp25": [
+          "FuseChat: Knowledge Fusion of Chat Models",
+          "Selective Preference Optimization via Token-Level Reward Function Estimation",
+          "Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "3-in-1: 2D Rotary Adaptation for Efficient Finetuning, Efficient Batching and Composability",
+      "evidence": "Instruction-following ability. We further benchmark RoAd using AlpacaEval2.0 [9]. (Section 4.1)",
+      "paper_count": 13,
+      "paper_weight": 13.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "3-in-1: 2D Rotary Adaptation for Efficient Finetuning, Efficient Batching and Composability"
+        ],
+        "iclr25": [
+          "Better Instruction-Following Through Minimum Bayes Risk",
+          "Self-Boosting Large Language Models with  Synthetic Preference Data",
+          "Weighted-Reward Preference Optimization for Implicit Model Fusion",
+          "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning"
+        ],
+        "naacl25": [
+          "Stronger Models are Not Always Stronger Teachers for Instruction Tuning",
+          "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism"
+        ],
+        "acl25": [
+          "Optimal Transport-Based Token Weighting scheme for Enhanced Preference Optimization"
+        ],
+        "icml25": [
+          "R.I.P.: Better Models by Survival of the Fittest Prompts",
+          "Boosting Multi-Domain Fine-Tuning of Large Language Models through Evolving Interactions between Samples",
+          "Discriminative Policy Optimization for Token-Level Reward Models",
+          "Thinking LLMs: General Instruction Following with Thought Generation",
+          "ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Human preference alignment",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+      "evidence": "AlpacaEval 2.0 approximately evaluates human preference for instruction following. (Section 5.1)",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+          "Bootstrapping Language Models with DPO Implicit Rewards",
+          "Self-Boosting Large Language Models with  Synthetic Preference Data"
+        ],
+        "acl25": [
+          "Model Extrapolation Expedites Alignment"
+        ],
+        "icml25": [
+          "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems",
+          "Energy-Based Preference Model Offers Better Offline Alignment than the Bradley-Terry Preference Model"
+        ],
+        "emnlp25": [
+          "Icon2: Aligning Large Language Models Using Self-Synthetic Preference Data via Inherent Regulation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "evidence": "In addition, we also use AlpacaEval 2.0 Length Controlled [37] and Arena Hard [38] as secondary measures of helpfulness, following [33, 39].",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "HelpSteer 2: Open-source dataset for training top-performing reward models"
+        ],
+        "iclr25": [
+          "Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models",
+          "HelpSteer2-Preference: Complementing Ratings with Preferences"
+        ],
+        "acl25": [
+          "HelpSteer3: Human-Annotated Feedback and Edit Data to Empower Inference-Time Scaling in Open-Ended General-Domain Tasks",
+          "AutoMixAlign: Adaptive Data Mixing for Multi-Task Preference Optimization in LLMs"
+        ],
+        "icml25": [
+          "STAIR: Improving Safety Alignment with Introspective Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Alignment",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+      "evidence": "\"POWER-DL consistently outperforms state-of-the-art methods in alignment benchmarks, achieving improvements of up to 13.0 points on AlpacaEval 2.0\"",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking"
+        ],
+        "naacl25": [
+          "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models"
+        ],
+        "icml25": [
+          "AlphaPO: Reward Shape Matters for LLM Alignment",
+          "On the Robustness of Reward Models for Language Model Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Conversational ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Self-Play Preference Optimization for Language Model Alignment",
+      "evidence": "We conduct GPT-4-based automatic evaluation on AlpacaEval 2.0 (Li et al., 2023b), MT-Bench (Zheng et al., 2023), and Arena-Hard (Li et al., 2024) to measure the chatbot capability of our model.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Self-Play Preference Optimization for Language Model Alignment"
+        ],
+        "icml25": [
+          "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training",
+          "DPO Meets PPO: Reinforced Token Optimization for RLHF"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Instruction Tuning With Loss Over Instructions",
+      "evidence": "Our models are also tested for their open-ended text generation capabilities using model-based evaluations, specifically through MT-Bench [77], AlpacaEval 1.0 and 2.0 [37] (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Instruction Tuning With Loss Over Instructions"
+        ],
+        "iclr25": [
+          "RRM:  Robust Reward Model Training Mitigates Reward Hacking"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Towards Federated RLHF with Aggregated Client Preference for LLMs",
+      "evidence": "For question answering, we use AlpacaEval 2.0 (Li et al., 2023b; Dubois et al., 2024a;b) to assess model performance on 805 instructions. (Section 7.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Towards Federated RLHF with Aggregated Client Preference for LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Verbosity bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates",
+      "evidence": "Additionally, the LC win rates of our cheats are generally higher than the raw win rates because of their short length, which highlights that AlpacaEval 2.0 is also not robust to length cheat.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "evidence": "We conduct comprehensive evaluations using AlpacaEval 2.0, Arena-Hard, MT-Bench, FLASK benchmarks for assessing the response quality across various dimensions.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Mixture-of-Agents Enhances Large Language Model Capabilities"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation",
+      "evidence": "Remarkably, on AlpacaEval 2 (Li et al., 2023c) and Arena-Hard (Li et al., 2024b), two LLM general problem-solving ability benchmarks, the model trained on 20K our synthetic instruction-response pairs, consistently outperforms models trained on significantly larger datasets... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "AlphaPO: Reward Shape Matters for LLM Alignment",
+      "evidence": "To understand the effect of \u03b1 on model generalization, we measure the AE2 performance of various models with changing \u03b1. (Section 4.2. Results)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "AlphaPO: Reward Shape Matters for LLM Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+      "evidence": "To test our hypothesis, we break down the prompts in Alpaca Eval 2.0 (Li et al., 2023) into different categories. ... We select four representative tasks: two are objective tasks that can be verified: mathematical reasoning or calculation (Math) and Coding...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Creative writing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+      "evidence": "To test our hypothesis, we break down the prompts in Alpaca Eval 2.0 (Li et al., 2023) into different categories. ... and the other two tasks are tasks that require modeling human open-ended preference: Creative writing and making personal recommendations (Recommendation).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Open-ended instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Weights-Rotated Preference Optimization for Large Language Models",
+      "evidence": "We employed three challenging benchmarks to evaluate the open-ended instruction-following task: MT-Bench (Zheng et al., 2023), AlpacaEval 2 (Li et al., 2023), and Arena-Hard (Li et al., 2024). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Weights-Rotated Preference Optimization for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Chatbot Arena",
+      "other_type": "measurements",
+      "relationship_type": "correlates",
+      "paper": "Improving Instruct Models for Free: A Study on Partial Adaptation",
+      "evidence": "Here, we test on AlpacaEval 2.0 (Dubois et al., 2024), which has a Spearman correlation of 0.98 with Chatbot Arena while being cost-efficient. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Improving Instruct Models for Free: A Study on Partial Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+      "evidence": "\u201cWe conducted human evaluations on the AlpacaEval2 and Arena-Hard datasets using the Gemma2-9B model.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "AlpacaEval",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+      "evidence": "\u201cAlpacaEval is done with the AlpacaEval2 library\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 18,
+  "incoming_relationship_count": 15,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, the prevailing usage treats AlpacaEval 2.0 as an automatic, LLM-as-a-judge benchmark for open-ended instruction following and chat evaluation, often described as a simulated human preference evaluation. Most definitions describe pairwise comparisons in which a strong judge model such as GPT-4 compares a model response against a reference or baseline response, although one paper instead calls it a reference-free instruction-following benchmark. Several descriptions say it contains 805 questions or instructions from five datasets, while another describes 805 representative instructions from real user interactions; recurring variants include length-controlled AlpacaEval 2.0 or Alpaca-Eval V2, and smaller lines of work describe it as an updated conversation-quality version, a text-only human preference alignment benchmark, or a leaderboard."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use AlpacaEval 2.0 to measure 9 constructs and 6 behavioral indicators. The dominant framing centers on instruction following, especially instruction following ability, and recurring uses extend to human preference alignment, helpfulness, and alignment; one paper also says it approximately evaluates human preference for instruction following. Beyond that core, papers use it for other linked qualities and tasks rather than converging on a single additional target."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Across evaluation suites, papers commonly position AlpacaEval 2.0 as one of the main benchmarks, most often alongside MT-Bench and Arena-Hard, and sometimes as an in-domain evaluation or as a secondary helpfulness check in its length-controlled form. Reported usage usually involves win rate or length-controlled win rate from pairwise head-to-head judging against a baseline or reference response. Papers also link it to 3 other instruments, and one paper reports that AlpacaEval 2.0 correlates with Chatbot Arena."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "The recurring concern is response length. Several papers describe length-controlled win rates, length-controlled regression, or a generalized linear model as ways to calibrate win rates and reduce length bias, verbosity bias, or stylistic bias, and papers say these changes are meant to provide a fairer comparison. One paper further relates AlpacaEval 2.0 to verbosity bias and says the benchmark is not robust to length cheat, noting that length-controlled win rates can exceed raw win rates for short responses."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, the prevailing usage treats AlpacaEval 2.0 as an automatic, LLM-as-a-judge benchmark for open-ended instruction following and chat evaluation, often described as a simulated human preference evaluation. Most definitions describe pairwise comparisons in which a strong judge model such as GPT-4 compares a model response against a reference or baseline response, although one paper instead calls it a reference-free instruction-following benchmark. Several descriptions say it contains 805 questions or instructions from five datasets, while another describes 805 representative instructions from real user interactions; recurring variants include length-controlled AlpacaEval 2.0 or Alpaca-Eval V2, and smaller lines of work describe it as an updated conversation-quality version, a text-only human preference alignment benchmark, or a leaderboard.\n\nWhat it is claimed to measure. Papers use AlpacaEval 2.0 to measure 9 constructs and 6 behavioral indicators. The dominant framing centers on instruction following, especially instruction following ability, and recurring uses extend to human preference alignment, helpfulness, and alignment; one paper also says it approximately evaluates human preference for instruction following. Beyond that core, papers use it for other linked qualities and tasks rather than converging on a single additional target.\n\nSpace of uses. Across evaluation suites, papers commonly position AlpacaEval 2.0 as one of the main benchmarks, most often alongside MT-Bench and Arena-Hard, and sometimes as an in-domain evaluation or as a secondary helpfulness check in its length-controlled form. Reported usage usually involves win rate or length-controlled win rate from pairwise head-to-head judging against a baseline or reference response. Papers also link it to 3 other instruments, and one paper reports that AlpacaEval 2.0 correlates with Chatbot Arena.\n\nConcerns raised. The recurring concern is response length. Several papers describe length-controlled win rates, length-controlled regression, or a generalized linear model as ways to calibrate win rates and reduce length bias, verbosity bias, or stylistic bias, and papers say these changes are meant to provide a fairer comparison. One paper further relates AlpacaEval 2.0 to verbosity bias and says the benchmark is not robust to length cheat, noting that length-controlled win rates can exceed raw win rates for short responses.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation",
+      "Aligning Large Language Models with Implicit Preferences from User-Generated Content",
+      "AutoMixAlign: Adaptive Data Mixing for Multi-Task Preference Optimization in LLMs",
+      "Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement",
+      "DavIR: Data Selection via Implicit Reward for Large Language Models",
+      "DiffPO: Diffusion-styled Preference Optimization for Inference Time Alignment of Large Language Models",
+      "Evaluating Language Models as Synthetic Data Generators",
+      "Finding the Sweet Spot: Preference Data Construction for Scaling Preference Optimization",
+      "From Real to Synthetic: Synthesizing Millions of Diversified and Complicated User Instructions with Attributed Grounding",
+      "ImPart: Importance-Aware Delta-Sparsification for Improved Model Compression and Merging in LLMs",
+      "Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process",
+      "LongReward: Improving Long-context Large Language Models with AI Feedback",
+      "Model Extrapolation Expedites Alignment",
+      "MuSC: Improving Complex Instruction Following with Multi-granularity Self-Contrastive Training",
+      "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference",
+      "Optimal Transport-Based Token Weighting scheme for Enhanced Preference Optimization",
+      "PopAlign: Diversifying Contrasting Patterns for a More Comprehensive Alignment",
+      "Synthesizing Post-Training Data for LLMs through Multi-Agent Simulation",
+      "Towards Reward Fairness in RLHF: From a Resource Allocation Perspective"
+    ],
+    "emnlp25": [
+      "AIR: Complex Instruction Generation via Automatic Iterative Refinement",
+      "COUNTDOWN: Contextually Sparse Activation Filtering Out Unnecessary Weights in Down Projection",
+      "Following Length Constraints in Instructions",
+      "FuseChat: Knowledge Fusion of Chat Models",
+      "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "Icon2: Aligning Large Language Models Using Self-Synthetic Preference Data via Inherent Regulation",
+      "Improve LLM-as-a-Judge Ability as a General Ability",
+      "Improving Instruct Models for Free: A Study on Partial Adaptation",
+      "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+      "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+      "NILE: Internal Consistency Alignment in Large Language Models",
+      "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+      "Selective Preference Optimization via Token-Level Reward Function Estimation",
+      "Textual Aesthetics in Large Language Models",
+      "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+      "Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization",
+      "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+      "Direct Judgement Preference Optimization",
+      "Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge",
+      "Weights-Rotated Preference Optimization for Large Language Models"
+    ],
+    "iclr25": [
+      "A transfer learning framework for weak to strong generalization",
+      "Balancing Act: Diversity and Consistency in Large Language Model Ensembles",
+      "Better Instruction-Following Through Minimum Bayes Risk",
+      "Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models",
+      "Bootstrapping Language Models with DPO Implicit Rewards",
+      "Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization",
+      "Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates",
+      "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+      "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+      "GenARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment",
+      "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+      "Is In-Context Learning Sufficient for Instruction Following in LLMs?",
+      "Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning",
+      "Learn Your Reference Model for Real Good Alignment",
+      "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+      "MallowsPO: Fine-Tune Your LLM with Preference Dispersions",
+      "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+      "Online Preference Alignment for Language Models via Count-based Exploration",
+      "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+      "Post-hoc Reward Calibration: A Case Study on Length Bias",
+      "QERA: an Analytical Framework for Quantization Error Reconstruction",
+      "RRM:  Robust Reward Model Training Mitigates Reward Hacking",
+      "RainbowPO: A Unified Framework for Combining Improvements in Preference Optimization",
+      "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+      "Self-Boosting Large Language Models with  Synthetic Preference Data",
+      "Self-Play Preference Optimization for Language Model Alignment",
+      "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters",
+      "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+      "Towards Federated RLHF with Aggregated Client Preference for LLMs",
+      "Value-Incentivized Preference Optimization: A Unified Approach to Online and Offline RLHF",
+      "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+      "Weighted-Reward Preference Optimization for Implicit Model Fusion"
+    ],
+    "icml25": [
+      "AMPO: Active Multi Preference Optimization for Self-play Preference Selection",
+      "Active Evaluation Acquisition for Efficient LLM Benchmarking",
+      "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+      "AlphaPO: Reward Shape Matters for LLM Alignment",
+      "An Architecture Search Framework for Inference-Time Techniques",
+      "Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment",
+      "Boosting Multi-Domain Fine-Tuning of Large Language Models through Evolving Interactions between Samples",
+      "ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization",
+      "DPO Meets PPO: Reinforced Token Optimization for RLHF",
+      "Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data",
+      "Discriminative Policy Optimization for Token-Level Reward Models",
+      "Energy-Based Preference Model Offers Better Offline Alignment than the Bradley-Terry Preference Model",
+      "From Crowdsourced Data to High-quality Benchmarks: Arena-Hard and Benchbuilder Pipeline",
+      "GRAM: A Generative Foundation Reward Model for Reward Generalization",
+      "Improving Model Alignment Through Collective Intelligence of Open-Source Models",
+      "Instruction-Following Pruning for Large Language Models",
+      "Investigating Non-Transitivity in LLM-as-a-Judge",
+      "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems",
+      "LLM Alignment as Retriever Optimization: An Information Retrieval Perspective",
+      "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+      "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+      "Latent Preference Coding: Aligning Large Language Models via Discrete Latent Codes",
+      "On the Robustness of Reward Models for Language Model Alignment",
+      "Principled Data Selection for Alignment: The Hidden Risks of Difficult Examples",
+      "R.I.P.: Better Models by Survival of the Fittest Prompts",
+      "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+      "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs",
+      "Reward-Guided Speculative Decoding for Efficient LLM Reasoning",
+      "Right Now, Wrong Then: Non-Stationary Direct Preference Optimization under Preference Drift",
+      "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+      "STAIR: Improving Safety Alignment with Introspective Reasoning",
+      "TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization",
+      "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+      "Thinking LLMs: General Instruction Following with Thought Generation",
+      "Unnatural Languages Are Not Bugs but Features for LLMs",
+      "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training"
+    ],
+    "naacl25": [
+      "DPL: Diverse Preference Learning Without A Reference Model",
+      "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+      "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+      "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models",
+      "Stronger Models are Not Always Stronger Teachers for Instruction Tuning",
+      "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism"
+    ],
+    "neurips24": [
+      "3-in-1: 2D Rotary Adaptation for Efficient Finetuning, Efficient Batching and Composability",
+      "Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment",
+      "Instruction Tuning With Loss Over Instructions",
+      "MAmmoTH2: Scaling Instructions from the Web",
+      "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+      "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "UltraMedical: Building Specialized Generalists in Biomedicine",
+      "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "Time-Reversal Provides Unsupervised Feedback to LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 19,
+    "emnlp25": 20,
+    "iclr25": 33,
+    "icml25": 36,
+    "naacl25": 6,
+    "neurips24": 9
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

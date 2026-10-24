@@ -1,0 +1,104 @@
+{
+  "canonical_name": "Speculative decoding",
+  "type": "behavior",
+  "canonical_definition": "Across the provided literature, speculative decoding is consistently defined as a behavior intended to accelerate large language model inference. The most common operationalization involves a two-model architecture: a smaller, faster 'draft' model generates multiple candidate tokens, which are then verified in parallel by the larger, original 'target' model. This process is frequently framed as a technique to enhance the efficiency of autoregressive decoding, with studies reporting significant speedups. The verification step, which is studied alongside the concept of 'Token verification', is often implemented using token-level rejection sampling, where, as one paper notes, \u201cthe target model accepts a candidate token if it assigns the same or higher probability given the context\u201d (PEARL: Parallel Speculative Decoding with Adaptive Draft Length). A necessary condition for this method's effectiveness, as stated in one source, is that \u201cthe drafter is sufficiently fast and accurate in approximating the target distribution\u201d (Accelerating LLM Inference...). While one paper uses the term 'speculative token generation', the underlying mechanism of producing and validating draft tokens remains the same. The outcome of this process is the generation of multiple new tokens within a single forward pass of the target model.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Speculative decoding",
+    "Speculative token generation"
+  ],
+  "papers": [
+    "DeFT: Decoding with Flash Tree-attention for Efficient Tree-structured LLM Inference",
+    "Multi-Draft Speculative Sampling: Canonical Decomposition and Theoretical Limits",
+    "PEARL: Parallel Speculative Decoding with Adaptive Draft Length",
+    "Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies",
+    "QuantSpec: Self-Speculative Decoding with Hierarchical Quantized KV Cache",
+    "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding",
+    "Fast yet Safe: Early-Exiting with Risk Control",
+    "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+    "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution"
+  ],
+  "paper_count": 9,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating multiple draft tokens with a small model and then verifying them with a larger model to accelerate decoding.",
+      "paper": "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+      "original_name": "Speculative decoding"
+    },
+    {
+      "text": "Producing draft candidate tokens that are later validated by a target model during decoding.",
+      "paper": "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding",
+      "original_name": "Speculative token generation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Computational efficiency",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "PEARL: Parallel Speculative Decoding with Adaptive Draft Length",
+      "evidence": "Speculative decoding (SD)... has shown great power for LLM inference acceleration.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "PEARL: Parallel Speculative Decoding with Adaptive Draft Length"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Token verification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "PEARL: Parallel Speculative Decoding with Adaptive Draft Length",
+      "evidence": "\u201cand then the target model verifies these draft tokens in parallel within a single forward\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "PEARL: Parallel Speculative Decoding with Adaptive Draft Length"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, speculative decoding is consistently defined as a behavior intended to accelerate large language model inference. The most common operationalization involves a two-model architecture: a smaller, faster 'draft' model generates multiple candidate tokens, which are then verified in parallel by the larger, original 'target' model. This process is frequently framed as a technique to enhance the efficiency of autoregressive decoding, with studies reporting significant speedups. The verification step, which is studied alongside the concept of 'Token verification', is often implemented using token-level rejection sampling, where, as one paper notes, \u201cthe target model accepts a candidate token if it assigns the same or higher probability given the context\u201d (PEARL: Parallel Speculative Decoding with Adaptive Draft Length). A necessary condition for this method's effectiveness, as stated in one source, is that \u201cthe drafter is sufficiently fast and accurate in approximating the target distribution\u201d (Accelerating LLM Inference...). While one paper uses the term 'speculative token generation', the underlying mechanism of producing and validating draft tokens remains the same. The outcome of this process is the generation of multiple new tokens within a single forward pass of the target model.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "DeFT: Decoding with Flash Tree-attention for Efficient Tree-structured LLM Inference",
+      "Multi-Draft Speculative Sampling: Canonical Decomposition and Theoretical Limits",
+      "PEARL: Parallel Speculative Decoding with Adaptive Draft Length"
+    ],
+    "icml25": [
+      "Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies",
+      "QuantSpec: Self-Speculative Decoding with Hierarchical Quantized KV Cache",
+      "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding"
+    ],
+    "neurips24": [
+      "Fast yet Safe: Early-Exiting with Risk Control",
+      "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+      "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "icml25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

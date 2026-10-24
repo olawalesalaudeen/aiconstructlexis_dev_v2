@@ -1,0 +1,176 @@
+{
+  "canonical_name": "AMBER",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, AMBER is most commonly described as a hallucination benchmark that extends POPE beyond existence checks to cover attribute and relation hallucinations as well. Several papers also present it as spanning both discriminative and generative tasks, and one description says it evaluates multimodal hallucinations through 15,220 yes-or-no questions. Smaller descriptions treat it as a dataset for image description tasks, or note implementation details, such as the use of CHAIR as the evaluation metric; one paper further describes it as designed to be evaluated without LLM assistance, with metrics including response-level hallucination and human cognition hallucination.\n\nWhat it is claimed to measure. Papers use AMBER to measure 2 behavioral indicators and 2 constructs. The prevailing use is to measure hallucination, especially hallucination and object hallucination, with papers also using it to measure hallucination resistance and visual recognition. These links are concentrated on hallucination-related targets, while visual recognition appears as a smaller additional use.\n\nSpace of uses. No measurement instrument is linked to it. Papers usually position AMBER as one benchmark within broader hallucination evaluation suites, often alongside POPE, and some also use it with Object HalBench, MME-Hall, and MMHalBench. Papers also use it as an outcome check for whether a method mitigates hallucinations or reduces hallucination in generated descriptions, and one paper reports that improvement in the overall AMBER score indicates mitigation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "AMBER"
+  ],
+  "papers": [
+    "CCHall: A Novel Benchmark for Joint Cross-Lingual and Cross-Modal Hallucinations Detection in Large Language Models",
+    "LPOI: Listwise Preference Optimization for Vision Language Models",
+    "Visual Evidence Prompting Mitigates Hallucinations in Large Vision-Language Models",
+    "Mitigating Hallucinations in Large Vision-Language Models via Entity-Centric Multimodal Preference Optimization",
+    "RICO: Improving Accuracy and Completeness in Image Recaptioning via Visual Reconstruction",
+    "SHARP: Steering Hallucination in LVLMs via Representation Engineering",
+    "VLA-Mark: A cross modal watermark for large vision-language alignment models",
+    "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models",
+    "CHiP: Cross-modal Hierarchical Direct Preference Optimization for Multimodal LLMs",
+    "CertainlyUncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness",
+    "Mitigating Object Hallucination in MLLMs via Data-augmented Phrase-level Alignment",
+    "PerturboLLaVA: Reducing Multimodal Hallucinations with Perturbative Visual Training",
+    "Visual Description Grounding Reduces Hallucinations and Boosts Reasoning in LVLMs",
+    "Evaluating and Mitigating Object Hallucination in Large Vision-Language Models: Can They Still See Removed Objects?",
+    "From Introspection to Best Practices: Principled Analysis of Demonstrations in Multimodal In-Context Learning",
+    "VoCoT: Unleashing Visually Grounded Multi-Step Reasoning in Large Multi-Modal Models"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark that extends POPE to evaluate not just the existence of objects but also attribute and relation hallucinations, providing a more comprehensive analysis of multimodal model accuracy.",
+      "paper": "CertainlyUncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness",
+      "original_name": "AMBER"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "CHiP: Cross-modal Hierarchical Direct Preference Optimization for Multimodal LLMs",
+      "evidence": "AMBER (Wang et al., 2023a) was designed to be evaluated without LLM assistance. ... Metrics: ... (c) Response-level hallucination (Hal); (d) Human cognition hallucination (Cog). (Sec. 5.1)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CHiP: Cross-modal Hierarchical Direct Preference Optimization for Multimodal LLMs",
+          "CertainlyUncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness"
+        ],
+        "naacl25": [
+          "VoCoT: Unleashing Visually Grounded Multi-Step Reasoning in Large Multi-Modal Models"
+        ],
+        "icml25": [
+          "DAMA: Data- and Model-aware Alignment of Multi-modal LLMs"
+        ],
+        "emnlp25": [
+          "RICO: Improving Accuracy and Completeness in Image Recaptioning via Visual Reconstruction",
+          "Mitigating Hallucinations in Large Vision-Language Models via Entity-Centric Multimodal Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Object hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Mitigating Object Hallucination in MLLMs via Data-augmented Phrase-level Alignment",
+      "evidence": "To evaluate performance on both generative and discriminative tasks, we use AMBER (Wang et al., 2023b), which measures hallucination using several metrics. For generative tasks, AMBER assesses the frequency of hallucinated objects in image descriptions... (Section 4.1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Mitigating Object Hallucination in MLLMs via Data-augmented Phrase-level Alignment"
+        ],
+        "naacl25": [
+          "Evaluating and Mitigating Object Hallucination in Large Vision-Language Models: Can They Still See Removed Objects?"
+        ],
+        "emnlp25": [
+          "SHARP: Steering Hallucination in LVLMs via Representation Engineering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual recognition",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Visual Description Grounding Reduces Hallucinations and Boosts Reasoning in LVLMs",
+      "evidence": "The models are tested across seven benchmarks: AMBER (visual recognition)... (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Visual Description Grounding Reduces Hallucinations and Boosts Reasoning in LVLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination resistance",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "From Introspection to Best Practices: Principled Analysis of Demonstrations in Multimodal In-Context Learning",
+      "evidence": "Hallucination: AMBER (Wang et al., 2023) provides a discriminative way to evaluate various types of hallucination",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "From Introspection to Best Practices: Principled Analysis of Demonstrations in Multimodal In-Context Learning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, AMBER is most commonly described as a hallucination benchmark that extends POPE beyond existence checks to cover attribute and relation hallucinations as well. Several papers also present it as spanning both discriminative and generative tasks, and one description says it evaluates multimodal hallucinations through 15,220 yes-or-no questions. Smaller descriptions treat it as a dataset for image description tasks, or note implementation details, such as the use of CHAIR as the evaluation metric; one paper further describes it as designed to be evaluated without LLM assistance, with metrics including response-level hallucination and human cognition hallucination."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use AMBER to measure 2 behavioral indicators and 2 constructs. The prevailing use is to measure hallucination, especially hallucination and object hallucination, with papers also using it to measure hallucination resistance and visual recognition. These links are concentrated on hallucination-related targets, while visual recognition appears as a smaller additional use."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it. Papers usually position AMBER as one benchmark within broader hallucination evaluation suites, often alongside POPE, and some also use it with Object HalBench, MME-Hall, and MMHalBench. Papers also use it as an outcome check for whether a method mitigates hallucinations or reduces hallucination in generated descriptions, and one paper reports that improvement in the overall AMBER score indicates mitigation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, AMBER is most commonly described as a hallucination benchmark that extends POPE beyond existence checks to cover attribute and relation hallucinations as well. Several papers also present it as spanning both discriminative and generative tasks, and one description says it evaluates multimodal hallucinations through 15,220 yes-or-no questions. Smaller descriptions treat it as a dataset for image description tasks, or note implementation details, such as the use of CHAIR as the evaluation metric; one paper further describes it as designed to be evaluated without LLM assistance, with metrics including response-level hallucination and human cognition hallucination.\n\nWhat it is claimed to measure. Papers use AMBER to measure 2 behavioral indicators and 2 constructs. The prevailing use is to measure hallucination, especially hallucination and object hallucination, with papers also using it to measure hallucination resistance and visual recognition. These links are concentrated on hallucination-related targets, while visual recognition appears as a smaller additional use.\n\nSpace of uses. No measurement instrument is linked to it. Papers usually position AMBER as one benchmark within broader hallucination evaluation suites, often alongside POPE, and some also use it with Object HalBench, MME-Hall, and MMHalBench. Papers also use it as an outcome check for whether a method mitigates hallucinations or reduces hallucination in generated descriptions, and one paper reports that improvement in the overall AMBER score indicates mitigation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CCHall: A Novel Benchmark for Joint Cross-Lingual and Cross-Modal Hallucinations Detection in Large Language Models",
+      "LPOI: Listwise Preference Optimization for Vision Language Models",
+      "Visual Evidence Prompting Mitigates Hallucinations in Large Vision-Language Models"
+    ],
+    "iclr25": [
+      "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models",
+      "CHiP: Cross-modal Hierarchical Direct Preference Optimization for Multimodal LLMs",
+      "CertainlyUncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness",
+      "Mitigating Object Hallucination in MLLMs via Data-augmented Phrase-level Alignment",
+      "PerturboLLaVA: Reducing Multimodal Hallucinations with Perturbative Visual Training",
+      "Visual Description Grounding Reduces Hallucinations and Boosts Reasoning in LVLMs"
+    ],
+    "naacl25": [
+      "Evaluating and Mitigating Object Hallucination in Large Vision-Language Models: Can They Still See Removed Objects?",
+      "From Introspection to Best Practices: Principled Analysis of Demonstrations in Multimodal In-Context Learning",
+      "VoCoT: Unleashing Visually Grounded Multi-Step Reasoning in Large Multi-Modal Models"
+    ],
+    "emnlp25": [
+      "Mitigating Hallucinations in Large Vision-Language Models via Entity-Centric Multimodal Preference Optimization",
+      "RICO: Improving Accuracy and Completeness in Image Recaptioning via Visual Reconstruction",
+      "SHARP: Steering Hallucination in LVLMs via Representation Engineering",
+      "VLA-Mark: A cross modal watermark for large vision-language alignment models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr25": 6,
+    "naacl25": 3,
+    "emnlp25": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "naacl25"
+  ]
+}

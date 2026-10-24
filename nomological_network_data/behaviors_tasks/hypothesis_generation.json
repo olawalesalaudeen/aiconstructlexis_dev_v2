@@ -1,0 +1,232 @@
+{
+  "canonical_name": "Hypothesis generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is to elicit one or more candidate hypotheses, rules, or explanations from observations, evidence, or task context, usually in natural language. Much of this usage appears in inductive reasoning, where models are prompted to produce multiple abstract hypotheses, a set of valid hypotheses, or free-form and constrained candidate rules that explain input-output examples. A smaller line of work uses the same label for inferring another agent's latent strategy from past observations, generating testable scientific hypotheses from evidence, constraints, anomalies, or data patterns, proposing out-of-domain explanations or predictions under incomplete information, proposing potential actions before execution, or making reasonable hypotheses in an optimization loop. Where success is described, hypotheses are those that best explain the observations, are accurate or valid, or are testable.\n\nVariants. Papers study several variants and neighboring formulations. Common named variants include scientific hypothesis generation and hypothesis formulation, which center on literature-grounded or otherwise testable hypotheses, and zero-shot hypothesis generation, which is explicitly defined as generating hypotheses without in-context demonstrations and relying on model prior. Other settings include natural-language hypotheses paired with Python implementations, chemistry and social-science tasks, multi-agent settings that infer other agents' strategies, and causal-modelling settings where the generated hypothesis is a causal graph. Several papers also report that hypothesis generation is related to iterative refinement, described as proposing, selecting, and refining textual rules with feedback, and one paper claims a causal relationship from hypothesis generation to causal discovery.\n\nSpace of elicitation and scores. Only one measurement instrument is linked to it, DiscoveryBench. In that benchmark, systems are asked to generate Python code to analyze a described data schema and scientific query, and then generate scientific hypotheses. Outside that benchmarked use, papers often elicit the behavior directly with prompts that ask for multiple abstract hypotheses, a set of valid hypotheses, hypotheses about another agent's strategy, or a natural-language hypothesis followed by Python code.\n\nWhat it is taken as evidence of. Papers link it to three constructs, and they do not use one shared construct framing. Commonsense reasoning and theory of mind are recorded as causes of hypothesis generation, with papers saying an LLM leverages commonsense reasoning to generate hypotheses and that a Theory of Mind module generates hypotheses about latent variables in natural language. Inductive reasoning is recorded as related rather than causal, in work that frames automatic inductive reasoning as prompting on observations, sampling multiple hypotheses about the rule, and selecting the one that best explains the observations.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Hypothesis generation",
+    "Scientific hypothesis generation",
+    "Zero-shot hypothesis generation",
+    "Hypothesis formulation"
+  ],
+  "papers": [
+    "EscapeBench: Towards Advancing Creative Intelligence of Language Model Agents",
+    "Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation",
+    "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+    "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+    "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+    "On LLM-Based Scientific Inductive Reasoning Beyond Equations",
+    "On the Role of Model Prior in Real-World Inductive Reasoning",
+    "VisEscape: A Benchmark for Evaluating Exploration-driven Decision-making in Virtual Escape Rooms",
+    "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning",
+    "Hypothesis Search: Inductive Reasoning with Language Models",
+    "SocioDojo: Building Lifelong Analytical Agents with Real-world Text and Time Series",
+    "Phenomenal Yet Puzzling: Testing Inductive Reasoning Capabilities of Language Models with Hypothesis Refinement",
+    "Hypothetical Minds: Scaffolding Theory of Mind for Multi-Agent Tasks with Large Language Models",
+    "MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses",
+    "NeSyC: A Neuro-symbolic Continual Learner For Complex Embodied Tasks in Open Domains",
+    "Bongard in Wonderland: Visual Puzzles that Still Make AI Go Mad?",
+    "LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models",
+    "Position: LLMs Need a Bayesian Meta-Reasoning Framework for More Robust and Generalizable Reasoning",
+    "Sparse Autoencoders for Hypothesis Generation",
+    "Exploiting Edited Large Language Models as General Scientific Optimizers",
+    "Generating Diverse Hypotheses for Inductive Reasoning"
+  ],
+  "paper_count": 21,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable act of producing natural language statements that propose explanations for another agent's latent strategies or goals.",
+      "paper": "Hypothetical Minds: Scaffolding Theory of Mind for Multi-Agent Tasks with Large Language Models",
+      "original_name": "Hypothesis generation"
+    },
+    {
+      "text": "Generating candidate scientific hypotheses from evidence, constraints, and anomalies.",
+      "paper": "Position: LLMs Need a Bayesian Meta-Reasoning Framework for More Robust and Generalizable Reasoning",
+      "original_name": "Scientific hypothesis generation"
+    },
+    {
+      "text": "The observable behavior of generating hypotheses without any in-context demonstrations, relying solely on the model's internal knowledge.",
+      "paper": "On the Role of Model Prior in Real-World Inductive Reasoning",
+      "original_name": "Zero-shot hypothesis generation"
+    },
+    {
+      "text": "Designing testable scientific hypotheses based on identified research ideas or data patterns.",
+      "paper": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "original_name": "Hypothesis formulation"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Iterative refinement",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Phenomenal Yet Puzzling: Testing Inductive Reasoning Capabilities of Language Models with Hypothesis Refinement",
+      "evidence": "Iterative hypothesis refinement employs a three-step process: proposing, selecting, and refining hypotheses in the form of textual rules. (Abstract).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Phenomenal Yet Puzzling: Testing Inductive Reasoning Capabilities of Language Models with Hypothesis Refinement"
+        ],
+        "iclr25": [
+          "MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Theory of mind",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Hypothetical Minds: Scaffolding Theory of Mind for Multi-Agent Tasks with Large Language Models",
+      "evidence": "The ToM module generates hypotheses about these latent variables in natural language. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Hypothetical Minds: Scaffolding Theory of Mind for Multi-Agent Tasks with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Commonsense reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "NeSyC: A Neuro-symbolic Continual Learner For Complex Embodied Tasks in Open Domains",
+      "evidence": "An LLM leverages common-sense reasoning to generate hypotheses, while a symbolic tool ensures their logical consistency through systematic validation. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "NeSyC: A Neuro-symbolic Continual Learner For Complex Embodied Tasks in Open Domains"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Inductive reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Generating Diverse Hypotheses for Inductive Reasoning",
+      "evidence": "a new paradigm in automatic inductive reasoning has emerged: feeding observations (often referred to as train examples) as prompts into the LLM, sampling multiple hypotheses about the rule, and selecting the one that best explains the observations",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Generating Diverse Hypotheses for Inductive Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DiscoveryBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+      "evidence": "In DiscoveryBench, given the description of input data schema and a scientific query, a method is supposed to first generate Python code to analyze the data based on the query and then generate scientific hypotheses. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Causal discovery",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning",
+      "evidence": "In hypothesis generation, we produce a causal graph by use of an LLM.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is to elicit one or more candidate hypotheses, rules, or explanations from observations, evidence, or task context, usually in natural language. Much of this usage appears in inductive reasoning, where models are prompted to produce multiple abstract hypotheses, a set of valid hypotheses, or free-form and constrained candidate rules that explain input-output examples. A smaller line of work uses the same label for inferring another agent's latent strategy from past observations, generating testable scientific hypotheses from evidence, constraints, anomalies, or data patterns, proposing out-of-domain explanations or predictions under incomplete information, proposing potential actions before execution, or making reasonable hypotheses in an optimization loop. Where success is described, hypotheses are those that best explain the observations, are accurate or valid, or are testable."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several variants and neighboring formulations. Common named variants include scientific hypothesis generation and hypothesis formulation, which center on literature-grounded or otherwise testable hypotheses, and zero-shot hypothesis generation, which is explicitly defined as generating hypotheses without in-context demonstrations and relying on model prior. Other settings include natural-language hypotheses paired with Python implementations, chemistry and social-science tasks, multi-agent settings that infer other agents' strategies, and causal-modelling settings where the generated hypothesis is a causal graph. Several papers also report that hypothesis generation is related to iterative refinement, described as proposing, selecting, and refining textual rules with feedback, and one paper claims a causal relationship from hypothesis generation to causal discovery."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Only one measurement instrument is linked to it, DiscoveryBench. In that benchmark, systems are asked to generate Python code to analyze a described data schema and scientific query, and then generate scientific hypotheses. Outside that benchmarked use, papers often elicit the behavior directly with prompts that ask for multiple abstract hypotheses, a set of valid hypotheses, hypotheses about another agent's strategy, or a natural-language hypothesis followed by Python code."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to three constructs, and they do not use one shared construct framing. Commonsense reasoning and theory of mind are recorded as causes of hypothesis generation, with papers saying an LLM leverages commonsense reasoning to generate hypotheses and that a Theory of Mind module generates hypotheses about latent variables in natural language. Inductive reasoning is recorded as related rather than causal, in work that frames automatic inductive reasoning as prompting on observations, sampling multiple hypotheses about the rule, and selecting the one that best explains the observations."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is to elicit one or more candidate hypotheses, rules, or explanations from observations, evidence, or task context, usually in natural language. Much of this usage appears in inductive reasoning, where models are prompted to produce multiple abstract hypotheses, a set of valid hypotheses, or free-form and constrained candidate rules that explain input-output examples. A smaller line of work uses the same label for inferring another agent's latent strategy from past observations, generating testable scientific hypotheses from evidence, constraints, anomalies, or data patterns, proposing out-of-domain explanations or predictions under incomplete information, proposing potential actions before execution, or making reasonable hypotheses in an optimization loop. Where success is described, hypotheses are those that best explain the observations, are accurate or valid, or are testable.\n\nVariants. Papers study several variants and neighboring formulations. Common named variants include scientific hypothesis generation and hypothesis formulation, which center on literature-grounded or otherwise testable hypotheses, and zero-shot hypothesis generation, which is explicitly defined as generating hypotheses without in-context demonstrations and relying on model prior. Other settings include natural-language hypotheses paired with Python implementations, chemistry and social-science tasks, multi-agent settings that infer other agents' strategies, and causal-modelling settings where the generated hypothesis is a causal graph. Several papers also report that hypothesis generation is related to iterative refinement, described as proposing, selecting, and refining textual rules with feedback, and one paper claims a causal relationship from hypothesis generation to causal discovery.\n\nSpace of elicitation and scores. Only one measurement instrument is linked to it, DiscoveryBench. In that benchmark, systems are asked to generate Python code to analyze a described data schema and scientific query, and then generate scientific hypotheses. Outside that benchmarked use, papers often elicit the behavior directly with prompts that ask for multiple abstract hypotheses, a set of valid hypotheses, hypotheses about another agent's strategy, or a natural-language hypothesis followed by Python code.\n\nWhat it is taken as evidence of. Papers link it to three constructs, and they do not use one shared construct framing. Commonsense reasoning and theory of mind are recorded as causes of hypothesis generation, with papers saying an LLM leverages commonsense reasoning to generate hypotheses and that a Theory of Mind module generates hypotheses about latent variables in natural language. Inductive reasoning is recorded as related rather than causal, in work that frames automatic inductive reasoning as prompting on observations, sampling multiple hypotheses about the rule, and selecting the one that best explains the observations.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "EscapeBench: Towards Advancing Creative Intelligence of Language Model Agents",
+      "Unveiling the Power of Source: Source-based Minimum Bayes Risk Decoding for Neural Machine Translation"
+    ],
+    "emnlp25": [
+      "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+      "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "HypER: Literature-grounded Hypothesis Generation and Distillation with Provenance",
+      "On LLM-Based Scientific Inductive Reasoning Beyond Equations",
+      "On the Role of Model Prior in Real-World Inductive Reasoning",
+      "VisEscape: A Benchmark for Evaluating Exploration-driven Decision-making in Virtual Escape Rooms"
+    ],
+    "iclr24": [
+      "Causal Modelling Agents: Causal Graph Discovery through Synergising Metadata- and Data-driven Reasoning",
+      "Hypothesis Search: Inductive Reasoning with Language Models",
+      "SocioDojo: Building Lifelong Analytical Agents with Real-world Text and Time Series",
+      "Phenomenal Yet Puzzling: Testing Inductive Reasoning Capabilities of Language Models with Hypothesis Refinement"
+    ],
+    "iclr25": [
+      "Hypothetical Minds: Scaffolding Theory of Mind for Multi-Agent Tasks with Large Language Models",
+      "MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses",
+      "NeSyC: A Neuro-symbolic Continual Learner For Complex Embodied Tasks in Open Domains"
+    ],
+    "icml25": [
+      "Bongard in Wonderland: Visual Puzzles that Still Make AI Go Mad?",
+      "LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models",
+      "Position: LLMs Need a Bayesian Meta-Reasoning Framework for More Robust and Generalizable Reasoning",
+      "Sparse Autoencoders for Hypothesis Generation"
+    ],
+    "naacl25": [
+      "Exploiting Edited Large Language Models as General Scientific Optimizers",
+      "Generating Diverse Hypotheses for Inductive Reasoning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 6,
+    "iclr24": 4,
+    "iclr25": 3,
+    "icml25": 4,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

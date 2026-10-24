@@ -1,0 +1,143 @@
+{
+  "canonical_name": "BARTScore",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, BARTScore is predominantly characterized as a model-based evaluation metric used to assess the quality of generated text. Its core mechanism, as described in multiple papers, involves leveraging a pre-trained BART model to calculate a score based on generation probability, such as the conditional or average likelihood of the output text. The most common application described is as an automated procedure for comparing generated chain-of-thought rationales against \"manually created golden references.\" Papers use BARTScore to operationalize several constructs, including general `Output quality`, `Faithfulness`, and `Coherence`, with one study using it to measure \"semantic coherence\" in argument structures. It is applied to evaluate tasks such as `Text summarization` and question answering. While most sources treat it as a reference-based metric, one paper notes its use \"without human annotations,\" and another describes its function as providing \"pseudo ground-truth\" for output quality. In evaluation contexts, BARTScore is frequently studied alongside other metrics like BERTScore, BLEURT, and human judgments.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "metric/method/tool \u2014 not a benchmark or LLM ability",
+  "names": [
+    "BARTScore",
+    "BART Score"
+  ],
+  "papers": [
+    "Agent-as-Judge for Factual Summarization of Long Narratives",
+    "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability",
+    "Plan Dynamically, Express Rhetorically: A Debate-Driven Rhetorical Framework for Argumentative Writing",
+    "AdvisorQA: Towards Helpful and Harmless Advice-seeking Question Answering with Collective Intelligence",
+    "CSEval: Towards Automated, Multi-Dimensional, and Reference-Free Counterspeech Evaluation using Auto-Calibrated LLMs",
+    "Learning to Substitute Words with Model-based Score Ranking",
+    "PlagBench: Exploring the Duality of Large Language Models in Plagiarism Generation and Detection",
+    "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An automated evaluation procedure used to compare generated chain-of-thought rationales against manually created golden references.",
+      "paper": "PlagBench: Exploring the Duality of Large Language Models in Plagiarism Generation and Detection",
+      "original_name": "BARTScore"
+    },
+    {
+      "text": "A reference-based metric that uses the probability assigned by a BART model to the output given the input as a proxy for quality, used here as pseudo ground-truth for summarization and QA.",
+      "paper": "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability",
+      "original_name": "BART Score"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing",
+      "evidence": "\"we use the BART score (Yuan et al., 2021) to evaluate response quality of different models\" (Section 2.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BERTScore",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Learning to Substitute Words with Model-based Score Ranking",
+      "evidence": "It has been shown that BARTScore outperforms other metrics such as BERTScore and BLEURT (Yuan et al., 2021) (Section 3.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Learning to Substitute Words with Model-based Score Ranking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BLEURT",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Learning to Substitute Words with Model-based Score Ranking",
+      "evidence": "It has been shown that BARTScore outperforms other metrics such as BERTScore and BLEURT (Yuan et al., 2021) (Section 3.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Learning to Substitute Words with Model-based Score Ranking"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+      "evidence": "\"The evaluation assessed BARTScore, CTC, BLURT, and human-evaluated faithfulness scores.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "PlagBench: Exploring the Duality of Large Language Models in Plagiarism Generation and Detection",
+      "evidence": "\"Coherence \u2192BARTScore (Yuan et al., 2021)\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "PlagBench: Exploring the Duality of Large Language Models in Plagiarism Generation and Detection"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, BARTScore is predominantly characterized as a model-based evaluation metric used to assess the quality of generated text. Its core mechanism, as described in multiple papers, involves leveraging a pre-trained BART model to calculate a score based on generation probability, such as the conditional or average likelihood of the output text. The most common application described is as an automated procedure for comparing generated chain-of-thought rationales against \"manually created golden references.\" Papers use BARTScore to operationalize several constructs, including general `Output quality`, `Faithfulness`, and `Coherence`, with one study using it to measure \"semantic coherence\" in argument structures. It is applied to evaluate tasks such as `Text summarization` and question answering. While most sources treat it as a reference-based metric, one paper notes its use \"without human annotations,\" and another describes its function as providing \"pseudo ground-truth\" for output quality. In evaluation contexts, BARTScore is frequently studied alongside other metrics like BERTScore, BLEURT, and human judgments.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Agent-as-Judge for Factual Summarization of Long Narratives",
+      "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability",
+      "Plan Dynamically, Express Rhetorically: A Debate-Driven Rhetorical Framework for Argumentative Writing"
+    ],
+    "naacl25": [
+      "AdvisorQA: Towards Helpful and Harmless Advice-seeking Question Answering with Collective Intelligence",
+      "CSEval: Towards Automated, Multi-Dimensional, and Reference-Free Counterspeech Evaluation using Auto-Calibrated LLMs",
+      "Learning to Substitute Words with Model-based Score Ranking",
+      "PlagBench: Exploring the Duality of Large Language Models in Plagiarism Generation and Detection",
+      "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "naacl25": 5
+  },
+  "conferences": [
+    "emnlp25",
+    "naacl25"
+  ]
+}

@@ -1,0 +1,663 @@
+{
+  "canonical_name": "Generation diversity",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats generation diversity as variety and non-repetition in model outputs: responses should differ across samples instead of repeating n-grams, generic phrasing, or a narrow set of completions. Many definitions keep this at the level of wording or unique n-grams, while others broaden the same idea to semantic, syntactic, logical, or structural variation, coverage of the real data distribution, and diverse reasoning chains, plans, or solutions for one problem. A smaller line of work uses diversity for different targets, including balance of yes and no perspectives in summaries, coverage of selected support instances or finetuning tasks, synthesized dialogue coverage, and breadth of model knowledge or capabilities.\n\nSpace of facets. Papers use several near-overlapping labels, especially content, response, and output diversity, while task-specific variants shift the focus from responses to other kinds of candidates such as predictions or plans. One explicit breakdown separates multiple distinct responses, linguistic complexity, and coverage of the real data distribution, while other papers speak of lexical, semantic, structural, syntactic, logical, or perspective diversity. At the same time, the same label is applied to different objects, from generated texts and reasoning traces to selected data points, latent task coverage, balanced viewpoints in summaries, and structurally varied generated conformations.\n\nSpace of measurement. No paper explicitly says that generation diversity is measured by a named instrument. Papers nevertheless connect it to 1 measurement instrument, QuALITY, and 11 behavioral indicators, and operationalize it directly by sampling multiple outputs and comparing them with automatic measures such as Distinct-1/2/3, Self-BLEU, predictive entropy, LCTR, and semantic similarity or cosine similarity from sentence embeddings; one paper instead uses an LLM evaluator to score whether a summary balances yes and no perspectives. These operationalizations mostly match the prevailing non-repetition framing, though some extend it to plan or reasoning-path uniqueness, structure diversity, or viewpoint balance.\n\nLinks. Across papers, mode collapse is the most recurrent connection: some treat reduced diversity as related to mode collapse, and another claims a causal relationship from mode collapse to generation diversity. Papers also claim causal relationships from generation diversity to general ability and alignment tax, often in the form that diversity loss harms capabilities or that suppressing alternative plausible outputs during training leads to alignment tax, and one says preserving output diversity mitigates catastrophic forgetting. QuALITY is reported as a correlate, and papers also report many isolated related or causal links across 16 constructs and 11 behavioral indicators.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Diversity",
+    "Content diversity",
+    "Generation diversity",
+    "Response diversity",
+    "Prediction diversity",
+    "Solution diversity",
+    "Plan diversity",
+    "Output diversity"
+  ],
+  "papers": [
+    "Balancing Diversity and Risk in LLM Sampling: How to Select Your Method and Parameter for Open-Ended Text Generation",
+    "Curiosity-Driven Reinforcement Learning from Human Feedback",
+    "Deliberate Reasoning in Language Models as Structure-Aware Planning with an Accurate World Model",
+    "Evaluating Language Models as Synthetic Data Generators",
+    "Evaluating the Evaluation of Diversity in Commonsense Generation",
+    "Generating Diverse Training Samples for Relation Extraction with Large Language Models",
+    "Know You First and Be You Better: Modeling Human-Like User Simulators via Implicit Profiles",
+    "Odysseus Navigates the Sirens' Song: Dynamic Focus Decoding for Factual and Diverse Open-Ended Text Generation",
+    "Sightation Counts: Leveraging Sighted User Feedback in Building a BLV-aligned Dataset of Diagram Descriptions",
+    "Biased Tales: Cultural and Topic Bias in Generating Children's Stories",
+    "CARD: Cross-modal Agent Framework for Generative and Editable Residential Design",
+    "Conditional [MASK] Discrete Diffusion Language Model",
+    "Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models",
+    "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+    "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+    "Humans Hallucinate Too: Language Models Identify and Correct Subjective Annotation Errors With Label-in-a-Haystack Prompts",
+    "Nullspace Disentanglement for Red Teaming Language Models",
+    "RareSyn: Health Record Synthesis for Rare Disease Diagnosis",
+    "Reward-Weighted Sampling: Enhancing Non-Autoregressive Characteristics in Masked Diffusion LLMs",
+    "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning",
+    "Weights-Rotated Preference Optimization for Large Language Models",
+    "Beyond Reverse KL: Generalizing Direct Preference Optimization with Diverse Divergence Constraints",
+    "Branch-GAN: Improving Text Generation with (not so) Large Language Models",
+    "Closing the Curious Case of Neural Text Degeneration",
+    "Does Writing with Language Models Reduce Content Diversity?",
+    "Language Model Decoding as Direct Metrics Optimization",
+    "Leftover Lunch: Advantage-based Offline Reinforcement Learning for Language Models",
+    "MUSTARD: Mastering Uniform Synthesis of Theorem and Proof Data",
+    "MiniLLM: Knowledge Distillation of Large Language Models",
+    "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+    "Quality-Diversity through AI Feedback",
+    "Tailoring Self-Rationalizers with Multi-Reward Distillation",
+    "Towards Few-Shot Adaptation of Foundation Models via Multitask Finetuning",
+    "Understanding the Effects of RLHF on LLM Generalisation and Diversity",
+    "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+    "Collab: Controlled Decoding using Mixture of Agents for LLM Alignment",
+    "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+    "Conformal Generative Modeling with Improved Sample Efficiency through Sequential Greedy Filtering",
+    "Context Steering: Controllable Personalization at Inference Time",
+    "Correlation and Navigation in the Vocabulary Key Representation Space of Language Models",
+    "DPLM-2: A Multimodal Diffusion Protein Language Model",
+    "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+    "Diverse Preference Learning for Capabilities and Alignment",
+    "Diversity-Rewarded CFG Distillation",
+    "Dualformer: Controllable Fast and Slow Thinking by Learning with Randomized Reasoning Traces",
+    "Energy-Based Diffusion Language Models for Text Generation",
+    "Generative Monoculture in Large Language Models",
+    "Guaranteed Generation from Large Language Models",
+    "MAP: Multi-Human-Value Alignment Palette",
+    "MatExpert: Decomposing Materials Discovery By Mimicking Human Experts",
+    "Multiagent Finetuning: Self Improvement with Diverse Reasoning Chains",
+    "On-the-fly Preference Alignment via Principle-Guided Decoding",
+    "PAD: Personalized Alignment of LLMs at Decoding-time",
+    "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs",
+    "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+    "Progress or Regress? Self-Improvement Reversal in Post-training",
+    "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+    "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective",
+    "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+    "Trajectory-LLM: A Language-based Data Generator for Trajectory Prediction in Autonomous Driving",
+    "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs",
+    "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+    "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+    "Constrain Alignment with Sparse Autoencoders",
+    "Elucidating the Design Space of Multimodal Protein Language Models",
+    "Improving Diversity in Language Models: When Temperature Fails, Change the Loss",
+    "Improving LLMs for Recommendation with Out-Of-Vocabulary Tokens",
+    "Language Models as Implicit Tree Search",
+    "Measuring Diversity in Synthetic Datasets",
+    "Neural Genetic Search in Discrete Spaces",
+    "Position: LLM Social Simulations Are a Promising Research Method",
+    "Position: We Can\u2019t Understand AI Using our Existing Vocabulary",
+    "Representative Language Generation",
+    "Roll the dice & look before you leap: Going beyond the creative limits of next-token prediction",
+    "Soft Reasoning: Navigating Solution Spaces in Large Language Models through Controlled Embedding Exploration",
+    "Synthetic Text Generation for Training Large Language Models via Gradient Matching",
+    "TRACE Back from the Future: A Probabilistic Reasoning Approach to Controllable Language Generation",
+    "Towards Cost-Effective Reward Guided Text Generation",
+    "Active Few-Shot Learning for Text Classification",
+    "MoDS: Moderating a Mixture of Document Speakers to Summarize Debatable Queries in Document Collections",
+    "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis",
+    "VTechAGP: An Academic-to-General-Audience Text Paraphrase Dataset and Benchmark Models",
+    "Learnability Matters: Active Learning for Video Captioning",
+    "Localize, Understand, Collaborate: Semantic-Aware Dragging via Intention Reasoner",
+    "Synthesize, Partition, then Adapt: Eliciting Diverse Samples from Foundation Models",
+    "TSDS: Data Selection for Task-Specific Model Finetuning",
+    "Transfer Q-star : Principled Decoding for LLM Alignment"
+  ],
+  "paper_count": 87,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The extent to which generated text varies in wording and avoids repetitive n-gram patterns across outputs.",
+      "paper": "Transfer Q-star : Principled Decoding for LLM Alignment",
+      "original_name": "Diversity"
+    },
+    {
+      "text": "The degree to which written content varies in lexical expressions and key ideas across a collection of texts, reflecting the range of unique perspectives and phrasings present.",
+      "paper": "Does Writing with Language Models Reduce Content Diversity?",
+      "original_name": "Content diversity"
+    },
+    {
+      "text": "The degree to which a model produces a wide variety of distinct outputs rather than repetitive or mode-collapsed responses.",
+      "paper": "Beyond Reverse KL: Generalizing Direct Preference Optimization with Diverse Divergence Constraints",
+      "original_name": "Generation diversity"
+    },
+    {
+      "text": "The variety of linguistic expressions and content generated by a model, measured by the uniqueness of n-grams across outputs.",
+      "paper": "Leftover Lunch: Advantage-based Offline Reinforcement Learning for Language Models",
+      "original_name": "Response diversity"
+    },
+    {
+      "text": "The model's ability to generate a wide variety of syntactic, semantic, and logical outputs for a given input or across a range of inputs.",
+      "paper": "Understanding the Effects of RLHF on LLM Generalisation and Diversity",
+      "original_name": "Output diversity"
+    },
+    {
+      "text": "The degree of dissimilarity in the outputs generated by a set of ensembled models for the same input.",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "original_name": "Prediction diversity"
+    },
+    {
+      "text": "The degree to which multiple solutions generated for the same problem differ from one another, which is crucial for effective exploration of the solution space.",
+      "paper": "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+      "original_name": "Solution diversity"
+    },
+    {
+      "text": "The latent capacity of the model to generate a variety of unique valid solutions or paths for a given problem rather than converging on a single output.",
+      "paper": "Dualformer: Controllable Fast and Slow Thinking by Learning with Randomized Reasoning Traces",
+      "original_name": "Plan diversity"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mode collapse",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+      "evidence": "Large Language Models (LLMs) often suffer from mode collapse, repeatedly generating the same few completions even when many valid answers exist, limiting their diversity across a wide range of tasks.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models"
+        ],
+        "iclr24": [
+          "Understanding the Effects of RLHF on LLM Generalisation and Diversity"
+        ],
+        "icml25": [
+          "Representative Language Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "evidence": "Decoding-based approaches offer greater adaptability but face a fundamental diversity\u2013quality trade-off. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "G2: Guided Generation for Enhanced Output Diversity in LLMs"
+        ],
+        "neurips24": [
+          "Synthesize, Partition, then Adapt: Eliciting Diverse Samples from Foundation Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Collab: Controlled Decoding using Mixture of Agents for LLM Alignment",
+      "evidence": "Diversity: This metric measures the ability to generate texts with a wide range of vocabulary.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Collab: Controlled Decoding using Mixture of Agents for LLM Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Diverse Preference Learning for Capabilities and Alignment",
+      "evidence": "Diversity loss can harm both capabilities and representation. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Diverse Preference Learning for Capabilities and Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Coherence",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Closing the Curious Case of Neural Text Degeneration",
+      "evidence": "Thus, the best choice of threshold must strike a balance between diversity (i.e., including as many tokens as possible in the set of candidates) and coherence (i.e., avoiding sampling tokens outside the true support). (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Closing the Curious Case of Neural Text Degeneration"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Out-of-distribution generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Understanding the Effects of RLHF on LLM Generalisation and Diversity",
+      "evidence": "We demonstrate an inherent tradeoff between generalisation performance and output diversity when choosing between these methods (Section 7).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Understanding the Effects of RLHF on LLM Generalisation and Diversity"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Downstream task performance",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Imitating Language via Scalable Inverse Reinforcement Learning",
+      "evidence": "\u201cOur experiments demonstrate particularly strong gains for IRL on the Pareto front of task performance and diversity of model generations.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Imitating Language via Scalable Inverse Reinforcement Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "evidence": "preserving output diversity has the added benefit of mitigating forgetting, as maintaining diverse outputs encourages models to retain pre-trained knowledge throughout the training process. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Alignment tax",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "evidence": "by suppressing alternative plausible outputs during training, CE can lead to \u201cknowledge forgetting\u201d or \u201calignment tax\u201d, eroding the pre-trained model\u2019s encoded knowledge (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Creativity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Diversity-Rewarded CFG Distillation",
+      "evidence": "hindering the exploration of novel and diverse ideas \u2014 a cornerstone of creativity.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Diversity-Rewarded CFG Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Music generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Diversity-Rewarded CFG Distillation",
+      "evidence": "We apply our strategy to text-to-music generation, a creative task where balancing quality and diversity is key.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Diversity-Rewarded CFG Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Epistemic uncertainty",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "evidence": "The performance of uncertainty-aware MBR is highly correlated with the prediction diversity across the combined models. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Synthetic data generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective",
+      "evidence": "As emphasized in (Long et al., 2024), the generation of synthetic data typically focuses on two primary objectives: faithfulness and diversity. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective",
+      "evidence": "We emphasize the importance of balancing faithfulness and diversity during post-training stages, providing a theoretical foundation for existing methodologies. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Progress or Regress? Self-Improvement Reversal in Post-training",
+      "evidence": "We posit that a model\u2019s capacity to produce diverse solutions is indicative of its robustness and flexibility in problem-solving. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Progress or Regress? Self-Improvement Reversal in Post-training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Self-improvement",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Progress or Regress? Self-Improvement Reversal in Post-training",
+      "evidence": "The evaluation results highlight a critical trade-off in iterative self-improvement: while aiming for higher accuracy, the diversity of outputs, which can be crucial for creativity and robustness in problem-solving, is compromised. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Progress or Regress? Self-Improvement Reversal in Post-training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Controllability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Constrain Alignment with Sparse Autoencoders",
+      "evidence": "Recent advancements in DPO focus on mainly two directions: efficiency i.e., further simplifying the constraints of DPO, and controllability i.e., keeping the balance between alignment and generation diversity. (Section 1. Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Constrain Alignment with Sparse Autoencoders"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code debugging",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "correlates",
+      "paper": "AuPair: Golden Example Pairs for Code Repair",
+      "evidence": "The superior performance of AuPairs produced by Gemini-1.5-Pro corresponds to highly diverse fixes (Fig. 8, top right). (Section 3.7. High Code-specific Diversity)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "AuPair: Golden Example Pairs for Code Repair"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Representation learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Elucidating the Design Space of Multimodal Protein Language Models",
+      "evidence": "Introducing representation-level learning and architectural innovations infuses geometric inductive biases and effectively refines generation diversity. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Elucidating the Design Space of Multimodal Protein Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Distinct-n",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Measuring Diversity in Synthetic Datasets",
+      "evidence": "Commonly used n-gram-based diversity metrics include distinct n-grams (distinct-n) (Song et al., 2024), self-BLEU (Shu et al., 2019), and ROUGE-L (Wang et al., 2022; Padmakumar & He, 2023). (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Measuring Diversity in Synthetic Datasets"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reward hacking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Weights-Rotated Preference Optimization for Large Language Models",
+      "evidence": "Reward hacking suppresses all behavioral characteristics in rejected completions, resulting in poor expressive ability and the deterioration of generation diversity. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Weights-Rotated Preference Optimization for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "evidence": "This limitation [in output diversity] hinders their performance in tasks that demand diverse and informative responses, such as open-domain question answering, instruction following, and test-time scaling for reasoning (Zhang et al., 2024a). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "G2: Guided Generation for Enhanced Output Diversity in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Stability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs",
+      "evidence": "Furthermore, stability implies an intuitive notion of diversity, suggesting that tokens with similar logits should have comparable probabilities of being selected.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 23,
+  "incoming_relationship_count": 11,
+  "outgoing_relationship_count": 12,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats generation diversity as variety and non-repetition in model outputs: responses should differ across samples instead of repeating n-grams, generic phrasing, or a narrow set of completions. Many definitions keep this at the level of wording or unique n-grams, while others broaden the same idea to semantic, syntactic, logical, or structural variation, coverage of the real data distribution, and diverse reasoning chains, plans, or solutions for one problem. A smaller line of work uses diversity for different targets, including balance of yes and no perspectives in summaries, coverage of selected support instances or finetuning tasks, synthesized dialogue coverage, and breadth of model knowledge or capabilities."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use several near-overlapping labels, especially content, response, and output diversity, while task-specific variants shift the focus from responses to other kinds of candidates such as predictions or plans. One explicit breakdown separates multiple distinct responses, linguistic complexity, and coverage of the real data distribution, while other papers speak of lexical, semantic, structural, syntactic, logical, or perspective diversity. At the same time, the same label is applied to different objects, from generated texts and reasoning traces to selected data points, latent task coverage, balanced viewpoints in summaries, and structurally varied generated conformations."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No paper explicitly says that generation diversity is measured by a named instrument. Papers nevertheless connect it to 1 measurement instrument, QuALITY, and 11 behavioral indicators, and operationalize it directly by sampling multiple outputs and comparing them with automatic measures such as Distinct-1/2/3, Self-BLEU, predictive entropy, LCTR, and semantic similarity or cosine similarity from sentence embeddings; one paper instead uses an LLM evaluator to score whether a summary balances yes and no perspectives. These operationalizations mostly match the prevailing non-repetition framing, though some extend it to plan or reasoning-path uniqueness, structure diversity, or viewpoint balance."
+    },
+    {
+      "label": "Links.",
+      "text": "Across papers, mode collapse is the most recurrent connection: some treat reduced diversity as related to mode collapse, and another claims a causal relationship from mode collapse to generation diversity. Papers also claim causal relationships from generation diversity to general ability and alignment tax, often in the form that diversity loss harms capabilities or that suppressing alternative plausible outputs during training leads to alignment tax, and one says preserving output diversity mitigates catastrophic forgetting. QuALITY is reported as a correlate, and papers also report many isolated related or causal links across 16 constructs and 11 behavioral indicators."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define generation diversity as the variety, distinctness, and non-repetitiveness of generated outputs, often across multiple samples for the same prompt and sometimes specifying lexical, syntactic, semantic, logical, or reasoning-path variation. A few papers use the term for data or task-space coverage, broad model capability space, or balanced perspectives in a summary, but these are outliers rather than a substantial competing definition.",
+    "papers_with_definition": 34,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats generation diversity as variety and non-repetition in model outputs: responses should differ across samples instead of repeating n-grams, generic phrasing, or a narrow set of completions. Many definitions keep this at the level of wording or unique n-grams, while others broaden the same idea to semantic, syntactic, logical, or structural variation, coverage of the real data distribution, and diverse reasoning chains, plans, or solutions for one problem. A smaller line of work uses diversity for different targets, including balance of yes and no perspectives in summaries, coverage of selected support instances or finetuning tasks, synthesized dialogue coverage, and breadth of model knowledge or capabilities.\n\nSpace of facets. Papers use several near-overlapping labels, especially content, response, and output diversity, while task-specific variants shift the focus from responses to other kinds of candidates such as predictions or plans. One explicit breakdown separates multiple distinct responses, linguistic complexity, and coverage of the real data distribution, while other papers speak of lexical, semantic, structural, syntactic, logical, or perspective diversity. At the same time, the same label is applied to different objects, from generated texts and reasoning traces to selected data points, latent task coverage, balanced viewpoints in summaries, and structurally varied generated conformations.\n\nSpace of measurement. No paper explicitly says that generation diversity is measured by a named instrument. Papers nevertheless connect it to 1 measurement instrument, QuALITY, and 11 behavioral indicators, and operationalize it directly by sampling multiple outputs and comparing them with automatic measures such as Distinct-1/2/3, Self-BLEU, predictive entropy, LCTR, and semantic similarity or cosine similarity from sentence embeddings; one paper instead uses an LLM evaluator to score whether a summary balances yes and no perspectives. These operationalizations mostly match the prevailing non-repetition framing, though some extend it to plan or reasoning-path uniqueness, structure diversity, or viewpoint balance.\n\nLinks. Across papers, mode collapse is the most recurrent connection: some treat reduced diversity as related to mode collapse, and another claims a causal relationship from mode collapse to generation diversity. Papers also claim causal relationships from generation diversity to general ability and alignment tax, often in the form that diversity loss harms capabilities or that suppressing alternative plausible outputs during training leads to alignment tax, and one says preserving output diversity mitigates catastrophic forgetting. QuALITY is reported as a correlate, and papers also report many isolated related or causal links across 16 constructs and 11 behavioral indicators.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Balancing Diversity and Risk in LLM Sampling: How to Select Your Method and Parameter for Open-Ended Text Generation",
+      "Curiosity-Driven Reinforcement Learning from Human Feedback",
+      "Deliberate Reasoning in Language Models as Structure-Aware Planning with an Accurate World Model",
+      "Evaluating Language Models as Synthetic Data Generators",
+      "Evaluating the Evaluation of Diversity in Commonsense Generation",
+      "Generating Diverse Training Samples for Relation Extraction with Large Language Models",
+      "Know You First and Be You Better: Modeling Human-Like User Simulators via Implicit Profiles",
+      "Odysseus Navigates the Sirens' Song: Dynamic Focus Decoding for Factual and Diverse Open-Ended Text Generation",
+      "Sightation Counts: Leveraging Sighted User Feedback in Building a BLV-aligned Dataset of Diagram Descriptions"
+    ],
+    "emnlp25": [
+      "Biased Tales: Cultural and Topic Bias in Generating Children's Stories",
+      "CARD: Cross-modal Agent Framework for Generative and Editable Residential Design",
+      "Conditional [MASK] Discrete Diffusion Language Model",
+      "Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models",
+      "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+      "Humans Hallucinate Too: Language Models Identify and Correct Subjective Annotation Errors With Label-in-a-Haystack Prompts",
+      "Nullspace Disentanglement for Red Teaming Language Models",
+      "RareSyn: Health Record Synthesis for Rare Disease Diagnosis",
+      "Reward-Weighted Sampling: Enhancing Non-Autoregressive Characteristics in Masked Diffusion LLMs",
+      "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning",
+      "Weights-Rotated Preference Optimization for Large Language Models"
+    ],
+    "iclr24": [
+      "Beyond Reverse KL: Generalizing Direct Preference Optimization with Diverse Divergence Constraints",
+      "Branch-GAN: Improving Text Generation with (not so) Large Language Models",
+      "Closing the Curious Case of Neural Text Degeneration",
+      "Does Writing with Language Models Reduce Content Diversity?",
+      "Language Model Decoding as Direct Metrics Optimization",
+      "Leftover Lunch: Advantage-based Offline Reinforcement Learning for Language Models",
+      "MUSTARD: Mastering Uniform Synthesis of Theorem and Proof Data",
+      "MiniLLM: Knowledge Distillation of Large Language Models",
+      "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+      "Quality-Diversity through AI Feedback",
+      "Tailoring Self-Rationalizers with Multi-Reward Distillation",
+      "Towards Few-Shot Adaptation of Foundation Models via Multitask Finetuning",
+      "Understanding the Effects of RLHF on LLM Generalisation and Diversity"
+    ],
+    "iclr25": [
+      "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+      "Collab: Controlled Decoding using Mixture of Agents for LLM Alignment",
+      "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+      "Conformal Generative Modeling with Improved Sample Efficiency through Sequential Greedy Filtering",
+      "Context Steering: Controllable Personalization at Inference Time",
+      "Correlation and Navigation in the Vocabulary Key Representation Space of Language Models",
+      "DPLM-2: A Multimodal Diffusion Protein Language Model",
+      "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+      "Diverse Preference Learning for Capabilities and Alignment",
+      "Diversity-Rewarded CFG Distillation",
+      "Dualformer: Controllable Fast and Slow Thinking by Learning with Randomized Reasoning Traces",
+      "Energy-Based Diffusion Language Models for Text Generation",
+      "Generative Monoculture in Large Language Models",
+      "Guaranteed Generation from Large Language Models",
+      "MAP: Multi-Human-Value Alignment Palette",
+      "MatExpert: Decomposing Materials Discovery By Mimicking Human Experts",
+      "Multiagent Finetuning: Self Improvement with Diverse Reasoning Chains",
+      "On-the-fly Preference Alignment via Principle-Guided Decoding",
+      "PAD: Personalized Alignment of LLMs at Decoding-time",
+      "Permute-and-Flip: An optimally stable and watermarkable decoder for LLMs",
+      "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "Progress or Regress? Self-Improvement Reversal in Post-training",
+      "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+      "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective",
+      "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+      "Trajectory-LLM: A Language-based Data Generator for Trajectory Prediction in Autonomous Driving",
+      "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs",
+      "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+    ],
+    "icml25": [
+      "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+      "Constrain Alignment with Sparse Autoencoders",
+      "Elucidating the Design Space of Multimodal Protein Language Models",
+      "Improving Diversity in Language Models: When Temperature Fails, Change the Loss",
+      "Improving LLMs for Recommendation with Out-Of-Vocabulary Tokens",
+      "Language Models as Implicit Tree Search",
+      "Measuring Diversity in Synthetic Datasets",
+      "Neural Genetic Search in Discrete Spaces",
+      "Position: LLM Social Simulations Are a Promising Research Method",
+      "Position: We Can\u2019t Understand AI Using our Existing Vocabulary",
+      "Representative Language Generation",
+      "Roll the dice & look before you leap: Going beyond the creative limits of next-token prediction",
+      "Soft Reasoning: Navigating Solution Spaces in Large Language Models through Controlled Embedding Exploration",
+      "Synthetic Text Generation for Training Large Language Models via Gradient Matching",
+      "TRACE Back from the Future: A Probabilistic Reasoning Approach to Controllable Language Generation",
+      "Towards Cost-Effective Reward Guided Text Generation"
+    ],
+    "naacl25": [
+      "Active Few-Shot Learning for Text Classification",
+      "MoDS: Moderating a Mixture of Document Speakers to Summarize Debatable Queries in Document Collections",
+      "ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis",
+      "VTechAGP: An Academic-to-General-Audience Text Paraphrase Dataset and Benchmark Models"
+    ],
+    "neurips24": [
+      "Learnability Matters: Active Learning for Video Captioning",
+      "Localize, Understand, Collaborate: Semantic-Aware Dragging via Intention Reasoner",
+      "Synthesize, Partition, then Adapt: Eliciting Diverse Samples from Foundation Models",
+      "TSDS: Data Selection for Task-Specific Model Finetuning",
+      "Transfer Q-star : Principled Decoding for LLM Alignment"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 9,
+    "emnlp25": 12,
+    "iclr24": 13,
+    "iclr25": 28,
+    "icml25": 16,
+    "naacl25": 4,
+    "neurips24": 5
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

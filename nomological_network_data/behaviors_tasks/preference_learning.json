@@ -1,0 +1,99 @@
+{
+  "canonical_name": "Preference learning",
+  "type": "behavior",
+  "canonical_definition": "Across the provided literature, preference learning is most commonly framed as the task of choosing, ranking, or predicting a preferred response from a pair or set of candidates for a given prompt. This behavior is operationalized through the creation of preference datasets where an annotator, which can be a human or another LLM, labels which response is better according to a set of criteria. Performance on this task is frequently measured using metrics like \"ranking accuracy\" or \"classification accuracy\" to evaluate how well a model can predict these preference judgments. The annotations themselves can vary; one paper notes they can include \"Scalar scores that indicate the fine-grained quality regarding multiple aspects, (2) Preference ranking... and (3) Textual explanations\" (\"Multimodal Large Language Models Make Text-to-Image Generative Models Align Better\"). While most definitions focus on the act of judging preferences, a few papers define it as \"preference optimization,\" the process of updating a model's policy to align with these judgments. Other, less frequent conceptualizations include \"preference selection\" to test for biases in multimodal models by using images as choices, and \"pairwise discrimination learning,\" which frames the task as learning from differential feedback over a series of binary choices. In the provided data, preference learning is studied in relation to \"Objective mismatch\" and is reported by one paper to cause \"Hallucination\".",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/training pipeline \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Preference labeling",
+    "Preference selection",
+    "Preference optimization",
+    "Preference model estimation",
+    "Pairwise discrimination learning"
+  ],
+  "papers": [
+    "Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization",
+    "Position: Principles of Animal Cognition to Improve LLM Evaluations",
+    "Square$\u03c7$PO: Differentially Private and Robust $\u03c7^2$-Preference Optimization in Offline Direct Alignment",
+    "A Critical Evaluation of AI Feedback for Aligning Large Language Models",
+    "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of choosing a preferred response from two or more candidate completions for a given instruction, based on a set of criteria.",
+      "paper": "A Critical Evaluation of AI Feedback for Aligning Large Language Models",
+      "original_name": "Preference labeling"
+    },
+    {
+      "text": "The task of choosing a preferred option from a set of choices, which can be presented visually or textually, to test for inherent biases.",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "original_name": "Preference selection"
+    },
+    {
+      "text": "Updating a language model policy to prefer responses judged better under a preference dataset or reward model.",
+      "paper": "Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization",
+      "original_name": "Preference optimization"
+    },
+    {
+      "text": "The observable process of estimating a model of preferences from corrupted or privatized labels, using least-square regression with privacy-aware scaling.",
+      "paper": "Square$\u03c7$PO: Differentially Private and Robust $\u03c7^2$-Preference Optimization in Offline Direct Alignment",
+      "original_name": "Preference model estimation"
+    },
+    {
+      "text": "The observable behavior of learning to select the correct option in a series of binary choices through differential feedback, such as consistently choosing A over B when reinforced for doing so.",
+      "paper": "Position: Principles of Animal Cognition to Improve LLM Evaluations",
+      "original_name": "Pairwise discrimination learning"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "DAMA: Data- and Model-aware Alignment of Multi-modal LLMs",
+      "evidence": "\u201crecent works utilizing preference optimization have demonstrated significant performance in hallucination mitigation\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "DAMA: Data- and Model-aware Alignment of Multi-modal LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, preference learning is most commonly framed as the task of choosing, ranking, or predicting a preferred response from a pair or set of candidates for a given prompt. This behavior is operationalized through the creation of preference datasets where an annotator, which can be a human or another LLM, labels which response is better according to a set of criteria. Performance on this task is frequently measured using metrics like \"ranking accuracy\" or \"classification accuracy\" to evaluate how well a model can predict these preference judgments. The annotations themselves can vary; one paper notes they can include \"Scalar scores that indicate the fine-grained quality regarding multiple aspects, (2) Preference ranking... and (3) Textual explanations\" (\"Multimodal Large Language Models Make Text-to-Image Generative Models Align Better\"). While most definitions focus on the act of judging preferences, a few papers define it as \"preference optimization,\" the process of updating a model's policy to align with these judgments. Other, less frequent conceptualizations include \"preference selection\" to test for biases in multimodal models by using images as choices, and \"pairwise discrimination learning,\" which frames the task as learning from differential feedback over a series of binary choices. In the provided data, preference learning is studied in relation to \"Objective mismatch\" and is reported by one paper to cause \"Hallucination\".",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization"
+    ],
+    "icml25": [
+      "Position: Principles of Animal Cognition to Improve LLM Evaluations",
+      "Square$\u03c7$PO: Differentially Private and Robust $\u03c7^2$-Preference Optimization in Offline Direct Alignment"
+    ],
+    "neurips24": [
+      "A Critical Evaluation of AI Feedback for Aligning Large Language Models",
+      "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 1,
+    "icml25": 2,
+    "neurips24": 2
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

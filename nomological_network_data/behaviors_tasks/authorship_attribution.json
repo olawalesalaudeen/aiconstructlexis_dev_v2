@@ -1,0 +1,134 @@
+{
+  "canonical_name": "Authorship attribution",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the concept is used for several closely related authorship tasks rather than a single fixed formulation. A prevalent framing is a pairwise judgment over two texts, documents, or text collections, asking whether they were written by the same author and returning either a likelihood score or a binary same/different decision. Other papers formulate it as determining whether a text was written by a particular known author from linguistic cues or stylistic fingerprints, or as identifying which human or machine generator produced a text.\n\nVariants. Papers use several names for neighboring variants, including authorship attribution, authorship verification, and text origin detection. The settings range from recognizing whether two input documents have the same author, to multi-class classification where humans and LLMs are the labels, to identifying the specific LLM that generated an AI-generated text from its statistical or representational patterns. A related paper also places it alongside AI-generated text detection, describing that area as including neural authorship attribution and multi-author classification.\n\nSpace of elicitation and scores. No paper links it to a measurement instrument. In the task descriptions themselves, papers score it with outputs such as a same-author likelihood score, a binary same/different classification, or a multi-class author label, but no named instrument is used in the linked relationships to elicit or measure the behavior.\n\nWhat it is taken as evidence of. Construct links are narrow in the surveyed papers. The only construct relation is a correlational one with Reasoning: a paper reports that models with stronger reasoning abilities excel at verification and concealing authorial traits, so this behavior is reported to correlate with Reasoning rather than being tied to multiple construct framings.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Authorship attribution",
+    "Authorship verification",
+    "Text origin detection"
+  ],
+  "papers": [
+    "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers",
+    "OpenTuringBench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+    "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+    "Unraveling Interwoven Roles of Large Language Models in Authorship Privacy: Obfuscation, Mimicking, and Verification",
+    "What's in a prompt? Language models encode literary style in prompt embeddings",
+    "Beemo: Benchmark of Expert-edited Machine-generated Outputs",
+    "CAVE: Controllable Authorship Verification Explanations"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of taking two collections of text and producing a score indicating the likelihood they were written by the same author.",
+      "paper": "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers",
+      "original_name": "Authorship attribution"
+    },
+    {
+      "text": "The observable task of determining whether a given piece of text was written by a specific, known author based on stylistic evidence.",
+      "paper": "Unraveling Interwoven Roles of Large Language Models in Authorship Privacy: Obfuscation, Mimicking, and Verification",
+      "original_name": "Authorship verification"
+    },
+    {
+      "text": "The observable task of determining which specific LLM generated a given piece of text, based on analysis of its statistical or representational patterns.",
+      "paper": "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+      "original_name": "Text origin detection"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "AI-generated text detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Beemo: Benchmark of Expert-edited Machine-generated Outputs",
+      "evidence": "MGT detection features various task formulations and labelling schemes: binary classification, neural authorship attribution, boundary-detection, and multi-author classification. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Beemo: Benchmark of Expert-edited Machine-generated Outputs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Ablation study",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers",
+      "evidence": "our ablation study evaluates the impact of different layers in the LIGHT-LUAR model by systematically removing each layer from the aggregation and measuring its effect on attribution performance across three datasets (Section 6.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "Unraveling Interwoven Roles of Large Language Models in Authorship Privacy: Obfuscation, Mimicking, and Verification",
+      "evidence": "models with stronger reasoning abilities (e.g., o3-mini, Deepseek) according to the benchmark 1, excel at verification and concealing authorial traits",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Unraveling Interwoven Roles of Large Language Models in Authorship Privacy: Obfuscation, Mimicking, and Verification"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the concept is used for several closely related authorship tasks rather than a single fixed formulation. A prevalent framing is a pairwise judgment over two texts, documents, or text collections, asking whether they were written by the same author and returning either a likelihood score or a binary same/different decision. Other papers formulate it as determining whether a text was written by a particular known author from linguistic cues or stylistic fingerprints, or as identifying which human or machine generator produced a text."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several names for neighboring variants, including authorship attribution, authorship verification, and text origin detection. The settings range from recognizing whether two input documents have the same author, to multi-class classification where humans and LLMs are the labels, to identifying the specific LLM that generated an AI-generated text from its statistical or representational patterns. A related paper also places it alongside AI-generated text detection, describing that area as including neural authorship attribution and multi-author classification."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No paper links it to a measurement instrument. In the task descriptions themselves, papers score it with outputs such as a same-author likelihood score, a binary same/different classification, or a multi-class author label, but no named instrument is used in the linked relationships to elicit or measure the behavior."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Construct links are narrow in the surveyed papers. The only construct relation is a correlational one with Reasoning: a paper reports that models with stronger reasoning abilities excel at verification and concealing authorial traits, so this behavior is reported to correlate with Reasoning rather than being tied to multiple construct framings."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the concept is used for several closely related authorship tasks rather than a single fixed formulation. A prevalent framing is a pairwise judgment over two texts, documents, or text collections, asking whether they were written by the same author and returning either a likelihood score or a binary same/different decision. Other papers formulate it as determining whether a text was written by a particular known author from linguistic cues or stylistic fingerprints, or as identifying which human or machine generator produced a text.\n\nVariants. Papers use several names for neighboring variants, including authorship attribution, authorship verification, and text origin detection. The settings range from recognizing whether two input documents have the same author, to multi-class classification where humans and LLMs are the labels, to identifying the specific LLM that generated an AI-generated text from its statistical or representational patterns. A related paper also places it alongside AI-generated text detection, describing that area as including neural authorship attribution and multi-author classification.\n\nSpace of elicitation and scores. No paper links it to a measurement instrument. In the task descriptions themselves, papers score it with outputs such as a same-author likelihood score, a binary same/different classification, or a multi-class author label, but no named instrument is used in the linked relationships to elicit or measure the behavior.\n\nWhat it is taken as evidence of. Construct links are narrow in the surveyed papers. The only construct relation is a correlational one with Reasoning: a paper reports that models with stronger reasoning abilities excel at verification and concealing authorial traits, so this behavior is reported to correlate with Reasoning rather than being tied to multiple construct framings.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers",
+      "OpenTuringBench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+      "Profiler: Black-box AI-generated Text Origin Detection via Context-aware Inference Pattern Analysis",
+      "Unraveling Interwoven Roles of Large Language Models in Authorship Privacy: Obfuscation, Mimicking, and Verification",
+      "What's in a prompt? Language models encode literary style in prompt embeddings"
+    ],
+    "naacl25": [
+      "Beemo: Benchmark of Expert-edited Machine-generated Outputs",
+      "CAVE: Controllable Authorship Verification Explanations"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "naacl25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "naacl25"
+  ]
+}

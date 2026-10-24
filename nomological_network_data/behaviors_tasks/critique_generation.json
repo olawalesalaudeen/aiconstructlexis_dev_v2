@@ -1,0 +1,202 @@
+{
+  "canonical_name": "Critique generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is text-based feedback about a response, sentence, or solution: papers most commonly describe outputs that identify errors, weaknesses, or unfaithful spans and often suggest fixes or improvements. Some authors make the behavior more evaluative, pairing the critique with a judgment or with criteria-based justification, while others cast it as guidance to another agent during collaboration. As \"Teaching Language Models to Critique via Reinforcement Learning\" puts it, the critique may include \"an analysis of the solution\u2019s strengths and weaknesses,\" \"actionable improvement suggestions,\" and \"a final judgment of correctness.\"\n\nVariants. Variants appear in collaborative exchanges, where a critic agent gives feedback on another agent\u2019s answer, and in candidate-response comparison, where the output is a list of strengths and weaknesses for each response. Other papers specialize the behavior to factuality judgments that say which document parts support or contradict a claim, to mathematical or table-reasoning error review, and to step-by-step verification rationales before a final Yes/No decision. Some definitions also narrow it to single-response critique or to correction suggestions after an inconsistency is found.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead operationalize the behavior through the generated text itself, such as critiques that detail an error span and suggest a fix, strengths-and-weaknesses lists for responses, support-or-contradiction explanations for factuality, or a verbalized rationale before a final yes/no judgment. In \"MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration,\" the critique output is described as one that \"detail[s] the error span ... and suggest[s] a fix.\"\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. The linked constructs are Reasoning and Robustness, but the recorded links are causal: a paper claims a causal relationship from critique generation to Reasoning, saying the critiques help correct flawed reasoning steps, and another paper claims a causal relationship from critique generation to Robustness. Beyond constructs, a paper also claims a causal relationship from critique generation to Self-correction, and the Robustness link is additionally recorded in the reverse direction, as a causal relationship from Robustness to critique generation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Critique generation",
+    "Providing feedback",
+    "Response critique",
+    "Correction suggestion generation",
+    "Chain-of-thought verification",
+    "Natural language critique",
+    "Single-response critique generation",
+    "Solution critique",
+    "Textual critique generation"
+  ],
+  "papers": [
+    "Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction",
+    "Improving Model Factuality with Fine-grained Critique-based Evaluator",
+    "Praetor: A Fine-Grained Generative LLM Evaluator with Instance-Level Customizable Evaluation Criteria",
+    "Table-Critic: A Multi-Agent Framework for Collaborative Criticism and Refinement in Table Reasoning",
+    "Direct Judgement Preference Optimization",
+    "Generative Judge for Evaluating Alignment",
+    "ACC-Collab: An Actor-Critic Approach to Multi-Agent LLM Collaboration",
+    "Generative Verifiers: Reward Modeling as Next-Token Prediction",
+    "An Architecture Search Framework for Inference-Time Techniques",
+    "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+    "Teaching Language Models to Critique via Reinforcement Learning",
+    "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+    "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+    "Self-Generated Critiques Boost Reward Modeling for Language Models",
+    "LLaMA-Berry: Pairwise Optimization for Olympiad-level Mathematical Reasoning via O1-like Monte Carlo Tree Search"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable behavior of producing a textual explanation that identifies error spans in a generated sentence and suggests fixes.",
+      "paper": "Self-Generated Critiques Boost Reward Modeling for Language Models",
+      "original_name": "Critique generation"
+    },
+    {
+      "text": "Generating critique or guidance on another agent's answer during a collaborative exchange.",
+      "paper": "ACC-Collab: An Actor-Critic Approach to Multi-Agent LLM Collaboration",
+      "original_name": "Providing feedback"
+    },
+    {
+      "text": "Producing strengths and weaknesses for candidate responses so they can be improved or selected.",
+      "paper": "An Architecture Search Framework for Inference-Time Techniques",
+      "original_name": "Response critique"
+    },
+    {
+      "text": "The observable behavior of a model, after identifying an inconsistency, generating a specific suggestion for how to improve or correct the output.",
+      "paper": "Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction",
+      "original_name": "Correction suggestion generation"
+    },
+    {
+      "text": "The observable behavior of a model generating an explicit, step-by-step rationale to critique a solution before making a final correctness judgment.",
+      "paper": "Generative Verifiers: Reward Modeling as Next-Token Prediction",
+      "original_name": "Chain-of-thought verification"
+    },
+    {
+      "text": "Generating structured, explanatory text that justifies an evaluation decision by referencing specific criteria and response content.",
+      "paper": "Generative Judge for Evaluating Alignment",
+      "original_name": "Natural language critique"
+    },
+    {
+      "text": "Producing a natural language critique that identifies shortcomings in a single model-generated response relative to the query and evaluation criteria.",
+      "paper": "Generative Judge for Evaluating Alignment",
+      "original_name": "Single-response critique generation"
+    },
+    {
+      "text": "Identifying flaws, errors, or inefficiencies in a generated mathematical solution through self-generated feedback.",
+      "paper": "LLaMA-Berry: Pairwise Optimization for Olympiad-level Mathematical Reasoning via O1-like Monte Carlo Tree Search",
+      "original_name": "Solution critique"
+    },
+    {
+      "text": "Producing natural language explanations that justify a factuality judgment for a claim, indicating which parts of the document support or contradict it.",
+      "paper": "Improving Model Factuality with Fine-grained Critique-based Evaluator",
+      "original_name": "Textual critique generation"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Self-Generated Critiques Boost Reward Modeling for Language Models",
+      "evidence": "Additionally, these critiques help the policy language model (LM) correct flawed reasoning steps, resulting in improved accuracy in refined responses.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Self-Generated Critiques Boost Reward Modeling for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Self-Generated Critiques Boost Reward Modeling for Language Models",
+      "evidence": "Additional studies confirm the utility of generated critiques for Critic-RM in identifying and correcting mistakes made by LLMs.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Self-Generated Critiques Boost Reward Modeling for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "CARE: A Disagreement Detection Framework with Concept Alignment and Reasoning Enhancement",
+      "evidence": "This mechanism enhances the model\u2019s robustness in complex and uncertain environments and fosters a dynamic learning phase, facilitating continuous improvement through error identification and rectification. (Section 3.4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CARE: A Disagreement Detection Framework with Concept Alignment and Reasoning Enhancement"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is text-based feedback about a response, sentence, or solution: papers most commonly describe outputs that identify errors, weaknesses, or unfaithful spans and often suggest fixes or improvements. Some authors make the behavior more evaluative, pairing the critique with a judgment or with criteria-based justification, while others cast it as guidance to another agent during collaboration. As \"Teaching Language Models to Critique via Reinforcement Learning\" puts it, the critique may include \"an analysis of the solution\u2019s strengths and weaknesses,\" \"actionable improvement suggestions,\" and \"a final judgment of correctness.\""
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants appear in collaborative exchanges, where a critic agent gives feedback on another agent\u2019s answer, and in candidate-response comparison, where the output is a list of strengths and weaknesses for each response. Other papers specialize the behavior to factuality judgments that say which document parts support or contradict a claim, to mathematical or table-reasoning error review, and to step-by-step verification rationales before a final Yes/No decision. Some definitions also narrow it to single-response critique or to correction suggestions after an inconsistency is found."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Papers instead operationalize the behavior through the generated text itself, such as critiques that detail an error span and suggest a fix, strengths-and-weaknesses lists for responses, support-or-contradiction explanations for factuality, or a verbalized rationale before a final yes/no judgment. In \"MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration,\" the critique output is described as one that \"detail[s] the error span ... and suggest[s] a fix.\""
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not converge on a single construct that this behavior reflects. The linked constructs are Reasoning and Robustness, but the recorded links are causal: a paper claims a causal relationship from critique generation to Reasoning, saying the critiques help correct flawed reasoning steps, and another paper claims a causal relationship from critique generation to Robustness. Beyond constructs, a paper also claims a causal relationship from critique generation to Self-correction, and the Robustness link is additionally recorded in the reverse direction, as a causal relationship from Robustness to critique generation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is text-based feedback about a response, sentence, or solution: papers most commonly describe outputs that identify errors, weaknesses, or unfaithful spans and often suggest fixes or improvements. Some authors make the behavior more evaluative, pairing the critique with a judgment or with criteria-based justification, while others cast it as guidance to another agent during collaboration. As \"Teaching Language Models to Critique via Reinforcement Learning\" puts it, the critique may include \"an analysis of the solution\u2019s strengths and weaknesses,\" \"actionable improvement suggestions,\" and \"a final judgment of correctness.\"\n\nVariants. Variants appear in collaborative exchanges, where a critic agent gives feedback on another agent\u2019s answer, and in candidate-response comparison, where the output is a list of strengths and weaknesses for each response. Other papers specialize the behavior to factuality judgments that say which document parts support or contradict a claim, to mathematical or table-reasoning error review, and to step-by-step verification rationales before a final Yes/No decision. Some definitions also narrow it to single-response critique or to correction suggestions after an inconsistency is found.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead operationalize the behavior through the generated text itself, such as critiques that detail an error span and suggest a fix, strengths-and-weaknesses lists for responses, support-or-contradiction explanations for factuality, or a verbalized rationale before a final yes/no judgment. In \"MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration,\" the critique output is described as one that \"detail[s] the error span ... and suggest[s] a fix.\"\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. The linked constructs are Reasoning and Robustness, but the recorded links are causal: a paper claims a causal relationship from critique generation to Reasoning, saying the critiques help correct flawed reasoning steps, and another paper claims a causal relationship from critique generation to Robustness. Beyond constructs, a paper also claims a causal relationship from critique generation to Self-correction, and the Robustness link is additionally recorded in the reverse direction, as a causal relationship from Robustness to critique generation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction",
+      "Improving Model Factuality with Fine-grained Critique-based Evaluator",
+      "Praetor: A Fine-Grained Generative LLM Evaluator with Instance-Level Customizable Evaluation Criteria",
+      "Table-Critic: A Multi-Agent Framework for Collaborative Criticism and Refinement in Table Reasoning"
+    ],
+    "iclr25": [
+      "ACC-Collab: An Actor-Critic Approach to Multi-Agent LLM Collaboration",
+      "Generative Verifiers: Reward Modeling as Next-Token Prediction"
+    ],
+    "icml25": [
+      "An Architecture Search Framework for Inference-Time Techniques",
+      "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+      "Teaching Language Models to Critique via Reinforcement Learning",
+      "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback"
+    ],
+    "naacl25": [
+      "MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration",
+      "Self-Generated Critiques Boost Reward Modeling for Language Models",
+      "LLaMA-Berry: Pairwise Optimization for Olympiad-level Mathematical Reasoning via O1-like Monte Carlo Tree Search"
+    ],
+    "iclr24": [
+      "Generative Judge for Evaluating Alignment"
+    ],
+    "emnlp25": [
+      "Direct Judgement Preference Optimization"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "iclr25": 2,
+    "icml25": 4,
+    "naacl25": 3,
+    "iclr24": 1,
+    "emnlp25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

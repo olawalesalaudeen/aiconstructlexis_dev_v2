@@ -1,0 +1,290 @@
+{
+  "canonical_name": "EvalPlus",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, the prevailing description treats EvalPlus as an augmented or upgraded version of HumanEval and MBPP, with HumanEval+ and MBPP+ adding many more test cases for more rigorous code-generation evaluation. One paper states that HumanEval+ has 'an average of 774.8 test cases per problem,' while MBPP+ expands test cases 'by over 35 times'; another says the suite reports both base scores on HumanEval and MBPP and plus scores on HumanEval+ and MBPP+. A smaller line of description frames it as an evaluation framework, or specifically as the test set used to augment HumanEval for more comprehensive functional-correctness testing, particularly for Python.\n\nWhat it is claimed to measure. Papers use EvalPlus to measure 3 constructs and 4 behavioral indicators. The prevailing usage is code generation, often via its plus variants for function-level evaluation; other papers use it for three other behavioral indicators and three constructs, including code debugging, vulnerability identification, and inductive reasoning, with one paper explicitly saying that the abundance of test cases allows MBPP+ to serve as an inductive reasoning dataset. Overall, the reported measurement claims are spread across several targets rather than centered on a single construct.\n\nSpace of uses. Papers link it to 2 instruments, HumanEval and HumanEval+. Most commonly, they position it as the test-augmented suite around HumanEval and MBPP; one paper explicitly calls it 'an improved version of HumanEval,' and another describes HumanEval+ as being evaluated with EvalPlus. In broader benchmarking, one paper pairs EvalPlus with LiveCodeBench-Lite, and another uses the EvalPlus-created test set to evaluate a Python benchmark that extends HumanEval for functional correctness.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Evalplus",
+    "EvalPlus",
+    "MBPP+"
+  ],
+  "papers": [
+    "CodeDPO: Aligning Code Models with Self Generated and Verified Source Code",
+    "GiFT: Gibbs Fine-Tuning for Code Generation",
+    "LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs",
+    "Personality-Guided Code Generation Using Large Language Models",
+    "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+    "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+    "Tree-of-Evolution: Tree-Structured Instruction Evolution for Code Generation in Large Language Models",
+    "A Systematic Analysis of Base Model Choice for Reward Modeling",
+    "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+    "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference",
+    "CopySpec: Accelerating LLMs with Speculative Copy-and-Paste",
+    "Efficient Model Development through Fine-tuning Transfer",
+    "Agent Skill Acquisition for Large Language Models via CycleQD",
+    "Planning in Natural Language Improves LLM Search for Code Generation",
+    "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+    "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+    "StringLLM: Understanding the String Processing Capability of Large Language Models",
+    "CursorCore: Assist Programming through Aligning Anything",
+    "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+    "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+    "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+    "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+    "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment",
+    "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+    "Selective Prompt Anchoring for Code Generation",
+    "Teaching Language Models to Critique via Reinforcement Learning",
+    "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models",
+    "Effective Skill Unlearning through Intervention and Abstention",
+    "Generating Diverse Hypotheses for Inductive Reasoning",
+    "$\\textit{Trans-LoRA}$: towards data-free Transferable Parameter Efficient Finetuning",
+    "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+    "Enhancing Reasoning Capabilities of LLMs via Principled Synthetic Logic Corpus",
+    "IaC-Eval: A Code Generation Benchmark for Cloud Infrastructure-as-Code Programs",
+    "Observational Scaling Laws and the Predictability of Langauge Model Performance",
+    "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs",
+    "SelfCodeAlign: Self-Alignment for Code Generation",
+    "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+    "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+    "kGym: A Platform and Dataset to Benchmark Large Language Models on Linux Kernel Crash Resolution"
+  ],
+  "paper_count": 39,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An evaluation framework used for rigorous assessment of code generation models, particularly for Python.",
+      "paper": "$\\textit{Trans-LoRA}$: towards data-free Transferable Parameter Efficient Finetuning",
+      "original_name": "Evalplus"
+    },
+    {
+      "text": "An augmented version of the HumanEval and MBPP benchmarks that significantly increases the number of test cases per problem to provide a more rigorous evaluation.",
+      "paper": "Tree-of-Evolution: Tree-Structured Instruction Evolution for Code Generation in Large Language Models",
+      "original_name": "EvalPlus"
+    },
+    {
+      "text": "An extended version of the Mostly Basic Python Problems (MBPP) benchmark with additional test cases to improve evaluation robustness.",
+      "paper": "Planning in Natural Language Improves LLM Search for Code Generation",
+      "original_name": "MBPP+"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "evidence": "HumanEval [8] and MBPP [3] are the two most widely-used benchmarks for function-level code generation. We use their test augmented versions, i.e., HumanEval+ and MBPP+, with 80\u00d7/35\u00d7 more test cases for rigorous evaluation [38]. (Section 3.1)",
+      "paper_count": 11,
+      "paper_weight": 11.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SelfCodeAlign: Self-Alignment for Code Generation",
+          "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs",
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+        ],
+        "iclr25": [
+          "Planning in Natural Language Improves LLM Search for Code Generation"
+        ],
+        "naacl25": [
+          "Generating Diverse Hypotheses for Inductive Reasoning"
+        ],
+        "acl25": [
+          "Personality-Guided Code Generation Using Large Language Models"
+        ],
+        "icml25": [
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+          "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+          "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators"
+        ],
+        "emnlp25": [
+          "Efficient Model Development through Fine-tuning Transfer",
+          "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Coding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+      "evidence": "We evaluate models on 11 different benchmarks, covering skills such as ... coding (HumanEval+ [6, 32], MBPP+ [2, 32]) (Section 2.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "IaC-Eval: A Code Generation Benchmark for Cloud Infrastructure-as-Code Programs",
+      "evidence": "Finally, we conduct a detailed evaluation (Sec. 3) against a range of state-of-the-art models known for their strong performance on the EvalPlus [48] benchmark (an improved version of HumanEval). (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "IaC-Eval: A Code Generation Benchmark for Cloud Infrastructure-as-Code Programs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code debugging",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+      "evidence": "We evaluate their static debug and self-refine capabilities on EvalPlus with five iterations.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Self-correction ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+      "evidence": "We evaluate their static debug and self-refine capabilities on EvalPlus with five iterations.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Inductive reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Generating Diverse Hypotheses for Inductive Reasoning",
+      "evidence": "The abundance of test cases avails utilizing MBPP+ as an inductive reasoning dataset.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Generating Diverse Hypotheses for Inductive Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval+",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+      "evidence": "\u201cThe evaluation of HumanEval+ is conducted with EvalPlus (Liu et al., 2023a)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 7,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, the prevailing description treats EvalPlus as an augmented or upgraded version of HumanEval and MBPP, with HumanEval+ and MBPP+ adding many more test cases for more rigorous code-generation evaluation. One paper states that HumanEval+ has 'an average of 774.8 test cases per problem,' while MBPP+ expands test cases 'by over 35 times'; another says the suite reports both base scores on HumanEval and MBPP and plus scores on HumanEval+ and MBPP+. A smaller line of description frames it as an evaluation framework, or specifically as the test set used to augment HumanEval for more comprehensive functional-correctness testing, particularly for Python."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use EvalPlus to measure 3 constructs and 4 behavioral indicators. The prevailing usage is code generation, often via its plus variants for function-level evaluation; other papers use it for three other behavioral indicators and three constructs, including code debugging, vulnerability identification, and inductive reasoning, with one paper explicitly saying that the abundance of test cases allows MBPP+ to serve as an inductive reasoning dataset. Overall, the reported measurement claims are spread across several targets rather than centered on a single construct."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers link it to 2 instruments, HumanEval and HumanEval+. Most commonly, they position it as the test-augmented suite around HumanEval and MBPP; one paper explicitly calls it 'an improved version of HumanEval,' and another describes HumanEval+ as being evaluated with EvalPlus. In broader benchmarking, one paper pairs EvalPlus with LiveCodeBench-Lite, and another uses the EvalPlus-created test set to evaluate a Python benchmark that extends HumanEval for functional correctness."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, the prevailing description treats EvalPlus as an augmented or upgraded version of HumanEval and MBPP, with HumanEval+ and MBPP+ adding many more test cases for more rigorous code-generation evaluation. One paper states that HumanEval+ has 'an average of 774.8 test cases per problem,' while MBPP+ expands test cases 'by over 35 times'; another says the suite reports both base scores on HumanEval and MBPP and plus scores on HumanEval+ and MBPP+. A smaller line of description frames it as an evaluation framework, or specifically as the test set used to augment HumanEval for more comprehensive functional-correctness testing, particularly for Python.\n\nWhat it is claimed to measure. Papers use EvalPlus to measure 3 constructs and 4 behavioral indicators. The prevailing usage is code generation, often via its plus variants for function-level evaluation; other papers use it for three other behavioral indicators and three constructs, including code debugging, vulnerability identification, and inductive reasoning, with one paper explicitly saying that the abundance of test cases allows MBPP+ to serve as an inductive reasoning dataset. Overall, the reported measurement claims are spread across several targets rather than centered on a single construct.\n\nSpace of uses. Papers link it to 2 instruments, HumanEval and HumanEval+. Most commonly, they position it as the test-augmented suite around HumanEval and MBPP; one paper explicitly calls it 'an improved version of HumanEval,' and another describes HumanEval+ as being evaluated with EvalPlus. In broader benchmarking, one paper pairs EvalPlus with LiveCodeBench-Lite, and another uses the EvalPlus-created test set to evaluate a Python benchmark that extends HumanEval for functional correctness.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CodeDPO: Aligning Code Models with Self Generated and Verified Source Code",
+      "GiFT: Gibbs Fine-Tuning for Code Generation",
+      "LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs",
+      "Personality-Guided Code Generation Using Large Language Models",
+      "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+      "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+      "Tree-of-Evolution: Tree-Structured Instruction Evolution for Code Generation in Large Language Models"
+    ],
+    "emnlp25": [
+      "A Systematic Analysis of Base Model Choice for Reward Modeling",
+      "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+      "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference",
+      "CopySpec: Accelerating LLMs with Speculative Copy-and-Paste",
+      "Efficient Model Development through Fine-tuning Transfer"
+    ],
+    "iclr25": [
+      "Agent Skill Acquisition for Large Language Models via CycleQD",
+      "Planning in Natural Language Improves LLM Search for Code Generation",
+      "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+      "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+      "StringLLM: Understanding the String Processing Capability of Large Language Models"
+    ],
+    "icml25": [
+      "CursorCore: Assist Programming through Aligning Anything",
+      "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+      "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+      "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+      "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment",
+      "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+      "Selective Prompt Anchoring for Code Generation",
+      "Teaching Language Models to Critique via Reinforcement Learning"
+    ],
+    "naacl25": [
+      "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models",
+      "Effective Skill Unlearning through Intervention and Abstention",
+      "Generating Diverse Hypotheses for Inductive Reasoning"
+    ],
+    "neurips24": [
+      "$\\textit{Trans-LoRA}$: towards data-free Transferable Parameter Efficient Finetuning",
+      "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+      "Enhancing Reasoning Capabilities of LLMs via Principled Synthetic Logic Corpus",
+      "IaC-Eval: A Code Generation Benchmark for Cloud Infrastructure-as-Code Programs",
+      "Observational Scaling Laws and the Predictability of Langauge Model Performance",
+      "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs",
+      "SelfCodeAlign: Self-Alignment for Code Generation",
+      "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+      "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+      "kGym: A Platform and Dataset to Benchmark Large Language Models on Linux Kernel Crash Resolution"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 7,
+    "emnlp25": 5,
+    "iclr25": 5,
+    "icml25": 9,
+    "naacl25": 3,
+    "neurips24": 10
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

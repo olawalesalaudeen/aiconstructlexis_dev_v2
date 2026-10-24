@@ -1,0 +1,383 @@
+{
+  "canonical_name": "Self-consistency",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, 'Self-consistency' is predominantly characterized as an inference or evaluation procedure, while a smaller set of studies treat it as a property of model reasoning or outputs. The prevailing procedural definition involves sampling multiple diverse reasoning paths for a given prompt and then selecting the most frequent final answer through a majority vote. This approach, often used with Chain-of-thought reasoning, is based on the premise that \"correct reasoning is more likely to converge on a single answer\" (Token-Supervised Value Models for Enhancing Mathematical Problem-Solving Capabilities of Large Language Models). It is frequently studied alongside other inference techniques like Best-of-N and Self-Refine to enhance accuracy. In contrast, some papers define self-consistency as a property of logical coherence. This alternative framing refers to the degree to which a model's beliefs do not contradict each other, the alignment between an answer and its rationale, or the maintenance of correctness \"throughout the entire reasoning process\" (Step-by-Step Reasoning for Math Problems  via Twisted Sequential Monte Carlo). In this context, it is studied in relation to Faithfulness and Hallucination and is reported to be measured by instruments like CC-SHAP. The concept is applied to tasks ranging from mathematical problem-solving on benchmarks like GSM8k to long-form text generation.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Self-consistency",
+    "Self-Consistency"
+  ],
+  "papers": [
+    "CCQA: Generating Question from Solution Can Improve Inference-Time Reasoning in SLMs",
+    "Evaluating Large Language Models for Detecting Antisemitism",
+    "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+    "MADAWSD: Multi-Agent Debate Framework for Adversarial Word Sense Disambiguation",
+    "MAgICoRe: Multi-Agent, Iterative, Coarse-to-Fine Refinement for Reasoning",
+    "On LLM-Based Scientific Inductive Reasoning Beyond Equations",
+    "STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases",
+    "Sketch-of-Thought: Efficient LLM Reasoning with Adaptive Cognitive-Inspired Sketching",
+    "Slim-SC: Thought Pruning for Efficient Scaling with Self-Consistency",
+    "The LLM Already Knows: Estimating LLM-Perceived Question Difficulty via Hidden Representations",
+    "Large Language Models Cannot Self-Correct Reasoning Yet",
+    "Let Models Speak Ciphers: Multiagent Debate through Embeddings",
+    "LitCab: Lightweight Language Model Calibration over Short- and Long-form Responses",
+    "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+    "Towards Understanding Factual Knowledge of Large Language Models",
+    "DeLLMa: Decision Making Under Uncertainty with Large Language Models",
+    "Do Vision & Language Decoders use Images and Text equally? How Self-consistent are their Explanations?",
+    "Generative Verifiers: Reward Modeling as Next-Token Prediction",
+    "Integrative Decoding: Improving Factuality via Implicit Self-consistency",
+    "Logically Consistent Language Models via Neuro-Symbolic Integration",
+    "MIRAGE: Evaluating and Explaining Inductive Reasoning Process in Language Models",
+    "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver",
+    "On the self-verification limitations of large language models on reasoning and planning tasks",
+    "Process Reward Model with Q-value Rankings",
+    "ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement",
+    "Sample then Identify: A General Framework for Risk Control and Assessment in Multimodal Large Language Models",
+    "Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting",
+    "Step-by-Step Reasoning for Math Problems  via Twisted Sequential Monte Carlo",
+    "Token-Supervised Value Models for Enhancing Mathematical Problem-Solving Capabilities of Large Language Models",
+    "Transformers Provably Solve Parity Efficiently with Chain of Thought",
+    "Varying Shades of Wrong: Aligning LLMs with Wrong Answers Only",
+    "WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct",
+    "Rethinking Chain-of-Thought from the Perspective of Self-Training",
+    "Rethinking External Slow-Thinking: From Snowball Errors to Probability of Correct Reasoning",
+    "Think Smarter not Harder: Adaptive Reasoning with Inference Aware Optimization",
+    "Can Language Models Perform Robust Reasoning in Chain-of-thought Prompting with Noisy Rationales?",
+    "LLM-Check: Investigating Detection of Hallucinations in Large Language Models",
+    "Large Language Models as Urban Residents: An LLM Agent Framework for Personal Mobility Generation"
+  ],
+  "paper_count": 38,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An inference procedure where multiple reasoning paths are sampled and the most frequent final answer is selected, leveraging the idea that correct reasoning is more likely to converge on a single answer.",
+      "paper": "Token-Supervised Value Models for Enhancing Mathematical Problem-Solving Capabilities of Large Language Models",
+      "original_name": "Self-consistency"
+    },
+    {
+      "text": "A prompting-based evaluation procedure that samples multiple responses and uses majority vote for decision-making tasks.",
+      "paper": "DeLLMa: Decision Making Under Uncertainty with Large Language Models",
+      "original_name": "Self-Consistency"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Majority voting",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Recursive Introspection: Teaching Language Model Agents How to Self-Improve",
+      "evidence": "self-consistency [53], which runs majority voting on multiple responses from the first turn as a baseline to compare to our sequential strategy. (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Recursive Introspection: Teaching Language Model Agents How to Self-Improve"
+        ],
+        "iclr25": [
+          "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Trustworthiness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain",
+      "evidence": "Failure to preserve self-consistency reveals a lack of understanding of the shared semantics underlying natural language and programming language, and therefore undermines the trustworthiness of a model. (ABSTRACT)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multi-agent debate",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Large Language Models Cannot Self-Correct Reasoning Yet",
+      "evidence": "for self-consistency with an equivalent number of responses, multi-agent debate signi\ufb01cantly underperforms simple self-consistency using majority voting. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Large Language Models Cannot Self-Correct Reasoning Yet"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "GSM8K",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "The Consensus Game: Language Model Generation via Equilibrium Search",
+      "evidence": "\u201cIn the mathematical reasoning task (GSM8K), we also consider self-consistency (Wang et al., 2022).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "The Consensus Game: Language Model Generation via Equilibrium Search"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Reranking Laws for Language Generation: A Communication-Theoretic Perspective",
+      "evidence": "\u201cWe apply self-consistency over diverse reasoning paths (Wang et al., 2023), selecting the most frequent answer in the candidate set, and report results on the SVAMP ... and StrategyQA ... datasets.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Reranking Laws for Language Generation: A Communication-Theoretic Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Commonsense reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Reranking Laws for Language Generation: A Communication-Theoretic Perspective",
+      "evidence": "\u201cWe apply self-consistency over diverse reasoning paths (Wang et al., 2023), selecting the most frequent answer in the candidate set, and report results on the SVAMP ... and StrategyQA ... datasets.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Reranking Laws for Language Generation: A Communication-Theoretic Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Integrative Decoding: Improving Factuality via Implicit Self-consistency",
+      "evidence": "This naturally leads us to ask: how can we further unlock the potential of self-consistency and repeated sampling in open-ended generation tasks? (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Integrative Decoding: Improving Factuality via Implicit Self-consistency"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Explanation generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Do Vision & Language Decoders use Images and Text equally? How Self-consistent are their Explanations?",
+      "evidence": "\u201cwe evaluate the self-consistency of VLM decoders in both post-hoc and CoT explanation settings\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Do Vision & Language Decoders use Images and Text equally? How Self-consistent are their Explanations?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement",
+      "evidence": "In 'Self-Consistency' ... we use the same prompt but generate 15 responses ... then select the final answer based on majority voting.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LLM The Genius Paradox: A Linguistic and Math Expert's Struggle with Simple Word-based Counting Problems",
+      "evidence": "self-consistency: first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by majority voting (Wang et al., 2022). (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "LLM The Genius Paradox: A Linguistic and Math Expert's Struggle with Simple Word-based Counting Problems"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation",
+      "evidence": "Language models lack robustness to prompt variations (Huang et al., 2024; Elazar et al., 2021) and give contradictory responses in such cases, motivating the need for enhanced self-consistency. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reliability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CER: Confidence Enhanced Reasoning in LLMs",
+      "evidence": "we aggregate the answer of generated response paths in a way that reflects the reliability of each generated content (as opposed to self-consistency in which each generated chain contributes equally to majority voting).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "CER: Confidence Enhanced Reasoning in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Confidence",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Self-Consistency Preference Optimization",
+      "evidence": "Intuitively, the consistency of an answer is a reflection of the model confidence... (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Self-Consistency Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Robust Native Language Identification through Agentic Decomposition",
+      "evidence": "The consistency of LLM outputs is intertwined with the broader discourse on faithfulness in reasoning \u2014 specifically, whether a model\u2019s generated explanation or stated decision process accurately reflects its true internal mechanisms (Agarwal et al., 2024). (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Robust Native Language Identification through Agentic Decomposition"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Logical consistency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Transitive self-consistency evaluation of NLI models without gold labels",
+      "evidence": "This implies that evaluating the logical consistency of NLI models should be based on the labels assigned by the model itself, disregarding the actual correctness of the labels in the real world. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Transitive self-consistency evaluation of NLI models without gold labels"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "CC-SHAP",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Do Vision & Language Decoders use Images and Text equally? How Self-consistent are their Explanations?",
+      "evidence": "CC-SHAP (Parcalabescu & Frank, 2024) is an edit-free measure of self-consistency at input and output level. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Do Vision & Language Decoders use Images and Text equally? How Self-consistent are their Explanations?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 16,
+  "incoming_relationship_count": 14,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, 'Self-consistency' is predominantly characterized as an inference or evaluation procedure, while a smaller set of studies treat it as a property of model reasoning or outputs. The prevailing procedural definition involves sampling multiple diverse reasoning paths for a given prompt and then selecting the most frequent final answer through a majority vote. This approach, often used with Chain-of-thought reasoning, is based on the premise that \"correct reasoning is more likely to converge on a single answer\" (Token-Supervised Value Models for Enhancing Mathematical Problem-Solving Capabilities of Large Language Models). It is frequently studied alongside other inference techniques like Best-of-N and Self-Refine to enhance accuracy. In contrast, some papers define self-consistency as a property of logical coherence. This alternative framing refers to the degree to which a model's beliefs do not contradict each other, the alignment between an answer and its rationale, or the maintenance of correctness \"throughout the entire reasoning process\" (Step-by-Step Reasoning for Math Problems  via Twisted Sequential Monte Carlo). In this context, it is studied in relation to Faithfulness and Hallucination and is reported to be measured by instruments like CC-SHAP. The concept is applied to tasks ranging from mathematical problem-solving on benchmarks like GSM8k to long-form text generation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "CCQA: Generating Question from Solution Can Improve Inference-Time Reasoning in SLMs",
+      "Evaluating Large Language Models for Detecting Antisemitism",
+      "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+      "MADAWSD: Multi-Agent Debate Framework for Adversarial Word Sense Disambiguation",
+      "MAgICoRe: Multi-Agent, Iterative, Coarse-to-Fine Refinement for Reasoning",
+      "On LLM-Based Scientific Inductive Reasoning Beyond Equations",
+      "STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases",
+      "Sketch-of-Thought: Efficient LLM Reasoning with Adaptive Cognitive-Inspired Sketching",
+      "Slim-SC: Thought Pruning for Efficient Scaling with Self-Consistency",
+      "The LLM Already Knows: Estimating LLM-Perceived Question Difficulty via Hidden Representations"
+    ],
+    "iclr24": [
+      "Large Language Models Cannot Self-Correct Reasoning Yet",
+      "Let Models Speak Ciphers: Multiagent Debate through Embeddings",
+      "LitCab: Lightweight Language Model Calibration over Short- and Long-form Responses",
+      "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+      "Towards Understanding Factual Knowledge of Large Language Models"
+    ],
+    "iclr25": [
+      "DeLLMa: Decision Making Under Uncertainty with Large Language Models",
+      "Do Vision & Language Decoders use Images and Text equally? How Self-consistent are their Explanations?",
+      "Generative Verifiers: Reward Modeling as Next-Token Prediction",
+      "Integrative Decoding: Improving Factuality via Implicit Self-consistency",
+      "Logically Consistent Language Models via Neuro-Symbolic Integration",
+      "MIRAGE: Evaluating and Explaining Inductive Reasoning Process in Language Models",
+      "Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solver",
+      "On the self-verification limitations of large language models on reasoning and planning tasks",
+      "Process Reward Model with Q-value Rankings",
+      "ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement",
+      "Sample then Identify: A General Framework for Risk Control and Assessment in Multimodal Large Language Models",
+      "Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting",
+      "Step-by-Step Reasoning for Math Problems  via Twisted Sequential Monte Carlo",
+      "Token-Supervised Value Models for Enhancing Mathematical Problem-Solving Capabilities of Large Language Models",
+      "Transformers Provably Solve Parity Efficiently with Chain of Thought",
+      "Varying Shades of Wrong: Aligning LLMs with Wrong Answers Only",
+      "WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct"
+    ],
+    "icml25": [
+      "Rethinking Chain-of-Thought from the Perspective of Self-Training",
+      "Rethinking External Slow-Thinking: From Snowball Errors to Probability of Correct Reasoning",
+      "Think Smarter not Harder: Adaptive Reasoning with Inference Aware Optimization"
+    ],
+    "neurips24": [
+      "Can Language Models Perform Robust Reasoning in Chain-of-thought Prompting with Noisy Rationales?",
+      "LLM-Check: Investigating Detection of Hallucinations in Large Language Models",
+      "Large Language Models as Urban Residents: An LLM Agent Framework for Personal Mobility Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 10,
+    "iclr24": 5,
+    "iclr25": 17,
+    "icml25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

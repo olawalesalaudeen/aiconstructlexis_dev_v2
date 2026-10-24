@@ -1,0 +1,189 @@
+{
+  "canonical_name": "Language bias",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats language bias as language-dependent unevenness in model behavior: performance varies by language, models may prefer some languages or language pairs over others, and English, Western, or higher-resource languages are often favored. This framing appears both in task-performance definitions, where similar content can yield different results across languages, and in representation-space definitions, where sentences from the same language can be mapped closer together regardless of semantic similarity. A minority usage applies the same label to large vision-language models, defining it instead as over-reliance on textual inputs and neglect of visual inputs during generation. One paper also broadens the cross-lingual framing from performance alone to equitable computational efficiency across languages.\n\nSpace of facets. Papers use several near-synonymous labels for the cross-lingual version of the construct, including cross-lingual fairness, anglocentric bias, English-centric bias, language-dependent effectiveness, and linguistic bias. Within that cluster, some authors narrow the issue to English versus other languages or Western versus non-Western languages, some stress style-sensitive translation, and another paper characterizes it as preference in multilingual embedding spaces. The clearest terminological split is that the same name, language bias, is also used for LVLM over-reliance on text and neglect of visual inputs, rather than for disparities across natural languages.\n\nSpace of measurement. Across the papers, language bias is linked to 1 measurement instrument and 1 behavioral indicator. The linked instrument is ScienceQA-IMG, described as a dataset where zero-shot performance is used to assess whether a method alleviates language bias, and the linked behavioral indicator is hallucination. Beyond that explicit instrument link, cross-lingual papers operationalize the construct as performance drop when switching from bilingual to multilingual evaluation, as systematic language-dependent differences captured with linear mixed-effects models, or more generally as differences in performance and computational efficiency across languages. These operationalizations follow the same split as the definitions: cross-lingual papers measure between-language disparities, while the LVLM usage appears in a multimodal setting alongside hallucination and visual comprehension.\n\nLinks. In the reported relationships, language bias is linked to 1 behavioral indicator, hallucination, and 2 constructs, multilingual ability and visual understanding. Several papers claim a causal relationship from language bias to hallucination, describing models that prioritize language patterns, ignore images, or rely heavily on text, which is said to lead to fluent but inaccurate content. One paper also claims a causal relationship from language bias to visual understanding, citing evidence that debiasing language bias enhances visual comprehension. Separately, one paper reports that language bias is related to multilingual ability, stating that multilingual capabilities coexist with English-centric behavior.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Anglocentric bias",
+    "Language-dependent effectiveness",
+    "Cross-lingual fairness",
+    "Language bias",
+    "English-centric bias",
+    "Linguistic bias"
+  ],
+  "papers": [
+    "Cracking the Code of Hallucination in LVLMs with Vision-aware Head Divergence",
+    "Modular Sentence Encoders: Separating Language Specialization from Cross-Lingual Alignment",
+    "Retrofitting Large Language Models with Dynamic Tokenization",
+    "Robust Estimation of Population-Level Effects in Repeated-Measures NLP Experimental Designs",
+    "Towards Style Alignment in Cross-Cultural Translation",
+    "Looking Beyond Text: Reducing Language Bias in Large Vision-Language Models via Multimodal Dual-Attention and Soft-Image Guidance",
+    "Think Globally, Group Locally: Evaluating LLMs Using Multi-Lingual Word Grouping Games",
+    "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which model performance and computational efficiency are equitable across different languages, mitigating biases introduced by static tokenization.",
+      "paper": "Retrofitting Large Language Models with Dynamic Tokenization",
+      "original_name": "Cross-lingual fairness"
+    },
+    {
+      "text": "A systemic tendency for model performance, particularly in style-sensitive tasks like translation, to be higher for English and Western languages compared to non-Western languages.",
+      "paper": "Towards Style Alignment in Cross-Cultural Translation",
+      "original_name": "Anglocentric bias"
+    },
+    {
+      "text": "The systematic variation in a model's performance that is attributable to the specific natural language it is operating on, often observed as a performance gap between high-resource and lower-resource languages.",
+      "paper": "Robust Estimation of Population-Level Effects in Repeated-Measures NLP Experimental Designs",
+      "original_name": "Language-dependent effectiveness"
+    },
+    {
+      "text": "The tendency of a multilingual model to prefer certain languages or language pairs, for instance by mapping sentences from the same language closer together in the embedding space regardless of semantic similarity.",
+      "paper": "Modular Sentence Encoders: Separating Language Specialization from Cross-Lingual Alignment",
+      "original_name": "Language bias"
+    },
+    {
+      "text": "A model's disposition to perform better on English tasks and contexts due to being trained on disproportionately English-dominated datasets.",
+      "paper": "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models",
+      "original_name": "English-centric bias"
+    },
+    {
+      "text": "The tendency for a model to exhibit differential performance on a task depending on the linguistic modality of the input, even when the content is similar.",
+      "paper": "Think Globally, Group Locally: Evaluating LLMs Using Multi-Lingual Word Grouping Games",
+      "original_name": "Linguistic bias"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "MMICL: Empowering Vision-language Model with Multi-Modal In-Context Learning",
+      "evidence": "language bias in VLMs, a common issue for VLMs that often leads to hallucination when faced with extensive textual context. (ABSTRACT)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "MMICL: Empowering Vision-language Model with Multi-Modal In-Context Learning"
+        ],
+        "acl25": [
+          "Cracking the Code of Hallucination in LVLMs with Vision-aware Head Divergence"
+        ],
+        "emnlp25": [
+          "Looking Beyond Text: Reducing Language Bias in Large Vision-Language Models via Multimodal Dual-Attention and Soft-Image Guidance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ScienceQA-IMG",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MMICL: Empowering Vision-language Model with Multi-Modal In-Context Learning",
+      "evidence": "Zero-shot performance of different VLMs on ScienceQA-IMG dataset in different split. MMICL outperforms other VLMs by successfully alleviating language bias. (Table 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "MMICL: Empowering Vision-language Model with Multi-Modal In-Context Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multilingual ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models",
+      "evidence": "Large language models (LLMs) have demonstrated multilingual capabilities, yet they are mostly English-centric due to the imbalanced training corpora. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Looking Beyond Text: Reducing Language Bias in Large Vision-Language Models via Multimodal Dual-Attention and Soft-Image Guidance",
+      "evidence": "\"LACING effectively debiases LVLMs from their language bias, enhancing visual comprehension and reducing hallucinations\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Looking Beyond Text: Reducing Language Bias in Large Vision-Language Models via Multimodal Dual-Attention and Soft-Image Guidance"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats language bias as language-dependent unevenness in model behavior: performance varies by language, models may prefer some languages or language pairs over others, and English, Western, or higher-resource languages are often favored. This framing appears both in task-performance definitions, where similar content can yield different results across languages, and in representation-space definitions, where sentences from the same language can be mapped closer together regardless of semantic similarity. A minority usage applies the same label to large vision-language models, defining it instead as over-reliance on textual inputs and neglect of visual inputs during generation. One paper also broadens the cross-lingual framing from performance alone to equitable computational efficiency across languages."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use several near-synonymous labels for the cross-lingual version of the construct, including cross-lingual fairness, anglocentric bias, English-centric bias, language-dependent effectiveness, and linguistic bias. Within that cluster, some authors narrow the issue to English versus other languages or Western versus non-Western languages, some stress style-sensitive translation, and another paper characterizes it as preference in multilingual embedding spaces. The clearest terminological split is that the same name, language bias, is also used for LVLM over-reliance on text and neglect of visual inputs, rather than for disparities across natural languages."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Across the papers, language bias is linked to 1 measurement instrument and 1 behavioral indicator. The linked instrument is ScienceQA-IMG, described as a dataset where zero-shot performance is used to assess whether a method alleviates language bias, and the linked behavioral indicator is hallucination. Beyond that explicit instrument link, cross-lingual papers operationalize the construct as performance drop when switching from bilingual to multilingual evaluation, as systematic language-dependent differences captured with linear mixed-effects models, or more generally as differences in performance and computational efficiency across languages. These operationalizations follow the same split as the definitions: cross-lingual papers measure between-language disparities, while the LVLM usage appears in a multimodal setting alongside hallucination and visual comprehension."
+    },
+    {
+      "label": "Links.",
+      "text": "In the reported relationships, language bias is linked to 1 behavioral indicator, hallucination, and 2 constructs, multilingual ability and visual understanding. Several papers claim a causal relationship from language bias to hallucination, describing models that prioritize language patterns, ignore images, or rely heavily on text, which is said to lead to fluent but inaccurate content. One paper also claims a causal relationship from language bias to visual understanding, citing evidence that debiasing language bias enhances visual comprehension. Separately, one paper reports that language bias is related to multilingual ability, stating that multilingual capabilities coexist with English-centric behavior."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define language bias as unequal model behavior across natural languages, especially performance gaps that favor English or other high-resource or Western languages, sometimes broadened to fairness or efficiency across languages. A few papers use the term for different phenomena, such as language-driven clustering in embeddings or text-over-vision reliance, but the dominant usage across the papers is the same cross-language performance disparity.",
+    "papers_with_definition": 7,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats language bias as language-dependent unevenness in model behavior: performance varies by language, models may prefer some languages or language pairs over others, and English, Western, or higher-resource languages are often favored. This framing appears both in task-performance definitions, where similar content can yield different results across languages, and in representation-space definitions, where sentences from the same language can be mapped closer together regardless of semantic similarity. A minority usage applies the same label to large vision-language models, defining it instead as over-reliance on textual inputs and neglect of visual inputs during generation. One paper also broadens the cross-lingual framing from performance alone to equitable computational efficiency across languages.\n\nSpace of facets. Papers use several near-synonymous labels for the cross-lingual version of the construct, including cross-lingual fairness, anglocentric bias, English-centric bias, language-dependent effectiveness, and linguistic bias. Within that cluster, some authors narrow the issue to English versus other languages or Western versus non-Western languages, some stress style-sensitive translation, and another paper characterizes it as preference in multilingual embedding spaces. The clearest terminological split is that the same name, language bias, is also used for LVLM over-reliance on text and neglect of visual inputs, rather than for disparities across natural languages.\n\nSpace of measurement. Across the papers, language bias is linked to 1 measurement instrument and 1 behavioral indicator. The linked instrument is ScienceQA-IMG, described as a dataset where zero-shot performance is used to assess whether a method alleviates language bias, and the linked behavioral indicator is hallucination. Beyond that explicit instrument link, cross-lingual papers operationalize the construct as performance drop when switching from bilingual to multilingual evaluation, as systematic language-dependent differences captured with linear mixed-effects models, or more generally as differences in performance and computational efficiency across languages. These operationalizations follow the same split as the definitions: cross-lingual papers measure between-language disparities, while the LVLM usage appears in a multimodal setting alongside hallucination and visual comprehension.\n\nLinks. In the reported relationships, language bias is linked to 1 behavioral indicator, hallucination, and 2 constructs, multilingual ability and visual understanding. Several papers claim a causal relationship from language bias to hallucination, describing models that prioritize language patterns, ignore images, or rely heavily on text, which is said to lead to fluent but inaccurate content. One paper also claims a causal relationship from language bias to visual understanding, citing evidence that debiasing language bias enhances visual comprehension. Separately, one paper reports that language bias is related to multilingual ability, stating that multilingual capabilities coexist with English-centric behavior.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Cracking the Code of Hallucination in LVLMs with Vision-aware Head Divergence",
+      "Modular Sentence Encoders: Separating Language Specialization from Cross-Lingual Alignment",
+      "Retrofitting Large Language Models with Dynamic Tokenization",
+      "Robust Estimation of Population-Level Effects in Repeated-Measures NLP Experimental Designs",
+      "Towards Style Alignment in Cross-Cultural Translation"
+    ],
+    "emnlp25": [
+      "Looking Beyond Text: Reducing Language Bias in Large Vision-Language Models via Multimodal Dual-Attention and Soft-Image Guidance",
+      "Think Globally, Group Locally: Evaluating LLMs Using Multi-Lingual Word Grouping Games"
+    ],
+    "naacl25": [
+      "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 5,
+    "emnlp25": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "naacl25"
+  ]
+}

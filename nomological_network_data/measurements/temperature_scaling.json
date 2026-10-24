@@ -1,0 +1,75 @@
+{
+  "canonical_name": "Temperature scaling",
+  "type": "measurement",
+  "canonical_definition": "Across the provided literature, temperature scaling is consistently characterized as a post-hoc or post-processing calibration procedure designed to improve a model's predictive or confidence calibration. The most common description of its mechanism is that it rescales a model's output logits with a scalar temperature parameter before the softmax function, which, as one paper notes, can \"either be smoothed (T > 1) or sharpened (T < 1).\" Several sources state that implementing this technique requires tuning the temperature hyperparameter on a separate validation set. While its prevailing use is for calibration, a less common framing describes it as a self-evaluation technique to adjust softmax probabilities to better reflect confidence. One paper also specifies that this method does not reorder candidate generations. In terms of application, temperature scaling is reported to be particularly beneficial for the task of response classification.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Temperature scaling",
+    "Temperature Scaling"
+  ],
+  "papers": [
+    "Bayesian Low-rank Adaptation for Large Language Models",
+    "LitCab: Lightweight Language Model Calibration over Short- and Long-form Responses",
+    "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A post-hoc calibration procedure that tunes a temperature hyperparameter on a validation set to improve predictive calibration.",
+      "paper": "Bayesian Low-rank Adaptation for Large Language Models",
+      "original_name": "Temperature scaling"
+    },
+    {
+      "text": "A post-hoc calibration method used as a self-evaluation technique to adjust softmax probabilities to better reflect confidence.",
+      "paper": "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+      "original_name": "Temperature Scaling"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Calibration",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+      "evidence": "We use Temperature Scaling (TS) (Guo et al., 2017): Introduces a temperature parameter T to scale the logits, minimizing ECE on a validation set to achieve better calibration.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, temperature scaling is consistently characterized as a post-hoc or post-processing calibration procedure designed to improve a model's predictive or confidence calibration. The most common description of its mechanism is that it rescales a model's output logits with a scalar temperature parameter before the softmax function, which, as one paper notes, can \"either be smoothed (T > 1) or sharpened (T < 1).\" Several sources state that implementing this technique requires tuning the temperature hyperparameter on a separate validation set. While its prevailing use is for calibration, a less common framing describes it as a self-evaluation technique to adjust softmax probabilities to better reflect confidence. One paper also specifies that this method does not reorder candidate generations. In terms of application, temperature scaling is reported to be particularly beneficial for the task of response classification.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Bayesian Low-rank Adaptation for Large Language Models",
+      "LitCab: Lightweight Language Model Calibration over Short- and Long-form Responses"
+    ],
+    "iclr25": [
+      "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 2,
+    "iclr25": 2
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25"
+  ]
+}

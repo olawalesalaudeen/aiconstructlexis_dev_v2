@@ -1,0 +1,179 @@
+{
+  "canonical_name": "QuALITY",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, QuALITY is most commonly described as a long-context, single-document question answering benchmark built from stories or articles paired with multiple-choice questions. Definitions converge on long passages or long documents, with one paper saying passages average about 5,000 tokens and another describing English passages between 2K and 8K tokens; several papers also describe it as reading comprehension or long-input QA. Most uses keep the multiple-choice format, though some papers adapt it, either by requiring the model to generate the answer directly without the four options or by recasting it as binary-choice extractive QA.\n\nWhat it is claimed to measure. Papers link QuALITY to 2 constructs and 3 behavioral indicators. The dominant use is to measure question answering, especially multiple-choice question answering and machine reading comprehension, and papers also use it to measure long-context understanding, with one snippet saying such closed-ended tasks focus on \"understanding and reasoning within long contexts.\" These links are concentrated on QA and long-context abilities rather than spread across many constructs. A smaller, different claim reports that QuALITY is correlated with Generation diversity, based on evidence phrased in terms of pass@5 and sample quality.\n\nSpace of uses. Most papers position QuALITY as one benchmark within broader long-sequence or QA evaluation suites, often alongside NarrativeQA, QASPER, and TriviaQA. The snippets also show benchmark-specific setup choices, such as using the default validation split and shared prompts with QASPER, and some papers present it as a real-world long-context task or as a closed-ended evaluation of long-context understanding.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "QuALITY",
+    "Quality"
+  ],
+  "papers": [
+    "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+    "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models",
+    "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+    "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+    "Retrieval meets Long Context Large Language Models",
+    "Bridging Context Gaps: Leveraging Coreference Resolution for Long Contextual Understanding",
+    "From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs",
+    "Language Models Learn to Mislead Humans via RLHF",
+    "SiReRAG: Indexing Similar and Related Information for Multihop Reasoning",
+    "Synthetic continued pretraining",
+    "AutoMix: Automatically Mixing Language Models",
+    "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+    "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+    "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+    "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+    "On scalable oversight with weak LLMs judging strong LLMs"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A single-document question answering benchmark with long passages and multiple-choice questions, here used in a direct-answer setting to assess document-level reasoning.",
+      "paper": "From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs",
+      "original_name": "QuALITY"
+    },
+    {
+      "text": "A dataset used to evaluate performance on the long-context task of question answering.",
+      "paper": "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+      "original_name": "Quality"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Retrieval meets Long Context Large Language Models",
+      "evidence": "QuALITY (QLTY) (Pang et al., 2022) is a question answering dataset over stories and articles collected from several resources, such as Project Gutenberg and the Open American National Corpus4.",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Retrieval meets Long Context Large Language Models",
+          "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval"
+        ],
+        "neurips24": [
+          "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks"
+        ],
+        "iclr25": [
+          "Language Models Learn to Mislead Humans via RLHF"
+        ],
+        "naacl25": [
+          "Graph Neural Network Enhanced Retrieval for Question Answering of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "evidence": "Long-context ability evaluation. Following Xiong et al. [94], we evaluated the models on long-sequence tasks, including ... QuALITY [58]... (Table 4, Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+          "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multiple-choice question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "evidence": "Closed-ended tasks primarily focus on the capacity for understanding and reasoning within long contexts, including tasks like multiple-choice questions from QuALITY [5]... (Section 4.2).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+        ],
+        "emnlp25": [
+          "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Machine reading comprehension",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "On scalable oversight with weak LLMs judging strong LLMs",
+      "evidence": "The QuALITY dataset is a reading comprehension task consisting of documents (about 5k tokens long) with a set of multiple choice reading comprehension questions. (Appendix F.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "On scalable oversight with weak LLMs judging strong LLMs"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, QuALITY is most commonly described as a long-context, single-document question answering benchmark built from stories or articles paired with multiple-choice questions. Definitions converge on long passages or long documents, with one paper saying passages average about 5,000 tokens and another describing English passages between 2K and 8K tokens; several papers also describe it as reading comprehension or long-input QA. Most uses keep the multiple-choice format, though some papers adapt it, either by requiring the model to generate the answer directly without the four options or by recasting it as binary-choice extractive QA."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link QuALITY to 2 constructs and 3 behavioral indicators. The dominant use is to measure question answering, especially multiple-choice question answering and machine reading comprehension, and papers also use it to measure long-context understanding, with one snippet saying such closed-ended tasks focus on \"understanding and reasoning within long contexts.\" These links are concentrated on QA and long-context abilities rather than spread across many constructs. A smaller, different claim reports that QuALITY is correlated with Generation diversity, based on evidence phrased in terms of pass@5 and sample quality."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Most papers position QuALITY as one benchmark within broader long-sequence or QA evaluation suites, often alongside NarrativeQA, QASPER, and TriviaQA. The snippets also show benchmark-specific setup choices, such as using the default validation split and shared prompts with QASPER, and some papers present it as a real-world long-context task or as a closed-ended evaluation of long-context understanding."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, QuALITY is most commonly described as a long-context, single-document question answering benchmark built from stories or articles paired with multiple-choice questions. Definitions converge on long passages or long documents, with one paper saying passages average about 5,000 tokens and another describing English passages between 2K and 8K tokens; several papers also describe it as reading comprehension or long-input QA. Most uses keep the multiple-choice format, though some papers adapt it, either by requiring the model to generate the answer directly without the four options or by recasting it as binary-choice extractive QA.\n\nWhat it is claimed to measure. Papers link QuALITY to 2 constructs and 3 behavioral indicators. The dominant use is to measure question answering, especially multiple-choice question answering and machine reading comprehension, and papers also use it to measure long-context understanding, with one snippet saying such closed-ended tasks focus on \"understanding and reasoning within long contexts.\" These links are concentrated on QA and long-context abilities rather than spread across many constructs. A smaller, different claim reports that QuALITY is correlated with Generation diversity, based on evidence phrased in terms of pass@5 and sample quality.\n\nSpace of uses. Most papers position QuALITY as one benchmark within broader long-sequence or QA evaluation suites, often alongside NarrativeQA, QASPER, and TriviaQA. The snippets also show benchmark-specific setup choices, such as using the default validation split and shared prompts with QASPER, and some papers present it as a real-world long-context task or as a closed-ended evaluation of long-context understanding.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+      "Stronger Baselines for Retrieval-Augmented Generation with Long-Context Language Models"
+    ],
+    "iclr24": [
+      "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+      "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "Retrieval meets Long Context Large Language Models"
+    ],
+    "iclr25": [
+      "Bridging Context Gaps: Leveraging Coreference Resolution for Long Contextual Understanding",
+      "From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs",
+      "Language Models Learn to Mislead Humans via RLHF",
+      "SiReRAG: Indexing Similar and Related Information for Multihop Reasoning",
+      "Synthetic continued pretraining"
+    ],
+    "neurips24": [
+      "AutoMix: Automatically Mixing Language Models",
+      "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks",
+      "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+      "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness",
+      "On scalable oversight with weak LLMs judging strong LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr24": 3,
+    "iclr25": 5,
+    "neurips24": 6
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "neurips24"
+  ]
+}

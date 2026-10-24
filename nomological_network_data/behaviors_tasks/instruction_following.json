@@ -1,0 +1,1922 @@
+{
+  "canonical_name": "Instruction following",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage centers on adherence to explicit prompt constraints: producing the requested action or response format, staying on task, and avoiding unsupported or extraneous actions. Many papers define success through concrete constraints such as length limits, valid JSON, structural rules, style or content requirements, or exact phrase reproduction, while a smaller line broadens it to executing high-level natural-language commands or satisfying task requirements and dependency-aware milestones. Failures are described symmetrically as instruction violation or non-compliance, for example using the wrong language or format, revealing forbidden information, inserting unspecified actions, or taking an unauthorized policy-violating action.\n\nVariants. Papers use several near-synonyms for this behavior, most often instruction adherence, while smaller strands call it prompt execution, following natural language instructions, requirement satisfaction, or policy violation. The settings vary across multimodal and GUI tasks, negotiations with word-limit and JSON constraints, embodied planning from user goals, role-play that must stay in character, and multilingual or narrative tasks, with a few specialized cases such as exact phrase repetition.\n\nSpace of elicitation and scores. Papers link instruction following to 58 measurement instruments, with MT-Bench, IFEval, AlpacaEval 2.0, AlpacaEval, and Arena-Hard appearing most often. These are usually benchmark-style evaluations of open-ended or explicit-instruction tasks: MT-Bench is described as multi-turn or open-ended questions graded by GPT-4, IFEval as evaluating whether models follow explicit instructions, AlpacaEval 2.0 as a length-controlled, reference-free instruction-following benchmark, and Arena-Hard as judging response quality on open-ended instruction following. Other papers also use instruction datasets, domain-specific benchmarks, GPT-4 or other LLM judges, and human evaluation to elicit or score the behavior.\n\nWhat it is taken as evidence of. Papers link instruction following to 22 constructs, most often Helpfulness, Human preference alignment, In-context learning, Evaluator self-consistency, and Reasoning. There is no single agreed construct it reflects: papers describe Helpfulness as related to or correlated with instruction following, and one paper states that a model is more helpful if it shows superior performance on measures of instruction following. Other papers claim causal relationships from instruction following to Human preference alignment, or from In-context learning and Evaluator self-consistency to instruction following, while Reasoning is presented as a related capability rather than a settled target construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Instruction adherence",
+    "Prompt execution",
+    "Following natural language instructions",
+    "Requirement satisfaction",
+    "Policy violation",
+    "Poor instruction-following",
+    "Instruction execution",
+    "Instruction violation",
+    "Instruction non-compliance",
+    "Phrase repetition",
+    "Natural language instruction following"
+  ],
+  "papers": [
+    "A Survey of Post-Training Scaling in Large Language Models",
+    "Automatic Expert Discovery in LLM Upcycling via Sparse Interpolated Mixture-of-Experts",
+    "Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning",
+    "Beyond Logits: Aligning Feature Dynamics for Effective Knowledge Distillation",
+    "Cross-Lingual Optimization for Language Transfer in Large Language Models",
+    "Curiosity-Driven Reinforcement Learning from Human Feedback",
+    "DRPruning: Efficient Large Language Model Pruning through Distributionally Robust Optimization",
+    "HSCR: Hierarchical Self-Contrastive Rewarding for Aligning Medical Vision Language Models",
+    "MaCP: Minimal yet Mighty Adaptation via Hierarchical Cosine Projection",
+    "MaXIFE: Multilingual and Cross-lingual Instruction Following Evaluation",
+    "Model Extrapolation Expedites Alignment",
+    "One QuantLLM for ALL: Fine-tuning Quantized LLMs Once for Efficient Deployments",
+    "Quaff: Quantized Parameter-Efficient Fine-Tuning under Outlier Spatial Stability Hypothesis",
+    "Second Language (Arabic) Acquisition of LLMs via Progressive Vocabulary Expansion",
+    "T-REG: Preference Optimization with Token-Level Reward Regularization",
+    "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization",
+    "``What do you call a dog that is incontrovertibly true? Dogma'': Testing LLM Generalization through Humor",
+    "Add-One-In: Incremental Sample Selection for Large Language Models via a Choice-Based Greedy Paradigm",
+    "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models",
+    "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+    "Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing",
+    "CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models",
+    "DIDS: Domain Impact-aware Data Sampling for Large Language Model Training",
+    "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+    "Effective Red-Teaming of Policy-Adherent Agents",
+    "Efficient Model Development through Fine-tuning Transfer",
+    "FilBench: Can LLMs Understand and Generate Filipino?",
+    "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+    "From Unaligned to Aligned: Scaling Multilingual LLMs with Multi-Way Parallel Corpora",
+    "FuseChat: Knowledge Fusion of Chat Models",
+    "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+    "Improbable Bigrams Expose Vulnerabilities of Incomplete Tokens in Byte-Level Tokenizers",
+    "Improving Task Diversity in Label Efficient Supervised Finetuning of LLMs",
+    "JI2S: JointInfluence\u2010Aware Instruction Data Selection for EfficientFine\u2010Tuning",
+    "LaMDAgent: An Autonomous Framework for Post-Training Pipeline Optimization via LLM Agents",
+    "Language Models Can be Efficiently Steered via Minimal Embedding Layer Transformations",
+    "LoRACoE: Improving Large Language Model via Composition-based LoRA Expert",
+    "Logit Space Constrained Fine-Tuning for Mitigating Hallucinations in LLM-Based Recommender Systems",
+    "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+    "Membership and Memorization in LLM Knowledge Distillation",
+    "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+    "Middo: Model-Informed Dynamic Data Optimization for Enhanced LLM Fine-Tuning via Closed-Loop Learning",
+    "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization",
+    "NILE: Internal Consistency Alignment in Large Language Models",
+    "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+    "Orthogonal Finetuning Made Scalable",
+    "P-MMEval: A Parallel Multilingual Multitask Benchmark for Consistent Evaluation of LLMs",
+    "PAFT: Prompt-Agnostic Fine-Tuning",
+    "Precise In-Parameter Concept Erasure in Large Language Models",
+    "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+    "Same Question, Different Words: A Latent Adversarial Framework for Prompt Robustness",
+    "Selective Preference Optimization via Token-Level Reward Function Estimation",
+    "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+    "Speculative Safety-Aware Decoding",
+    "Split-Merge: Scalable and Memory-Efficient Merging of Expert LLMs",
+    "Structure-Conditional Minimum Bayes Risk Decoding",
+    "Studying the Role of Input-Neighbor Overlap in Retrieval-Augmented Language Models Training Efficiency",
+    "TVQACML: Benchmarking Text-Centric Visual Question Answering in Multilingual Chinese Minority Languages",
+    "ToDi: Token-wise Distillation via Fine-Grained Divergence Control",
+    "Too Helpful, Too Harmless, Too Honest or Just Right?",
+    "Towards Holistic Evaluation of Large Audio-Language Models: A Comprehensive Survey",
+    "Translate Smart, not Hard: Cascaded Translation Systems with Quality-Aware Deferral",
+    "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+    "Video2Roleplay: A Multimodal Dataset and Framework for Video-Guided Role-playing Agents",
+    "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+    "AlpaGasus: Training a Better Alpaca with Fewer Data",
+    "Curiosity-driven Red-teaming for Large Language Models",
+    "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning",
+    "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+    "Lemur: Harmonizing Natural Language and Code for Language Agents",
+    "MiniLLM: Knowledge Distillation of Large Language Models",
+    "NOLA: Compressing LoRA using Linear Combination of Random Basis",
+    "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data",
+    "QA-LoRA: Quantization-Aware Low-Rank Adaptation of Large Language Models",
+    "Seeking Neural Nuggets: Knowledge Transfer in Large Language Models from a Parametric Perspective",
+    "Self-Alignment with Instruction Backtranslation",
+    "The False Promise of Imitating Proprietary Language Models",
+    "The Reversal Curse: LLMs trained on \u201cA is B\u201d fail to learn \u201cB is A\u201d",
+    "The Trickle-down Impact of Reward Inconsistency on RLHF",
+    "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+    "Understanding the Effects of RLHF on LLM Generalisation and Diversity",
+    "VeRA: Vector-based Random Matrix Adaptation",
+    "What Makes Good Data for Alignment? A Comprehensive Study of Automatic Data Selection in Instruction Tuning",
+    "Evaluating Language Model Agency Through Negotiations",
+    "LoTa-Bench: Benchmarking Language-oriented Task Planners for Embodied Agents",
+    "3D-Properties: Identifying Challenges in DPO and Charting a Path Forward",
+    "Advantage-Guided Distillation for Preference Alignment in Small Language Models",
+    "AgentTrek: Agent Trajectory Synthesis via Guiding Replay with Web Tutorials",
+    "Ask, and it shall be given: On the Turing completeness of prompting",
+    "Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models",
+    "Backtracking Improves Generation Safety",
+    "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+    "Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models",
+    "BitStack: Any-Size Compression of Large Language Models in Variable Memory Environments",
+    "Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization",
+    "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+    "DataMan: Data Manager for Pre-training Large Language Models",
+    "Decoupling Angles and Strength in Low-rank Adaptation",
+    "Diffusion-based Neural Network Weights Generation",
+    "Distributed Speculative Inference (DSI): Speculation Parallelism for Provably Faster Lossless Language Model Inference",
+    "Do LLMs ``know'' internally when they follow instructions?",
+    "Do LLMs estimate uncertainty well in instruction-following?",
+    "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+    "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+    "Federated Residual Low-Rank Adaption of Large Language Models",
+    "Gumbel Counterfactual Generation From Language Models",
+    "HelpSteer2-Preference: Complementing Ratings with Preferences",
+    "How to Evaluate Reward Models for RLHF",
+    "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+    "Iterative Label Refinement Matters More than Preference Optimization under Weak Supervision",
+    "Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning",
+    "Jamba: Hybrid Transformer-Mamba Language Models",
+    "KaSA: Knowledge-Aware Singular-Value Adaptation of Large Language Models",
+    "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid",
+    "Learn Your Reference Model for Real Good Alignment",
+    "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning",
+    "Limits to scalable evaluation at the frontier: LLM as judge won\u2019t beat twice the data",
+    "LoCA: Location-Aware Cosine Adaptation for Parameter-Efficient Fine-Tuning",
+    "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+    "MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs",
+    "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents",
+    "MoS: Unleashing Parameter Efficiency of Low-Rank Adaptation with Mixture of Shards",
+    "Model Equality Testing: Which Model is this API Serving?",
+    "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+    "NeuroLM: A Universal Multi-task Foundation Model for Bridging the Gap between Language and EEG Signals",
+    "OLMoE: Open Mixture-of-Experts Language Models",
+    "On a Connection Between Imitation Learning and RLHF",
+    "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+    "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+    "QERA: an Analytical Framework for Quantization Error Reconstruction",
+    "RainbowPO: A Unified Framework for Combining Improvements in Preference Optimization",
+    "Re-Imagining Multimodal Instruction Tuning: A Representation View",
+    "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+    "SWIFT: On-the-Fly Self-Speculative Decoding for LLM Inference Acceleration",
+    "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+    "SeRA: Self-Reviewing and Alignment of LLMs using Implicit Reward Margins",
+    "Self-Boosting Large Language Models with  Synthetic Preference Data",
+    "Self-play with Execution Feedback: Improving Instruction-following Capabilities of Large Language Models",
+    "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+    "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters",
+    "Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling",
+    "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+    "Synthetic continued pretraining",
+    "TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models",
+    "TODO: Enhancing LLM Alignment with Ternary Preferences",
+    "TaskGalaxy: Scaling Multi-modal Instruction Fine-tuning with Tens of Thousands Vision Task Types",
+    "Towards Optimal Multi-draft Speculative Decoding",
+    "Towards Scalable Exact Machine Unlearning Using Parameter-Efficient Fine-Tuning",
+    "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+    "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+    "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs",
+    "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+    "When Prompt Engineering Meets Software Engineering: CNL-P as Natural and Robust \"APIs'' for Human-AI Interaction",
+    "Agent-as-a-Judge: Evaluate Agents with Agents",
+    "Aligning Spoken Dialogue Models from User Interactions",
+    "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+    "BSLoRA: Enhancing the Parameter Efficiency of LoRA with Intra-Layer and Inter-Layer Sharing",
+    "Cache Me If You Must: Adaptive Key-Value Quantization for Large Language Models",
+    "Calibrated Language Models and How to Find Them with Label Smoothing",
+    "Compress then Serve: Serving Thousands of LoRA Adapters with Little Overhead",
+    "ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization",
+    "Constrain Alignment with Sparse Autoencoders",
+    "DA-KD: Difficulty-Aware Knowledge Distillation for Efficient Large Language Models",
+    "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models",
+    "Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data",
+    "Discriminative Policy Optimization for Token-Level Reward Models",
+    "DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs",
+    "Ferret: Federated Full-Parameter Tuning at Scale for Large Language Models",
+    "Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape",
+    "Heads up! Large Language Models Can Perform Tasks Without Your Instruction via Selective Attention Head Masking",
+    "Instruction-Following Pruning for Large Language Models",
+    "Internal Causal Mechanisms Robustly Predict Language Model Out-of-Distribution Behaviors",
+    "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems",
+    "LOGO \u2014 Long cOntext aliGnment via efficient preference Optimization",
+    "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+    "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+    "Learning Distribution-wise Control in Representation Space for Language Models",
+    "Liger: Linearizing Large Language Models to Gated Recurrent Structures",
+    "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+    "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+    "Occult: Optimizing Collaborative Communications across Experts for Accelerated Parallel MoE Training and Inference",
+    "On Teacher Hacking in Language Model Distillation",
+    "Overtrained Language Models Are Harder to Fine-Tune",
+    "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+    "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration",
+    "R.I.P.: Better Models by Survival of the Fittest Prompts",
+    "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+    "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+    "RoSTE: An Efficient Quantization-Aware Supervised Fine-Tuning Approach for Large Language Models",
+    "SeedLoRA: A Fusion Approach to Efficient LLM Fine-Tuning",
+    "Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation",
+    "SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity",
+    "Test-Time Learning for Large Language Models",
+    "The Illusion of Role Separation: Hidden Shortcuts in LLM Role Learning (and How to Fix Them)",
+    "Tool Unlearning for Tool-Augmented LLMs",
+    "Understanding Overadaptation in Supervised Fine-Tuning: The Role of Ensemble Methods",
+    "Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning",
+    "WeGeFT: Weight-Generative Fine-Tuning for Multi-Faceted Efficient Adaptation of Large Models",
+    "What Limits Bidirectional Model\u2019s Generative Capabilities? A Uni-Bi-Directional Mixture-of-Expert Method For Bidirectional Fine-tuning",
+    "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors",
+    "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction",
+    "Arabic Dataset for LLM Safeguard Evaluation",
+    "Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation",
+    "CogLM: Tracking Cognitive Development of Large Language Models",
+    "DPL: Diverse Preference Learning Without A Reference Model",
+    "Enhancing Language Model Hypernetworks with Restart: A Study on Optimization",
+    "GuideLLM: Exploring LLM-Guided Conversation with Applications in Autobiography Interviewing",
+    "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+    "Pipeline Analysis for Developing Instruct LLMs in Low-Resource Languages: A Case Study on Basque",
+    "Preference Consistency Matters: Enhancing Preference Learning in Language Models with Automated Self-Curation of Training Corpora",
+    "Prompt Compression for Large Language Models: A Survey",
+    "Regularized Best-of-N Sampling with Minimum Bayes Risk Objective for Language Model Alignment",
+    "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models",
+    "Stronger Models are Not Always Stronger Teachers for Instruction Tuning",
+    "Take the essence and discard the dross: A Rethinking on Data Selection for Fine-Tuning Large Language Models",
+    "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs",
+    "3-in-1: 2D Rotary Adaptation for Efficient Finetuning, Efficient Batching and Composability",
+    "A Hitchhiker's Guide to Fine-Grained Face Forgery Detection Using Common Sense Reasoning",
+    "Adversarial Moment-Matching Distillation of Large Language Models",
+    "Aligner: Efficient Alignment by Learning to Correct",
+    "Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment",
+    "Can Large Language Model Agents Simulate Human Trust Behavior?",
+    "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+    "Decoding-Time Language Model Alignment with Multiple Objectives",
+    "DoFIT: Domain-aware Federated Instruction Tuning with Alleviated Catastrophic Forgetting",
+    "Grounding Multimodal Large Language Models in Actions",
+    "IDGen: Item Discrimination Induced Prompt Generation for LLM Evaluation",
+    "LISA: Layerwise Importance Sampling for Memory-Efficient Large Language Model Fine-Tuning",
+    "Me, Myself, and AI: The Situational Awareness Dataset (SAD) for LLMs",
+    "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+    "Noise Contrastive Alignment of Language Models with Explicit Rewards",
+    "Policy Improvement using Language Feedback Models",
+    "ReFT: Representation Finetuning for Language Models",
+    "Reinforcing LLM Agents via Policy Optimization with Action Decomposition",
+    "S$^{2}$FT: Efficient, Scalable and Generalizable LLM Fine-tuning by Structured Sparsity",
+    "SaulLM-54B & SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain",
+    "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+    "Star-Agents: Automatic Data Optimization with LLM Agents for Instruction Tuning",
+    "VHELM: A Holistic Evaluation of Vision Language Models",
+    "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+    "What matters when building vision-language models?",
+    "Would I Lie To You? Inference Time Alignment of Language Models using Direct Preference Heads"
+  ],
+  "paper_count": 244,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The tendency to follow the requested action format and avoid inserting unsupported or extraneous actions.",
+      "paper": "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction",
+      "original_name": "Instruction adherence"
+    },
+    {
+      "text": "The model processing and acting upon a specific input prompt to perform a designated task.",
+      "paper": "Ask, and it shall be given: On the Turing completeness of prompting",
+      "original_name": "Prompt execution"
+    },
+    {
+      "text": "The observable act of generating a response that adheres to the constraints and commands specified in a natural language prompt.",
+      "paper": "Self-play with Execution Feedback: Improving Instruction-following Capabilities of Large Language Models",
+      "original_name": "Following natural language instructions"
+    },
+    {
+      "text": "Demonstrating that a generated solution fulfills specified functional and structural conditions defined in a task, including dependency-aware milestones.",
+      "paper": "Agent-as-a-Judge: Evaluate Agents with Agents",
+      "original_name": "Requirement satisfaction"
+    },
+    {
+      "text": "The observable act of an agent performing an action that contradicts a stated domain-specific rule or constraint, such as canceling a non-refundable ticket.",
+      "paper": "Effective Red-Teaming of Policy-Adherent Agents",
+      "original_name": "Policy violation"
+    },
+    {
+      "text": "Failing to adhere to task instructions, such as generating output in the wrong language or format.",
+      "paper": "FilBench: Can LLMs Understand and Generate Filipino?",
+      "original_name": "Poor instruction-following"
+    },
+    {
+      "text": "Following detailed directives by carrying out the requested steps or constraints.",
+      "paper": "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+      "original_name": "Instruction execution"
+    },
+    {
+      "text": "The observable behavior where a model generates a response that contradicts or ignores the original instruction, such as revealing forbidden information in a narrative context.",
+      "paper": "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+      "original_name": "Instruction violation"
+    },
+    {
+      "text": "The observable failure of a model to adhere to the specified format or constraints of a given task or prompt.",
+      "paper": "TVQACML: Benchmarking Text-Centric Visual Question Answering in Multilingual Chinese Minority Languages",
+      "original_name": "Instruction non-compliance"
+    },
+    {
+      "text": "The observable task of a model accurately reproducing a specific phrase provided in the input prompt when instructed to do so.",
+      "paper": "Improbable Bigrams Expose Vulnerabilities of Incomplete Tokens in Byte-Level Tokenizers",
+      "original_name": "Phrase repetition"
+    },
+    {
+      "text": "Interpreting and acting upon high-level user commands expressed in natural language to initiate appropriate task planning behavior.",
+      "paper": "LoTa-Bench: Benchmarking Language-oriented Task Planners for Embodied Agents",
+      "original_name": "Natural language instruction following"
+    }
+  ],
+  "definition_count": 11,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Trickle-down Impact of Reward Inconsistency on RLHF",
+      "evidence": "MT-Bench is a benchmark featuring challenging ONE-TURN or MULTI-TURN reasoning and instruction-following examples, where the model responses are graded by GPT-4 on a scale of 1 (worst) to 10 (best). (Section 6)",
+      "paper_count": 35,
+      "paper_weight": 35.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "The Trickle-down Impact of Reward Inconsistency on RLHF",
+          "Beyond Reverse KL: Generalizing Direct Preference Optimization with Diverse Divergence Constraints",
+          "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data"
+        ],
+        "neurips24": [
+          "S$^{2}$FT: Efficient, Scalable and Generalizable LLM Fine-tuning by Structured Sparsity",
+          "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+          "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+          "Aligner: Efficient Alignment by Learning to Correct",
+          "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+          "LISA: Layerwise Importance Sampling for Memory-Efficient Large Language Model Fine-Tuning"
+        ],
+        "iclr25": [
+          "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+          "TODO: Enhancing LLM Alignment with Ternary Preferences",
+          "TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models",
+          "ALLaM: Large Language Models for Arabic and English",
+          "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+          "KaSA: Knowledge-Aware Singular-Value Adaptation of Large Language Models",
+          "Is In-Context Learning Sufficient for Instruction Following in LLMs?",
+          "Limits to scalable evaluation at the frontier: LLM as judge won\u2019t beat twice the data",
+          "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+          "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters",
+          "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid",
+          "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs"
+        ],
+        "naacl25": [
+          "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+          "Preference Consistency Matters: Enhancing Preference Learning in Language Models with Automated Self-Curation of Training Corpora",
+          "ReIFE: Re-evaluating Instruction-Following Evaluation",
+          "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models",
+          "Transferable Post-training via Inverse Value Learning"
+        ],
+        "acl25": [
+          "Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering"
+        ],
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques",
+          "WeGeFT: Weight-Generative Fine-Tuning for Multi-Faceted Efficient Adaptation of Large Models",
+          "Understanding Overadaptation in Supervised Fine-Tuning: The Role of Ensemble Methods",
+          "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration",
+          "SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity",
+          "TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization"
+        ],
+        "emnlp25": [
+          "FuseChat: Knowledge Fusion of Chat Models",
+          "Selective Preference Optimization via Token-Level Reward Function Estimation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "IFEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment",
+      "evidence": "\u201cInstruction-Following Evaluation (IFEval): IFEval is a benchmark evaluating a model\u2019s ability to follow explicit instructions\u201d",
+      "paper_count": 30,
+      "paper_weight": 30.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment",
+          "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback"
+        ],
+        "iclr25": [
+          "Q-Adapter: Customizing Pre-trained LLMs to New Preferences with Forgetting Mitigation",
+          "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+          "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+          "Jamba: Hybrid Transformer-Mamba Language Models",
+          "Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling",
+          "Diffusion-based Neural Network Weights Generation",
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+          "Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning",
+          "MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs",
+          "Compute-Constrained Data Selection",
+          "Advancing LLM Reasoning Generalists with Preference Trees",
+          "Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking"
+        ],
+        "naacl25": [
+          "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning"
+        ],
+        "acl25": [
+          "Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning",
+          "SkillVerse : Assessing and Enhancing LLMs with Tree Evaluation",
+          "IPO: Your Language Model is Secretly a Preference Classifier"
+        ],
+        "icml25": [
+          "Constrain Alignment with Sparse Autoencoders",
+          "Portable Reward Tuning: Towards Reusable Fine-Tuning across Different Pretrained Models",
+          "Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data",
+          "Instruction-Following Pruning for Large Language Models",
+          "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+          "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+          "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training"
+        ],
+        "emnlp25": [
+          "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+          "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+          "LoRACoE: Improving Large Language Model via Composition-based LoRA Expert",
+          "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+          "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlpacaEval 2.0",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "evidence": "We primarily assess our models using three of the most popular open-ended instruction-following benchmarks: MT-Bench [94], AlpacaEval 2 [51], and Arena-Hard v0.1 [50].",
+      "paper_count": 26,
+      "paper_weight": 26.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SimPO: Simple Preference Optimization with a Reference-Free Reward"
+        ],
+        "iclr25": [
+          "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+          "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+          "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+          "Balancing Act: Diversity and Consistency in Large Language Model Ensembles",
+          "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+          "Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization",
+          "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+          "QERA: an Analytical Framework for Quantization Error Reconstruction",
+          "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters"
+        ],
+        "naacl25": [
+          "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+          "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models"
+        ],
+        "acl25": [
+          "T-REG: Preference Optimization with Token-Level Reward Regularization"
+        ],
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques",
+          "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs",
+          "Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data",
+          "AlphaPO: Reward Shape Matters for LLM Alignment",
+          "Instruction-Following Pruning for Large Language Models",
+          "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+          "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+          "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+          "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+          "TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization"
+        ],
+        "emnlp25": [
+          "FuseChat: Knowledge Fusion of Chat Models",
+          "Selective Preference Optimization via Token-Level Reward Function Estimation",
+          "Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Arena-Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "evidence": "We primarily assess our models using three of the most popular open-ended instruction-following benchmarks: MT-Bench [94], AlpacaEval 2 [51], and Arena-Hard v0.1 [50].",
+      "paper_count": 13,
+      "paper_weight": 13.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SimPO: Simple Preference Optimization with a Reference-Free Reward"
+        ],
+        "iclr25": [
+          "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+          "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+          "Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization",
+          "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model"
+        ],
+        "naacl25": [
+          "ReIFE: Re-evaluating Instruction-Following Evaluation"
+        ],
+        "acl25": [
+          "T-REG: Preference Optimization with Token-Level Reward Regularization"
+        ],
+        "icml25": [
+          "Instruction-Following Pruning for Large Language Models",
+          "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+          "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+          "TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization"
+        ],
+        "emnlp25": [
+          "Selective Preference Optimization via Token-Level Reward Function Estimation",
+          "Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlpacaEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data",
+      "evidence": "To evaluate the instruction-following ability, we employ the three most widely recognized benchmarks, including AlpacaEval (Li et al., 2023), MT-bench (Zheng et al., 2023) and Vicuna-bench (Chiang et al., 2023).",
+      "paper_count": 12,
+      "paper_weight": 12.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data"
+        ],
+        "neurips24": [
+          "Learning to Reason via Program Generation, Emulation, and Search",
+          "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+          "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback"
+        ],
+        "iclr25": [
+          "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+          "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs"
+        ],
+        "naacl25": [
+          "ReIFE: Re-evaluating Instruction-Following Evaluation"
+        ],
+        "icml25": [
+          "Learning Distribution-wise Control in Representation Space for Language Models",
+          "Learning to Keep a Promise: Scaling Language Model Decoding Parallelism with Learned Asynchronous Decoding",
+          "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric",
+          "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators"
+        ],
+        "emnlp25": [
+          "Improving Task Diversity in Label Efficient Supervised Finetuning of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Alpaca instruction dataset",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "QA-LoRA: Quantization-Aware Low-Rank Adaptation of Large Language Models",
+      "evidence": "\"Alpaca contains 52K instruction-following data generated from text-davinci-003 (GPT 3.5)\" (Section 4.1)",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "QA-LoRA: Quantization-Aware Low-Rank Adaptation of Large Language Models"
+        ],
+        "iclr25": [
+          "Towards Optimal Multi-draft Speculative Decoding",
+          "SWIFT: On-the-Fly Self-Speculative Decoding for LLM Inference Acceleration",
+          "Distributed Speculative Inference (DSI): Speculation Parallelism for Provably Faster Lossless Language Model Inference",
+          "Iterative Label Refinement Matters More than Preference Optimization under Weak Supervision",
+          "Durable Quantization Conditioned Misalignment Attack on Large Language Models"
+        ],
+        "emnlp25": [
+          "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models",
+      "evidence": "Vicuna QA (Chiang et al., 2023) uses GPT-4 to evaluate the abilities of open-ended chatbots to follow instructions.",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models",
+          "Listen, Think, and Understand"
+        ],
+        "iclr25": [
+          "DELIFT: Data Efficient Language model Instruction Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Vicuna-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data",
+      "evidence": "To evaluate the instruction-following ability, we employ the three most widely recognized benchmarks, including AlpacaEval (Li et al., 2023), MT-bench (Zheng et al., 2023) and Vicuna-bench (Chiang et al., 2023).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data"
+        ],
+        "naacl25": [
+          "Preference Consistency Matters: Enhancing Preference Learning in Language Models with Automated Self-Curation of Training Corpora"
+        ],
+        "icml25": [
+          "DA-KD: Difficulty-Aware Knowledge Distillation for Efficient Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Beyond task performance: evaluating and reducing the flaws of large multimodal models with in-context-learning",
+      "evidence": "LMMs must be helpful (e.g., ... follow user instructions)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Beyond task performance: evaluating and reducing the flaws of large multimodal models with in-context-learning"
+        ],
+        "iclr25": [
+          "Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking",
+          "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "UltraFeedback",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MetaAligner: Towards Generalizable Multi-Objective Alignment of Language Models",
+      "evidence": "UltraFeedback [7]: a multi-aspect alignment dataset with 64K prompts with preferences obtained from GPT-4, including \"Instruction following\", \"Honest\", \"Truthful\", and \"Helpful\" objectives (Section 4.1).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MetaAligner: Towards Generalizable Multi-Objective Alignment of Language Models",
+          "Noise Contrastive Alignment of Language Models with Explicit Rewards"
+        ],
+        "icml25": [
+          "Learning Distribution-wise Control in Representation Space for Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models",
+      "evidence": "math and code problems are formatted as instructions, enhancing instruction following capabilities enables LLMs to better address these tasks. (Section 4)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models"
+        ],
+        "neurips24": [
+          "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search"
+        ],
+        "naacl25": [
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Super-NaturalInstructions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Seeking Neural Nuggets: Knowledge Transfer in Large Language Models from a Parametric Perspective",
+      "evidence": "This set of tasks evaluates a model\u2019s capability in adhering to instructions. ... Our chosen benchmark for this category is the Super Natural Instructions (Super NI) (Wang et al., 2022)... (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Seeking Neural Nuggets: Knowledge Transfer in Large Language Models from a Parametric Perspective"
+        ],
+        "icml25": [
+          "DA-KD: Difficulty-Aware Knowledge Distillation for Efficient Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FollowIR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like Language Models",
+      "evidence": "State-of-the-art bi-encoder performance on instruction-following retrieval tasks (+14.3 p-MRR, +3.1 nDCG/MAP on FollowIR (Weller et al., 2024)) with comparable scores to SoTA cross-encoders. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like Language Models"
+        ],
+        "naacl25": [
+          "FollowIR: Evaluating and Teaching Information Retrieval Models to Follow Instructions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "InfoBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs",
+      "evidence": "InfoBench (Qin et al., 2024) introduces a new metric called Decomposed Requirements Following Ratio (DRFR) for assessing the instruction-adherence capabilities of LLMs.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs"
+        ],
+        "emnlp25": [
+          "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human preference alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "On-the-fly Preference Alignment via Principle-Guided Decoding",
+      "evidence": "the model's ability to follow instructions inherently leads to better alignment with general preferences such as helpfulness and safety",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "On-the-fly Preference Alignment via Principle-Guided Decoding"
+        ],
+        "acl25": [
+          "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BigCodeBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Selective Prompt Anchoring for Code Generation",
+      "evidence": "BigCodeBench (Zhuo et al., 2024) is a more challenging benchmark for code generation that evaluates models\u2019 abilities to follow complex instructions... (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Selective Prompt Anchoring for Code Generation",
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Beyond task performance: evaluating and reducing the flaws of large multimodal models with in-context-learning",
+      "evidence": "\u201cICL can marginally help to adapt LMMs to follow instructions.\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Beyond task performance: evaluating and reducing the flaws of large multimodal models with in-context-learning",
+          "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Language Model Based Text-to-Audio Generation: Anti-Causally Aligned Collaborative Residual Transformers",
+      "evidence": "we conducted a comprehensive user study ... raters were presented with a set of three audio clips\u2014one from each system\u2014and were asked to rank them according to two key dimensions: Fidelity Quality ... and Instruction Following, which measures how accurately the audio reflects the given prompt. (Section 5.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Language Model Based Text-to-Audio Generation: Anti-Causally Aligned Collaborative Residual Transformers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models",
+      "evidence": "Gemma-7B-Instruct performs better in structured tasks like reasoning and coding, where precise instruction-following is crucial (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLMBar",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "evidence": "LLMBar (Zeng et al., 2023) instead takes a different approach by assessing LLM-based judges\u2019 ability to follow instructions, using response pairs with clear ground truth preference labels based on adherence to instructions rather than subjective preferences. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "JudgeBench: A Benchmark for Evaluating LLM-Based Judges"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Zero-shot generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Re-Imagining Multimodal Instruction Tuning: A Representation View",
+      "evidence": "multimodal instruction tuning has been introduced (Liu et al., 2024), full fine-tuning pre-trained models with diverse multimodal instruction-following datasets, thereby enabling zero-shot generalization to previously unseen multimodal tasks. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Re-Imagining Multimodal Instruction Tuning: A Representation View"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FollowBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+      "evidence": "We evaluate the trained models on several widely-used instruction-following benchmarks, including IFEval (Zhou et al., 2023), Multi-IF (He et al., 2024b), SysBench (Qin et al., 2024), FollowBench (Jiang et al., 2024), and CFBench (Zhang et al., 2024a). (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AgentBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AgentBench: Evaluating LLMs as Agents",
+      "evidence": "AGENTBENCH thus systematically evaluate an LLM\u2019s core abilities, including following instructions (Ouyang et al., 2022), coding (Chen et al., 2021), knowledge acquisition (Joshi et al., 2017; Talmor et al., 2019), logical reasoning (Srivastava et al., 2023), and commonsense grounding (Shridhar et al., 2020a).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "AgentBench: Evaluating LLMs as Agents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Harmful content generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher",
+      "evidence": "GPT-4 showed notably more unsafe behavior than Turbo in almost all cases when chatting with ciphers, due to its superior instruction understanding and adherence, thereby interpreting the cipher instruction and generating a relevant response. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PandaLM",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization",
+      "evidence": "It addresses vital subjective factors such as relative conciseness, clarity, adherence to instructions, comprehensiveness, and formality.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Human preference alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Privately Aligning Language Models with Reinforcement Learning",
+      "evidence": "their magical ability to follow myriad user instructions \u2013 the driving force behind their mass adoption \u2013 has been attributed to instruction fine-tuning and learning from human feedback. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Privately Aligning Language Models with Reinforcement Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GAVIE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning",
+      "evidence": "To improve the robustness and flexibility of the evaluation on visual instruction tuning, we propose GPT4-Assisted Visual Instruction Evaluation (GAVIE) to assess the LMM output in two different aspects: Relevancy to evaluate the instruction-following performance and Accuracy to measure the visual hallucination in the LMM output. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Task generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "From Instance Training to Instruction Learning: Task Adapters Generation from Instructions",
+      "evidence": "Instruction Following is often used to evaluate the cross-task generalization of LLMs, and it is dedicated to handling any task described in natural language (Section 2 Related Work).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "From Instance Training to Instruction Learning: Task Adapters Generation from Instructions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Lumen: Unleashing Versatile Vision-Centric Capabilities of Large Multimodal Models",
+      "evidence": "To examine general visual understanding and instruction following of our model, we follow common practices and employ MMBench [77], MME [78], SEEDBench [79], MMMU [30] and MathVista [80] for evaluation. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Lumen: Unleashing Versatile Vision-Centric Capabilities of Large Multimodal Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models",
+      "evidence": "Furthermore, we reveal that the catastrophic forgetting in MLLMs is primarily due to the decline in instruction following rather than reasoning knowledge.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robotic manipulation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "PERIA: Perceive, Reason, Imagine, Act via Holistic Language and Vision Planning for Manipulation",
+      "evidence": "\"Long-horizon manipulation tasks with general instructions often implicitly encapsulate multiple sub-tasks, posing significant challenges in instruction following\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "PERIA: Perceive, Reason, Imagine, Act via Holistic Language and Vision Planning for Manipulation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Accuracy",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models",
+      "evidence": "\u201cTruth Alignment = Reasoning Capability + Instruction Following\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CoIN: A Benchmark of Continual Instruction Tuning for Multimodel Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-improvement",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+      "evidence": "We believe this result indicates that self-improvement requires a minimal level of instruction following and reasoning capabilities, which is not present in these small models. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench-101",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+      "evidence": "Also, we employed three popular and challenging benchmarks to evaluate the open-ended instruction following task: AlpacaEval (Li et al., 2023), Arena-Hard (Li et al., 2024), MT-Bench 101 (Bai et al., 2024) (Section 5.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LiveBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "LiveBench... contains a wide variety of challenging tasks, spanning math, coding, reasoning, language, instruction following, and data analysis.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "UltraChat",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Model Equality Testing: Which Model is this API Serving?",
+      "evidence": "...and instruction task UltraChat (Ding et al., 2023). (\u00a75)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Model Equality Testing: Which Model is this API Serving?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction fine-tuning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Gumbel Counterfactual Generation From Language Models",
+      "evidence": "Instruction Tuning finetunes the pretrained models on demonstrations of instruction following. (Section 4.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gumbel Counterfactual Generation From Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs",
+      "evidence": "This trend suggests that lower learning rates enhance the model\u2019s ability to generalize to unseen tasks requiring knowledge, complex reasoning, and instruction following.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HelpSteer",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+      "evidence": "HelpSteer (Wang et al., 2023) is a QA dataset aimed at evaluating the model\u2019s capability to follow instructions across five dimensions, including informativeness and factuality. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ArmoRM",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+      "evidence": "To address this issue, we selected the instruction-following dimension from ArmoRM-8B (Wang et al., 2024a) as the main evaluation metric for our experiment. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongGenBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+      "evidence": "We introduced LongGenBench, a synthetic benchmark that evaluates long-form generation capabilities of language models by testing their ability to follow instructions over extended sequences. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-form text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+      "evidence": "The ability to follow instructions is essential for long text generation (Reversed NIAH1), just as effective information retrieval is fundamental for processing long-context inputs (NIAH(Kamradt, 2023)). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Context retention",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs",
+      "evidence": "This highlights the memory retention issue in long-context models, which often leads to a loss of coherence and adherence to task instructions. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LongGenBench: Benchmarking Long-Form Generation in Long Context LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual grounding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Text4Seg: Reimagining Image Segmentation as Text Generation",
+      "evidence": "\u201cThese results emphasize the superiority of Text4Seg in following instructions, leading to enhanced visual grounding ability.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Text4Seg: Reimagining Image Segmentation as Text Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Open LLM Leaderboard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning",
+      "evidence": "\"we also confirm that our safety-tuned model still preserves general instruction-following capabilities: as shown in Table B.2, the performance on the six tasks in the Open LLM Leaderboard changes insignificantly with safety tuning.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AudioBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AudioBench: A Universal Benchmark for Audio Large Language Models",
+      "evidence": "Despite recent advancements, there lacks a comprehensive benchmark for AudioLLMs on instruction following capabilities conditioned on audio signals. AudioBench addresses this gap by setting up datasets as well as desired evaluation metrics.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "AudioBench: A Universal Benchmark for Audio Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+      "evidence": "this balance creates vulnerabilities when the model\u2019s instruction-following objective from u conflicts with the safety goals defined in g.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WildBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ReIFE: Re-evaluating Instruction-Following Evaluation",
+      "evidence": "\"we evaluate the evaluation protocols used in three automatic LLM benchmarks for instruction-following4 \u2013 AlpacaEval (Li et al., 2023c), ArenaHard (Li et al., 2024b), and WildBench (Lin et al., 2024)\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "ReIFE: Re-evaluating Instruction-Following Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Nudging: Inference-time Alignment of LLMs via Guided Decoding",
+      "evidence": "Large language models (LLMs) require alignment to effectively and safely follow user instructions. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Nudging: Inference-time Alignment of LLMs via Guided Decoding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BabyAI",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "The Synergy of LLMs & RL Unlocks Offline Learning of Generalizable Language-Conditioned Policies with Low-fidelity Data",
+      "evidence": "BabyAI is a grid world platform for instruction following where an agent receives natural language goal instructions such as: \u201cGo to the tile (3,2)\u201d or \u201cLook behind the green locked door\u201d. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "The Synergy of LLMs & RL Unlocks Offline Learning of Generalizable Language-Conditioned Policies with Low-fidelity Data"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TRACE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Continual Instruction Assistant",
+      "evidence": "TRACE, another continual instruction tuning benchmark, is designed to evaluate the general ability, instruction following, and safety for LLMs (Wang et al., 2023). (Section 2. Related Work)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Large Continual Instruction Assistant"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Response ranking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "An Architecture Search Framework for Inference-Time Techniques",
+      "evidence": "for tasks like instruction-following and reasoning, techniques such as fusion and ranking are effective for bolstering task performances (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "An Architecture Search Framework for Inference-Time Techniques"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Natural Instructions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On Teacher Hacking in Language Model Distillation",
+      "evidence": "Our experiments use three datasets for training and evaluation: the XSum summarization dataset (Narayan et al., 2018), the WMT-14 en-de translation dataset (Bojar et al., 2014), and the instruction-following dataset Natural Instructions (Mishra et al., 2022; Wang et al., 2022).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "On Teacher Hacking in Language Model Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Coding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models",
+      "evidence": "Gemma-7B-Instruct performs better in structured tasks like reasoning and coding, where precise instruction-following is crucial (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "T-Eval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Can Compressed LLMs Truly Act? An Empirical Evaluation of Agentic Capabilities in LLM Compression",
+      "evidence": "We utilize T-Eval (Chen et al., 2023c), which assesses six core competencies: planning, reasoning, retrieval, understanding, instruction following, and reviewing. (Sec. 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Can Compressed LLMs Truly Act? An Empirical Evaluation of Agentic Capabilities in LLM Compression"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-Instruct",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DA-KD: Difficulty-Aware Knowledge Distillation for Efficient Large Language Models",
+      "evidence": "Then, we evaluate the trained student models on five instruction-following datasets: Dolly evaluation (Conover et al., 2023), Self-Instruct (Wang et al., 2022a), Super-Natural Instructions (Wang et al., 2022b), Unnatural Instruction(Honovich et al., 2022) and Vicuna evaluation(Chiang et al., 2023). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "DA-KD: Difficulty-Aware Knowledge Distillation for Efficient Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Mathematical problem solving",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models",
+      "evidence": "math and code problems are formatted as instructions, enhancing instruction following capabilities enables LLMs to better address these tasks. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FLAN Collection",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MUDDFormer: Breaking Residual Bottlenecks in Transformers via Multiway Dynamic Dense Connections",
+      "evidence": "Table 3 also reports target span perplexities on a randomly sampled subset of the FLAN Collection dataset (Longpre et al., 2023), which features data of instructing following, chain-of-thought, in-context few-shot learning, etc. (Section 3.3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MUDDFormer: Breaking Residual Bottlenecks in Transformers via Multiway Dynamic Dense Connections"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+      "evidence": "achieving an optimal trade-off between instruction adherence and output quality. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Sparse Activation Editing for Reliable Instruction Following in Narratives"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "PAFT: Prompt-Agnostic Fine-Tuning",
+      "evidence": "This brittleness manifests... as poor instruction following in chatbots and AI agents when commands deviate from those encountered during training (Hong et al., 2024; Sahoo et al., 2025) (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "PAFT: Prompt-Agnostic Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "C-Eval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+      "evidence": "Instruction benchmarks evaluate a model\u2019s ability to comprehend and execute detailed directives. ... with C-Eval (Huang et al., 2024) focusing on Chinese instructions.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "VoiceBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Towards Holistic Evaluation of Large Audio-Language Models: A Comprehensive Survey",
+      "evidence": "...VoiceBench (Chen et al., 2024c) synthesizes IFEval (Zhou et al., 2023a), a text-based LLM instruction-following benchmark, into speech...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Towards Holistic Evaluation of Large Audio-Language Models: A Comprehensive Survey"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "evidence": "This limitation [in output diversity] hinders their performance in tasks that demand diverse and informative responses, such as open-domain question answering, instruction following, and test-time scaling for reasoning (Zhang et al., 2024a). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "G2: Guided Generation for Enhanced Output Diversity in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-lingual generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Instructing Large Language Models for Low-Resource Languages: A Systematic Study for Basque",
+      "evidence": "We question whether instruction-following capabilities could be directly transferred to new languages without dedicated instruction data, and whether instruction-tuned models could be adapted through continued pretraining, similar to base models. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Instructing Large Language Models for Low-Resource Languages: A Systematic Study for Basque"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multi-IF",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+      "evidence": "We evaluate the trained models on several widely-used instruction-following benchmarks, including IFEval (Zhou et al., 2023), Multi-IF (He et al., 2024b), SysBench (Qin et al., 2024), FollowBench (Jiang et al., 2024), and CFBench (Zhang et al., 2024a). (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CFBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+      "evidence": "We evaluate the trained models on several widely-used instruction-following benchmarks, including IFEval (Zhou et al., 2023), Multi-IF (He et al., 2024b), SysBench (Qin et al., 2024), FollowBench (Jiang et al., 2024), and CFBench (Zhang et al., 2024a). (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Information extraction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Image Textualization: An Automatic Framework for Generating Rich and Detailed Image Descriptions",
+      "evidence": "to identify hallucinations existed in the reference description, we first extract object entities (object nouns and phrases) from it. Here, we leverage the strong instruction following ability of the Large Language Model (LLM). (Sec. 3.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Image Textualization: An Automatic Framework for Generating Rich and Detailed Image Descriptions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Omni-Judge",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Omni-MATH: A Universal Olympiad Level Mathematic Benchmark for Large Language Models",
+      "evidence": "Then we treat this task as a similar flow of instruction following, where the extraction of the model answer, judgment, and detailed justification are all required to be generated by Omni-Judge. (Section 2.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Omni-MATH: A Universal Olympiad Level Mathematic Benchmark for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Paraphrasing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "Instruction Following: four tasks to paraphrase, simplify, summarize, or generate stories",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Story generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "Instruction Following: four tasks to paraphrase, simplify, summarize, or generate stories",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "evidence": "Instruction Following: four tasks to paraphrase, simplify, summarize, or generate stories",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "LiveBench: A Challenging, Contamination-Limited LLM Benchmark"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ShareGPT",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Transferable Post-training via Inverse Value Learning",
+      "evidence": "\u201cShareGPT is a dialog dataset collected from sharegpt.com, a website collecting user-shared dialog with ChatGPT. This dataset encompasses a wide range of topics, making it suitable as a general instruction tuning set focusing on the instruction-following ability of models.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Transferable Post-training via Inverse Value Learning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 72,
+  "incoming_relationship_count": 14,
+  "outgoing_relationship_count": 58,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage centers on adherence to explicit prompt constraints: producing the requested action or response format, staying on task, and avoiding unsupported or extraneous actions. Many papers define success through concrete constraints such as length limits, valid JSON, structural rules, style or content requirements, or exact phrase reproduction, while a smaller line broadens it to executing high-level natural-language commands or satisfying task requirements and dependency-aware milestones. Failures are described symmetrically as instruction violation or non-compliance, for example using the wrong language or format, revealing forbidden information, inserting unspecified actions, or taking an unauthorized policy-violating action."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-synonyms for this behavior, most often instruction adherence, while smaller strands call it prompt execution, following natural language instructions, requirement satisfaction, or policy violation. The settings vary across multimodal and GUI tasks, negotiations with word-limit and JSON constraints, embodied planning from user goals, role-play that must stay in character, and multilingual or narrative tasks, with a few specialized cases such as exact phrase repetition."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link instruction following to 58 measurement instruments, with MT-Bench, IFEval, AlpacaEval 2.0, AlpacaEval, and Arena-Hard appearing most often. These are usually benchmark-style evaluations of open-ended or explicit-instruction tasks: MT-Bench is described as multi-turn or open-ended questions graded by GPT-4, IFEval as evaluating whether models follow explicit instructions, AlpacaEval 2.0 as a length-controlled, reference-free instruction-following benchmark, and Arena-Hard as judging response quality on open-ended instruction following. Other papers also use instruction datasets, domain-specific benchmarks, GPT-4 or other LLM judges, and human evaluation to elicit or score the behavior."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link instruction following to 22 constructs, most often Helpfulness, Human preference alignment, In-context learning, Evaluator self-consistency, and Reasoning. There is no single agreed construct it reflects: papers describe Helpfulness as related to or correlated with instruction following, and one paper states that a model is more helpful if it shows superior performance on measures of instruction following. Other papers claim causal relationships from instruction following to Human preference alignment, or from In-context learning and Evaluator self-consistency to instruction following, while Reasoning is presented as a related capability rather than a settled target construct."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage centers on adherence to explicit prompt constraints: producing the requested action or response format, staying on task, and avoiding unsupported or extraneous actions. Many papers define success through concrete constraints such as length limits, valid JSON, structural rules, style or content requirements, or exact phrase reproduction, while a smaller line broadens it to executing high-level natural-language commands or satisfying task requirements and dependency-aware milestones. Failures are described symmetrically as instruction violation or non-compliance, for example using the wrong language or format, revealing forbidden information, inserting unspecified actions, or taking an unauthorized policy-violating action.\n\nVariants. Papers use several near-synonyms for this behavior, most often instruction adherence, while smaller strands call it prompt execution, following natural language instructions, requirement satisfaction, or policy violation. The settings vary across multimodal and GUI tasks, negotiations with word-limit and JSON constraints, embodied planning from user goals, role-play that must stay in character, and multilingual or narrative tasks, with a few specialized cases such as exact phrase repetition.\n\nSpace of elicitation and scores. Papers link instruction following to 58 measurement instruments, with MT-Bench, IFEval, AlpacaEval 2.0, AlpacaEval, and Arena-Hard appearing most often. These are usually benchmark-style evaluations of open-ended or explicit-instruction tasks: MT-Bench is described as multi-turn or open-ended questions graded by GPT-4, IFEval as evaluating whether models follow explicit instructions, AlpacaEval 2.0 as a length-controlled, reference-free instruction-following benchmark, and Arena-Hard as judging response quality on open-ended instruction following. Other papers also use instruction datasets, domain-specific benchmarks, GPT-4 or other LLM judges, and human evaluation to elicit or score the behavior.\n\nWhat it is taken as evidence of. Papers link instruction following to 22 constructs, most often Helpfulness, Human preference alignment, In-context learning, Evaluator self-consistency, and Reasoning. There is no single agreed construct it reflects: papers describe Helpfulness as related to or correlated with instruction following, and one paper states that a model is more helpful if it shows superior performance on measures of instruction following. Other papers claim causal relationships from instruction following to Human preference alignment, or from In-context learning and Evaluator self-consistency to instruction following, while Reasoning is presented as a related capability rather than a settled target construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Survey of Post-Training Scaling in Large Language Models",
+      "Automatic Expert Discovery in LLM Upcycling via Sparse Interpolated Mixture-of-Experts",
+      "Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning",
+      "Beyond Logits: Aligning Feature Dynamics for Effective Knowledge Distillation",
+      "Cross-Lingual Optimization for Language Transfer in Large Language Models",
+      "Curiosity-Driven Reinforcement Learning from Human Feedback",
+      "DRPruning: Efficient Large Language Model Pruning through Distributionally Robust Optimization",
+      "HSCR: Hierarchical Self-Contrastive Rewarding for Aligning Medical Vision Language Models",
+      "MaCP: Minimal yet Mighty Adaptation via Hierarchical Cosine Projection",
+      "MaXIFE: Multilingual and Cross-lingual Instruction Following Evaluation",
+      "Model Extrapolation Expedites Alignment",
+      "One QuantLLM for ALL: Fine-tuning Quantized LLMs Once for Efficient Deployments",
+      "Quaff: Quantized Parameter-Efficient Fine-Tuning under Outlier Spatial Stability Hypothesis",
+      "Second Language (Arabic) Acquisition of LLMs via Progressive Vocabulary Expansion",
+      "T-REG: Preference Optimization with Token-Level Reward Regularization",
+      "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization",
+      "``What do you call a dog that is incontrovertibly true? Dogma'': Testing LLM Generalization through Humor"
+    ],
+    "emnlp25": [
+      "Add-One-In: Incremental Sample Selection for Large Language Models via a Choice-Based Greedy Paradigm",
+      "AraEval: An Arabic Multi-Task Evaluation Suite for Large Language Models",
+      "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+      "Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing",
+      "CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models",
+      "DIDS: Domain Impact-aware Data Sampling for Large Language Model Training",
+      "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+      "Effective Red-Teaming of Policy-Adherent Agents",
+      "Efficient Model Development through Fine-tuning Transfer",
+      "FilBench: Can LLMs Understand and Generate Filipino?",
+      "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+      "From Unaligned to Aligned: Scaling Multilingual LLMs with Multi-Way Parallel Corpora",
+      "FuseChat: Knowledge Fusion of Chat Models",
+      "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "Improbable Bigrams Expose Vulnerabilities of Incomplete Tokens in Byte-Level Tokenizers",
+      "Improving Task Diversity in Label Efficient Supervised Finetuning of LLMs",
+      "JI2S: JointInfluence\u2010Aware Instruction Data Selection for EfficientFine\u2010Tuning",
+      "LaMDAgent: An Autonomous Framework for Post-Training Pipeline Optimization via LLM Agents",
+      "Language Models Can be Efficiently Steered via Minimal Embedding Layer Transformations",
+      "LoRACoE: Improving Large Language Model via Composition-based LoRA Expert",
+      "Logit Space Constrained Fine-Tuning for Mitigating Hallucinations in LLM-Based Recommender Systems",
+      "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+      "Membership and Memorization in LLM Knowledge Distillation",
+      "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+      "Middo: Model-Informed Dynamic Data Optimization for Enhanced LLM Fine-Tuning via Closed-Loop Learning",
+      "Mixture of Weight-shared Heterogeneous Group Attention Experts for Dynamic Token-wise KV Optimization",
+      "NILE: Internal Consistency Alignment in Large Language Models",
+      "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+      "Orthogonal Finetuning Made Scalable",
+      "P-MMEval: A Parallel Multilingual Multitask Benchmark for Consistent Evaluation of LLMs",
+      "PAFT: Prompt-Agnostic Fine-Tuning",
+      "Precise In-Parameter Concept Erasure in Large Language Models",
+      "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+      "Same Question, Different Words: A Latent Adversarial Framework for Prompt Robustness",
+      "Selective Preference Optimization via Token-Level Reward Function Estimation",
+      "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+      "Speculative Safety-Aware Decoding",
+      "Split-Merge: Scalable and Memory-Efficient Merging of Expert LLMs",
+      "Structure-Conditional Minimum Bayes Risk Decoding",
+      "Studying the Role of Input-Neighbor Overlap in Retrieval-Augmented Language Models Training Efficiency",
+      "TVQACML: Benchmarking Text-Centric Visual Question Answering in Multilingual Chinese Minority Languages",
+      "ToDi: Token-wise Distillation via Fine-Grained Divergence Control",
+      "Too Helpful, Too Harmless, Too Honest or Just Right?",
+      "Towards Holistic Evaluation of Large Audio-Language Models: A Comprehensive Survey",
+      "Translate Smart, not Hard: Cascaded Translation Systems with Quality-Aware Deferral",
+      "VerIF: Verification Engineering for Reinforcement Learning in Instruction Following",
+      "Video2Roleplay: A Multimodal Dataset and Framework for Video-Guided Role-playing Agents"
+    ],
+    "iclr24": [
+      "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+      "AlpaGasus: Training a Better Alpaca with Fewer Data",
+      "Curiosity-driven Red-teaming for Large Language Models",
+      "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning",
+      "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+      "Lemur: Harmonizing Natural Language and Code for Language Agents",
+      "MiniLLM: Knowledge Distillation of Large Language Models",
+      "NOLA: Compressing LoRA using Linear Combination of Random Basis",
+      "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data",
+      "QA-LoRA: Quantization-Aware Low-Rank Adaptation of Large Language Models",
+      "Seeking Neural Nuggets: Knowledge Transfer in Large Language Models from a Parametric Perspective",
+      "Self-Alignment with Instruction Backtranslation",
+      "The False Promise of Imitating Proprietary Language Models",
+      "The Reversal Curse: LLMs trained on \u201cA is B\u201d fail to learn \u201cB is A\u201d",
+      "The Trickle-down Impact of Reward Inconsistency on RLHF",
+      "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+      "Understanding the Effects of RLHF on LLM Generalisation and Diversity",
+      "VeRA: Vector-based Random Matrix Adaptation",
+      "What Makes Good Data for Alignment? A Comprehensive Study of Automatic Data Selection in Instruction Tuning",
+      "Evaluating Language Model Agency Through Negotiations",
+      "LoTa-Bench: Benchmarking Language-oriented Task Planners for Embodied Agents"
+    ],
+    "iclr25": [
+      "3D-Properties: Identifying Challenges in DPO and Charting a Path Forward",
+      "Advantage-Guided Distillation for Preference Alignment in Small Language Models",
+      "AgentTrek: Agent Trajectory Synthesis via Guiding Replay with Web Tutorials",
+      "Ask, and it shall be given: On the Turing completeness of prompting",
+      "Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models",
+      "Backtracking Improves Generation Safety",
+      "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+      "Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models",
+      "BitStack: Any-Size Compression of Large Language Models in Variable Memory Environments",
+      "Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization",
+      "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+      "DataMan: Data Manager for Pre-training Large Language Models",
+      "Decoupling Angles and Strength in Low-rank Adaptation",
+      "Diffusion-based Neural Network Weights Generation",
+      "Distributed Speculative Inference (DSI): Speculation Parallelism for Provably Faster Lossless Language Model Inference",
+      "Do LLMs ``know'' internally when they follow instructions?",
+      "Do LLMs estimate uncertainty well in instruction-following?",
+      "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+      "Durable Quantization Conditioned Misalignment Attack on Large Language Models",
+      "Federated Residual Low-Rank Adaption of Large Language Models",
+      "Gumbel Counterfactual Generation From Language Models",
+      "HelpSteer2-Preference: Complementing Ratings with Preferences",
+      "How to Evaluate Reward Models for RLHF",
+      "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+      "Iterative Label Refinement Matters More than Preference Optimization under Weak Supervision",
+      "Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning",
+      "Jamba: Hybrid Transformer-Mamba Language Models",
+      "KaSA: Knowledge-Aware Singular-Value Adaptation of Large Language Models",
+      "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid",
+      "Learn Your Reference Model for Real Good Alignment",
+      "Learning Diverse Attacks on Large Language Models for Robust Red-Teaming and Safety Tuning",
+      "Limits to scalable evaluation at the frontier: LLM as judge won\u2019t beat twice the data",
+      "LoCA: Location-Aware Cosine Adaptation for Parameter-Efficient Fine-Tuning",
+      "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+      "MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs",
+      "MMRole: A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents",
+      "MoS: Unleashing Parameter Efficiency of Low-Rank Adaptation with Mixture of Shards",
+      "Model Equality Testing: Which Model is this API Serving?",
+      "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+      "NeuroLM: A Universal Multi-task Foundation Model for Bridging the Gap between Language and EEG Signals",
+      "OLMoE: Open Mixture-of-Experts Language Models",
+      "On a Connection Between Imitation Learning and RLHF",
+      "OpenPRM: Building Open-domain Process-based Reward Models with Preference Trees",
+      "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+      "QERA: an Analytical Framework for Quantization Error Reconstruction",
+      "RainbowPO: A Unified Framework for Combining Improvements in Preference Optimization",
+      "Re-Imagining Multimodal Instruction Tuning: A Representation View",
+      "SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models",
+      "SWIFT: On-the-Fly Self-Speculative Decoding for LLM Inference Acceleration",
+      "Sail into the Headwind: Alignment via Robust Rewards and Dynamic Labels against Reward Hacking",
+      "SeRA: Self-Reviewing and Alignment of LLMs using Implicit Reward Margins",
+      "Self-Boosting Large Language Models with  Synthetic Preference Data",
+      "Self-play with Execution Feedback: Improving Instruction-following Capabilities of Large Language Models",
+      "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+      "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters",
+      "Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling",
+      "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+      "Synthetic continued pretraining",
+      "TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models",
+      "TODO: Enhancing LLM Alignment with Ternary Preferences",
+      "TaskGalaxy: Scaling Multi-modal Instruction Fine-tuning with Tens of Thousands Vision Task Types",
+      "Towards Optimal Multi-draft Speculative Decoding",
+      "Towards Scalable Exact Machine Unlearning Using Parameter-Efficient Fine-Tuning",
+      "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+      "Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning",
+      "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs",
+      "Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model",
+      "When Prompt Engineering Meets Software Engineering: CNL-P as Natural and Robust \"APIs'' for Human-AI Interaction"
+    ],
+    "icml25": [
+      "Agent-as-a-Judge: Evaluate Agents with Agents",
+      "Aligning Spoken Dialogue Models from User Interactions",
+      "AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization",
+      "BSLoRA: Enhancing the Parameter Efficiency of LoRA with Intra-Layer and Inter-Layer Sharing",
+      "Cache Me If You Must: Adaptive Key-Value Quantization for Large Language Models",
+      "Calibrated Language Models and How to Find Them with Label Smoothing",
+      "Compress then Serve: Serving Thousands of LoRA Adapters with Little Overhead",
+      "ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization",
+      "Constrain Alignment with Sparse Autoencoders",
+      "DA-KD: Difficulty-Aware Knowledge Distillation for Efficient Large Language Models",
+      "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models",
+      "Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data",
+      "Discriminative Policy Optimization for Token-Level Reward Models",
+      "DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs",
+      "Ferret: Federated Full-Parameter Tuning at Scale for Large Language Models",
+      "Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape",
+      "Heads up! Large Language Models Can Perform Tasks Without Your Instruction via Selective Attention Head Masking",
+      "Instruction-Following Pruning for Large Language Models",
+      "Internal Causal Mechanisms Robustly Predict Language Model Out-of-Distribution Behaviors",
+      "KABB: Knowledge-Aware Bayesian Bandits for Dynamic Expert Coordination in Multi-Agent Systems",
+      "LOGO \u2014 Long cOntext aliGnment via efficient preference Optimization",
+      "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+      "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+      "Learning Distribution-wise Control in Representation Space for Language Models",
+      "Liger: Linearizing Large Language Models to Gated Recurrent Structures",
+      "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+      "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "Occult: Optimizing Collaborative Communications across Experts for Accelerated Parallel MoE Training and Inference",
+      "On Teacher Hacking in Language Model Distillation",
+      "Overtrained Language Models Are Harder to Fine-Tune",
+      "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+      "QoS-Efficient Serving of Multiple Mixture-of-Expert LLMs Using Partial Runtime Reconfiguration",
+      "R.I.P.: Better Models by Survival of the Fittest Prompts",
+      "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+      "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+      "RoSTE: An Efficient Quantization-Aware Supervised Fine-Tuning Approach for Large Language Models",
+      "SeedLoRA: A Fusion Approach to Efficient LLM Fine-Tuning",
+      "Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation",
+      "SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity",
+      "Test-Time Learning for Large Language Models",
+      "The Illusion of Role Separation: Hidden Shortcuts in LLM Role Learning (and How to Fix Them)",
+      "Tool Unlearning for Tool-Augmented LLMs",
+      "Understanding Overadaptation in Supervised Fine-Tuning: The Role of Ensemble Methods",
+      "Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning",
+      "WeGeFT: Weight-Generative Fine-Tuning for Multi-Faceted Efficient Adaptation of Large Models",
+      "What Limits Bidirectional Model\u2019s Generative Capabilities? A Uni-Bi-Directional Mixture-of-Expert Method For Bidirectional Fine-tuning",
+      "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors",
+      "UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction"
+    ],
+    "naacl25": [
+      "Arabic Dataset for LLM Safeguard Evaluation",
+      "Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation",
+      "CogLM: Tracking Cognitive Development of Large Language Models",
+      "DPL: Diverse Preference Learning Without A Reference Model",
+      "Enhancing Language Model Hypernetworks with Restart: A Study on Optimization",
+      "GuideLLM: Exploring LLM-Guided Conversation with Applications in Autobiography Interviewing",
+      "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+      "Pipeline Analysis for Developing Instruct LLMs in Low-Resource Languages: A Case Study on Basque",
+      "Preference Consistency Matters: Enhancing Preference Learning in Language Models with Automated Self-Curation of Training Corpora",
+      "Prompt Compression for Large Language Models: A Survey",
+      "Regularized Best-of-N Sampling with Minimum Bayes Risk Objective for Language Model Alignment",
+      "Reward-Guided Tree Search for Inference Time Alignment of Large Language Models",
+      "Stronger Models are Not Always Stronger Teachers for Instruction Tuning",
+      "Take the essence and discard the dross: A Rethinking on Data Selection for Fine-Tuning Large Language Models",
+      "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs"
+    ],
+    "neurips24": [
+      "3-in-1: 2D Rotary Adaptation for Efficient Finetuning, Efficient Batching and Composability",
+      "A Hitchhiker's Guide to Fine-Grained Face Forgery Detection Using Common Sense Reasoning",
+      "Adversarial Moment-Matching Distillation of Large Language Models",
+      "Aligner: Efficient Alignment by Learning to Correct",
+      "Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment",
+      "Can Large Language Model Agents Simulate Human Trust Behavior?",
+      "CorDA: Context-Oriented Decomposition Adaptation of Large Language Models for Task-Aware Parameter-Efficient Fine-tuning",
+      "Decoding-Time Language Model Alignment with Multiple Objectives",
+      "DoFIT: Domain-aware Federated Instruction Tuning with Alleviated Catastrophic Forgetting",
+      "Grounding Multimodal Large Language Models in Actions",
+      "IDGen: Item Discrimination Induced Prompt Generation for LLM Evaluation",
+      "LISA: Layerwise Importance Sampling for Memory-Efficient Large Language Model Fine-Tuning",
+      "Me, Myself, and AI: The Situational Awareness Dataset (SAD) for LLMs",
+      "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "Noise Contrastive Alignment of Language Models with Explicit Rewards",
+      "Policy Improvement using Language Feedback Models",
+      "ReFT: Representation Finetuning for Language Models",
+      "Reinforcing LLM Agents via Policy Optimization with Action Decomposition",
+      "S$^{2}$FT: Efficient, Scalable and Generalizable LLM Fine-tuning by Structured Sparsity",
+      "SaulLM-54B & SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain",
+      "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "Star-Agents: Automatic Data Optimization with LLM Agents for Instruction Tuning",
+      "VHELM: A Holistic Evaluation of Vision Language Models",
+      "Vaccine: Perturbation-aware Alignment for Large Language Models against Harmful Fine-tuning Attack",
+      "What matters when building vision-language models?",
+      "Would I Lie To You? Inference Time Alignment of Language Models using Direct Preference Heads"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 17,
+    "emnlp25": 49,
+    "iclr24": 21,
+    "iclr25": 68,
+    "icml25": 48,
+    "naacl25": 15,
+    "neurips24": 26
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

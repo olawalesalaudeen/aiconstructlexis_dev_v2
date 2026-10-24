@@ -1,0 +1,183 @@
+{
+  "canonical_name": "Reasoning faithfulness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats reasoning faithfulness as agreement between a model's stated reasoning and the basis on which it reaches an answer: generated paths, traces, or chain-of-thought should reflect the actual process, internal decision-making, or true basis of the output, rather than hallucinated or misleading justifications. Smaller lines of work shift the reference point, defining it as the final conclusion adhering to the generated reasoning chain, as reasoning remaining grounded in provided evidence rather than shortcuts or \"cheating\", or as safety explanations that are coherent, logically sound, and faithful to the input prompt. One paper frames the failure side as \"reasoning hallucinations\", inconsistencies between natural-language reasoning steps and generated program logic.\n\nSpace of facets. Papers use several nearby names for overlapping but not identical notions, including reasoning faithfulness, reasoning fidelity, chain-of-thought faithfulness, and reasoning hallucinations. The main point of variation is what the reasoning should be faithful to: the model's internal decision-making or true basis of outputs, the model's own reasoning chain, the input prompt in safety decisions, provided evidence in multimodal settings, or the logic of generated programs. Where papers spell out failure modes, they describe internally inconsistent or unsupported inferences, and one paper breaks reasoning hallucinations into logical errors in code statements, missing or irrelevant steps, and correct steps that are misordered or improperly connected.\n\nSpace of measurement. Reasoning faithfulness is linked to 1 measurement instrument, CTC, and to no behavioral indicators. In the recorded measurement link, one paper says its evaluation assessed CTC together with BARTScore, BLURT, and human-evaluated faithfulness scores; nearby variants are also operationalized with an LLM judge, GPT-4.1-mini, which scores whether explanations faithfully reflect the input and defines explanation fidelity as the fraction of reasoning sentences judged coherent, and with analyses that compare natural-language reasoning to generated program logic for logical errors, missing steps, or misordered connections. The recorded operationalizations emphasize coherence, grounding, and agreement between explanations, reasoning, and outputs, while some definitions instead describe whether the reasoning trace reflects the model's internal decision-making process.\n\nLinks. The recorded links are all related links: reasoning faithfulness is related to 4 constructs, alignment, logical reasoning, logical consistency, and reasoning. Individual papers connect it to whether models reason faithfully or are prone to \"cheating\", to cases where derived conclusions do not adhere to the generated reasoning chain, to lack of rigorous logical coherence, and to the question of whether reasoning tokens are actually used to generate answers. No causal or correlational links are reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Reasoning faithfulness",
+    "Reasoning fidelity",
+    "Chain-of-thought faithfulness",
+    "Reasoning hallucinations"
+  ],
+  "papers": [
+    "FLARE: Faithful Logic-Aided Reasoning and Exploration",
+    "From Reasoning to Answer: Empirical, Attention-Based and Mechanistic Insights into Distilled DeepSeek R1 Models",
+    "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+    "The Sound of Syntax: Finetuning and Comprehensive Evaluation of Language Models for Speech Pathology",
+    "On Targeted Manipulation and Deception when Optimizing LLMs for User Feedback",
+    "Putnam-AXIOM: A Functional & Static Benchmark for Measuring Higher Level Mathematical Reasoning in LLMs",
+    "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment",
+    "Logic-of-Thought: Injecting Logic into Contexts for Full Reasoning in Large Language Models",
+    "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+    "SciFIBench: Benchmarking Large Multimodal Models for Scientific Figure Interpretation"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which a model's generated reasoning path accurately reflects the actual process leading to its answer, avoiding hallucinated or misleading justifications.",
+      "paper": "Logic-of-Thought: Injecting Logic into Contexts for Full Reasoning in Large Language Models",
+      "original_name": "Reasoning faithfulness"
+    },
+    {
+      "text": "The degree to which a model's generated explanation for a safety decision is coherent, logically sound, and faithfully reflects the content of the input prompt.",
+      "paper": "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+      "original_name": "Reasoning fidelity"
+    },
+    {
+      "text": "The degree to which a model's explicit reasoning trace accurately reflects the true basis of its outputs.",
+      "paper": "On Targeted Manipulation and Deception when Optimizing LLMs for User Feedback",
+      "original_name": "Chain-of-thought faithfulness"
+    },
+    {
+      "text": "The latent tendency of LLMs to generate reasoning steps in natural language that are inconsistent with the logic of generated programs, manifesting as logical errors, missing steps, or misordered connections despite seemingly correct justifications.",
+      "paper": "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment",
+      "original_name": "Reasoning hallucinations"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BARTScore",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+      "evidence": "\"The evaluation assessed BARTScore, CTC, BLURT, and human-evaluated faithfulness scores.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CTC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling",
+      "evidence": "\"The evaluation assessed BARTScore, CTC, BLURT, and human-evaluated faithfulness scores.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "From Reasoning to Answer: Empirical, Attention-Based and Mechanistic Insights into Distilled DeepSeek R1 Models",
+      "evidence": "This question [Do LRMs actually leverage the reasoning tokens to generate answers?] is closely tied to active research areas including reasoning effectiveness (Ma et al., 2025), reasoning faithfulness (Chen et al., 2025), and model behavior monitoring (Baker et al., 2025). (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "From Reasoning to Answer: Empirical, Attention-Based and Mechanistic Insights into Distilled DeepSeek R1 Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models",
+      "evidence": "LLMs still struggle with conducting faithful reasoning due to issues of lack of knowledge and hallucination (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats reasoning faithfulness as agreement between a model's stated reasoning and the basis on which it reaches an answer: generated paths, traces, or chain-of-thought should reflect the actual process, internal decision-making, or true basis of the output, rather than hallucinated or misleading justifications. Smaller lines of work shift the reference point, defining it as the final conclusion adhering to the generated reasoning chain, as reasoning remaining grounded in provided evidence rather than shortcuts or \"cheating\", or as safety explanations that are coherent, logically sound, and faithful to the input prompt. One paper frames the failure side as \"reasoning hallucinations\", inconsistencies between natural-language reasoning steps and generated program logic."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use several nearby names for overlapping but not identical notions, including reasoning faithfulness, reasoning fidelity, chain-of-thought faithfulness, and reasoning hallucinations. The main point of variation is what the reasoning should be faithful to: the model's internal decision-making or true basis of outputs, the model's own reasoning chain, the input prompt in safety decisions, provided evidence in multimodal settings, or the logic of generated programs. Where papers spell out failure modes, they describe internally inconsistent or unsupported inferences, and one paper breaks reasoning hallucinations into logical errors in code statements, missing or irrelevant steps, and correct steps that are misordered or improperly connected."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Reasoning faithfulness is linked to 1 measurement instrument, CTC, and to no behavioral indicators. In the recorded measurement link, one paper says its evaluation assessed CTC together with BARTScore, BLURT, and human-evaluated faithfulness scores; nearby variants are also operationalized with an LLM judge, GPT-4.1-mini, which scores whether explanations faithfully reflect the input and defines explanation fidelity as the fraction of reasoning sentences judged coherent, and with analyses that compare natural-language reasoning to generated program logic for logical errors, missing steps, or misordered connections. The recorded operationalizations emphasize coherence, grounding, and agreement between explanations, reasoning, and outputs, while some definitions instead describe whether the reasoning trace reflects the model's internal decision-making process."
+    },
+    {
+      "label": "Links.",
+      "text": "The recorded links are all related links: reasoning faithfulness is related to 4 constructs, alignment, logical reasoning, logical consistency, and reasoning. Individual papers connect it to whether models reason faithfully or are prone to \"cheating\", to cases where derived conclusions do not adhere to the generated reasoning chain, to lack of rigorous logical coherence, and to the question of whether reasoning tokens are actually used to generate answers. No causal or correlational links are reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "conflicting",
+    "reason": "Most papers define reasoning faithfulness as whether a model's stated reasoning trace reflects the actual basis or internal process behind its output, but several others use the term for different things: alignment between answer and chain of thought, explanation coherence with the input, grounding in evidence rather than shortcuts, or consistency between natural-language reasoning and generated program logic. Because these definitions attach the property to different objects and different reference points, papers using them would not be studying the same phenomenon.",
+    "papers_with_definition": 7,
+    "runs": [
+      "conflicting",
+      "conflicting",
+      "conflicting"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats reasoning faithfulness as agreement between a model's stated reasoning and the basis on which it reaches an answer: generated paths, traces, or chain-of-thought should reflect the actual process, internal decision-making, or true basis of the output, rather than hallucinated or misleading justifications. Smaller lines of work shift the reference point, defining it as the final conclusion adhering to the generated reasoning chain, as reasoning remaining grounded in provided evidence rather than shortcuts or \"cheating\", or as safety explanations that are coherent, logically sound, and faithful to the input prompt. One paper frames the failure side as \"reasoning hallucinations\", inconsistencies between natural-language reasoning steps and generated program logic.\n\nSpace of facets. Papers use several nearby names for overlapping but not identical notions, including reasoning faithfulness, reasoning fidelity, chain-of-thought faithfulness, and reasoning hallucinations. The main point of variation is what the reasoning should be faithful to: the model's internal decision-making or true basis of outputs, the model's own reasoning chain, the input prompt in safety decisions, provided evidence in multimodal settings, or the logic of generated programs. Where papers spell out failure modes, they describe internally inconsistent or unsupported inferences, and one paper breaks reasoning hallucinations into logical errors in code statements, missing or irrelevant steps, and correct steps that are misordered or improperly connected.\n\nSpace of measurement. Reasoning faithfulness is linked to 1 measurement instrument, CTC, and to no behavioral indicators. In the recorded measurement link, one paper says its evaluation assessed CTC together with BARTScore, BLURT, and human-evaluated faithfulness scores; nearby variants are also operationalized with an LLM judge, GPT-4.1-mini, which scores whether explanations faithfully reflect the input and defines explanation fidelity as the fraction of reasoning sentences judged coherent, and with analyses that compare natural-language reasoning to generated program logic for logical errors, missing steps, or misordered connections. The recorded operationalizations emphasize coherence, grounding, and agreement between explanations, reasoning, and outputs, while some definitions instead describe whether the reasoning trace reflects the model's internal decision-making process.\n\nLinks. The recorded links are all related links: reasoning faithfulness is related to 4 constructs, alignment, logical reasoning, logical consistency, and reasoning. Individual papers connect it to whether models reason faithfully or are prone to \"cheating\", to cases where derived conclusions do not adhere to the generated reasoning chain, to lack of rigorous logical coherence, and to the question of whether reasoning tokens are actually used to generate answers. No causal or correlational links are reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "FLARE: Faithful Logic-Aided Reasoning and Exploration",
+      "From Reasoning to Answer: Empirical, Attention-Based and Mechanistic Insights into Distilled DeepSeek R1 Models",
+      "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+      "The Sound of Syntax: Finetuning and Comprehensive Evaluation of Language Models for Speech Pathology"
+    ],
+    "iclr25": [
+      "On Targeted Manipulation and Deception when Optimizing LLMs for User Feedback"
+    ],
+    "icml25": [
+      "Putnam-AXIOM: A Functional & Static Benchmark for Measuring Higher Level Mathematical Reasoning in LLMs",
+      "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment"
+    ],
+    "naacl25": [
+      "Logic-of-Thought: Injecting Logic into Contexts for Full Reasoning in Large Language Models",
+      "Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling"
+    ],
+    "neurips24": [
+      "SciFIBench: Benchmarking Large Multimodal Models for Scientific Figure Interpretation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 4,
+    "iclr25": 1,
+    "icml25": 2,
+    "naacl25": 2,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

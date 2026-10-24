@@ -1,0 +1,144 @@
+{
+  "canonical_name": "Predictive uncertainty",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage describes predictive uncertainty as the model's lack of confidence or ambiguity in its predictions or generated outputs, usually at the next-token level and often quantified through the entropy of the output distribution, with higher entropy marking greater uncertainty. Some papers present it dynamically, as how quickly generation moves from initial uncertainty to confident predictions, especially when prefixes are ambiguous or complex, and a smaller line applies the same idea to preference predictions near the decision boundary.\n\nSpace of facets. Papers use the labels predictive uncertainty, prediction uncertainty, and sometimes model uncertainty for closely related notions centered on output-side prediction confidence. A recurring distinction is between predictive uncertainty over outputs and weight uncertainty over parameters, and one paper says predictive uncertainty can be decomposed into different sources. Some authors also frame reasoning or self-training as processes that progressively reduce prediction uncertainty.\n\nSpace of measurement. No named measurement instrument is linked to it, and one linked behavioral indicator appears, Hallucination. Papers instead operationalize the construct through direct analyses of model outputs, most often with entropy of the predictive distribution or predictive entropy, including next-token entropy, maximizing predictive entropy, and treating predictions closest to 0.5 as most uncertain in preference modeling; one study also tracks how quickly and stably generation shifts from high ambiguity to confident predictions, and another uses an entropy threshold to decide when to intervene. These operationalizations mostly match the dominant definition as uncertainty or confidence in predictions, though some apply the same logic to preference predictions rather than standard next-token generation.\n\nLinks. The only recurring linked phenomenon is Hallucination. One paper claims a causal relationship from Predictive uncertainty to Hallucination, stating that when the model is uncertain about the semantic meaning of the next tokens to generate, it is likely to start hallucinating, and another paper reports that Hallucination is correlated with Predictive uncertainty through a strong positive correlation with model uncertainty.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Prediction uncertainty",
+    "Predictive uncertainty",
+    "Model uncertainty"
+  ],
+  "papers": [
+    "ALLabel: Three-stage Active Learning for LLM-based Entity Recognition using Demonstration Retrieval",
+    "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+    "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+    "Mitigating Hallucinations in LM-Based TTS Models via Distribution Alignment Using GFlowNets",
+    "Retracing the Past: LLMs Emit Training Data When They Get Lost",
+    "Topic Coverage-based Demonstration Retrieval for In-Context Learning",
+    "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+    "Why and How LLMs Benefit from Knowledge Introspection in Commonsense Reasoning",
+    "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+    "Rethinking Chain-of-Thought from the Perspective of Self-Training",
+    "Active Reward Modeling: Adaptive Preference Labeling for Large Language Model Alignment"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree of confidence in a model's predictions, often measured by the entropy of its output probability distribution, where higher entropy indicates greater uncertainty.",
+      "paper": "Why and How LLMs Benefit from Knowledge Introspection in Commonsense Reasoning",
+      "original_name": "Prediction uncertainty"
+    },
+    {
+      "text": "The degree of ambiguity in the model's next-token predictions, which decreases more rapidly for memorized sequences as the model resolves uncertainty through recall.",
+      "paper": "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+      "original_name": "Predictive uncertainty"
+    },
+    {
+      "text": "The latent level of confidence a model has in its next-token predictions, inferred from the entropy of its output probability distribution, which influences where interventions are applied.",
+      "paper": "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "original_name": "Model uncertainty"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Improving Uncertainty Estimation through Semantically Diverse Language Generation",
+      "evidence": "When an LLM is uncertain about the semantic meaning of the next tokens to generate, it is likely to start hallucinating. Thus, it has been suggested that predictive uncertainty is one of the main causes of hallucinations. (Abstract)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Improving Uncertainty Estimation through Semantically Diverse Language Generation"
+        ],
+        "emnlp25": [
+          "Mitigating Hallucinations in LM-Based TTS Models via Distribution Alignment Using GFlowNets"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Consistency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Exploring Response Uncertainty in MLLMs: An Empirical Evaluation under Misleading Scenarios",
+      "evidence": "\u201cTo evaluate the uncertainty of a model\u2019s responses, a common approach is to calculate the most frequent response from multiple outputs generated by the model across multiple runs. This method quantifies the model\u2019s prediction uncertainty using a metric known as the consistency rate (CR)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Exploring Response Uncertainty in MLLMs: An Empirical Evaluation under Misleading Scenarios"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage describes predictive uncertainty as the model's lack of confidence or ambiguity in its predictions or generated outputs, usually at the next-token level and often quantified through the entropy of the output distribution, with higher entropy marking greater uncertainty. Some papers present it dynamically, as how quickly generation moves from initial uncertainty to confident predictions, especially when prefixes are ambiguous or complex, and a smaller line applies the same idea to preference predictions near the decision boundary."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use the labels predictive uncertainty, prediction uncertainty, and sometimes model uncertainty for closely related notions centered on output-side prediction confidence. A recurring distinction is between predictive uncertainty over outputs and weight uncertainty over parameters, and one paper says predictive uncertainty can be decomposed into different sources. Some authors also frame reasoning or self-training as processes that progressively reduce prediction uncertainty."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No named measurement instrument is linked to it, and one linked behavioral indicator appears, Hallucination. Papers instead operationalize the construct through direct analyses of model outputs, most often with entropy of the predictive distribution or predictive entropy, including next-token entropy, maximizing predictive entropy, and treating predictions closest to 0.5 as most uncertain in preference modeling; one study also tracks how quickly and stably generation shifts from high ambiguity to confident predictions, and another uses an entropy threshold to decide when to intervene. These operationalizations mostly match the dominant definition as uncertainty or confidence in predictions, though some apply the same logic to preference predictions rather than standard next-token generation."
+    },
+    {
+      "label": "Links.",
+      "text": "The only recurring linked phenomenon is Hallucination. One paper claims a causal relationship from Predictive uncertainty to Hallucination, stating that when the model is uncertain about the semantic meaning of the next tokens to generate, it is likely to start hallucinating, and another paper reports that Hallucination is correlated with Predictive uncertainty through a strong positive correlation with model uncertainty."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define predictive uncertainty as the model's uncertainty or lack of confidence in its output predictions, often next-token predictions and often operationalized with output-distribution entropy rather than parameter uncertainty. A few papers narrow this to specific settings such as memorized sequences, iterative reasoning, or preference comparisons, but they are still studying the same core property of the model's predictions.",
+    "papers_with_definition": 7,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage describes predictive uncertainty as the model's lack of confidence or ambiguity in its predictions or generated outputs, usually at the next-token level and often quantified through the entropy of the output distribution, with higher entropy marking greater uncertainty. Some papers present it dynamically, as how quickly generation moves from initial uncertainty to confident predictions, especially when prefixes are ambiguous or complex, and a smaller line applies the same idea to preference predictions near the decision boundary.\n\nSpace of facets. Papers use the labels predictive uncertainty, prediction uncertainty, and sometimes model uncertainty for closely related notions centered on output-side prediction confidence. A recurring distinction is between predictive uncertainty over outputs and weight uncertainty over parameters, and one paper says predictive uncertainty can be decomposed into different sources. Some authors also frame reasoning or self-training as processes that progressively reduce prediction uncertainty.\n\nSpace of measurement. No named measurement instrument is linked to it, and one linked behavioral indicator appears, Hallucination. Papers instead operationalize the construct through direct analyses of model outputs, most often with entropy of the predictive distribution or predictive entropy, including next-token entropy, maximizing predictive entropy, and treating predictions closest to 0.5 as most uncertain in preference modeling; one study also tracks how quickly and stably generation shifts from high ambiguity to confident predictions, and another uses an entropy threshold to decide when to intervene. These operationalizations mostly match the dominant definition as uncertainty or confidence in predictions, though some apply the same logic to preference predictions rather than standard next-token generation.\n\nLinks. The only recurring linked phenomenon is Hallucination. One paper claims a causal relationship from Predictive uncertainty to Hallucination, stating that when the model is uncertain about the semantic meaning of the next tokens to generate, it is likely to start hallucinating, and another paper reports that Hallucination is correlated with Predictive uncertainty through a strong positive correlation with model uncertainty.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "ALLabel: Three-stage Active Learning for LLM-based Entity Recognition using Demonstration Retrieval",
+      "Context-Aware Membership Inference Attacks against Pre-trained Large Language Models",
+      "G2: Guided Generation for Enhanced Output Diversity in LLMs",
+      "Mitigating Hallucinations in LM-Based TTS Models via Distribution Alignment Using GFlowNets",
+      "Retracing the Past: LLMs Emit Training Data When They Get Lost",
+      "Topic Coverage-based Demonstration Retrieval for In-Context Learning",
+      "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+      "Why and How LLMs Benefit from Knowledge Introspection in Commonsense Reasoning"
+    ],
+    "icml25": [
+      "Rethinking Chain-of-Thought from the Perspective of Self-Training",
+      "Active Reward Modeling: Adaptive Preference Labeling for Large Language Model Alignment"
+    ],
+    "iclr25": [
+      "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 8,
+    "icml25": 2,
+    "iclr25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

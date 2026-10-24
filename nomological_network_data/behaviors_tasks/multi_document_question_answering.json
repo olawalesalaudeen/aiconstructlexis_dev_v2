@@ -1,0 +1,164 @@
+{
+  "canonical_name": "Multi-document question answering",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats multi-document question answering as answering a question from several documents supplied in the context, often under long-context conditions. A recurring formulation gives the model k documents where only one is the gold document and the remaining k-1 are irrelevant distractors, so the model must identify the answer-bearing document while ignoring the rest. Another common framing describes the task as retrieving, integrating, or synthesizing relevant information across multiple documents, sometimes with evidence localization over a larger collection.\n\nVariants. Papers use labels such as MDQA and multi-doc QA, and study the task in retrieval-based and long-context settings. Document collections vary from top-5, top-10, or top-20 retrieved documents to contexts of 10 or 30 documents, including setups with 10 documents where only one is relevant and the rest function as distractors. Some work also extends the task to visually rich, multimodal documents over a collection of source documents rather than a single source.\n\nSpace of elicitation and scores. Across the papers, this behavior is measured by 2 instruments: 2WikiMultiHopQA and LongBench. LongBench explicitly treats multi-doc QA as one of its task categories, and 2WikiMultiHopQA is used as a multi-document QA task with 200 samples. One paper also reports performance on a multi-document question-answering task in terms of EM score.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Multi-document question answering",
+    "Multi-Document Question Answering (MDQA)"
+  ],
+  "papers": [
+    "LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks",
+    "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models",
+    "Positional Overload: Positional Debiasing and Context Window Extension for Large Language Models using Set Encoding",
+    "Accelerate Parallelizable Reasoning via Parallel Decoding within One Sequence",
+    "CAFE: Retrieval Head-based Coarse-to-Fine Information Seeking to Enhance Multi-Document QA Capability",
+    "Large Language Models Meet Knowledge Graphs for Question Answering: Synthesis and Opportunities",
+    "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+    "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval",
+    "Radar: Fast Long-Context Decoding for Any Transformer",
+    "Core Context Aware Transformers for Long Context Language Modeling",
+    "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+    "Mask-Enhanced Autoregressive Prediction: Pay Less Attention to Learn More",
+    "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference",
+    "Entropy-Based Decoding for Retrieval-Augmented Large Language Models",
+    "FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models",
+    "VisDoM: Multi-Document QA with Visually Rich Elements Using Multimodal Retrieval-Augmented Generation",
+    "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+    "Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding",
+    "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+  ],
+  "paper_count": 19,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of answering a question based on information contained within one of several documents provided in the context, where other documents act as distractors.",
+      "paper": "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+      "original_name": "Multi-document question answering"
+    },
+    {
+      "text": "An evaluation task introduced by Liu et al. (2023) to probe the \"lost-in-the-middle\" effect by placing a single relevant document among multiple distractor documents and asking a question about it.",
+      "paper": "Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding",
+      "original_name": "Multi-Document Question Answering (MDQA)"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Radar: Fast Long-Context Decoding for Any Transformer",
+      "evidence": "\"These tasks belong to 6 categories in total: single-doc QA, multi-doc QA, summarization, few-shot learning, synthetic, and code.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Radar: Fast Long-Context Decoding for Any Transformer"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "2WikiMultiHopQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Accelerate Parallelizable Reasoning via Parallel Decoding within One Sequence",
+      "evidence": "The multi-document QA task involves \"2Wiki-MultihopQA\" from LongBench (Bai et al., 2023), comprising 200 samples. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Accelerate Parallelizable Reasoning via Parallel Decoding within One Sequence"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+      "evidence": "We select four tasks that pose position bias: ... retrieval-augmented question-answering (Liu et al., 2024) that asks LMs to answer questions based on retrieved documents",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Eliminating Position Bias of Language Models: A Mechanistic Approach"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats multi-document question answering as answering a question from several documents supplied in the context, often under long-context conditions. A recurring formulation gives the model k documents where only one is the gold document and the remaining k-1 are irrelevant distractors, so the model must identify the answer-bearing document while ignoring the rest. Another common framing describes the task as retrieving, integrating, or synthesizing relevant information across multiple documents, sometimes with evidence localization over a larger collection."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use labels such as MDQA and multi-doc QA, and study the task in retrieval-based and long-context settings. Document collections vary from top-5, top-10, or top-20 retrieved documents to contexts of 10 or 30 documents, including setups with 10 documents where only one is relevant and the rest function as distractors. Some work also extends the task to visually rich, multimodal documents over a collection of source documents rather than a single source."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Across the papers, this behavior is measured by 2 instruments: 2WikiMultiHopQA and LongBench. LongBench explicitly treats multi-doc QA as one of its task categories, and 2WikiMultiHopQA is used as a multi-document QA task with 200 samples. One paper also reports performance on a multi-document question-answering task in terms of EM score."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats multi-document question answering as answering a question from several documents supplied in the context, often under long-context conditions. A recurring formulation gives the model k documents where only one is the gold document and the remaining k-1 are irrelevant distractors, so the model must identify the answer-bearing document while ignoring the rest. Another common framing describes the task as retrieving, integrating, or synthesizing relevant information across multiple documents, sometimes with evidence localization over a larger collection.\n\nVariants. Papers use labels such as MDQA and multi-doc QA, and study the task in retrieval-based and long-context settings. Document collections vary from top-5, top-10, or top-20 retrieved documents to contexts of 10 or 30 documents, including setups with 10 documents where only one is relevant and the rest function as distractors. Some work also extends the task to visually rich, multimodal documents over a collection of source documents rather than a single source.\n\nSpace of elicitation and scores. Across the papers, this behavior is measured by 2 instruments: 2WikiMultiHopQA and LongBench. LongBench explicitly treats multi-doc QA as one of its task categories, and 2WikiMultiHopQA is used as a multi-document QA task with 200 samples. One paper also reports performance on a multi-document question-answering task in terms of EM score.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks",
+      "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models",
+      "Positional Overload: Positional Debiasing and Context Window Extension for Large Language Models using Set Encoding"
+    ],
+    "emnlp25": [
+      "Accelerate Parallelizable Reasoning via Parallel Decoding within One Sequence",
+      "CAFE: Retrieval Head-based Coarse-to-Fine Information Seeking to Enhance Multi-Document QA Capability",
+      "Large Language Models Meet Knowledge Graphs for Question Answering: Synthesis and Opportunities"
+    ],
+    "iclr25": [
+      "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+      "RNNs are not Transformers (Yet):  The Key Bottleneck on In-Context Retrieval",
+      "Radar: Fast Long-Context Decoding for Any Transformer"
+    ],
+    "icml25": [
+      "Core Context Aware Transformers for Long Context Language Modeling",
+      "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+      "Mask-Enhanced Autoregressive Prediction: Pay Less Attention to Learn More",
+      "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference"
+    ],
+    "naacl25": [
+      "Entropy-Based Decoding for Retrieval-Augmented Large Language Models",
+      "FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models",
+      "VisDoM: Multi-Document QA with Visually Rich Elements Using Multimodal Retrieval-Augmented Generation"
+    ],
+    "neurips24": [
+      "Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum",
+      "Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding",
+      "Mixture of In-Context Experts Enhance LLMs' Long Context Awareness"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 3,
+    "iclr25": 3,
+    "icml25": 4,
+    "naacl25": 3,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

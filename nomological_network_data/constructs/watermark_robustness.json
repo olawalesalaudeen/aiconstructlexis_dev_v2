@@ -1,0 +1,127 @@
+{
+  "canonical_name": "Watermark robustness",
+  "type": "construct",
+  "canonical_definition": "The ability of an embedded watermark to remain detectable after the text has been altered by various corruptions, such as word substitution or being mixed with human-written text.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique: robustness of an embedded watermark is a property of the watermarking scheme (a decoding-time technique), not of the model.",
+  "names": [
+    "Watermark robustness",
+    "Robustness to corruption",
+    "Attack robustness"
+  ],
+  "papers": [
+    "A Semantic Invariant Robust Watermark for Large Language Models",
+    "On the Reliability of Watermarks for Large Language Models",
+    "Towards Codable Watermarking for Injecting Multi-Bits Information to LLMs",
+    "GaussMark: A Practical Approach for Structural Watermarking of Language Models"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability of an embedded watermark to remain detectable after the text has been altered by various corruptions, such as word substitution or being mixed with human-written text.",
+      "paper": "On the Reliability of Watermarks for Large Language Models",
+      "original_name": "Watermark robustness"
+    },
+    {
+      "text": "The degree to which a watermark remains detectable after the generated text undergoes token-level or sequence-level modifications such as insertions, deletions, substitutions, or roundtrip translation.",
+      "paper": "GaussMark: A Practical Approach for Structural Watermarking of Language Models",
+      "original_name": "Robustness to corruption"
+    },
+    {
+      "text": "The degree to which a watermark remains detectable after semantically invariant modifications to the generated text, such as paraphrasing or synonym substitution.",
+      "paper": "A Semantic Invariant Robust Watermark for Large Language Models",
+      "original_name": "Attack robustness"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Copy-paste attack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Semantic Invariant Robust Watermark for Large Language Models",
+      "evidence": "Tests involved watermark detection accuracy under no attack, GPT3.5 rewrite attacks, two DIPPER (Krishna et al., 2023) settings, the copy-paste attack as well as the emoj attack (Appendix G). (Table 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "A Semantic Invariant Robust Watermark for Large Language Models",
+          "Towards Codable Watermarking for Injecting Multi-Bits Information to LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DIPPER",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Semantic Invariant Robust Watermark for Large Language Models",
+      "evidence": "Tests involved watermark detection accuracy under no attack, GPT3.5 rewrite attacks, two DIPPER (Krishna et al., 2023) settings, the copy-paste attack as well as the emoj attack (Appendix G). (Table 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "A Semantic Invariant Robust Watermark for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Watermark detectability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "GaussMark: A Practical Approach for Structural Watermarking of Language Models",
+      "evidence": "watermarks should remain detectable after common token- and sequence-level corruptions are applied.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "GaussMark: A Practical Approach for Structural Watermarking of Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Watermark removal",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "De-mark: Watermark Removal in Large Language Models",
+      "evidence": "\u201cOne critical vulnerability lies in watermark stealing & removal, a method that seeks to reverse-engineer the watermarking process. With this method, adversaries can effectively strip or alter the embedded watermark, undermining its intended protection.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "De-mark: Watermark Removal in Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "The ability of an embedded watermark to remain detectable after the text has been altered by various corruptions, such as word substitution or being mixed with human-written text.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "A Semantic Invariant Robust Watermark for Large Language Models",
+      "On the Reliability of Watermarks for Large Language Models",
+      "Towards Codable Watermarking for Injecting Multi-Bits Information to LLMs"
+    ],
+    "icml25": [
+      "GaussMark: A Practical Approach for Structural Watermarking of Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 3,
+    "icml25": 1
+  },
+  "conferences": [
+    "iclr24",
+    "icml25"
+  ]
+}

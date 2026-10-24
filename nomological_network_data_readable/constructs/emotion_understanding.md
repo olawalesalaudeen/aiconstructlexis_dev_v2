@@ -1,0 +1,66 @@
+# Emotion understanding
+**Type:** Construct  
+**Referenced in:** 11 papers  
+**Also known as:** Emotion perception, Emotional recognition, Fine-grained emotion recognition, Nuanced emotion recognition, Emotional understanding  
+
+## State of the Field
+
+**Definition agreement:** Consensus. Most papers define emotion understanding as a model's ability to detect, infer, and interpret emotional states, expressions, or affective tone from visual or multimodal inputs. The differences mostly concern modality and emphasis, such as scene atmosphere versus human emotion, nuanced or culturally specific states, or whether the output is classification or description, rather than a different underlying phenomenon.
+
+**Space of definitions.** Across the surveyed work, the prevailing usage treats emotion understanding as an ability to recognize, perceive, infer, or interpret emotions, sentiment, affective tone, or emotional expressions from visual or multimodal evidence. Several definitions explicitly cast it as a latent model ability, and most differ mainly in whether the target is a person's emotion category, an image's emotional tone, or a scene's emotional or atmospheric qualities. A smaller line of work broadens the construct to complex, coexisting, fine-grained, compound, or culturally specific emotions, and some authors explicitly frame it as going beyond simple classification toward natural-language description or arbitrary emotion categories.
+
+**Space of facets.** Papers use several near-neighbor labels, including emotional understanding, emotion perception, emotional recognition, fine-grained emotion recognition, and nuanced emotion recognition, for closely related abilities. A recurring distinction is between basic or discriminative recognition and richer understanding: some papers position emotion understanding above basic or discrete category prediction, as a higher-level perceptual task that covers subtle, compound, open-vocabulary, or coexisting emotions. Another recurring facet is a coarse-grained to fine-grained progression in emotion analysis, and some papers tie the construct to implicit meanings or affective implications in images, including culturally specific ones.
+
+**Space of measurement.** In the linked work, emotion understanding is operationalized with five instruments and one behavioral indicator. The measurement space is benchmark-oriented: it is measured by EQ-Bench, MELD, MVSA-M, MVSA-S, and TumEmo; EQ-Bench is used directly to evaluate emotional understanding ability, MVSA-S and MVSA-M use positive-or-negative sentiment polarity classification, TumEmo uses basic emotion classification, and MELD results are described as showing emotion perception and contextual understanding. The linked behavioral indicator is emotion analysis, described as moving from coarse-grained to fine-grained emotion classification. These operationalizations only partly line up with the broader definitions, because several papers define the construct in terms of nuanced, complex, or generative emotion understanding beyond basic classification.
+
+**Links.** Beyond measurement, papers report three linked constructs and one linked behavioral indicator. Emotion understanding is reported to correlate with social bias, with EQ-Bench-based analyses noting performance disparities across race, gender, and age group. It is also related to fine-grained visual understanding, where one paper argues that difficulty with fine-grained details bears on understanding cognition and emotion, and to emotional reasoning, where papers note continuing challenges; separately, emotion analysis is related to emotion understanding through a coarse-grained to fine-grained classification process.
+
+## Sources
+
+**[ConMe: Rethinking Evaluation of Compositional Reasoning for Modern VLMs](https://proceedings.neurips.cc/paper_files/paper/2024/file/28aad3b3b315d86910d7f4ee2867dfa4-Paper-Datasets_and_Benchmarks_Track.pdf)**
+> The ability to infer or form an opinion about the emotional or atmospheric qualities of a scene based on visual evidence.
+
+**[II-Bench: An Image Implication Understanding Benchmark for Multimodal Large Language Models](https://proceedings.neurips.cc/paper_files/paper/2024/file/52764eb83bf0a0bd32766ce5c01612e5-Paper-Datasets_and_Benchmarks_Track.pdf) (as "Emotional understanding")**
+> The ability to perceive and interpret the human emotions, sentiment, and affective tone conveyed by an image.
+
+**[Emotion-LLaMA: Multimodal Emotion Recognition and Reasoning with Instruction Tuning](https://proceedings.neurips.cc/paper_files/paper/2024/file/c7f43ada17acc234f568dc66da527418-Paper-Conference.pdf) (as "Emotion perception")**
+> The latent ability to accurately identify and interpret emotional expressions from multimodal inputs.
+
+**[Emotion-LLaMA: Multimodal Emotion Recognition and Reasoning with Instruction Tuning](https://proceedings.neurips.cc/paper_files/paper/2024/file/c7f43ada17acc234f568dc66da527418-Paper-Conference.pdf) (as "Emotional recognition")**
+> The latent ability to infer a person's emotion category from multimodal evidence such as facial expression, voice, and text.
+
+**[AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models](https://raw.githubusercontent.com/mlresearch/v267/main/assets/lian25a/lian25a.pdf) (as "Fine-grained emotion recognition")**
+> The capacity to identify and generate detailed, nuanced emotional categories beyond basic emotions, reflecting the diversity and subtlety of human affective states.
+
+**[OV-MER: Towards Open-Vocabulary Multimodal Emotion Recognition](https://raw.githubusercontent.com/mlresearch/v267/main/assets/lian25b/lian25b.pdf) (as "Nuanced emotion recognition")**
+> The ability to detect and represent subtle, compound, or culturally specific emotional states that are not captured by basic emotion taxonomies.
+
+## Relationships
+
+### Emotion understanding →
+- **EQ-Bench** (measurements) — *measured_by*
+  > To evaluate LVLMs’ emotional understanding ability, we utilized EQ-Bench (Paech, 2023). (Section 3.3)
+  - [Does the Emotional Understanding of LVLMs Vary Under High-Stress Environments and Across Different Demographic Attributes?](https://aclanthology.org/2025.acl-long.1130.pdf)
+- **MVSA-S** (measurements) — *measured_by*
+  > “Emotion: Following (Yang et al., 2023; Huang et al., 2024), we conduct experiments on 4 benchmark datasets. MVSA-S and MVSA-M (Niu et al., 2016) are datasets used for sentiment polarity classification (positive or negative), while TumEmo (Yang et al., 2021) is a multimodal dataset designed for classifying six basic emotions. Additionally, HFM (Liu et al., 2022) is a multimodal dataset focused on recognizing high-level implicit emotion of sarcasm.”
+  - [MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding](https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25cg/zhang25cg.pdf)
+- **MVSA-M** (measurements) — *measured_by*
+  > “Emotion: Following (Yang et al., 2023; Huang et al., 2024), we conduct experiments on 4 benchmark datasets. MVSA-S and MVSA-M (Niu et al., 2016) are datasets used for sentiment polarity classification (positive or negative), while TumEmo (Yang et al., 2021) is a multimodal dataset designed for classifying six basic emotions. Additionally, HFM (Liu et al., 2022) is a multimodal dataset focused on recognizing high-level implicit emotion of sarcasm.”
+  - [MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding](https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25cg/zhang25cg.pdf)
+- **TumEmo** (measurements) — *measured_by*
+  > “Emotion: Following (Yang et al., 2023; Huang et al., 2024), we conduct experiments on 4 benchmark datasets. MVSA-S and MVSA-M (Niu et al., 2016) are datasets used for sentiment polarity classification (positive or negative), while TumEmo (Yang et al., 2021) is a multimodal dataset designed for classifying six basic emotions. Additionally, HFM (Liu et al., 2022) is a multimodal dataset focused on recognizing high-level implicit emotion of sarcasm.”
+  - [MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding](https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25cg/zhang25cg.pdf)
+- **MELD** (measurements) — *measured_by*
+  > This shows its strong emotion perception and contextual understanding. (Section 4.2, referring to MELD results in Table 6)
+  - [Audio-Reasoner: Improving Reasoning Capability in Large Audio Language Models](https://aclanthology.org/2025.emnlp-main.1216.pdf)
+
+### Associated with
+- **Fine-grained visual understanding** (constructs)
+  > While recent MLLMs show promising results in basic perception, they still struggle to perceive fine-grained details (Tong et al., 2024b), which is essential for understanding cognition and emotion.
+  - [MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding](https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25cg/zhang25cg.pdf)
+- **Emotion analysis** (behaviors tasks)
+  > In this paper, we propose Sharpening Emotion Perception in Multimodal Large Language Models (SEPM)... The first stage performs coarse-grained emotion classification, generating textual prompts for the next stage... The second stage then completes fine-grained emotion classification based on this enhanced input. (Section 1, 3.2)
+  - [Catch Your Emotion: Sharpening Emotion Perception in Multimodal Large Language Models](https://raw.githubusercontent.com/mlresearch/v267/main/assets/fang25h/fang25h.pdf)
+- **Social bias** (constructs)
+  > an analysis of the models’ emotional understanding ability, using EQ-Bench-based metrics, revealed that... (2) performance disparities were confirmed across race, gender, and age group. (Abstract)
+  - [Does the Emotional Understanding of LVLMs Vary Under High-Stress Environments and Across Different Demographic Attributes?](https://aclanthology.org/2025.acl-long.1130.pdf)

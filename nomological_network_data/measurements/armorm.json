@@ -1,0 +1,176 @@
+{
+  "canonical_name": "ArmoRM",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across these papers, the prevailing usage treats ArmoRM as an automated reward model or judge for evaluating LLM responses, often described as multi-dimension or multi-objective and as assessing outputs from multiple perspectives. Some authors describe it more specifically as 8B or Llama3-8B variants, including ArmoRM-8B, ArmoRM-Llama3-8B, and ArmoRM-Llama3-8B-v0.1, used to score model outputs, filter synthetic preference data, or create preference pairs. One paper also describes it as producing both a scalar reward value and human-interpretable fine-grained attributes.\n\nWhat it is claimed to measure. Papers link ArmoRM to 4 constructs and 2 behavioral indicators, so it is reported as measuring several targets rather than only one. The most common construct links are to Helpfulness and Text generation quality, followed by Harmlessness and Humor; the behavioral-indicator links are to Instruction following and Preference ranking. In these uses, papers report it as assessing response quality, evaluating responses from various perspectives, and, in one case, using its instruction-following dimension as the main evaluation metric.\n\nSpace of uses. Most commonly, papers position ArmoRM as an automated evaluator, external judge, or proxy model: they use it to score responses, rank candidate responses, create preference pairs, assign ground-truth quality labels, or calculate win rate. A smaller line of work uses a Llama3-8B variant as a scoring model for filtering synthetic preference data, and one paper says this use \"effectively mitigates erroneous responses.\" It is also used alongside PairRM, Skywork-Reward-Llama-3.1-8B, and Skywork-Reward-Gemma-2-27B, and the only linked instrument is RewardBench, which one paper relates to ArmoRM by noting its ranking there.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "ArmoRM-Llama3-8B-v0.1",
+    "ArmoRM-8B",
+    "ArmoRM",
+    "ArmoRM-Llama3-8B"
+  ],
+  "papers": [
+    "Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models",
+    "Permutative Preference Alignment from Listwise Ranking of Human Judgments",
+    "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+    "PAD: Personalized Alignment of LLMs at Decoding-time",
+    "RainbowPO: A Unified Framework for Combining Improvements in Preference Optimization",
+    "Self-Boosting Large Language Models with  Synthetic Preference Data",
+    "Weighted-Reward Preference Optimization for Implicit Model Fusion",
+    "AlphaPO: Reward Shape Matters for LLM Alignment",
+    "BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute",
+    "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+    "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+    "R.I.P.: Better Models by Survival of the Fittest Prompts",
+    "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+    "Self-Consistency Preference Optimization",
+    "The Best of Both Worlds: Bridging Quality and Diversity in Data Selection with Bipartite Graph",
+    "Thinking LLMs: General Instruction Following with Thought Generation"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "ArmoRM-Llama3-8B-v0.1, a scoring model used for filtering synthetic preference data in the Llama3 setting.",
+      "paper": "Self-Boosting Large Language Models with  Synthetic Preference Data",
+      "original_name": "ArmoRM-Llama3-8B-v0.1"
+    },
+    {
+      "text": "An 8-billion parameter reward model used as an automated evaluator, specifically leveraging its instruction-following dimension to score model outputs.",
+      "paper": "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+      "original_name": "ArmoRM-8B"
+    },
+    {
+      "text": "A state-of-the-art multi-dimension reward model used as an automated judge to evaluate the alignment of LLM responses from various perspectives.",
+      "paper": "PAD: Personalized Alignment of LLMs at Decoding-time",
+      "original_name": "ArmoRM"
+    },
+    {
+      "text": "A specific, publicly-available reward model used as an external judge to score model-generated responses and create preference pairs for baseline training.",
+      "paper": "Self-Consistency Preference Optimization",
+      "original_name": "ArmoRM-Llama3-8B"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Stronger Models are Not Always Stronger Teachers for Instruction Tuning",
+      "evidence": "we assess response quality using reward models... we employ three state-of-the-art reward models from RewardBench (Lambert et al., 2024): ArmoRM-Llama3-8B-v0.1 (Wang et al., 2024a), Skywork-Reward-Llama-3.1-8B (Liu and Zeng, 2024), and Skywork-Reward-Gemma-2-27B (Liu and Zeng, 2024). (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Stronger Models are Not Always Stronger Teachers for Instruction Tuning"
+        ],
+        "icml25": [
+          "BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+      "evidence": "Since ArmoRM is a multi-objective model that not only gives a scalar reward value but also predicts human-interpretable fine-grained attributes, we first select 5 attributes (namely complexity, instruction following, honesty, helpfulness, and intelligence depth) that have the highest average coefficients on the UltraFeedback data. (Section 6.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+      "evidence": "To address this issue, we selected the instruction-following dimension from ArmoRM-8B (Wang et al., 2024a) as the main evaluation metric for our experiment. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Preference ranking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Weighted-Reward Preference Optimization for Implicit Model Fusion",
+      "evidence": "\u201cArmoRM-Llama-3-8B-v0.1 (Wang et al., 2024a) is then employed as the reward model to score and rank these responses.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Weighted-Reward Preference Optimization for Implicit Model Fusion"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across these papers, the prevailing usage treats ArmoRM as an automated reward model or judge for evaluating LLM responses, often described as multi-dimension or multi-objective and as assessing outputs from multiple perspectives. Some authors describe it more specifically as 8B or Llama3-8B variants, including ArmoRM-8B, ArmoRM-Llama3-8B, and ArmoRM-Llama3-8B-v0.1, used to score model outputs, filter synthetic preference data, or create preference pairs. One paper also describes it as producing both a scalar reward value and human-interpretable fine-grained attributes."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link ArmoRM to 4 constructs and 2 behavioral indicators, so it is reported as measuring several targets rather than only one. The most common construct links are to Helpfulness and Text generation quality, followed by Harmlessness and Humor; the behavioral-indicator links are to Instruction following and Preference ranking. In these uses, papers report it as assessing response quality, evaluating responses from various perspectives, and, in one case, using its instruction-following dimension as the main evaluation metric."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Most commonly, papers position ArmoRM as an automated evaluator, external judge, or proxy model: they use it to score responses, rank candidate responses, create preference pairs, assign ground-truth quality labels, or calculate win rate. A smaller line of work uses a Llama3-8B variant as a scoring model for filtering synthetic preference data, and one paper says this use \"effectively mitigates erroneous responses.\" It is also used alongside PairRM, Skywork-Reward-Llama-3.1-8B, and Skywork-Reward-Gemma-2-27B, and the only linked instrument is RewardBench, which one paper relates to ArmoRM by noting its ranking there."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across these papers, the prevailing usage treats ArmoRM as an automated reward model or judge for evaluating LLM responses, often described as multi-dimension or multi-objective and as assessing outputs from multiple perspectives. Some authors describe it more specifically as 8B or Llama3-8B variants, including ArmoRM-8B, ArmoRM-Llama3-8B, and ArmoRM-Llama3-8B-v0.1, used to score model outputs, filter synthetic preference data, or create preference pairs. One paper also describes it as producing both a scalar reward value and human-interpretable fine-grained attributes.\n\nWhat it is claimed to measure. Papers link ArmoRM to 4 constructs and 2 behavioral indicators, so it is reported as measuring several targets rather than only one. The most common construct links are to Helpfulness and Text generation quality, followed by Harmlessness and Humor; the behavioral-indicator links are to Instruction following and Preference ranking. In these uses, papers report it as assessing response quality, evaluating responses from various perspectives, and, in one case, using its instruction-following dimension as the main evaluation metric.\n\nSpace of uses. Most commonly, papers position ArmoRM as an automated evaluator, external judge, or proxy model: they use it to score responses, rank candidate responses, create preference pairs, assign ground-truth quality labels, or calculate win rate. A smaller line of work uses a Llama3-8B variant as a scoring model for filtering synthetic preference data, and one paper says this use \"effectively mitigates erroneous responses.\" It is also used alongside PairRM, Skywork-Reward-Llama-3.1-8B, and Skywork-Reward-Gemma-2-27B, and the only linked instrument is RewardBench, which one paper relates to ArmoRM by noting its ranking there.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Diverse, not Short: A Length-Controlled Data Selection Strategy for Improving Response Diversity of Language Models",
+      "Permutative Preference Alignment from Listwise Ranking of Human Judgments"
+    ],
+    "iclr25": [
+      "Amulet: ReAlignment During Test Time for Personalized Preference Adaptation of LLMs",
+      "PAD: Personalized Alignment of LLMs at Decoding-time",
+      "RainbowPO: A Unified Framework for Combining Improvements in Preference Optimization",
+      "Self-Boosting Large Language Models with  Synthetic Preference Data",
+      "Weighted-Reward Preference Optimization for Implicit Model Fusion"
+    ],
+    "icml25": [
+      "AlphaPO: Reward Shape Matters for LLM Alignment",
+      "BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute",
+      "Larger or Smaller Reward Margins to Select Preferences for LLM Alignment?",
+      "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "R.I.P.: Better Models by Survival of the Fittest Prompts",
+      "Reward-Augmented Data Enhances Direct Preference Alignment of LLMs",
+      "Self-Consistency Preference Optimization",
+      "The Best of Both Worlds: Bridging Quality and Diversity in Data Selection with Bipartite Graph",
+      "Thinking LLMs: General Instruction Following with Thought Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 5,
+    "icml25": 9
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

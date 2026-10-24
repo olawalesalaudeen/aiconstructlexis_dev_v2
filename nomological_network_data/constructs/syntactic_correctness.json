@@ -1,0 +1,129 @@
+{
+  "canonical_name": "Syntactic correctness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across these papers, the prevailing usage treats syntactic correctness as generated code or queries adhering to the grammatical and structural rules of a target programming language and being free of syntax errors. Most definitions frame it as a model ability or capability to produce such outputs, while a smaller variation defines it as the degree to which outputs conform to syntax and avoid linter-detected errors; language-specific descriptions mention HTML, CSS, and JavaScript, SQL clause arrangement and operator usage, and Verilog code that can be successfully compiled.\n\nSpace of facets. Papers do not divide the construct into named subtypes; instead, they apply the same idea across different programming settings, and one line of work uses the near-synonymous name syntax correctness. Rather than subdividing it, papers mostly contrast it with other properties: semantic accuracy or semantically meaningful code, logical coherence or logical structure, and, in one evaluation, functional accuracy.\n\nSpace of measurement. No measurement instrument is linked to it. Papers instead operationalize it within 2 behavioral indicators, Code generation and Text-to-SQL, and describe checking whether outputs successfully compile, whether generated code avoids linter-detected errors, and whether SQL queries avoid errors such as missing commas, incorrect JOIN conditions, or misplaced keywords; 1 construct, Cross-programming-language generalization, is also linked to it. These operationalizations make the definitions concrete through compilation success, linter outcomes, and explicit SQL syntax error checks.\n\nLinks. One paper relates syntactic correctness to Code generation, describing evaluation in terms of syntax correctness and functional accuracy. One paper reports that Cross-programming-language generalization correlates with syntactic correctness, giving syntactic correctness rates in non-Python languages alongside higher rates on Python. One paper claims a causal relationship from Text-to-SQL to syntactic correctness, stating that this ensures generated queries maintain proper SQL structure.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Syntactic correctness",
+    "Syntax correctness"
+  ],
+  "papers": [
+    "CRUXEVAL-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution",
+    "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation",
+    "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+    "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+    "CRANE: Reasoning with constrained LLM generation",
+    "Structure-Guided Large Language Models for Text-to-SQL Generation"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability to generate code that is free of syntax errors and adheres to the rules of the target programming languages like HTML, CSS, and JavaScript.",
+      "paper": "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation",
+      "original_name": "Syntactic correctness"
+    },
+    {
+      "text": "The model's capability to generate Verilog code that adheres to the language's grammatical and structural rules, allowing it to be successfully compiled.",
+      "paper": "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+      "original_name": "Syntax correctness"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-programming-language generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CRUXEVAL-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution",
+      "evidence": "Interestingly, even though phi-1 and phi-1.5 have not trained on PLs other than Python, they can still achieve an average of 49.1% and 72.0% syntactically correctness rate in other PLs, respectively, compared with 97.0% and 98.7% achieved on Python. It indicates the cross-language generalizability of LLMs. (Section 4.2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "CRUXEVAL-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text-to-SQL",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Structure-Guided Large Language Models for Text-to-SQL Generation",
+      "evidence": "This ensures that the generated queries maintain both semantic accuracy (correctly capturing user intentions) and syntactic correctness (following proper SQL structure). (Section 1. Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Structure-Guided Large Language Models for Text-to-SQL Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across these papers, the prevailing usage treats syntactic correctness as generated code or queries adhering to the grammatical and structural rules of a target programming language and being free of syntax errors. Most definitions frame it as a model ability or capability to produce such outputs, while a smaller variation defines it as the degree to which outputs conform to syntax and avoid linter-detected errors; language-specific descriptions mention HTML, CSS, and JavaScript, SQL clause arrangement and operator usage, and Verilog code that can be successfully compiled."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not divide the construct into named subtypes; instead, they apply the same idea across different programming settings, and one line of work uses the near-synonymous name syntax correctness. Rather than subdividing it, papers mostly contrast it with other properties: semantic accuracy or semantically meaningful code, logical coherence or logical structure, and, in one evaluation, functional accuracy."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to it. Papers instead operationalize it within 2 behavioral indicators, Code generation and Text-to-SQL, and describe checking whether outputs successfully compile, whether generated code avoids linter-detected errors, and whether SQL queries avoid errors such as missing commas, incorrect JOIN conditions, or misplaced keywords; 1 construct, Cross-programming-language generalization, is also linked to it. These operationalizations make the definitions concrete through compilation success, linter outcomes, and explicit SQL syntax error checks."
+    },
+    {
+      "label": "Links.",
+      "text": "One paper relates syntactic correctness to Code generation, describing evaluation in terms of syntax correctness and functional accuracy. One paper reports that Cross-programming-language generalization correlates with syntactic correctness, giving syntactic correctness rates in non-Python languages alongside higher rates on Python. One paper claims a causal relationship from Text-to-SQL to syntactic correctness, stating that this ensures generated queries maintain proper SQL structure."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "All papers define syntactic correctness as whether generated code or queries follow the formal syntax or grammatical rules of the target programming language. The differences are only in setting and operationalization, such as HTML/CSS/JavaScript, SQL, or Verilog, and checks like linter errors or successful compilation.",
+    "papers_with_definition": 4,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across these papers, the prevailing usage treats syntactic correctness as generated code or queries adhering to the grammatical and structural rules of a target programming language and being free of syntax errors. Most definitions frame it as a model ability or capability to produce such outputs, while a smaller variation defines it as the degree to which outputs conform to syntax and avoid linter-detected errors; language-specific descriptions mention HTML, CSS, and JavaScript, SQL clause arrangement and operator usage, and Verilog code that can be successfully compiled.\n\nSpace of facets. Papers do not divide the construct into named subtypes; instead, they apply the same idea across different programming settings, and one line of work uses the near-synonymous name syntax correctness. Rather than subdividing it, papers mostly contrast it with other properties: semantic accuracy or semantically meaningful code, logical coherence or logical structure, and, in one evaluation, functional accuracy.\n\nSpace of measurement. No measurement instrument is linked to it. Papers instead operationalize it within 2 behavioral indicators, Code generation and Text-to-SQL, and describe checking whether outputs successfully compile, whether generated code avoids linter-detected errors, and whether SQL queries avoid errors such as missing commas, incorrect JOIN conditions, or misplaced keywords; 1 construct, Cross-programming-language generalization, is also linked to it. These operationalizations make the definitions concrete through compilation success, linter outcomes, and explicit SQL syntax error checks.\n\nLinks. One paper relates syntactic correctness to Code generation, describing evaluation in terms of syntax correctness and functional accuracy. One paper reports that Cross-programming-language generalization correlates with syntactic correctness, giving syntactic correctness rates in non-Python languages alongside higher rates on Python. One paper claims a causal relationship from Text-to-SQL to syntactic correctness, stating that this ensures generated queries maintain proper SQL structure.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CRUXEVAL-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution"
+    ],
+    "iclr25": [
+      "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+      "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis"
+    ],
+    "icml25": [
+      "CRANE: Reasoning with constrained LLM generation",
+      "Structure-Guided Large Language Models for Text-to-SQL Generation"
+    ],
+    "emnlp25": [
+      "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "iclr25": 2,
+    "icml25": 2,
+    "emnlp25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "canonical_name": "Self-evaluation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats self-evaluation as a model judging its own output, usually for correctness or quality, after generating a summary, answer, reasoning step, solution, or other text. What counts as the behavior is typically an explicit self-judgment, such as a score, a correctness decision, a confidence level, a likelihood like P(true), or written feedback about issues and advice; some papers also use it to decide which of two answers is better. A smaller line of work narrows the task to checking dialogue responses against their context, rating generated definitions, formulations, and code from execution results, pre-checking an abstract's novelty against a paper database, or asking whether the model's own output is an instance of a concept.\n\nVariants. Papers use several nearby labels for this behavior, including inconsistency identification, self-review, self-assessment, and self-grading. The settings vary widely, with recurring examples in summarization, reasoning and search, harmlessness-oriented text appraisal, instruction-following uncertainty, dialogue consistency reflection, scientific abstract novelty checks, and execution-based evaluation of generated code and formulations. In broader workflows, individual papers also claim causal relationships from self-evaluation to self-correction, describing that the model can abandon erroneous paths and select the correct one, and from self-evaluation to text generation, stating that evaluation can potentially improve the quality of generated text.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers usually operationalize it through prompts that ask the model to score or judge its own output, emit a confidence level, produce a true or false likelihood, assign self-rewards, or return ratings and feedback paragraphs that report issues and advice. In summarization, one paper further defines a self-evaluation bias rate as the difference between an LLM's score for its own summaries and the average score assigned by other evaluators.\n\nWhat it is taken as evidence of. Papers give little direct evidence about what broader construct self-evaluation indicates. The only linked construct is Confidence, and that connection is framed through measured_by claims in both directions: one paper states both that Confidence is measured by Self-evaluation and that Self-evaluation is measured by Confidence, using the model's score and the probability of the token it responds with to self-evaluate. No other construct link appears in the surveyed papers.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Self-evaluation",
+    "Inconsistency identification",
+    "Self-review",
+    "Self-assessment",
+    "Self-grading"
+  ],
+  "papers": [
+    "Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction",
+    "Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System",
+    "Towards Multi-dimensional Evaluation of LLM Summarization across Domains and Languages",
+    "Detecting LLM Hallucination Through Layer-wise Information Deficiency: Analysis of Ambiguous Prompts and Unanswerable Questions",
+    "Language Model Self-improvement by Reinforcement Learning Contemplation",
+    "RAIN: Your Language Models Can Align Themselves without Finetuning",
+    "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models",
+    "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+    "Do LLMs estimate uncertainty well in instruction-following?",
+    "Potemkin Understanding in Large Language Models",
+    "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees"
+  ],
+  "paper_count": 11,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An LLM assessing the quality of its own generated summary, potentially exhibiting bias in scoring.",
+      "paper": "Towards Multi-dimensional Evaluation of LLM Summarization across Domains and Languages",
+      "original_name": "Self-evaluation"
+    },
+    {
+      "text": "The observable behavior of a model analyzing its own output against a context and explicitly identifying and categorizing types of inconsistencies.",
+      "paper": "Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction",
+      "original_name": "Inconsistency identification"
+    },
+    {
+      "text": "A final check where an agent assesses the novelty of a generated abstract by comparing it against a database of existing papers.",
+      "paper": "Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System",
+      "original_name": "Self-review"
+    },
+    {
+      "text": "Evaluating whether the generated definition, formulation, and code are correct based on the execution result.",
+      "paper": "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+      "original_name": "Self-assessment"
+    },
+    {
+      "text": "Evaluating whether a generated response or answer to a question is correct according to the model's own understanding of a concept.",
+      "paper": "Potemkin Understanding in Large Language Models",
+      "original_name": "Self-grading"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "GRAT: Guiding Retrieval-Augmented Reasoning through Process Rewards Tree Search",
+      "evidence": "Since the model possesses self-evaluation and exploration capabilities, it can abandon erroneous paths and select the correct one (Figure 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "GRAT: Guiding Retrieval-Augmented Reasoning through Process Rewards Tree Search"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Entropy",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Large Language Models Have Intrinsic Meta-Cognition, but Need a Good Lens",
+      "evidence": "Traditional methods include token probability (Jiang et al., 2021), perplexity (Si et al., 2022), and entropy (Huang et al., 2023). (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Large Language Models Have Intrinsic Meta-Cognition, but Need a Good Lens"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation quality",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Language Model Self-improvement by Reinforcement Learning Contemplation",
+      "evidence": "This result suggests that evaluation can potentially improve the quality of the generated text, which serves as a stepping stone for building RLC method. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Language Model Self-improvement by Reinforcement Learning Contemplation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Confidence",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control",
+      "evidence": "We define confidence by utilizing the score and the probability of the token responded by the LLM to self-evaluate.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Enhancing Graph Of Thought: Enhancing Prompts with LLM Rationales and Dynamic Temperature Control"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats self-evaluation as a model judging its own output, usually for correctness or quality, after generating a summary, answer, reasoning step, solution, or other text. What counts as the behavior is typically an explicit self-judgment, such as a score, a correctness decision, a confidence level, a likelihood like P(true), or written feedback about issues and advice; some papers also use it to decide which of two answers is better. A smaller line of work narrows the task to checking dialogue responses against their context, rating generated definitions, formulations, and code from execution results, pre-checking an abstract's novelty against a paper database, or asking whether the model's own output is an instance of a concept."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby labels for this behavior, including inconsistency identification, self-review, self-assessment, and self-grading. The settings vary widely, with recurring examples in summarization, reasoning and search, harmlessness-oriented text appraisal, instruction-following uncertainty, dialogue consistency reflection, scientific abstract novelty checks, and execution-based evaluation of generated code and formulations. In broader workflows, individual papers also claim causal relationships from self-evaluation to self-correction, describing that the model can abandon erroneous paths and select the correct one, and from self-evaluation to text generation, stating that evaluation can potentially improve the quality of generated text."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers usually operationalize it through prompts that ask the model to score or judge its own output, emit a confidence level, produce a true or false likelihood, assign self-rewards, or return ratings and feedback paragraphs that report issues and advice. In summarization, one paper further defines a self-evaluation bias rate as the difference between an LLM's score for its own summaries and the average score assigned by other evaluators."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers give little direct evidence about what broader construct self-evaluation indicates. The only linked construct is Confidence, and that connection is framed through measured_by claims in both directions: one paper states both that Confidence is measured by Self-evaluation and that Self-evaluation is measured by Confidence, using the model's score and the probability of the token it responds with to self-evaluate. No other construct link appears in the surveyed papers."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats self-evaluation as a model judging its own output, usually for correctness or quality, after generating a summary, answer, reasoning step, solution, or other text. What counts as the behavior is typically an explicit self-judgment, such as a score, a correctness decision, a confidence level, a likelihood like P(true), or written feedback about issues and advice; some papers also use it to decide which of two answers is better. A smaller line of work narrows the task to checking dialogue responses against their context, rating generated definitions, formulations, and code from execution results, pre-checking an abstract's novelty against a paper database, or asking whether the model's own output is an instance of a concept.\n\nVariants. Papers use several nearby labels for this behavior, including inconsistency identification, self-review, self-assessment, and self-grading. The settings vary widely, with recurring examples in summarization, reasoning and search, harmlessness-oriented text appraisal, instruction-following uncertainty, dialogue consistency reflection, scientific abstract novelty checks, and execution-based evaluation of generated code and formulations. In broader workflows, individual papers also claim causal relationships from self-evaluation to self-correction, describing that the model can abandon erroneous paths and select the correct one, and from self-evaluation to text generation, stating that evaluation can potentially improve the quality of generated text.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers usually operationalize it through prompts that ask the model to score or judge its own output, emit a confidence level, produce a true or false likelihood, assign self-rewards, or return ratings and feedback paragraphs that report issues and advice. In summarization, one paper further defines a self-evaluation bias rate as the difference between an LLM's score for its own summaries and the average score assigned by other evaluators.\n\nWhat it is taken as evidence of. Papers give little direct evidence about what broader construct self-evaluation indicates. The only linked construct is Confidence, and that connection is framed through measured_by claims in both directions: one paper states both that Confidence is measured by Self-evaluation and that Self-evaluation is measured by Confidence, using the model's score and the probability of the token it responds with to self-evaluate. No other construct link appears in the surveyed papers.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction",
+      "Many Heads Are Better Than One: Improved Scientific Idea Generation by A LLM-Based Multi-Agent System",
+      "Towards Multi-dimensional Evaluation of LLM Summarization across Domains and Languages"
+    ],
+    "emnlp25": [
+      "Detecting LLM Hallucination Through Layer-wise Information Deficiency: Analysis of Ambiguous Prompts and Unanswerable Questions"
+    ],
+    "iclr25": [
+      "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+      "Do LLMs estimate uncertainty well in instruction-following?"
+    ],
+    "iclr24": [
+      "Language Model Self-improvement by Reinforcement Learning Contemplation",
+      "RAIN: Your Language Models Can Align Themselves without Finetuning",
+      "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models"
+    ],
+    "icml25": [
+      "Potemkin Understanding in Large Language Models"
+    ],
+    "neurips24": [
+      "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 1,
+    "iclr25": 2,
+    "iclr24": 3,
+    "icml25": 1,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

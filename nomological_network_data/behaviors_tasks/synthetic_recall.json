@@ -1,0 +1,746 @@
+{
+  "canonical_name": "Synthetic recall",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is a synthetic needle-retrieval task: the model must retrieve, reproduce, or recall specific inserted information from a long, often irrelevant context. Most definitions use a \"needle in a haystack\" setup in which the target is a short fact, statement, passkey, or key-value pair hidden in long text, and some explicitly describe it as a stress test of recall from long contexts or of the fidelity of compressed representations. Success is usually exact recovery of the inserted content, for example identifying and outputting a five-digit passkey, retrieving one or more target key-value pairs, or returning a target statement when it appears at different positions, and one formulation states that a prediction is correct only if all passkeys are retrieved.\n\nVariants. Most variants stay in text and are described as passkey retrieval, needle-in-a-haystack retrieval, or long-context retrieval. Common differences are whether the model must find a single needle or multiple needles, whether the inserted item is a passkey, target statement, key-value pair, or matching string, and whether recall is tested at different depths or positions in the context. Smaller lines extend the behavior to multi-needle reasoning, multilingual haystacks, and multimodal or audio settings where the model retrieves an inserted statement, image, or temporally grounded segment.\n\nSpace of elicitation and scores. Papers link synthetic recall to 20 measurement instruments. The most common are Needle-in-a-Haystack, RULER, Passkey retrieval, HELMET, and MM-NIAH. These are mostly synthetic long-context retrieval benchmarks: Needle-in-a-Haystack is described as inserting a random fact or statement into a long context and asking the model to retrieve it, Passkey retrieval as locating a hidden five-digit number in otherwise meaningless text, RULER as a more complex synthetic benchmark containing needle-retrieval and related tasks, HELMET as a benchmark category that includes synthetic recall, and MM-NIAH as a multimodal version that detects image or text needles within hybrid long contexts.\n\nWhat it is taken as evidence of. Papers connect synthetic recall to 6 constructs, and they do not converge on a single construct that it reflects. The prevailing links are to long-context understanding and length generalization: papers describe passkey or needle retrieval as evaluating the maximum context length a model can effectively handle, as probing fine-grained contextual understanding, and as a metric through accuracy on Passkey Retrieval. Smaller strands relate it to factual retention and use retrieval tasks to measure temporal perception, while single papers instead claim a causal relationship from synthetic recall to personalization and from recency bias to synthetic recall.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Synthetic recall",
+    "Passkey retrieval",
+    "Needle-in-a-haystack retrieval",
+    "Long-context retrieval",
+    "Single-needle retrieval",
+    "Multi-needle retrieval",
+    "Long-dependency retrieval",
+    "Prefix-suffix retrieval",
+    "Needle question answering",
+    "Needle extraction",
+    "String retrieval capability",
+    "Multimodal retrieval",
+    "Information retrieval",
+    "Multi-needle reasoning",
+    "Synthetic retrieval",
+    "Retrieval"
+  ],
+  "papers": [
+    "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+    "Attention Entropy is a Key Factor: An Analysis of Parallel Context Encoding with Full-attention-based Pre-trained Language Models",
+    "ClusterAttn: KV Cache Compression under Intrinsic Attention Clustering",
+    "Efficient Long Context Language Model Retrieval with Compression",
+    "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method",
+    "FocusLLM: Precise Understanding of Long Context by Dynamic Condensing",
+    "HotelMatch-LLM: Joint Multi-Task Training of Small and Large Language Models for Efficient Multimodal Hotel Retrieval",
+    "KV-Latent: Dimensional-level KV Cache Reduction with Frequency-aware Rotary Positional Embedding",
+    "LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs",
+    "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use",
+    "Positional Overload: Positional Debiasing and Context Window Extension for Large Language Models using Set Encoding",
+    "RARE: Retrieval-Augmented Reasoning Enhancement for Large Language Models",
+    "SEAL: Scaling to Emphasize Attention for Long-Context Retrieval",
+    "Scaling up the State Size of RNN LLMs for Long-Context Scenarios",
+    "AIR-Bench: Automated Heterogeneous Information Retrieval Benchmark",
+    "Dialogue-RAG: Enhancing Retrieval for LLMs via Node-Linking Utterance Rewriting",
+    "NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering",
+    "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+    "Beyond Outlining: Heterogeneous Recursive Planning for Adaptive Long-form Writing with Language Models",
+    "Charting the Landscape of African NLP: Mapping Progress and Shaping the Road Ahead",
+    "Context-aware Biases for Length Extrapolation",
+    "Cost-Optimal Grouped-Query Attention for Long-Context Modeling",
+    "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+    "Diffusion vs. Autoregressive Language Models: A Text Embedding Perspective",
+    "Does quantization affect models' performance on long-context tasks?",
+    "Following the Autoregressive Nature of LLM Embeddings via Compression and Alignment",
+    "GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction",
+    "MAviS: A Multimodal Conversational Assistant For Avian Species",
+    "OmniThink: Expanding Knowledge Boundaries in Machine Writing through Thinking",
+    "POSITION BIAS MITIGATES POSITION BIAS: Mitigate Position Bias Through Inter-Position Knowledge Distillation",
+    "Parrot: A Training Pipeline Enhances Both Program CoT and Natural Language CoT for Reasoning",
+    "Personality Matters: User Traits Predict LLM Preferences in Multi-Turn Collaborative Tasks",
+    "TableEval: A Real-World Benchmark for Complex, Multilingual, and Multi-Structured Table Question Answering",
+    "TreeRare: Syntax Tree-Guided Retrieval and Reasoning for Knowledge-Intensive Question Answering",
+    "TurnaboutLLM: A Deductive Reasoning Benchmark from Detective Games",
+    "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation",
+    "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+    "LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models",
+    "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+    "YaRN: Efficient Context Window Extension of Large Language Models",
+    "A Little Goes a Long Way: Efficient Long Context Training and Inference with Partial Contexts",
+    "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+    "Agent-Oriented Planning in Multi-Agent Systems",
+    "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+    "Boltzmann Semantic Score: A Semantic Metric for Evaluating Large Vision Models Using Large Language Models",
+    "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+    "Chain-of-Action: Faithful and Multimodal Question Answering through Large Language Models",
+    "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities",
+    "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+    "DistRL: An Asynchronous Distributed Reinforcement Learning Framework for On-Device Control Agent",
+    "Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs",
+    "DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads",
+    "Forgetting Transformer: Softmax Attention with a Forget Gate",
+    "From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs",
+    "GOFA: A Generative One-For-All Model for Joint Graph Language Modeling",
+    "Holistic Reasoning with Long-Context LMs: A Benchmark for Database Operations on Massive Textual Data",
+    "Human-inspired Episodic Memory for Infinite Context LLMs",
+    "Hymba: A Hybrid-head Architecture for Small Language Models",
+    "Internet of Agents: Weaving a Web of Heterogeneous Agents for Collaborative Intelligence",
+    "Jamba: Hybrid Transformer-Mamba Language Models",
+    "LongMamba: Enhancing Mamba's Long-Context Capabilities via Training-Free Receptive Field Enlargement",
+    "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+    "MagicPIG: LSH Sampling for Efficient LLM Generation",
+    "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+    "Needle In A Video Haystack: A Scalable  Synthetic Evaluator for Video MLLMs",
+    "Not All Heads Matter: A Head-Level KV Cache Compression Method with Integrated Retrieval and Reasoning",
+    "OmniKV: Dynamic Context Selection for Efficient Long-Context LLMs",
+    "Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution",
+    "Quest: Query-centric Data Synthesis Approach for Long-context Scaling of Large Language Model",
+    "ReAttention: Training-Free Infinite Context with Finite Attention Scope",
+    "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+    "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+    "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+    "TidalDecode: Fast and Accurate LLM Decoding with Position Persistent Sparse Attention",
+    "Training Free Exponential Context Extension via Cascading KV Cache",
+    "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+    "What is Wrong with Perplexity for Long-context Language Modeling?",
+    "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+    "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities",
+    "Can Compressed LLMs Truly Act? An Empirical Evaluation of Agentic Capabilities in LLM Compression",
+    "CateKV: On Sequential Consistency for Long-Context LLM Inference Acceleration",
+    "CoMemo: LVLMs Need Image Context with Image Memory",
+    "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+    "Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling",
+    "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?",
+    "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models",
+    "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+    "Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding",
+    "On the Emergence of Position Bias in Transformers",
+    "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+    "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding",
+    "SepLLM: Accelerate Large Language Models by Compressing One Segment into One Separator",
+    "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference",
+    "SpeCache: Speculative Key-Value Caching for Efficient Generation of LLMs",
+    "Star Attention: Efficient LLM Inference over Long Sequences",
+    "Understanding and Improving Length Generalization in Recurrent Models",
+    "xLSTM 7B: A Recurrent LLM for Fast and Efficient Inference",
+    "CommVQ: Commutative Vector Quantization for KV Cache Compression",
+    "Speculative Prefill: Turbocharging TTFT with Lightweight and Training-Free Token Importance Estimation",
+    "NExtLong: Toward Effective Long-Context Training without Long Documents",
+    "AutoEval-ToD: Automated Evaluation of Task-oriented Dialog Systems",
+    "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+    "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+    "MoDification: Mixture of Depths Made Easy",
+    "Multilingual Needle in a Haystack: Investigating Long-Context Behavior of Multilingual Large Language Models",
+    "THREAD: Thinking Deeper with Recursive Spawning",
+    "TRANSIENTTABLES: Evaluating LLMs' Reasoning on Temporally Evolving Semi-structured Tables",
+    "FollowIR: Evaluating and Teaching Information Retrieval Models to Follow Instructions",
+    "tRAG: Term-level Retrieval-Augmented Generation for Domain-Adaptive Retrieval",
+    "ScreenQA: Large-Scale Question-Answer Pairs Over Mobile App Screenshots",
+    "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities",
+    "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+    "Autonomous Agents for Collaborative Task under Information Asymmetry",
+    "Boosting the Potential of Large Language Models with an Intelligent Information Assistant",
+    "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+    "IMPACT: A Large-scale Integrated Multimodal Patent Analysis and Creation Dataset for Design Patents",
+    "InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory",
+    "Needle In A Multimodal Haystack",
+    "Order-Independence Without Fine Tuning",
+    "Selective Attention: Enhancing Transformer through Principled Context Control",
+    "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack"
+  ],
+  "paper_count": 121,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Reproducing specific, inserted pieces of information (needles) from a long context, testing the fidelity of compressed representations.",
+      "paper": "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+      "original_name": "Synthetic recall"
+    },
+    {
+      "text": "A \"needle in a haystack\" task where the model must identify and extract a specific, short piece of information (a passkey) from a long, repetitive document.",
+      "paper": "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+      "original_name": "Passkey retrieval"
+    },
+    {
+      "text": "The observable task of identifying and extracting a specific piece of information embedded within a large volume of irrelevant text.",
+      "paper": "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+      "original_name": "Needle-in-a-haystack retrieval"
+    },
+    {
+      "text": "Retrieving a target statement or fact from a long input context when it appears at different positions.",
+      "paper": "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+      "original_name": "Long-context retrieval"
+    },
+    {
+      "text": "Finding and recalling a single, specific piece of information ('needle') embedded within a long, distracting context ('haystack').",
+      "paper": "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+      "original_name": "Single-needle retrieval"
+    },
+    {
+      "text": "Finding and recalling multiple, distinct pieces of information ('needles') embedded within a long, distracting context ('haystack').",
+      "paper": "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+      "original_name": "Multi-needle retrieval"
+    },
+    {
+      "text": "Recovering a specific target item embedded far back in a long context.",
+      "paper": "TidalDecode: Fast and Accurate LLM Decoding with Position Persistent Sparse Attention",
+      "original_name": "Long-dependency retrieval"
+    },
+    {
+      "text": "Finding a string in a large dictionary that matches both a specified prefix and suffix.",
+      "paper": "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+      "original_name": "Prefix-suffix retrieval"
+    },
+    {
+      "text": "Locating and reasoning about a specific short segment (needle) embedded within a longer audio (haystack), requiring precise temporal grounding.",
+      "paper": "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities",
+      "original_name": "Needle question answering"
+    },
+    {
+      "text": "The fundamental ability of a long-context model to retrieve specific, exact-match information from long and potentially noisy input sequences.",
+      "paper": "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+      "original_name": "String retrieval capability"
+    },
+    {
+      "text": "Answering questions by locating a specific inserted fact, statement, or image within a long multimodal document.",
+      "paper": "Needle In A Multimodal Haystack",
+      "original_name": "Multimodal retrieval"
+    },
+    {
+      "text": "Locating and extracting a specific piece of information (needle) from a large body of text (haystack), particularly in long and multilingual contexts.",
+      "paper": "tRAG: Term-level Retrieval-Augmented Generation for Domain-Adaptive Retrieval",
+      "original_name": "Information retrieval"
+    },
+    {
+      "text": "Performing a reasoning task that requires synthesizing information from multiple, distinct facts ('needles') embedded within a long context.",
+      "paper": "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+      "original_name": "Multi-needle reasoning"
+    },
+    {
+      "text": "The observable behavior of extracting specific, artificially embedded information (e.g., passkeys or key-value pairs) from a long synthetic context.",
+      "paper": "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+      "original_name": "Synthetic retrieval"
+    },
+    {
+      "text": "The observable ability of a model to locate and extract specific information from a long input context.",
+      "paper": "CommVQ: Commutative Vector Quantization for KV Cache Compression",
+      "original_name": "Retrieval"
+    }
+  ],
+  "definition_count": 15,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Needle-in-a-Haystack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Little Goes a Long Way: Efficient Long Context Training and Inference with Partial Contexts",
+      "evidence": "NIAH measures the averaged correct answer rate of the models on the needle-in-a-haystack retrieval task. (Table 4)",
+      "paper_count": 11,
+      "paper_weight": 11.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Little Goes a Long Way: Efficient Long Context Training and Inference with Partial Contexts",
+          "ReAttention: Training-Free Infinite Context with Finite Attention Scope",
+          "Forgetting Transformer: Softmax Attention with a Forget Gate",
+          "DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads",
+          "Hymba: A Hybrid-head Architecture for Small Language Models",
+          "World Model on Million-Length Video And Language With Blockwise RingAttention"
+        ],
+        "acl25": [
+          "SEAL: Scaling to Emphasize Attention for Long-Context Retrieval",
+          "ClusterAttn: KV Cache Compression under Intrinsic Attention Clustering"
+        ],
+        "icml25": [
+          "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models",
+          "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+          "LongRoPE2: Near-Lossless LLM Context Window Scaling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RULER",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Jamba: Hybrid Transformer-Mamba Language Models",
+      "evidence": "\u201cRULER includes 8 variants of needle-in-a-haystack retrieval tasks\u201d",
+      "paper_count": 9,
+      "paper_weight": 9.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jamba: Hybrid Transformer-Mamba Language Models",
+          "LongMamba: Enhancing Mamba's Long-Context Capabilities via Training-Free Receptive Field Enlargement",
+          "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+          "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ],
+        "acl25": [
+          "Attention Entropy is a Key Factor: An Analysis of Parallel Context Encoding with Full-attention-based Pre-trained Language Models",
+          "SEAL: Scaling to Emphasize Attention for Long-Context Retrieval"
+        ],
+        "icml25": [
+          "Star Attention: Efficient LLM Inference over Long Sequences",
+          "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Passkey retrieval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "YaRN: Efficient Context Window Extension of Large Language Models",
+      "evidence": "The passkey retrieval task as defined in Mohtashami and Jaggi (2023) measures a model\u2019s ability to retrieve a simple passkey (i.e., a five-digit number) from amongst a large amount of otherwise meaningless text. (Section 4.3)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "YaRN: Efficient Context Window Extension of Large Language Models"
+        ],
+        "acl25": [
+          "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method"
+        ],
+        "icml25": [
+          "Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding",
+          "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding",
+          "Fourier Position Embedding: Enhancing Attention\u2019s Periodic Extension for Length Generalization"
+        ],
+        "iclr25": [
+          "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HELMET",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly",
+      "evidence": "we present HELMET (How to Evaluate Long-context Models Effectively and Thoroughly). We curate a diverse set of application-centric long-context tasks across seven categories. Beyond widely adopted categories like synthetic recall...",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+        ],
+        "icml25": [
+          "NExtLong: Toward Effective Long-Context Training without Long Documents"
+        ],
+        "emnlp25": [
+          "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+      "evidence": "Passkey retrieval, on the other hand, can effectively measure the maximum distance that a token can attend to during the inference stage. (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training"
+        ],
+        "icml25": [
+          "Can Compressed LLMs Truly Act? An Empirical Evaluation of Agentic Capabilities in LLM Compression"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MM-NIAH",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Needle In A Multimodal Haystack",
+      "evidence": "Our benchmark includes three types of evaluation tasks: multimodal retrieval, counting, and reasoning. (Abstract)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Needle In A Multimodal Haystack"
+        ],
+        "icml25": [
+          "CoMemo: LVLMs Need Image Context with Image Memory"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "NeedleBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+      "evidence": "NeedleBench (Li et al., 2024a): Tests retrieval and reasoning in complex contexts through three subtasks: Single-Needle Retrieval, Multi-Needle Retrieval, and Multi-Needle Reasoning.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+          "Rodimus*: Breaking the Accuracy-Efficiency Trade-Off with Efficient Attentions"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Key-value retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+      "evidence": "finetuning LLMs on this dataset significantly improves LLMs\u2019 information retrieval and reasoning capabilities in longer-context settings. (ABSTRACT)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+          "SCBench: A KV Cache-Centric Analysis of Long-Context Methods"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SWDE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "evidence": "Specifically, we assess information retrieval on FDA [93] and SWDE [49], which are designed to evaluate retrieval from in-context passages scraped from HTML/PDFs. (Section 4.1.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Gated Slot Attention for Efficient Linear-Time Sequence Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Personalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs",
+      "evidence": "RAG consistently performed the best across most models, indicating that adherence to user preferences may hinge on retrieval capabilities.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Retrieval Head Mechanistically Explains Long-Context Factuality",
+      "evidence": "completely pruning retrieval heads leads to failure in retrieving relevant information and results in hallucination, while pruning random non-retrieval heads does not affect the model\u2019s retrieval ability. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Retrieval Head Mechanistically Explains Long-Context Factuality"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Recency bias",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+      "evidence": "\u201cthis bias impairs the models\u2019 ability to recall distant information\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Qasper",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MoDification: Mixture of Depths Made Easy",
+      "evidence": "In long-context retrieval scenario where questions are gathered from Qasper (Dasigi et al., 2021), MoDification-7B-32k yields 10.3 on Qasper, which is competitive with 10.2 from LLaMA-2-7B-32k. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "MoDification: Mixture of Depths Made Easy"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference",
+      "evidence": "On LongBench, we evaluate our method with a range of realistic scenarios, including single-/multi-document QA, document summarization, code completion, information retrieval, etc. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MileBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CoMemo: LVLMs Need Image Context with Image Memory",
+      "evidence": "The MileBench benchmark also includes needle in haystack tasks for both text and image scenarios. (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "CoMemo: LVLMs Need Image Context with Image Memory"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LOFT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?",
+      "evidence": "A significant portion of long-context evaluation datasets, including RULER (Hsieh et al., 2024b), LongBench (Bai et al., 2024), LongBench v2 (Bai et al., 2025), and LOFT (Lee et al., 2024), primarily assess retrieval and summarization rather than complex reasoning. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Temporal perception",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Needle In A Video Haystack: A Scalable  Synthetic Evaluator for Video MLLMs",
+      "evidence": "This task [Retrieval] specifically assesses the model\u2019s capability for temporal perception and understanding across the time dimension. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Needle In A Video Haystack: A Scalable  Synthetic Evaluator for Video MLLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "What is Wrong with Perplexity for Long-context Language Modeling?",
+      "evidence": "we conduct experiments on LongEval (Li et al., 2023a), a benchmark for long-context retrieval abilities, where we can separate the answer tokens that match the desired answers (e.g., <45129> in Figure 2(a)) from non-answer tokens. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "What is Wrong with Perplexity for Long-context Language Modeling?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "POSITION BIAS MITIGATES POSITION BIAS: Mitigate Position Bias Through Inter-Position Knowledge Distillation",
+      "evidence": "In retrieval tasks, PB predominantly manifests as token-shifting... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "POSITION BIAS MITIGATES POSITION BIAS: Mitigate Position Bias Through Inter-Position Knowledge Distillation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 19,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 15,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is a synthetic needle-retrieval task: the model must retrieve, reproduce, or recall specific inserted information from a long, often irrelevant context. Most definitions use a \"needle in a haystack\" setup in which the target is a short fact, statement, passkey, or key-value pair hidden in long text, and some explicitly describe it as a stress test of recall from long contexts or of the fidelity of compressed representations. Success is usually exact recovery of the inserted content, for example identifying and outputting a five-digit passkey, retrieving one or more target key-value pairs, or returning a target statement when it appears at different positions, and one formulation states that a prediction is correct only if all passkeys are retrieved."
+    },
+    {
+      "label": "Variants.",
+      "text": "Most variants stay in text and are described as passkey retrieval, needle-in-a-haystack retrieval, or long-context retrieval. Common differences are whether the model must find a single needle or multiple needles, whether the inserted item is a passkey, target statement, key-value pair, or matching string, and whether recall is tested at different depths or positions in the context. Smaller lines extend the behavior to multi-needle reasoning, multilingual haystacks, and multimodal or audio settings where the model retrieves an inserted statement, image, or temporally grounded segment."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link synthetic recall to 20 measurement instruments. The most common are Needle-in-a-Haystack, RULER, Passkey retrieval, HELMET, and MM-NIAH. These are mostly synthetic long-context retrieval benchmarks: Needle-in-a-Haystack is described as inserting a random fact or statement into a long context and asking the model to retrieve it, Passkey retrieval as locating a hidden five-digit number in otherwise meaningless text, RULER as a more complex synthetic benchmark containing needle-retrieval and related tasks, HELMET as a benchmark category that includes synthetic recall, and MM-NIAH as a multimodal version that detects image or text needles within hybrid long contexts."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect synthetic recall to 6 constructs, and they do not converge on a single construct that it reflects. The prevailing links are to long-context understanding and length generalization: papers describe passkey or needle retrieval as evaluating the maximum context length a model can effectively handle, as probing fine-grained contextual understanding, and as a metric through accuracy on Passkey Retrieval. Smaller strands relate it to factual retention and use retrieval tasks to measure temporal perception, while single papers instead claim a causal relationship from synthetic recall to personalization and from recency bias to synthetic recall."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is a synthetic needle-retrieval task: the model must retrieve, reproduce, or recall specific inserted information from a long, often irrelevant context. Most definitions use a \"needle in a haystack\" setup in which the target is a short fact, statement, passkey, or key-value pair hidden in long text, and some explicitly describe it as a stress test of recall from long contexts or of the fidelity of compressed representations. Success is usually exact recovery of the inserted content, for example identifying and outputting a five-digit passkey, retrieving one or more target key-value pairs, or returning a target statement when it appears at different positions, and one formulation states that a prediction is correct only if all passkeys are retrieved.\n\nVariants. Most variants stay in text and are described as passkey retrieval, needle-in-a-haystack retrieval, or long-context retrieval. Common differences are whether the model must find a single needle or multiple needles, whether the inserted item is a passkey, target statement, key-value pair, or matching string, and whether recall is tested at different depths or positions in the context. Smaller lines extend the behavior to multi-needle reasoning, multilingual haystacks, and multimodal or audio settings where the model retrieves an inserted statement, image, or temporally grounded segment.\n\nSpace of elicitation and scores. Papers link synthetic recall to 20 measurement instruments. The most common are Needle-in-a-Haystack, RULER, Passkey retrieval, HELMET, and MM-NIAH. These are mostly synthetic long-context retrieval benchmarks: Needle-in-a-Haystack is described as inserting a random fact or statement into a long context and asking the model to retrieve it, Passkey retrieval as locating a hidden five-digit number in otherwise meaningless text, RULER as a more complex synthetic benchmark containing needle-retrieval and related tasks, HELMET as a benchmark category that includes synthetic recall, and MM-NIAH as a multimodal version that detects image or text needles within hybrid long contexts.\n\nWhat it is taken as evidence of. Papers connect synthetic recall to 6 constructs, and they do not converge on a single construct that it reflects. The prevailing links are to long-context understanding and length generalization: papers describe passkey or needle retrieval as evaluating the maximum context length a model can effectively handle, as probing fine-grained contextual understanding, and as a metric through accuracy on Passkey Retrieval. Smaller strands relate it to factual retention and use retrieval tasks to measure temporal perception, while single papers instead claim a causal relationship from synthetic recall to personalization and from recency bias to synthetic recall.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression",
+      "Attention Entropy is a Key Factor: An Analysis of Parallel Context Encoding with Full-attention-based Pre-trained Language Models",
+      "ClusterAttn: KV Cache Compression under Intrinsic Attention Clustering",
+      "Efficient Long Context Language Model Retrieval with Compression",
+      "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method",
+      "FocusLLM: Precise Understanding of Long Context by Dynamic Condensing",
+      "HotelMatch-LLM: Joint Multi-Task Training of Small and Large Language Models for Efficient Multimodal Hotel Retrieval",
+      "KV-Latent: Dimensional-level KV Cache Reduction with Frequency-aware Rotary Positional Embedding",
+      "LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs",
+      "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use",
+      "Positional Overload: Positional Debiasing and Context Window Extension for Large Language Models using Set Encoding",
+      "RARE: Retrieval-Augmented Reasoning Enhancement for Large Language Models",
+      "SEAL: Scaling to Emphasize Attention for Long-Context Retrieval",
+      "Scaling up the State Size of RNN LLMs for Long-Context Scenarios",
+      "AIR-Bench: Automated Heterogeneous Information Retrieval Benchmark",
+      "Dialogue-RAG: Enhancing Retrieval for LLMs via Node-Linking Utterance Rewriting",
+      "NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering"
+    ],
+    "emnlp25": [
+      "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+      "Beyond Outlining: Heterogeneous Recursive Planning for Adaptive Long-form Writing with Language Models",
+      "Charting the Landscape of African NLP: Mapping Progress and Shaping the Road Ahead",
+      "Context-aware Biases for Length Extrapolation",
+      "Cost-Optimal Grouped-Query Attention for Long-Context Modeling",
+      "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+      "Diffusion vs. Autoregressive Language Models: A Text Embedding Perspective",
+      "Does quantization affect models' performance on long-context tasks?",
+      "Following the Autoregressive Nature of LLM Embeddings via Compression and Alignment",
+      "GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction",
+      "MAviS: A Multimodal Conversational Assistant For Avian Species",
+      "OmniThink: Expanding Knowledge Boundaries in Machine Writing through Thinking",
+      "POSITION BIAS MITIGATES POSITION BIAS: Mitigate Position Bias Through Inter-Position Knowledge Distillation",
+      "Parrot: A Training Pipeline Enhances Both Program CoT and Natural Language CoT for Reasoning",
+      "Personality Matters: User Traits Predict LLM Preferences in Multi-Turn Collaborative Tasks",
+      "TableEval: A Real-World Benchmark for Complex, Multilingual, and Multi-Structured Table Question Answering",
+      "TreeRare: Syntax Tree-Guided Retrieval and Reasoning for Knowledge-Intensive Question Answering",
+      "TurnaboutLLM: A Deductive Reasoning Benchmark from Detective Games",
+      "Recall with Reasoning: Chain-of-Thought Distillation for Mamba's Long-Context Memory and Extrapolation"
+    ],
+    "iclr24": [
+      "Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs",
+      "LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models",
+      "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+      "YaRN: Efficient Context Window Extension of Large Language Models"
+    ],
+    "iclr25": [
+      "A Little Goes a Long Way: Efficient Long Context Training and Inference with Partial Contexts",
+      "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+      "Agent-Oriented Planning in Multi-Agent Systems",
+      "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+      "Boltzmann Semantic Score: A Semantic Metric for Evaluating Large Vision Models Using Large Language Models",
+      "CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences",
+      "Chain-of-Action: Faithful and Multimodal Question Answering through Large Language Models",
+      "ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities",
+      "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "DistRL: An Asynchronous Distributed Reinforcement Learning Framework for On-Device Control Agent",
+      "Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs",
+      "DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads",
+      "Forgetting Transformer: Softmax Attention with a Forget Gate",
+      "From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs",
+      "GOFA: A Generative One-For-All Model for Joint Graph Language Modeling",
+      "Holistic Reasoning with Long-Context LMs: A Benchmark for Database Operations on Massive Textual Data",
+      "Human-inspired Episodic Memory for Infinite Context LLMs",
+      "Hymba: A Hybrid-head Architecture for Small Language Models",
+      "Internet of Agents: Weaving a Web of Heterogeneous Agents for Collaborative Intelligence",
+      "Jamba: Hybrid Transformer-Mamba Language Models",
+      "LongMamba: Enhancing Mamba's Long-Context Capabilities via Training-Free Receptive Field Enlargement",
+      "LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization",
+      "MagicPIG: LSH Sampling for Efficient LLM Generation",
+      "MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba",
+      "Needle In A Video Haystack: A Scalable  Synthetic Evaluator for Video MLLMs",
+      "Not All Heads Matter: A Head-Level KV Cache Compression Method with Integrated Retrieval and Reasoning",
+      "OmniKV: Dynamic Context Selection for Efficient Long-Context LLMs",
+      "Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution",
+      "Quest: Query-centric Data Synthesis Approach for Long-context Scaling of Large Language Model",
+      "ReAttention: Training-Free Infinite Context with Finite Attention Scope",
+      "SCBench: A KV Cache-Centric Analysis of Long-Context Methods",
+      "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+      "Scaling Stick-Breaking Attention: An Efficient Implementation and In-depth Study",
+      "TidalDecode: Fast and Accurate LLM Decoding with Position Persistent Sparse Attention",
+      "Training Free Exponential Context Extension via Cascading KV Cache",
+      "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+      "What is Wrong with Perplexity for Long-context Language Modeling?",
+      "HELMET: How to Evaluate Long-context Models Effectively and Thoroughly"
+    ],
+    "icml25": [
+      "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities",
+      "Can Compressed LLMs Truly Act? An Empirical Evaluation of Agentic Capabilities in LLM Compression",
+      "CateKV: On Sequential Consistency for Long-Context LLM Inference Acceleration",
+      "CoMemo: LVLMs Need Image Context with Image Memory",
+      "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+      "Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling",
+      "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?",
+      "LaCache: Ladder-Shaped KV Caching for Efficient Long-Context Modeling of Large Language Models",
+      "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+      "Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding",
+      "On the Emergence of Position Bias in Transformers",
+      "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "Rethinking Addressing in Language Models via Contextualized Equivariant Positional Encoding",
+      "SepLLM: Accelerate Large Language Models by Compressing One Segment into One Separator",
+      "ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference",
+      "SpeCache: Speculative Key-Value Caching for Efficient Generation of LLMs",
+      "Star Attention: Efficient LLM Inference over Long Sequences",
+      "Understanding and Improving Length Generalization in Recurrent Models",
+      "xLSTM 7B: A Recurrent LLM for Fast and Efficient Inference",
+      "CommVQ: Commutative Vector Quantization for KV Cache Compression",
+      "Speculative Prefill: Turbocharging TTFT with Lightweight and Training-Free Token Importance Estimation",
+      "NExtLong: Toward Effective Long-Context Training without Long Documents"
+    ],
+    "naacl25": [
+      "AutoEval-ToD: Automated Evaluation of Task-oriented Dialog Systems",
+      "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+      "LongLeader: A Comprehensive Leaderboard for Large Language Models in Long-context Scenarios",
+      "MoDification: Mixture of Depths Made Easy",
+      "Multilingual Needle in a Haystack: Investigating Long-Context Behavior of Multilingual Large Language Models",
+      "THREAD: Thinking Deeper with Recursive Spawning",
+      "TRANSIENTTABLES: Evaluating LLMs' Reasoning on Temporally Evolving Semi-structured Tables",
+      "FollowIR: Evaluating and Teaching Information Retrieval Models to Follow Instructions",
+      "tRAG: Term-level Retrieval-Augmented Generation for Domain-Adaptive Retrieval",
+      "ScreenQA: Large-Scale Question-Answer Pairs Over Mobile App Screenshots"
+    ],
+    "neurips24": [
+      "4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities",
+      "An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding",
+      "Autonomous Agents for Collaborative Task under Information Asymmetry",
+      "Boosting the Potential of Large Language Models with an Intelligent Information Assistant",
+      "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+      "IMPACT: A Large-scale Integrated Multimodal Patent Analysis and Creation Dataset for Design Patents",
+      "InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory",
+      "Needle In A Multimodal Haystack",
+      "Order-Independence Without Fine Tuning",
+      "Selective Attention: Enhancing Transformer through Principled Context Control",
+      "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 17,
+    "emnlp25": 19,
+    "iclr24": 4,
+    "iclr25": 38,
+    "icml25": 22,
+    "naacl25": 10,
+    "neurips24": 11
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

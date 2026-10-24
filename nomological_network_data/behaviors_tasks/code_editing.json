@@ -1,0 +1,203 @@
+{
+  "canonical_name": "Code editing",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is modifying existing code in response to a natural-language instruction, request, or feedback, with success defined as producing updated code that satisfies the requested change. Definitions also describe it as goal-directed editing to alter output or correct errors, or as adding, deleting, or changing lines to implement a fix or new feature. A smaller line of work frames the behavior as iterative refinement of previously generated code, and visually grounded versions require the edited code to produce a target shape or a rendering that matches a target design.\n\nVariants. Variants differ by scope and setting. Some papers study file-level editing, while others span function, class, or file level, or require actions across multiple files during long agent trajectories with intermediate feedback. Alternative labels include program editing, code modification, and code refinement, and more specialized settings include CSS style adjustment and code edit generation, sometimes emitted in Search/Replace form after file, function, or line localization. Another visual-programming variant asks models to adjust Python Turtle code from textual or visual instructions to generate a target shape.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead operationalize the behavior through task setups that expect an updated code snippet, a formatted code edit such as Search/Replace, or iterative code changes until an output, shape, or rendering matches the target.\n\nWhat it is taken as evidence of. Papers link it to three constructs, and they do not converge on a single linked construct. The prevailing claim is a causal relationship from code editing to Generalization, including statements that reasoning over differences between program states can aid generalization and that explicit editing rules improve length generalization. Smaller strands claim causal relationships from code editing to Functional correctness and to Robustness.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Program editing",
+    "Code editing",
+    "Code modification",
+    "Code refinement",
+    "CSS style adjustment",
+    "Code editing task",
+    "Code edit generation",
+    "Update code",
+    "Instructional code editing"
+  ],
+  "papers": [
+    "SoRFT: Issue Resolving with Subtask-oriented Reinforced Fine-Tuning",
+    "Generating CAD Code with Vision-Language Models for 3D Designs",
+    "RefactorBench: Evaluating Stateful Reasoning in Language Agents Through Code",
+    "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+    "VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents",
+    "EditLord: Learning Code Transformation Rules for Code Editing",
+    "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+    "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+    "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale",
+    "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+    "CursorCore: Assist Programming through Aligning Anything",
+    "TurtleBench: A Visual Programming Benchmark in Turtle Geometry",
+    "Learning to Edit Visual Programs with Self-Supervision",
+    "MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution",
+    "SelfCodeAlign: Self-Alignment for Code Generation",
+    "Source Code Foundation Models are Transferable Binary Analysis Knowledge Bases"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of modifying an existing program in a goal-directed manner to alter its output or correct errors.",
+      "paper": "Learning to Edit Visual Programs with Self-Supervision",
+      "original_name": "Program editing"
+    },
+    {
+      "text": "Editing an existing program according to a natural-language instruction to produce an updated code snippet.",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "original_name": "Code editing"
+    },
+    {
+      "text": "The observable action of altering existing source code by adding, deleting, or changing lines to implement a fix or new feature.",
+      "paper": "MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution",
+      "original_name": "Code modification"
+    },
+    {
+      "text": "The task of improving or correcting an existing piece of source code.",
+      "paper": "Source Code Foundation Models are Transferable Binary Analysis Knowledge Bases",
+      "original_name": "Code refinement"
+    },
+    {
+      "text": "The task of iteratively editing CSS style rules to make a web page's rendering match a target design.",
+      "paper": "VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents",
+      "original_name": "CSS style adjustment"
+    },
+    {
+      "text": "A task type within TurtleBench where models are given existing code and instructed to modify it to produce a visually altered shape based on textual or visual instructions.",
+      "paper": "TurtleBench: A Visual Programming Benchmark in Turtle Geometry",
+      "original_name": "Code editing task"
+    },
+    {
+      "text": "The observable task of producing code modifications, often in a specific format like Search/Replace, to fix a software issue based on the localized code context.",
+      "paper": "SoRFT: Issue Resolving with Subtask-oriented Reinforced Fine-Tuning",
+      "original_name": "Code edit generation"
+    },
+    {
+      "text": "Revising or fixing previously generated code in response to user requests for bug fixes or refinements.",
+      "paper": "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+      "original_name": "Update code"
+    },
+    {
+      "text": "The task of generating or modifying a code snippet based on a user's explicit natural language instructions.",
+      "paper": "CursorCore: Assist Programming through Aligning Anything",
+      "original_name": "Instructional code editing"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Learning to Edit Visual Programs with Self-Supervision",
+      "evidence": "Reasoning over the differences between the two states admits a more local task (as evidenced by our data efficient learning), and this property can aid in generalization. (Appendix B.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Learning to Edit Visual Programs with Self-Supervision"
+        ],
+        "icml25": [
+          "EditLord: Learning Code Transformation Rules for Code Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "EditLord: Learning Code Transformation Rules for Code Editing",
+      "evidence": "With explicit editing rules, EDITLORD significantly improved the baseline in generalization, e.g., by up to 24.87% improvement in length generalization and 58.1% improved robustness against semantics-preserving code transformations. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "EditLord: Learning Code Transformation Rules for Code Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Functional correctness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "EditLord: Learning Code Transformation Rules for Code Editing",
+      "evidence": "EDITLORD outperforms the state-of-the-art by an average of 22.7% in editing performance and 58.1% in robustness while achieving 20.2% higher functional correctness across critical software engineering and security applications, LM models, and editing modes. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "EditLord: Learning Code Transformation Rules for Code Editing"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is modifying existing code in response to a natural-language instruction, request, or feedback, with success defined as producing updated code that satisfies the requested change. Definitions also describe it as goal-directed editing to alter output or correct errors, or as adding, deleting, or changing lines to implement a fix or new feature. A smaller line of work frames the behavior as iterative refinement of previously generated code, and visually grounded versions require the edited code to produce a target shape or a rendering that matches a target design."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants differ by scope and setting. Some papers study file-level editing, while others span function, class, or file level, or require actions across multiple files during long agent trajectories with intermediate feedback. Alternative labels include program editing, code modification, and code refinement, and more specialized settings include CSS style adjustment and code edit generation, sometimes emitted in Search/Replace form after file, function, or line localization. Another visual-programming variant asks models to adjust Python Turtle code from textual or visual instructions to generate a target shape."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Papers instead operationalize the behavior through task setups that expect an updated code snippet, a formatted code edit such as Search/Replace, or iterative code changes until an output, shape, or rendering matches the target."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to three constructs, and they do not converge on a single linked construct. The prevailing claim is a causal relationship from code editing to Generalization, including statements that reasoning over differences between program states can aid generalization and that explicit editing rules improve length generalization. Smaller strands claim causal relationships from code editing to Functional correctness and to Robustness."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is modifying existing code in response to a natural-language instruction, request, or feedback, with success defined as producing updated code that satisfies the requested change. Definitions also describe it as goal-directed editing to alter output or correct errors, or as adding, deleting, or changing lines to implement a fix or new feature. A smaller line of work frames the behavior as iterative refinement of previously generated code, and visually grounded versions require the edited code to produce a target shape or a rendering that matches a target design.\n\nVariants. Variants differ by scope and setting. Some papers study file-level editing, while others span function, class, or file level, or require actions across multiple files during long agent trajectories with intermediate feedback. Alternative labels include program editing, code modification, and code refinement, and more specialized settings include CSS style adjustment and code edit generation, sometimes emitted in Search/Replace form after file, function, or line localization. Another visual-programming variant asks models to adjust Python Turtle code from textual or visual instructions to generate a target shape.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead operationalize the behavior through task setups that expect an updated code snippet, a formatted code edit such as Search/Replace, or iterative code changes until an output, shape, or rendering matches the target.\n\nWhat it is taken as evidence of. Papers link it to three constructs, and they do not converge on a single linked construct. The prevailing claim is a causal relationship from code editing to Generalization, including statements that reasoning over differences between program states can aid generalization and that explicit editing rules improve length generalization. Smaller strands claim causal relationships from code editing to Functional correctness and to Robustness.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Generating CAD Code with Vision-Language Models for 3D Designs",
+      "RefactorBench: Evaluating Stateful Reasoning in Language Agents Through Code",
+      "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+      "VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents"
+    ],
+    "icml25": [
+      "EditLord: Learning Code Transformation Rules for Code Editing",
+      "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+      "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale",
+      "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+      "CursorCore: Assist Programming through Aligning Anything"
+    ],
+    "neurips24": [
+      "Learning to Edit Visual Programs with Self-Supervision",
+      "MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution",
+      "SelfCodeAlign: Self-Alignment for Code Generation",
+      "Source Code Foundation Models are Transferable Binary Analysis Knowledge Bases"
+    ],
+    "acl25": [
+      "SoRFT: Issue Resolving with Subtask-oriented Reinforced Fine-Tuning"
+    ],
+    "naacl25": [
+      "TurtleBench: A Visual Programming Benchmark in Turtle Geometry"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "icml25": 6,
+    "neurips24": 4,
+    "acl25": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,840 @@
+{
+  "canonical_name": "Fact checking",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is evidence-grounded veracity judgment: a claim or statement is checked against retrieved documents, a corpus, tables, a knowledge base, a knowledge graph, or other grounding material, and labeled as true, false, supported, refuted, or not enough information. One paper describes automated fact-checking as verifying a queried fact \"with respect to a baseline knowledge.\" Papers differ mainly in output and accompanying requirements: some use binary true/false or support/unsupport decisions, while others use Supported, Refuted, and NotEnoughInfo, or require a verdict together with evidence, extracted supporting or refuting statements, or a human-readable explanation; the verdict is usually model-produced, though one line of work describes human or LLM-assisted veracity labeling after reviewing the claim and evidence. A smaller line of work broadens the behavior to extracting claims before verification, synthesizing missing or contradictory evidence into a belief judgment, or checking factual correctness during generation at the sentence or answer level.\n\nVariants. Papers study this behavior under names such as fact verification, claim verification, veracity prediction, statement verification, and table fact verification. Common settings are general claim-evidence verification, scientific claims over abstracts or papers, news and misinformation settings using external facts, and table-based verification where a statement is judged against table contents as true/false or entailment/contradiction. Smaller variants place the check over knowledge graphs or other knowledge bases, medical statements or medical claims, legal evidence, out-of-context image captions, individual claims in long generations, sub-claims or triplets, and generated-text factual consistency or answer verification.\n\nSpace of elicitation and scores. Papers link fact checking to 16 measurement instruments, most often FEVER, FEVEROUS, SciFact, HoVer, and TabFact. These instruments cover three-way claim verdicts, verification with sentence and table evidence, scientific claims with paper sentences as evidence, multi-hop verification, and table-grounded true/false judgments. Other instruments also appear in medical and climate settings, factual statement checking, retrieval benchmarks, and medium-context evaluations.\n\nWhat it is taken as evidence of. Papers link fact checking to 9 constructs, but they do not treat it as evidence of a single construct in a uniform way. The clearest measurement use is logical consistency: one paper says it assesses logical consistency \"particularly in the context of fact-checking,\" so the behavior serves there as the measurement setting. Other frequent construct links are heterogeneous, fact checking is related to interpretability and explainability and to faithfulness, one paper claims a causal relationship from chain-of-thought reasoning to fact checking, one claims a causal relationship from fact checking to generalization, and another also claims a causal relationship from interpretability and explainability to fact checking.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Veracity analysis",
+    "Factuality checking",
+    "Fact extraction and verification",
+    "Veracity judgment",
+    "Claim verification",
+    "Fact verification",
+    "Table fact verification",
+    "Statement verification",
+    "Verdict prediction",
+    "Factual consistency evaluation",
+    "Veracity labeling",
+    "Answer verification",
+    "Answer correctness assessment",
+    "Sentence-level verification",
+    "Factual verification",
+    "Veracity prediction",
+    "Fact checking",
+    "Fact-checking",
+    "Truthfulness prediction",
+    "Statement validation",
+    "Legal fact verification",
+    "Table-based fact verification",
+    "Sub-claim verification"
+  ],
+  "papers": [
+    "Can External Validation Tools Improve Annotation Quality for LLM-as-a-Judge?",
+    "Curriculum Debiasing: Toward Robust Parameter-Efficient Fine-Tuning Against Dataset Biases",
+    "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+    "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+    "Neuron Empirical Gradient: Discovering and Quantifying Neurons' Global Linear Controllability",
+    "Towards Multi-dimensional Evaluation of LLM Summarization across Domains and Languages",
+    "A Multi-Agent Framework with Automated Decision Rule Optimization for Cross-Domain Misinformation Detection",
+    "Adversarial Attacks Against Automated Fact-Checking: A Survey",
+    "AgentPro: Enhancing LLM Agents with Automated Process Supervision",
+    "Are LLMs Better than Reported? Detecting Label Errors and Mitigating Their Effect on Model Performance",
+    "Attacks by Content: Automated Fact-checking is an AI Security Issue",
+    "Augmenting Multi-Agent Communication with State Delta Trajectory",
+    "Can GRPO Boost Complex Multimodal Table Understanding?",
+    "CompassVerifier: A Unified and Robust Verifier for LLMs Evaluation and Outcome Reward",
+    "Conflict-Aware Soft Prompting for Retrieval-Augmented Generation",
+    "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+    "DnDScore: Decontextualization and Decomposition for Factuality Verification in Long-Form Text Generation",
+    "DocAgent: An Agentic Framework for Multi-Modal Long-Context Document Understanding",
+    "Does quantization affect models' performance on long-context tasks?",
+    "Efficient Real-time Refinement of Language Model Text Generation",
+    "Enhancing Logical Reasoning in Language Models via Symbolically-Guided Monte Carlo Process Supervision",
+    "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+    "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering",
+    "Long-Form Information Alignment Evaluation Beyond Atomic Facts",
+    "Matter-of-Fact: A Benchmark for Verifying the Feasibility of Literature-Supported Claims in Materials Science",
+    "MedFact: A Large-scale Chinese Dataset for Evidence-based Medical Fact-checking of LLM Responses",
+    "MusKGC: A Flexible Multi-source Knowledge Enhancement Framework for Open-World Knowledge Graph Completion",
+    "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking",
+    "Refining Attention for Explainable and Noise-Robust Fact-Checking with Transformers",
+    "SciRIFF: A Resource to Enhance Language Model Instruction-Following over Scientific Literature",
+    "TSVer: A Benchmark for Fact Verification Against Time-Series Evidence",
+    "Table-LLM-Specialist: Language Model Specialists for Tables using Iterative Fine-tuning",
+    "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+    "The Missing Parts: Augmenting Fact Verification with Half Truth Detection",
+    "The Psychology of Falsehood: A Human-Centric Survey of Misinformation Detection",
+    "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+    "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+    "VeriFact: Enhancing Long-Form Factuality Evaluation with Refined Fact Extraction and Reference Facts",
+    "Weaver: Interweaving SQL and LLM for Table Reasoning",
+    "When Truthful Representations Flip Under Deceptive Instructions?",
+    "BTR: Binary Token Representations for Efficient Retrieval Augmented Language Models",
+    "BadEdit: Backdooring Large Language Models by Model Editing",
+    "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+    "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+    "Massive Editing for Large Language Models via Meta Learning",
+    "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners",
+    "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "GameArena: Evaluating LLM Reasoning through Live Computer Games",
+    "Grounding by Trying: LLMs with Reinforcement Learning-Enhanced Retrieval",
+    "Logical Consistency of Large Language Models in Fact-Checking",
+    "Reliable and Diverse Evaluation of LLM Medical Knowledge Mastery",
+    "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+    "SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding",
+    "Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation",
+    "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA",
+    "Evaluating LLMs Across Multi-Cognitive Levels: From Medical Knowledge Mastery to Scenario-Based Problem Solving",
+    "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+    "Position: LLMs Need a Bayesian Meta-Reasoning Framework for More Robust and Generalizable Reasoning",
+    "ALTER: Augmentation for Large-Table-Based Reasoning",
+    "COVE: COntext and VEracity prediction for out-of-context images",
+    "Eliciting Critical Reasoning in Retrieval-Augmented Generation via Contrastive Explanations",
+    "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+    "Few-Shot Natural Language to First-Order Logic Translation via Code Generation",
+    "Grounding Fallacies Misrepresenting Scientific Publications in Evidence",
+    "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+    "LLaSA: Large Language and Structured Data Assistant",
+    "Token-Level Density-Based Uncertainty Quantification Methods for Eliciting Truthfulness of Large Language Models",
+    "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+    "Beemo: Benchmark of Expert-edited Machine-generated Outputs",
+    "CORRECT: Context- and Reference-Augmented Reasoning and Prompting for Fact-Checking",
+    "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+    "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection",
+    "Is your benchmark truly adversarial? AdvScore: Evaluating Human-Grounded Adversarialness",
+    "SimRAG: Self-Improving Retrieval-Augmented Generation for Adapting Large Language Models to Specialized Domains",
+    "Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs",
+    "LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models",
+    "Long-form factuality in large language models",
+    "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution",
+    "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token"
+  ],
+  "paper_count": 79,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of classifying a claim as true, false, or another relevant category based on retrieved evidence.",
+      "paper": "The Psychology of Falsehood: A Human-Centric Survey of Misinformation Detection",
+      "original_name": "Veracity prediction"
+    },
+    {
+      "text": "The process of synthesizing evidence to make a judgment on whether a claim should be believed, including handling cases of missing or contradictory evidence.",
+      "paper": "Attacks by Content: Automated Fact-checking is an AI Security Issue",
+      "original_name": "Veracity analysis"
+    },
+    {
+      "text": "The task of identifying factual claims in text and verifying their correctness against a knowledge source.",
+      "paper": "AgentPro: Enhancing LLM Agents with Automated Process Supervision",
+      "original_name": "Fact extraction and verification"
+    },
+    {
+      "text": "Judging whether a generated fact is entailed by retrieved evidence.",
+      "paper": "MusKGC: A Flexible Multi-source Knowledge Enhancement Framework for Open-World Knowledge Graph Completion",
+      "original_name": "Factuality checking"
+    },
+    {
+      "text": "The task of verifying the truthfulness of a given claim against a corpus of evidence.",
+      "paper": "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+      "original_name": "Fact checking"
+    },
+    {
+      "text": "The task of making a final determination on whether a piece of news is true or false, based on provided analysis, evidence, and decision rules.",
+      "paper": "A Multi-Agent Framework with Automated Decision Rule Optimization for Cross-Domain Misinformation Detection",
+      "original_name": "Veracity judgment"
+    },
+    {
+      "text": "Determining whether a scientific claim is supported or refuted by evidence in a given abstract or paper, often accompanied by extracted supporting or refuting statements.",
+      "paper": "SciRIFF: A Resource to Enhance Language Model Instruction-Following over Scientific Literature",
+      "original_name": "Claim verification"
+    },
+    {
+      "text": "The task of determining whether a given claim is supported or refuted by evidence from a provided knowledge source.",
+      "paper": "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering",
+      "original_name": "Fact verification"
+    },
+    {
+      "text": "The task of determining whether a given statement is true or false based on the content of an associated table.",
+      "paper": "Can GRPO Boost Complex Multimodal Table Understanding?",
+      "original_name": "Table fact verification"
+    },
+    {
+      "text": "The observable behavior of a model assessing whether a given statement is factually correct, often through step-by-step reasoning.",
+      "paper": "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+      "original_name": "Statement verification"
+    },
+    {
+      "text": "Classifying the truthfulness of a claim based on retrieved evidence, typically as Supported, Refuted, or NotEnoughInfo.",
+      "paper": "Adversarial Attacks Against Automated Fact-Checking: A Survey",
+      "original_name": "Verdict prediction"
+    },
+    {
+      "text": "Assessing whether a generated text (e.g., summary, dialogue response) is factually consistent with respect to a grounding text or source document.",
+      "paper": "Are LLMs Better than Reported? Detecting Label Errors and Mitigating Their Effect on Model Performance",
+      "original_name": "Factual consistency evaluation"
+    },
+    {
+      "text": "Assigning a truthfulness label to a claim-evidence pair after reviewing both elements, either through human annotation or LLM-assisted labeling.",
+      "paper": "MedFact: A Large-scale Chinese Dataset for Evidence-based Medical Fact-checking of LLM Responses",
+      "original_name": "Veracity labeling"
+    },
+    {
+      "text": "The process of cross-checking a generated answer against complementary sources or modalities to confirm its accuracy and completeness.",
+      "paper": "DocAgent: An Agentic Framework for Multi-Modal Long-Context Document Understanding",
+      "original_name": "Answer verification"
+    },
+    {
+      "text": "The observable process of checking the factual correctness of individual sentences as they are generated during text production.",
+      "paper": "Efficient Real-time Refinement of Language Model Text Generation",
+      "original_name": "Sentence-level verification"
+    },
+    {
+      "text": "The observable task of assessing a given factual statement and producing a binary output of \"True\" or \"False\" based on the instructional context.",
+      "paper": "When Truthful Representations Flip Under Deceptive Instructions?",
+      "original_name": "Factual verification"
+    },
+    {
+      "text": "The observable task of verifying a queried fact against a provided knowledge base, such as a knowledge graph, and producing a binary response indicating its validity.",
+      "paper": "Logical Consistency of Large Language Models in Fact-Checking",
+      "original_name": "Fact-checking"
+    },
+    {
+      "text": "Predicting whether a human statement is true or false after questioning.",
+      "paper": "GameArena: Evaluating LLM Reasoning through Live Computer Games",
+      "original_name": "Truthfulness prediction"
+    },
+    {
+      "text": "Determining whether a given medical statement is true or false, requiring precise discrimination of knowledge without the aid of multiple-choice options.",
+      "paper": "Evaluating LLMs Across Multi-Cognitive Levels: From Medical Knowledge Mastery to Scenario-Based Problem Solving",
+      "original_name": "Statement validation"
+    },
+    {
+      "text": "Selecting facts that can be logically inferred from evidence in a legal case.",
+      "paper": "LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models",
+      "original_name": "Legal fact verification"
+    },
+    {
+      "text": "The task of determining whether a given natural language statement is true or false based on the content of a provided table.",
+      "paper": "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+      "original_name": "Table-based fact verification"
+    },
+    {
+      "text": "Evaluating the truthfulness of individual triplets or sub-claims by retrieving relevant documents and determining whether they support or refute the claim.",
+      "paper": "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+      "original_name": "Sub-claim verification"
+    }
+  ],
+  "definition_count": 22,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FEVER",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unsupervised Pretraining for Fact Verification by Language Model Distillation",
+      "evidence": "We use the FEVER (Thorne et al., 2018) dataset for all our experiments and comparison against previous methods. (Section 4.1)",
+      "paper_count": 10,
+      "paper_weight": 10.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Unsupervised Pretraining for Fact Verification by Language Model Distillation",
+          "BTR: Binary Token Representations for Efficient Retrieval Augmented Language Models",
+          "Massive Editing for Large Language Models via Meta Learning"
+        ],
+        "neurips24": [
+          "Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs"
+        ],
+        "iclr25": [
+          "Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation"
+        ],
+        "naacl25": [
+          "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+          "Eliciting Critical Reasoning in Retrieval-Augmented Generation via Contrastive Explanations"
+        ],
+        "emnlp25": [
+          "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+          "AgentPro: Enhancing LLM Agents with Automated Process Supervision",
+          "Adversarial Attacks Against Automated Fact-Checking: A Survey"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FEVEROUS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners",
+      "evidence": "FEVEROUS, on the other hand, is a fact-verification dataset that requires the identification of multiple relevant tables for reasoning and verifying factual questions.",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners"
+        ],
+        "neurips24": [
+          "Information Re-Organization Improves Reasoning in Large Language Models",
+          "Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs"
+        ],
+        "naacl25": [
+          "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+          "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection"
+        ],
+        "emnlp25": [
+          "Refining Attention for Explainable and Noise-Robust Fact-Checking with Transformers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SciFact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Information Re-Organization Improves Reasoning in Large Language Models",
+      "evidence": "Besides, we also take into account the SCIFACT [26] dataset, notable for its inclusion of scientific claims (Section 4.1).",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Information Re-Organization Improves Reasoning in Large Language Models"
+        ],
+        "naacl25": [
+          "CORRECT: Context- and Reference-Augmented Reasoning and Prompting for Fact-Checking"
+        ],
+        "acl25": [
+          "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking"
+        ],
+        "emnlp25": [
+          "Refining Attention for Explainable and Noise-Robust Fact-Checking with Transformers",
+          "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HoVer",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Information Re-Organization Improves Reasoning in Large Language Models",
+      "evidence": "Claim Verification The task involves assessing a given claim against a set of evidence documents to determine whether they support or refute the claim [12]. We consider HOVER [24] and FEVEROUS [25]... (Section 4.1).",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Information Re-Organization Improves Reasoning in Large Language Models"
+        ],
+        "iclr25": [
+          "Grounding by Trying: LLMs with Reinforcement Learning-Enhanced Retrieval"
+        ],
+        "naacl25": [
+          "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+          "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TabFact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "evidence": "We evaluate our method on three datasets covering fact verification, short-form, and long-form question-answering tasks... (a) TabFact (Chen et al., 2019): A fact verification benchmark utilizing Wikipedia tables. (Section 3)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables"
+        ],
+        "acl25": [
+          "TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models"
+        ],
+        "emnlp25": [
+          "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+          "Can GRPO Boost Complex Multimodal Table Understanding?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Creak",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+      "evidence": "and one fact-checking dataset: Creak (Onoe et al., 2021).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph"
+        ],
+        "iclr25": [
+          "Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation",
+          "Weak to Strong Generalization for Large Language Models with Multi-capabilities"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Information retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Unsupervised Pretraining for Fact Verification by Language Model Distillation",
+      "evidence": "Most recent works typically divide the fact verification task into two stages. The first stage retrieves a relatively small subset of evidence from a knowledge source (e.g. a knowledge graph) that is relevant to verify a given claim. (Section 2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Unsupervised Pretraining for Fact Verification by Language Model Distillation"
+        ],
+        "icml25": [
+          "DEFAME: Dynamic Evidence-based FAct-checking with Multimodal Experts"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PubHealth",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting",
+      "evidence": "PubHealth is a dataset of medical claims spanning a variety of biomedical subjects and it requires the RAG system to verify a given claim based on the retrieved documents. (Section 4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting"
+        ],
+        "acl25": [
+          "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FM2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Refining Attention for Explainable and Noise-Robust Fact-Checking with Transformers",
+      "evidence": "We use four popular datasets for fact-checking: Feverous, AVeriTeC, FM2 and SciFact.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Refining Attention for Explainable and Noise-Robust Fact-Checking with Transformers",
+          "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Climate-FEVER",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+      "evidence": "\u201cClimate-FEVER (Diggelmann et al., 2021), Fact checking\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+          "Enhancing Logical Reasoning in Language Models via Symbolically-Guided Monte Carlo Process Supervision"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Interpretability and explainability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+      "evidence": "Claim verification is a long-standing and challenging task that demands not only high accuracy but also explainability of the verification process. (Abstract)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+        ],
+        "acl25": [
+          "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FB15k-237",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Unsupervised Pretraining for Fact Verification by Language Model Distillation",
+      "evidence": "We show that SFAVEL yields a significant improvement over prior state-of-the-art, both over unsupervised and supervised methods, on the FEVER fact verification challenge (+8% accuracy) and the FB15k-237 dataset (+5.3% Hits@1). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Unsupervised Pretraining for Fact Verification by Language Model Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CounterFact",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BadEdit: Backdooring Large Language Models by Model Editing",
+      "evidence": "Counterfact Fact-Checking (Meng et al., 2022a) is a data set with factual statements consisting of a statement with corresponding fact.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "BadEdit: Backdooring Large Language Models by Model Editing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Multi-hop reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Information Re-Organization Improves Reasoning in Large Language Models",
+      "evidence": "...we conduct experiments using Llama2-70B [2], GPT-3.5 [1], and GPT-4 [3] on various contextually aware multi-hop reasoning tasks, including claim verification [12], question answering [13], and reading comprehension [14] (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Information Re-Organization Improves Reasoning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models",
+      "evidence": "Tasks at the Understanding level examine the ability to comprehend and interpret facts, entities, concepts, and relationships in legal texts... We construct five tasks at this level: ...Legal Fact Verification (2-2)... (Section C.3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TruthfulQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution",
+      "evidence": "We evaluate a biography-generation task (Min et al., 2023) and TruthfulQA (Lin et al., 2022) which is a benchmark for testing false beliefs or misconceptions. (Section 4.1, Fact verification)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RTE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "QuanTA: Efficient High-Rank Fine-Tuning of LLMs with Quantum-Informed Tensor Adaptation",
+      "evidence": "\"the RTE dataset [49], a classification task where the model is tasked to verify the correctness of statements\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "QuanTA: Efficient High-Rank Fine-Tuning of LLMs with Quantum-Informed Tensor Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+      "evidence": "LongBench (Bai et al., 2024): Focused on medium-context tasks (10K tokens), it assesses summarization, QA, and fact-checking across multiple domains...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+      "evidence": "fact verification is one area in which assessing the robustness of models developed for this task is crucial. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain-of-thought reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+      "evidence": "we extend this by incorporating agent-based LLM, enabling iterative interactions with the knowledge base to resolve ambiguous entities and execute multi-step reasoning for more robust and in-depth claim verification. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Misinformation detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection",
+      "evidence": "Consequently, fact-checking based methods (Thorne and Vlachos, 2018; Nakov et al., 2021) have been the mainstream for fake news detection. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection",
+      "evidence": "The model then performs reasoning over this combined information to predict the label Yp of the claim and generates a human-readable explanation Ye. (Section 3.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection",
+      "evidence": "the LLM world knowledge conversion produces hallucinatory evidence, directly impacting claim validation (Section 4.7)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+      "evidence": "We consider the task of fact-checking claims against grounding documents, where the goal is to assess factual consistency based on provided textual evidence (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LOFT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+      "evidence": "\u201cLOFT (7 retrieval tasks including argumentative retrieval, fact-checking, web search, multi-hop reasoning QA, etc)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "LongRoPE2: Near-Lossless LLM Context Window Scaling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SAFE",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Long-form factuality in large language models",
+      "evidence": "...and determining whether a fact is supported by the search results.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Long-form factuality in large language models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Logical consistency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Logical Consistency of Large Language Models in Fact-Checking",
+      "evidence": "\"We assess and improve the logical consistency of LLMs in propositional logic queries and logic rules, particularly in the context of fact-checking.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Logical Consistency of Large Language Models in Fact-Checking"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 27,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 24,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is evidence-grounded veracity judgment: a claim or statement is checked against retrieved documents, a corpus, tables, a knowledge base, a knowledge graph, or other grounding material, and labeled as true, false, supported, refuted, or not enough information. One paper describes automated fact-checking as verifying a queried fact \"with respect to a baseline knowledge.\" Papers differ mainly in output and accompanying requirements: some use binary true/false or support/unsupport decisions, while others use Supported, Refuted, and NotEnoughInfo, or require a verdict together with evidence, extracted supporting or refuting statements, or a human-readable explanation; the verdict is usually model-produced, though one line of work describes human or LLM-assisted veracity labeling after reviewing the claim and evidence. A smaller line of work broadens the behavior to extracting claims before verification, synthesizing missing or contradictory evidence into a belief judgment, or checking factual correctness during generation at the sentence or answer level."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study this behavior under names such as fact verification, claim verification, veracity prediction, statement verification, and table fact verification. Common settings are general claim-evidence verification, scientific claims over abstracts or papers, news and misinformation settings using external facts, and table-based verification where a statement is judged against table contents as true/false or entailment/contradiction. Smaller variants place the check over knowledge graphs or other knowledge bases, medical statements or medical claims, legal evidence, out-of-context image captions, individual claims in long generations, sub-claims or triplets, and generated-text factual consistency or answer verification."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link fact checking to 16 measurement instruments, most often FEVER, FEVEROUS, SciFact, HoVer, and TabFact. These instruments cover three-way claim verdicts, verification with sentence and table evidence, scientific claims with paper sentences as evidence, multi-hop verification, and table-grounded true/false judgments. Other instruments also appear in medical and climate settings, factual statement checking, retrieval benchmarks, and medium-context evaluations."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link fact checking to 9 constructs, but they do not treat it as evidence of a single construct in a uniform way. The clearest measurement use is logical consistency: one paper says it assesses logical consistency \"particularly in the context of fact-checking,\" so the behavior serves there as the measurement setting. Other frequent construct links are heterogeneous, fact checking is related to interpretability and explainability and to faithfulness, one paper claims a causal relationship from chain-of-thought reasoning to fact checking, one claims a causal relationship from fact checking to generalization, and another also claims a causal relationship from interpretability and explainability to fact checking."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is evidence-grounded veracity judgment: a claim or statement is checked against retrieved documents, a corpus, tables, a knowledge base, a knowledge graph, or other grounding material, and labeled as true, false, supported, refuted, or not enough information. One paper describes automated fact-checking as verifying a queried fact \"with respect to a baseline knowledge.\" Papers differ mainly in output and accompanying requirements: some use binary true/false or support/unsupport decisions, while others use Supported, Refuted, and NotEnoughInfo, or require a verdict together with evidence, extracted supporting or refuting statements, or a human-readable explanation; the verdict is usually model-produced, though one line of work describes human or LLM-assisted veracity labeling after reviewing the claim and evidence. A smaller line of work broadens the behavior to extracting claims before verification, synthesizing missing or contradictory evidence into a belief judgment, or checking factual correctness during generation at the sentence or answer level.\n\nVariants. Papers study this behavior under names such as fact verification, claim verification, veracity prediction, statement verification, and table fact verification. Common settings are general claim-evidence verification, scientific claims over abstracts or papers, news and misinformation settings using external facts, and table-based verification where a statement is judged against table contents as true/false or entailment/contradiction. Smaller variants place the check over knowledge graphs or other knowledge bases, medical statements or medical claims, legal evidence, out-of-context image captions, individual claims in long generations, sub-claims or triplets, and generated-text factual consistency or answer verification.\n\nSpace of elicitation and scores. Papers link fact checking to 16 measurement instruments, most often FEVER, FEVEROUS, SciFact, HoVer, and TabFact. These instruments cover three-way claim verdicts, verification with sentence and table evidence, scientific claims with paper sentences as evidence, multi-hop verification, and table-grounded true/false judgments. Other instruments also appear in medical and climate settings, factual statement checking, retrieval benchmarks, and medium-context evaluations.\n\nWhat it is taken as evidence of. Papers link fact checking to 9 constructs, but they do not treat it as evidence of a single construct in a uniform way. The clearest measurement use is logical consistency: one paper says it assesses logical consistency \"particularly in the context of fact-checking,\" so the behavior serves there as the measurement setting. Other frequent construct links are heterogeneous, fact checking is related to interpretability and explainability and to faithfulness, one paper claims a causal relationship from chain-of-thought reasoning to fact checking, one claims a causal relationship from fact checking to generalization, and another also claims a causal relationship from interpretability and explainability to fact checking.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "A Multi-Agent Framework with Automated Decision Rule Optimization for Cross-Domain Misinformation Detection",
+      "Adversarial Attacks Against Automated Fact-Checking: A Survey",
+      "AgentPro: Enhancing LLM Agents with Automated Process Supervision",
+      "Are LLMs Better than Reported? Detecting Label Errors and Mitigating Their Effect on Model Performance",
+      "Attacks by Content: Automated Fact-checking is an AI Security Issue",
+      "Augmenting Multi-Agent Communication with State Delta Trajectory",
+      "Can GRPO Boost Complex Multimodal Table Understanding?",
+      "CompassVerifier: A Unified and Robust Verifier for LLMs Evaluation and Outcome Reward",
+      "Conflict-Aware Soft Prompting for Retrieval-Augmented Generation",
+      "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+      "DnDScore: Decontextualization and Decomposition for Factuality Verification in Long-Form Text Generation",
+      "DocAgent: An Agentic Framework for Multi-Modal Long-Context Document Understanding",
+      "Does quantization affect models' performance on long-context tasks?",
+      "Efficient Real-time Refinement of Language Model Text Generation",
+      "Enhancing Logical Reasoning in Language Models via Symbolically-Guided Monte Carlo Process Supervision",
+      "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "InfoGain-RAG: Boosting Retrieval-Augmented Generation through Document Information Gain-based Reranking and Filtering",
+      "Long-Form Information Alignment Evaluation Beyond Atomic Facts",
+      "Matter-of-Fact: A Benchmark for Verifying the Feasibility of Literature-Supported Claims in Materials Science",
+      "MedFact: A Large-scale Chinese Dataset for Evidence-based Medical Fact-checking of LLM Responses",
+      "MusKGC: A Flexible Multi-source Knowledge Enhancement Framework for Open-World Knowledge Graph Completion",
+      "Query-Focused Retrieval Heads Improve Long-Context Reasoning and Re-ranking",
+      "Refining Attention for Explainable and Noise-Robust Fact-Checking with Transformers",
+      "SciRIFF: A Resource to Enhance Language Model Instruction-Following over Scientific Literature",
+      "TSVer: A Benchmark for Fact Verification Against Time-Series Evidence",
+      "Table-LLM-Specialist: Language Model Specialists for Tables using Iterative Fine-tuning",
+      "Table-R1: Inference-Time Scaling for Table Reasoning Tasks",
+      "The Missing Parts: Augmenting Fact Verification with Half Truth Detection",
+      "The Psychology of Falsehood: A Human-Centric Survey of Misinformation Detection",
+      "Training a Utility-based Retriever Through Shared Context Attribution for Retrieval-Augmented Language Models",
+      "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+      "VeriFact: Enhancing Long-Form Factuality Evaluation with Refined Fact Extraction and Reference Facts",
+      "Weaver: Interweaving SQL and LLM for Table Reasoning",
+      "When Truthful Representations Flip Under Deceptive Instructions?"
+    ],
+    "iclr24": [
+      "BTR: Binary Token Representations for Efficient Retrieval Augmented Language Models",
+      "BadEdit: Backdooring Large Language Models by Model Editing",
+      "Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph",
+      "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+      "Massive Editing for Large Language Models via Meta Learning",
+      "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners",
+      "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
+    ],
+    "iclr25": [
+      "GameArena: Evaluating LLM Reasoning through Live Computer Games",
+      "Grounding by Trying: LLMs with Reinforcement Learning-Enhanced Retrieval",
+      "Logical Consistency of Large Language Models in Fact-Checking",
+      "Reliable and Diverse Evaluation of LLM Medical Knowledge Mastery",
+      "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+      "SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding",
+      "Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation",
+      "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA"
+    ],
+    "icml25": [
+      "Evaluating LLMs Across Multi-Cognitive Levels: From Medical Knowledge Mastery to Scenario-Based Problem Solving",
+      "LongRoPE2: Near-Lossless LLM Context Window Scaling",
+      "Position: LLMs Need a Bayesian Meta-Reasoning Framework for More Robust and Generalizable Reasoning"
+    ],
+    "naacl25": [
+      "ALTER: Augmentation for Large-Table-Based Reasoning",
+      "COVE: COntext and VEracity prediction for out-of-context images",
+      "Eliciting Critical Reasoning in Retrieval-Augmented Generation via Contrastive Explanations",
+      "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+      "Few-Shot Natural Language to First-Order Logic Translation via Code Generation",
+      "Grounding Fallacies Misrepresenting Scientific Publications in Evidence",
+      "H-STAR: LLM-driven Hybrid SQL-Text Adaptive Reasoning on Tables",
+      "LLaSA: Large Language and Structured Data Assistant",
+      "Token-Level Density-Based Uncertainty Quantification Methods for Eliciting Truthfulness of Large Language Models",
+      "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+      "Beemo: Benchmark of Expert-edited Machine-generated Outputs",
+      "CORRECT: Context- and Reference-Augmented Reasoning and Prompting for Fact-Checking",
+      "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+      "IMRRF: Integrating Multi-Source Retrieval and Redundancy Filtering for LLM-based Fake News Detection",
+      "Is your benchmark truly adversarial? AdvScore: Evaluating Human-Grounded Adversarialness",
+      "SimRAG: Self-Improving Retrieval-Augmented Generation for Adapting Large Language Models to Specialized Domains"
+    ],
+    "neurips24": [
+      "Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs",
+      "LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models",
+      "Long-form factuality in large language models",
+      "Nearest Neighbor Speculative Decoding for LLM Generation and Attribution",
+      "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token"
+    ],
+    "acl25": [
+      "Can External Validation Tools Improve Annotation Quality for LLM-as-a-Judge?",
+      "Curriculum Debiasing: Toward Robust Parameter-Efficient Fine-Tuning Against Dataset Biases",
+      "DRAG: Distilling RAG for SLMs from LLMs to Transfer Knowledge and Mitigate Hallucination via Evidence and Graph-based Distillation",
+      "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+      "Neuron Empirical Gradient: Discovering and Quantifying Neurons' Global Linear Controllability",
+      "Towards Multi-dimensional Evaluation of LLM Summarization across Domains and Languages"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 34,
+    "iclr24": 7,
+    "iclr25": 8,
+    "icml25": 3,
+    "naacl25": 16,
+    "neurips24": 5,
+    "acl25": 6
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

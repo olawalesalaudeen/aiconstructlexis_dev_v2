@@ -1,0 +1,185 @@
+{
+  "canonical_name": "BigCodeBench",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, BigCodeBench is most commonly described as a code generation benchmark centered on completion or function completion tasks that require correct use of library APIs and multiple function calls. Definitions also portray it as a Python benchmark with execution-based evaluation over 1,140 fine-grained, rich-context, multi-tool-use tasks drawn from 139 libraries and 7 domains, while another paper describes 148 function completion problems requiring multiple Python libraries. Some papers further describe it as covering diverse problems from cryptography to data visualization, and a smaller usage mentions the BigCodeBench Leaderboard plus the BigCodeBench-Hard and BigCodeBench-full subsets.\n\nWhat it is claimed to measure. Papers link BigCodeBench to 3 behavioral indicators and 1 construct. The prevailing use is to measure code generation, with papers describing it as a benchmark for code generation, a harness for running and evaluating LM-written code, and a dataset attached to the code generation task. A recurring secondary framing says it measures tool use and instruction following, especially in tasks that require using tools and following complex instructions, and one paper reports it as measuring compositional reasoning because tasks can require sequences of function calls from multiple libraries.\n\nSpace of uses. Papers usually position BigCodeBench as a standalone evaluation benchmark, and no measurement instrument is linked to it. Reported uses include zero-shot evaluation in the completion setting, use of the official evaluation libraries or evaluation harness to run and score generated code, reporting results on BigCodeBench-Hard and BigCodeBench-full, and drawing examples from the BigCodeBench Leaderboard. One paper also uses it as a comparison point for assessing alignment between a static benchmark and the Copilot Arena leaderboard.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "BigCodeBench"
+  ],
+  "papers": [
+    "ACECODER: Acing Coder RL via Automated Test-Case Synthesis",
+    "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+    "ReflectionCoder: Learning from Reflection Sequence for Enhanced One-off Code Generation",
+    "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models",
+    "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+    "Efficient Model Development through Fine-tuning Transfer",
+    "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+    "Teaching Your Models to Understand Code via Focal Preference Alignment",
+    "UnitCoder: Scalable Code Synthesis from Pre-training Corpora",
+    "Agent Skill Acquisition for Large Language Models via CycleQD",
+    "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+    "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+    "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+    "Copilot Arena: A Platform for Code LLM Evaluation in the Wild",
+    "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+    "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+    "PAK-UCB Contextual Bandit: An Online Learning Approach to Prompt-Aware Selection of Generative Models and LLMs",
+    "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+    "Selective Prompt Anchoring for Code Generation",
+    "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+    "Language Models can Categorize System Inputs for Performance Analysis",
+    "Scaling LLM Inference Efficiently with Optimized Sample Compute Allocation"
+  ],
+  "paper_count": 22,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark designed to evaluate a code model's ability to generate code that correctly utilizes various library APIs in a completion setting.",
+      "paper": "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+      "original_name": "BigCodeBench"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "evidence": "Our BigCodeBench focuses on evaluating the fundamental code generation capability of LLMs, which is also an essential path toward strong code agents. (Section 5)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions"
+        ],
+        "icml25": [
+          "Selective Prompt Anchoring for Code Generation",
+          "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+          "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+          "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Tool use",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "evidence": "We introduce BigCodeBench, a new high-quality programming benchmark constructed via the collaboration between human experts and LLMs, assessing the capability of tool use and complex instruction following. (Section 6)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions"
+        ],
+        "icml25": [
+          "Selective Prompt Anchoring for Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Selective Prompt Anchoring for Code Generation",
+      "evidence": "BigCodeBench (Zhuo et al., 2024) is a more challenging benchmark for code generation that evaluates models\u2019 abilities to follow complex instructions... (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Selective Prompt Anchoring for Code Generation",
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Compositional reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "evidence": "BigCodeBench frequently invokes a sequence of function calls from multiple libraries to solve a single task, requiring significant compositional reasoning ability for task-solving. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, BigCodeBench is most commonly described as a code generation benchmark centered on completion or function completion tasks that require correct use of library APIs and multiple function calls. Definitions also portray it as a Python benchmark with execution-based evaluation over 1,140 fine-grained, rich-context, multi-tool-use tasks drawn from 139 libraries and 7 domains, while another paper describes 148 function completion problems requiring multiple Python libraries. Some papers further describe it as covering diverse problems from cryptography to data visualization, and a smaller usage mentions the BigCodeBench Leaderboard plus the BigCodeBench-Hard and BigCodeBench-full subsets."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link BigCodeBench to 3 behavioral indicators and 1 construct. The prevailing use is to measure code generation, with papers describing it as a benchmark for code generation, a harness for running and evaluating LM-written code, and a dataset attached to the code generation task. A recurring secondary framing says it measures tool use and instruction following, especially in tasks that require using tools and following complex instructions, and one paper reports it as measuring compositional reasoning because tasks can require sequences of function calls from multiple libraries."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers usually position BigCodeBench as a standalone evaluation benchmark, and no measurement instrument is linked to it. Reported uses include zero-shot evaluation in the completion setting, use of the official evaluation libraries or evaluation harness to run and score generated code, reporting results on BigCodeBench-Hard and BigCodeBench-full, and drawing examples from the BigCodeBench Leaderboard. One paper also uses it as a comparison point for assessing alignment between a static benchmark and the Copilot Arena leaderboard."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, BigCodeBench is most commonly described as a code generation benchmark centered on completion or function completion tasks that require correct use of library APIs and multiple function calls. Definitions also portray it as a Python benchmark with execution-based evaluation over 1,140 fine-grained, rich-context, multi-tool-use tasks drawn from 139 libraries and 7 domains, while another paper describes 148 function completion problems requiring multiple Python libraries. Some papers further describe it as covering diverse problems from cryptography to data visualization, and a smaller usage mentions the BigCodeBench Leaderboard plus the BigCodeBench-Hard and BigCodeBench-full subsets.\n\nWhat it is claimed to measure. Papers link BigCodeBench to 3 behavioral indicators and 1 construct. The prevailing use is to measure code generation, with papers describing it as a benchmark for code generation, a harness for running and evaluating LM-written code, and a dataset attached to the code generation task. A recurring secondary framing says it measures tool use and instruction following, especially in tasks that require using tools and following complex instructions, and one paper reports it as measuring compositional reasoning because tasks can require sequences of function calls from multiple libraries.\n\nSpace of uses. Papers usually position BigCodeBench as a standalone evaluation benchmark, and no measurement instrument is linked to it. Reported uses include zero-shot evaluation in the completion setting, use of the official evaluation libraries or evaluation harness to run and score generated code, reporting results on BigCodeBench-Hard and BigCodeBench-full, and drawing examples from the BigCodeBench Leaderboard. One paper also uses it as a comparison point for assessing alignment between a static benchmark and the Copilot Arena leaderboard.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "ACECODER: Acing Coder RL via Automated Test-Case Synthesis",
+      "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+      "ReflectionCoder: Learning from Reflection Sequence for Enhanced One-off Code Generation",
+      "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models"
+    ],
+    "emnlp25": [
+      "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+      "Efficient Model Development through Fine-tuning Transfer",
+      "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+      "Teaching Your Models to Understand Code via Focal Preference Alignment",
+      "UnitCoder: Scalable Code Synthesis from Pre-training Corpora"
+    ],
+    "iclr25": [
+      "Agent Skill Acquisition for Large Language Models via CycleQD",
+      "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+      "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis"
+    ],
+    "icml25": [
+      "Copilot Arena: A Platform for Code LLM Evaluation in the Wild",
+      "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+      "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+      "PAK-UCB Contextual Bandit: An Online Learning Approach to Prompt-Aware Selection of Generative Models and LLMs",
+      "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+      "Selective Prompt Anchoring for Code Generation",
+      "The Elicitation Game: Evaluating Capability Elicitation Techniques"
+    ],
+    "naacl25": [
+      "Language Models can Categorize System Inputs for Performance Analysis",
+      "Scaling LLM Inference Efficiently with Optimized Sample Compute Allocation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 5,
+    "iclr25": 4,
+    "icml25": 7,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

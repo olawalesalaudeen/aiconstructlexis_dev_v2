@@ -1,0 +1,171 @@
+{
+  "canonical_name": "Expert routing",
+  "type": "behavior",
+  "canonical_definition": "Expert routing is most commonly described as the behavior of selecting and activating specific expert sub-networks within a model to process inputs. The prevailing operationalization of this behavior occurs at the token level, where a \"router\" or \"gating network\" assigns individual tokens to one or more experts, often based on similarity in the hidden space. Some work distinguishes between routing decisions made independently at each layer and those made sequentially, where one layer's assignments condition the next. A smaller body of work conceptualizes routing at a coarser granularity, such as \"sequence routing,\" where an entire input sequence is assigned to a single expert, or \"model routing,\" where a whole evaluation instance is directed to one of several distinct foundation models. This behavior is typically observed and analyzed through \"routing scores,\" which, as one study notes, \"facilitates mechanistic interpretability by enabling observations of fine-grained experts' routing patterns\" (Monet: Mixture of Monosemantic Experts for Transformers). The stated function of this mechanism can also be to enable knowledge transfer, as in \"cross-lingual routing,\" which allows \"knowledge to propagate across languages\" (Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts).",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Expert routing",
+    "Model routing",
+    "Sequence routing",
+    "Cross-lingual routing",
+    "Token-expert routing",
+    "Expert activation"
+  ],
+  "papers": [
+    "Ada-K Routing: Boosting the Efficiency of MoE-based LLMs",
+    "Drop-Upcycling: Training Sparse Mixture of Experts with Partial Re-initialization",
+    "Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models",
+    "Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts",
+    "EmbedLLM: Learning Compact Representations of Large Language Models",
+    "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+    "Layerwise Recurrent Router for  Mixture-of-Experts",
+    "Mixture Compressor for Mixture-of-Experts LLMs Gains More",
+    "Monet: Mixture of Monosemantic Experts for Transformers",
+    "No Need to Talk: Asynchronous Mixture of Language Models",
+    "OLMoE: Open Mixture-of-Experts Language Models",
+    "ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing",
+    "RouteLLM: Learning to Route LLMs from Preference Data",
+    "Solving Token Gradient Conflict in Mixture-of-Experts for Large Vision-Language Model",
+    "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice",
+    "Tight Clusters Make Specialized Experts",
+    "Unearthing Skill-level Insights for Understanding Trade-offs of Foundation Models"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The pattern of selecting and activating specific experts for given inputs, observable through routing scores.",
+      "paper": "Monet: Mixture of Monosemantic Experts for Transformers",
+      "original_name": "Expert routing"
+    },
+    {
+      "text": "Assigning an input sequence to a single expert based on a short prefix or other routing signal.",
+      "paper": "No Need to Talk: Asynchronous Mixture of Language Models",
+      "original_name": "Sequence routing"
+    },
+    {
+      "text": "Assigning each evaluation instance to one of several models based on the skills relevant to that instance.",
+      "paper": "Unearthing Skill-level Insights for Understanding Trade-offs of Foundation Models",
+      "original_name": "Model routing"
+    },
+    {
+      "text": "An observable internal model behavior where input tokens from one language are processed by experts designated for other languages within a Mixture-of-Experts architecture.",
+      "paper": "Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts",
+      "original_name": "Cross-lingual routing"
+    },
+    {
+      "text": "Producing routing decisions that map each token to experts across layers in a Mixture-of-Experts model.",
+      "paper": "Layerwise Recurrent Router for  Mixture-of-Experts",
+      "original_name": "Token routing"
+    },
+    {
+      "text": "Assigning input tokens to one or more experts based on similarity or transformed similarity in the hidden space.",
+      "paper": "Tight Clusters Make Specialized Experts",
+      "original_name": "Token-expert routing"
+    },
+    {
+      "text": "The observable mechanism where the model selects and activates specific expert sub-networks for processing individual tokens.",
+      "paper": "Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models",
+      "original_name": "Expert activation"
+    }
+  ],
+  "definition_count": 7,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Scalability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Multi-Head Mixture-of-Experts",
+      "evidence": "MH-MoE can alleviate lower expert activation problem and significantly enhance the usage of larger experts by enabling optimization of almost all of experts, allowing for more efficient scaling of model capacity.",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "neurips24": [
+          "Multi-Head Mixture-of-Experts"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Scalability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Multi-Head Mixture-of-Experts",
+      "evidence": "\u201cMH-MoE can alleviate lower expert activation problem and significantly enhance the usage of larger experts by enabling optimization of almost all of experts, allowing for more efficient scaling of model capacity\u201d",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "neurips24": [
+          "Multi-Head Mixture-of-Experts"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "MoVA: Adapting Mixture of Vision Experts to Multimodal Context",
+      "evidence": "This coarse-to-fine paradigm effectively leverages representations from experts based on multimodal context and model expertise, further enhancing the generalization ability.",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "neurips24": [
+          "MoVA: Adapting Mixture of Vision Experts to Multimodal Context"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "MoVA: Adapting Mixture of Vision Experts to Multimodal Context",
+      "evidence": "\"This coarse-to-fine paradigm effectively leverages representations from experts based on multimodal context and model expertise, further enhancing the generalization ability.\"",
+      "paper_count": 1,
+      "paper_weight": 0.5,
+      "papers_by_conference": {
+        "neurips24": [
+          "MoVA: Adapting Mixture of Vision Experts to Multimodal Context"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Expert routing is most commonly described as the behavior of selecting and activating specific expert sub-networks within a model to process inputs. The prevailing operationalization of this behavior occurs at the token level, where a \"router\" or \"gating network\" assigns individual tokens to one or more experts, often based on similarity in the hidden space. Some work distinguishes between routing decisions made independently at each layer and those made sequentially, where one layer's assignments condition the next. A smaller body of work conceptualizes routing at a coarser granularity, such as \"sequence routing,\" where an entire input sequence is assigned to a single expert, or \"model routing,\" where a whole evaluation instance is directed to one of several distinct foundation models. This behavior is typically observed and analyzed through \"routing scores,\" which, as one study notes, \"facilitates mechanistic interpretability by enabling observations of fine-grained experts' routing patterns\" (Monet: Mixture of Monosemantic Experts for Transformers). The stated function of this mechanism can also be to enable knowledge transfer, as in \"cross-lingual routing,\" which allows \"knowledge to propagate across languages\" (Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts).",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Ada-K Routing: Boosting the Efficiency of MoE-based LLMs",
+      "Drop-Upcycling: Training Sparse Mixture of Experts with Partial Re-initialization",
+      "Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models",
+      "Efficiently Democratizing Medical LLMs for 50 Languages via a Mixture of Language Family Experts",
+      "EmbedLLM: Learning Compact Representations of Large Language Models",
+      "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "Layerwise Recurrent Router for  Mixture-of-Experts",
+      "Mixture Compressor for Mixture-of-Experts LLMs Gains More",
+      "Monet: Mixture of Monosemantic Experts for Transformers",
+      "No Need to Talk: Asynchronous Mixture of Language Models",
+      "OLMoE: Open Mixture-of-Experts Language Models",
+      "ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing",
+      "RouteLLM: Learning to Route LLMs from Preference Data",
+      "Solving Token Gradient Conflict in Mixture-of-Experts for Large Vision-Language Model",
+      "TC-MoE: Augmenting Mixture of Experts with Ternary Expert Choice",
+      "Tight Clusters Make Specialized Experts",
+      "Unearthing Skill-level Insights for Understanding Trade-offs of Foundation Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 17
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

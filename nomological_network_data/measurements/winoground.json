@@ -1,0 +1,172 @@
+{
+  "canonical_name": "Winoground",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, Winoground is most commonly described as a compositional image-text matching dataset or benchmark for probing visio-linguistic compositionality, fine-grained alignment, and reasoning. Definitions converge on a setup with carefully constructed minimal pairs, or paired images and captions, and one recurring task description says the model must correctly match two images and captions whose captions use the same words in different orders. A smaller framing describes it more broadly as a dataset of images for evaluating vision-language models, including image captioning and compositional understanding.\n\nWhat it is claimed to measure. Papers link it to three constructs and two behavioral indicators. The prevailing usage is to measure compositional reasoning, followed by compositionality and relation understanding: papers describe it as testing compositional visual reasoning, as a benchmark for assessing VLM compositionality, and as evaluating the ability to understand relationships between objects within an image. Smaller uses report it as measuring cross-modal retrieval through binary image-text matching, and self-correction, where authors evaluate whether extra token-level annotation cues let a model self-correct hallucinations.\n\nSpace of uses. No measurement instrument is linked to it. Papers instead use it alongside other benchmarks, including EqBen, Visual Genome, NLVR, MMVP, and SugarCREPE, sometimes as one of a small set of image-text matching benchmarks and sometimes within broader suites for fine-grained alignment or compositional visual reasoning. One paper also uses 100 samples from it for human evaluation of token-level predictions, as a check on whether extra annotation cues let a model self-correct hallucinations.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "WINOGROUND",
+    "WinoGround",
+    "Winoground"
+  ],
+  "papers": [
+    "Causal Graphical Models for Vision-Language Compositional Understanding",
+    "Natural Language Inference Improves Compositionality in Vision-Language Models",
+    "TLDR: Token-Level Detective Reward Model for Large Vision Language Models",
+    "ConMe: Rethinking Evaluation of Compositional Reasoning for Modern VLMs",
+    "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+    "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+    "TripletCLIP:  Improving Compositional Reasoning of CLIP via Synthetic Vision-Language Negatives",
+    "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+    "Unified Generative and Discriminative Training for Multi-modal Large Language Models",
+    "VisMin: Visual Minimal-Change Understanding"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset for probing visio-linguistic compositionality by requiring models to correctly match images and captions from carefully constructed minimal pairs.",
+      "paper": "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+      "original_name": "WINOGROUND"
+    },
+    {
+      "text": "A dataset of images used to evaluate vision-language models, particularly for tasks like image captioning and assessing compositional understanding.",
+      "paper": "TLDR: Token-Level Detective Reward Model for Large Vision Language Models",
+      "original_name": "WinoGround"
+    },
+    {
+      "text": "A compositional image-text matching benchmark with paired images and captions designed to test fine-grained alignment and reasoning.",
+      "paper": "Natural Language Inference Improves Compositionality in Vision-Language Models",
+      "original_name": "Winoground"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Compositional reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "VisMin: Visual Minimal-Change Understanding",
+      "evidence": "Fine-tuning on this data enhances the model\u2019s ability to distinguish between similar images, showing improvements on challenging benchmarks like Winoground, MMVP, and EQBEN, which test compositional reasoning and fine-grained understanding. (Section 6.1)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "VisMin: Visual Minimal-Change Understanding",
+          "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+          "TripletCLIP:  Improving Compositional Reasoning of CLIP via Synthetic Vision-Language Negatives",
+          "ConMe: Rethinking Evaluation of Compositional Reasoning for Modern VLMs"
+        ],
+        "iclr25": [
+          "Natural Language Inference Improves Compositionality in Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Relation understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+      "evidence": "We include relational benchmarks, such as Visual Genome [Yuksekgonul et al., 2023], Winoground [Thrush et al., 2022a], and SugarCrepe [Hsieh et al., 2024] designed to evaluate the models\u2019 ability to understand and represent relationships between objects within an image... (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "TLDR: Token-Level Detective Reward Model for Large Vision Language Models",
+      "evidence": "In this section, we evaluate on WinoGround (Thrush et al., 2022) dataset to show whether given extra token-level annotation cues, the vision language model is able to self-correct its own hallucinations. (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TLDR: Token-Level Detective Reward Model for Large Vision Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-modal retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Natural Language Inference Improves Compositionality in Vision-Language Models",
+      "evidence": "Image-text matching evaluation through binary retrieval tasks... We report results on two benchmarks (Winoground (Thrush et al., 2022), EqBen (Wang et al., 2023b))",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Natural Language Inference Improves Compositionality in Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Compositionality",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Exploring How Generative MLLMs Perceive More Than CLIP with the Same Vision Encoder",
+      "evidence": "We use several challenging benchmarks, Winoground (Thrush et al., 2022), NaturalBench (Li et al., 2024), SeeTrue (Yarom et al., 2024), SugarCREPE (Hsieh et al., 2024), for assessing VLMs\u2019 compositionality. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Exploring How Generative MLLMs Perceive More Than CLIP with the Same Vision Encoder"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, Winoground is most commonly described as a compositional image-text matching dataset or benchmark for probing visio-linguistic compositionality, fine-grained alignment, and reasoning. Definitions converge on a setup with carefully constructed minimal pairs, or paired images and captions, and one recurring task description says the model must correctly match two images and captions whose captions use the same words in different orders. A smaller framing describes it more broadly as a dataset of images for evaluating vision-language models, including image captioning and compositional understanding."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link it to three constructs and two behavioral indicators. The prevailing usage is to measure compositional reasoning, followed by compositionality and relation understanding: papers describe it as testing compositional visual reasoning, as a benchmark for assessing VLM compositionality, and as evaluating the ability to understand relationships between objects within an image. Smaller uses report it as measuring cross-modal retrieval through binary image-text matching, and self-correction, where authors evaluate whether extra token-level annotation cues let a model self-correct hallucinations."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it. Papers instead use it alongside other benchmarks, including EqBen, Visual Genome, NLVR, MMVP, and SugarCREPE, sometimes as one of a small set of image-text matching benchmarks and sometimes within broader suites for fine-grained alignment or compositional visual reasoning. One paper also uses 100 samples from it for human evaluation of token-level predictions, as a check on whether extra annotation cues let a model self-correct hallucinations."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, Winoground is most commonly described as a compositional image-text matching dataset or benchmark for probing visio-linguistic compositionality, fine-grained alignment, and reasoning. Definitions converge on a setup with carefully constructed minimal pairs, or paired images and captions, and one recurring task description says the model must correctly match two images and captions whose captions use the same words in different orders. A smaller framing describes it more broadly as a dataset of images for evaluating vision-language models, including image captioning and compositional understanding.\n\nWhat it is claimed to measure. Papers link it to three constructs and two behavioral indicators. The prevailing usage is to measure compositional reasoning, followed by compositionality and relation understanding: papers describe it as testing compositional visual reasoning, as a benchmark for assessing VLM compositionality, and as evaluating the ability to understand relationships between objects within an image. Smaller uses report it as measuring cross-modal retrieval through binary image-text matching, and self-correction, where authors evaluate whether extra token-level annotation cues let a model self-correct hallucinations.\n\nSpace of uses. No measurement instrument is linked to it. Papers instead use it alongside other benchmarks, including EqBen, Visual Genome, NLVR, MMVP, and SugarCREPE, sometimes as one of a small set of image-text matching benchmarks and sometimes within broader suites for fine-grained alignment or compositional visual reasoning. One paper also uses 100 samples from it for human evaluation of token-level predictions, as a check on whether extra annotation cues let a model self-correct hallucinations.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Causal Graphical Models for Vision-Language Compositional Understanding",
+      "Natural Language Inference Improves Compositionality in Vision-Language Models",
+      "TLDR: Token-Level Detective Reward Model for Large Vision Language Models"
+    ],
+    "neurips24": [
+      "ConMe: Rethinking Evaluation of Compositional Reasoning for Modern VLMs",
+      "HEMM: Holistic Evaluation of Multimodal Foundation Models",
+      "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+      "TripletCLIP:  Improving Compositional Reasoning of CLIP via Synthetic Vision-Language Negatives",
+      "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+      "Unified Generative and Discriminative Training for Multi-modal Large Language Models",
+      "VisMin: Visual Minimal-Change Understanding"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "neurips24": 7
+  },
+  "conferences": [
+    "iclr25",
+    "neurips24"
+  ]
+}

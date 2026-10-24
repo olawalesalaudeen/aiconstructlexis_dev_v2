@@ -1,0 +1,498 @@
+{
+  "canonical_name": "Adversarial robustness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats adversarial robustness as a latent model property, or degree of stability, in maintaining performance, correct predictions, or intended behavior when inputs are intentionally perturbed by adversarial attacks, often small or subtle ones. A smaller line of work flips the framing to adversarial vulnerability or susceptibility, defining the construct as how easily outputs can be manipulated or performance degrades, sometimes inferred from attack success rate. Other papers narrow the phenomenon to factual accuracy under adversarial examples, resistance to human-crafted misinformation, offensive-language detection under homophonic substitutions, LLM judges' susceptibility to prompt injection or adversarial phrases, or distraction from complex role-play context; one paper instead defines attack resistance as the number of input bits an attacker must control for one bit of output control.\n\nSpace of facets. The papers use several neighboring labels rather than a single taxonomy. Many use adversarial robustness, while others use adversarial vulnerability, adversarial susceptibility, attack resistance, distraction susceptibility, robustness to phonetic attacks, or safety vulnerability, so the phenomenon is alternately framed as resistance to perturbation, exposure to manipulation, or a domain-specific subtype. In related use, one paper treats it as an aspect of reliability, another explicitly separates out-of-distribution and adversarial robustness, and another relates multimodal attack susceptibility to safety alignment.\n\nSpace of measurement. Papers operationalize the construct with 14 measurement instruments and link it to 1 behavioral indicator. The most frequently linked instruments are HarmBench, AdvBench, GCG, SST-2, and AG News; papers use them as harmful instruction benchmarks, an attack method, and task datasets under character-level typos, confidence-elicitation attacks, or other adversarial prompts, often reporting robustness under attack or attack success rate. These measurements mostly track the dominant definition of performance under adversarial perturbation, though some instruments narrow the target to factuality, agent prompt injection, or safety-guardrail failure.\n\nLinks. Across relationships, papers link adversarial robustness to 4 constructs and 1 behavioral indicator. One paper claims a causal relationship from General ability to adversarial robustness, using the language that increased model capabilities give rise to emergent vulnerabilities, and one paper claims a causal relationship from adversarial robustness to Jailbreaking, describing models as fragile and easily distracted under complex role-play instructions, which enhances attack performance. Papers also report that adversarial robustness is related to Reliability, to Robustness in work that separates out-of-distribution and adversarial robustness, and to Safety alignment in discussions of multimodal attacks; no correlational link is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Adversarial robustness",
+    "Adversarial Vulnerability",
+    "Attack resistance",
+    "Adversarial susceptibility",
+    "Adversarial vulnerability",
+    "Robustness to phonetic attacks",
+    "Distraction susceptibility",
+    "Vulnerability",
+    "Safety vulnerability"
+  ],
+  "papers": [
+    "DiffuseDef: Improved Robustness to Adversarial Attacks via Iterative Denoising",
+    "SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Model",
+    "TripleFact: Defending Data Contamination in the Evaluation of LLM-driven Fake News Detection",
+    "Adversarial Attacks Against Automated Fact-Checking: A Survey",
+    "Enhancing Chinese Offensive Language Detection with Homophonic Perturbation",
+    "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+    "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+    "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+    "Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore's Low-Resource Languages",
+    "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+    "An Image Is Worth 1000 Lies: Transferability of Adversarial Images across Prompts on Vision-Language Models",
+    "An LLM can Fool Itself: A Prompt-Based Adversarial Attack",
+    "Evoke: Evoking Critical Thinking Abilities in LLMs via Reviewer-Author Prompt Editing",
+    "RAIN: Your Language Models Can Align Themselves without Finetuning",
+    "Towards Understanding Factual Knowledge of Large Language Models",
+    "Aligned LLMs Are Not Aligned Browser Agents",
+    "Backtracking Improves Generation Safety",
+    "Confidence Elicitation: A New Attack Vector for Large Language Models",
+    "Cut the Crap: An Economical Communication Pipeline for LLM-based Multi-Agent Systems",
+    "Dissecting Adversarial Robustness of Multimodal LM Agents",
+    "Endless Jailbreaks with Bijection Learning",
+    "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+    "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "Scaling Laws for Adversarial Attacks on Language Model Activations and Tokens",
+    "Shh, don't say that! Domain Certification in LLMs",
+    "Tracking the Copyright of Large Vision-Language Models through Parameter Learning Adversarial Images",
+    "h4rm3l: A Language for Composable Jailbreak Attack Synthesis",
+    "Adversarial Reasoning at Jailbreaking Time",
+    "An Interpretable N-gram Perplexity Threat Model for Large Language Model Jailbreaks",
+    "AxBench: Steering LLMs? Even Simple Baselines Outperform Sparse Autoencoders",
+    "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+    "Learning Safety Constraints for Large Language Models",
+    "On the Vulnerability of Applying Retrieval-Augmented Generation within Knowledge-Intensive Application Domains",
+    "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+    "Scaling Trends in Language Model Robustness",
+    "Testing the Limits of Fine-Tuning for Improving Visual Cognition in Vision Language Models",
+    "Weak-to-Strong Jailbreaking on Large Language Models",
+    "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP",
+    "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+    "Achieving Domain-Independent Certified Robustness via Knowledge Continuity",
+    "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+    "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+    "Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?",
+    "Text-Guided Attention is All You Need for Zero-Shot Robustness in Vision-Language Models"
+  ],
+  "paper_count": 45,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent property of a model to maintain its performance and make correct predictions when faced with small, intentionally crafted perturbations to its input.",
+      "paper": "An Image Is Worth 1000 Lies: Transferability of Adversarial Images across Prompts on Vision-Language Models",
+      "original_name": "Adversarial robustness"
+    },
+    {
+      "text": "The latent susceptibility of a model to adversarial perturbations, inferred from attack success rates.",
+      "paper": "Achieving Domain-Independent Certified Robustness via Knowledge Continuity",
+      "original_name": "Adversarial Vulnerability"
+    },
+    {
+      "text": "The degree to which a model's outputs can be manipulated by small, targeted perturbations to its inputs or internal states.",
+      "paper": "Scaling Laws for Adversarial Attacks on Language Model Activations and Tokens",
+      "original_name": "Adversarial susceptibility"
+    },
+    {
+      "text": "A model property representing the number of bits the attacker must control on the input to exert a single bit of control on the output.",
+      "paper": "Scaling Laws for Adversarial Attacks on Language Model Activations and Tokens",
+      "original_name": "Attack resistance"
+    },
+    {
+      "text": "The degree to which a model's performance degrades or its outputs can be manipulated by small, maliciously crafted input perturbations.",
+      "paper": "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP",
+      "original_name": "Adversarial vulnerability"
+    },
+    {
+      "text": "The model's ability to maintain performance in detecting offensive language when faced with inputs that have been intentionally altered with homophonic substitutions to evade detection.",
+      "paper": "Enhancing Chinese Offensive Language Detection with Homophonic Perturbation",
+      "original_name": "Robustness to phonetic attacks"
+    },
+    {
+      "text": "The tendency of LLMs to fail in recognizing malicious intent due to cognitive overload or contextual interference caused by complex role-playing instructions.",
+      "paper": "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+      "original_name": "Distraction susceptibility"
+    },
+    {
+      "text": "The susceptibility of LLM judges to adversarial manipulations such as prompt injection or adversarial phrases that distort judgment outcomes.",
+      "paper": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "original_name": "Vulnerability"
+    },
+    {
+      "text": "A latent weakness in a model's architecture or alignment that can be exploited to bypass its safety mechanisms.",
+      "paper": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+      "original_name": "Safety vulnerability"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AdvBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "For robustness evaluations, we take harmful requests from two harmful instruction datasets: HarmBench (Mazeika et al., 2024) and AdvBench (Zou et al., 2023b). (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ],
+        "naacl25": [
+          "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions"
+        ],
+        "icml25": [
+          "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HarmBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?",
+      "evidence": "We compute the correlation between the capability score and safety scores on the following benchmarks: AdvGLUE [91], AdvGLUE++ [34], AdvDemonstration [34], and HarmBench [51]. (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?"
+        ],
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GCG",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "Table 1: General model capability metrics and adversarial robustness (measured as ASR) of three LLMs trained using various safety fine-tuning methods. ... GCG ... PAIR ... AutoDAN ... HumanJailbreaks",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ],
+        "icml25": [
+          "Scaling Trends in Language Model Robustness"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SST-2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Confidence Elicitation: A New Attack Vector for Large Language Models",
+      "evidence": "We conducted our confidence elicitation attacks on Meta-Llama-3-8B-Instruct (Touvron et al., 2023) and Mistral-7B-Instruct-v0.2 (Jiang et al., 2023) while performing classification on two common datasets to evaluate adversarial robustness: SST-2, AG-News and one modern dataset: StrategyQA (Geva et al., 2021). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Confidence Elicitation: A New Attack Vector for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reliability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "An LLM can Fool Itself: A Prompt-Based Adversarial Attack",
+      "evidence": "This paper studies one key aspect of LLM\u2019s reliability\u2014adversarial robustness.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "An LLM can Fool Itself: A Prompt-Based Adversarial Attack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "An LLM can Fool Itself: A Prompt-Based Adversarial Attack",
+      "evidence": "Existing research evaluates adversarial robustness of LLMs on the GLUE dataset (Wang et al., 2018)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "An LLM can Fool Itself: A Prompt-Based Adversarial Attack"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FM2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Towards Understanding Factual Knowledge of Large Language Models",
+      "evidence": "To investigate this [whether LLMs can withstand adversarial examples], we utilize two datasets, namely Symmetric (Schuster et al., 2019) and FM2 (Eisenschlos et al., 2021). (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Towards Understanding Factual Knowledge of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "evidence": "Following the common practice in the field [132, 147], we consider the out-of-distribution (OOD) and adversarial robustness respectively. (Sec. 2.2.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AgentDojo",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "evidence": "To measure the adversarial robustness of AI agents, we introduce AgentDojo, an evaluation framework for agents that execute tools over untrusted data.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AG News",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Confidence Elicitation: A New Attack Vector for Large Language Models",
+      "evidence": "We conducted our confidence elicitation attacks on Meta-Llama-3-8B-Instruct (Touvron et al., 2023) and Mistral-7B-Instruct-v0.2 (Jiang et al., 2023) while performing classification on two common datasets to evaluate adversarial robustness: SST-2, AG-News and one modern dataset: StrategyQA (Geva et al., 2021). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Confidence Elicitation: A New Attack Vector for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "StrategyQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Confidence Elicitation: A New Attack Vector for Large Language Models",
+      "evidence": "We conducted our confidence elicitation attacks on Meta-Llama-3-8B-Instruct (Touvron et al., 2023) and Mistral-7B-Instruct-v0.2 (Jiang et al., 2023) while performing classification on two common datasets to evaluate adversarial robustness: SST-2, AG-News and one modern dataset: StrategyQA (Geva et al., 2021). (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Confidence Elicitation: A New Attack Vector for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AutoDAN",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "Table 1: General model capability metrics and adversarial robustness (measured as ASR) of three LLMs trained using various safety fine-tuning methods. ... GCG ... PAIR ... AutoDAN ... HumanJailbreaks",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Endless Jailbreaks with Bijection Learning",
+      "evidence": "increased model capabilities give rise to distinct emergent model vulnerabilities. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Endless Jailbreaks with Bijection Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Jailbreaking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters",
+      "evidence": "\"LLMs are notably fragile and easily distracted by our complex role-play instructions, thereby enhancing the attack performance of each individual jailbreak character.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities",
+      "evidence": "larger models are more susceptible to multimodal attacks, revealing the lack of safety alignment in the additional modalities. (Section 4.2, Finding A3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Con Instruction: Universal Jailbreaking of Multimodal Large Language Models via Non-Textual Modalities"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "JailbreakBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "evidence": "To assess how robust our models are to adversarial prompt injection, we evaluate them on the JailBreakBench dataset. (Section 3.3.4. ADVERSARIAL ROBUSTNESS EVALUATION)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Unlearning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+      "evidence": "Existing unlearning strategies, ranging from gradient-based fine-tuning and model editing to sparse autoencoder (SAE) steering, either lack interpretability or fail to provide a robust defense against adversarial prompts. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Model Unlearning via Sparse Autoencoder Subspace Guided Projections"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 17,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 16,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats adversarial robustness as a latent model property, or degree of stability, in maintaining performance, correct predictions, or intended behavior when inputs are intentionally perturbed by adversarial attacks, often small or subtle ones. A smaller line of work flips the framing to adversarial vulnerability or susceptibility, defining the construct as how easily outputs can be manipulated or performance degrades, sometimes inferred from attack success rate. Other papers narrow the phenomenon to factual accuracy under adversarial examples, resistance to human-crafted misinformation, offensive-language detection under homophonic substitutions, LLM judges' susceptibility to prompt injection or adversarial phrases, or distraction from complex role-play context; one paper instead defines attack resistance as the number of input bits an attacker must control for one bit of output control."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "The papers use several neighboring labels rather than a single taxonomy. Many use adversarial robustness, while others use adversarial vulnerability, adversarial susceptibility, attack resistance, distraction susceptibility, robustness to phonetic attacks, or safety vulnerability, so the phenomenon is alternately framed as resistance to perturbation, exposure to manipulation, or a domain-specific subtype. In related use, one paper treats it as an aspect of reliability, another explicitly separates out-of-distribution and adversarial robustness, and another relates multimodal attack susceptibility to safety alignment."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers operationalize the construct with 14 measurement instruments and link it to 1 behavioral indicator. The most frequently linked instruments are HarmBench, AdvBench, GCG, SST-2, and AG News; papers use them as harmful instruction benchmarks, an attack method, and task datasets under character-level typos, confidence-elicitation attacks, or other adversarial prompts, often reporting robustness under attack or attack success rate. These measurements mostly track the dominant definition of performance under adversarial perturbation, though some instruments narrow the target to factuality, agent prompt injection, or safety-guardrail failure."
+    },
+    {
+      "label": "Links.",
+      "text": "Across relationships, papers link adversarial robustness to 4 constructs and 1 behavioral indicator. One paper claims a causal relationship from General ability to adversarial robustness, using the language that increased model capabilities give rise to emergent vulnerabilities, and one paper claims a causal relationship from adversarial robustness to Jailbreaking, describing models as fragile and easily distracted under complex role-play instructions, which enhances attack performance. Papers also report that adversarial robustness is related to Reliability, to Robustness in work that separates out-of-distribution and adversarial robustness, and to Safety alignment in discussions of multimodal attacks; no correlational link is reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers define adversarial robustness as a model's ability, or inverse susceptibility, to keep its outputs, performance, or intended behavior stable under adversarially crafted or perturbed inputs. A smaller but substantial group extends this from small input perturbations to jailbreaks, prompt injection, misinformation, or latent exploitable weaknesses, so the definitions describe the same general phenomenon from different angles rather than using the term for incompatible constructs.",
+    "papers_with_definition": 17,
+    "runs": [
+      "complementary",
+      "consensus",
+      "complementary"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats adversarial robustness as a latent model property, or degree of stability, in maintaining performance, correct predictions, or intended behavior when inputs are intentionally perturbed by adversarial attacks, often small or subtle ones. A smaller line of work flips the framing to adversarial vulnerability or susceptibility, defining the construct as how easily outputs can be manipulated or performance degrades, sometimes inferred from attack success rate. Other papers narrow the phenomenon to factual accuracy under adversarial examples, resistance to human-crafted misinformation, offensive-language detection under homophonic substitutions, LLM judges' susceptibility to prompt injection or adversarial phrases, or distraction from complex role-play context; one paper instead defines attack resistance as the number of input bits an attacker must control for one bit of output control.\n\nSpace of facets. The papers use several neighboring labels rather than a single taxonomy. Many use adversarial robustness, while others use adversarial vulnerability, adversarial susceptibility, attack resistance, distraction susceptibility, robustness to phonetic attacks, or safety vulnerability, so the phenomenon is alternately framed as resistance to perturbation, exposure to manipulation, or a domain-specific subtype. In related use, one paper treats it as an aspect of reliability, another explicitly separates out-of-distribution and adversarial robustness, and another relates multimodal attack susceptibility to safety alignment.\n\nSpace of measurement. Papers operationalize the construct with 14 measurement instruments and link it to 1 behavioral indicator. The most frequently linked instruments are HarmBench, AdvBench, GCG, SST-2, and AG News; papers use them as harmful instruction benchmarks, an attack method, and task datasets under character-level typos, confidence-elicitation attacks, or other adversarial prompts, often reporting robustness under attack or attack success rate. These measurements mostly track the dominant definition of performance under adversarial perturbation, though some instruments narrow the target to factuality, agent prompt injection, or safety-guardrail failure.\n\nLinks. Across relationships, papers link adversarial robustness to 4 constructs and 1 behavioral indicator. One paper claims a causal relationship from General ability to adversarial robustness, using the language that increased model capabilities give rise to emergent vulnerabilities, and one paper claims a causal relationship from adversarial robustness to Jailbreaking, describing models as fragile and easily distracted under complex role-play instructions, which enhances attack performance. Papers also report that adversarial robustness is related to Reliability, to Robustness in work that separates out-of-distribution and adversarial robustness, and to Safety alignment in discussions of multimodal attacks; no correlational link is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "DiffuseDef: Improved Robustness to Adversarial Attacks via Iterative Denoising",
+      "SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Model",
+      "TripleFact: Defending Data Contamination in the Evaluation of LLM-driven Fake News Detection"
+    ],
+    "emnlp25": [
+      "Adversarial Attacks Against Automated Fact-Checking: A Survey",
+      "Enhancing Chinese Offensive Language Detection with Homophonic Perturbation",
+      "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+      "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+      "Model Unlearning via Sparse Autoencoder Subspace Guided Projections",
+      "Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore's Low-Resource Languages",
+      "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection"
+    ],
+    "iclr24": [
+      "An Image Is Worth 1000 Lies: Transferability of Adversarial Images across Prompts on Vision-Language Models",
+      "An LLM can Fool Itself: A Prompt-Based Adversarial Attack",
+      "Evoke: Evoking Critical Thinking Abilities in LLMs via Reviewer-Author Prompt Editing",
+      "RAIN: Your Language Models Can Align Themselves without Finetuning",
+      "Towards Understanding Factual Knowledge of Large Language Models"
+    ],
+    "iclr25": [
+      "Aligned LLMs Are Not Aligned Browser Agents",
+      "Backtracking Improves Generation Safety",
+      "Confidence Elicitation: A New Attack Vector for Large Language Models",
+      "Cut the Crap: An Economical Communication Pipeline for LLM-based Multi-Agent Systems",
+      "Dissecting Adversarial Robustness of Multimodal LM Agents",
+      "Endless Jailbreaks with Bijection Learning",
+      "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+      "MMDT: Decoding the Trustworthiness and Safety of Multimodal Foundation Models",
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "Scaling Laws for Adversarial Attacks on Language Model Activations and Tokens",
+      "Shh, don't say that! Domain Certification in LLMs",
+      "Tracking the Copyright of Large Vision-Language Models through Parameter Learning Adversarial Images",
+      "h4rm3l: A Language for Composable Jailbreak Attack Synthesis"
+    ],
+    "icml25": [
+      "Adversarial Reasoning at Jailbreaking Time",
+      "An Interpretable N-gram Perplexity Threat Model for Large Language Model Jailbreaks",
+      "AxBench: Steering LLMs? Even Simple Baselines Outperform Sparse Autoencoders",
+      "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+      "Learning Safety Constraints for Large Language Models",
+      "On the Vulnerability of Applying Retrieval-Augmented Generation within Knowledge-Intensive Application Domains",
+      "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "Scaling Trends in Language Model Robustness",
+      "Testing the Limits of Fine-Tuning for Improving Visual Cognition in Vision Language Models",
+      "Weak-to-Strong Jailbreaking on Large Language Models",
+      "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP"
+    ],
+    "naacl25": [
+      "SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters"
+    ],
+    "neurips24": [
+      "Achieving Domain-Independent Certified Robustness via Knowledge Continuity",
+      "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?",
+      "Text-Guided Attention is All You Need for Zero-Shot Robustness in Vision-Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 7,
+    "iclr24": 5,
+    "iclr25": 13,
+    "icml25": 11,
+    "naacl25": 1,
+    "neurips24": 5
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

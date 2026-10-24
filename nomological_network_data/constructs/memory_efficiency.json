@@ -1,0 +1,144 @@
+{
+  "canonical_name": "Memory efficiency",
+  "type": "construct",
+  "canonical_definition": "Across the provided literature, Memory efficiency is consistently defined as the extent to which a model or training procedure reduces memory usage during either training or inference. A more detailed framing, present in several papers, specifies that this reduction targets not just model parameters but also memory consumed by \"activation values and optimizer states\" (\"Subspace Optimization for Large Language Models with Convergence Guarantees\"). The construct is operationalized by measuring and comparing the total GPU memory consumed during model execution on various tasks. Papers in this set use benchmarks such as CIFAR-100, GLUE, and a commonsense reasoning benchmark to assess memory efficiency, often reporting specific quantitative improvements like a \"54% reduction in model memory\" (\"Parameter and Memory Efficient Pretraining via Low-rank Riemannian Optimization\") or requiring \"21G less memory\" (\"From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control\"). While most of the data focuses on measurement, one paper suggests a causal link, reporting that Abstraction causes Memory efficiency.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Memory efficiency"
+  ],
+  "papers": [
+    "AdamS: Momentum Itself Can Be A Normalizer for LLM Pretraining and Post-training",
+    "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+    "CodeSSM: Towards State Space Models for Code Understanding",
+    "Building, Reusing, and Generalizing Abstract Representations from Concrete Sequences",
+    "DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory",
+    "Enhancing Zeroth-order Fine-tuning for Language Models with Low-rank Structures",
+    "Parameter and Memory Efficient Pretraining via Low-rank Riemannian Optimization",
+    "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+    "Second-Order Fine-Tuning without Pain for LLMs: A Hessian Informed Zeroth-Order Optimizer",
+    "Efficient Long Context Fine-tuning with Chunk Flow",
+    "FRUGAL: Memory-Efficient Optimization by Reducing State Overhead for Scalable Training",
+    "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control",
+    "Joint MoE Scaling Laws: Mixture of Experts Can Be Memory Efficient",
+    "On Exact Bit-level Reversible Transformers Without Changing Architecture",
+    "QuantSpec: Self-Speculative Decoding with Hierarchical Quantized KV Cache",
+    "Scalable Model Merging with Progressive Layer-wise Distillation",
+    "Subspace Optimization for Large Language Models with Convergence Guarantees"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The extent to which a model or training procedure reduces memory usage during training or inference.",
+      "paper": "Parameter and Memory Efficient Pretraining via Low-rank Riemannian Optimization",
+      "original_name": "Memory efficiency"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Abstraction",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Building, Reusing, and Generalizing Abstract Representations from Concrete Sequences",
+      "evidence": "In contrast, many sequence learning models lack the ability to abstract, which leads to memory inefficiency and poor transfer.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Building, Reusing, and Generalizing Abstract Representations from Concrete Sequences"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CIFAR-100",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control",
+      "evidence": "\u201cWe begin our evaluation with a toy example using the CIFAR-100 dataset (Krizhevsky et al., 2009) on the ViT model\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control",
+      "evidence": "\u201cWe further apply the parallel control approach to the GLUE benchmark (Wang, 2018)\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Commonsense reasoning benchmark",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control",
+      "evidence": "\u201cWe extend our experiments to larger backbones, specifically LLaMA2-7B ... and LLaMA3-8B ... on the \u2018Commonsense Benchmark\u2019.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Across the provided literature, Memory efficiency is consistently defined as the extent to which a model or training procedure reduces memory usage during either training or inference. A more detailed framing, present in several papers, specifies that this reduction targets not just model parameters but also memory consumed by \"activation values and optimizer states\" (\"Subspace Optimization for Large Language Models with Convergence Guarantees\"). The construct is operationalized by measuring and comparing the total GPU memory consumed during model execution on various tasks. Papers in this set use benchmarks such as CIFAR-100, GLUE, and a commonsense reasoning benchmark to assess memory efficiency, often reporting specific quantitative improvements like a \"54% reduction in model memory\" (\"Parameter and Memory Efficient Pretraining via Low-rank Riemannian Optimization\") or requiring \"21G less memory\" (\"From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control\"). While most of the data focuses on measurement, one paper suggests a causal link, reporting that Abstraction causes Memory efficiency.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "AdamS: Momentum Itself Can Be A Normalizer for LLM Pretraining and Post-training",
+      "CoLA: Compute-Efficient Pre-Training of LLMs via Low-Rank Activation",
+      "CodeSSM: Towards State Space Models for Code Understanding"
+    ],
+    "iclr25": [
+      "Building, Reusing, and Generalizing Abstract Representations from Concrete Sequences",
+      "DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory",
+      "Enhancing Zeroth-order Fine-tuning for Language Models with Low-rank Structures",
+      "Parameter and Memory Efficient Pretraining via Low-rank Riemannian Optimization",
+      "SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training",
+      "Second-Order Fine-Tuning without Pain for LLMs: A Hessian Informed Zeroth-Order Optimizer"
+    ],
+    "icml25": [
+      "Efficient Long Context Fine-tuning with Chunk Flow",
+      "FRUGAL: Memory-Efficient Optimization by Reducing State Overhead for Scalable Training",
+      "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control",
+      "Joint MoE Scaling Laws: Mixture of Experts Can Be Memory Efficient",
+      "On Exact Bit-level Reversible Transformers Without Changing Architecture",
+      "QuantSpec: Self-Speculative Decoding with Hierarchical Quantized KV Cache",
+      "Scalable Model Merging with Progressive Layer-wise Distillation",
+      "Subspace Optimization for Large Language Models with Convergence Guarantees"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 6,
+    "icml25": 8
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

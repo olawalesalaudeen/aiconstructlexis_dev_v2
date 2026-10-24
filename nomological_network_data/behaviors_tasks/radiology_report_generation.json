@@ -1,0 +1,163 @@
+{
+  "canonical_name": "Radiology report generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats radiology report generation as producing a descriptive, clinically relevant text report from radiology image data, sometimes from one or more images plus associated clinical context. Most formulations emphasize describing clinical observations or findings from a radiology image, often a chest X-ray. A narrower formulation specifies a typical report structure, requiring the model to generate the two sections \"Findings\" and \"Impression\".\n\nVariants. Variants center on chest X-ray settings, with papers describing chest X-ray radiology report generation and textual medical reports from chest X-ray images. Some authors use the shorter name \"report generation\", and one paper frames a retrieval-based version given only radiology images. Input assumptions vary from one or more images with associated clinical context to a single medical image, and the output may be framed generally as clinical observations or more specifically as Findings and Impression sections.\n\nSpace of elicitation and scores. Papers link this behavior to 3 measurement instruments. The most frequently linked is MIMIC-CXR, used in chest X-ray report generation experiments; IU-Xray also appears as a public dataset, and GREEN appears as an evaluation metric for radiology reports, described as a single-answer reference-guided LLM-as-a-Judge mechanism. Papers therefore assess it with both dataset-based tasks and report-evaluation metrics.\n\nWhat it is taken as evidence of. Only 1 construct is linked to this behavior: Faithfulness. A smaller line of work treats radiology report generation as measuring Faithfulness, with one paper arguing that small textual differences can drastically invert radiology report meaning and downstream prescribed treatments. In the linked claims, the construct framing centers on Faithfulness rather than multiple alternative constructs.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Radiology report generation",
+    "Report generation"
+  ],
+  "papers": [
+    "CheXalign: Preference fine-tuning in chest X-ray interpretation models without human feedback",
+    "Online Iterative Self-Alignment for Radiology Report Generation",
+    "RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection",
+    "Conformal Language Modeling",
+    "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+    "VividMed: Vision Language Model with Versatile Visual Grounding for Medicine"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of generating a descriptive, clinically relevant text report based on one or more radiology images and associated clinical context.",
+      "paper": "RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection",
+      "original_name": "Radiology report generation"
+    },
+    {
+      "text": "The task of generating a textual radiology report, typically including 'Findings' and 'Impression' sections, based on a medical image.",
+      "paper": "VividMed: Vision Language Model with Versatile Visual Grounding for Medicine",
+      "original_name": "Report generation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MIMIC-CXR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees",
+      "evidence": "In this section, we apply Conformal Alignment to chest X-ray report (CXR) generation. Following the pipeline in Figure 1, we apply our method to (a subset of) the MIMIC-CXR dataset [20]. (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Conformal Alignment: Knowing When to Trust Foundation Models with Guarantees"
+        ],
+        "iclr25": [
+          "Conformal Generative Modeling with Improved Sample Efficiency through Sequential Greedy Filtering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Retrieval-augmented generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+      "evidence": "\u201cwe introduce a fact-aware multimodal retrieval-augmented pipeline in generating accurate radiology reports (FactMM-RAG).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GREEN",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CheXalign: Preference fine-tuning in chest X-ray interpretation models without human feedback",
+      "evidence": "GREEN is a state-of-the-art metric for radiology report evaluation, based on a single-answer reference-guided LLM-as-a-Judge mechanism. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "CheXalign: Preference fine-tuning in chest X-ray interpretation models without human feedback"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BERTScore",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CheXalign: Preference fine-tuning in chest X-ray interpretation models without human feedback",
+      "evidence": "Since we have radiologist-written reference available, it is possible to employ standard, general domain, NLG metrics such as BLEU (Papineni et al., 2002), ROUGE (Lin, 2004), and the BERTScore (Zhang et al., 2019). (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "CheXalign: Preference fine-tuning in chest X-ray interpretation models without human feedback"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Factuality",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+      "evidence": "Factual correctness is especially critical in chest radiology domains, as minute textual differences can drastically invert radiology report meaning and downstream prescribed treatments",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats radiology report generation as producing a descriptive, clinically relevant text report from radiology image data, sometimes from one or more images plus associated clinical context. Most formulations emphasize describing clinical observations or findings from a radiology image, often a chest X-ray. A narrower formulation specifies a typical report structure, requiring the model to generate the two sections \"Findings\" and \"Impression\"."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants center on chest X-ray settings, with papers describing chest X-ray radiology report generation and textual medical reports from chest X-ray images. Some authors use the shorter name \"report generation\", and one paper frames a retrieval-based version given only radiology images. Input assumptions vary from one or more images with associated clinical context to a single medical image, and the output may be framed generally as clinical observations or more specifically as Findings and Impression sections."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 3 measurement instruments. The most frequently linked is MIMIC-CXR, used in chest X-ray report generation experiments; IU-Xray also appears as a public dataset, and GREEN appears as an evaluation metric for radiology reports, described as a single-answer reference-guided LLM-as-a-Judge mechanism. Papers therefore assess it with both dataset-based tasks and report-evaluation metrics."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Only 1 construct is linked to this behavior: Faithfulness. A smaller line of work treats radiology report generation as measuring Faithfulness, with one paper arguing that small textual differences can drastically invert radiology report meaning and downstream prescribed treatments. In the linked claims, the construct framing centers on Faithfulness rather than multiple alternative constructs."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats radiology report generation as producing a descriptive, clinically relevant text report from radiology image data, sometimes from one or more images plus associated clinical context. Most formulations emphasize describing clinical observations or findings from a radiology image, often a chest X-ray. A narrower formulation specifies a typical report structure, requiring the model to generate the two sections \"Findings\" and \"Impression\".\n\nVariants. Variants center on chest X-ray settings, with papers describing chest X-ray radiology report generation and textual medical reports from chest X-ray images. Some authors use the shorter name \"report generation\", and one paper frames a retrieval-based version given only radiology images. Input assumptions vary from one or more images with associated clinical context to a single medical image, and the output may be framed generally as clinical observations or more specifically as Findings and Impression sections.\n\nSpace of elicitation and scores. Papers link this behavior to 3 measurement instruments. The most frequently linked is MIMIC-CXR, used in chest X-ray report generation experiments; IU-Xray also appears as a public dataset, and GREEN appears as an evaluation metric for radiology reports, described as a single-answer reference-guided LLM-as-a-Judge mechanism. Papers therefore assess it with both dataset-based tasks and report-evaluation metrics.\n\nWhat it is taken as evidence of. Only 1 construct is linked to this behavior: Faithfulness. A smaller line of work treats radiology report generation as measuring Faithfulness, with one paper arguing that small textual differences can drastically invert radiology report meaning and downstream prescribed treatments. In the linked claims, the construct framing centers on Faithfulness rather than multiple alternative constructs.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CheXalign: Preference fine-tuning in chest X-ray interpretation models without human feedback",
+      "Online Iterative Self-Alignment for Radiology Report Generation",
+      "RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection"
+    ],
+    "iclr24": [
+      "Conformal Language Modeling"
+    ],
+    "naacl25": [
+      "Fact-Aware Multimodal Retrieval Augmentation for Accurate Medical Radiology Report Generation",
+      "VividMed: Vision Language Model with Versatile Visual Grounding for Medicine"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "iclr24": 1,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "naacl25"
+  ]
+}

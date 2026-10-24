@@ -1,0 +1,253 @@
+{
+  "canonical_name": "Referring expression segmentation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across definitions, the prevailing usage is an image task where a model segments the specific object or region named by a natural language expression or description. Most papers describe success as producing a segmentation mask for the referred target, and one source says the output is \"a mask that can cover the described object\" (Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation). A smaller line extends this formulation to predicting a binary mask for a named component of a 3D object.\n\nVariants. Papers use several nearby names, most often referring expression segmentation, and also referring segmentation and referring image segmentation. Within these formulations, some describe segmenting a specific object instance, some a specific object or region, and one description notes that in RefCOCO-g \"one sentence is associated with one instance.\" A smaller line studies domain or modality variants, including remote sensing, where prompts ask for a mask for a referring expression and the model replies with a \"<SEG>\" token that is decoded into a mask (GeoPixel: Pixel Grounding Large Multimodal Model in Remote Sensing), and 3D referring object part segmentation over point clouds.\n\nSpace of elicitation and scores. Papers link it to 4 measurement instruments. The most common are RefCOCO, RefCOCO+, and RefCOCOg, often described together as the refCOCO series, and a smaller line also uses gRefCOCO. These instruments are described as datasets or benchmarks for evaluating referring segmentation, and one paper reports evaluating RefCOCO with cIoU.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior evidences. Instead, they link it to 3 constructs through related-to claims: multimodal alignment is related to it in work saying RIS relies on pixel-level ground-truth masks to learn visual-linguistic alignment, visual grounding is related to it in work on switching between RES and other visual grounding tasks, and visual recognition is related to it in work that adds referring segmentation as a broader recognition ability. Separately, one paper relates referring expression generation to it as a dual task.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Referring expression segmentation",
+    "Referring segmentation",
+    "Referring image segmentation",
+    "Referring object part segmentation"
+  ],
+  "papers": [
+    "3D-AffordanceLLM: Harnessing Large Language Models for Open-Vocabulary Affordance Detection in 3D Worlds",
+    "MMR: A Large-scale Benchmark Dataset for Multi-target and Multi-granularity Reasoning Segmentation",
+    "SegLLM: Multi-round Reasoning Segmentation with Large Language Models",
+    "Text4Seg: Reimagining Image Segmentation as Text Generation",
+    "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+    "Visual Agents as Fast and Slow Thinkers",
+    "Visual-O1: Understanding Ambiguous Instructions via Multi-modal Multi-turn Chain-of-thoughts Reasoning",
+    "GeoPixel: Pixel Grounding Large Multimodal Model in Remote Sensing",
+    "Boosting Weakly Supervised Referring Image Segmentation via Progressive Comprehension",
+    "Interfacing Foundation Models' Embeddings",
+    "Lumen: Unleashing Versatile Vision-Centric Capabilities of Large Multimodal Models",
+    "MoVA: Adapting Mixture of Vision Experts to Multimodal Context",
+    "OMG-LLaVA: Bridging Image-level, Object-level, Pixel-level Reasoning and Understanding",
+    "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding",
+    "Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation",
+    "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of segmenting the specific object or region in an image that is described by a given natural language expression.",
+      "paper": "Text4Seg: Reimagining Image Segmentation as Text Generation",
+      "original_name": "Referring expression segmentation"
+    },
+    {
+      "text": "The task of segmenting an object in an image based on a natural language description.",
+      "paper": "Visual Agents as Fast and Slow Thinkers",
+      "original_name": "Referring segmentation"
+    },
+    {
+      "text": "The task of segmenting a specific object or region in an image based on a natural language description.",
+      "paper": "Visual-O1: Understanding Ambiguous Instructions via Multi-modal Multi-turn Chain-of-thoughts Reasoning",
+      "original_name": "Referring image segmentation"
+    },
+    {
+      "text": "The pre-training task of predicting a binary mask for a specific component of a 3D object, given a referring expression that names the component.",
+      "paper": "3D-AffordanceLLM: Harnessing Large Language Models for Open-Vocabulary Affordance Detection in 3D Worlds",
+      "original_name": "Referring object part segmentation"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing",
+      "evidence": "Table 2 presents the results of referring image segmentation on three datasets: RefCOCO [40], RefCOCO+ [123] and RefCOCOg [68].",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing",
+          "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding"
+        ],
+        "iclr25": [
+          "MMR: A Large-scale Benchmark Dataset for Multi-target and Multi-granularity Reasoning Segmentation",
+          "Text4Seg: Reimagining Image Segmentation as Text Generation",
+          "Visual Agents as Fast and Slow Thinkers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCO+",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing",
+      "evidence": "Table 2 presents the results of referring image segmentation on three datasets: RefCOCO [40], RefCOCO+ [123] and RefCOCOg [68].",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing"
+        ],
+        "iclr25": [
+          "Text4Seg: Reimagining Image Segmentation as Text Generation",
+          "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+          "Visual Agents as Fast and Slow Thinkers"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RefCOCOg",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing",
+      "evidence": "Table 2 presents the results of referring image segmentation on three datasets: RefCOCO [40], RefCOCO+ [123] and RefCOCOg [68].",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing"
+        ],
+        "iclr25": [
+          "Text4Seg: Reimagining Image Segmentation as Text Generation",
+          "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+          "Visual Agents as Fast and Slow Thinkers"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Referring expression generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation",
+      "evidence": "To eliminate unsuitable candidate outputs, we leverage the dual task of REG: Referring expression segmentation (RES) [37, 48], which aims to segment a target object mask from the entire image given a sentence describing the object. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multimodal alignment",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Boosting Weakly Supervised Referring Image Segmentation via Progressive Comprehension",
+      "evidence": "Despite remarkable progress, most existing RIS works [7, 58, 27, 26, 21, 5] rely heavily on pixel-level ground-truth masks to learn visual-linguistic alignment. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Boosting Weakly Supervised Referring Image Segmentation via Progressive Comprehension"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual recognition",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding",
+      "evidence": "In addition to detection, Octopus is potential to acquire a broader range of recognition abilities, taking advantage of the versatility of the DETR mechanism. Hereby, we endow Octopus with the referring segmentation ability by modifying its object queries into \u201cmask\u201d queries... (Appendix B)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual grounding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Text4Seg: Reimagining Image Segmentation as Text Generation",
+      "evidence": "flexible switching between referring expression segmentation, open-vocabulary segmentation, and other visual grounding tasks. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Text4Seg: Reimagining Image Segmentation as Text Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "gRefCOCO",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Text4Seg: Reimagining Image Segmentation as Text Generation",
+      "evidence": "\u201cwe construct a generalized referring expression segmentation dataset with 419k samples using the train split of grefCOCO (Liu et al., 2023a).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Text4Seg: Reimagining Image Segmentation as Text Generation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 8,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 6,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across definitions, the prevailing usage is an image task where a model segments the specific object or region named by a natural language expression or description. Most papers describe success as producing a segmentation mask for the referred target, and one source says the output is \"a mask that can cover the described object\" (Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation). A smaller line extends this formulation to predicting a binary mask for a named component of a 3D object."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby names, most often referring expression segmentation, and also referring segmentation and referring image segmentation. Within these formulations, some describe segmenting a specific object instance, some a specific object or region, and one description notes that in RefCOCO-g \"one sentence is associated with one instance.\" A smaller line studies domain or modality variants, including remote sensing, where prompts ask for a mask for a referring expression and the model replies with a \"<SEG>\" token that is decoded into a mask (GeoPixel: Pixel Grounding Large Multimodal Model in Remote Sensing), and 3D referring object part segmentation over point clouds."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to 4 measurement instruments. The most common are RefCOCO, RefCOCO+, and RefCOCOg, often described together as the refCOCO series, and a smaller line also uses gRefCOCO. These instruments are described as datasets or benchmarks for evaluating referring segmentation, and one paper reports evaluating RefCOCO with cIoU."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not converge on a single construct that this behavior evidences. Instead, they link it to 3 constructs through related-to claims: multimodal alignment is related to it in work saying RIS relies on pixel-level ground-truth masks to learn visual-linguistic alignment, visual grounding is related to it in work on switching between RES and other visual grounding tasks, and visual recognition is related to it in work that adds referring segmentation as a broader recognition ability. Separately, one paper relates referring expression generation to it as a dual task."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across definitions, the prevailing usage is an image task where a model segments the specific object or region named by a natural language expression or description. Most papers describe success as producing a segmentation mask for the referred target, and one source says the output is \"a mask that can cover the described object\" (Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation). A smaller line extends this formulation to predicting a binary mask for a named component of a 3D object.\n\nVariants. Papers use several nearby names, most often referring expression segmentation, and also referring segmentation and referring image segmentation. Within these formulations, some describe segmenting a specific object instance, some a specific object or region, and one description notes that in RefCOCO-g \"one sentence is associated with one instance.\" A smaller line studies domain or modality variants, including remote sensing, where prompts ask for a mask for a referring expression and the model replies with a \"<SEG>\" token that is decoded into a mask (GeoPixel: Pixel Grounding Large Multimodal Model in Remote Sensing), and 3D referring object part segmentation over point clouds.\n\nSpace of elicitation and scores. Papers link it to 4 measurement instruments. The most common are RefCOCO, RefCOCO+, and RefCOCOg, often described together as the refCOCO series, and a smaller line also uses gRefCOCO. These instruments are described as datasets or benchmarks for evaluating referring segmentation, and one paper reports evaluating RefCOCO with cIoU.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior evidences. Instead, they link it to 3 constructs through related-to claims: multimodal alignment is related to it in work saying RIS relies on pixel-level ground-truth masks to learn visual-linguistic alignment, visual grounding is related to it in work on switching between RES and other visual grounding tasks, and visual recognition is related to it in work that adds referring segmentation as a broader recognition ability. Separately, one paper relates referring expression generation to it as a dual task.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "3D-AffordanceLLM: Harnessing Large Language Models for Open-Vocabulary Affordance Detection in 3D Worlds",
+      "MMR: A Large-scale Benchmark Dataset for Multi-target and Multi-granularity Reasoning Segmentation",
+      "SegLLM: Multi-round Reasoning Segmentation with Large Language Models",
+      "Text4Seg: Reimagining Image Segmentation as Text Generation",
+      "Towards Semantic Equivalence of Tokenization in Multimodal LLM",
+      "Visual Agents as Fast and Slow Thinkers",
+      "Visual-O1: Understanding Ambiguous Instructions via Multi-modal Multi-turn Chain-of-thoughts Reasoning"
+    ],
+    "icml25": [
+      "GeoPixel: Pixel Grounding Large Multimodal Model in Remote Sensing"
+    ],
+    "neurips24": [
+      "Boosting Weakly Supervised Referring Image Segmentation via Progressive Comprehension",
+      "Interfacing Foundation Models' Embeddings",
+      "Lumen: Unleashing Versatile Vision-Centric Capabilities of Large Multimodal Models",
+      "MoVA: Adapting Mixture of Vision Experts to Multimodal Context",
+      "OMG-LLaVA: Bridging Image-level, Object-level, Pixel-level Reasoning and Understanding",
+      "Octopus: A Multi-modal LLM with Parallel Recognition and Sequential Understanding",
+      "Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation",
+      "Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 7,
+    "icml25": 1,
+    "neurips24": 8
+  },
+  "conferences": [
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "canonical_name": "Citation quality",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats citation quality as a grounding and attribution property of generated responses: whether a model cites relevant source passages, whether those citations support the attached claims, and whether it avoids irrelevant or unsupported citations. This framing appears both as a latent model ability and as overall citation correctness or appropriateness at the claim level. A smaller line of work uses the near-synonymous label Attribution Groundedness for the same support-based idea in RAG, while another broadens the construct to the scholarly quality of references, emphasizing academically impactful, relevant, and credible sources and checking for fabricated or hallucinated references.\n\nSpace of facets. Papers break the construct into recurring facets of citation recall and precision, support for atomic claims, and, in one evaluation, the distribution of citation positions through a coefficient of variation. One paper explicitly places it under \"honesty for RAG application,\" describing responses as firmly rooted in the provided documents while maintaining appropriate attribution. The naming is not fully uniform: Citation quality and Attribution Groundedness are used for closely similar support-and-relevance notions, while the survey-generation framing also includes citation performance, author influence, and venue reputation.\n\nSpace of measurement. Papers link citation quality to one measurement instrument and no behavioral indicators. The linked instrument is TRUE, an NLI model used for entailment judgment in citation quality evaluation; beyond this, papers operationalize the construct with automatic relevance metrics over cited passages, claim-level citation recall and precision plus citation-position variation, an F1 groundedness score from citation precision and recall, and citation accuracy checks for fabricated or hallucinated references. These operationalizations mostly track the dominant definitions around support and relevance, though the survey-generation usage extends measurement to citation performance, author influence, and venue reputation.\n\nLinks. The recorded links are measurement links rather than causal or correlational claims. Multiple papers say citation quality is measured by TRUE, and one paper reports that Faithfulness is measured by citation quality through whether a system's response cites relevant passages.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Citation quality",
+    "Attribution groundedness"
+  ],
+  "papers": [
+    "SurveyGen: Quality-Aware Scientific Survey Generation with Large Language Models",
+    "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+    "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+    "MIRAGE-Bench: Automatic Multilingual Benchmark Arena for Retrieval-Augmented Generation Systems",
+    "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The latent ability of a model to correctly identify and reference relevant source passages when generating a response, reflecting its grounding and traceability.",
+      "paper": "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization",
+      "original_name": "Citation quality"
+    },
+    {
+      "text": "The quality of an LLM's generated citations in a RAG context, specifically whether the citations are relevant and sufficiently support the claims they are attached to.",
+      "paper": "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+      "original_name": "Attribution groundedness"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TRUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+      "evidence": "We use TRUE3, a fine-tuned T5-11B (Raffel et al., 2020) model as the NLI model for the judgement of entailment in citation quality. (Section 4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+          "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Faithfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MIRAGE-Bench: Automatic Multilingual Benchmark Arena for Retrieval-Augmented Generation Systems",
+      "evidence": "Using passage-level relevance judgments for all queries (or qrels) information available in MIRACL, we evaluate whether the system\u2019s response cites the relevant passages, crucial for measuring faithfulness.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "MIRAGE-Bench: Automatic Multilingual Benchmark Arena for Retrieval-Augmented Generation Systems"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats citation quality as a grounding and attribution property of generated responses: whether a model cites relevant source passages, whether those citations support the attached claims, and whether it avoids irrelevant or unsupported citations. This framing appears both as a latent model ability and as overall citation correctness or appropriateness at the claim level. A smaller line of work uses the near-synonymous label Attribution Groundedness for the same support-based idea in RAG, while another broadens the construct to the scholarly quality of references, emphasizing academically impactful, relevant, and credible sources and checking for fabricated or hallucinated references."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers break the construct into recurring facets of citation recall and precision, support for atomic claims, and, in one evaluation, the distribution of citation positions through a coefficient of variation. One paper explicitly places it under \"honesty for RAG application,\" describing responses as firmly rooted in the provided documents while maintaining appropriate attribution. The naming is not fully uniform: Citation quality and Attribution Groundedness are used for closely similar support-and-relevance notions, while the survey-generation framing also includes citation performance, author influence, and venue reputation."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link citation quality to one measurement instrument and no behavioral indicators. The linked instrument is TRUE, an NLI model used for entailment judgment in citation quality evaluation; beyond this, papers operationalize the construct with automatic relevance metrics over cited passages, claim-level citation recall and precision plus citation-position variation, an F1 groundedness score from citation precision and recall, and citation accuracy checks for fabricated or hallucinated references. These operationalizations mostly track the dominant definitions around support and relevance, though the survey-generation usage extends measurement to citation performance, author influence, and venue reputation."
+    },
+    {
+      "label": "Links.",
+      "text": "The recorded links are measurement links rather than causal or correlational claims. Multiple papers say citation quality is measured by TRUE, and one paper reports that Faithfulness is measured by citation quality through whether a system's response cites relevant passages."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define citation quality as the quality or latent ability of a model's citations to be relevant to the response and to support the specific claims they are attached to, especially in RAG settings. A single paper shifts emphasis to selecting impactful and credible scholarly sources in surveys, but the dominant use is still citation grounding and support, so the construct is mostly defined the same way.",
+    "papers_with_definition": 5,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats citation quality as a grounding and attribution property of generated responses: whether a model cites relevant source passages, whether those citations support the attached claims, and whether it avoids irrelevant or unsupported citations. This framing appears both as a latent model ability and as overall citation correctness or appropriateness at the claim level. A smaller line of work uses the near-synonymous label Attribution Groundedness for the same support-based idea in RAG, while another broadens the construct to the scholarly quality of references, emphasizing academically impactful, relevant, and credible sources and checking for fabricated or hallucinated references.\n\nSpace of facets. Papers break the construct into recurring facets of citation recall and precision, support for atomic claims, and, in one evaluation, the distribution of citation positions through a coefficient of variation. One paper explicitly places it under \"honesty for RAG application,\" describing responses as firmly rooted in the provided documents while maintaining appropriate attribution. The naming is not fully uniform: Citation quality and Attribution Groundedness are used for closely similar support-and-relevance notions, while the survey-generation framing also includes citation performance, author influence, and venue reputation.\n\nSpace of measurement. Papers link citation quality to one measurement instrument and no behavioral indicators. The linked instrument is TRUE, an NLI model used for entailment judgment in citation quality evaluation; beyond this, papers operationalize the construct with automatic relevance metrics over cited passages, claim-level citation recall and precision plus citation-position variation, an F1 groundedness score from citation precision and recall, and citation accuracy checks for fabricated or hallucinated references. These operationalizations mostly track the dominant definitions around support and relevance, though the survey-generation usage extends measurement to citation performance, author influence, and venue reputation.\n\nLinks. The recorded links are measurement links rather than causal or correlational claims. Multiple papers say citation quality is measured by TRUE, and one paper reports that Faithfulness is measured by citation quality through whether a system's response cites relevant passages.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse"
+    ],
+    "naacl25": [
+      "ALiiCE: Evaluating Positional Fine-grained Citation Generation",
+      "MIRAGE-Bench: Automatic Multilingual Benchmark Arena for Retrieval-Augmented Generation Systems",
+      "PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization"
+    ],
+    "emnlp25": [
+      "SurveyGen: Quality-Aware Scientific Survey Generation with Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 1,
+    "naacl25": 3,
+    "emnlp25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "naacl25"
+  ]
+}

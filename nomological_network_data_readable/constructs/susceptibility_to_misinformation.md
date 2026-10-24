@@ -1,0 +1,27 @@
+# Susceptibility to misinformation
+**Type:** Construct  
+**Referenced in:** 5 papers  
+**Also known as:** Authority bias, Persuadability  
+
+## State of the Field
+
+**Definition agreement:** Consensus. All papers define susceptibility to misinformation as a property of an LLM where it accepts, adopts, or prioritizes false or misleading externally provided information despite conflicting reliable knowledge. Most papers differ only in the source or framing of that misinformation, such as user input, human claims, or malicious factual-looking data, so they are studying the same core phenomenon.
+
+**Space of definitions.** Across the surveyed work, the prevailing framing treats this construct as a model-level tendency or disposition to accept, favor, or be influenced by false information when it is presented by a user or otherwise presented as factual. One definition centers on whether a model will "accept and incorporate false information provided by a user, even when it contradicts the model's internal knowledge," and another describes models as being influenced by "biased, misleading, or false information presented as factual," including adoption of malicious data without explicit instruction. A smaller framing names a narrower phenomenon, authority bias, where models "tend to favor the knowledge provided by the user even when it deviates from the facts," specifically over conflicting database information and because of "undue trust in the user's authority as a human."
+
+**Space of facets.** The papers organize closely related behavior under different names rather than a single shared taxonomy. "Susceptibility to misinformation" is framed against the model's own knowledge, "authority bias" is framed as favoring human-provided knowledge over a database, and "persuadability" is framed as taking up misleading or malicious content without explicit instruction. Across these framings, the same general pattern, taking up false information, is specified with different sources and reference standards.
+
+**Space of measurement.** Papers do not link this construct to any measurement instrument or behavioral indicator, so no benchmark, human evaluation, LLM-as-a-judge, probe, or analysis is specified as its operationalization.
+
+**Links.** The papers do not report any causes, correlates, or related links involving this construct.
+
+## Sources
+
+**[Exploring the Impact of Instruction-Tuning on LLM's Susceptibility to Misinformation](https://aclanthology.org/2025.acl-long.1295.pdf)**
+> The degree to which a large language model is likely to accept and incorporate false information provided by a user, even when it contradicts the model's internal knowledge.
+
+**[LLMs Trust Humans More, That's a Problem! Unveiling and Mitigating the Authority Bias in Retrieval-Augmented Generation](https://aclanthology.org/2025.acl-long.1400.pdf) (as "Authority bias")**
+> The tendency of a large language model to favor knowledge provided by a human user over conflicting information from a database, even when the user's information is factually incorrect.
+
+**[Attacks by Content: Automated Fact-checking is an AI Security Issue](https://aclanthology.org/2025.emnlp-main.431.pdf) (as "Persuadability")**
+> The disposition of an LLM to be influenced by biased, misleading, or false information presented as factual, leading to adoption of malicious data without explicit instruction.

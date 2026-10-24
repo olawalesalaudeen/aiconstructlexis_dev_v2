@@ -1,0 +1,329 @@
+{
+  "canonical_name": "Pre-training data detection",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Most papers treat pre-training data detection as a seen versus unseen text classification task: given a text sample, sentence, or sequence, the method decides whether that text was included in the model's pretraining or training data. The prevailing success criterion is separating training from non-training text, and one definition makes this explicit as analyzing model output statistics to find a scoring function that best separates the two classes. A narrower application uses the same behavior for detecting whether excerpts from copyrighted books were included, and a smaller line of work studies the task with controllable FDR.\n\nVariants. Papers use closely related names for the behavior, including pre-training data detection, pretraining data detection, and training data detection. The task is studied at different text granularities, from individual sentences to text sequences and more general samples, and the most specific domain variant is copyrighted book detection. Some work also studies harder settings where seen and unseen samples have high n-gram overlap.\n\nSpace of elicitation and scores. Papers link the behavior to 6 instruments overall. The most frequent named links are WikiMIA, Membership inference attack, MIMIR, BookMIA, and BookTection, with 1 other instrument also linked. Among the instruments that measure it directly, papers mostly use benchmark datasets: WikiMIA is the most common and is described as a temporal MIA dataset built from data created before and after model training for gold truth detection, MIMIR is used as a harder benchmark with high n-gram overlap between seen and unseen text, and BookMIA and BookTection also appear as evaluation datasets. Papers describe the link to Membership inference attack as related rather than as measurement.\n\nWhat it is taken as evidence of. Papers connect the behavior to 3 constructs rather than treating it as evidence of only one, with Memorization the most recurrent link. One paper claims a causal relationship from Memorization to Pre-training data detection, stating that memory effects on training data are a reason detection algorithms are effective, and another reports Memorization as related to the task in the context of memorized private information being vulnerable to data extraction. Smaller lines of work relate Overfitting to the task, describing effectiveness as closely tied to memorization or overfitting, and relate the task to Privacy preservation as a way of assessing privacy risks.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Pre-training data detection",
+    "Training data detection",
+    "Pretraining data detection",
+    "Copyrighted book detection"
+  ],
+  "papers": [
+    "Detecting Pretraining Data from Large Language Models",
+    "A Statistical Approach for Controlled Training Data Detection",
+    "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+    "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+    "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable task of determining whether a given text sample was part of a large language model's pre-training corpus by analyzing the model's output statistics.",
+      "paper": "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+      "original_name": "Pre-training data detection"
+    },
+    {
+      "text": "The observable task of classifying a given text sample as either having been part of the model's training set or not.",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "original_name": "Training data detection"
+    },
+    {
+      "text": "The observable task of classifying whether a given text sequence was included in a language model's pretraining dataset.",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "original_name": "Pretraining data detection"
+    },
+    {
+      "text": "The specific application of pretraining data detection to identify excerpts from copyrighted books within the model's training data.",
+      "paper": "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "original_name": "Copyrighted book detection"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiMIA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Detecting Pretraining Data from Large Language Models",
+      "evidence": "To facilitate this study, we introduce a dynamic benchmark WIKIMIA that uses data created before and after model training to support gold truth detection. (Abstract)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Detecting Pretraining Data from Large Language Models"
+        ],
+        "iclr25": [
+          "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+          "Fine-tuning can Help Detect Pretraining Data from Large Language Models"
+        ],
+        "emnlp25": [
+          "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Membership inference attack",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+      "evidence": "Pre-training data detection can be considered a special case of Membership Inference Attack (MIA) (Shokri et al., 2017): the goal is to infer whether a given input has been used for training a target LLM",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ],
+        "emnlp25": [
+          "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MIMIR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+      "evidence": "We focus on two benchmarks (and the only two to our knowledge) for pre-training data detection, WikiMIA (Shi et al., 2024) and MIMIR (Duan et al., 2024).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models",
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Min-K% Prob",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Detecting Pretraining Data from Large Language Models",
+      "evidence": "MIN-K% PROB can also detect potential copyright infringement in training data, as we show in this section. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Detecting Pretraining Data from Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LOSS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "evidence": "LOSS (Yeom et al., 2018), which uses the auto-regressive loss of a sample to determine whether it has been seen during training; (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Statistical Approach for Controlled Training Data Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Min-K% method",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "evidence": "MinK% (Shi et al., 2023), which takes the average loss of the top k% tokens with the highest loss as the basis for detection (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Statistical Approach for Controlled Training Data Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Zlib",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "evidence": "methods that compare a sample\u2019s loss to its zlib compression entropy (Zlib (Carlini et al., 2021)) (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Statistical Approach for Controlled Training Data Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Lowercase",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Statistical Approach for Controlled Training Data Detection",
+      "evidence": "methods that compare a sample\u2019s loss to... its loss after lowercasing (Lowercase (Carlini et al., 2021)) (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Statistical Approach for Controlled Training Data Detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Privacy preservation",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "TDDBench: A Benchmark for Training data detection",
+      "evidence": "Training data detection (TDD) is commonly employed to assess privacy risks in machine learning models (Murakonda & Shokri, 2020).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TDDBench: A Benchmark for Training data detection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Overfitting",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "TDDBench: A Benchmark for Training data detection",
+      "evidence": "A common view is that the effectiveness of TDD is closely tied to the level of training-data memorization or overfitting exhibited by the target model during training (Yeom et al., 2018; Long et al., 2018).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TDDBench: A Benchmark for Training data detection"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Data contamination",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "evidence": "pretraining data detection attacks are becoming increasingly important as they can reveal whether a model has been trained on potentially sensitive data and prevent evaluation data contamination (Jiang et al., 2024; Yang et al., 2023).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BookTection",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "evidence": "To verify the effectiveness of detection methods, we employ four common benchmark datasets for evaluations, including WikiMIA (Shi et al., 2024), ArXivTection (Duarte et al., 2024), BookTection (Duarte et al., 2024) BookMIA (Shi et al., 2024) and Pile (Maini et al., 2024). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Fine-tuning can Help Detect Pretraining Data from Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BookMIA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "evidence": "To verify the effectiveness of detection methods, we employ four common benchmark datasets for evaluations, including WikiMIA (Shi et al., 2024), ArXivTection (Duarte et al., 2024), BookTection (Duarte et al., 2024) BookMIA (Shi et al., 2024) and Pile (Maini et al., 2024). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Fine-tuning can Help Detect Pretraining Data from Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "The Pile",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "evidence": "To verify the effectiveness of detection methods, we employ four common benchmark datasets for evaluations, including WikiMIA (Shi et al., 2024), ArXivTection (Duarte et al., 2024), BookTection (Duarte et al., 2024) BookMIA (Shi et al., 2024) and Pile (Maini et al., 2024). (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Fine-tuning can Help Detect Pretraining Data from Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Memorization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework",
+      "evidence": "The powerful learning capabilities of LLMs often lead to noticeable memory effects on training data. This characteristic is a key reason why pre-training data detection algorithms are effective (Carlini et al., 2021; Tirumala et al., 2022). (Section 3.5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Identifying Pre-training Data in LLMs: A Neuron Activation-Based Detection Framework"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 15,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 12,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most papers treat pre-training data detection as a seen versus unseen text classification task: given a text sample, sentence, or sequence, the method decides whether that text was included in the model's pretraining or training data. The prevailing success criterion is separating training from non-training text, and one definition makes this explicit as analyzing model output statistics to find a scoring function that best separates the two classes. A narrower application uses the same behavior for detecting whether excerpts from copyrighted books were included, and a smaller line of work studies the task with controllable FDR."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use closely related names for the behavior, including pre-training data detection, pretraining data detection, and training data detection. The task is studied at different text granularities, from individual sentences to text sequences and more general samples, and the most specific domain variant is copyrighted book detection. Some work also studies harder settings where seen and unseen samples have high n-gram overlap."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link the behavior to 6 instruments overall. The most frequent named links are WikiMIA, Membership inference attack, MIMIR, BookMIA, and BookTection, with 1 other instrument also linked. Among the instruments that measure it directly, papers mostly use benchmark datasets: WikiMIA is the most common and is described as a temporal MIA dataset built from data created before and after model training for gold truth detection, MIMIR is used as a harder benchmark with high n-gram overlap between seen and unseen text, and BookMIA and BookTection also appear as evaluation datasets. Papers describe the link to Membership inference attack as related rather than as measurement."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect the behavior to 3 constructs rather than treating it as evidence of only one, with Memorization the most recurrent link. One paper claims a causal relationship from Memorization to Pre-training data detection, stating that memory effects on training data are a reason detection algorithms are effective, and another reports Memorization as related to the task in the context of memorized private information being vulnerable to data extraction. Smaller lines of work relate Overfitting to the task, describing effectiveness as closely tied to memorization or overfitting, and relate the task to Privacy preservation as a way of assessing privacy risks."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Most papers treat pre-training data detection as a seen versus unseen text classification task: given a text sample, sentence, or sequence, the method decides whether that text was included in the model's pretraining or training data. The prevailing success criterion is separating training from non-training text, and one definition makes this explicit as analyzing model output statistics to find a scoring function that best separates the two classes. A narrower application uses the same behavior for detecting whether excerpts from copyrighted books were included, and a smaller line of work studies the task with controllable FDR.\n\nVariants. Papers use closely related names for the behavior, including pre-training data detection, pretraining data detection, and training data detection. The task is studied at different text granularities, from individual sentences to text sequences and more general samples, and the most specific domain variant is copyrighted book detection. Some work also studies harder settings where seen and unseen samples have high n-gram overlap.\n\nSpace of elicitation and scores. Papers link the behavior to 6 instruments overall. The most frequent named links are WikiMIA, Membership inference attack, MIMIR, BookMIA, and BookTection, with 1 other instrument also linked. Among the instruments that measure it directly, papers mostly use benchmark datasets: WikiMIA is the most common and is described as a temporal MIA dataset built from data created before and after model training for gold truth detection, MIMIR is used as a harder benchmark with high n-gram overlap between seen and unseen text, and BookMIA and BookTection also appear as evaluation datasets. Papers describe the link to Membership inference attack as related rather than as measurement.\n\nWhat it is taken as evidence of. Papers connect the behavior to 3 constructs rather than treating it as evidence of only one, with Memorization the most recurrent link. One paper claims a causal relationship from Memorization to Pre-training data detection, stating that memory effects on training data are a reason detection algorithms are effective, and another reports Memorization as related to the task in the context of memorized private information being vulnerable to data extraction. Smaller lines of work relate Overfitting to the task, describing effectiveness as closely tied to memorization or overfitting, and relate the task to Privacy preservation as a way of assessing privacy risks.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "A Statistical Approach for Controlled Training Data Detection",
+      "Fine-tuning can Help Detect Pretraining Data from Large Language Models",
+      "Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models",
+      "Min-K%++: Improved Baseline for Pre-Training Data Detection from Large Language Models"
+    ],
+    "iclr24": [
+      "Detecting Pretraining Data from Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "iclr24": 1
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25"
+  ]
+}

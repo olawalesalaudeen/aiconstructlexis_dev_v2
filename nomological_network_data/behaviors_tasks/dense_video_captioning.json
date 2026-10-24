@@ -1,0 +1,137 @@
+{
+  "canonical_name": "Dense video captioning",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the definitions, the prevailing usage treats dense video captioning as generating multiple temporally aligned descriptions within a single video, rather than a single overall caption. Papers consistently require time localization: one formulation asks models to \"output the start and end timestamp for each event, and describe each event with sentences,\" while another describes \"multiple, time-localized textual descriptions\" for a sequence of events. A narrower formulation further stresses fine-grained coverage of chronologically evolving events and visual elements such as camera states, scenes, actions, and object attributes.\n\nVariants. Papers mostly study this behavior as describing several events that unfold over time in one video. One formulation broadens the target content beyond events alone to include evolving visual elements, including camera states, scenes, actions, and object attributes. Papers also use the abbreviation DVC, and one paper relates it to the broader label \"dense captioning.\"\n\nSpace of elicitation and scores. Papers link dense video captioning to 2 measurement instruments, ActivityNet Captions and YouCook2, and both are described as evaluation datasets. These are the only linked instruments recorded. One evaluation report says performance on YouCook2 is reported with the CIDEr metric, while another states that both ActivityNet Captions and YouCook2 are used as evaluation datasets for the task.\n\nWhat it is taken as evidence of. Papers connect dense video captioning to 1 construct, Temporal grounding ability. The recorded link is a related relationship rather than a direct measurement claim: one paper presents dense video captioning as a downstream task associated with video temporal grounding. No other construct is linked to it.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Dense video captioning"
+  ],
+  "papers": [
+    "TUNA: Comprehensive Fine-grained Temporal Understanding Evaluation on Dense Dynamic Videos",
+    "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+    "Youku Dense Caption: A Large-scale Chinese Video Dense Caption Dataset and Benchmarks",
+    "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+    "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing timestamped descriptions for multiple events throughout a video.",
+      "paper": "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "original_name": "Dense video captioning"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Dense captioning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "evidence": "We define two dense captioning tasks according to different goals: 1) [DVC] Dense Video Captioning: Comprehensively describe all the events happened in the video. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Temporal grounding ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "evidence": "Video Temporal Grounding (VTG) is an important ability for video understanding models (Lin et al., 2023b), and has becoming the base of a series of downstream tasks like moment retrieval (Fabian Caba Heilbron & Niebles, 2015; Gao et al., 2017; Oncescu et al., 2021), dense video caption (Zhou et al., 2018; Tang et al., 2019), video highlight detection (Lei et al.; Liu et al., 2022), and video summarization (Song et al., 2015; Gygli et al., 2014).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "YouCook2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "evidence": "we report the performance of models using the CIDEr metric for the dense video captioning task on the Youcook2 dataset",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ActivityNet Captions",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "evidence": "We use Youcook2 (Zhou et al., 2018) and ActivityNet Captions (Fabian Caba Heilbron & Niebles, 2015) datasets as the evaluation datasets.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the definitions, the prevailing usage treats dense video captioning as generating multiple temporally aligned descriptions within a single video, rather than a single overall caption. Papers consistently require time localization: one formulation asks models to \"output the start and end timestamp for each event, and describe each event with sentences,\" while another describes \"multiple, time-localized textual descriptions\" for a sequence of events. A narrower formulation further stresses fine-grained coverage of chronologically evolving events and visual elements such as camera states, scenes, actions, and object attributes."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers mostly study this behavior as describing several events that unfold over time in one video. One formulation broadens the target content beyond events alone to include evolving visual elements, including camera states, scenes, actions, and object attributes. Papers also use the abbreviation DVC, and one paper relates it to the broader label \"dense captioning.\""
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link dense video captioning to 2 measurement instruments, ActivityNet Captions and YouCook2, and both are described as evaluation datasets. These are the only linked instruments recorded. One evaluation report says performance on YouCook2 is reported with the CIDEr metric, while another states that both ActivityNet Captions and YouCook2 are used as evaluation datasets for the task."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers connect dense video captioning to 1 construct, Temporal grounding ability. The recorded link is a related relationship rather than a direct measurement claim: one paper presents dense video captioning as a downstream task associated with video temporal grounding. No other construct is linked to it."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the definitions, the prevailing usage treats dense video captioning as generating multiple temporally aligned descriptions within a single video, rather than a single overall caption. Papers consistently require time localization: one formulation asks models to \"output the start and end timestamp for each event, and describe each event with sentences,\" while another describes \"multiple, time-localized textual descriptions\" for a sequence of events. A narrower formulation further stresses fine-grained coverage of chronologically evolving events and visual elements such as camera states, scenes, actions, and object attributes.\n\nVariants. Papers mostly study this behavior as describing several events that unfold over time in one video. One formulation broadens the target content beyond events alone to include evolving visual elements, including camera states, scenes, actions, and object attributes. Papers also use the abbreviation DVC, and one paper relates it to the broader label \"dense captioning.\"\n\nSpace of elicitation and scores. Papers link dense video captioning to 2 measurement instruments, ActivityNet Captions and YouCook2, and both are described as evaluation datasets. These are the only linked instruments recorded. One evaluation report says performance on YouCook2 is reported with the CIDEr metric, while another states that both ActivityNet Captions and YouCook2 are used as evaluation datasets for the task.\n\nWhat it is taken as evidence of. Papers connect dense video captioning to 1 construct, Temporal grounding ability. The recorded link is a related relationship rather than a direct measurement claim: one paper presents dense video captioning as a downstream task associated with video temporal grounding. No other construct is linked to it.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "TRACE: Temporal Grounding Video LLM  via Causal Event Modeling",
+      "Youku Dense Caption: A Large-scale Chinese Video Dense Caption Dataset and Benchmarks"
+    ],
+    "neurips24": [
+      "E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding",
+      "SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM"
+    ],
+    "acl25": [
+      "TUNA: Comprehensive Fine-grained Temporal Understanding Evaluation on Dense Dynamic Videos"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 2,
+    "neurips24": 2,
+    "acl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "neurips24"
+  ]
+}

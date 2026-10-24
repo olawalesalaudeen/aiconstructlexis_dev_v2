@@ -1,0 +1,215 @@
+{
+  "canonical_name": "Speech translation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats speech translation as converting spoken content, spoken audio, or an utterance in a source language into written text in a target language. Most definitions make the text output explicit and often formulate the task as directly predicting target-language text from speech, while a smaller number use broader wording such as translating spoken language into another language without specifying the output form. Some papers also use the label speech-to-text translation and describe it as transcribing spoken audio into written text in a different target language.\n\nVariants. Papers use several names for closely related versions of the task, including speech translation, speech-to-text translation, and direct speech translation. The most common distinction is between end-to-end speech translation, which directly converts speech in one language to text in another without intermediate transcription, and cascaded speech translation, which first transcribes speech with ASR and then applies machine translation. Smaller strands examine zero-shot speech translation settings and terminology translation within speech translation.\n\nSpace of elicitation and scores. Papers measure this behavior with three linked instruments, most often CoVoST 2, and also FLEURS and MuST-C. These instruments are used as dataset-based evaluations of speech translation, and some papers describe scoring with BLEU, including sacreBLEU-computed BLEU scores.\n\nWhat it is taken as evidence of. No construct is linked to speech translation, so papers do not converge on it as evidence of a particular construct. Outside construct links, one paper claims a causal relationship from speech recognition to speech translation, and one paper reports that literal translation correlates with speech translation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Speech translation",
+    "Speech-to-text translation",
+    "Cascaded speech translation",
+    "End-to-end speech translation",
+    "Automatic speech translation"
+  ],
+  "papers": [
+    "Distilling an End-to-End Voice Assistant Without Instruction Training Data",
+    "It's Not a Walk in the Park! Challenges of Idiom Translation in Speech-to-text Systems",
+    "Locate-and-Focus: Enhancing Terminology Translation in Speech Language Models",
+    "Soundwave: Less is More for Speech-Text Alignment in LLMs",
+    "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability",
+    "Audio-Reasoner: Improving Reasoning Capability in Large Audio Language Models",
+    "Charting the Landscape of African NLP: Mapping Progress and Shaping the Road Ahead",
+    "CoVoGER: A Multilingual Multitask Benchmark for Speech-to-text Generative Error Correction with Large Language Models",
+    "MultiMed-ST: Large-scale Many-to-many Multilingual Medical Speech Translation",
+    "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+    "Speech Discrete Tokens or Continuous Features? A Comparative Analysis for Spoken Language Understanding in SpeechLLMs",
+    "Whisper-UT: A Unified Translation Framework for Speech and Text",
+    "SALMONN: Towards Generic Hearing Abilities for Large Language Models",
+    "Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring the Capabilities of Spoken Language Models with 180 Tasks",
+    "Prepending or Cross-Attention for Speech-to-Text? An Empirical Comparison",
+    "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+    "Wav2Prompt: End-to-End Speech Prompt Learning and Task-based Fine-tuning for Text-based LLMs"
+  ],
+  "paper_count": 17,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Translating spoken language into another language.",
+      "paper": "Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring the Capabilities of Spoken Language Models with 180 Tasks",
+      "original_name": "Speech translation"
+    },
+    {
+      "text": "The task of transcribing spoken audio from a source language into written text in a different target language.",
+      "paper": "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+      "original_name": "Speech-to-text translation"
+    },
+    {
+      "text": "Translating speech by first transcribing it to text using ASR and then applying machine translation to the transcribed text.",
+      "paper": "MultiMed-ST: Large-scale Many-to-many Multilingual Medical Speech Translation",
+      "original_name": "Cascaded speech translation"
+    },
+    {
+      "text": "Directly translating speech in one language to text in another without an intermediate transcription step.",
+      "paper": "MultiMed-ST: Large-scale Many-to-many Multilingual Medical Speech Translation",
+      "original_name": "End-to-end speech translation"
+    },
+    {
+      "text": "The task of translating spoken language from a source language in an audio input into written text in a target language.",
+      "paper": "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+      "original_name": "Automatic speech translation"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CoVoST 2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SALMONN: Towards Generic Hearing Abilities for Large Language Models",
+      "evidence": "\u201cEn2Zh CoVoST2-En2Zh ...\u201d",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SALMONN: Towards Generic Hearing Abilities for Large Language Models"
+        ],
+        "naacl25": [
+          "Prepending or Cross-Attention for Speech-to-Text? An Empirical Comparison"
+        ],
+        "acl25": [
+          "Distilling an End-to-End Voice Assistant Without Instruction Training Data",
+          "Soundwave: Less is More for Speech-Text Alignment in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MuST-C",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Soundwave: Less is More for Speech-Text Alignment in LLMs",
+      "evidence": "MuST-C\u2217(En-Nl|En-It|En-Ro|En-Es) (Table 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Soundwave: Less is More for Speech-Text Alignment in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FLEURS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability",
+      "evidence": "We analyze the output probability distributions of Whisper on the ASR and ST tasks of the Fleurs data (Conneau et al., 2023) on 4 language pairs (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Speech recognition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "MultiMed-ST: Large-scale Many-to-many Multilingual Medical Speech Translation",
+      "evidence": "In the context of ST, ASR performance influences translation quality; therefore, ASR was additionally assessed using Word Error Rate (WER) and Character Error Rate (CER). (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "MultiMed-ST: Large-scale Many-to-many Multilingual Medical Speech Translation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Literal translation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "It's Not a Walk in the Park! Challenges of Idiom Translation in Speech-to-text Systems",
+      "evidence": "SLT systems experience a pronounced performance drop on idiomatic data, often reverting to literal translations even in higher layers. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "It's Not a Walk in the Park! Challenges of Idiom Translation in Speech-to-text Systems"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats speech translation as converting spoken content, spoken audio, or an utterance in a source language into written text in a target language. Most definitions make the text output explicit and often formulate the task as directly predicting target-language text from speech, while a smaller number use broader wording such as translating spoken language into another language without specifying the output form. Some papers also use the label speech-to-text translation and describe it as transcribing spoken audio into written text in a different target language."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several names for closely related versions of the task, including speech translation, speech-to-text translation, and direct speech translation. The most common distinction is between end-to-end speech translation, which directly converts speech in one language to text in another without intermediate transcription, and cascaded speech translation, which first transcribes speech with ASR and then applies machine translation. Smaller strands examine zero-shot speech translation settings and terminology translation within speech translation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure this behavior with three linked instruments, most often CoVoST 2, and also FLEURS and MuST-C. These instruments are used as dataset-based evaluations of speech translation, and some papers describe scoring with BLEU, including sacreBLEU-computed BLEU scores."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked to speech translation, so papers do not converge on it as evidence of a particular construct. Outside construct links, one paper claims a causal relationship from speech recognition to speech translation, and one paper reports that literal translation correlates with speech translation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats speech translation as converting spoken content, spoken audio, or an utterance in a source language into written text in a target language. Most definitions make the text output explicit and often formulate the task as directly predicting target-language text from speech, while a smaller number use broader wording such as translating spoken language into another language without specifying the output form. Some papers also use the label speech-to-text translation and describe it as transcribing spoken audio into written text in a different target language.\n\nVariants. Papers use several names for closely related versions of the task, including speech translation, speech-to-text translation, and direct speech translation. The most common distinction is between end-to-end speech translation, which directly converts speech in one language to text in another without intermediate transcription, and cascaded speech translation, which first transcribes speech with ASR and then applies machine translation. Smaller strands examine zero-shot speech translation settings and terminology translation within speech translation.\n\nSpace of elicitation and scores. Papers measure this behavior with three linked instruments, most often CoVoST 2, and also FLEURS and MuST-C. These instruments are used as dataset-based evaluations of speech translation, and some papers describe scoring with BLEU, including sacreBLEU-computed BLEU scores.\n\nWhat it is taken as evidence of. No construct is linked to speech translation, so papers do not converge on it as evidence of a particular construct. Outside construct links, one paper claims a causal relationship from speech recognition to speech translation, and one paper reports that literal translation correlates with speech translation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Distilling an End-to-End Voice Assistant Without Instruction Training Data",
+      "It's Not a Walk in the Park! Challenges of Idiom Translation in Speech-to-text Systems",
+      "Locate-and-Focus: Enhancing Terminology Translation in Speech Language Models",
+      "Soundwave: Less is More for Speech-Text Alignment in LLMs"
+    ],
+    "emnlp25": [
+      "Are Generative Models Underconfident? Better Quality Estimation with Boosted Model Probability",
+      "Audio-Reasoner: Improving Reasoning Capability in Large Audio Language Models",
+      "Charting the Landscape of African NLP: Mapping Progress and Shaping the Road Ahead",
+      "CoVoGER: A Multilingual Multitask Benchmark for Speech-to-text Generative Error Correction with Large Language Models",
+      "MultiMed-ST: Large-scale Many-to-many Multilingual Medical Speech Translation",
+      "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+      "Speech Discrete Tokens or Continuous Features? A Comparative Analysis for Spoken Language Understanding in SpeechLLMs",
+      "Whisper-UT: A Unified Translation Framework for Speech and Text"
+    ],
+    "iclr24": [
+      "SALMONN: Towards Generic Hearing Abilities for Large Language Models"
+    ],
+    "iclr25": [
+      "Dynamic-SUPERB Phase-2: A Collaboratively Expanding Benchmark for Measuring the Capabilities of Spoken Language Models with 180 Tasks"
+    ],
+    "naacl25": [
+      "Prepending or Cross-Attention for Speech-to-Text? An Empirical Comparison",
+      "VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning",
+      "Wav2Prompt: End-to-End Speech Prompt Learning and Task-based Fine-tuning for Text-based LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 8,
+    "iclr24": 1,
+    "iclr25": 1,
+    "naacl25": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "naacl25"
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "canonical_name": "Easy-to-hard generalization",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats easy-to-hard generalization as a model's ability to learn from simpler tasks or instances and then succeed on harder, larger, or more complex ones. The definitions largely keep that core framing while varying the emphasis: some state that the harder cases receive no additional or direct supervision, some describe it as simple-to-hard generalization on unseen instances with longer or more intricate reasoning chains, and others use closely aligned labels such as transferability to more complex circuits or logical extrapolation to larger and more difficult problems.\n\nSpace of facets. Authors differentiate the construct mainly by what makes the target case harder. One recurring formulation ties it to reasoning length, with one paper explicitly saying that simple-to-hard generalization is a type of length generalization, while other papers frame the same pattern as logical extrapolation to greater size and difficulty or as transferability to circuits with more components. Across these papers, the labels easy-to-hard generalization, simple-to-hard generalization, transferability, and logical extrapolation are all used for this generalization pattern.\n\nSpace of measurement. Operationalization is sparse. Papers link it to no measurement instrument and no behavioral indicator, and the only recorded measurement claim says it is measured by mathematical reasoning, phrased as selecting mathematical reasoning to evaluate easy-to-hard generalization ability. No named measurement instrument is linked to it.\n\nLinks. More than one paper relates it to length generalization, including one that explicitly says simple-to-hard generalization is a type of length generalization and another that frames the target behavior as logical extrapolation to problems of greater size and difficulty than those in the training set. One paper also relates it to modality imbalance, using simple-to-hard generalization to measure the brittleness of learning in that setting.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Easy-to-hard generalization",
+    "Simple-to-hard generalization",
+    "Transferability",
+    "Logical extrapolation"
+  ],
+  "papers": [
+    "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?",
+    "LaMAGIC2: Advanced Circuit Formulations for Language Model-Based Analog Topology Generation",
+    "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+    "Transformers Can Do Arithmetic with the Right Embeddings"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability of a model to learn to solve difficult problems by training on solutions to simpler problems, without requiring direct supervision on the harder instances.",
+      "paper": "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+      "original_name": "Easy-to-hard generalization"
+    },
+    {
+      "text": "The latent ability of a model to generalize from training on simpler instances of a task to performing well on more complex, unseen instances, particularly involving longer or more intricate reasoning chains.",
+      "paper": "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?",
+      "original_name": "Simple-to-hard generalization"
+    },
+    {
+      "text": "The model's ability to generalize its performance from training on simpler circuits to generating more complex circuits with a larger number of components.",
+      "paper": "LaMAGIC2: Advanced Circuit Formulations for Language Model-Based Analog Topology Generation",
+      "original_name": "Transferability"
+    },
+    {
+      "text": "The ability to solve problems that are larger and more complex than those seen in the training data.",
+      "paper": "Transformers Can Do Arithmetic with the Right Embeddings",
+      "original_name": "Logical extrapolation"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Transformers Can Do Arithmetic with the Right Embeddings",
+      "evidence": "\u201cwe investigate whether these models are capable of logical extrapolation\u2014can they solve problems of greater size and difficulty than those that appear in their training set?\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Transformers Can Do Arithmetic with the Right Embeddings"
+        ],
+        "icml25": [
+          "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Modality imbalance",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?",
+      "evidence": "We observe that current models can S2H generalize on text \u2013 when trained to read short sequences from small LaTeX-formatted tables, the models can read longer paths from larger tables, also provided in LaTeX code. However, they fail to length-generalize on images. To address the generalization gap and imbalanced learning of different modalities, our goal is to transfer the generalization behavior from text to image modality. (Figure 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MATH",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Generative Verifiers: Reward Modeling as Next-Token Prediction",
+      "evidence": "We evaluate these verifiers on the GSM8K test set as well as their easy-to-hard generalization on much harder MATH dataset (Hendrycks et al., 2021) (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generative Verifiers: Reward Modeling as Next-Token Prediction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision",
+      "evidence": "\"we select mathematical reasoning to evaluate easy-to-hard generalization ability\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats easy-to-hard generalization as a model's ability to learn from simpler tasks or instances and then succeed on harder, larger, or more complex ones. The definitions largely keep that core framing while varying the emphasis: some state that the harder cases receive no additional or direct supervision, some describe it as simple-to-hard generalization on unseen instances with longer or more intricate reasoning chains, and others use closely aligned labels such as transferability to more complex circuits or logical extrapolation to larger and more difficult problems."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Authors differentiate the construct mainly by what makes the target case harder. One recurring formulation ties it to reasoning length, with one paper explicitly saying that simple-to-hard generalization is a type of length generalization, while other papers frame the same pattern as logical extrapolation to greater size and difficulty or as transferability to circuits with more components. Across these papers, the labels easy-to-hard generalization, simple-to-hard generalization, transferability, and logical extrapolation are all used for this generalization pattern."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is sparse. Papers link it to no measurement instrument and no behavioral indicator, and the only recorded measurement claim says it is measured by mathematical reasoning, phrased as selecting mathematical reasoning to evaluate easy-to-hard generalization ability. No named measurement instrument is linked to it."
+    },
+    {
+      "label": "Links.",
+      "text": "More than one paper relates it to length generalization, including one that explicitly says simple-to-hard generalization is a type of length generalization and another that frames the target behavior as logical extrapolation to problems of greater size and difficulty than those in the training set. One paper also relates it to modality imbalance, using simple-to-hard generalization to measure the brittleness of learning in that setting."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "All papers define easy-to-hard generalization as a model's ability to train on easier, smaller, or simpler instances and then succeed on harder, larger, or more complex unseen instances without direct supervision on those harder cases. The differences are only in wording and domain emphasis, such as reasoning chains or circuit generation, rather than in the core property being defined.",
+    "papers_with_definition": 4,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats easy-to-hard generalization as a model's ability to learn from simpler tasks or instances and then succeed on harder, larger, or more complex ones. The definitions largely keep that core framing while varying the emphasis: some state that the harder cases receive no additional or direct supervision, some describe it as simple-to-hard generalization on unseen instances with longer or more intricate reasoning chains, and others use closely aligned labels such as transferability to more complex circuits or logical extrapolation to larger and more difficult problems.\n\nSpace of facets. Authors differentiate the construct mainly by what makes the target case harder. One recurring formulation ties it to reasoning length, with one paper explicitly saying that simple-to-hard generalization is a type of length generalization, while other papers frame the same pattern as logical extrapolation to greater size and difficulty or as transferability to circuits with more components. Across these papers, the labels easy-to-hard generalization, simple-to-hard generalization, transferability, and logical extrapolation are all used for this generalization pattern.\n\nSpace of measurement. Operationalization is sparse. Papers link it to no measurement instrument and no behavioral indicator, and the only recorded measurement claim says it is measured by mathematical reasoning, phrased as selecting mathematical reasoning to evaluate easy-to-hard generalization ability. No named measurement instrument is linked to it.\n\nLinks. More than one paper relates it to length generalization, including one that explicitly says simple-to-hard generalization is a type of length generalization and another that frames the target behavior as logical extrapolation to problems of greater size and difficulty than those in the training set. One paper also relates it to modality imbalance, using simple-to-hard generalization to measure the brittleness of learning in that setting.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "icml25": [
+      "Generalizing from SIMPLE to HARD Visual Reasoning: Can We Mitigate Modality Imbalance in VLMs?",
+      "LaMAGIC2: Advanced Circuit Formulations for Language Model-Based Analog Topology Generation",
+      "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges"
+    ],
+    "neurips24": [
+      "Transformers Can Do Arithmetic with the Right Embeddings"
+    ]
+  },
+  "paper_count_by_conference": {
+    "icml25": 3,
+    "neurips24": 1
+  },
+  "conferences": [
+    "icml25",
+    "neurips24"
+  ]
+}

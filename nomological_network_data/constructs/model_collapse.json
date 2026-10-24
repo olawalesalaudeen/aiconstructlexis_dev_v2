@@ -1,0 +1,264 @@
+{
+  "canonical_name": "Model collapse",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across papers, the most recurrent framing treats model collapse as degrading performance in self-consuming, self-improvement, or synthetic-data training loops. In that usage, papers describe worsening generalization, failure to improve with more data, or outputs and training data becoming increasingly deterministic and less diverse. Other papers use the term for different phenomena, including token clustering over transformer layers into a single consensus state that limits output diversity and rapid collapse during optimization under a training loss; a separate theoretical account frames the issue through the capacity to preserve \"distributional fidelity\" across successive generations of synthesized data. The disagreement is therefore over whether collapse is mainly a problem in recursive synthetic-data training, internal token dynamics, or optimization.\n\nSpace of facets. Papers do not use a single internal taxonomy, but they do mark distinct forms and adjacent notions. One line explicitly studies a strong form caused by synthetic data in the training corpus, while other work describes early collapse through loss of distributional tails, homogenized language, and increasingly deterministic outputs. Another paper effectively equates collapse with token consensus, where tokens cluster and the model loses the ability to produce different outputs, and theoretical work also organizes the discussion around distributional fidelity across generations.\n\nSpace of measurement. Papers link model collapse to 3 measurement instruments, BabiStories, HelpSteer2, and MNIST, and to 2 behavioral indicators, with news summarization used as a direct measure. The operationalizations are all dataset or task experiments: BabiStories and MNIST are used to empirically confirm collapse, HelpSteer2 compares replacing prior data with synthetic data against accumulating new data across iterations, and news summarization treats worse performance with synthesized than original data as indicating collapse. These measures target performance changes in synthetic or iterative training settings, so they align most closely with the degradation-over-generations framing rather than the token-clustering account.\n\nLinks. More than one paper claims a causal relationship from model collapse to generalization, describing real-world generalization as compromised or generalization error as depending on preserved fidelity across generations. One paper records causal claims in both directions between model collapse and overfitting, and single-paper causal claims also connect model collapse to reduced linguistic diversity and to a behavioral indicator about misinformation or nonsensical outputs. Another paper claims a causal relationship from recursive stability to model collapse, stating that collapse can be avoided under a recursive stability condition and a non-negligible constant level of real data; papers also relate model collapse to semantic drift, and one additional related link is recorded.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Model collapse",
+    "Distributional fidelity"
+  ],
+  "papers": [
+    "Demystifying Synthetic Data in LLM Pre-training: A Systematic Study of Scaling Laws, Benefits, and Pitfalls",
+    "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+    "Large Language Models Threaten Language's Epistemic and Communicative Foundations",
+    "Machine-generated text detection prevents language model collapse",
+    "Recursive Training Loops in LLMs: How training data properties modulate distribution shift in generated data?",
+    "Superficial Self-Improved Reasoners Benefit from Model Merging",
+    "A Theoretical Perspective: How to Prevent Model Collapse in Self-consuming Training Loops",
+    "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+    "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+    "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification",
+    "MACPO: Weak-to-Strong Alignment via Multi-Agent Contrastive Preference Optimization",
+    "Strong Model Collapse",
+    "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World",
+    "Consensus Is All You Get: The Role of Attention in Transformers",
+    "Self-Consuming Generative Models with Adversarially Curated Data"
+  ],
+  "paper_count": 15,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A latent degradation in model performance caused by training on synthetic data, characterized by worsening generalization and failure to improve with more data.",
+      "paper": "Strong Model Collapse",
+      "original_name": "Model collapse"
+    },
+    {
+      "text": "The capacity of a generative model to preserve the statistical properties of the true data distribution across successive generations of data synthesis.",
+      "paper": "A Theoretical Perspective: How to Prevent Model Collapse in Self-consuming Training Loops",
+      "original_name": "Distributional fidelity"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Strong Model Collapse",
+      "evidence": "Consequently, the model\u2019s ability to generalize to real-world data is compromised, as it increasingly relies on the distorted distribution provided by prior AI generations rather than learning accurate representations of the real world. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Strong Model Collapse",
+          "A Theoretical Perspective: How to Prevent Model Collapse in Self-consuming Training Loops"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Overfitting",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Strong Model Collapse",
+      "evidence": "this phenomenon arises as the model gradually overfits to patterns found in synthetic data, which may not fully represent the richness or variability of real-world data. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Strong Model Collapse"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Misinformation generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Strong Model Collapse",
+      "evidence": "If synthetic data is used in training these models, even in small quantities, the model can start producing \u201cgibberish\u201d or nonsensical outputs, contains misinformation, or reflect stereotypes. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Strong Model Collapse"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MNIST",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Strong Model Collapse",
+      "evidence": "Our theoretical results are empirically confirmed with experiments in: \u2022 Toy settings, including random projections model on Gaussian data, and shallow networks fully trained on the MNIST dataset (Deng, 2012). (Section 1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Strong Model Collapse"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BabiStories",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Strong Model Collapse",
+      "evidence": "Our theoretical results are empirically confirmed with experiments in: ... \u2022 Realistic setting of GPT-2 models trained on BabiStories (Zhang et al., 2024a) (Section 1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Strong Model Collapse"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Recursive stability",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "A Theoretical Perspective: How to Prevent Model Collapse in Self-consuming Training Loops",
+      "evidence": "Theorem 1 demonstrates that under a recursive stability condition and a non-negligible constant level of real data, model collapse can be avoided across a variety of model architectures.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "A Theoretical Perspective: How to Prevent Model Collapse in Self-consuming Training Loops"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HelpSteer2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World",
+      "evidence": "Fine-tuning Google\u2019s Gemma2 models on Nvidia\u2019s HelpSteer 2 dataset demonstrates that model collapse occurs if previous data are replaced after each model-fitting iteration (left), whereas model collapse is avoided if new synthetic data instead accumulate with previous real and synthetic data (right).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Semantic drift",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Large Language Models Threaten Language's Epistemic and Communicative Foundations",
+      "evidence": "Semantic drift and model collapse are linked in a loop of human and LLM language production",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Large Language Models Threaten Language's Epistemic and Communicative Foundations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Linguistic diversity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Large Language Models Threaten Language's Epistemic and Communicative Foundations",
+      "evidence": "\u201cThe loss of the distributional tails during early model collapse can reduce linguistic innovation and cognitive diversity ... due to homogenized language.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Large Language Models Threaten Language's Epistemic and Communicative Foundations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "News summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification",
+      "evidence": "We experiment with practical tasks \u2013 computing matrix eigenvalues with transformers and news summarization with LLMs \u2013 which both exhibit model collapse when trained on generated data",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 10,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 8,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the most recurrent framing treats model collapse as degrading performance in self-consuming, self-improvement, or synthetic-data training loops. In that usage, papers describe worsening generalization, failure to improve with more data, or outputs and training data becoming increasingly deterministic and less diverse. Other papers use the term for different phenomena, including token clustering over transformer layers into a single consensus state that limits output diversity and rapid collapse during optimization under a training loss; a separate theoretical account frames the issue through the capacity to preserve \"distributional fidelity\" across successive generations of synthesized data. The disagreement is therefore over whether collapse is mainly a problem in recursive synthetic-data training, internal token dynamics, or optimization."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not use a single internal taxonomy, but they do mark distinct forms and adjacent notions. One line explicitly studies a strong form caused by synthetic data in the training corpus, while other work describes early collapse through loss of distributional tails, homogenized language, and increasingly deterministic outputs. Another paper effectively equates collapse with token consensus, where tokens cluster and the model loses the ability to produce different outputs, and theoretical work also organizes the discussion around distributional fidelity across generations."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link model collapse to 3 measurement instruments, BabiStories, HelpSteer2, and MNIST, and to 2 behavioral indicators, with news summarization used as a direct measure. The operationalizations are all dataset or task experiments: BabiStories and MNIST are used to empirically confirm collapse, HelpSteer2 compares replacing prior data with synthetic data against accumulating new data across iterations, and news summarization treats worse performance with synthesized than original data as indicating collapse. These measures target performance changes in synthetic or iterative training settings, so they align most closely with the degradation-over-generations framing rather than the token-clustering account."
+    },
+    {
+      "label": "Links.",
+      "text": "More than one paper claims a causal relationship from model collapse to generalization, describing real-world generalization as compromised or generalization error as depending on preserved fidelity across generations. One paper records causal claims in both directions between model collapse and overfitting, and single-paper causal claims also connect model collapse to reduced linguistic diversity and to a behavioral indicator about misinformation or nonsensical outputs. Another paper claims a causal relationship from recursive stability to model collapse, stating that collapse can be avoided under a recursive stability condition and a non-negligible constant level of real data; papers also relate model collapse to semantic drift, and one additional related link is recorded."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "conflicting",
+    "reason": "A few papers define model collapse as performance degradation from training or iteratively self-improving on synthetic or self-generated data, often tied to loss of data diversity. But a substantial share use the term for different things: token representations collapsing within transformer layers, catastrophic optimization instability during training, or even the opposite idea of preserving the true data distribution across generations, so these papers would not be studying the same phenomenon.",
+    "papers_with_definition": 5,
+    "runs": [
+      "conflicting",
+      "conflicting",
+      "conflicting"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across papers, the most recurrent framing treats model collapse as degrading performance in self-consuming, self-improvement, or synthetic-data training loops. In that usage, papers describe worsening generalization, failure to improve with more data, or outputs and training data becoming increasingly deterministic and less diverse. Other papers use the term for different phenomena, including token clustering over transformer layers into a single consensus state that limits output diversity and rapid collapse during optimization under a training loss; a separate theoretical account frames the issue through the capacity to preserve \"distributional fidelity\" across successive generations of synthesized data. The disagreement is therefore over whether collapse is mainly a problem in recursive synthetic-data training, internal token dynamics, or optimization.\n\nSpace of facets. Papers do not use a single internal taxonomy, but they do mark distinct forms and adjacent notions. One line explicitly studies a strong form caused by synthetic data in the training corpus, while other work describes early collapse through loss of distributional tails, homogenized language, and increasingly deterministic outputs. Another paper effectively equates collapse with token consensus, where tokens cluster and the model loses the ability to produce different outputs, and theoretical work also organizes the discussion around distributional fidelity across generations.\n\nSpace of measurement. Papers link model collapse to 3 measurement instruments, BabiStories, HelpSteer2, and MNIST, and to 2 behavioral indicators, with news summarization used as a direct measure. The operationalizations are all dataset or task experiments: BabiStories and MNIST are used to empirically confirm collapse, HelpSteer2 compares replacing prior data with synthetic data against accumulating new data across iterations, and news summarization treats worse performance with synthesized than original data as indicating collapse. These measures target performance changes in synthetic or iterative training settings, so they align most closely with the degradation-over-generations framing rather than the token-clustering account.\n\nLinks. More than one paper claims a causal relationship from model collapse to generalization, describing real-world generalization as compromised or generalization error as depending on preserved fidelity across generations. One paper records causal claims in both directions between model collapse and overfitting, and single-paper causal claims also connect model collapse to reduced linguistic diversity and to a behavioral indicator about misinformation or nonsensical outputs. Another paper claims a causal relationship from recursive stability to model collapse, stating that collapse can be avoided under a recursive stability condition and a non-negligible constant level of real data; papers also relate model collapse to semantic drift, and one additional related link is recorded.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Demystifying Synthetic Data in LLM Pre-training: A Systematic Study of Scaling Laws, Benefits, and Pitfalls",
+      "Editing Across Languages: A Survey of Multilingual Knowledge Editing",
+      "Large Language Models Threaten Language's Epistemic and Communicative Foundations",
+      "Machine-generated text detection prevents language model collapse",
+      "Recursive Training Loops in LLMs: How training data properties modulate distribution shift in generated data?",
+      "Superficial Self-Improved Reasoners Benefit from Model Merging"
+    ],
+    "iclr25": [
+      "A Theoretical Perspective: How to Prevent Model Collapse in Self-consuming Training Loops",
+      "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+      "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "Beyond Model Collapse: Scaling Up with Synthesized Data Requires Verification",
+      "MACPO: Weak-to-Strong Alignment via Multi-Agent Contrastive Preference Optimization",
+      "Strong Model Collapse"
+    ],
+    "icml25": [
+      "Collapse or Thrive: Perils and Promises of Synthetic Data in a Self-Generating World",
+      "Consensus Is All You Get: The Role of Attention in Transformers",
+      "Self-Consuming Generative Models with Adversarially Curated Data"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 6,
+    "iclr25": 6,
+    "icml25": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

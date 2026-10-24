@@ -1,0 +1,265 @@
+{
+  "canonical_name": "MMVP",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, MMVP is most commonly described as a benchmark for fine-grained visual recognition or visual detail understanding, built from CLIP-blind pairs of visually similar images with a binary-option question for each pair. Definitions also describe it as containing 150 image pairs and covering 9 visual patterns, with paired classification accuracy used for evaluation. A smaller line of work places it under single-image VQA or, more broadly, among multi-image benchmarks for probing visual shortcomings, and one paper notes converting it to paired image-text format without altering the content.\n\nWhat it is claimed to measure. Papers use MMVP to measure a broad range of targets rather than one shared construct: it is linked to 9 constructs and 2 behavioral indicators. The constructs most often listed are Visual understanding, Compositional reasoning, Fine-grained perception, Fine-grained visual understanding, and Multimodal perception, with 4 other constructs also linked, while the behavioral indicators are Fine-grained visual recognition and Visual question answering. In the relationship evidence, papers also frame it as evaluating visual perception, visual reasoning, visual grounding, and multimodal understanding.\n\nSpace of uses. Papers often position MMVP as a vision-centric or fine-grained evaluation benchmark within larger benchmark suites. It appears alongside RealWorldQA, CV-Bench, MME, MMBench, and ChartQA, with additional use beside POPE, Winoground, and EQBEN in evaluations of perception, understanding, grounding, or compositional reasoning. Some papers single it out as a vision-centric or fine-grained comprehension check, while others include it inside broader general VQA or multimodal understanding evaluations.\n\nConcerns raised. One practical caveat appears in a paper that says MMVP was not in paired image-text format for its evaluation setup, so the authors manually converted it without altering the content.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "MMVP"
+  ],
+  "papers": [
+    "Exploring How Generative MLLMs Perceive More Than CLIP with the Same Vision Encoder",
+    "Symmetrical Visual Contrastive Optimization: Aligning Vision-Language Models with Minimal Contrastive Images",
+    "Looking Beyond Text: Reducing Language Bias in Large Vision-Language Models via Multimodal Dual-Attention and Soft-Image Guidance",
+    "SEA: Supervised Embedding Alignment for Token-Level Visual-Textual Integration in MLLMs",
+    "UnifiedVisual: A Framework for Constructing Unified Vision-Language Datasets",
+    "DEEM: Diffusion models serve as the eyes of large language models for image perception",
+    "Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-language Context Sparsification",
+    "Reconstructive Visual Instruction Tuning",
+    "See What You Are Told: Visual Attention Sink in Large Multimodal Models",
+    "Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models",
+    "CoMemo: LVLMs Need Image Context with Image Memory",
+    "HaploVL: A Single-Transformer Baseline for Multi-Modal Understanding",
+    "MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding",
+    "CODE: Contrasting Self-generated Description to Combat Hallucination in Large Multi-modal Models",
+    "Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs",
+    "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+    "VisMin: Visual Minimal-Change Understanding",
+    "Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models"
+  ],
+  "paper_count": 18,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark that evaluates the fine-grained visual recognition capabilities of LVLMs using pairs of visually similar (CLIP-blind) images, each with a binary-option question.",
+      "paper": "Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models",
+      "original_name": "MMVP"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "CODE: Contrasting Self-generated Description to Combat Hallucination in Large Multi-modal Models",
+      "evidence": "MMVP [53] aims to evaluate the understanding of visual details for 9 different visual patterns using paired classification accuracy. (Section 4)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CODE: Contrasting Self-generated Description to Combat Hallucination in Large Multi-modal Models"
+        ],
+        "iclr25": [
+          "See What You Are Told: Visual Attention Sink in Large Multimodal Models",
+          "Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-language Context Sparsification"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual grounding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs",
+      "evidence": "the vision-disabled performance on benchmarks like MMVP is notably worse than random guessing, suggesting that strong visual grounding is particularly crucial. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Compositional reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "VisMin: Visual Minimal-Change Understanding",
+      "evidence": "Fine-tuning on this data enhances the model\u2019s ability to distinguish between similar images, showing improvements on challenging benchmarks like Winoground, MMVP, and EQBEN, which test compositional reasoning and fine-grained understanding. (Section 6.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "VisMin: Visual Minimal-Change Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual perception",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "DEEM: Diffusion models serve as the eyes of large language models for image perception",
+      "evidence": "We conducted extensive evaluations of DEEM on RobustVQA and two widely recognized benchmarks, POPE and MMVP, for visual hallucination and perception respectively (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DEEM: Diffusion models serve as the eyes of large language models for image perception"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fine-grained visual recognition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models",
+      "evidence": "MMVP (Tong et al., 2024) collects CLIP-blind pairs and evaluates the fine-grained visual recognition capabilities of LVLMs (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fine-grained visual understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Reconstructive Visual Instruction Tuning",
+      "evidence": "We evaluate our each variant of ROSS mainly on ... (ii) fine-grained comprehension: MMVP (Tong et al., 2024b) and ChartQA (Masry et al., 2022) (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Reconstructive Visual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fine-grained perception",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "HaploVL: A Single-Transformer Baseline for Multi-Modal Understanding",
+      "evidence": "Among these benchmarks, MMVP mainly focuses on fine-grained perception. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "HaploVL: A Single-Transformer Baseline for Multi-Modal Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Visual question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "CoMemo: LVLMs Need Image Context with Image Memory",
+      "evidence": "General VQA: Assessing visual perception and reasoning abilities through single-image question answering, including MMBench (Liu et al., 2025b), MME (Fu et al., 2023), and MMVP (Zhong et al., 2023). (Section 4.5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "CoMemo: LVLMs Need Image Context with Image Memory"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multimodal perception",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding",
+      "evidence": "\u201cPerception: Following (Tong et al., 2024a), we conduct experiments on 4 types of perception task (i.e., general, knowledge, ocr, and vision-centric) across 16 benchmarks: MME (Fu et al., 2023), MMBench (Liu et al., 2025), SEED (Li et al., 2024), GQA (Hudson & Manning, 2019), ScienceQA (Lu et al., 2022), MMMU (Yue et al., 2024), MathVista (Lu et al., 2024), AI2D (Kembhavi et al., 2016), ChartQA (Masry et al., 2022), OCRBench (Liu et al., 2024), TextVQA (Singh et al., 2019), DocVQA (Mathew et al., 2021), MMVP (Tong et al., 2024b), RealworldQA (xAI, 2024), and CV-Bench (Tong et al., 2024a).\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multimodal understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "UnifiedVisual: A Framework for Constructing Unified Vision-Language Datasets",
+      "evidence": "To evaluate multimodal understanding capabilities, we conduct evaluations on six widely-used benchmarks: RealworldQA (XAI, 2024), MMVP (Tong et al., 2024b), ScienceQA (Lu et al., 2022), VStar (Wu and Xie, 2023), MME (Fu et al., 2024), and POPE (Li et al., 2023b). (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "UnifiedVisual: A Framework for Constructing Unified Vision-Language Datasets"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 10,
+  "incoming_relationship_count": 10,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, MMVP is most commonly described as a benchmark for fine-grained visual recognition or visual detail understanding, built from CLIP-blind pairs of visually similar images with a binary-option question for each pair. Definitions also describe it as containing 150 image pairs and covering 9 visual patterns, with paired classification accuracy used for evaluation. A smaller line of work places it under single-image VQA or, more broadly, among multi-image benchmarks for probing visual shortcomings, and one paper notes converting it to paired image-text format without altering the content."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use MMVP to measure a broad range of targets rather than one shared construct: it is linked to 9 constructs and 2 behavioral indicators. The constructs most often listed are Visual understanding, Compositional reasoning, Fine-grained perception, Fine-grained visual understanding, and Multimodal perception, with 4 other constructs also linked, while the behavioral indicators are Fine-grained visual recognition and Visual question answering. In the relationship evidence, papers also frame it as evaluating visual perception, visual reasoning, visual grounding, and multimodal understanding."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers often position MMVP as a vision-centric or fine-grained evaluation benchmark within larger benchmark suites. It appears alongside RealWorldQA, CV-Bench, MME, MMBench, and ChartQA, with additional use beside POPE, Winoground, and EQBEN in evaluations of perception, understanding, grounding, or compositional reasoning. Some papers single it out as a vision-centric or fine-grained comprehension check, while others include it inside broader general VQA or multimodal understanding evaluations."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One practical caveat appears in a paper that says MMVP was not in paired image-text format for its evaluation setup, so the authors manually converted it without altering the content."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, MMVP is most commonly described as a benchmark for fine-grained visual recognition or visual detail understanding, built from CLIP-blind pairs of visually similar images with a binary-option question for each pair. Definitions also describe it as containing 150 image pairs and covering 9 visual patterns, with paired classification accuracy used for evaluation. A smaller line of work places it under single-image VQA or, more broadly, among multi-image benchmarks for probing visual shortcomings, and one paper notes converting it to paired image-text format without altering the content.\n\nWhat it is claimed to measure. Papers use MMVP to measure a broad range of targets rather than one shared construct: it is linked to 9 constructs and 2 behavioral indicators. The constructs most often listed are Visual understanding, Compositional reasoning, Fine-grained perception, Fine-grained visual understanding, and Multimodal perception, with 4 other constructs also linked, while the behavioral indicators are Fine-grained visual recognition and Visual question answering. In the relationship evidence, papers also frame it as evaluating visual perception, visual reasoning, visual grounding, and multimodal understanding.\n\nSpace of uses. Papers often position MMVP as a vision-centric or fine-grained evaluation benchmark within larger benchmark suites. It appears alongside RealWorldQA, CV-Bench, MME, MMBench, and ChartQA, with additional use beside POPE, Winoground, and EQBEN in evaluations of perception, understanding, grounding, or compositional reasoning. Some papers single it out as a vision-centric or fine-grained comprehension check, while others include it inside broader general VQA or multimodal understanding evaluations.\n\nConcerns raised. One practical caveat appears in a paper that says MMVP was not in paired image-text format for its evaluation setup, so the authors manually converted it without altering the content.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Exploring How Generative MLLMs Perceive More Than CLIP with the Same Vision Encoder",
+      "Symmetrical Visual Contrastive Optimization: Aligning Vision-Language Models with Minimal Contrastive Images"
+    ],
+    "emnlp25": [
+      "Looking Beyond Text: Reducing Language Bias in Large Vision-Language Models via Multimodal Dual-Attention and Soft-Image Guidance",
+      "SEA: Supervised Embedding Alignment for Token-Level Visual-Textual Integration in MLLMs",
+      "UnifiedVisual: A Framework for Constructing Unified Vision-Language Datasets"
+    ],
+    "iclr25": [
+      "DEEM: Diffusion models serve as the eyes of large language models for image perception",
+      "Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-language Context Sparsification",
+      "Reconstructive Visual Instruction Tuning",
+      "See What You Are Told: Visual Attention Sink in Large Multimodal Models",
+      "Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models"
+    ],
+    "icml25": [
+      "CoMemo: LVLMs Need Image Context with Image Memory",
+      "HaploVL: A Single-Transformer Baseline for Multi-Modal Understanding",
+      "MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding"
+    ],
+    "neurips24": [
+      "CODE: Contrasting Self-generated Description to Combat Hallucination in Large Multi-modal Models",
+      "Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs",
+      "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+      "VisMin: Visual Minimal-Change Understanding",
+      "Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 3,
+    "iclr25": 5,
+    "icml25": 3,
+    "neurips24": 5
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

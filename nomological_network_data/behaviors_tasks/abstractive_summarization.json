@@ -1,0 +1,252 @@
+{
+  "canonical_name": "Abstractive summarization",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the dominant framing is a generation task: producing a concise summary of a source document that captures its main or salient ideas, often through paraphrase or other novel phrasing rather than extracting exact spans. Many definitions add coherence, fluency, or informativeness, and some, including Filipino-focused work, also require faithfulness and avoiding hallucination. A smaller line of work describes the setting as models responding to queries given context, while another contrasts it with extractive summarization by describing an abstractive revision as more concise and natural-sounding.\n\nVariants. Papers study this behavior in several settings, including news summarization, dialogue summarization, multilingual summarization, Filipino summarization, long-document summarization, and user-generated posts paired with concise summaries. One paper describes a news variant that requires single-sentence summaries from BBC articles, and another treats document-based question-answering, meeting summarization, and clinical report generation as abstractive summarization tasks. Another paper positions it alongside extractive summarization, where an extractive summary is revised into an abstractive one.\n\nSpace of elicitation and scores. Papers measure it with six instruments, most often XSum. CNN/DailyMail and XLSum are also recurring, with DialogSum and Plutus-ben appearing as additional instruments, and one other instrument. These instruments are described as datasets or benchmarks, covering news article summaries, multilingual article-summary pairs, dialogue summaries, and broader task suites.\n\nWhat it is taken as evidence of. Papers do not explicitly treat this behavior as evidence of any construct. The links beyond measurement instead relate it to other behaviors: one paper relates it to hallucination by defining hallucinations in this setting as grounding errors where the output contains information not supported by the context, and another relates it to extractive summarization by contrasting an extractive summary with a more concise and natural-sounding abstractive revision.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Abstractive summarization"
+  ],
+  "papers": [
+    "Batayan: A Filipino NLP benchmark for evaluating Large Language Models",
+    "Beyond N-Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization",
+    "CC-Tuning: A Cross-Lingual Connection Mechanism for Improving Joint Multilingual Supervised Fine-Tuning",
+    "Faster Speculative Decoding via Effective Draft Decoder with Pruned Candidate Tree",
+    "SARA: Salience-Aware Reinforced Adaptive Decoding for Large Language Models in Abstractive Summarization",
+    "AROMA: Autonomous Rank-one Matrix Adaptation",
+    "Demystifying Domain-adaptive Post-training for Financial LLMs",
+    "Efficient Beam Search for Large Language Models Using Trie-Based Decoding",
+    "How Private are Language Models in Abstractive Summarization?",
+    "Language Models Can be Efficiently Steered via Minimal Embedding Layer Transformations",
+    "Plutus: Benchmarking Large Language Models in Low-Resource Greek Finance",
+    "UNCERTAINTY-LINE: Length-Invariant Estimation of Uncertainty for Large Language Models",
+    "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+    "Teaching Language Models to Hallucinate Less with Synthetic Tasks",
+    "Towards Green AI in Fine-tuning Large Language Models via Adaptive Backpropagation",
+    "BOND: Aligning LLMs with Best-of-N Distillation",
+    "MuHBoost: Multi-Label Boosting For Practical Longitudinal Human Behavior Modeling",
+    "Joint Localization and Activation Editing for Low-Resource Fine-Tuning",
+    "Progressively Label Enhancement for Large Language Model Alignment"
+  ],
+  "paper_count": 19,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of generating a concise and coherent summary that captures the main ideas of a source document, potentially using novel phrasing.",
+      "paper": "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+      "original_name": "Abstractive summarization"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+      "evidence": "We start by evaluating GKD on an abstractive summarization task of generating a summary that captures salient ideas of the input document. To do so, we use the XSum dataset (Narayan et al., 2018) (Section 4.1).",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes"
+        ],
+        "neurips24": [
+          "Many-Shot In-Context Learning"
+        ],
+        "iclr25": [
+          "BOND: Aligning LLMs with Best-of-N Distillation"
+        ],
+        "icml25": [
+          "Joint Localization and Activation Editing for Low-Resource Fine-Tuning"
+        ],
+        "emnlp25": [
+          "AROMA: Autonomous Rank-one Matrix Adaptation",
+          "UNCERTAINTY-LINE: Length-Invariant Estimation of Uncertainty for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XLSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Many-Shot In-Context Learning",
+      "evidence": "summarization using XSum [42] and XLSum [19] (Introduction).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Many-Shot In-Context Learning"
+        ],
+        "acl25": [
+          "CC-Tuning: A Cross-Lingual Connection Mechanism for Improving Joint Multilingual Supervised Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CNN/DailyMail",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Faster Speculative Decoding via Effective Draft Decoder with Pruned Candidate Tree",
+      "evidence": "To comprehensively evaluate our method, we selected four datasets from different tasks: ...CNN/DM (See et al., 2017) for abstractive summarization... (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Faster Speculative Decoding via Effective Draft Decoder with Pruned Candidate Tree"
+        ],
+        "emnlp25": [
+          "Language Models Can be Efficiently Steered via Minimal Embedding Layer Transformations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Teaching Language Models to Hallucinate Less with Synthetic Tasks",
+      "evidence": "Hallucinations in the abstractive summarization setting are grounding errors: errors where the output contains some information that is not supported by the context. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Teaching Language Models to Hallucinate Less with Synthetic Tasks"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DialogSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Towards Green AI in Fine-tuning Large Language Models via Adaptive Backpropagation",
+      "evidence": "Our experiments are mainly conducted using the following two datasets of abstractive summarization: ... \u2022 DialogSum (Chen et al., 2021) is a dialogue summarization dataset of 13,460 dialogues with manually labeled summaries and topics.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Towards Green AI in Fine-tuning Large Language Models via Adaptive Backpropagation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Extractive summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "MuHBoost: Multi-Label Boosting For Practical Longitudinal Human Behavior Modeling",
+      "evidence": "in the second stage of the pipeline (Figure 1\u2019s last panel), we prompt the LLM again to revise the extractive summary in order to obtain a more concise and natural-sounding data description, which is known as abstractive summarization (Gupta & Gupta, 2019). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MuHBoost: Multi-Label Boosting For Practical Longitudinal Human Behavior Modeling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reddit TL;DR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Progressively Label Enhancement for Large Language Model Alignment",
+      "evidence": "\u201cIt contains user-generated posts paired with concise summaries, providing a challenging benchmark for abstractive summarization tasks.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Progressively Label Enhancement for Large Language Model Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Plutus-ben",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Plutus: Benchmarking Large Language Models in Low-Resource Greek Finance",
+      "evidence": "\u201cPlutus-ben addresses six core tasks: numeric/textual named entity recognition, question answering, extractive summarization, abstractive summarization, and topic classification.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Plutus: Benchmarking Large Language Models in Low-Resource Greek Finance"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 8,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 8,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the dominant framing is a generation task: producing a concise summary of a source document that captures its main or salient ideas, often through paraphrase or other novel phrasing rather than extracting exact spans. Many definitions add coherence, fluency, or informativeness, and some, including Filipino-focused work, also require faithfulness and avoiding hallucination. A smaller line of work describes the setting as models responding to queries given context, while another contrasts it with extractive summarization by describing an abstractive revision as more concise and natural-sounding."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study this behavior in several settings, including news summarization, dialogue summarization, multilingual summarization, Filipino summarization, long-document summarization, and user-generated posts paired with concise summaries. One paper describes a news variant that requires single-sentence summaries from BBC articles, and another treats document-based question-answering, meeting summarization, and clinical report generation as abstractive summarization tasks. Another paper positions it alongside extractive summarization, where an extractive summary is revised into an abstractive one."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers measure it with six instruments, most often XSum. CNN/DailyMail and XLSum are also recurring, with DialogSum and Plutus-ben appearing as additional instruments, and one other instrument. These instruments are described as datasets or benchmarks, covering news article summaries, multilingual article-summary pairs, dialogue summaries, and broader task suites."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not explicitly treat this behavior as evidence of any construct. The links beyond measurement instead relate it to other behaviors: one paper relates it to hallucination by defining hallucinations in this setting as grounding errors where the output contains information not supported by the context, and another relates it to extractive summarization by contrasting an extractive summary with a more concise and natural-sounding abstractive revision."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the dominant framing is a generation task: producing a concise summary of a source document that captures its main or salient ideas, often through paraphrase or other novel phrasing rather than extracting exact spans. Many definitions add coherence, fluency, or informativeness, and some, including Filipino-focused work, also require faithfulness and avoiding hallucination. A smaller line of work describes the setting as models responding to queries given context, while another contrasts it with extractive summarization by describing an abstractive revision as more concise and natural-sounding.\n\nVariants. Papers study this behavior in several settings, including news summarization, dialogue summarization, multilingual summarization, Filipino summarization, long-document summarization, and user-generated posts paired with concise summaries. One paper describes a news variant that requires single-sentence summaries from BBC articles, and another treats document-based question-answering, meeting summarization, and clinical report generation as abstractive summarization tasks. Another paper positions it alongside extractive summarization, where an extractive summary is revised into an abstractive one.\n\nSpace of elicitation and scores. Papers measure it with six instruments, most often XSum. CNN/DailyMail and XLSum are also recurring, with DialogSum and Plutus-ben appearing as additional instruments, and one other instrument. These instruments are described as datasets or benchmarks, covering news article summaries, multilingual article-summary pairs, dialogue summaries, and broader task suites.\n\nWhat it is taken as evidence of. Papers do not explicitly treat this behavior as evidence of any construct. The links beyond measurement instead relate it to other behaviors: one paper relates it to hallucination by defining hallucinations in this setting as grounding errors where the output contains information not supported by the context, and another relates it to extractive summarization by contrasting an extractive summary with a more concise and natural-sounding abstractive revision.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "AROMA: Autonomous Rank-one Matrix Adaptation",
+      "Demystifying Domain-adaptive Post-training for Financial LLMs",
+      "Efficient Beam Search for Large Language Models Using Trie-Based Decoding",
+      "How Private are Language Models in Abstractive Summarization?",
+      "Language Models Can be Efficiently Steered via Minimal Embedding Layer Transformations",
+      "Plutus: Benchmarking Large Language Models in Low-Resource Greek Finance",
+      "UNCERTAINTY-LINE: Length-Invariant Estimation of Uncertainty for Large Language Models"
+    ],
+    "iclr24": [
+      "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+      "Teaching Language Models to Hallucinate Less with Synthetic Tasks",
+      "Towards Green AI in Fine-tuning Large Language Models via Adaptive Backpropagation"
+    ],
+    "iclr25": [
+      "BOND: Aligning LLMs with Best-of-N Distillation",
+      "MuHBoost: Multi-Label Boosting For Practical Longitudinal Human Behavior Modeling"
+    ],
+    "acl25": [
+      "Batayan: A Filipino NLP benchmark for evaluating Large Language Models",
+      "Beyond N-Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization",
+      "CC-Tuning: A Cross-Lingual Connection Mechanism for Improving Joint Multilingual Supervised Fine-Tuning",
+      "Faster Speculative Decoding via Effective Draft Decoder with Pruned Candidate Tree",
+      "SARA: Salience-Aware Reinforced Adaptive Decoding for Large Language Models in Abstractive Summarization"
+    ],
+    "icml25": [
+      "Joint Localization and Activation Editing for Low-Resource Fine-Tuning",
+      "Progressively Label Enhancement for Large Language Model Alignment"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 7,
+    "iclr24": 3,
+    "iclr25": 2,
+    "acl25": 5,
+    "icml25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

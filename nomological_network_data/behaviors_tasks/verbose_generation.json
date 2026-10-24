@@ -1,0 +1,152 @@
+{
+  "canonical_name": "Verbose generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage is outputs that are longer or wordier than needed for the prompt or task. Most definitions treat it as excessive length, often with redundant or irrelevant continuation; some add that it can continue until the maximum generation length and become incoherent, or that an answer may begin correctly but then keep going with unrelated content that lowers evaluation scores. Papers also frame the threshold relative to desired conciseness or task complexity, and one study describes models as producing \"longer and more verbose captions than top human ones\" (Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning).\n\nVariants. Papers use several nearby names, most often overgeneration, overly verbose generation, verbose response generation, response length generation, and unnecessarily lengthy output generation. The behavior appears in settings such as captioning, general prompt answering, and cases where a model gives the correct answer first but then adds unrelated material. A smaller line of work treats it more neutrally as response length with measurable word counts that vary by model, prompt, and decoding settings.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through conciseness judgments, comparisons against human or baseline outputs, measurable word counts, and score reductions such as lower F1 or ROUGE-L when correct answers are followed by irrelevant continuation.\n\nWhat it is taken as evidence of. No construct is linked to it, so papers here do not present a shared view of what construct it indicates. The only recorded relation is that one paper claims a causal relationship from Reward hacking to Verbose generation, describing overly long content with meaningless repetitions in that account.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Verbose generation",
+    "Overgeneration",
+    "Overly verbose generation",
+    "Verbose response generation",
+    "Response length generation",
+    "Unnecessarily lengthy output generation"
+  ],
+  "papers": [
+    "Growing Through Experience: Scaling Episodic Grounding in Language Models",
+    "Analyzing and Modeling LLM Response Lengths with Extreme Value Theory: Anchoring Effects and Hybrid Distributions",
+    "FilBench: Can LLMs Understand and Generate Filipino?",
+    "Through the Valley: Path to Effective Long CoT Training for Small Language Models",
+    "Weights-Rotated Preference Optimization for Large Language Models",
+    "FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets",
+    "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+    "Mixture-of-Agents Enhances Large Language Model Capabilities",
+    "The Power of LLM-Generated Synthetic Data for Stance Detection in Online Political Discussions",
+    "AlphaPO: Reward Shape Matters for LLM Alignment",
+    "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+    "Hidden in Plain Sight: Evaluating Abstract Shape Recognition in Vision-Language Models",
+    "Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning",
+    "SimPO: Simple Preference Optimization with a Reference-Free Reward"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An observable pattern where the model produces outputs that are longer or more wordy than necessary or desired.",
+      "paper": "Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning",
+      "original_name": "Verbose generation"
+    },
+    {
+      "text": "Producing excessively long or verbose outputs, often continuing until the maximum generation length is reached, leading to incoherence.",
+      "paper": "FilBench: Can LLMs Understand and Generate Filipino?",
+      "original_name": "Overgeneration"
+    },
+    {
+      "text": "Producing responses that are excessively long, often including redundant or irrelevant content, beyond what is necessary to answer the prompt.",
+      "paper": "Weights-Rotated Preference Optimization for Large Language Models",
+      "original_name": "Overly verbose generation"
+    },
+    {
+      "text": "The observable tendency of a model to produce outputs that are excessively long or wordy relative to the complexity of the task.",
+      "paper": "Through the Valley: Path to Effective Long CoT Training for Small Language Models",
+      "original_name": "Verbose response generation"
+    },
+    {
+      "text": "The observable production of text outputs with measurable word counts, varying in length based on model, prompt, and decoding settings.",
+      "paper": "Analyzing and Modeling LLM Response Lengths with Extreme Value Theory: Anchoring Effects and Hybrid Distributions",
+      "original_name": "Response length generation"
+    },
+    {
+      "text": "Producing outputs that are longer than required, including irrelevant content after correct answers, which can reduce evaluation scores despite factual correctness.",
+      "paper": "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+      "original_name": "Unnecessarily lengthy output generation"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reward hacking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Weights-Rotated Preference Optimization for Large Language Models",
+      "evidence": "DPO suffers from reward hacking, causing the model\u2019s expressive capability to decline and generating overly long content with meaningless repetitions. (Figure 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Weights-Rotated Preference Optimization for Large Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage is outputs that are longer or wordier than needed for the prompt or task. Most definitions treat it as excessive length, often with redundant or irrelevant continuation; some add that it can continue until the maximum generation length and become incoherent, or that an answer may begin correctly but then keep going with unrelated content that lowers evaluation scores. Papers also frame the threshold relative to desired conciseness or task complexity, and one study describes models as producing \"longer and more verbose captions than top human ones\" (Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning)."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby names, most often overgeneration, overly verbose generation, verbose response generation, response length generation, and unnecessarily lengthy output generation. The behavior appears in settings such as captioning, general prompt answering, and cases where a model gives the correct answer first but then adds unrelated material. A smaller line of work treats it more neutrally as response length with measurable word counts that vary by model, prompt, and decoding settings."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Instead, papers operationalize it through conciseness judgments, comparisons against human or baseline outputs, measurable word counts, and score reductions such as lower F1 or ROUGE-L when correct answers are followed by irrelevant continuation."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked to it, so papers here do not present a shared view of what construct it indicates. The only recorded relation is that one paper claims a causal relationship from Reward hacking to Verbose generation, describing overly long content with meaningless repetitions in that account."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage is outputs that are longer or wordier than needed for the prompt or task. Most definitions treat it as excessive length, often with redundant or irrelevant continuation; some add that it can continue until the maximum generation length and become incoherent, or that an answer may begin correctly but then keep going with unrelated content that lowers evaluation scores. Papers also frame the threshold relative to desired conciseness or task complexity, and one study describes models as producing \"longer and more verbose captions than top human ones\" (Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning).\n\nVariants. Papers use several nearby names, most often overgeneration, overly verbose generation, verbose response generation, response length generation, and unnecessarily lengthy output generation. The behavior appears in settings such as captioning, general prompt answering, and cases where a model gives the correct answer first but then adds unrelated material. A smaller line of work treats it more neutrally as response length with measurable word counts that vary by model, prompt, and decoding settings.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Instead, papers operationalize it through conciseness judgments, comparisons against human or baseline outputs, measurable word counts, and score reductions such as lower F1 or ROUGE-L when correct answers are followed by irrelevant continuation.\n\nWhat it is taken as evidence of. No construct is linked to it, so papers here do not present a shared view of what construct it indicates. The only recorded relation is that one paper claims a causal relationship from Reward hacking to Verbose generation, describing overly long content with meaningless repetitions in that account.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Growing Through Experience: Scaling Episodic Grounding in Language Models"
+    ],
+    "emnlp25": [
+      "Analyzing and Modeling LLM Response Lengths with Extreme Value Theory: Anchoring Effects and Hybrid Distributions",
+      "FilBench: Can LLMs Understand and Generate Filipino?",
+      "Through the Valley: Path to Effective Long CoT Training for Small Language Models",
+      "Weights-Rotated Preference Optimization for Large Language Models"
+    ],
+    "iclr24": [
+      "FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets"
+    ],
+    "iclr25": [
+      "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "The Power of LLM-Generated Synthetic Data for Stance Detection in Online Political Discussions"
+    ],
+    "icml25": [
+      "AlphaPO: Reward Shape Matters for LLM Alignment",
+      "EPIC: Efficient Position-Independent Caching for Serving Large Language Models"
+    ],
+    "neurips24": [
+      "Hidden in Plain Sight: Evaluating Abstract Shape Recognition in Vision-Language Models",
+      "Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning",
+      "SimPO: Simple Preference Optimization with a Reference-Free Reward"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 1,
+    "emnlp25": 4,
+    "iclr24": 1,
+    "iclr25": 3,
+    "icml25": 2,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

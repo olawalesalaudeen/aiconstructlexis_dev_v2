@@ -1,0 +1,153 @@
+{
+  "canonical_name": "Label noise robustness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats label noise robustness as keeping performance stable when supervision is noisy or corrupted, most often through mislabeled or synthetic label noise in training data. One paper makes this concrete as having the lowest relative drop in performance compared with training on clean data. A smaller line of work extends the same framing to noisy textual descriptions, dialogue annotations or input formulations, noisy in-context demonstrations, and self-generated data with errors, and some of these definitions narrow the outcome to compositional performance or to continuing the self-improvement process.\n\nSpace of facets. Instead of a shared subtype taxonomy, papers apply the term across several noise sources and learning settings. The main distinctions in use are between corrupted training labels, noisy captions or textual supervision, annotation or input noise, incorrect labels in demonstrations, and errors in self-generated training data. Some authors also tie the construct to a specific target, either maintaining compositional performance or preserving a self-improvement process under noisy training signals.\n\nSpace of measurement. Operationalization is sparse in the recorded links: the construct is linked to one measurement instrument, CIFAR-10, and to no behavioral indicators or other constructs. In that operationalization, robustness is assessed by randomly flipping labels in the dataset and comparing performance against clean-data training, which lines up with the common definitions centered on corrupted labels. No additional linked instrument is recorded for versions of the construct based on noisy textual descriptions, dialogue annotations, in-context demonstrations, or self-generated data.\n\nLinks. No papers in the recorded relationships claim causal, correlational, or other related-construct links for this construct. The only explicit link is that it is measured by CIFAR-10.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Robustness to noisy labels",
+    "Robustness to noisy textual descriptions",
+    "Robustness to noise",
+    "Robustness to label noise"
+  ],
+  "papers": [
+    "Efficient OpAmp Adaptation for Zoom Attention to Golden Contexts",
+    "Mitigating Shortcut Learning with InterpoLated Learning",
+    "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+    "Repeated Random Sampling for Minimizing the Time-to-Accuracy of Learning",
+    "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+    "Causal Graphical Models for Vision-Language Compositional Understanding",
+    "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+    "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+    "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding",
+    "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which model performance degrades minimally when training labels are corrupted or mislabeled.",
+      "paper": "Repeated Random Sampling for Minimizing the Time-to-Accuracy of Learning",
+      "original_name": "Robustness to noisy labels"
+    },
+    {
+      "text": "The degree to which a model maintains compositional performance when captions or textual supervision are noisy.",
+      "paper": "Causal Graphical Models for Vision-Language Compositional Understanding",
+      "original_name": "Robustness to noisy textual descriptions"
+    },
+    {
+      "text": "The resilience of a model's performance in the presence of synthetic label noise in the training data, indicating stability in learning despite data imperfections.",
+      "paper": "Mitigating Shortcut Learning with InterpoLated Learning",
+      "original_name": "Robustness to noise"
+    },
+    {
+      "text": "The model's ability to maintain performance and continue the self-improvement process even when trained on self-generated data that contains a certain amount of errors or inaccuracies.",
+      "paper": "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges",
+      "original_name": "Robustness to label noise"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CIFAR-10",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Repeated Random Sampling for Minimizing the Time-to-Accuracy of Learning",
+      "evidence": "For this experiment, we use CIFAR10 and randomly flip p percentage of the labels in the dataset\u2014we vary p in {10%, 30%, 50%}.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Repeated Random Sampling for Minimizing the Time-to-Accuracy of Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Flatness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "SAFE: Finding Sparse and Flat Minima to Improve Pruning",
+      "evidence": "This aligns well with previous observations that sharpness-minimization can enhance robustness toward label noise (Baek et al., 2024). (4.4. Robustness to Noisy Data)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "SAFE: Finding Sparse and Flat Minima to Improve Pruning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats label noise robustness as keeping performance stable when supervision is noisy or corrupted, most often through mislabeled or synthetic label noise in training data. One paper makes this concrete as having the lowest relative drop in performance compared with training on clean data. A smaller line of work extends the same framing to noisy textual descriptions, dialogue annotations or input formulations, noisy in-context demonstrations, and self-generated data with errors, and some of these definitions narrow the outcome to compositional performance or to continuing the self-improvement process."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Instead of a shared subtype taxonomy, papers apply the term across several noise sources and learning settings. The main distinctions in use are between corrupted training labels, noisy captions or textual supervision, annotation or input noise, incorrect labels in demonstrations, and errors in self-generated training data. Some authors also tie the construct to a specific target, either maintaining compositional performance or preserving a self-improvement process under noisy training signals."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is sparse in the recorded links: the construct is linked to one measurement instrument, CIFAR-10, and to no behavioral indicators or other constructs. In that operationalization, robustness is assessed by randomly flipping labels in the dataset and comparing performance against clean-data training, which lines up with the common definitions centered on corrupted labels. No additional linked instrument is recorded for versions of the construct based on noisy textual descriptions, dialogue annotations, in-context demonstrations, or self-generated data."
+    },
+    {
+      "label": "Links.",
+      "text": "No papers in the recorded relationships claim causal, correlational, or other related-construct links for this construct. The only explicit link is that it is measured by CIFAR-10."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define label noise robustness as a model's ability to keep its performance stable when the supervision signal contains errors, such as corrupted labels, noisy captions, flawed annotations, or inaccurate self-generated data. The differences are mainly the learning setting and type of noisy supervision being discussed, not a different underlying phenomenon.",
+    "papers_with_definition": 6,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats label noise robustness as keeping performance stable when supervision is noisy or corrupted, most often through mislabeled or synthetic label noise in training data. One paper makes this concrete as having the lowest relative drop in performance compared with training on clean data. A smaller line of work extends the same framing to noisy textual descriptions, dialogue annotations or input formulations, noisy in-context demonstrations, and self-generated data with errors, and some of these definitions narrow the outcome to compositional performance or to continuing the self-improvement process.\n\nSpace of facets. Instead of a shared subtype taxonomy, papers apply the term across several noise sources and learning settings. The main distinctions in use are between corrupted training labels, noisy captions or textual supervision, annotation or input noise, incorrect labels in demonstrations, and errors in self-generated training data. Some authors also tie the construct to a specific target, either maintaining compositional performance or preserving a self-improvement process under noisy training signals.\n\nSpace of measurement. Operationalization is sparse in the recorded links: the construct is linked to one measurement instrument, CIFAR-10, and to no behavioral indicators or other constructs. In that operationalization, robustness is assessed by randomly flipping labels in the dataset and comparing performance against clean-data training, which lines up with the common definitions centered on corrupted labels. No additional linked instrument is recorded for versions of the construct based on noisy textual descriptions, dialogue annotations, in-context demonstrations, or self-generated data.\n\nLinks. No papers in the recorded relationships claim causal, correlational, or other related-construct links for this construct. The only explicit link is that it is measured by CIFAR-10.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Efficient OpAmp Adaptation for Zoom Attention to Golden Contexts",
+      "Mitigating Shortcut Learning with InterpoLated Learning"
+    ],
+    "iclr24": [
+      "CABINET: Content Relevance-based Noise Reduction for Table Question Answering",
+      "Repeated Random Sampling for Minimizing the Time-to-Accuracy of Learning"
+    ],
+    "iclr25": [
+      "Calibrating LLMs with Information-Theoretic Evidential Deep Learning",
+      "Causal Graphical Models for Vision-Language Compositional Understanding",
+      "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards"
+    ],
+    "icml25": [
+      "Self-Improving Transformers Overcome Easy-to-Hard and Length Generalization Challenges"
+    ],
+    "naacl25": [
+      "A Zero-Shot Open-Vocabulary Pipeline for Dialogue Understanding",
+      "PICLe: Pseudo-annotations for In-Context Learning in Low-Resource Named Entity Detection"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr24": 2,
+    "iclr25": 3,
+    "icml25": 1,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

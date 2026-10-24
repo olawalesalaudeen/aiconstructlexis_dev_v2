@@ -1,0 +1,156 @@
+{
+  "canonical_name": "WebNLG",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across papers, WebNLG is most commonly described as a dataset or benchmark for generating natural language from structured inputs, especially RDF triples, DBpedia categories, and knowledge graph triplets. Several definitions frame it as data-to-text, struct-to-text, graph-to-text, or knowledge-graph-to-natural-language, and one definition specifies 22,000 examples across 14 categories; a smaller number of descriptions instead call it a table-to-text dataset or, once, a text-to-data dataset. Some papers also refer to specific versions or subsets, including WebNLG17 as the 2017 graph-to-text setting and WebNLG-Test as the publicly released test set of manually aligned knowledge graphs and English textual descriptions.\n\nWhat it is claimed to measure. Papers link WebNLG to 2 behavioral indicators and no constructs. The prevailing usage is to measure Data-to-text generation, with papers explicitly grouping it under E2E and WebNLG (data-to-text generation); some work uses it more broadly to measure Text generation. The measurement claims therefore concentrate on behavioral indicators rather than on constructs.\n\nSpace of uses. Papers often use WebNLG as one benchmark within broader generation suites. It is frequently paired with E2E, and some evaluations also place it alongside CommonGen and an Adidas product description dataset; one graph-to-text setup evaluates WebNLG17 together with WebNLG20 and DART. One paper also uses a Web NLG configuration for domain adaptation under distribution shift, filtering the training data to infrastructure descriptions while keeping person descriptions in validation and test.\n\nConcerns raised. The concern explicitly raised in these papers is possible pretraining exposure: one paper says the publicly released WebNLG-Test may have been partially seen by many LLMs during pretraining.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "WebNLG",
+    "Web NLG",
+    "WebNLG17",
+    "WebNLG-Test"
+  ],
+  "papers": [
+    "MuCAL: Contrastive Alignment for Preference-Driven KG-to-Text Generation",
+    "Superpose Task-specific Features for Model Merging",
+    "Mixture of LoRA Experts",
+    "NOLA: Compressing LoRA using Linear Combination of Random Basis",
+    "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+    "Revisiting Prefix-tuning: Statistical Benefits of Reparameterization among Prompts",
+    "Joint Localization and Activation Editing for Low-Resource Fine-Tuning",
+    "Logits are All We Need to Adapt Closed Models",
+    "Evaluating and Improving Graph to Text Generation with Large Language Models",
+    "Smoothie: Label Free Language Model Routing"
+  ],
+  "paper_count": 10,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A text-to-data dataset with 22,000 examples across 14 categories, used to evaluate natural language generation from structured data.",
+      "paper": "Mixture of LoRA Experts",
+      "original_name": "WebNLG"
+    },
+    {
+      "text": "Natural language generation dataset involving conversion of RDF triples into fluent text, used to evaluate domain adaptation under distribution shift.",
+      "paper": "Logits are All We Need to Adapt Closed Models",
+      "original_name": "Web NLG"
+    },
+    {
+      "text": "A graph-to-text benchmark used to evaluate generation from knowledge graph triplets in the 2017 WebNLG setting.",
+      "paper": "Evaluating and Improving Graph to Text Generation with Large Language Models",
+      "original_name": "WebNLG17"
+    },
+    {
+      "text": "A publicly available test set from the WebNLG challenge, consisting of manually aligned knowledge graphs and their corresponding English textual descriptions.",
+      "paper": "MuCAL: Contrastive Alignment for Preference-Driven KG-to-Text Generation",
+      "original_name": "WebNLG-Test"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Data-to-text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Smoothie: Label Free Language Model Routing",
+      "evidence": "...we consider 7 datasets corresponding to commonly-studied natural language generation (NLG) tasks [51]: ... E2E and WebNLG (data-to-text generation)... (Section 5.1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Smoothie: Label Free Language Model Routing"
+        ],
+        "iclr25": [
+          "Revisiting Prefix-tuning: Statistical Benefits of Reparameterization among Prompts"
+        ],
+        "icml25": [
+          "Joint Localization and Activation Editing for Low-Resource Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "NOLA: Compressing LoRA using Linear Combination of Random Basis",
+      "evidence": "We utilize the following datasets for our Natural Language Generation (NLG) task: ... WebNLG (Gardent et al., 2017) is a text-to-data dataset... (Section 3.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "NOLA: Compressing LoRA using Linear Combination of Random Basis"
+        ],
+        "icml25": [
+          "Logits are All We Need to Adapt Closed Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across papers, WebNLG is most commonly described as a dataset or benchmark for generating natural language from structured inputs, especially RDF triples, DBpedia categories, and knowledge graph triplets. Several definitions frame it as data-to-text, struct-to-text, graph-to-text, or knowledge-graph-to-natural-language, and one definition specifies 22,000 examples across 14 categories; a smaller number of descriptions instead call it a table-to-text dataset or, once, a text-to-data dataset. Some papers also refer to specific versions or subsets, including WebNLG17 as the 2017 graph-to-text setting and WebNLG-Test as the publicly released test set of manually aligned knowledge graphs and English textual descriptions."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link WebNLG to 2 behavioral indicators and no constructs. The prevailing usage is to measure Data-to-text generation, with papers explicitly grouping it under E2E and WebNLG (data-to-text generation); some work uses it more broadly to measure Text generation. The measurement claims therefore concentrate on behavioral indicators rather than on constructs."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers often use WebNLG as one benchmark within broader generation suites. It is frequently paired with E2E, and some evaluations also place it alongside CommonGen and an Adidas product description dataset; one graph-to-text setup evaluates WebNLG17 together with WebNLG20 and DART. One paper also uses a Web NLG configuration for domain adaptation under distribution shift, filtering the training data to infrastructure descriptions while keeping person descriptions in validation and test."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "The concern explicitly raised in these papers is possible pretraining exposure: one paper says the publicly released WebNLG-Test may have been partially seen by many LLMs during pretraining."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across papers, WebNLG is most commonly described as a dataset or benchmark for generating natural language from structured inputs, especially RDF triples, DBpedia categories, and knowledge graph triplets. Several definitions frame it as data-to-text, struct-to-text, graph-to-text, or knowledge-graph-to-natural-language, and one definition specifies 22,000 examples across 14 categories; a smaller number of descriptions instead call it a table-to-text dataset or, once, a text-to-data dataset. Some papers also refer to specific versions or subsets, including WebNLG17 as the 2017 graph-to-text setting and WebNLG-Test as the publicly released test set of manually aligned knowledge graphs and English textual descriptions.\n\nWhat it is claimed to measure. Papers link WebNLG to 2 behavioral indicators and no constructs. The prevailing usage is to measure Data-to-text generation, with papers explicitly grouping it under E2E and WebNLG (data-to-text generation); some work uses it more broadly to measure Text generation. The measurement claims therefore concentrate on behavioral indicators rather than on constructs.\n\nSpace of uses. Papers often use WebNLG as one benchmark within broader generation suites. It is frequently paired with E2E, and some evaluations also place it alongside CommonGen and an Adidas product description dataset; one graph-to-text setup evaluates WebNLG17 together with WebNLG20 and DART. One paper also uses a Web NLG configuration for domain adaptation under distribution shift, filtering the training data to infrastructure descriptions while keeping person descriptions in validation and test.\n\nConcerns raised. The concern explicitly raised in these papers is possible pretraining exposure: one paper says the publicly released WebNLG-Test may have been partially seen by many LLMs during pretraining.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr24": [
+      "Mixture of LoRA Experts",
+      "NOLA: Compressing LoRA using Linear Combination of Random Basis"
+    ],
+    "iclr25": [
+      "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "Revisiting Prefix-tuning: Statistical Benefits of Reparameterization among Prompts"
+    ],
+    "icml25": [
+      "Joint Localization and Activation Editing for Low-Resource Fine-Tuning",
+      "Logits are All We Need to Adapt Closed Models"
+    ],
+    "emnlp25": [
+      "MuCAL: Contrastive Alignment for Preference-Driven KG-to-Text Generation",
+      "Superpose Task-specific Features for Model Merging"
+    ],
+    "naacl25": [
+      "Evaluating and Improving Graph to Text Generation with Large Language Models"
+    ],
+    "neurips24": [
+      "Smoothie: Label Free Language Model Routing"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr24": 2,
+    "iclr25": 2,
+    "icml25": 2,
+    "emnlp25": 2,
+    "naacl25": 1,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

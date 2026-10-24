@@ -1,0 +1,126 @@
+{
+  "canonical_name": "Attention sink",
+  "type": "construct",
+  "canonical_definition": "The concept of an \"attention sink\" is consistently described across the provided literature as a phenomenon in Transformer models where attention is disproportionately focused on initial tokens. The prevailing definition states that a large portion of attention weights concentrates on \"the first token,\" a process that begins in the early layers of the model. A related framing describes this as \"initial tokens\" more broadly absorbing attention, which is said to impede \"subsequent tokens from attending to relevant context\" (\"EPIC: Efficient Position-Independent Caching for Serving Large Language Models\"). This phenomenon is operationalized by observing the distribution of attention weights within the model. The attention sink is presented as a problem to be addressed, with one paper discussing the \"removal\" of these tokens to prevent interference in later computations. In the context of model capabilities, the attention sink is reported to negatively affect length generalization, where it is cited as a factor that \"restricts their scalability and effectiveness in practice\" for training-free extrapolation methods (\"ParallelComp: Parallel Long-Context Compressor for Length Extrapolation\").",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/engineering: an internal attention-weight pattern of the Transformer mechanism, not an ability, disposition, risk or quality of the model; parallels the maintainers' removal of C0039 Attention sparsity",
+  "names": [
+    "Attention sink",
+    "Attention stabilization"
+  ],
+  "papers": [
+    "VisiPruner: Decoding Discontinuous Cross-Modal Dynamics for Efficient Multimodal LLMs",
+    "Rapid Selection and Ordering of In-Context Demonstrations via Prompt Embedding Clustering",
+    "When Attention Sink Emerges in Language Models: An Empirical View",
+    "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+    "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+  ],
+  "paper_count": 5,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A phenomenon where a large proportion of attention weights in a Transformer model consistently focuses on the first token, starting from early layers.",
+      "paper": "Rapid Selection and Ordering of In-Context Demonstrations via Prompt Embedding Clustering",
+      "original_name": "Attention sink"
+    },
+    {
+      "text": "The latent functional role of visual tokens in early layers to absorb attention weights and stabilize attention distributions without contributing meaningful content to the task.",
+      "paper": "VisiPruner: Decoding Discontinuous Cross-Modal Dynamics for Efficient Multimodal LLMs",
+      "original_name": "Attention stabilization"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Semantic representation",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Look Both Ways and No Sink: Converting LLMs into Text Encoders without Training",
+      "evidence": "Further analysis reveals that the attention sink phenomenon (Xiao et al., 2023), where the model tends to focus on the first token, significantly affects the performance of the converted text encoder. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Look Both Ways and No Sink: Converting LLMs into Text Encoders without Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Length generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "evidence": "most training-free extrapolation methods are not only severely limited by memory bottlenecks, but also suffer from the attention sink, which restricts their scalability and effectiveness in practice. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Recency bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "evidence": "These attention distributions give rise to three corresponding biases: i) Attention sink, where focus is concentrated on the initial few tokens. ii) Recency bias, where attention is more strongly concentrated at the tail. iii) Middle bias, where attention is disproportionately focused on a few tokens in the middle of a sequence. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation",
+      "evidence": "These attention distributions give rise to three corresponding biases: i) Attention sink, where focus is concentrated on the initial few tokens. ii) Recency bias, where attention is more strongly concentrated at the tail. iii) Middle bias, where attention is disproportionately focused on a few tokens in the middle of a sequence. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 4,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "The concept of an \"attention sink\" is consistently described across the provided literature as a phenomenon in Transformer models where attention is disproportionately focused on initial tokens. The prevailing definition states that a large portion of attention weights concentrates on \"the first token,\" a process that begins in the early layers of the model. A related framing describes this as \"initial tokens\" more broadly absorbing attention, which is said to impede \"subsequent tokens from attending to relevant context\" (\"EPIC: Efficient Position-Independent Caching for Serving Large Language Models\"). This phenomenon is operationalized by observing the distribution of attention weights within the model. The attention sink is presented as a problem to be addressed, with one paper discussing the \"removal\" of these tokens to prevent interference in later computations. In the context of model capabilities, the attention sink is reported to negatively affect length generalization, where it is cited as a factor that \"restricts their scalability and effectiveness in practice\" for training-free extrapolation methods (\"ParallelComp: Parallel Long-Context Compressor for Length Extrapolation\").",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "VisiPruner: Decoding Discontinuous Cross-Modal Dynamics for Efficient Multimodal LLMs"
+    ],
+    "iclr25": [
+      "Rapid Selection and Ordering of In-Context Demonstrations via Prompt Embedding Clustering",
+      "When Attention Sink Emerges in Language Models: An Empirical View"
+    ],
+    "icml25": [
+      "EPIC: Efficient Position-Independent Caching for Serving Large Language Models",
+      "ParallelComp: Parallel Long-Context Compressor for Length Extrapolation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 1,
+    "iclr25": 2,
+    "icml25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,2775 @@
+{
+  "canonical_name": "Robustness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage describes robustness as stable model performance or behavior under changes in prompts, inputs, task conditions, environments, or evaluation setup. Many papers apply this broad framing to prompt paraphrases and ordering, noisy or degraded inputs, distribution shifts, adversarial perturbations, new opponents or environments, and other superficial or challenging variations, often contrasting robustness with brittleness to minor changes. Smaller lines of work define it more narrowly as retaining pre-learned general capabilities after task-specific fine-tuning, or as worst-case performance on rare shifted inputs rather than average performance. Another recurring minority usage applies the term to the persistence of an artifact rather than the model, for example a jailbreak prompt, backdoor, or watermark remaining effective or detectable after defenses, fine-tuning, editing, or paraphrasing.\n\nSpace of facets. Papers most often organize robustness by the source of variation: prompt and instruction changes, input noise or superficial perturbations, out-of-distribution data, adversarial or jailbreak attacks, and deployment across opponents, seeds, or environments. A smaller strand explicitly separates out-of-distribution from adversarial robustness, and some benchmark papers place robustness inside broader Trustworthiness framings or alongside Safety and Consistency. Across linked constructs, robustness is frequently discussed alongside Generalization, while Selection bias is used to describe one recurring failure mode. The same label is also used for distinct objects, model stability, retention after adaptation, and persistence of watermarks or backdoors.\n\nSpace of measurement. Papers link robustness to 45 measurement instruments and 16 behavioral indicators. The most common instruments are AdvBench, GSM-Hard, MMBench, MMLU-Redux, and SVAMP, plus 40 other instruments; these are mostly benchmarks or dynamic environments that probe performance under adversarial inputs, out-of-domain tests, shuffled answer choices, text perturbations, varying task parameters or seeds, and degraded context, and one paper also uses a judge-based comparison. Among behavioral indicators, links cluster around attack, generation, and agent behaviors. These operationalizations usually match the dominant definition by scoring stability under perturbation or shift, though some operationalize robustness as retention of earlier capabilities after fine-tuning or as watermark and backdoor persistence under attack or overwriting.\n\nLinks. Across linked constructs, several papers claim causal relationships from Generalization to Robustness, and one paper claims the reverse from Robustness to Generalization. Several papers also claim causal relationships from Reasoning and from In-context learning to Robustness, and one paper separately claims a causal relationship from Out-of-distribution generalization to Robustness and from Robustness to Out-of-distribution generalization. Papers also relate robustness to Generalization non-causally, and one paper reports that robustness correlates with Selection bias.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Robustness",
+    "Model robustness",
+    "Worst-case performance"
+  ],
+  "papers": [
+    "A Reality Check on Context Utilisation for Retrieval-Augmented Generation",
+    "A Survey on Efficient Large Language Model Training: From Data-centric Perspectives",
+    "AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection",
+    "AdamMeme: Adaptively Probe the Reasoning Capacity of Multimodal Large Language Models on Harmfulness",
+    "Adaptive and Robust Translation from Natural Language to Multi-model Query Languages",
+    "Addressing Blind Guessing: Calibration of Selection Bias in Multiple-Choice Question Answering by Video Language Models",
+    "AgentRM: Enhancing Agent Generalization with Reward Modeling",
+    "AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models",
+    "Astute RAG: Overcoming Imperfect Retrieval Augmentation and Knowledge Conflicts for Large Language Models",
+    "Attacking Vision-Language Computer Agents via Pop-ups",
+    "Benchmarking and Improving Large Vision-Language Models for Fundamental Visual Graph Understanding and Reasoning",
+    "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering Target Atoms",
+    "Binary Classifier Optimization for Large Language Model Alignment",
+    "Byte Latent Transformer: Patches Scale Better Than Tokens",
+    "Can Knowledge Graphs Make Large Language Models More Trustworthy? An Empirical Study Over Open-ended Question Answering",
+    "Can LLMs Reason About Program Semantics? A Comprehensive Evaluation of LLMs on Formal Specification Inference",
+    "CoIR: A Comprehensive Benchmark for Code Information Retrieval Models",
+    "CoT-based Synthesizer: Enhancing LLM Performance through Answer Synthesis",
+    "Collapse of Dense Retrievers: Short, Early, and Literal Biases Outranking Factual Evidence",
+    "CulFiT: A Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis",
+    "D.Va: Validate Your Demonstration First Before You Use It",
+    "DS2-ABSA: Dual-Stream Data Synthesis with Label Refinement for Few-Shot Aspect-Based Sentiment Analysis",
+    "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+    "Decoding Knowledge Attribution in Mixture-of-Experts: A Framework of Basic-Refinement Collaboration and Efficiency Analysis",
+    "Detection of Human and Machine-Authored Fake News in Urdu",
+    "Did Translation Models Get More Robust Without Anyone Even Noticing?",
+    "Diversity-oriented Data Augmentation with Large Language Models",
+    "Dually Self-Improved Counterfactual Data Augmentation Using Large Language Model",
+    "Dynamic Evaluation with Cognitive Reasoning for Multi-turn Safety of Large Language Models",
+    "Enhancing Retrieval-Augmented Generation via Evidence Tree Search",
+    "Enhancing Unsupervised Sentence Embeddings via Knowledge-Driven Data Augmentation and Gaussian-Decayed Contrastive Learning",
+    "Explaining Matters: Leveraging Definitions and Semantic Expansion for Sexism Detection",
+    "Exploring Explanations Improves the Robustness of In-Context Learning",
+    "Exposing the Achilles' Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning",
+    "Faithful and Robust LLM-Driven Theorem Proving for NLI Explanations",
+    "FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation",
+    "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+    "From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models",
+    "G-Safeguard: A Topology-Guided Security Lens and Treatment on LLM-based Multi-agent Systems",
+    "GIFT-SW: Gaussian noise Injected Fine-Tuning of Salient Weights for LLMs",
+    "GRaMPa: Subword Regularisation by Skewing Uniform Segmentation Distributions with an Efficient Path-counting Markov Model",
+    "HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring",
+    "HAF-RM: A Hybrid Alignment Framework for Reward Model Training",
+    "HiddenDetect: Detecting Jailbreak Attacks against Multimodal Large Language Models via Monitoring Hidden States",
+    "Hierarchical Memory Organization for Wikipedia Generation",
+    "ISR: Self-Refining Referring Expressions for Entity Grounding",
+    "Improved Unbiased Watermark for Large Language Models",
+    "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+    "Improving Preference Extraction In LLMs By Identifying Latent Knowledge Through Classifying Probes",
+    "InSerter: Speech Instruction Following with Unsupervised Interleaved Pre-training",
+    "Insight Over Sight: Exploring the Vision-Knowledge Conflicts in Multimodal LLMs",
+    "Iron Sharpens Iron: Defending Against Attacks in Machine-Generated Text Detection with Adversarial Training",
+    "LLMs Can Simulate Standardized Patients via Agent Coevolution",
+    "LLMs Trust Humans More, That's a Problem! Unveiling and Mitigating the Authority Bias in Retrieval-Augmented Generation",
+    "Large Language Models are Good Relational Learners",
+    "Large Margin Representation Learning for Robust Cross-lingual Named Entity Recognition",
+    "Learning to Reason Over Time: Timeline Self-Reflection for Improved Temporal Reasoning in Language Models",
+    "Learning to Rewrite: Generalized LLM-Generated Text Detection",
+    "MTSA: Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming",
+    "Mitigating Lost-in-Retrieval Problems in Retrieval Augmented Multi-Hop Question Answering",
+    "Mixtures of In-Context Learners",
+    "Multi-task Adversarial Attacks against Black-box Model with Few-shot Queries",
+    "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use",
+    "On Synthesizing Data for Context Attribution in Question Answering",
+    "One QuantLLM for ALL: Fine-tuning Quantized LLMs Once for Efficient Deployments",
+    "PIGuard: Prompt Injection Guardrail via Mitigating Overdefense for Free",
+    "Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning",
+    "Private Memorization Editing: Turning Memorization into a Defense to Strengthen Data Privacy in Large Language Models",
+    "Quaff: Quantized Parameter-Efficient Fine-Tuning under Outlier Spatial Stability Hypothesis",
+    "R2-MultiOmnia: Leading Multilingual Multimodal Reasoning via Self-Training",
+    "ReLearn: Unlearning via Learning for Large Language Models",
+    "Real-time Factuality Assessment from Adversarial Feedback",
+    "Reconsidering LLM Uncertainty Estimation Methods in the Wild",
+    "Representation Bending for Large Language Model Safety",
+    "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+    "SCULPT: Systematic Tuning of Long Prompts",
+    "SConU: Selective Conformal Uncertainty in Large Language Models",
+    "SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL",
+    "SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Model",
+    "Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models",
+    "Selecting and Merging: Towards Adaptable and Scalable Named Entity Recognition with Large Language Models",
+    "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data",
+    "The TIP of the Iceberg: Revealing a Hidden Class of Task-in-Prompt Adversarial Attacks on LLMs",
+    "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents",
+    "Theorem Prover as a Judge for Synthetic Data Generation",
+    "ToolCoder: A Systematic Code-Empowered Tool Learning Framework for Large Language Models",
+    "Towards Robust Universal Information Extraction: Dataset, Evaluation, and Solution",
+    "Towards Robust and Efficient Federated Low-Rank Adaptation with Heterogeneous Clients",
+    "Translation and Fusion Improves Cross-lingual Information Extraction",
+    "Unanswerability Evaluation for Retrieval Augmented Generation",
+    "VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models",
+    "Vulnerability of LLMs to Vertically Aligned Text Manipulations",
+    "Watermarking Large Language Models: An Unbiased and Low-risk Method",
+    "When to Speak, When to Abstain: Contrastive Decoding with Abstention",
+    "Which of These Best Describes Multiple Choice Evaluation with LLMs? A) Forced B) Flawed C) Fixable D) All of the Above",
+    "XDAC: XAI-Driven Detection and Attribution of LLM-Generated News Comments in Korean",
+    "YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering",
+    "A Generative Pre-Trained Language Model for Channel Prediction in Wireless Communications Systems",
+    "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+    "ACING: Actor-Critic for Instruction Learning in Black-Box LLMs",
+    "AIP: Subverting Retrieval-Augmented Generation via Adversarial Instructional Prompt",
+    "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models",
+    "APLOT: Robust Reward Modeling via Adaptive Preference Learning with Optimal Transport",
+    "AdaRewriter: Unleashing the Power of Prompting-based Conversational Query Reformulation via Test-Time Adaptation",
+    "Addressing Tokenization Inconsistency in Steganography and Watermarking Based on Large Language Models",
+    "AgentPro: Enhancing LLM Agents with Automated Process Supervision",
+    "Alignment Quality Index (AQI) : Beyond Refusals: AQI as an Intrinsic Alignment Diagnostic via Latent Geometry, Cluster Divergence, and Layer wise Pooled Representations",
+    "AmpleHate: Amplifying the Attention for Versatile Implicit Hate Detection",
+    "AnyMAC: Cascading Flexible Multi-Agent Collaboration via Next-Agent Prediction",
+    "Are Vision-Language Models Safe in the Wild? A Meme-Based Benchmark Study",
+    "AskToAct: Enhancing LLMs Tool Use via Self-Correcting Clarification",
+    "Attacking Misinformation Detection Using Adversarial Examples Generated by Language Models",
+    "AutoCT: Automating Interpretable Clinical Trial Prediction with LLM Agents",
+    "Automating Steering for Safe Multimodal Large Language Models",
+    "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models",
+    "Beyond Demographics: Enhancing Cultural Value Survey Simulation with Multi-Stage Personality-Driven Cognitive Reasoning",
+    "Beyond Demonstrations: Dynamic Vector Construction from Latent Representations",
+    "Bias Beware: The Impact of Cognitive Biases on LLM-Driven Product Recommendations",
+    "Bit-Flip Error Resilience in LLMs: A Comprehensive Analysis and Defense Framework",
+    "BrailleLLM: Braille Instruction Tuning with Large Language Models for Braille Domain Tasks",
+    "Breaking Agents: Compromising Autonomous LLM Agents Through Malfunction Amplification",
+    "CARE: A Disagreement Detection Framework with Concept Alignment and Reasoning Enhancement",
+    "CARFT: Boosting LLM Reasoning via Contrastive Learning with Annotated Chain-of-Thought-based Reinforced Fine-Tuning",
+    "CARMA: Enhanced Compositionality in LLMs via Advanced Regularisation and Mutual Information Alignment",
+    "CAT: Causal Attention Tuning For Injecting Fine-grained Causal Knowledge into Large Language Models",
+    "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+    "CODI: Compressing Chain-of-Thought into Continuous Space via Self-Distillation",
+    "CRITICTOOL: Evaluating Self-Critique Capabilities of Large Language Models in Tool-Calling Error Scenarios",
+    "CTCC: A Robust and Stealthy Fingerprinting Framework for Large Language Models via Cross-Turn Contextual Correlation Backdoor",
+    "Can GRPO Boost Complex Multimodal Table Understanding?",
+    "Can an Individual Manipulate the Collective Decisions of Multi-Agents?",
+    "Case-Based Decision-Theoretic Decoding with Quality Memories",
+    "Chat-Driven Text Generation and Interaction for Person Retrieval",
+    "CoBia: Constructed Conversations Can Trigger Otherwise Concealed Societal Biases in LLMs",
+    "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning",
+    "Coarse-to-Fine Grounded Memory for LLM Agent Planning",
+    "Collaborative Beam Search: Enhancing LLM Reasoning via Collective Consensus",
+    "CompassVerifier: A Unified and Robust Verifier for LLMs Evaluation and Outcome Reward",
+    "Composable Cross-prompt Essay Scoring by Merging Models",
+    "Compositional Generalisation for Explainable Hate Speech Detection",
+    "Confidence-guided Refinement Reasoning for Zero-shot Question Answering",
+    "Conflict-Aware Soft Prompting for Retrieval-Augmented Generation",
+    "Context-Aware Hierarchical Taxonomy Generation for Scientific Papers via LLM-Guided Multi-Aspect Clustering",
+    "Contra4: Evaluating Contrastive Cross-Modal Reasoning in Audio, Video, Image, and 3D",
+    "CourtReasoner: Can LLM Agents Reason Like Judges?",
+    "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+    "DINT Transformer",
+    "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+    "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+    "Debate-to-Detect: Reformulating Misinformation Detection as a Real-World Debate with Large Language Models",
+    "DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments",
+    "DeepResonance: Enhancing Multimodal Music Understanding via Music-centric Multi-way Instruction Tuning",
+    "Demystifying Synthetic Data in LLM Pre-training: A Systematic Study of Scaling Laws, Benefits, and Pitfalls",
+    "Demystifying optimized prompts in language models",
+    "Detoxifying Large Language Models via the Diversity of Toxic Samples",
+    "Dipper: Diversity in Prompts for Producing Large Language Model Ensembles in Reasoning Tasks",
+    "Direct Value Optimization: Improving Chain-of-Thought Reasoning in LLMs with Refined Values",
+    "Disentangled Information Bottleneck for Adversarial Text Defense",
+    "DivScore: Zero-Shot Detection of LLM-Generated Text in Specialized Domains",
+    "Do Large Language Models Understand Word Senses?",
+    "DocReRank: Single-Page Hard Negative Query Generation for Training Multi-Modal RAG Rerankers",
+    "Dual-Path Counterfactual Integration for Multimodal Aspect-Based Sentiment Classification",
+    "Enhancing Large Language Model for Knowledge Graph Completion via Structure-Aware Alignment-Tuning",
+    "Ensembling Prompting Strategies for Zero-Shot Hierarchical Text Classification with Large Language Models",
+    "Evaluating Large Language Models for Detecting Antisemitism",
+    "Evaluating Robustness of Large Audio Language Models to Audio Injection: An Empirical Study",
+    "EverTracer: Hunting Stolen Large Language Models via Stealthy and Robust Probabilistic Fingerprint",
+    "EvolveSearch: An Iterative Self-Evolving Search Agent",
+    "Exploring Response Uncertainty in MLLMs: An Empirical Evaluation under Misleading Scenarios",
+    "Facilitating Cognitive Accessibility with LLMs: A Multi-Task Approach to Easy-to-Read Text Generation",
+    "Few-Shot Open-Set Classification via Reasoning-Aware Decomposition",
+    "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+    "Following Length Constraints in Instructions",
+    "Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon",
+    "From A and B to A+B: Can Large Language Models Solve Compositional Math Problems?",
+    "GRADA: Graph-based Reranking against Adversarial Documents Attack",
+    "GRAID: Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection",
+    "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+    "Generator-Assistant Stepwise Rollback Framework for Large Language Model Agent",
+    "HELENE: Hessian Layer-wise Clipping and Gradient Annealing for Accelerating Fine-tuning LLM with Zeroth-order Optimization",
+    "Hallucination Detection in LLMs Using Spectral Features of Attention Maps",
+    "How Persuasive Is Your Context?",
+    "ICG: Improving Cover Image Generation via MLLM-based Prompting and Personalized Preference Alignment",
+    "IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents",
+    "Image Difference Captioning via Adversarial Preference Optimization",
+    "Improbable Bigrams Expose Vulnerabilities of Incomplete Tokens in Byte-Level Tokenizers",
+    "Improving Clustering with Positive Pairs Generated from LLM-Driven Labels",
+    "Improving Large Language Model Safety with Contrastive Representation Learning",
+    "Improving Large Language Models Function Calling and Interpretability via Guided-Structured Templates",
+    "Improving Multilingual Retrieval-Augmented Language Models through Dialectic Reasoning Argumentations",
+    "In Benchmarks We Trust ... Or Not?",
+    "In-Context Learning Boosts Speech Recognition via Human-like Adaptation to Speakers and Language Varieties",
+    "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+    "KCS: Diversify Multi-hop Question Generation with Knowledge Composition Sampling",
+    "KG-RAG: Enhancing GUI Agent Decision-Making via Knowledge Graph-Driven Retrieval-Augmented Generation",
+    "Knowledge Editing through Chain-of-Thought",
+    "Koel-TTS: Enhancing LLM based Speech Generation with Preference Alignment and Classifier Free Guidance",
+    "LCES: Zero-shot Automated Essay Scoring via Pairwise Comparisons Using Large Language Models",
+    "LEO-MINI: An Efficient Multimodal Large Language Model using Conditional Token Reduction and Mixture of Multi-Modal Experts",
+    "LLM-Guided Co-Training for Text Classification",
+    "LLMs are Better Than You Think: Label-Guided In-Context Learning for Named Entity Recognition",
+    "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+    "LVLMs are Bad at Overhearing Human Referential Communication",
+    "Large Language Models Badly Generalize across Option Length, Problem Types, and Irrelevant Noun Replacements",
+    "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers",
+    "Leveraging Loanword Constraints for Improving Machine Translation in a Low-Resource Multilingual Context",
+    "Logical Reasoning with Outcome Reward Models for Test-Time Scaling",
+    "Logits-Based Finetuning",
+    "MA-GTS: A Multi-Agent Framework for Solving Complex Graph Problems in Real-World Applications",
+    "MADAWSD: Multi-Agent Debate Framework for Adversarial Word Sense Disambiguation",
+    "MERMAID: Multi-perspective Self-reflective Agents with Generative Augmentation for Emotion Recognition",
+    "MMAPG: A Training-Free Framework for Multimodal Multi-hop Question Answering via Adaptive Planning Graphs",
+    "MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation",
+    "MPRF: Interpretable Stance Detection through Multi-Path Reasoning Framework",
+    "MR. Judge: Multimodal Reasoner as a Judge",
+    "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+    "Med-PRM: Medical Reasoning Models with Stepwise, Guideline-verified Process Rewards",
+    "Memory-QA: Answering Recall Questions Based on Multimodal Memories",
+    "Mitigating Hallucinations in LM-Based TTS Models via Distribution Alignment Using GFlowNets",
+    "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning",
+    "ModRWKV: Transformer Multimodality in Linear Time",
+    "ModelCitizens: Representing Community Voices in Online Safety",
+    "MolErr2Fix: Benchmarking LLM Trustworthiness in Chemistry via Modular Error Detection, Localization, Explanation, and Correction",
+    "Morables: A Benchmark for Assessing Abstract Moral Reasoning in LLMs with Fables",
+    "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+    "Multi-LMentry: Can Multilingual LLMs Solve Elementary Tasks Across Languages?",
+    "MultiLogicNMR(er): A Benchmark and Neural-Symbolic Framework for Non-monotonic Reasoning with Multiple Extensions",
+    "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+    "NovelHopQA: Diagnosing Multi-Hop Reasoning Failures in Long Narrative Contexts",
+    "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+    "OpenTuringBench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+    "PAKTON: A Multi-Agent Framework for Question Answering in Long Legal Agreements",
+    "PLLuM-Align: Polish Preference Dataset for Large Language Model Alignment",
+    "PPTAgent: Generating and Evaluating Presentations Beyond Text-to-Slides",
+    "Parallel Continuous Chain-of-Thought with Jacobi Iteration",
+    "Personalized LLM Decoding via Contrasting Personal Preference",
+    "Persuasion Dynamics in LLMs: Investigating Robustness and Adaptability in Knowledge and Safety with DuET-PD",
+    "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs",
+    "Principled Personas: Defining and Measuring the Intended Effects of Persona Prompting on Task Performance",
+    "PruneCD: Contrasting Pruned Self Model to Improve Decoding Factuality",
+    "Pun Unintended: LLMs and the Illusion of Humor Understanding",
+    "QuZO: Quantized Zeroth-Order Fine-Tuning for Large Language Models",
+    "QualBench: Benchmarking Chinese LLMs with Localized Professional Qualifications for Vertical Domain Evaluation",
+    "Quantifying Logical Consistency in Transformers via Query-Key Alignment",
+    "R-PRM: Reasoning-Driven Process Reward Modeling",
+    "RAG-Instruct: Boosting LLMs with Diverse Retrieval-Augmented Instructions",
+    "RBPtool: A Deep Language Model Framework for Multi-Resolution RBP-RNA Binding Prediction and RNA Molecule Design",
+    "REARANK: Reasoning Re-ranking Agent via Reinforcement Learning",
+    "RESF: Regularized-Entropy-Sensitive Fingerprinting for Black-Box Tamper Detection of Large Language Models",
+    "RICO: Improving Accuracy and Completeness in Image Recaptioning via Visual Reconstruction",
+    "RTQA : Recursive Thinking for Complex Temporal Knowledge Graph Question Answering with Large Language Models",
+    "Randomized Smoothing Meets Vision-Language Models",
+    "Re-Align: Aligning Vision Language Models via Retrieval-Augmented Direct Preference Optimization",
+    "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+    "ReEvalMed: Rethinking Medical Report Evaluation by Aligning Metrics with Real-World Clinical Judgment",
+    "ReSURE: Regularizing Supervision Unreliability for Multi-turn Dialogue Fine-tuning",
+    "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+    "RecBase: Generative Foundation Model Pretraining for Zero-Shot Recommendation",
+    "Reflective Agreement: Combining Self-Mixture of Agents with a Sequence Tagger for Robust Event Extraction",
+    "Reimagining Safety Alignment with An Image",
+    "Reinforced Query Reasoners for Reasoning-intensive Retrieval Tasks",
+    "Reinforcement Learning for Large Language Models via Group Preference Reward Shaping",
+    "Retrieval over Classification: Integrating Relation Semantics for Multimodal Relation Extraction",
+    "Retrieval-Augmented Generation with Estimation of Source Reliability",
+    "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?",
+    "Robust Adaptation of Large Multimodal Models for Retrieval Augmented Hateful Meme Detection",
+    "Robust Native Language Identification through Agentic Decomposition",
+    "SAFE-SQL: Self-Augmented In-Context Learning with Fine-grained Example Selection for Text-to-SQL",
+    "SAFE: Schema-Driven Approximate Distance Join for Efficient Knowledge Graph Querying",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+    "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+    "SafeScientist: Enhancing AI Scientist Safety for Risk-Aware Scientific Discovery",
+    "SenDetEX: Sentence-Level AI-Generated Text Detection for Human-AI Hybrid Content via Style and Context Fusion",
+    "SensorLLM: Aligning Large Language Models with Motion Sensors for Human Activity Recognition",
+    "SimMark: A Robust Sentence-Level Similarity-Based Watermarking Algorithm for Large Language Models",
+    "Simple Yet Effective: An Information-Theoretic Approach to Multi-LLM Uncertainty Quantification",
+    "Single LLM, Multiple Roles: A Unified Retrieval-Augmented Generation Framework Using Role-Specific Token Optimization",
+    "SliceMoE: Routing Embedding Slices Instead of Tokens for Fine-Grained and Balanced Transformer Scaling",
+    "Sparse Autoencoder Features for Classifications and Transferability",
+    "Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed Acceptance",
+    "Speculative Safety-Aware Decoding",
+    "Speech Discrete Tokens or Continuous Features? A Comparative Analysis for Spoken Language Understanding in SpeechLLMs",
+    "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering",
+    "Stop Looking for ``Important Tokens'' in Multimodal Language Models: Duplication Matters More",
+    "Structured Preference Optimization for Vision-Language Long-Horizon Task Planning",
+    "Summarizing Speech: A Comprehensive Survey",
+    "Surprise Calibration for Better In-Context Learning",
+    "TALON: A Multi-Agent Framework for Long-Table Exploration and Question Answering",
+    "TCPO: Thought-Centric Preference Optimization for Effective Embodied Decision-making",
+    "TP-RAG: Benchmarking Retrieval-Augmented Large Language Model Agents for Spatiotemporal-Aware Travel Planning",
+    "TempParaphraser: ``Heating Up'' Text to Evade AI-Text Detection through Paraphrasing",
+    "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning",
+    "The Hidden Strength of Disagreement: Unraveling the Consensus-Diversity Tradeoff in Adaptive Multi-Agent Systems",
+    "The LLM Already Knows: Estimating LLM-Perceived Question Difficulty via Hidden Representations",
+    "The Sound of Syntax: Finetuning and Comprehensive Evaluation of Language Models for Speech Pathology",
+    "The State of Multilingual LLM Safety Research: From Measuring The Language Gap To Mitigating It",
+    "ThinkSLM: Towards Reasoning in Small Language Models",
+    "Tiny Budgets, Big Gains: Parameter Placement Strategy in Parameter Super-Efficient Fine-Tuning",
+    "Too Helpful, Too Harmless, Too Honest or Just Right?",
+    "Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore's Low-Resource Languages",
+    "TrojanStego: Your Language Model Can Secretly Be A Steganographic Privacy Leaking Agent",
+    "TrojanWave: Exploiting Prompt Learning for Stealthy Backdoor Attacks on Large Audio-Language Models",
+    "Trustworthy Medical Question Answering: An Evaluation-Centric Survey",
+    "Tuning Less, Prompting More: In-Context Preference Learning Pipeline for Natural Language Transformation",
+    "TurnBack: A Geospatial Route Cognition Benchmark for Large Language Models through Reverse Route",
+    "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+    "Unleashing the Reasoning Potential of LLMs by Critique Fine-Tuning on One Problem",
+    "Unmasking Deceptive Visuals: Benchmarking Multimodal Large Language Models on Misleading Chart Question Answering",
+    "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+    "VERITAS: Leveraging Vision Priors and Expert Fusion to Improve Multimodal Data",
+    "VisCRA: A Visual Chain Reasoning Attack for Jailbreaking Multimodal Large Language Models",
+    "WangchanThaiInstruct: An instruction-following Dataset for Culture-Aware, Multitask, and Multi-domain Evaluation in Thai",
+    "Waste-Bench: A Comprehensive Benchmark for Evaluating VLLMs in Cluttered Environments",
+    "Weaver: Interweaving SQL and LLM for Table Reasoning",
+    "Where Confabulation Lives: Latent Feature Discovery in LLMs",
+    "Whisper-UT: A Unified Translation Framework for Speech and Text",
+    "Who is in the Spotlight: The Hidden Bias Undermining Multimodal Retrieval-Augmented Generation",
+    "WildDoc: How Far Are We from Achieving Comprehensive and Robust Document Understanding in the Wild?",
+    "Zero-shot Multimodal Document Retrieval via Cross-modal Question Generation",
+    "pFedGPT: Hierarchically Optimizing LoRA Aggregation Weights for Personalized Federated GPT Models",
+    "reWordBench: Benchmarking and Improving the Robustness of Reward Models with Transformed Inputs",
+    "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+    "BadEdit: Backdooring Large Language Models by Model Editing",
+    "Batch Calibration: Rethinking Calibration for In-Context Learning and Prompt Engineering",
+    "Beam Enumeration: Probabilistic Explainability For Sample Efficient Self-conditioned Molecular Design",
+    "Branch-GAN: Improving Text Generation with (not so) Large Language Models",
+    "Breaking Physical and Linguistic Borders: Multilingual Federated Prompt Tuning for Low-Resource Languages",
+    "CLaM-TTS: Improving Neural Codec Language Model for Zero-Shot Text-to-Speech",
+    "Can Large Language Models Infer Causation from Correlation?",
+    "Catastrophic Jailbreak of Open-source LLMs via Exploiting Generation",
+    "CoVLM: Composing Visual Entities and Relationships in Large Language Models Via Communicative Decoding",
+    "Compositional Preference Models for Aligning LMs",
+    "Conformal Language Modeling",
+    "DQ-LoRe: Dual Queries with Low Rank Approximation Re-ranking for In-Context Learning",
+    "Diagnosing Transformers: Illuminating Feature Spaces for Clinical Decision-Making",
+    "Energy-based Automated Model Evaluation",
+    "Evaluating Language Model Agency Through Negotiations",
+    "Ferret: Refer and Ground Anything Anywhere at Any Granularity",
+    "GAIA: a benchmark for General AI Assistants",
+    "Gen-Z: Generative Zero-Shot Text Classification with Contextualized Label Descriptions",
+    "GeoLLM: Extracting Geospatial Knowledge from Large Language Models",
+    "Grounding Language Plans in Demonstrations Through Counterfactual Perturbations",
+    "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning",
+    "Knowledge Fusion of Large Language Models",
+    "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+    "Large Language Models Are Not Robust Multiple Choice Selectors",
+    "Learning with Language-Guided State Abstractions",
+    "MEND: Meta Demonstration Distillation for Efficient and Effective In-Context Learning",
+    "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning",
+    "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data",
+    "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners",
+    "Phenomenal Yet Puzzling: Testing Inductive Reasoning Capabilities of Language Models with Hypothesis Refinement",
+    "Prompt Risk Control: A Rigorous Framework for Responsible Deployment of Large Language Models",
+    "Provable Robust Watermarking for AI-Generated Text",
+    "ReFusion: Improving Natural Language Understanding with Computation-Efficient Retrieval Representation Fusion",
+    "Reward Model Ensembles Help Mitigate Overoptimization",
+    "Towards Robust Multi-Modal Reasoning via Model Selection",
+    "Towards Unified Multi-Modal Personalization: Large Vision-Language Models for Generative Recommendation and Beyond",
+    "Training Socially Aligned Language Models on Simulated Social Interactions",
+    "True Knowledge Comes from Practice: Aligning Large Language Models with Embodied Environments via Reinforcement Learning",
+    "Understanding In-Context Learning in Transformers and LLMs by Learning to Learn Discrete Functions",
+    "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+    "Zero-Shot Robustification of Zero-Shot Models",
+    "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+    "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation",
+    "A Watermark for Order-Agnostic Language Models",
+    "ADAM: An Embodied Causal Agent in Open-World Environments",
+    "Accelerating Inference of Retrieval-Augmented Generation via Sparse Context Selection",
+    "Adaptive Transformer Programs: Bridging the Gap Between Performance and Interpretability in Transformers",
+    "Agent-Oriented Planning in Multi-Agent Systems",
+    "AgentRefine: Enhancing Agent Generalization through Refinement Tuning",
+    "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents",
+    "Articulate-Anything:  Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model",
+    "Automated Design of Agentic Systems",
+    "Automatic Curriculum Expert Iteration for Reliable LLM Reasoning",
+    "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+    "Beyond Surface Structure: A Causal Assessment of LLMs' Comprehension ability",
+    "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses",
+    "CAMEx: Curvature-aware Merging of Experts",
+    "CS-Bench: A Comprehensive Benchmark for Large Language Models towards Computer Science Mastery",
+    "Can Knowledge Editing Really Correct Hallucinations?",
+    "Can LLMs Solve Longer Math Word Problems Better?",
+    "Can Textual Gradient Work in Federated Learning?",
+    "Can We Trust Embodied Agents? Exploring Backdoor Attacks against Embodied LLM-Based Decision-Making Systems",
+    "Causal Order: The Key to Leveraging Imperfect Experts in Causal Inference",
+    "Certifying Counterfactual Bias in LLMs",
+    "Certifying Language Model Robustness with Fuzzed Randomized Smoothing: An Efficient Defense Against Backdoor Attacks",
+    "Chain-of-Action: Faithful and Multimodal Question Answering through Large Language Models",
+    "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+    "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+    "ComLoRA: A Competitive Learning Approach for Enhancing LoRA",
+    "Competing Large Language Models in Multi-Agent Gaming Environments",
+    "Context Clues: Evaluating Long Context Models for Clinical Prediction Tasks on EHR Data",
+    "DAMO: Decoding by Accumulating Activations Momentum for Mitigating Hallucinations in Vision-Language Models",
+    "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+    "DEPT: Decoupled Embeddings for Pre-training Language Models",
+    "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search",
+    "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+    "Decoupling Angles and Strength in Low-rank Adaptation",
+    "Discriminator-Guided Embodied Planning for LLM Agent",
+    "DistRL: An Asynchronous Distributed Reinforcement Learning Framework for On-Device Control Agent",
+    "Do Vision-Language Models Represent Space and How? Evaluating Spatial Frame of Reference under Ambiguities",
+    "Don't Take Things Out of Context: Attention Intervention for Enhancing Chain-of-Thought Reasoning in Large Language Models",
+    "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+    "Dynamic Multimodal Evaluation with Flexible Complexity by Vision-Language Bootstrapping",
+    "Dysca: A Dynamic and Scalable Benchmark for Evaluating Perception Ability of LVLMs",
+    "EDiT: A Local-SGD-Based Efficient Distributed Training Method for Large Language Models",
+    "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+    "Estimating the Probabilities of Rare Outputs in Language Models",
+    "ExACT: Teaching AI Agents to Explore with Reflective-MCTS and Exploratory Learning",
+    "Exact Byte-Level Probabilities from Tokenized Language Models for FIM-Tasks and Model Ensembles",
+    "Explaining Modern Gated-Linear RNNs via a Unified Implicit Attention Formulation",
+    "FakeShield: Explainable Image Forgery Detection and Localization via Multi-modal Large Language Models",
+    "Flow: Modularized Agentic Workflow Automation",
+    "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+    "From an LLM Swarm to a PDDL-empowered Hive: Planning Self-executed Instructions in a Multi-modal Jungle",
+    "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+    "GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models",
+    "GenSE: Generative Speech Enhancement via Language Models using Hierarchical Modeling",
+    "GeoLoRA: Geometric integration for parameter efficient fine-tuning",
+    "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+    "GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation",
+    "HAMSTER: Hierarchical Action Models for Open-World Robot Manipulation",
+    "Harnessing Diversity for Important Data Selection in Pretraining Large Language Models",
+    "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+    "How to Evaluate Reward Models for RLHF",
+    "Implicit In-context Learning",
+    "In-Context Editing: Learning Knowledge from Self-Induced Distributions",
+    "Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models",
+    "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+    "Integrative Decoding: Improving Factuality via Implicit Self-consistency",
+    "Jailbreaking as a Reward Misspecification Problem",
+    "KGARevion: An AI Agent for Knowledge-Intensive Biomedical QA",
+    "LLaMaFlex: Many-in-one LLMs via Generalized Pruning and Weight Sharing",
+    "Language Agents Meet Causality -- Bridging LLMs and Causal World Models",
+    "Large Language Models Meet Symbolic Provers for Logical Reasoning Evaluation",
+    "Large Language Models are Interpretable Learners",
+    "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+    "Layer Swapping for Zero-Shot Cross-Lingual Transfer in Large Language Models",
+    "Learning to Search from Demonstration Sequences",
+    "Lightweight Neural App Control",
+    "MA-RLHF: Reinforcement Learning from Human Feedback with Macro Actions",
+    "MAP: Multi-Human-Value Alignment Palette",
+    "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+    "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models",
+    "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+    "Maximizing the Potential of Synthetic Data: Insights from Random Matrix Theory",
+    "MetaMetrics: Calibrating Metrics for Generation Tasks Using Human Preferences",
+    "Mixture-of-Agents Enhances Large Language Model Capabilities",
+    "MoLEx: Mixture of Layer Experts for Fine-tuning with Sparse Upcycling",
+    "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+    "Motion-Agent: A Conversational Framework for Human Motion Generation with LLMs",
+    "Neural Interactive Proofs",
+    "NeuroLM: A Universal Multi-task Foundation Model for Bridging the Gap between Language and EEG Signals",
+    "NoVo: Norm Voting off Hallucinations with Attention Heads in Large Language Models",
+    "OBI-Bench: Can LMMs Aid in Study of Ancient Script on Oracle Bones?",
+    "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+    "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+    "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+    "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+    "Pareto Prompt Optimization",
+    "PathGen-1.6M: 1.6 Million Pathology Image-text Pairs Generation through Multi-agent Collaboration",
+    "Personalized Visual Instruction Tuning",
+    "Progress or Regress? Self-Improvement Reversal in Post-training",
+    "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like Language Models",
+    "Provence: efficient and robust context pruning for retrieval-augmented generation",
+    "Quest: Query-centric Data Synthesis Approach for Long-context Scaling of Large Language Model",
+    "RAG-SR: Retrieval-Augmented Generation for Neural Symbolic Regression",
+    "RaSA: Rank-Sharing Low-Rank Adaptation",
+    "Recognize Any Surgical Object: Unleashing the Power of Weakly-Supervised Data",
+    "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+    "Robust Function-Calling for On-Device Language Model via Function Masking",
+    "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models",
+    "SafeWatch: An Efficient Safety-Policy Following Video Guardrail Model with Transparent Explanations",
+    "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+    "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+    "SeCom: On Memory Construction and Retrieval for Personalized Conversational Agents",
+    "Self-Evolving Multi-Agent Collaboration Networks for Software Development",
+    "Self-Updatable Large Language Models by Integrating Context into Model Parameters",
+    "Solving Token Gradient Conflict in Mixture-of-Experts for Large Vision-Language Model",
+    "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+    "Text4Seg: Reimagining Image Segmentation as Text Generation",
+    "The Foundations of Tokenization: Statistical and Computational Concerns",
+    "The Power of LLM-Generated Synthetic Data for Stance Detection in Online Political Discussions",
+    "Think Thrice Before You Act: Progressive Thought Refinement in Large Language Models",
+    "Think while You Generate: Discrete Diffusion with Planned Denoising",
+    "Tight Clusters Make Specialized Experts",
+    "Towards Interpreting Visual Information Processing in Vision-Language Models",
+    "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies",
+    "Training-free LLM-generated Text Detection by Mining Token Probability Sequences",
+    "Transformer Meets Twicing: Harnessing Unattended Residual Information",
+    "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+    "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+    "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+    "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents",
+    "Visual Agents as Fast and Slow Thinkers",
+    "Weighted Multi-Prompt Learning with Description-free Large Language Model Distillation",
+    "Weighted-Reward Preference Optimization for Implicit Model Fusion",
+    "WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct",
+    "You Only Prune Once: Designing Calibration-Free Model Compression With Policy Learning",
+    "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+    "ALTER: Augmentation for Large-Table-Based Reasoning",
+    "Adapting Sentence-level Automatic Metrics for Document-level Simplification Evaluation",
+    "Arabic Dataset for LLM Safeguard Evaluation",
+    "Are Multimodal LLMs Robust Against Adversarial Perturbations? RoMMath: A Systematic Evaluation on Multimodal Math Reasoning",
+    "Assessing the State of the Art in Scene Segmentation",
+    "AudioBench: A Universal Benchmark for Audio Large Language Models",
+    "B4: A Black-Box Scrubbing Attack onLLMWatermarks",
+    "Beyond End-to-End VLMs: Leveraging Intermediate Text Representations for Superior Flowchart Understanding",
+    "Beyond the Next Token: Towards Prompt-Robust Zero-Shot Classification via Efficient Multi-Token Prediction",
+    "CoME: An Unlearning-based Approach to Conflict-free Model Editing",
+    "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models",
+    "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+    "Diversify-verify-adapt: Efficient and Robust Retrieval-Augmented Ambiguous Question Answering",
+    "Eliciting Critical Reasoning in Retrieval-Augmented Generation via Contrastive Explanations",
+    "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+    "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+    "GroundCocoa: A Benchmark for Evaluating Compositional & Conditional Reasoning in Language Models",
+    "Guiding Medical Vision-Language Models with Diverse Visual Prompts: Framework Design and Comprehensive Exploration of Prompt Variations",
+    "IFIR: A Comprehensive Benchmark for Evaluating Instruction-Following in Expert-Domain Information Retrieval",
+    "ImgTrojan: Jailbreaking Vision-Language Models with ONE Image",
+    "Improving Retrospective Language Agents via Joint Policy Gradient Optimization",
+    "In-Context Learning (and Unlearning) of Length Biases",
+    "Is your benchmark truly adversarial? AdvScore: Evaluating Human-Grounded Adversarialness",
+    "Kill two birds with one stone: generalized and robust AI-generated text detection via dynamic perturbations",
+    "Knowledge Graph-Guided Retrieval Augmented Generation",
+    "MAPWise: Evaluating Vision-Language Models for Advanced Map Queries",
+    "MMEvalPro: Calibrating Multimodal Benchmarks Towards Trustworthy and Efficient Evaluation",
+    "Mastering the Craft of Data Synthesis for CodeLLMs",
+    "Mutual-pairing Data Augmentation for Fewshot Continual Relation Extraction",
+    "NLI under the Microscope: What Atomic Hypothesis Decomposition Reveals",
+    "Option Symbol Matters: Investigating and Mitigating Multiple-Choice Option Symbol Bias of Large Language Models",
+    "ReIFE: Re-evaluating Instruction-Following Evaluation",
+    "SALAD: Improving Robustness and Generalization through Contrastive Learning with Structure-Aware and LLM-Driven Augmented Data",
+    "SANDWiCH: Semantical Analysis of Neighbours for Disambiguating Words in Context ad Hoc",
+    "Self-Harmonized Chain of Thought",
+    "SylloBio-NLI: Evaluating Large Language Models on Biomedical Syllogistic Reasoning",
+    "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs",
+    "Towards Operationalizing Right to Data Protection",
+    "Typographic Attacks in a Multi-Image Setting",
+    "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+    "WaterPool: A Language Model Watermark Mitigating Trade-Offs among Imperceptibility, Efficacy and Robustness",
+    "What Did I Do Wrong? Quantifying LLMs' Sensitivity and Consistency to Prompt Engineering",
+    "A Hitchhiker's Guide to Fine-Grained Face Forgery Detection Using Common Sense Reasoning",
+    "A StrongREJECT for Empty Jailbreaks",
+    "ANAH-v2: Scaling Analytical Hallucination Annotation of Large Language Models",
+    "Achieving Domain-Independent Certified Robustness via Knowledge Continuity",
+    "AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases",
+    "Animal-Bench: Benchmarking Multimodal Video Models for Animal-centric Video Understanding",
+    "AutoManual: Constructing Instruction Manuals by LLM Agents via Interactive Environmental Learning",
+    "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning",
+    "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+    "Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models",
+    "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+    "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+    "CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs",
+    "ControlMLLM: Training-Free Visual Prompt Learning for Multimodal Large Language Models",
+    "DARG: Dynamic Evaluation of Large Language Models via Adaptive Reasoning Graph",
+    "DDK: Distilling Domain Knowledge for Efficient Large Language Models",
+    "DPIC: Decoupling Prompt and Intrinsic Characteristics for LLM Generated Text Detection",
+    "Delta-CoMe: Training-Free Delta-Compression with Mixed-Precision for Large Language Models",
+    "DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning",
+    "Distributional Preference Alignment of LLMs via Optimal Transport",
+    "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation",
+    "Efficient Contextual LLM Cascades through Budget-Constrained Policy Learning",
+    "Efficient Large Multi-modal Models via Visual Context Compression",
+    "Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making",
+    "Emotion-LLaMA: Multimodal Emotion Recognition and Reasoning with Instruction Tuning",
+    "Empowering Visible-Infrared Person Re-Identification with Large Foundation Models",
+    "Enhancing LLM Reasoning via Vision-Augmented Prompting",
+    "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+    "Entity Alignment with Noisy Annotations from Large Language Models",
+    "Evaluating Large Vision-and-Language Models on Children's Mathematical Olympiads",
+    "Exploiting LLM Quantization",
+    "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+    "From News to Forecast: Integrating Event Analysis in LLM-Based Time Series Forecasting with Reflection",
+    "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models",
+    "Image2Struct: Benchmarking Structure Extraction for Vision-Language Models",
+    "ImageNet3D: Towards General-Purpose Object-Level 3D Understanding",
+    "Imitating Language via Scalable Inverse Reinforcement Learning",
+    "Improving Alignment and Robustness with Circuit Breakers",
+    "Information Re-Organization Improves Reasoning in Large Language Models",
+    "Instruction Tuning With Loss Over Instructions",
+    "Instruction-Guided Visual Masking",
+    "Is the MMI Criterion Necessary for Interpretability? Degenerating Non-causal Features to Plain Noise for Self-Rationalization",
+    "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters",
+    "KG-FIT: Knowledge Graph Fine-Tuning Upon Open-World Knowledge",
+    "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+    "Knowledge-Empowered Dynamic Graph Network for Irregularly Sampled Medical Time Series",
+    "LISA: Layerwise Importance Sampling for Memory-Efficient Large Language Model Fine-Tuning",
+    "LLM-based Skill Diffusion for Zero-shot Policy Adaptation",
+    "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment",
+    "LOVA3: Learning to Visual Question Answering, Asking and Assessment",
+    "Language Models as Hierarchy Encoders",
+    "Large language model validity via enhanced conformal prediction methods",
+    "Linguistic Collapse: Neural Collapse in (Large) Language Models",
+    "Long-Horizon Planning for Multi-Agent Robots in Partially Observable Environments",
+    "MARPLE: A Benchmark for Long-Horizon Inference",
+    "MDAgents: An Adaptive Collaboration of LLMs for Medical Decision-Making",
+    "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models",
+    "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+    "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+    "Meteor: Mamba-based Traversal of Rationale for Large Language and Vision Models",
+    "MiniCache: KV Cache Compression in Depth Dimension for Large Language Models",
+    "Mixture of Demonstrations for In-Context Learning",
+    "Mixture of Tokens: Continuous MoE through Cross-Example Aggregation",
+    "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+    "Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning",
+    "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+    "Noise Contrastive Alignment of Language Models with Explicit Rewards",
+    "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+    "OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step",
+    "On Giant's Shoulders: Effortless Weak to Strong by Dynamic Logits Fusion",
+    "On Learning Multi-Modal Forgery Representation for Diffusion Generated Video Detection",
+    "On the Effects of Data Scale on UI Control Agents",
+    "OpenDebateEvidence: A Massive-Scale Argument Mining and Summarization Dataset",
+    "OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset",
+    "Order-Independence Without Fine Tuning",
+    "PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation",
+    "Personalized Adapter for Large Meteorology Model on Devices: Towards Weather Foundation Models",
+    "PertEval: Unveiling Real Knowledge Capacity of LLMs with Knowledge-Invariant Perturbations",
+    "PointAD: Comprehending 3D Anomalies from Points and Pixels for Zero-shot 3D Anomaly Detection",
+    "Policy Learning from Tutorial Books via Understanding, Rehearsing and Introspecting",
+    "Preference Alignment with Flow Matching",
+    "Probing the Decision Boundaries of In-context Learning in Large Language Models",
+    "RL on Incorrect Synthetic Data Scales the Efficiency of LLM Math Reasoning by Eight-Fold",
+    "Regularizing Hidden States Enables Learning Generalizable Reward Model for LLMs",
+    "Reinforcing LLM Agents via Policy Optimization with Action Decomposition",
+    "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+    "SETLEXSEM CHALLENGE: Using Set Operations to Evaluate the Lexical and Semantic Robustness of Language Models",
+    "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+    "SG-Nav: Online 3D Scene Graph Prompting for LLM-based Zero-shot Object Navigation",
+    "SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models",
+    "SMART: Scalable Multi-agent Real-time Motion Generation via Next-token Prediction",
+    "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+    "SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey",
+    "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+    "Shadowcast: Stealthy Data Poisoning Attacks Against Vision-Language Models",
+    "Stepwise Alignment for Constrained Language Model Policy Optimization",
+    "StrategyLLM: Large Language Models as Strategy Generators, Executors, Optimizers, and Evaluators for Problem Solving",
+    "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents",
+    "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack",
+    "TAIA: Large Language Models are Out-of-Distribution Data Learners",
+    "TSDS: Data Selection for Task-Specific Model Finetuning",
+    "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment",
+    "Time-FFM: Towards LM-Empowered Federated Foundation Model for Time Series Forecasting",
+    "Tri-Level Navigator: LLM-Empowered Tri-Level Learning for Time Series OOD Generalization",
+    "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+    "VHELM: A Holistic Evaluation of Vision Language Models",
+    "VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions",
+    "VideoLLM-MoD: Efficient Video-Language Streaming with Mixture-of-Depths Vision Computation",
+    "Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents",
+    "Who Evaluates the Evaluations? Objectively Scoring Text-to-Image Prompt Coherence Metrics with T2IScoreScore (TS2)",
+    "WizardArena: Post-training Large Language Models via Simulated Offline Chatbot Arena",
+    "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token"
+  ],
+  "paper_count": 657,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which a model retains its pre-learned general capabilities, such as code generation and problem-solving, after fine-tuning on a specialized task like code editing.",
+      "paper": "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "original_name": "Robustness"
+    },
+    {
+      "text": "The stability of an LLM's reasoning performance across similar problems, tasks, or perturbations in task conditions.",
+      "paper": "Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models",
+      "original_name": "Model robustness"
+    },
+    {
+      "text": "The extent to which a model avoids highly undesirable outputs on rare or adversarially shifted inputs rather than only performing well on average.",
+      "paper": "Estimating the Probabilities of Rare Outputs in Language Models",
+      "original_name": "Worst-case performance"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models",
+      "evidence": "We attribute our outstanding robustness to the great generalization ability of our distilled thought-templates",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models",
+          "Mixture of Demonstrations for In-Context Learning"
+        ],
+        "icml25": [
+          "The Devil Is in the Details: Tackling Unimodal Spurious Correlations for Generalizable Multimodal Reward Models",
+          "ELEMENTAL: Interactive Learning from Demonstrations and Vision-Language Models for Reward Design in Robotics"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Exploring Explanations Improves the Robustness of In-Context Learning",
+      "evidence": "A recent advancement in enhancing robustness is ICL with explanations (X-ICL), which improves prediction reliability by guiding LLMs to understand and articulate the reasoning behind correct labels. (Abstract)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Exploring Explanations Improves the Robustness of In-Context Learning"
+        ],
+        "icml25": [
+          "DiffusionVLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression"
+        ],
+        "emnlp25": [
+          "MR. Judge: Multimodal Reasoner as a Judge"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Are Multimodal LLMs Robust Against Adversarial Perturbations? RoMMath: A Systematic Evaluation on Multimodal Math Reasoning",
+      "evidence": "we believe that utilizing few-shot settings with example demonstrations could potentially enhance model performance and robustness. (Section 5.1)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Are Multimodal LLMs Robust Against Adversarial Perturbations? RoMMath: A Systematic Evaluation on Multimodal Math Reasoning"
+        ],
+        "icml25": [
+          "Iterative Vectors: In-Context Gradient Steering without Backpropagation"
+        ],
+        "neurips24": [
+          "Mixture of Demonstrations for In-Context Learning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Overfitting",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Diagnosing Transformers: Illuminating Feature Spaces for Clinical Decision-Making",
+      "evidence": "In contrast, mixed-domain models exhibit greater resistance to overfitting, suggesting potential improvements in domain-specific model robustness; (ABSTRACT)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Diagnosing Transformers: Illuminating Feature Spaces for Clinical Decision-Making"
+        ],
+        "neurips24": [
+          "Imitating Language via Scalable Inverse Reinforcement Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM-Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset",
+      "evidence": "The drop in performance on GSM-Hard compared to GSM indicates that our models may not be robust to input perturbations, though, they are at par with previous work. (Limitations and Potential Risks)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset"
+        ],
+        "emnlp25": [
+          "CODI: Compressing Chain-of-Thought into Continuous Space via Self-Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Efficient Large Multi-modal Models via Visual Context Compression",
+      "evidence": "MMBench and the CN version evaluate a model\u2019s answer robustness with all-round shuffling on multiple choice answers. (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Efficient Large Multi-modal Models via Visual Context Compression"
+        ],
+        "iclr25": [
+          "Solving Token Gradient Conflict in Mixture-of-Experts for Large Vision-Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Trustworthiness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "evidence": "We assess the trustworthiness of Med-LVLMs across five dimensions, including trustfulness, fairness, safety, privacy, and robustness. (Abstract)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+          "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SVAMP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+      "evidence": "SVAMP (Patel et al., 2021), a robustness evaluation benchmark. (Section 3.4)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning"
+        ],
+        "emnlp25": [
+          "CODI: Compressing Chain-of-Thought into Continuous Space via Self-Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Prompt engineering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs",
+      "evidence": "the creator should generate training prompts allowing the solver to perform robustly on target prompt distributions. (Problem 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs"
+        ],
+        "naacl25": [
+          "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Neural collapse",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Advancing Personalized Learning with Neural Collapse for Long-Tail Challenge",
+      "evidence": "In this paper, we are the first to apply neural collapse to address the long-tail problem in data-based personalized learning and improve the robustness of large language models during LoRA fine-tuning in personalized learning scenarios. (Section 2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Advancing Personalized Learning with Neural Collapse for Long-Tail Challenge"
+        ],
+        "neurips24": [
+          "Linguistic Collapse: Neural Collapse in (Large) Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge transfer",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Mixture of Demonstrations for In-Context Learning",
+      "evidence": "In this subsection, we aim to evaluate the robustness, especially the generalizability and transferability of our method MoD to various LLMs. (Section 4.5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Mixture of Demonstrations for In-Context Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses",
+      "evidence": "We assert that robustness is fundamentally insufficient for ensuring safety goals due to inferential threats from dual-intent queries, with current defenses and evaluations failing to account for these risks. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+      "evidence": "Additional experiments on other benchmarks like RM-Bench, JudgeBench, and FollowBenchEval further highlight the utility of both planning and reasoning for building robust LLM-as-a-Judge reasoning models. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GAIA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "GAIA: a benchmark for General AI Assistants",
+      "evidence": "Static benchmarks are broken benchmarks in the making, and making GAIA evolve year-by-year through the removal of broken questions and the addition of new ones might be an important component to better assess the generalization and robustness of AI systems. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "GAIA: a benchmark for General AI Assistants"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Selection bias",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Large Language Models Are Not Robust Multiple Choice Selectors",
+      "evidence": "LLMs\u2019 poor robustness to option position changes results from their biased behavior: they prefer to select speci\ufb01c option IDs as answers (like \u201cOption A\u201d), which we term as selection bias.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Large Language Models Are Not Robust Multiple Choice Selectors"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "evidence": "Following the common practice in the field [132, 147], we consider the out-of-distribution (OOD) and adversarial robustness respectively. (Sec. 2.2.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OSWorld",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "evidence": "We find that current agents are not robust to these superficial changes, which lead to performance drops of 60% and even 80%. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Out-of-distribution generalization",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Tri-Level Navigator: LLM-Empowered Tri-Level Learning for Time Series OOD Generalization",
+      "evidence": "The emergent abilities of LLMs, especially in OOD scenarios, largely depends on the robustness of their representations (Section 3.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Tri-Level Navigator: LLM-Empowered Tri-Level Learning for Time Series OOD Generalization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMBench-CN",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Efficient Large Multi-modal Models via Visual Context Compression",
+      "evidence": "MMBench and the CN version evaluate a model\u2019s answer robustness with all-round shuffling on multiple choice answers. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Efficient Large Multi-modal Models via Visual Context Compression"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "A-OKVQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "VHELM: A Holistic Evaluation of Vision Language Models",
+      "evidence": "We introduce typos into A-OKVQA [34] and VQAv2 [12] to test the robustness against text perturbations. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "VHELM: A Holistic Evaluation of Vision Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "VQA-v2",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "VHELM: A Holistic Evaluation of Vision Language Models",
+      "evidence": "We introduce typos into A-OKVQA [34] and VQAv2 [12] to test the robustness against text perturbations. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "VHELM: A Holistic Evaluation of Vision Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "VirtualHome",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+      "evidence": "Finally, we demonstrate superior performance and robustness of ExRAP via intensive experiments with home robots and autonomous driving scenarios in VirtualHome, ALFRED, and CARLA. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ALFRED",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+      "evidence": "Finally, we demonstrate superior performance and robustness of ExRAP via intensive experiments with home robots and autonomous driving scenarios in VirtualHome, ALFRED, and CARLA. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "System 2 thinking",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "SETLEXSEM CHALLENGE: Using Set Operations to Evaluate the Lexical and Semantic Robustness of Language Models",
+      "evidence": "A truly intelligent system should exhibit System 2 thinking [Kahneman, 2011], which implies performing tasks consistently regardless of incidental features. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SETLEXSEM CHALLENGE: Using Set Operations to Evaluate the Lexical and Semantic Robustness of Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+      "evidence": "Kangaroo shows consistent high performance across different tasks such as QA, Math, and MT Bench, indicating its robustness and versatility. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Truthfulness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models",
+      "evidence": "Truthfulness involves a dual consideration of hallucination and robustness. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Stock movement prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+      "evidence": "\u201cCausalStock outperforms all baselines on ACC as well as MCC across three datasets demonstrating robustness performance for news-driven multi-stock movement prediction task.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MS MARCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+      "evidence": "\u201cTo evaluate the model\u2019s robustness in non-Wikipedia scenarios where high-quality text and titles are not available, we conduct experiments on a subset of MS MARCO\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Disentanglement",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models",
+      "evidence": "\u201cDRL is a major goal of artificial intelligence (AI), acclaimed for its enhancement of model robustness, interpretability, and generalizability.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Needle-in-a-Haystack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Provence: efficient and robust context pruning for retrieval-augmented generation",
+      "evidence": "We design a needle-in-the-haystack experiment which allows us to ... evaluate its robustness w.r.t. the position of the relevant information in the input context. (Section 4.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Provence: efficient and robust context pruning for retrieval-augmented generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Personalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Personalized Visual Instruction Tuning",
+      "evidence": "the diversity of names used during training makes the personalization capability more robust and generalizable to new individuals. (Section 6.2.3 IMPACT OF DATA SCALE AND NAME REPETITION)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Personalized Visual Instruction Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Recency bias",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+      "evidence": "Furthermore, we raise a novel robustness concern regarding SSMs with recency bias: our empirical outcomes show that Mamba is more susceptible to perturbations on local tokens, making it vulnerable to adversarial attack, as these local tokens can be easily manipulated to serve as backdoors. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "AgentRefine: Enhancing Agent Generalization through Refinement Tuning",
+      "evidence": "Our analysis shows that self-refinement enables the robustness of agent capability and the diversity of agent environments and thoughts further enhances the performance. (Section 11)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AgentRefine: Enhancing Agent Generalization through Refinement Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AndroidWorld",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents",
+      "evidence": "To understand agent robustness, we analyze M3A\u2019s performance across different random seeds, which generate different task parameters... (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+      "evidence": "GPT-4 comparison for robustness (Figure 5 caption).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+      "evidence": "\"This bias often leads to unexpected model failures and hurts performance, robustness, and reliability across various applications.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Eliminating Position Bias of Language Models: A Mechanistic Approach"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Causal reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Language Agents Meet Causality -- Bridging LLMs and Causal World Models",
+      "evidence": "A better approximation of the underlying causal model generally translates to more robust agents, implying that world models should be causality-aware",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Language Agents Meet Causality -- Bridging LLMs and Causal World Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FLAN",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Harnessing Diversity for Important Data Selection in Pretraining Large Language Models",
+      "evidence": "To demonstrate the generalizability and robustness of our method, we include FLAN (Chung et al., 2024) (a mix of multiple NLP tasks) as reference datasets .",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Harnessing Diversity for Important Data Selection in Pretraining Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLaVA-Bench-in-the-Wild",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DAMO: Decoding by Accumulating Activations Momentum for Mitigating Hallucinations in Vision-Language Models",
+      "evidence": "To assess robustness, we tested on the generalized dataset LLaVA-Bench. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DAMO: Decoding by Accumulating Activations Momentum for Mitigating Hallucinations in Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multi-turn dialogue",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models",
+      "evidence": "Our MTU-LLaMA exhibits the most gradual decrease in performance, demonstrating its robustness to higher dialogue turns. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Epistemic uncertainty",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "evidence": "Overall, we find that the uncertainty-aware variant of MBR proposed in this paper leads to better and more robust language generation. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Uncertainty-Aware Decoding with Minimum Bayes Risk"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GSM-Plus",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+      "evidence": "GSM-Plus, which tests model robustness. (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Progress or Regress? Self-Improvement Reversal in Post-training",
+      "evidence": "We posit that a model\u2019s capacity to produce diverse solutions is indicative of its robustness and flexibility in problem-solving. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Progress or Regress? Self-Improvement Reversal in Post-training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SmoothLLM",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+      "evidence": "\u201cWe select SmoothLLM (Robey et al., 2023) as our defense mechanism since it employs a perturbation-based approach, which is essential for establishing a robustness score.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Consistency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "What Did I Do Wrong? Quantifying LLMs' Sensitivity and Consistency to Prompt Engineering",
+      "evidence": "Our hope is that sensitivity and consistency will be helpful to guide prompt engineering and obtain LLMs that balance robustness with performance. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "What Did I Do Wrong? Quantifying LLMs' Sensitivity and Consistency to Prompt Engineering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Evaluation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models",
+      "evidence": "Hence, the critic agent \u03b8C will verify if this solution is robust and generalizable to unseen test cases. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AudioBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AudioBench: A Universal Benchmark for Audio Large Language Models",
+      "evidence": "Consequently, to minimize variability and thoroughly test model robustness, we incorporate at least 20 diverse prompt templates into our evaluation framework for the tasks without diverse prompts originally.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "AudioBench: A Universal Benchmark for Audio Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fact checking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+      "evidence": "fact verification is one area in which assessing the robustness of models developed for this task is crucial. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Shortcut learning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Towards Operationalizing Right to Data Protection",
+      "evidence": "This association can create a spurious correlation between the filmmaker\u2019s names and sentiment, leading LMs to learn shortcuts that can undermine their robustness. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Towards Operationalizing Right to Data Protection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Unlearning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "evidence": "Our approach leverages self-distillation to adjust logits and selectively reduce the influence of targeted tokens. This technique ensures smooth convergence and avoids catastrophic forgetting, even in challenging unlearning tasks with large datasets and sequential unlearning requests.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Zero-shot prompting",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+      "evidence": "\"We investigate the robustness of several LLMs in zero-shot, few-shot, and chain-of-thought prompting.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Few-shot prompting",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+      "evidence": "\"We investigate the robustness of several LLMs in zero-shot, few-shot, and chain-of-thought prompting.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Byte Latent Transformer: Patches Scale Better Than Tokens",
+      "evidence": "We create noised versions of HellaSwag and find that BLT outperforms in terms of robustness the Llama 3 BPE model by a large margin (Table 2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Byte Latent Transformer: Patches Scale Better Than Tokens"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Task alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents",
+      "evidence": "Our approach, instead, aims to enforce the task alignment, achieving a better robustness-utility tradeoff. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GrailQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data",
+      "evidence": "Figure 4: Performance under attack setting on 1,000 randomly sampled GrailQA questions. (Figure 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "VoxEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models",
+      "evidence": "Our benchmark ... 2) evaluates model robustness across diverse input audio conditions (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU-Redux",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+      "evidence": "To assess the robustness of QuaSAR as an ICL strategy, we evaluated two different phenomena: (i) the order swapping of choices in MMLU-Redux... (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Copy-paste attack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Watermarking Large Language Models: An Unbiased and Low-risk Method",
+      "evidence": "We assess the robustness of different watermarking methods under various attacks, including the copy-paste attack (Kirchenbauer et al., 2023a), paraphrasing using GPT-3.5, and two configurations of the DIPPER attack (Krishna et al., 2024). (Section 4.4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Watermarking Large Language Models: An Unbiased and Low-risk Method"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SQuAD2.0-Eval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning",
+      "evidence": "Following Li et al. (2023a), we further simulate complex retrieval scenarios using annotation information from SQuAD2.0 to more effectively evaluate the adherence and robustness of RALMs, resulting in the creation of SQuAD2.0-Eval. (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Collective intelligence",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+      "evidence": "By doing so, DebateCoder effectively leverages the collective intelligence of both models, making the generated code more robust and accurate. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RM-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+      "evidence": "RM-Bench is designed to assess the robustness of reward models, based on their sensitivity and resistance to subtle content differences and style biases. (Section 3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Divergent thinking",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples",
+      "evidence": "This divergent reasoning is also crucial for machines, enhancing their robustness and enabling them to assist humans in many applications such as scientific discovery. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "In-context classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "On the Training Convergence of Transformers for In-Context Classification of Gaussian Mixtures",
+      "evidence": "in the \u2018different norms\u2019 setting, the performance of \u20181-layer\u2019 deteriorates more significantly, while transformers with a more complex structure (\u20193-layer\u2019) show better robustness under this distribution shift.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "On the Training Convergence of Transformers for In-Context Classification of Gaussian Mixtures"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Multimodal reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Imagine While Reasoning in Space: Multimodal Visualization-of-Thought",
+      "evidence": "MVoT demonstrates comparable performance on MAZE (92.95%) and MINIBEHAVIOR (95.14%), while achieving a higher accuracy of 85.60% on FROZENLAKE compared to both Direct and CoT. This demonstrates better stability and robustness of MVoT than CoT.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Imagine While Reasoning in Space: Multimodal Visualization-of-Thought"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+      "evidence": "The evaluation on MMLU shows the generalizability and robustness of our framework. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "evidence": "We... demonstrate robustness by showing retention of code generation and general problem-solving abilities post adaptation. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PWWS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "evidence": "We report the clean accuracy (CA) and the robust accuracy under attack (AUA) with PWWS (PW), TextFooler (TF), and Bert-Attack (BA) (Table 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Explaining the role of Intrinsic Dimensionality in Adversarial Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "On the Robustness of Reward Models for Language Model Alignment",
+      "evidence": "we compare the plain BT model and BSR on RLHF training and empirically show that robust RMs better align the policy to the gold preference model. (Abstract).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "On the Robustness of Reward Models for Language Model Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Watermark spoofing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "StealthInk: A Multi-bit and Stealthy Watermark for Large Language Models",
+      "evidence": "Following the settings in (Jovanovi\u00b4c et al., 2024), we compare the robustness against watermark spoofing attack by setting up LMmo as LLAMA2-7B and LMatt as MISTRAL-7B (Jiang et al., 2023).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "StealthInk: A Multi-bit and Stealthy Watermark for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code editing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "EditLord: Learning Code Transformation Rules for Code Editing",
+      "evidence": "With explicit editing rules, EDITLORD significantly improved the baseline in generalization, e.g., by up to 24.87% improvement in length generalization and 58.1% improved robustness against semantics-preserving code transformations. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "EditLord: Learning Code Transformation Rules for Code Editing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Efficiency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Beyond Zero Initialization: Investigating the Impact of Non-Zero Initialization on LoRA Fine-Tuning Dynamics",
+      "evidence": "Assume a LoRA fine-tuning process is stable and efficient (Definitions 3-4) with \u03b3[\u03b7] = \u03b3\u2217. The process is considered robust with respect to the learning rates...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Beyond Zero Initialization: Investigating the Impact of Non-Zero Initialization on LoRA Fine-Tuning Dynamics"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GCG",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Explaining the role of Intrinsic Dimensionality in Adversarial Training",
+      "evidence": "\"robustness is assessed via failure rates against the GCG attack\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Explaining the role of Intrinsic Dimensionality in Adversarial Training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Discrimination ability",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "ROPO: Robust Preference Optimization for Large Language Models",
+      "evidence": "Without the need for any external LLM, the model\u2019s robustness and discrimination ability against noisy samples gradually improve as the alternating iterative training proceeds. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ROPO: Robust Preference Optimization for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Perplexity",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?",
+      "evidence": "\u201cWe systematically compare three widely used value probing methods: token likelihood, sequence perplexity, and text generation. Our results show that all three methods exhibit large variances under non-semantic perturbations\u201d (Abstract).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MultiArith",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CODI: Compressing Chain-of-Thought into Continuous Space via Self-Distillation",
+      "evidence": "For mathematical reasoning, we assess model robustness on three out-of-domain (OOD) benchmarks: ... and (3) MultiArith (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CODI: Compressing Chain-of-Thought into Continuous Space via Self-Distillation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FINTRUST",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+      "evidence": "we curate 15, 680 instances to evaluate LLM trustworthiness in the financial domain. We ... incorporate seven core dimensions: Truthfulness, Safety, Fairness, Robustness, Privacy, Transparency, and Knowledge Discovery. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Compositional generalization",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "From A and B to A+B: Can Large Language Models Solve Compositional Math Problems?",
+      "evidence": "our approach considers the interaction between multiple problems, focusing more on the compositional generalization (Xu and Wang, 2024; An et al., 2023; Li et al., 2021) in robustness. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "From A and B to A+B: Can Large Language Models Solve Compositional Math Problems?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Critique generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "CARE: A Disagreement Detection Framework with Concept Alignment and Reasoning Enhancement",
+      "evidence": "This mechanism enhances the model\u2019s robustness in complex and uncertain environments and fosters a dynamic learning phase, facilitating continuous improvement through error identification and rectification. (Section 3.4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CARE: A Disagreement Detection Framework with Concept Alignment and Reasoning Enhancement"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Evol-Instruct",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+      "evidence": "When robustness against fine-tuning attacks is evaluated by fine-tuning the watermarked StarCoder2-7B on the code generation dataset Evol-Instruct, the watermark persistence rate improves from 0% to 90% due to adversarial training and the parameter selection algorithm sensitive to the robust watermark. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ShareGPT",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+      "evidence": "This section assesses the robustness of CLMTracing against fine-tuning, wherein the model is fine-tuned on two clean datasets, ShareGPT and Evol-Instruct, with the goal of overwriting embedded watermarks. (Section 4.2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Backtracking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "evidence": "Our method\u2019s ability to backtrack helps resolve contradictions, leading to more stable performance in multi-hop scenarios. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Counterfactual reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Dual-Path Counterfactual Integration for Multimodal Aspect-Based Sentiment Classification",
+      "evidence": "we propose DPCI, a novel Dual-Path Counterfactual Integration framework that enhances model robustness by explicitly modeling counterfactual reasoning in multimodal contexts. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Dual-Path Counterfactual Integration for Multimodal Aspect-Based Sentiment Classification"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Error propagation",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+      "evidence": "This robustness arises from our balanced topology design, which mitigates error propagation through bottleneck structures while promoting rapid consensus via densely connected reliable agents.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Fine-grained visual reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models",
+      "evidence": "This work offers new insights into the limitations of LVLMs in MCQA and presents a practical approach to improve their robustness in fine-grained visual reasoning. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Internal consistency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+      "evidence": "By linking layer consistency to robustness, CROW provides practical and effective protection against backdoor threats. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Voice cloning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "DiTAR: Diffusion Transformer Autoregressive Modeling for Speech Generation",
+      "evidence": "In zero-shot speech generation, DiTAR achieves state-of-the-art performance in robustness, speaker similarity, and naturalness.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "DiTAR: Diffusion Transformer Autoregressive Modeling for Speech Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?",
+      "evidence": "\u201cWe systematically compare three widely used value probing methods: token likelihood, sequence perplexity, and text generation. Our results show that all three methods exhibit large variances under non-semantic perturbations\u201d (Abstract).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Adversarial attacks",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Attacking Misinformation Detection Using Adversarial Examples Generated by Language Models",
+      "evidence": "This raises the need to assess the robustness of such solutions, i.e. their ability to deliver correct result even for input manipulated by malicious actors. This is performed by seeking adversarial examples (AEs) (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Attacking Misinformation Detection Using Adversarial Examples Generated by Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 88,
+  "incoming_relationship_count": 41,
+  "outgoing_relationship_count": 47,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage describes robustness as stable model performance or behavior under changes in prompts, inputs, task conditions, environments, or evaluation setup. Many papers apply this broad framing to prompt paraphrases and ordering, noisy or degraded inputs, distribution shifts, adversarial perturbations, new opponents or environments, and other superficial or challenging variations, often contrasting robustness with brittleness to minor changes. Smaller lines of work define it more narrowly as retaining pre-learned general capabilities after task-specific fine-tuning, or as worst-case performance on rare shifted inputs rather than average performance. Another recurring minority usage applies the term to the persistence of an artifact rather than the model, for example a jailbreak prompt, backdoor, or watermark remaining effective or detectable after defenses, fine-tuning, editing, or paraphrasing."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most often organize robustness by the source of variation: prompt and instruction changes, input noise or superficial perturbations, out-of-distribution data, adversarial or jailbreak attacks, and deployment across opponents, seeds, or environments. A smaller strand explicitly separates out-of-distribution from adversarial robustness, and some benchmark papers place robustness inside broader Trustworthiness framings or alongside Safety and Consistency. Across linked constructs, robustness is frequently discussed alongside Generalization, while Selection bias is used to describe one recurring failure mode. The same label is also used for distinct objects, model stability, retention after adaptation, and persistence of watermarks or backdoors."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Papers link robustness to 45 measurement instruments and 16 behavioral indicators. The most common instruments are AdvBench, GSM-Hard, MMBench, MMLU-Redux, and SVAMP, plus 40 other instruments; these are mostly benchmarks or dynamic environments that probe performance under adversarial inputs, out-of-domain tests, shuffled answer choices, text perturbations, varying task parameters or seeds, and degraded context, and one paper also uses a judge-based comparison. Among behavioral indicators, links cluster around attack, generation, and agent behaviors. These operationalizations usually match the dominant definition by scoring stability under perturbation or shift, though some operationalize robustness as retention of earlier capabilities after fine-tuning or as watermark and backdoor persistence under attack or overwriting."
+    },
+    {
+      "label": "Links.",
+      "text": "Across linked constructs, several papers claim causal relationships from Generalization to Robustness, and one paper claims the reverse from Robustness to Generalization. Several papers also claim causal relationships from Reasoning and from In-context learning to Robustness, and one paper separately claims a causal relationship from Out-of-distribution generalization to Robustness and from Robustness to Out-of-distribution generalization. Papers also relate robustness to Generalization non-causally, and one paper reports that robustness correlates with Selection bias."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "complementary",
+    "reason": "Most papers use robustness for the same broad phenomenon: a model or agent maintaining intended performance, reasoning, behavior, or safety when prompts, inputs, environments, data distributions, or other operating conditions are perturbed, shifted, or made more challenging. A few papers instead apply the term to the persistence of things like watermarks, backdoors, jailbreak prompts, or evaluation methods, so the literature is not a strict consensus, but the dominant uses are complementary facets of stability under stress rather than outright contradictions.",
+    "papers_with_definition": 90,
+    "runs": [
+      "complementary",
+      "conflicting",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage describes robustness as stable model performance or behavior under changes in prompts, inputs, task conditions, environments, or evaluation setup. Many papers apply this broad framing to prompt paraphrases and ordering, noisy or degraded inputs, distribution shifts, adversarial perturbations, new opponents or environments, and other superficial or challenging variations, often contrasting robustness with brittleness to minor changes. Smaller lines of work define it more narrowly as retaining pre-learned general capabilities after task-specific fine-tuning, or as worst-case performance on rare shifted inputs rather than average performance. Another recurring minority usage applies the term to the persistence of an artifact rather than the model, for example a jailbreak prompt, backdoor, or watermark remaining effective or detectable after defenses, fine-tuning, editing, or paraphrasing.\n\nSpace of facets. Papers most often organize robustness by the source of variation: prompt and instruction changes, input noise or superficial perturbations, out-of-distribution data, adversarial or jailbreak attacks, and deployment across opponents, seeds, or environments. A smaller strand explicitly separates out-of-distribution from adversarial robustness, and some benchmark papers place robustness inside broader Trustworthiness framings or alongside Safety and Consistency. Across linked constructs, robustness is frequently discussed alongside Generalization, while Selection bias is used to describe one recurring failure mode. The same label is also used for distinct objects, model stability, retention after adaptation, and persistence of watermarks or backdoors.\n\nSpace of measurement. Papers link robustness to 45 measurement instruments and 16 behavioral indicators. The most common instruments are AdvBench, GSM-Hard, MMBench, MMLU-Redux, and SVAMP, plus 40 other instruments; these are mostly benchmarks or dynamic environments that probe performance under adversarial inputs, out-of-domain tests, shuffled answer choices, text perturbations, varying task parameters or seeds, and degraded context, and one paper also uses a judge-based comparison. Among behavioral indicators, links cluster around attack, generation, and agent behaviors. These operationalizations usually match the dominant definition by scoring stability under perturbation or shift, though some operationalize robustness as retention of earlier capabilities after fine-tuning or as watermark and backdoor persistence under attack or overwriting.\n\nLinks. Across linked constructs, several papers claim causal relationships from Generalization to Robustness, and one paper claims the reverse from Robustness to Generalization. Several papers also claim causal relationships from Reasoning and from In-context learning to Robustness, and one paper separately claims a causal relationship from Out-of-distribution generalization to Robustness and from Robustness to Out-of-distribution generalization. Papers also relate robustness to Generalization non-causally, and one paper reports that robustness correlates with Selection bias.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Reality Check on Context Utilisation for Retrieval-Augmented Generation",
+      "A Survey on Efficient Large Language Model Training: From Data-centric Perspectives",
+      "AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection",
+      "AdamMeme: Adaptively Probe the Reasoning Capacity of Multimodal Large Language Models on Harmfulness",
+      "Adaptive and Robust Translation from Natural Language to Multi-model Query Languages",
+      "Addressing Blind Guessing: Calibration of Selection Bias in Multiple-Choice Question Answering by Video Language Models",
+      "AgentRM: Enhancing Agent Generalization with Reward Modeling",
+      "AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models",
+      "Astute RAG: Overcoming Imperfect Retrieval Augmentation and Knowledge Conflicts for Large Language Models",
+      "Attacking Vision-Language Computer Agents via Pop-ups",
+      "Benchmarking and Improving Large Vision-Language Models for Fundamental Visual Graph Understanding and Reasoning",
+      "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering Target Atoms",
+      "Binary Classifier Optimization for Large Language Model Alignment",
+      "Byte Latent Transformer: Patches Scale Better Than Tokens",
+      "Can Knowledge Graphs Make Large Language Models More Trustworthy? An Empirical Study Over Open-ended Question Answering",
+      "Can LLMs Reason About Program Semantics? A Comprehensive Evaluation of LLMs on Formal Specification Inference",
+      "CoIR: A Comprehensive Benchmark for Code Information Retrieval Models",
+      "CoT-based Synthesizer: Enhancing LLM Performance through Answer Synthesis",
+      "Collapse of Dense Retrievers: Short, Early, and Literal Biases Outranking Factual Evidence",
+      "CulFiT: A Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis",
+      "D.Va: Validate Your Demonstration First Before You Use It",
+      "DS2-ABSA: Dual-Stream Data Synthesis with Label Refinement for Few-Shot Aspect-Based Sentiment Analysis",
+      "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+      "Decoding Knowledge Attribution in Mixture-of-Experts: A Framework of Basic-Refinement Collaboration and Efficiency Analysis",
+      "Detection of Human and Machine-Authored Fake News in Urdu",
+      "Did Translation Models Get More Robust Without Anyone Even Noticing?",
+      "Diversity-oriented Data Augmentation with Large Language Models",
+      "Dually Self-Improved Counterfactual Data Augmentation Using Large Language Model",
+      "Dynamic Evaluation with Cognitive Reasoning for Multi-turn Safety of Large Language Models",
+      "Enhancing Retrieval-Augmented Generation via Evidence Tree Search",
+      "Enhancing Unsupervised Sentence Embeddings via Knowledge-Driven Data Augmentation and Gaussian-Decayed Contrastive Learning",
+      "Explaining Matters: Leveraging Definitions and Semantic Expansion for Sexism Detection",
+      "Exploring Explanations Improves the Robustness of In-Context Learning",
+      "Exposing the Achilles' Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning",
+      "Faithful and Robust LLM-Driven Theorem Proving for NLI Explanations",
+      "FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation",
+      "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+      "From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models",
+      "G-Safeguard: A Topology-Guided Security Lens and Treatment on LLM-based Multi-agent Systems",
+      "GIFT-SW: Gaussian noise Injected Fine-Tuning of Salient Weights for LLMs",
+      "GRaMPa: Subword Regularisation by Skewing Uniform Segmentation Distributions with an Efficient Path-counting Markov Model",
+      "HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring",
+      "HAF-RM: A Hybrid Alignment Framework for Reward Model Training",
+      "HiddenDetect: Detecting Jailbreak Attacks against Multimodal Large Language Models via Monitoring Hidden States",
+      "Hierarchical Memory Organization for Wikipedia Generation",
+      "ISR: Self-Refining Referring Expressions for Entity Grounding",
+      "Improved Unbiased Watermark for Large Language Models",
+      "Improving Chain-of-Thought Reasoning via Quasi-Symbolic Abstractions",
+      "Improving Preference Extraction In LLMs By Identifying Latent Knowledge Through Classifying Probes",
+      "InSerter: Speech Instruction Following with Unsupervised Interleaved Pre-training",
+      "Insight Over Sight: Exploring the Vision-Knowledge Conflicts in Multimodal LLMs",
+      "Iron Sharpens Iron: Defending Against Attacks in Machine-Generated Text Detection with Adversarial Training",
+      "LLMs Can Simulate Standardized Patients via Agent Coevolution",
+      "LLMs Trust Humans More, That's a Problem! Unveiling and Mitigating the Authority Bias in Retrieval-Augmented Generation",
+      "Large Language Models are Good Relational Learners",
+      "Large Margin Representation Learning for Robust Cross-lingual Named Entity Recognition",
+      "Learning to Reason Over Time: Timeline Self-Reflection for Improved Temporal Reasoning in Language Models",
+      "Learning to Rewrite: Generalized LLM-Generated Text Detection",
+      "MTSA: Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming",
+      "Mitigating Lost-in-Retrieval Problems in Retrieval Augmented Multi-Hop Question Answering",
+      "Mixtures of In-Context Learners",
+      "Multi-task Adversarial Attacks against Black-box Model with Few-shot Queries",
+      "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use",
+      "On Synthesizing Data for Context Attribution in Question Answering",
+      "One QuantLLM for ALL: Fine-tuning Quantized LLMs Once for Efficient Deployments",
+      "PIGuard: Prompt Injection Guardrail via Mitigating Overdefense for Free",
+      "Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning",
+      "Private Memorization Editing: Turning Memorization into a Defense to Strengthen Data Privacy in Large Language Models",
+      "Quaff: Quantized Parameter-Efficient Fine-Tuning under Outlier Spatial Stability Hypothesis",
+      "R2-MultiOmnia: Leading Multilingual Multimodal Reasoning via Self-Training",
+      "ReLearn: Unlearning via Learning for Large Language Models",
+      "Real-time Factuality Assessment from Adversarial Feedback",
+      "Reconsidering LLM Uncertainty Estimation Methods in the Wild",
+      "Representation Bending for Large Language Model Safety",
+      "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+      "SCULPT: Systematic Tuning of Long Prompts",
+      "SConU: Selective Conformal Uncertainty in Large Language Models",
+      "SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL",
+      "SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Model",
+      "Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models",
+      "Selecting and Merging: Towards Adaptable and Scalable Named Entity Recognition with Large Language Models",
+      "TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data",
+      "The TIP of the Iceberg: Revealing a Hidden Class of Task-in-Prompt Adversarial Attacks on LLMs",
+      "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents",
+      "Theorem Prover as a Judge for Synthetic Data Generation",
+      "ToolCoder: A Systematic Code-Empowered Tool Learning Framework for Large Language Models",
+      "Towards Robust Universal Information Extraction: Dataset, Evaluation, and Solution",
+      "Towards Robust and Efficient Federated Low-Rank Adaptation with Heterogeneous Clients",
+      "Translation and Fusion Improves Cross-lingual Information Extraction",
+      "Unanswerability Evaluation for Retrieval Augmented Generation",
+      "VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models",
+      "Vulnerability of LLMs to Vertically Aligned Text Manipulations",
+      "Watermarking Large Language Models: An Unbiased and Low-risk Method",
+      "When to Speak, When to Abstain: Contrastive Decoding with Abstention",
+      "Which of These Best Describes Multiple Choice Evaluation with LLMs? A) Forced B) Flawed C) Fixable D) All of the Above",
+      "XDAC: XAI-Driven Detection and Attribution of LLM-Generated News Comments in Korean",
+      "YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering"
+    ],
+    "emnlp25": [
+      "A Generative Pre-Trained Language Model for Channel Prediction in Wireless Communications Systems",
+      "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+      "ACING: Actor-Critic for Instruction Learning in Black-Box LLMs",
+      "AIP: Subverting Retrieval-Augmented Generation via Adversarial Instructional Prompt",
+      "AMQ: Enabling AutoML for Mixed-precision Weight-Only Quantization of Large Language Models",
+      "APLOT: Robust Reward Modeling via Adaptive Preference Learning with Optimal Transport",
+      "AdaRewriter: Unleashing the Power of Prompting-based Conversational Query Reformulation via Test-Time Adaptation",
+      "Addressing Tokenization Inconsistency in Steganography and Watermarking Based on Large Language Models",
+      "AgentPro: Enhancing LLM Agents with Automated Process Supervision",
+      "Alignment Quality Index (AQI) : Beyond Refusals: AQI as an Intrinsic Alignment Diagnostic via Latent Geometry, Cluster Divergence, and Layer wise Pooled Representations",
+      "AmpleHate: Amplifying the Attention for Versatile Implicit Hate Detection",
+      "AnyMAC: Cascading Flexible Multi-Agent Collaboration via Next-Agent Prediction",
+      "Are Vision-Language Models Safe in the Wild? A Meme-Based Benchmark Study",
+      "AskToAct: Enhancing LLMs Tool Use via Self-Correcting Clarification",
+      "Attacking Misinformation Detection Using Adversarial Examples Generated by Language Models",
+      "AutoCT: Automating Interpretable Clinical Trial Prediction with LLM Agents",
+      "Automating Steering for Safe Multimodal Large Language Models",
+      "Benchmarking and Mitigating MCQA Selection Bias of Large Vision-Language Models",
+      "Beyond Demographics: Enhancing Cultural Value Survey Simulation with Multi-Stage Personality-Driven Cognitive Reasoning",
+      "Beyond Demonstrations: Dynamic Vector Construction from Latent Representations",
+      "Bias Beware: The Impact of Cognitive Biases on LLM-Driven Product Recommendations",
+      "Bit-Flip Error Resilience in LLMs: A Comprehensive Analysis and Defense Framework",
+      "BrailleLLM: Braille Instruction Tuning with Large Language Models for Braille Domain Tasks",
+      "Breaking Agents: Compromising Autonomous LLM Agents Through Malfunction Amplification",
+      "CARE: A Disagreement Detection Framework with Concept Alignment and Reasoning Enhancement",
+      "CARFT: Boosting LLM Reasoning via Contrastive Learning with Annotated Chain-of-Thought-based Reinforced Fine-Tuning",
+      "CARMA: Enhanced Compositionality in LLMs via Advanced Regularisation and Mutual Information Alignment",
+      "CAT: Causal Attention Tuning For Injecting Fine-grained Causal Knowledge into Large Language Models",
+      "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+      "CODI: Compressing Chain-of-Thought into Continuous Space via Self-Distillation",
+      "CRITICTOOL: Evaluating Self-Critique Capabilities of Large Language Models in Tool-Calling Error Scenarios",
+      "CTCC: A Robust and Stealthy Fingerprinting Framework for Large Language Models via Cross-Turn Contextual Correlation Backdoor",
+      "Can GRPO Boost Complex Multimodal Table Understanding?",
+      "Can an Individual Manipulate the Collective Decisions of Multi-Agents?",
+      "Case-Based Decision-Theoretic Decoding with Quality Memories",
+      "Chat-Driven Text Generation and Interaction for Person Retrieval",
+      "CoBia: Constructed Conversations Can Trigger Otherwise Concealed Societal Biases in LLMs",
+      "CoMAT: Chain of Mathematically Annotated Thought Improves Mathematical Reasoning",
+      "Coarse-to-Fine Grounded Memory for LLM Agent Planning",
+      "Collaborative Beam Search: Enhancing LLM Reasoning via Collective Consensus",
+      "CompassVerifier: A Unified and Robust Verifier for LLMs Evaluation and Outcome Reward",
+      "Composable Cross-prompt Essay Scoring by Merging Models",
+      "Compositional Generalisation for Explainable Hate Speech Detection",
+      "Confidence-guided Refinement Reasoning for Zero-shot Question Answering",
+      "Conflict-Aware Soft Prompting for Retrieval-Augmented Generation",
+      "Context-Aware Hierarchical Taxonomy Generation for Scientific Papers via LLM-Guided Multi-Aspect Clustering",
+      "Contra4: Evaluating Contrastive Cross-Modal Reasoning in Audio, Video, Image, and 3D",
+      "CourtReasoner: Can LLM Agents Reason Like Judges?",
+      "DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models",
+      "DINT Transformer",
+      "Data to Defense: The Role of Curation in Aligning Large Language Models Against Safety Compromise",
+      "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+      "Debate-to-Detect: Reformulating Misinformation Detection as a Real-World Debate with Large Language Models",
+      "DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments",
+      "DeepResonance: Enhancing Multimodal Music Understanding via Music-centric Multi-way Instruction Tuning",
+      "Demystifying Synthetic Data in LLM Pre-training: A Systematic Study of Scaling Laws, Benefits, and Pitfalls",
+      "Demystifying optimized prompts in language models",
+      "Detoxifying Large Language Models via the Diversity of Toxic Samples",
+      "Dipper: Diversity in Prompts for Producing Large Language Model Ensembles in Reasoning Tasks",
+      "Direct Value Optimization: Improving Chain-of-Thought Reasoning in LLMs with Refined Values",
+      "Disentangled Information Bottleneck for Adversarial Text Defense",
+      "DivScore: Zero-Shot Detection of LLM-Generated Text in Specialized Domains",
+      "Do Large Language Models Understand Word Senses?",
+      "DocReRank: Single-Page Hard Negative Query Generation for Training Multi-Modal RAG Rerankers",
+      "Dual-Path Counterfactual Integration for Multimodal Aspect-Based Sentiment Classification",
+      "Enhancing Large Language Model for Knowledge Graph Completion via Structure-Aware Alignment-Tuning",
+      "Ensembling Prompting Strategies for Zero-Shot Hierarchical Text Classification with Large Language Models",
+      "Evaluating Large Language Models for Detecting Antisemitism",
+      "Evaluating Robustness of Large Audio Language Models to Audio Injection: An Empirical Study",
+      "EverTracer: Hunting Stolen Large Language Models via Stealthy and Robust Probabilistic Fingerprint",
+      "EvolveSearch: An Iterative Self-Evolving Search Agent",
+      "Exploring Response Uncertainty in MLLMs: An Empirical Evaluation under Misleading Scenarios",
+      "Facilitating Cognitive Accessibility with LLMs: A Multi-Task Approach to Easy-to-Read Text Generation",
+      "Few-Shot Open-Set Classification via Reasoning-Aware Decomposition",
+      "FinTrust: A Comprehensive Benchmark of Trustworthiness Evaluation in Finance Domain",
+      "Following Length Constraints in Instructions",
+      "Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon",
+      "From A and B to A+B: Can Large Language Models Solve Compositional Math Problems?",
+      "GRADA: Graph-based Reranking against Adversarial Documents Attack",
+      "GRAID: Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection",
+      "GenLink: Generation-Driven Schema-Linking via Multi-Model Learning for Text-to-SQL",
+      "Generator-Assistant Stepwise Rollback Framework for Large Language Model Agent",
+      "HELENE: Hessian Layer-wise Clipping and Gradient Annealing for Accelerating Fine-tuning LLM with Zeroth-order Optimization",
+      "Hallucination Detection in LLMs Using Spectral Features of Attention Maps",
+      "How Persuasive Is Your Context?",
+      "ICG: Improving Cover Image Generation via MLLM-based Prompting and Personalized Preference Alignment",
+      "IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents",
+      "Image Difference Captioning via Adversarial Preference Optimization",
+      "Improbable Bigrams Expose Vulnerabilities of Incomplete Tokens in Byte-Level Tokenizers",
+      "Improving Clustering with Positive Pairs Generated from LLM-Driven Labels",
+      "Improving Large Language Model Safety with Contrastive Representation Learning",
+      "Improving Large Language Models Function Calling and Interpretability via Guided-Structured Templates",
+      "Improving Multilingual Retrieval-Augmented Language Models through Dialectic Reasoning Argumentations",
+      "In Benchmarks We Trust ... Or Not?",
+      "In-Context Learning Boosts Speech Recognition via Human-like Adaptation to Speakers and Language Varieties",
+      "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "KCS: Diversify Multi-hop Question Generation with Knowledge Composition Sampling",
+      "KG-RAG: Enhancing GUI Agent Decision-Making via Knowledge Graph-Driven Retrieval-Augmented Generation",
+      "Knowledge Editing through Chain-of-Thought",
+      "Koel-TTS: Enhancing LLM based Speech Generation with Preference Alignment and Classifier Free Guidance",
+      "LCES: Zero-shot Automated Essay Scoring via Pairwise Comparisons Using Large Language Models",
+      "LEO-MINI: An Efficient Multimodal Large Language Model using Conditional Token Reduction and Mixture of Multi-Modal Experts",
+      "LLM-Guided Co-Training for Text Classification",
+      "LLMs are Better Than You Think: Label-Guided In-Context Learning for Named Entity Recognition",
+      "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+      "LVLMs are Bad at Overhearing Human Referential Communication",
+      "Large Language Models Badly Generalize across Option Length, Problem Types, and Irrelevant Noun Replacements",
+      "Layered Insights: Generalizable Analysis of Human Authorial Style by Leveraging All Transformer Layers",
+      "Leveraging Loanword Constraints for Improving Machine Translation in a Low-Resource Multilingual Context",
+      "Logical Reasoning with Outcome Reward Models for Test-Time Scaling",
+      "Logits-Based Finetuning",
+      "MA-GTS: A Multi-Agent Framework for Solving Complex Graph Problems in Real-World Applications",
+      "MADAWSD: Multi-Agent Debate Framework for Adversarial Word Sense Disambiguation",
+      "MERMAID: Multi-perspective Self-reflective Agents with Generative Augmentation for Emotion Recognition",
+      "MMAPG: A Training-Free Framework for Multimodal Multi-hop Question Answering via Adaptive Planning Graphs",
+      "MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation",
+      "MPRF: Interpretable Stance Detection through Multi-Path Reasoning Framework",
+      "MR. Judge: Multimodal Reasoner as a Judge",
+      "MUSE: MCTS-Driven Red Teaming Framework for Enhanced Multi-Turn Dialogue Safety in Large Language Models",
+      "Med-PRM: Medical Reasoning Models with Stepwise, Guideline-verified Process Rewards",
+      "Memory-QA: Answering Recall Questions Based on Multimodal Memories",
+      "Mitigating Hallucinations in LM-Based TTS Models via Distribution Alignment Using GFlowNets",
+      "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning",
+      "ModRWKV: Transformer Multimodality in Linear Time",
+      "ModelCitizens: Representing Community Voices in Online Safety",
+      "MolErr2Fix: Benchmarking LLM Trustworthiness in Chemistry via Modular Error Detection, Localization, Explanation, and Correction",
+      "Morables: A Benchmark for Assessing Abstract Moral Reasoning in LLMs with Fables",
+      "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+      "Multi-LMentry: Can Multilingual LLMs Solve Elementary Tasks Across Languages?",
+      "MultiLogicNMR(er): A Benchmark and Neural-Symbolic Framework for Non-monotonic Reasoning with Multiple Extensions",
+      "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+      "NovelHopQA: Diagnosing Multi-Hop Reasoning Failures in Long Narrative Contexts",
+      "OBLIVIATE: Robust and Practical Machine Unlearning for Large Language Models",
+      "OpenTuringBench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution",
+      "PAKTON: A Multi-Agent Framework for Question Answering in Long Legal Agreements",
+      "PLLuM-Align: Polish Preference Dataset for Large Language Model Alignment",
+      "PPTAgent: Generating and Evaluating Presentations Beyond Text-to-Slides",
+      "Parallel Continuous Chain-of-Thought with Jacobi Iteration",
+      "Personalized LLM Decoding via Contrasting Personal Preference",
+      "Persuasion Dynamics in LLMs: Investigating Robustness and Adaptability in Knowledge and Safety with DuET-PD",
+      "Polysemantic Dropout: Conformal OOD Detection for Specialized LLMs",
+      "Principled Personas: Defining and Measuring the Intended Effects of Persona Prompting on Task Performance",
+      "PruneCD: Contrasting Pruned Self Model to Improve Decoding Factuality",
+      "Pun Unintended: LLMs and the Illusion of Humor Understanding",
+      "QuZO: Quantized Zeroth-Order Fine-Tuning for Large Language Models",
+      "QualBench: Benchmarking Chinese LLMs with Localized Professional Qualifications for Vertical Domain Evaluation",
+      "Quantifying Logical Consistency in Transformers via Query-Key Alignment",
+      "R-PRM: Reasoning-Driven Process Reward Modeling",
+      "RAG-Instruct: Boosting LLMs with Diverse Retrieval-Augmented Instructions",
+      "RBPtool: A Deep Language Model Framework for Multi-Resolution RBP-RNA Binding Prediction and RNA Molecule Design",
+      "REARANK: Reasoning Re-ranking Agent via Reinforcement Learning",
+      "RESF: Regularized-Entropy-Sensitive Fingerprinting for Black-Box Tamper Detection of Large Language Models",
+      "RICO: Improving Accuracy and Completeness in Image Recaptioning via Visual Reconstruction",
+      "RTQA : Recursive Thinking for Complex Temporal Knowledge Graph Question Answering with Large Language Models",
+      "Randomized Smoothing Meets Vision-Language Models",
+      "Re-Align: Aligning Vision Language Models via Retrieval-Augmented Direct Preference Optimization",
+      "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "ReEvalMed: Rethinking Medical Report Evaluation by Aligning Metrics with Real-World Clinical Judgment",
+      "ReSURE: Regularizing Supervision Unreliability for Multi-turn Dialogue Fine-tuning",
+      "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+      "RecBase: Generative Foundation Model Pretraining for Zero-Shot Recommendation",
+      "Reflective Agreement: Combining Self-Mixture of Agents with a Sequence Tagger for Robust Event Extraction",
+      "Reimagining Safety Alignment with An Image",
+      "Reinforced Query Reasoners for Reasoning-intensive Retrieval Tasks",
+      "Reinforcement Learning for Large Language Models via Group Preference Reward Shaping",
+      "Retrieval over Classification: Integrating Relation Semantics for Multimodal Relation Extraction",
+      "Retrieval-Augmented Generation with Estimation of Source Reliability",
+      "Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?",
+      "Robust Adaptation of Large Multimodal Models for Retrieval Augmented Hateful Meme Detection",
+      "Robust Native Language Identification through Agentic Decomposition",
+      "SAFE-SQL: Self-Augmented In-Context Learning with Fine-grained Example Selection for Text-to-SQL",
+      "SAFE: Schema-Driven Approximate Distance Join for Efficient Knowledge Graph Querying",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+      "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+      "SafeScientist: Enhancing AI Scientist Safety for Risk-Aware Scientific Discovery",
+      "SenDetEX: Sentence-Level AI-Generated Text Detection for Human-AI Hybrid Content via Style and Context Fusion",
+      "SensorLLM: Aligning Large Language Models with Motion Sensors for Human Activity Recognition",
+      "SimMark: A Robust Sentence-Level Similarity-Based Watermarking Algorithm for Large Language Models",
+      "Simple Yet Effective: An Information-Theoretic Approach to Multi-LLM Uncertainty Quantification",
+      "Single LLM, Multiple Roles: A Unified Retrieval-Augmented Generation Framework Using Role-Specific Token Optimization",
+      "SliceMoE: Routing Embedding Slices Instead of Tokens for Fine-Grained and Balanced Transformer Scaling",
+      "Sparse Autoencoder Features for Classifications and Transferability",
+      "Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed Acceptance",
+      "Speculative Safety-Aware Decoding",
+      "Speech Discrete Tokens or Continuous Features? A Comparative Analysis for Spoken Language Understanding in SpeechLLMs",
+      "SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering",
+      "Stop Looking for ``Important Tokens'' in Multimodal Language Models: Duplication Matters More",
+      "Structured Preference Optimization for Vision-Language Long-Horizon Task Planning",
+      "Summarizing Speech: A Comprehensive Survey",
+      "Surprise Calibration for Better In-Context Learning",
+      "TALON: A Multi-Agent Framework for Long-Table Exploration and Question Answering",
+      "TCPO: Thought-Centric Preference Optimization for Effective Embodied Decision-making",
+      "TP-RAG: Benchmarking Retrieval-Augmented Large Language Model Agents for Spatiotemporal-Aware Travel Planning",
+      "TempParaphraser: ``Heating Up'' Text to Evade AI-Text Detection through Paraphrasing",
+      "The Good, the Bad, and the Debatable: A Survey on the Impacts of Data for In-Context Learning",
+      "The Hidden Strength of Disagreement: Unraveling the Consensus-Diversity Tradeoff in Adaptive Multi-Agent Systems",
+      "The LLM Already Knows: Estimating LLM-Perceived Question Difficulty via Hidden Representations",
+      "The Sound of Syntax: Finetuning and Comprehensive Evaluation of Language Models for Speech Pathology",
+      "The State of Multilingual LLM Safety Research: From Measuring The Language Gap To Mitigating It",
+      "ThinkSLM: Towards Reasoning in Small Language Models",
+      "Tiny Budgets, Big Gains: Parameter Placement Strategy in Parameter Super-Efficient Fine-Tuning",
+      "Too Helpful, Too Harmless, Too Honest or Just Right?",
+      "Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore's Low-Resource Languages",
+      "TrojanStego: Your Language Model Can Secretly Be A Steganographic Privacy Leaking Agent",
+      "TrojanWave: Exploiting Prompt Learning for Stealthy Backdoor Attacks on Large Audio-Language Models",
+      "Trustworthy Medical Question Answering: An Evaluation-Centric Survey",
+      "Tuning Less, Prompting More: In-Context Preference Learning Pipeline for Natural Language Transformation",
+      "TurnBack: A Geospatial Route Cognition Benchmark for Large Language Models through Reverse Route",
+      "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+      "Unleashing the Reasoning Potential of LLMs by Critique Fine-Tuning on One Problem",
+      "Unmasking Deceptive Visuals: Benchmarking Multimodal Large Language Models on Misleading Chart Question Answering",
+      "Unsupervised Hallucination Detection by Inspecting Reasoning Processes",
+      "VERITAS: Leveraging Vision Priors and Expert Fusion to Improve Multimodal Data",
+      "VisCRA: A Visual Chain Reasoning Attack for Jailbreaking Multimodal Large Language Models",
+      "WangchanThaiInstruct: An instruction-following Dataset for Culture-Aware, Multitask, and Multi-domain Evaluation in Thai",
+      "Waste-Bench: A Comprehensive Benchmark for Evaluating VLLMs in Cluttered Environments",
+      "Weaver: Interweaving SQL and LLM for Table Reasoning",
+      "Where Confabulation Lives: Latent Feature Discovery in LLMs",
+      "Whisper-UT: A Unified Translation Framework for Speech and Text",
+      "Who is in the Spotlight: The Hidden Bias Undermining Multimodal Retrieval-Augmented Generation",
+      "WildDoc: How Far Are We from Achieving Comprehensive and Robust Document Understanding in the Wild?",
+      "Zero-shot Multimodal Document Retrieval via Cross-modal Question Generation",
+      "pFedGPT: Hierarchically Optimizing LoRA Aggregation Weights for Personalized Federated GPT Models",
+      "reWordBench: Benchmarking and Improving the Robustness of Reward Models with Transformed Inputs"
+    ],
+    "iclr24": [
+      "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+      "BadEdit: Backdooring Large Language Models by Model Editing",
+      "Batch Calibration: Rethinking Calibration for In-Context Learning and Prompt Engineering",
+      "Beam Enumeration: Probabilistic Explainability For Sample Efficient Self-conditioned Molecular Design",
+      "Branch-GAN: Improving Text Generation with (not so) Large Language Models",
+      "Breaking Physical and Linguistic Borders: Multilingual Federated Prompt Tuning for Low-Resource Languages",
+      "CLaM-TTS: Improving Neural Codec Language Model for Zero-Shot Text-to-Speech",
+      "Can Large Language Models Infer Causation from Correlation?",
+      "Catastrophic Jailbreak of Open-source LLMs via Exploiting Generation",
+      "CoVLM: Composing Visual Entities and Relationships in Large Language Models Via Communicative Decoding",
+      "Compositional Preference Models for Aligning LMs",
+      "Conformal Language Modeling",
+      "DQ-LoRe: Dual Queries with Low Rank Approximation Re-ranking for In-Context Learning",
+      "Diagnosing Transformers: Illuminating Feature Spaces for Clinical Decision-Making",
+      "Energy-based Automated Model Evaluation",
+      "Evaluating Language Model Agency Through Negotiations",
+      "Ferret: Refer and Ground Anything Anywhere at Any Granularity",
+      "GAIA: a benchmark for General AI Assistants",
+      "Gen-Z: Generative Zero-Shot Text Classification with Contextualized Label Descriptions",
+      "GeoLLM: Extracting Geospatial Knowledge from Large Language Models",
+      "Grounding Language Plans in Demonstrations Through Counterfactual Perturbations",
+      "Improving Generalization of Alignment with Human Preferences through Group Invariant Learning",
+      "Knowledge Fusion of Large Language Models",
+      "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+      "Large Language Models Are Not Robust Multiple Choice Selectors",
+      "Learning with Language-Guided State Abstractions",
+      "MEND: Meta Demonstration Distillation for Efficient and Effective In-Context Learning",
+      "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning",
+      "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data",
+      "OpenTab: Advancing Large Language Models as Open-domain Table Reasoners",
+      "Phenomenal Yet Puzzling: Testing Inductive Reasoning Capabilities of Language Models with Hypothesis Refinement",
+      "Prompt Risk Control: A Rigorous Framework for Responsible Deployment of Large Language Models",
+      "Provable Robust Watermarking for AI-Generated Text",
+      "ReFusion: Improving Natural Language Understanding with Computation-Efficient Retrieval Representation Fusion",
+      "Reward Model Ensembles Help Mitigate Overoptimization",
+      "Towards Robust Multi-Modal Reasoning via Model Selection",
+      "Towards Unified Multi-Modal Personalization: Large Vision-Language Models for Generative Recommendation and Beyond",
+      "Training Socially Aligned Language Models on Simulated Social Interactions",
+      "True Knowledge Comes from Practice: Aligning Large Language Models with Embodied Environments via Reinforcement Learning",
+      "Understanding In-Context Learning in Transformers and LLMs by Learning to Learn Discrete Functions",
+      "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+      "Zero-Shot Robustification of Zero-Shot Models"
+    ],
+    "iclr25": [
+      "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation",
+      "A Watermark for Order-Agnostic Language Models",
+      "ADAM: An Embodied Causal Agent in Open-World Environments",
+      "Accelerating Inference of Retrieval-Augmented Generation via Sparse Context Selection",
+      "Adaptive Transformer Programs: Bridging the Gap Between Performance and Interpretability in Transformers",
+      "Agent-Oriented Planning in Multi-Agent Systems",
+      "AgentRefine: Enhancing Agent Generalization through Refinement Tuning",
+      "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents",
+      "Articulate-Anything:  Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model",
+      "Automated Design of Agentic Systems",
+      "Automatic Curriculum Expert Iteration for Reliable LLM Reasoning",
+      "Beyond Mere Token Analysis: A Hypergraph Metric Space Framework for Defending Against Socially Engineered LLM Attacks",
+      "Beyond Surface Structure: A Causal Assessment of LLMs' Comprehension ability",
+      "Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses",
+      "CAMEx: Curvature-aware Merging of Experts",
+      "CS-Bench: A Comprehensive Benchmark for Large Language Models towards Computer Science Mastery",
+      "Can Knowledge Editing Really Correct Hallucinations?",
+      "Can LLMs Solve Longer Math Word Problems Better?",
+      "Can Textual Gradient Work in Federated Learning?",
+      "Can We Trust Embodied Agents? Exploring Backdoor Attacks against Embodied LLM-Based Decision-Making Systems",
+      "Causal Order: The Key to Leveraging Imperfect Experts in Causal Inference",
+      "Certifying Counterfactual Bias in LLMs",
+      "Certifying Language Model Robustness with Fuzzed Randomized Smoothing: An Efficient Defense Against Backdoor Attacks",
+      "Chain-of-Action: Faithful and Multimodal Question Answering through Large Language Models",
+      "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "CodePlan: Unlocking Reasoning Potential in Large Language Models by Scaling Code-form Planning",
+      "ComLoRA: A Competitive Learning Approach for Enhancing LoRA",
+      "Competing Large Language Models in Multi-Agent Gaming Environments",
+      "Context Clues: Evaluating Long Context Models for Clinical Prediction Tasks on EHR Data",
+      "DAMO: Decoding by Accumulating Activations Momentum for Mitigating Hallucinations in Vision-Language Models",
+      "DELIFT: Data Efficient Language model Instruction Fine-Tuning",
+      "DEPT: Decoupled Embeddings for Pre-training Language Models",
+      "DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search",
+      "DataGen: Unified Synthetic Dataset Generation via Large Language Models",
+      "Decoupling Angles and Strength in Low-rank Adaptation",
+      "Discriminator-Guided Embodied Planning for LLM Agent",
+      "DistRL: An Asynchronous Distributed Reinforcement Learning Framework for On-Device Control Agent",
+      "Do Vision-Language Models Represent Space and How? Evaluating Spatial Frame of Reference under Ambiguities",
+      "Don't Take Things Out of Context: Attention Intervention for Enhancing Chain-of-Thought Reasoning in Large Language Models",
+      "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+      "Dynamic Multimodal Evaluation with Flexible Complexity by Vision-Language Bootstrapping",
+      "Dysca: A Dynamic and Scalable Benchmark for Evaluating Perception Ability of LVLMs",
+      "EDiT: A Local-SGD-Based Efficient Distributed Training Method for Large Language Models",
+      "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+      "Estimating the Probabilities of Rare Outputs in Language Models",
+      "ExACT: Teaching AI Agents to Explore with Reflective-MCTS and Exploratory Learning",
+      "Exact Byte-Level Probabilities from Tokenized Language Models for FIM-Tasks and Model Ensembles",
+      "Explaining Modern Gated-Linear RNNs via a Unified Implicit Attention Formulation",
+      "FakeShield: Explainable Image Forgery Detection and Localization via Multi-modal Large Language Models",
+      "Flow: Modularized Agentic Workflow Automation",
+      "Forewarned is Forearmed:  Harnessing LLMs for Data Synthesis via Failure-induced Exploration",
+      "From an LLM Swarm to a PDDL-empowered Hive: Planning Self-executed Instructions in a Multi-modal Jungle",
+      "Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks",
+      "GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models",
+      "GenSE: Generative Speech Enhancement via Language Models using Hierarchical Modeling",
+      "GeoLoRA: Geometric integration for parameter efficient fine-tuning",
+      "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+      "GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation",
+      "HAMSTER: Hierarchical Action Models for Open-World Robot Manipulation",
+      "Harnessing Diversity for Important Data Selection in Pretraining Large Language Models",
+      "Hierarchical Autoregressive Transformers: Combining Byte- and Word-Level Processing for Robust, Adaptable Language Models",
+      "How to Evaluate Reward Models for RLHF",
+      "Implicit In-context Learning",
+      "In-Context Editing: Learning Knowledge from Self-Induced Distributions",
+      "Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models",
+      "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+      "Integrative Decoding: Improving Factuality via Implicit Self-consistency",
+      "Jailbreaking as a Reward Misspecification Problem",
+      "KGARevion: An AI Agent for Knowledge-Intensive Biomedical QA",
+      "LLaMaFlex: Many-in-one LLMs via Generalized Pruning and Weight Sharing",
+      "Language Agents Meet Causality -- Bridging LLMs and Causal World Models",
+      "Large Language Models Meet Symbolic Provers for Logical Reasoning Evaluation",
+      "Large Language Models are Interpretable Learners",
+      "Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation",
+      "Layer Swapping for Zero-Shot Cross-Lingual Transfer in Large Language Models",
+      "Learning to Search from Demonstration Sequences",
+      "Lightweight Neural App Control",
+      "MA-RLHF: Reinforcement Learning from Human Feedback with Macro Actions",
+      "MAP: Multi-Human-Value Alignment Palette",
+      "MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge",
+      "MTU-Bench: A Multi-granularity Tool-Use Benchmark for Large Language Models",
+      "Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning",
+      "Maximizing the Potential of Synthetic Data: Insights from Random Matrix Theory",
+      "MetaMetrics: Calibrating Metrics for Generation Tasks Using Human Preferences",
+      "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "MoLEx: Mixture of Layer Experts for Fine-tuning with Sparse Upcycling",
+      "Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning",
+      "Motion-Agent: A Conversational Framework for Human Motion Generation with LLMs",
+      "Neural Interactive Proofs",
+      "NeuroLM: A Universal Multi-task Foundation Model for Bridging the Gap between Language and EEG Signals",
+      "NoVo: Norm Voting off Hallucinations with Attention Heads in Large Language Models",
+      "OBI-Bench: Can LMMs Aid in Study of Ancient Script on Oracle Bones?",
+      "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+      "ObscuraCoder: Powering Efficient Code LM Pre-Training Via Obfuscation Grounding",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs",
+      "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+      "Pareto Prompt Optimization",
+      "PathGen-1.6M: 1.6 Million Pathology Image-text Pairs Generation through Multi-agent Collaboration",
+      "Personalized Visual Instruction Tuning",
+      "Progress or Regress? Self-Improvement Reversal in Post-training",
+      "Promptriever: Instruction-Trained Retrievers Can Be Prompted Like Language Models",
+      "Provence: efficient and robust context pruning for retrieval-augmented generation",
+      "Quest: Query-centric Data Synthesis Approach for Long-context Scaling of Large Language Model",
+      "RAG-SR: Retrieval-Augmented Generation for Neural Symbolic Regression",
+      "RaSA: Rank-Sharing Low-Rank Adaptation",
+      "Recognize Any Surgical Object: Unleashing the Power of Weakly-Supervised Data",
+      "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+      "Robust Function-Calling for On-Device Language Model via Function Masking",
+      "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models",
+      "SafeWatch: An Efficient Safety-Policy Following Video Guardrail Model with Transparent Explanations",
+      "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+      "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+      "SeCom: On Memory Construction and Retrieval for Personalized Conversational Agents",
+      "Self-Evolving Multi-Agent Collaboration Networks for Software Development",
+      "Self-Updatable Large Language Models by Integrating Context into Model Parameters",
+      "Solving Token Gradient Conflict in Mixture-of-Experts for Large Vision-Language Model",
+      "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+      "Text4Seg: Reimagining Image Segmentation as Text Generation",
+      "The Foundations of Tokenization: Statistical and Computational Concerns",
+      "The Power of LLM-Generated Synthetic Data for Stance Detection in Online Political Discussions",
+      "Think Thrice Before You Act: Progressive Thought Refinement in Large Language Models",
+      "Think while You Generate: Discrete Diffusion with Planned Denoising",
+      "Tight Clusters Make Specialized Experts",
+      "Towards Interpreting Visual Information Processing in Vision-Language Models",
+      "TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies",
+      "Training-free LLM-generated Text Detection by Mining Token Probability Sequences",
+      "Transformer Meets Twicing: Harnessing Unattended Residual Information",
+      "Uncertainty and Influence aware Reward Model Refinement for Reinforcement Learning from Human Feedback",
+      "Uncertainty-Aware Decoding with Minimum Bayes Risk",
+      "Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing",
+      "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents",
+      "Visual Agents as Fast and Slow Thinkers",
+      "Weighted Multi-Prompt Learning with Description-free Large Language Model Distillation",
+      "Weighted-Reward Preference Optimization for Implicit Model Fusion",
+      "WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct",
+      "You Only Prune Once: Designing Calibration-Free Model Compression With Policy Learning"
+    ],
+    "icml25": [
+      "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits"
+    ],
+    "naacl25": [
+      "ALTER: Augmentation for Large-Table-Based Reasoning",
+      "Adapting Sentence-level Automatic Metrics for Document-level Simplification Evaluation",
+      "Arabic Dataset for LLM Safeguard Evaluation",
+      "Are Multimodal LLMs Robust Against Adversarial Perturbations? RoMMath: A Systematic Evaluation on Multimodal Math Reasoning",
+      "Assessing the State of the Art in Scene Segmentation",
+      "AudioBench: A Universal Benchmark for Audio Large Language Models",
+      "B4: A Black-Box Scrubbing Attack onLLMWatermarks",
+      "Beyond End-to-End VLMs: Leveraging Intermediate Text Representations for Superior Flowchart Understanding",
+      "Beyond the Next Token: Towards Prompt-Robust Zero-Shot Classification via Efficient Multi-Token Prediction",
+      "CoME: An Unlearning-based Approach to Conflict-free Model Editing",
+      "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models",
+      "Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?",
+      "Diversify-verify-adapt: Efficient and Robust Retrieval-Augmented Ambiguous Question Answering",
+      "Eliciting Critical Reasoning in Retrieval-Augmented Generation via Contrastive Explanations",
+      "FactEval: Evaluating the Robustness of Fact Verification Systems in the Era of Large Language Models",
+      "Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions",
+      "GroundCocoa: A Benchmark for Evaluating Compositional & Conditional Reasoning in Language Models",
+      "Guiding Medical Vision-Language Models with Diverse Visual Prompts: Framework Design and Comprehensive Exploration of Prompt Variations",
+      "IFIR: A Comprehensive Benchmark for Evaluating Instruction-Following in Expert-Domain Information Retrieval",
+      "ImgTrojan: Jailbreaking Vision-Language Models with ONE Image",
+      "Improving Retrospective Language Agents via Joint Policy Gradient Optimization",
+      "In-Context Learning (and Unlearning) of Length Biases",
+      "Is your benchmark truly adversarial? AdvScore: Evaluating Human-Grounded Adversarialness",
+      "Kill two birds with one stone: generalized and robust AI-generated text detection via dynamic perturbations",
+      "Knowledge Graph-Guided Retrieval Augmented Generation",
+      "MAPWise: Evaluating Vision-Language Models for Advanced Map Queries",
+      "MMEvalPro: Calibrating Multimodal Benchmarks Towards Trustworthy and Efficient Evaluation",
+      "Mastering the Craft of Data Synthesis for CodeLLMs",
+      "Mutual-pairing Data Augmentation for Fewshot Continual Relation Extraction",
+      "NLI under the Microscope: What Atomic Hypothesis Decomposition Reveals",
+      "Option Symbol Matters: Investigating and Mitigating Multiple-Choice Option Symbol Bias of Large Language Models",
+      "ReIFE: Re-evaluating Instruction-Following Evaluation",
+      "SALAD: Improving Robustness and Generalization through Contrastive Learning with Structure-Aware and LLM-Driven Augmented Data",
+      "SANDWiCH: Semantical Analysis of Neighbours for Disambiguating Words in Context ad Hoc",
+      "Self-Harmonized Chain of Thought",
+      "SylloBio-NLI: Evaluating Large Language Models on Biomedical Syllogistic Reasoning",
+      "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs",
+      "Towards Operationalizing Right to Data Protection",
+      "Typographic Attacks in a Multi-Image Setting",
+      "UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models",
+      "WaterPool: A Language Model Watermark Mitigating Trade-Offs among Imperceptibility, Efficacy and Robustness",
+      "What Did I Do Wrong? Quantifying LLMs' Sensitivity and Consistency to Prompt Engineering"
+    ],
+    "neurips24": [
+      "A Hitchhiker's Guide to Fine-Grained Face Forgery Detection Using Common Sense Reasoning",
+      "A StrongREJECT for Empty Jailbreaks",
+      "ANAH-v2: Scaling Analytical Hallucination Annotation of Large Language Models",
+      "Achieving Domain-Independent Certified Robustness via Knowledge Continuity",
+      "AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases",
+      "Animal-Bench: Benchmarking Multimodal Video Models for Animal-centric Video Understanding",
+      "AutoManual: Constructing Instruction Manuals by LLM Agents via Interactive Environmental Learning",
+      "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning",
+      "Bridging The Gap between Low-rank and Orthogonal Adaptation via Householder Reflection Adaptation",
+      "Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models",
+      "CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models",
+      "CausalStock: Deep End-to-end Causal Discovery for News-driven Multi-stock Movement Prediction",
+      "CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs",
+      "ControlMLLM: Training-Free Visual Prompt Learning for Multimodal Large Language Models",
+      "DARG: Dynamic Evaluation of Large Language Models via Adaptive Reasoning Graph",
+      "DDK: Distilling Domain Knowledge for Efficient Large Language Models",
+      "DPIC: Decoupling Prompt and Intrinsic Characteristics for LLM Generated Text Detection",
+      "Delta-CoMe: Training-Free Delta-Compression with Mixed-Precision for Large Language Models",
+      "DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning",
+      "Distributional Preference Alignment of LLMs via Optimal Transport",
+      "DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation",
+      "Efficient Contextual LLM Cascades through Budget-Constrained Policy Learning",
+      "Efficient Large Multi-modal Models via Visual Context Compression",
+      "Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making",
+      "Emotion-LLaMA: Multimodal Emotion Recognition and Reasoning with Instruction Tuning",
+      "Empowering Visible-Infrared Person Re-Identification with Large Foundation Models",
+      "Enhancing LLM Reasoning via Vision-Augmented Prompting",
+      "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+      "Entity Alignment with Noisy Annotations from Large Language Models",
+      "Evaluating Large Vision-and-Language Models on Children's Mathematical Olympiads",
+      "Exploiting LLM Quantization",
+      "Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following",
+      "From News to Forecast: Integrating Event Analysis in LLM-Based Time Series Forecasting with Reflection",
+      "Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models",
+      "Image2Struct: Benchmarking Structure Extraction for Vision-Language Models",
+      "ImageNet3D: Towards General-Purpose Object-Level 3D Understanding",
+      "Imitating Language via Scalable Inverse Reinforcement Learning",
+      "Improving Alignment and Robustness with Circuit Breakers",
+      "Information Re-Organization Improves Reasoning in Large Language Models",
+      "Instruction Tuning With Loss Over Instructions",
+      "Instruction-Guided Visual Masking",
+      "Is the MMI Criterion Necessary for Interpretability? Degenerating Non-causal Features to Plain Noise for Self-Rationalization",
+      "Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters",
+      "KG-FIT: Knowledge Graph Fine-Tuning Upon Open-World Knowledge",
+      "Kangaroo: Lossless Self-Speculative Decoding for Accelerating LLMs via Double Early Exiting",
+      "Knowledge-Empowered Dynamic Graph Network for Irregularly Sampled Medical Time Series",
+      "LISA: Layerwise Importance Sampling for Memory-Efficient Large Language Model Fine-Tuning",
+      "LLM-based Skill Diffusion for Zero-shot Policy Adaptation",
+      "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment",
+      "LOVA3: Learning to Visual Question Answering, Asking and Assessment",
+      "Language Models as Hierarchy Encoders",
+      "Large language model validity via enhanced conformal prediction methods",
+      "Linguistic Collapse: Neural Collapse in (Large) Language Models",
+      "Long-Horizon Planning for Multi-Agent Robots in Partially Observable Environments",
+      "MARPLE: A Benchmark for Long-Horizon Inference",
+      "MDAgents: An Adaptive Collaboration of LLMs for Medical Decision-Making",
+      "MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models",
+      "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+      "Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length",
+      "Meteor: Mamba-based Traversal of Rationale for Large Language and Vision Models",
+      "MiniCache: KV Cache Compression in Depth Dimension for Large Language Models",
+      "Mixture of Demonstrations for In-Context Learning",
+      "Mixture of Tokens: Continuous MoE through Cross-Example Aggregation",
+      "MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models",
+      "Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning",
+      "Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models",
+      "Noise Contrastive Alignment of Language Models with Explicit Rewards",
+      "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step",
+      "On Giant's Shoulders: Effortless Weak to Strong by Dynamic Logits Fusion",
+      "On Learning Multi-Modal Forgery Representation for Diffusion Generated Video Detection",
+      "On the Effects of Data Scale on UI Control Agents",
+      "OpenDebateEvidence: A Massive-Scale Argument Mining and Summarization Dataset",
+      "OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset",
+      "Order-Independence Without Fine Tuning",
+      "PIVOT-R: Primitive-Driven Waypoint-Aware World Model for Robotic Manipulation",
+      "Personalized Adapter for Large Meteorology Model on Devices: Towards Weather Foundation Models",
+      "PertEval: Unveiling Real Knowledge Capacity of LLMs with Knowledge-Invariant Perturbations",
+      "PointAD: Comprehending 3D Anomalies from Points and Pixels for Zero-shot 3D Anomaly Detection",
+      "Policy Learning from Tutorial Books via Understanding, Rehearsing and Introspecting",
+      "Preference Alignment with Flow Matching",
+      "Probing the Decision Boundaries of In-context Learning in Large Language Models",
+      "RL on Incorrect Synthetic Data Scales the Efficiency of LLM Math Reasoning by Eight-Fold",
+      "Regularizing Hidden States Enables Learning Generalizable Reward Model for LLMs",
+      "Reinforcing LLM Agents via Policy Optimization with Action Decomposition",
+      "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+      "SETLEXSEM CHALLENGE: Using Set Operations to Evaluate the Lexical and Semantic Robustness of Language Models",
+      "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
+      "SG-Nav: Online 3D Scene Graph Prompting for LLM-based Zero-shot Object Navigation",
+      "SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models",
+      "SMART: Scalable Multi-agent Real-time Motion Generation via Next-token Prediction",
+      "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
+      "SeafloorAI: A Large-scale Vision-Language Dataset for Seafloor Geological Survey",
+      "Self-Retrieval: End-to-End Information Retrieval with One Large Language Model",
+      "Shadowcast: Stealthy Data Poisoning Attacks Against Vision-Language Models",
+      "Stepwise Alignment for Constrained Language Model Policy Optimization",
+      "StrategyLLM: Large Language Models as Strategy Generators, Executors, Optimizers, and Evaluators for Problem Solving",
+      "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents",
+      "Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack",
+      "TAIA: Large Language Models are Out-of-Distribution Data Learners",
+      "TSDS: Data Selection for Task-Specific Model Finetuning",
+      "Tackling Uncertain Correspondences for Multi-Modal Entity Alignment",
+      "Time-FFM: Towards LM-Empowered Federated Foundation Model for Time Series Forecasting",
+      "Tri-Level Navigator: LLM-Empowered Tri-Level Learning for Time Series OOD Generalization",
+      "UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling",
+      "VHELM: A Holistic Evaluation of Vision Language Models",
+      "VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions",
+      "VideoLLM-MoD: Efficient Video-Language Streaming with Mixture-of-Depths Vision Computation",
+      "Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents",
+      "Who Evaluates the Evaluations? Objectively Scoring Text-to-Image Prompt Coherence Metrics with T2IScoreScore (TS2)",
+      "WizardArena: Post-training Large Language Models via Simulated Offline Chatbot Arena",
+      "xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 97,
+    "emnlp25": 225,
+    "iclr24": 42,
+    "iclr25": 138,
+    "icml25": 1,
+    "naacl25": 42,
+    "neurips24": 112
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

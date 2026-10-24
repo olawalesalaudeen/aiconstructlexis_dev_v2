@@ -1,0 +1,375 @@
+{
+  "canonical_name": "Linear probing",
+  "type": "measurement",
+  "canonical_definition": "Linear probing is predominantly characterized in the literature as both an evaluation protocol and an interpretability technique. The method consistently involves training a simple, typically linear, classifier on a model's frozen internal representations, such as activations or features, to predict specific properties. A primary application is to assess the quality of learned representations for downstream tasks without requiring full model fine-tuning, with one paper describing it as an \"evaluation protocol accessing feature quality.\" An equally prevalent use is for interpretability, where it tests whether certain information is linearly encoded in a model's state, allowing researchers to probe if the model's activations \"'contains' various quantities of interest.\" Specific applications of this probing include identifying style-relevant attention heads, detecting sycophantic responses, and assessing if a model's representations can distinguish between truthful and false outputs. Across the surveyed work, linear probing is used to measure a range of constructs and behaviors. It is explicitly used to operationalize `Generalization`, analyze `Safety alignment`, evaluate `Perspective taking`, and measure performance on `Image classification`. The data also indicates its use for assessing `Commonsense knowledge`, `Mathematical reasoning`, and `Hallucination detection`.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique \u2014 not a construct/measurement/behavior of LLM ability",
+  "names": [
+    "Linear probing",
+    "Probing Classifier",
+    "Probing classifier",
+    "Linear Probing",
+    "Linear Probe",
+    "Linear probes",
+    "Classifier probe"
+  ],
+  "papers": [
+    "Behavioural vs. Representational Systematicity in End-to-End Models: An Opinionated Survey",
+    "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+    "Personalized Text Generation with Contrastive Activation Steering",
+    "Can LLMs be Literary Companions?: Analysing LLMs on Bengali Figures of Speech Identification",
+    "Large Language Models Do Multi-Label Classification Differently",
+    "Reason to Rote: Rethinking Memorization in Reasoning",
+    "SHARP: Steering Hallucination in LVLMs via Representation Engineering",
+    "Sparse Neurons Carry Strong Signals of Question Ambiguity in LLMs",
+    "Steering Language Models in Multi-Token Generation: A Case Study on Tense and Aspect",
+    "TS-CLIP: Time Series Understanding by CLIP",
+    "When Truthful Representations Flip Under Deceptive Instructions?",
+    "How Do Transformers Learn In-Context Beyond Simple Functions? A Case Study on Learning with Representations",
+    "Successor Heads: Recurring, Interpretable Attention Heads In The Wild",
+    "Understanding and Mitigating the Label Noise in Pre-training on Downstream Tasks",
+    "Understanding prompt engineering may not require rethinking generalization",
+    "Unsupervised Pretraining for Fact Verification by Language Model Distillation",
+    "Are Transformers Able to Reason by Connecting Separated Knowledge in Training Data?",
+    "Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics",
+    "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+    "Beyond Single Concept Vector: Modeling Concept Subspace in LLMs with Gaussian Distribution",
+    "Causal Graphical Models for Vision-Language Compositional Understanding",
+    "Causally Motivated Sycophancy Mitigation for Large Language Models",
+    "DRESSing Up LLM: Efficient Stylized Question-Answering via Style Subspace Editing",
+    "Do LLMs ``know'' internally when they follow instructions?",
+    "Have the VLMs Lost Confidence? A Study of Sycophancy in VLMs",
+    "LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations",
+    "Linear Representations of Political Perspective Emerge in Large Language Models",
+    "PathGen-1.6M: 1.6 Million Pathology Image-text Pairs Generation through Multi-agent Collaboration",
+    "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+    "Release the Powers of Prompt Tuning: Cross-Modality Prompt Transfer",
+    "Revisit Large-Scale Image-Caption Data in Pre-training Multimodal Foundation Models",
+    "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+    "Temporal Reasoning Transfer from Text to Video",
+    "Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control",
+    "Detecting Strategic Deception with Linear Probes",
+    "EEG-Language Pretraining for Highly Label-Efficient Clinical Phenotyping",
+    "From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models",
+    "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+    "On Understanding Attention-Based In-Context Learning for Categorical Data",
+    "Textural or Textual: How Vision-Language Models Read Text in Images"
+  ],
+  "paper_count": 40,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Evaluation protocol that trains a linear classifier on frozen model features to assess the quality of learned representations without fine-tuning.",
+      "paper": "Understanding prompt engineering may not require rethinking generalization",
+      "original_name": "Linear probe"
+    },
+    {
+      "text": "A supervised method where a linear classifier is trained to predict a property (e.g., a token's index modulo 10) from a model's internal representations to test if that information is linearly encoded.",
+      "paper": "How Do Transformers Learn In-Context Beyond Simple Functions? A Case Study on Learning with Representations",
+      "original_name": "Linear probing"
+    },
+    {
+      "text": "An interpretability technique using a linear classifier on layer representations to determine whether the model agrees with user requests based on multimodal context.",
+      "paper": "Have the VLMs Lost Confidence? A Study of Sycophancy in VLMs",
+      "original_name": "Linear Probing"
+    },
+    {
+      "text": "A linear probing classifier trained on LLM activations to discriminate between ordinary and target language styles, used to identify style-relevant attention heads.",
+      "paper": "DRESSing Up LLM: Efficient Stylized Question-Answering via Style Subspace Editing",
+      "original_name": "Probing Classifier"
+    },
+    {
+      "text": "A small, typically linear classifier trained on a model's intermediate activations (hidden states) to predict specific properties, such as the truthfulness of a generated output.",
+      "paper": "LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations",
+      "original_name": "Probing classifier"
+    },
+    {
+      "text": "A probing evaluation that trains linear classifiers on activations to predict task attributes from a single circuit location.",
+      "paper": "Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control",
+      "original_name": "Linear probes"
+    },
+    {
+      "text": "A method utilizing a classifier trained on network activations to identify and prune heads contributing to sycophantic responses.",
+      "paper": "Causally Motivated Sycophancy Mitigation for Large Language Models",
+      "original_name": "Linear Probe"
+    },
+    {
+      "text": "A technique using small classifiers trained on visual features to assess the amount of temporal information captured by encoders.",
+      "paper": "Temporal Reasoning Transfer from Text to Video",
+      "original_name": "Classifier probe"
+    }
+  ],
+  "definition_count": 8,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generalization",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Understanding prompt engineering may not require rethinking generalization",
+      "evidence": "\"we present a standard linear probe (on top of CLIP\u2019s features), which achieves slightly better accuracy but a vacuous generalization bound\"",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Understanding prompt engineering may not require rethinking generalization",
+          "Understanding and Mitigating the Label Noise in Pre-training on Downstream Tasks"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Calibrating Reasoning in Language Models with Internal Consistency",
+      "evidence": "To discern encoded information crucial for reasoning, we utilize linear probing (Alain and Bengio, 2016; Belinkov, 2022) to train classifiers on the activations with respect to the ground truth labels, aiming to differentiate between true and false propositions. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Calibrating Reasoning in Language Models with Internal Consistency"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Medical image classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis",
+      "evidence": "Classification performance on natural and medical images through linear probing using features extracted from untrained and frozen models versus pixels features (See Sec 3 for details). (Figure 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "A Textbook Remedy for Domain Shifts: Knowledge Priors for Medical Image Analysis"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Truthfulness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Causally Motivated Sycophancy Mitigation for Large Language Models",
+      "evidence": "\u201cOne prevalent approach in these studies is linear probing ... which involves developing a binary classifier for each concerned module ... Since the classifiers are trained to categorize internal representations as either \u2018true\u2019 or \u2018false\u2019, they can effectively identify which components\u2019 outputs lead to \u2018true\u2019 or \u2018false\u2019 answers.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Causally Motivated Sycophancy Mitigation for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+      "evidence": "Motivated by this observation, we adopt the widely used interpretability tool, linear probing, to analyze the changes in LLMs\u2019 safety features in this section. (Section 3.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Few-shot image classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "PathGen-1.6M: 1.6 Million Pathology Image-text Pairs Generation through Multi-agent Collaboration",
+      "evidence": "In this study, we explore the effectiveness of PathGen-CLIP in a few-shot setting, where the model undergoes fine-tuning through linear probing on its pre-extracted feature representations.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "PathGen-1.6M: 1.6 Million Pathology Image-text Pairs Generation through Multi-agent Collaboration"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Image classification",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Causal Graphical Models for Vision-Language Compositional Understanding",
+      "evidence": "\u201cWe analyze this aspect using the protocol adopted by (Yuksekgonul et al., 2023; Zhang et al., 2024), which is based on linear probing the fine-tuned CLIP visual encoder on CIFAR10, CIFAR100 and ImageNet.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Causal Graphical Models for Vision-Language Compositional Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Sycophancy",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Causally Motivated Sycophancy Mitigation for Large Language Models",
+      "evidence": "Linear Probe... which utilizes a classifier trained on network activations to identify and subsequently prune heads contribute to sycophantic responses.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Causally Motivated Sycophancy Mitigation for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Hallucination detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Steering Knowledge Selection Behaviours in LLMs via SAE-Based Representation Engineering",
+      "evidence": "\"We apply a linear probing method (Conneau et al., 2018; Zhu and Li, 2023; Allen-Zhu and Li, 2023) to investigate whether the residual stream contains a signal of knowledge conflict.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Steering Knowledge Selection Behaviours in LLMs via SAE-Based Representation Engineering"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "RNA structure prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "evidence": "Following Li et al. (2024), we evaluate the probes on benchmarked downstream tasks: secondary structure, subcellular localization, thermostability, as well as a novel task, mammalian cell line expression prediction.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Protein property prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "evidence": "Following Li et al. (2024), we evaluate the probes on benchmarked downstream tasks: secondary structure, subcellular localization, thermostability, as well as a novel task, mammalian cell line expression prediction.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Theory of mind",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models",
+      "evidence": "Using logistic regression, we performed binary classification on the representations of positive and negative samples to identify attention heads that are sensitive to perspective separation and belief representation.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Semantic understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Textural or Textual: How Vision-Language Models Read Text in Images",
+      "evidence": "Linear Probe leverages paronym-synonym pairs (subset 2 of ToT ) to assess the model\u2019s progressive disentanglement of textual and textural features across layers. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Textural or Textual: How Vision-Language Models Read Text in Images"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 13,
+  "incoming_relationship_count": 13,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "Linear probing is predominantly characterized in the literature as both an evaluation protocol and an interpretability technique. The method consistently involves training a simple, typically linear, classifier on a model's frozen internal representations, such as activations or features, to predict specific properties. A primary application is to assess the quality of learned representations for downstream tasks without requiring full model fine-tuning, with one paper describing it as an \"evaluation protocol accessing feature quality.\" An equally prevalent use is for interpretability, where it tests whether certain information is linearly encoded in a model's state, allowing researchers to probe if the model's activations \"'contains' various quantities of interest.\" Specific applications of this probing include identifying style-relevant attention heads, detecting sycophantic responses, and assessing if a model's representations can distinguish between truthful and false outputs. Across the surveyed work, linear probing is used to measure a range of constructs and behaviors. It is explicitly used to operationalize `Generalization`, analyze `Safety alignment`, evaluate `Perspective taking`, and measure performance on `Image classification`. The data also indicates its use for assessing `Commonsense knowledge`, `Mathematical reasoning`, and `Hallucination detection`.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Behavioural vs. Representational Systematicity in End-to-End Models: An Opinionated Survey",
+      "Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking",
+      "Personalized Text Generation with Contrastive Activation Steering"
+    ],
+    "emnlp25": [
+      "Can LLMs be Literary Companions?: Analysing LLMs on Bengali Figures of Speech Identification",
+      "Large Language Models Do Multi-Label Classification Differently",
+      "Reason to Rote: Rethinking Memorization in Reasoning",
+      "SHARP: Steering Hallucination in LVLMs via Representation Engineering",
+      "Sparse Neurons Carry Strong Signals of Question Ambiguity in LLMs",
+      "Steering Language Models in Multi-Token Generation: A Case Study on Tense and Aspect",
+      "TS-CLIP: Time Series Understanding by CLIP",
+      "When Truthful Representations Flip Under Deceptive Instructions?"
+    ],
+    "iclr24": [
+      "How Do Transformers Learn In-Context Beyond Simple Functions? A Case Study on Learning with Representations",
+      "Successor Heads: Recurring, Interpretable Attention Heads In The Wild",
+      "Understanding and Mitigating the Label Noise in Pre-training on Downstream Tasks",
+      "Understanding prompt engineering may not require rethinking generalization",
+      "Unsupervised Pretraining for Fact Verification by Language Model Distillation"
+    ],
+    "iclr25": [
+      "Are Transformers Able to Reason by Connecting Separated Knowledge in Training Data?",
+      "Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics",
+      "Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness",
+      "Beyond Single Concept Vector: Modeling Concept Subspace in LLMs with Gaussian Distribution",
+      "Causal Graphical Models for Vision-Language Compositional Understanding",
+      "Causally Motivated Sycophancy Mitigation for Large Language Models",
+      "DRESSing Up LLM: Efficient Stylized Question-Answering via Style Subspace Editing",
+      "Do LLMs ``know'' internally when they follow instructions?",
+      "Have the VLMs Lost Confidence? A Study of Sycophancy in VLMs",
+      "LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations",
+      "Linear Representations of Political Perspective Emerge in Large Language Models",
+      "PathGen-1.6M: 1.6 Million Pathology Image-text Pairs Generation through Multi-agent Collaboration",
+      "Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering",
+      "Release the Powers of Prompt Tuning: Cross-Modality Prompt Transfer",
+      "Revisit Large-Scale Image-Caption Data in Pre-training Multimodal Foundation Models",
+      "SaLoRA: Safety-Alignment Preserved Low-Rank Adaptation",
+      "Temporal Reasoning Transfer from Text to Video",
+      "Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control"
+    ],
+    "icml25": [
+      "Detecting Strategic Deception with Linear Probes",
+      "EEG-Language Pretraining for Highly Label-Efficient Clinical Phenotyping",
+      "From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models",
+      "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "On Understanding Attention-Based In-Context Learning for Categorical Data",
+      "Textural or Textual: How Vision-Language Models Read Text in Images"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 3,
+    "emnlp25": 8,
+    "iclr24": 5,
+    "iclr25": 18,
+    "icml25": 6
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

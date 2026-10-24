@@ -1,0 +1,324 @@
+{
+  "canonical_name": "WildBench",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most papers treat WildBench as an instruction-following benchmark, sometimes also as an automatic LLM benchmark, for assessing model responses on diverse and challenging user queries. Definitions recurrently describe real-user or natural tasks, longer or more complex prompts, and difficult multi-turn questions; some add a diverse distribution of task categories, evaluation against a reference answer with a fine-grained grading scale, human preference judgments, or a WB-Score. A smaller line of work frames it as an LLM-based evaluation framework or public dataset of model comparisons judged by an LLM-based judge.\n\nWhat it is claimed to measure. Papers use WildBench to measure 7 constructs and 6 behavioral indicators, so its reported targets are spread across multiple capacities rather than concentrated on one. The most frequent construct-level links are conversational ability, complex reasoning, and creativity, with 4 other constructs also linked. On the behavioral side, papers report it as evaluating creative writing and data analysis, plus 4 other indicators.\n\nSpace of uses. Most papers position WildBench as one of a few evaluation benchmarks, commonly alongside AlpacaEval and Arena-Hard, and sometimes MT-Bench. Papers link it to 2 other instruments, LLM-as-a-judge and Chatbot Arena: some describe WildBench itself as an LLM-as-Judge benchmark or use its public dataset for LLM-based evaluation, while another paper pairs it with a public subset of Chatbot Arena for human and LLM-based evaluation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "WildBench",
+    "Wildbench",
+    "Wild-Bench"
+  ],
+  "papers": [
+    "Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement",
+    "Genius: A Generalizable and Purely Unsupervised Self-Training Framework For Advanced Reasoning",
+    "From Reasoning to Answer: Empirical, Attention-Based and Mechanistic Insights into Distilled DeepSeek R1 Models",
+    "User Feedback in Human-LLM Dialogues: A Lens to Understand Users But Noisy as a Learning Signal",
+    "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+    "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+    "Jamba: Hybrid Transformer-Mamba Language Models",
+    "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+    "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+    "RocketEval: Efficient automated LLM evaluation via grading checklist",
+    "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+    "Diverging Preferences: When do Annotators Disagree and do Models Know?",
+    "R.I.P.: Better Models by Survival of the Fittest Prompts",
+    "ReIFE: Re-evaluating Instruction-Following Evaluation"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "An instruction-following benchmark that uses a diverse distribution of task categories and a fine-grained grading scale to evaluate model responses against a reference answer.",
+      "paper": "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+      "original_name": "WildBench"
+    },
+    {
+      "text": "An LLM-based evaluation framework used as a public dataset of model comparisons judged by an LLM-based judge.",
+      "paper": "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+      "original_name": "Wildbench"
+    },
+    {
+      "text": "A challenging instruction-following QA benchmark featuring long, multi-turn prompts and difficult questions sourced from real users.",
+      "paper": "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "original_name": "Wild-Bench"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+      "evidence": "We use the public dataset from Wildbench (Lin et al., 2024) to obtain our LLM-based evaluation. (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation"
+        ],
+        "icml25": [
+          "Diverging Preferences: When do Annotators Disagree and do Models Know?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Conversational ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Jamba: Hybrid Transformer-Mamba Language Models",
+      "evidence": "In this section we evaluate the Jamba-1.5 models on two chatbot scenarios: Arena-Hard (Li et al., 2024b), a set of 500 challenging user queries that uses GPT4-Turbo as a judge, and WildBench (Lin et al., 2024)... (Section 7.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Jamba: Hybrid Transformer-Mamba Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Complex reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "Complex real-user tasks usually have multiple constraints and require higher-order reasoning skills, which are well represented in WILDBENCH. (Figure 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Creativity",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "These tasks often require critical thinking, creativity, and technical expertise, making WILDBENCH substantially more challenging than AlpacaEval... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Technical expertise",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "These tasks often require critical thinking, creativity, and technical expertise, making WILDBENCH substantially more challenging than AlpacaEval... (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "Thanks to these realistic user activities, WILDBENCH is a more suitable benchmark for testing the long-context problem solving abilities of LLMs. (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Data analysis",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "This dataset is particularly suited for conversion into an evaluation benchmark because it contains a diverse array of tasks that users expect LLMs to perform, such as writing assistance, coding, mathematics, data analysis, role playing, and planning. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Role-playing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "This dataset is particularly suited for conversion into an evaluation benchmark because it contains a diverse array of tasks that users expect LLMs to perform, such as writing assistance, coding, mathematics, data analysis, role playing, and planning. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "This dataset is particularly suited for conversion into an evaluation benchmark because it contains a diverse array of tasks that users expect LLMs to perform, such as writing assistance, coding, mathematics, data analysis, role playing, and planning. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "evidence": "We primarily evaluate all the models using two recent proposed instruction-following QA benchmarks: Arena-Hard (Li et al., 2024) and Wild-Bench(Lin et al., 2024).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Creative writing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "\u201cThe tasks in WILDBENCH typically demand higher-order reasoning, such as ... creative writing with multiple constraints on the style and content\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "ReIFE: Re-evaluating Instruction-Following Evaluation",
+      "evidence": "\"we evaluate the evaluation protocols used in three automatic LLM benchmarks for instruction-following4 \u2013 AlpacaEval (Li et al., 2023c), ArenaHard (Li et al., 2024b), and WildBench (Lin et al., 2024)\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "ReIFE: Re-evaluating Instruction-Following Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "R.I.P.: Better Models by Survival of the Fittest Prompts",
+      "evidence": "We primarily assess models\u2019 general instruction-following capabilities on three evaluation benchmarks: AlpacaEval2 (Li et al., 2023b), Arena-Hard (Li et al., 2024b) and Wild-Bench (Lin et al., 2024). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "R.I.P.: Better Models by Survival of the Fittest Prompts"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chatbot Arena",
+      "other_type": "measurements",
+      "relationship_type": "correlates",
+      "paper": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "evidence": "\u201cWILD-BENCH results demonstrate a strong correlation with the human-voted Elo ratings from Chatbot Arena on hard tasks.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 14,
+  "incoming_relationship_count": 14,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most papers treat WildBench as an instruction-following benchmark, sometimes also as an automatic LLM benchmark, for assessing model responses on diverse and challenging user queries. Definitions recurrently describe real-user or natural tasks, longer or more complex prompts, and difficult multi-turn questions; some add a diverse distribution of task categories, evaluation against a reference answer with a fine-grained grading scale, human preference judgments, or a WB-Score. A smaller line of work frames it as an LLM-based evaluation framework or public dataset of model comparisons judged by an LLM-based judge."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use WildBench to measure 7 constructs and 6 behavioral indicators, so its reported targets are spread across multiple capacities rather than concentrated on one. The most frequent construct-level links are conversational ability, complex reasoning, and creativity, with 4 other constructs also linked. On the behavioral side, papers report it as evaluating creative writing and data analysis, plus 4 other indicators."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Most papers position WildBench as one of a few evaluation benchmarks, commonly alongside AlpacaEval and Arena-Hard, and sometimes MT-Bench. Papers link it to 2 other instruments, LLM-as-a-judge and Chatbot Arena: some describe WildBench itself as an LLM-as-Judge benchmark or use its public dataset for LLM-based evaluation, while another paper pairs it with a public subset of Chatbot Arena for human and LLM-based evaluation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most papers treat WildBench as an instruction-following benchmark, sometimes also as an automatic LLM benchmark, for assessing model responses on diverse and challenging user queries. Definitions recurrently describe real-user or natural tasks, longer or more complex prompts, and difficult multi-turn questions; some add a diverse distribution of task categories, evaluation against a reference answer with a fine-grained grading scale, human preference judgments, or a WB-Score. A smaller line of work frames it as an LLM-based evaluation framework or public dataset of model comparisons judged by an LLM-based judge.\n\nWhat it is claimed to measure. Papers use WildBench to measure 7 constructs and 6 behavioral indicators, so its reported targets are spread across multiple capacities rather than concentrated on one. The most frequent construct-level links are conversational ability, complex reasoning, and creativity, with 4 other constructs also linked. On the behavioral side, papers report it as evaluating creative writing and data analysis, plus 4 other indicators.\n\nSpace of uses. Most papers position WildBench as one of a few evaluation benchmarks, commonly alongside AlpacaEval and Arena-Hard, and sometimes MT-Bench. Papers link it to 2 other instruments, LLM-as-a-judge and Chatbot Arena: some describe WildBench itself as an LLM-as-Judge benchmark or use its public dataset for LLM-based evaluation, while another paper pairs it with a public subset of Chatbot Arena for human and LLM-based evaluation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement",
+      "Genius: A Generalizable and Purely Unsupervised Self-Training Framework For Advanced Reasoning"
+    ],
+    "emnlp25": [
+      "From Reasoning to Answer: Empirical, Attention-Based and Mechanistic Insights into Distilled DeepSeek R1 Models",
+      "User Feedback in Human-LLM Dialogues: A Lens to Understand Users But Noisy as a Learning Signal"
+    ],
+    "iclr25": [
+      "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning",
+      "Jamba: Hybrid Transformer-Mamba Language Models",
+      "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+      "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+      "RocketEval: Efficient automated LLM evaluation via grading checklist",
+      "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild"
+    ],
+    "icml25": [
+      "Diverging Preferences: When do Annotators Disagree and do Models Know?",
+      "R.I.P.: Better Models by Survival of the Fittest Prompts"
+    ],
+    "naacl25": [
+      "ReIFE: Re-evaluating Instruction-Following Evaluation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 2,
+    "iclr25": 7,
+    "icml25": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

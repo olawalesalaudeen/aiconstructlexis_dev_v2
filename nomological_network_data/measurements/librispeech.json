@@ -1,0 +1,196 @@
+{
+  "canonical_name": "LibriSpeech",
+  "type": "measurement",
+  "canonical_definition": "What it is. Most papers describe LibriSpeech as a large corpus, dataset, or benchmark of read English speech derived from audiobooks, often aligned and segmented, and commonly framed as clean read speech for ASR. Definitions usually mention 960 hours of English reading audio, though one paper says it contains roughly 1000 hours and another extracts chunks from it to form a 1GB audio dataset for compression experiments. Papers use several subsets and settings, including train-clean-100, dev-clean, dev-other, test-clean, test-other, and 100-hour and 960-hour setups, while a smaller line simply describes Librispeech as a speech recognition dataset for closed-ended audio evaluation.\n\nWhat it is claimed to measure. Across papers, LibriSpeech is linked to 1 construct and 2 behavioral indicators. The prevailing use is to measure Speech recognition: relationship evidence calls it an automatic speech recognition benchmark, a benchmark dataset of clean read speech for standard ASR tasks, and a test set that demonstrates ASR performance in a clean scenario. A smaller line uses it to measure Speech reconstruction, and one paper uses it to measure Utility preservation as part of a general utility evaluation built around standard ASR tasks.\n\nSpace of uses. No measurement instrument is linked to it directly. Papers most often position LibriSpeech as an ASR benchmark, but they also use it for pre-training, tokenizer training, mutual information estimation, phoneme recognition, reconstruction, and perplexity evaluation on speech-text sequences. It also appears alongside other benchmarks such as GigaSpeech, AMI, AIR-Bench, AudioCaps, and CHiME-4, and one paper pairs it with MELD in a broader utility evaluation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "LibriSpeech",
+    "Librispeech"
+  ],
+  "papers": [
+    "OmniCharacter: Towards Immersive Role-Playing Agents with Seamless Speech-Language Personality Interaction",
+    "Soundwave: Less is More for Speech-Text Alignment in LLMs",
+    "Enhancing Speech Large Language Models with Prompt-Aware Mixture of Audio Encoders",
+    "MIO: A Foundation Model on Multimodal Tokens",
+    "ModRWKV: Transformer Multimodality in Linear Time",
+    "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+    "Speech Discrete Tokens or Continuous Features? A Comparative Analysis for Spoken Language Understanding in SpeechLLMs",
+    "Language Modeling Is Compression",
+    "SALMONN: Towards Generic Hearing Abilities for Large Language Models",
+    "SpeechTokenizer: Unified Speech Tokenizer for Speech Language Models",
+    "Aligned Better, Listen Better for Audio-Visual Large Language Models",
+    "HALL-E: Hierarchical Neural Codec Language Model for Minute-Long Zero-Shot Text-to-Speech Synthesis",
+    "Scaling Speech-Text Pre-training with Synthetic Interleaved Data",
+    "SyllableLM: Learning Coarse Semantic Units for Speech Language Models",
+    "The KoLMogorov Test: Compression by Code Generation",
+    "Theory, Analysis, and Best Practices for Sigmoid Self-Attention",
+    "VLAS: Vision-Language-Action Model with Speech Instructions for Customized Robot Manipulation",
+    "A Variational Framework for Improving Naturalness in Generative Spoken Language Models",
+    "ALMTokenizer: A Low-bitrate and Semantic-rich Audio Codec Tokenizer for Audio Language Modeling",
+    "LASER: Attention with Exponential Transformation",
+    "Looking Beyond the Top-1: Transformers Determine Top Tokens in Order",
+    "SING: Spatial Context in Large Language Model for Next-Gen Wearables",
+    "Wav2Prompt: End-to-End Speech Prompt Learning and Task-based Fine-tuning for Text-based LLMs",
+    "Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation"
+  ],
+  "paper_count": 24,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A large corpus of read English speech, from which chunks are extracted to create a 1GB audio dataset for compression experiments.",
+      "paper": "Language Modeling Is Compression",
+      "original_name": "LibriSpeech"
+    },
+    {
+      "text": "A speech recognition dataset used for closed-ended audio evaluation.",
+      "paper": "Aligned Better, Listen Better for Audio-Visual Large Language Models",
+      "original_name": "Librispeech"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Speech recognition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SALMONN: Towards Generic Hearing Abilities for Large Language Models",
+      "evidence": "ASR | LibriSpeech test-clean/-other, GigaSpeech test | %WER (Table 2)",
+      "paper_count": 8,
+      "paper_weight": 8.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SALMONN: Towards Generic Hearing Abilities for Large Language Models"
+        ],
+        "iclr25": [
+          "VLAS: Vision-Language-Action Model with Speech Instructions for Customized Robot Manipulation",
+          "Theory, Analysis, and Best Practices for Sigmoid Self-Attention"
+        ],
+        "naacl25": [
+          "Wav2Prompt: End-to-End Speech Prompt Learning and Task-based Fine-tuning for Text-based LLMs"
+        ],
+        "icml25": [
+          "LASER: Attention with Exponential Transformation"
+        ],
+        "emnlp25": [
+          "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+          "Enhancing Speech Large Language Models with Prompt-Aware Mixture of Audio Encoders",
+          "ModRWKV: Transformer Multimodality in Linear Time"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Speech reconstruction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "SpeechTokenizer: Unified Speech Tokenizer for Speech Language Models",
+      "evidence": "We randomly sample 300 speech samples from LibriSpeech test set for speech reconstruction evaluation. (Section 4.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SpeechTokenizer: Unified Speech Tokenizer for Speech Language Models"
+        ],
+        "iclr25": [
+          "HALL-E: Hierarchical Neural Codec Language Model for Minute-Long Zero-Shot Text-to-Speech Synthesis"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Utility preservation",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+      "evidence": "For general utility evaluation, we use AIR-Bench Chat..., LibriSpeech (Panayotov et al., 2015), a benchmark dataset of clean read speech for standard ASR tasks, and MELD... (Section 8.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "SPIRIT: Patching Speech Language Models against Jailbreak Attacks"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Most papers describe LibriSpeech as a large corpus, dataset, or benchmark of read English speech derived from audiobooks, often aligned and segmented, and commonly framed as clean read speech for ASR. Definitions usually mention 960 hours of English reading audio, though one paper says it contains roughly 1000 hours and another extracts chunks from it to form a 1GB audio dataset for compression experiments. Papers use several subsets and settings, including train-clean-100, dev-clean, dev-other, test-clean, test-other, and 100-hour and 960-hour setups, while a smaller line simply describes Librispeech as a speech recognition dataset for closed-ended audio evaluation."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across papers, LibriSpeech is linked to 1 construct and 2 behavioral indicators. The prevailing use is to measure Speech recognition: relationship evidence calls it an automatic speech recognition benchmark, a benchmark dataset of clean read speech for standard ASR tasks, and a test set that demonstrates ASR performance in a clean scenario. A smaller line uses it to measure Speech reconstruction, and one paper uses it to measure Utility preservation as part of a general utility evaluation built around standard ASR tasks."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No measurement instrument is linked to it directly. Papers most often position LibriSpeech as an ASR benchmark, but they also use it for pre-training, tokenizer training, mutual information estimation, phoneme recognition, reconstruction, and perplexity evaluation on speech-text sequences. It also appears alongside other benchmarks such as GigaSpeech, AMI, AIR-Bench, AudioCaps, and CHiME-4, and one paper pairs it with MELD in a broader utility evaluation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Most papers describe LibriSpeech as a large corpus, dataset, or benchmark of read English speech derived from audiobooks, often aligned and segmented, and commonly framed as clean read speech for ASR. Definitions usually mention 960 hours of English reading audio, though one paper says it contains roughly 1000 hours and another extracts chunks from it to form a 1GB audio dataset for compression experiments. Papers use several subsets and settings, including train-clean-100, dev-clean, dev-other, test-clean, test-other, and 100-hour and 960-hour setups, while a smaller line simply describes Librispeech as a speech recognition dataset for closed-ended audio evaluation.\n\nWhat it is claimed to measure. Across papers, LibriSpeech is linked to 1 construct and 2 behavioral indicators. The prevailing use is to measure Speech recognition: relationship evidence calls it an automatic speech recognition benchmark, a benchmark dataset of clean read speech for standard ASR tasks, and a test set that demonstrates ASR performance in a clean scenario. A smaller line uses it to measure Speech reconstruction, and one paper uses it to measure Utility preservation as part of a general utility evaluation built around standard ASR tasks.\n\nSpace of uses. No measurement instrument is linked to it directly. Papers most often position LibriSpeech as an ASR benchmark, but they also use it for pre-training, tokenizer training, mutual information estimation, phoneme recognition, reconstruction, and perplexity evaluation on speech-text sequences. It also appears alongside other benchmarks such as GigaSpeech, AMI, AIR-Bench, AudioCaps, and CHiME-4, and one paper pairs it with MELD in a broader utility evaluation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "OmniCharacter: Towards Immersive Role-Playing Agents with Seamless Speech-Language Personality Interaction",
+      "Soundwave: Less is More for Speech-Text Alignment in LLMs"
+    ],
+    "iclr24": [
+      "Language Modeling Is Compression",
+      "SALMONN: Towards Generic Hearing Abilities for Large Language Models",
+      "SpeechTokenizer: Unified Speech Tokenizer for Speech Language Models"
+    ],
+    "iclr25": [
+      "Aligned Better, Listen Better for Audio-Visual Large Language Models",
+      "HALL-E: Hierarchical Neural Codec Language Model for Minute-Long Zero-Shot Text-to-Speech Synthesis",
+      "Scaling Speech-Text Pre-training with Synthetic Interleaved Data",
+      "SyllableLM: Learning Coarse Semantic Units for Speech Language Models",
+      "The KoLMogorov Test: Compression by Code Generation",
+      "Theory, Analysis, and Best Practices for Sigmoid Self-Attention",
+      "VLAS: Vision-Language-Action Model with Speech Instructions for Customized Robot Manipulation"
+    ],
+    "icml25": [
+      "A Variational Framework for Improving Naturalness in Generative Spoken Language Models",
+      "ALMTokenizer: A Low-bitrate and Semantic-rich Audio Codec Tokenizer for Audio Language Modeling",
+      "LASER: Attention with Exponential Transformation",
+      "Looking Beyond the Top-1: Transformers Determine Top Tokens in Order",
+      "SING: Spatial Context in Large Language Model for Next-Gen Wearables"
+    ],
+    "emnlp25": [
+      "Enhancing Speech Large Language Models with Prompt-Aware Mixture of Audio Encoders",
+      "MIO: A Foundation Model on Multimodal Tokens",
+      "ModRWKV: Transformer Multimodality in Linear Time",
+      "SPIRIT: Patching Speech Language Models against Jailbreak Attacks",
+      "Speech Discrete Tokens or Continuous Features? A Comparative Analysis for Spoken Language Understanding in SpeechLLMs"
+    ],
+    "naacl25": [
+      "Wav2Prompt: End-to-End Speech Prompt Learning and Task-based Fine-tuning for Text-based LLMs"
+    ],
+    "neurips24": [
+      "Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "iclr24": 3,
+    "iclr25": 7,
+    "icml25": 5,
+    "emnlp25": 5,
+    "naacl25": 1,
+    "neurips24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

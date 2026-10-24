@@ -1,0 +1,98 @@
+{
+  "canonical_name": "Bradley-Terry model",
+  "type": "measurement",
+  "canonical_definition": "The Bradley-Terry model is consistently described across the provided literature as a statistical method for analyzing pairwise comparisons to estimate relative performance. Its prevailing use is to aggregate preference data to produce rankings, with one paper calling it \"the canonical model for assessing relative performance of models based on pairwise comparisons\" (AutoEval Done Right: Using Synthetic Data for Model Evaluation). Papers operationalize this in several ways: some use it to aggregate comparisons to \"form a leaderboard over LLMs\" (Prompt-to-Leaderboard: Prompt-Adaptive LLM Evaluations), while others use it to estimate preference probabilities or simulate annotation noise. In terms of what it evaluates, the model is used to measure the construct of `Faithfulness`. It is also studied in relation to `Preference prediction`. While most sources refer to it as the \"Bradley-Terry model,\" a related framing is \"Bradley-Terry regression,\" which specifically emphasizes its use in aggregating human preference votes to estimate model strength parameters.",
+  "expert_reviewed": false,
+  "expert_removed": true,
+  "expert_removed_reason": "method/technique",
+  "names": [
+    "Bradley-Terry model",
+    "Bradley-Terry regression"
+  ],
+  "papers": [
+    "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+    "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?",
+    "Strong Preferences Affect the Robustness of Preference Models and Value Alignment",
+    "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization",
+    "AutoEval Done Right: Using Synthetic Data for Model Evaluation",
+    "Copilot Arena: A Platform for Code LLM Evaluation in the Wild",
+    "Investigating Non-Transitivity in LLM-as-a-Judge",
+    "Prompt-to-Leaderboard: Prompt-Adaptive LLM Evaluations"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A pairwise preference model used to simulate annotation noise and estimate preference probabilities from pairwise comparisons.",
+      "paper": "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?",
+      "original_name": "Bradley-Terry model"
+    },
+    {
+      "text": "Statistical method used to aggregate pairwise comparison data into a leaderboard by estimating model strength parameters from human preference votes.",
+      "paper": "Prompt-to-Leaderboard: Prompt-Adaptive LLM Evaluations",
+      "original_name": "Bradley-Terry regression"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization",
+      "evidence": "Fageot et al. (2024); Chiang et al. (2024) employ the Bradley-Terry model (Bradley & Terry, 1952) (see Appendix B.2 for detailed introduction) to estimate model scores by maximizing the likelihood of the comparison results between models. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Preference prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?",
+      "evidence": "\"Given a prompt x and two responses yi and yj, the probability that yi is preferred to yj is computed by\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [],
+  "definition_agreement": null,
+  "characterization": "The Bradley-Terry model is consistently described across the provided literature as a statistical method for analyzing pairwise comparisons to estimate relative performance. Its prevailing use is to aggregate preference data to produce rankings, with one paper calling it \"the canonical model for assessing relative performance of models based on pairwise comparisons\" (AutoEval Done Right: Using Synthetic Data for Model Evaluation). Papers operationalize this in several ways: some use it to aggregate comparisons to \"form a leaderboard over LLMs\" (Prompt-to-Leaderboard: Prompt-Adaptive LLM Evaluations), while others use it to estimate preference probabilities or simulate annotation noise. In terms of what it evaluates, the model is used to measure the construct of `Faithfulness`. It is also studied in relation to `Preference prediction`. While most sources refer to it as the \"Bradley-Terry model,\" a related framing is \"Bradley-Terry regression,\" which specifically emphasizes its use in aggregating human preference votes to estimate model strength parameters.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation",
+      "Rethinking Reward Model Evaluation: Are We Barking up the Wrong Tree?",
+      "Strong Preferences Affect the Robustness of Preference Models and Value Alignment",
+      "UniCBE: An Uniformity-driven Comparing Based Evaluation Framework with Unified Multi-Objective Optimization"
+    ],
+    "icml25": [
+      "AutoEval Done Right: Using Synthetic Data for Model Evaluation",
+      "Copilot Arena: A Platform for Code LLM Evaluation in the Wild",
+      "Investigating Non-Transitivity in LLM-as-a-Judge",
+      "Prompt-to-Leaderboard: Prompt-Adaptive LLM Evaluations"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 4,
+    "icml25": 4
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

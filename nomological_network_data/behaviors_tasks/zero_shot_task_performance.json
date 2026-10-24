@@ -1,0 +1,422 @@
+{
+  "canonical_name": "Zero-shot task performance",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats this behavior as performance on downstream or language-understanding tasks when the model is given no in-context examples and no task-specific fine-tuning or training. Definitions repeatedly describe answering questions or carrying out tasks such as question answering, commonsense reasoning, reading comprehension, or natural language inference from the prompt alone, and success is usually reported as accuracy on benchmark tasks. A smaller usage treats it as zero-evaluation performance on LAMBADA and WikiText using perplexity scores.\n\nVariants. Papers use several nearby labels for the same behavior, including zero-shot evaluation, zero-shot reasoning, and zero-shot downstream task performance. The settings are mostly downstream NLP benchmarks, commonly framed as question answering and commonsense reasoning, though some definitions emphasize multiple-choice and yes/no reasoning tasks, reading-comprehension datasets, instruction-only evaluation, or broader natural language tasks. Examples named by papers include HellaSwag, PIQA, ARC, WinoGrande, and MMLU.\n\nSpace of elicitation and scores. Papers link this behavior to 21 measurement instruments. The most common setup is that it is measured by lm-evaluation-harness, with HellaSwag, PIQA, ARC-Challenge, and WinoGrande appearing most often after that, and the remaining links spread across other benchmark tasks. These instruments are usually used to report zero-shot accuracy, sometimes as mean or average accuracy across tasks or runs, as in \"average accuracy over five runs in each table\" (Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models), while one paper measures zero-evaluation performance on LAMBADA and WikiText with perplexity scores.\n\nWhat it is taken as evidence of. Across linked constructs, papers connect this behavior to only one construct, Helpfulness. In that usage, helpfulness is measured by zero-shot task performance, with a safety-head ablation study using lm-eval to assess model performance on zero-shot tasks after ablation. No other construct link appears in the papers.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Zero-shot task performance",
+    "Zero-shot Evaluation",
+    "Zero-shot reasoning",
+    "Zero-shot downstream task performance"
+  ],
+  "papers": [
+    "A Simple and Effective Pruning Approach for Large Language Models",
+    "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models",
+    "Plug-and-Play: An Efficient Post-training Pruning Method for Large Language Models",
+    "Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning",
+    "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+    "CBQ: Cross-Block Quantization for Large Language Models",
+    "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+    "Harnessing Diversity for Important Data Selection in Pretraining Large Language Models",
+    "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+    "OSTQuant: Refining Large Language Model Quantization with Orthogonal and Scaling Transformations for Better Distribution Fitting",
+    "On the Role of Attention Heads in Large Language Model Safety",
+    "SLoPe: Double-Pruned Sparse Plus Lazy Low-Rank Adapter Pretraining of LLMs",
+    "TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters",
+    "Two Sparse Matrices are Better than One: Sparsifying Neural Networks with Double Sparse Factorization",
+    "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective",
+    "GANQ: GPU-Adaptive Non-Uniform Quantization for Large Language Models",
+    "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+    "Optimizing Large Language Model Training Using FP4 Quantization",
+    "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+    "Scaling Sparse Feature Circuits For Studying In-Context Learning",
+    "SliM-LLM: Salience-Driven Mixed-Precision Quantization for Large Language Models",
+    "GPTAQ: Efficient Finetuning-Free Quantization for Asymmetric Calibration",
+    "SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression"
+  ],
+  "paper_count": 23,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable performance of a model on various language understanding tasks, such as question answering and commonsense reasoning, when given no in-context examples.",
+      "paper": "CBQ: Cross-Block Quantization for Large Language Models",
+      "original_name": "Zero-shot task performance"
+    },
+    {
+      "text": "The observable behavior of performing tasks without any task-specific fine-tuning or examples provided in the prompt.",
+      "paper": "Harnessing Diversity for Important Data Selection in Pretraining Large Language Models",
+      "original_name": "Zero-shot Evaluation"
+    },
+    {
+      "text": "Answering benchmark questions without task-specific fine-tuning across multiple commonsense and reading-comprehension datasets.",
+      "paper": "GPTAQ: Efficient Finetuning-Free Quantization for Asymmetric Calibration",
+      "original_name": "Zero-shot reasoning"
+    },
+    {
+      "text": "The model's ability to perform various natural language tasks without any task-specific training, as evaluated on benchmarks like MMLU, Piqa, and Arc.",
+      "paper": "SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression",
+      "original_name": "Zero-shot downstream task performance"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "lm-evaluation-harness",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "A Simple and Effective Pruning Approach for Large Language Models",
+      "evidence": "For zero-shot evaluation, we use seven tasks from EleutherAI LM Harness (Gao et al., 2021).",
+      "paper_count": 8,
+      "paper_weight": 8.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "A Simple and Effective Pruning Approach for Large Language Models",
+          "SliceGPT: Compress Large Language Models by Deleting Rows and Columns"
+        ],
+        "iclr25": [
+          "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+          "OSTQuant: Refining Large Language Model Quantization with Orthogonal and Scaling Transformations for Better Distribution Fitting"
+        ],
+        "acl25": [
+          "Bypass Back-propagation: Optimization-based Structural Pruning for Large Language Models via Policy Gradient"
+        ],
+        "icml25": [
+          "EvoPress: Accurate Dynamic Model Compression via Evolutionary Search",
+          "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+          "GANQ: GPU-Adaptive Non-Uniform Quantization for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HellaSwag",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+      "evidence": "Secondly, we measure zero-shot accuracy on five tasks: WinoGrande (Sakaguchi et al., 2021), PiQA (Tata & Patel, 2003), HellaSwag, ARC-easy and ARC-challenge (Clark et al., 2018). (Section 5)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression"
+        ],
+        "iclr25": [
+          "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+          "CBQ: Cross-Block Quantization for Large Language Models"
+        ],
+        "icml25": [
+          "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+          "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PIQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+      "evidence": "Secondly, we measure zero-shot accuracy on five tasks: WinoGrande (Sakaguchi et al., 2021), PiQA (Tata & Patel, 2003), HellaSwag, ARC-easy and ARC-challenge (Clark et al., 2018). (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression"
+        ],
+        "iclr25": [
+          "CBQ: Cross-Block Quantization for Large Language Models"
+        ],
+        "icml25": [
+          "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WinoGrande",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+      "evidence": "Secondly, we measure zero-shot accuracy on five tasks: WinoGrande (Sakaguchi et al., 2021), PiQA (Tata & Patel, 2003), HellaSwag, ARC-easy and ARC-challenge (Clark et al., 2018). (Section 5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression"
+        ],
+        "icml25": [
+          "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CBQ: Cross-Block Quantization for Large Language Models",
+      "evidence": "The other is reported by the accuracy metric of zero-shot language tasks (Gao et al. (2021)) on PIQA (Bisk et al. (2020a)), HellaSwag (Clark et al. (2018)), ARC (Clark et al. (2018)), Mutual (Cui et al. (2020)) and Ehics (Hendrycks et al. (2020a)). (Section 5.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CBQ: Cross-Block Quantization for Large Language Models"
+        ],
+        "icml25": [
+          "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LAMBADA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+      "evidence": "We measure the zero-evaluation performance of trained GPT models on LAMBADA and WikiText using perplexity scores. (Section 5.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training"
+        ],
+        "iclr25": [
+          "LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Challenge",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+      "evidence": "Secondly, we measure zero-shot accuracy on five tasks: WinoGrande (Sakaguchi et al., 2021), PiQA (Tata & Patel, 2003), HellaSwag, ARC-easy and ARC-challenge (Clark et al., 2018). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARC-Easy",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+      "evidence": "Secondly, we measure zero-shot accuracy on five tasks: WinoGrande (Sakaguchi et al., 2021), PiQA (Tata & Patel, 2003), HellaSwag, ARC-easy and ARC-challenge (Clark et al., 2018). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BoolQ",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective",
+      "evidence": "evaluate zero-shot performance on seven downstream tasks: BoolQ (Clark et al., 2019), ARC Easy and Challenge (Clark et al., 2018), HellaSwag (Zellers et al., 2019), WinoGrande (Sakaguchi et al., 2021), OpenbookQA (Mihaylov et al., 2018), and PIQA (Bisk et al., 2020) (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SLoPe: Double-Pruned Sparse Plus Lazy Low-Rank Adapter Pretraining of LLMs",
+      "evidence": "For a fair comparison, we evaluate the models on MMLU (23), Arc Challenge (6), and OpenBookQA (35) zero-shot tasks implemented in Language Model Evaluation Harness (18).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SLoPe: Double-Pruned Sparse Plus Lazy Low-Rank Adapter Pretraining of LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MuTual",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CBQ: Cross-Block Quantization for Large Language Models",
+      "evidence": "The other is reported by the accuracy metric of zero-shot language tasks (Gao et al. (2021)) on PIQA (Bisk et al. (2020a)), HellaSwag (Clark et al. (2018)), ARC (Clark et al. (2018)), Mutual (Cui et al. (2020)) and Ehics (Hendrycks et al. (2020a)). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CBQ: Cross-Block Quantization for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ETHICS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "CBQ: Cross-Block Quantization for Large Language Models",
+      "evidence": "The other is reported by the accuracy metric of zero-shot language tasks (Gao et al. (2021)) on PIQA (Bisk et al. (2020a)), HellaSwag (Clark et al. (2018)), ARC (Clark et al. (2018)), Mutual (Cui et al. (2020)) and Ehics (Hendrycks et al. (2020a)). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "CBQ: Cross-Block Quantization for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WikiText",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+      "evidence": "We measure the zero-evaluation performance of trained GPT models on LAMBADA and WikiText using perplexity scores. (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "COPA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+      "evidence": "\u201cTable 1. Comparison of zero-evaluation performance... COPA \u2191\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RACE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+      "evidence": "\u201cTable 1. Comparison of zero-evaluation performance... RACE \u2191\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WiC",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+      "evidence": "\u201cTable 1. Comparison of zero-evaluation performance... WIC \u2191\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OpenBookQA",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective",
+      "evidence": "evaluate zero-shot performance on seven downstream tasks: BoolQ (Clark et al., 2019), ARC Easy and Challenge (Clark et al., 2018), HellaSwag (Zellers et al., 2019), WinoGrande (Sakaguchi et al., 2021), OpenbookQA (Mihaylov et al., 2018), and PIQA (Bisk et al., 2020) (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 17,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 17,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats this behavior as performance on downstream or language-understanding tasks when the model is given no in-context examples and no task-specific fine-tuning or training. Definitions repeatedly describe answering questions or carrying out tasks such as question answering, commonsense reasoning, reading comprehension, or natural language inference from the prompt alone, and success is usually reported as accuracy on benchmark tasks. A smaller usage treats it as zero-evaluation performance on LAMBADA and WikiText using perplexity scores."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several nearby labels for the same behavior, including zero-shot evaluation, zero-shot reasoning, and zero-shot downstream task performance. The settings are mostly downstream NLP benchmarks, commonly framed as question answering and commonsense reasoning, though some definitions emphasize multiple-choice and yes/no reasoning tasks, reading-comprehension datasets, instruction-only evaluation, or broader natural language tasks. Examples named by papers include HellaSwag, PIQA, ARC, WinoGrande, and MMLU."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 21 measurement instruments. The most common setup is that it is measured by lm-evaluation-harness, with HellaSwag, PIQA, ARC-Challenge, and WinoGrande appearing most often after that, and the remaining links spread across other benchmark tasks. These instruments are usually used to report zero-shot accuracy, sometimes as mean or average accuracy across tasks or runs, as in \"average accuracy over five runs in each table\" (Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models), while one paper measures zero-evaluation performance on LAMBADA and WikiText with perplexity scores."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Across linked constructs, papers connect this behavior to only one construct, Helpfulness. In that usage, helpfulness is measured by zero-shot task performance, with a safety-head ablation study using lm-eval to assess model performance on zero-shot tasks after ablation. No other construct link appears in the papers."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats this behavior as performance on downstream or language-understanding tasks when the model is given no in-context examples and no task-specific fine-tuning or training. Definitions repeatedly describe answering questions or carrying out tasks such as question answering, commonsense reasoning, reading comprehension, or natural language inference from the prompt alone, and success is usually reported as accuracy on benchmark tasks. A smaller usage treats it as zero-evaluation performance on LAMBADA and WikiText using perplexity scores.\n\nVariants. Papers use several nearby labels for the same behavior, including zero-shot evaluation, zero-shot reasoning, and zero-shot downstream task performance. The settings are mostly downstream NLP benchmarks, commonly framed as question answering and commonsense reasoning, though some definitions emphasize multiple-choice and yes/no reasoning tasks, reading-comprehension datasets, instruction-only evaluation, or broader natural language tasks. Examples named by papers include HellaSwag, PIQA, ARC, WinoGrande, and MMLU.\n\nSpace of elicitation and scores. Papers link this behavior to 21 measurement instruments. The most common setup is that it is measured by lm-evaluation-harness, with HellaSwag, PIQA, ARC-Challenge, and WinoGrande appearing most often after that, and the remaining links spread across other benchmark tasks. These instruments are usually used to report zero-shot accuracy, sometimes as mean or average accuracy across tasks or runs, as in \"average accuracy over five runs in each table\" (Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models), while one paper measures zero-evaluation performance on LAMBADA and WikiText with perplexity scores.\n\nWhat it is taken as evidence of. Across linked constructs, papers connect this behavior to only one construct, Helpfulness. In that usage, helpfulness is measured by zero-shot task performance, with a safety-head ablation study using lm-eval to assess model performance on zero-shot tasks after ablation. No other construct link appears in the papers.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "CBQ: Cross-Block Quantization for Large Language Models",
+      "Dynamic Low-Rank Sparse Adaptation for Large Language Models",
+      "Harnessing Diversity for Important Data Selection in Pretraining Large Language Models",
+      "Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity",
+      "OSTQuant: Refining Large Language Model Quantization with Orthogonal and Scaling Transformations for Better Distribution Fitting",
+      "On the Role of Attention Heads in Large Language Model Safety",
+      "SLoPe: Double-Pruned Sparse Plus Lazy Low-Rank Adapter Pretraining of LLMs",
+      "TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters",
+      "Two Sparse Matrices are Better than One: Sparsifying Neural Networks with Double Sparse Factorization"
+    ],
+    "icml25": [
+      "Determining Layer-wise Sparsity for Large Language Models Through a Theoretical Perspective",
+      "GANQ: GPU-Adaptive Non-Uniform Quantization for Large Language Models",
+      "MERIT: Maximum-normalized Element-wise Ratio for Language Model Large-batch Training",
+      "Optimizing Large Language Model Training Using FP4 Quantization",
+      "Quamba2: A Robust and Scalable Post-training Quantization Framework for Selective State Space Models",
+      "Scaling Sparse Feature Circuits For Studying In-Context Learning",
+      "SliM-LLM: Salience-Driven Mixed-Precision Quantization for Large Language Models",
+      "GPTAQ: Efficient Finetuning-Free Quantization for Asymmetric Calibration",
+      "SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression"
+    ],
+    "iclr24": [
+      "A Simple and Effective Pruning Approach for Large Language Models",
+      "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models",
+      "Plug-and-Play: An Efficient Post-training Pruning Method for Large Language Models",
+      "Pushing Mixture of Experts to the Limit: Extremely Parameter Efficient MoE for Instruction Tuning",
+      "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 9,
+    "icml25": 9,
+    "iclr24": 5
+  },
+  "conferences": [
+    "iclr24",
+    "iclr25",
+    "icml25"
+  ]
+}

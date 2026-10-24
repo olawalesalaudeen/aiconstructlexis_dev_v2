@@ -1,0 +1,146 @@
+{
+  "canonical_name": "Task recognition",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Most commonly, papers describe task recognition as identifying the target or underlying task from in-context demonstrations, sometimes adding that the model then solves the task by using knowledge obtained from pre-training. One formulation says the model 'recognizes the target task from demonstrations' and uses prior knowledge from pre-training to solve it. Some authors instead define the construct as differentiating among tasks from input characteristics without explicit task labels, while another frames it as a transformer's latent ability to retrieve a high-level task concept vector from demonstration pairs. Across definitions, the shared theme is recovering task information from examples, but the emphasis varies between observable task identification and solving, unsupervised task differentiation, and latent task-vector retrieval.\n\nSpace of facets. Papers most often place it alongside task learning as a separate part of in-context learning, rather than giving a finer subtype taxonomy. One paper explicitly describes in-context learning as disentangled into task recognition and task learning. The naming is not fully uniform: papers attached to this construct also use the labels task differentiation and task vector retrieval, shifting the focus from distinguishing tasks in an unsupervised manner to retrieving a task concept vector.\n\nSpace of measurement. No measurement instrument is linked to it, and no behavioral indicator is linked to it. The papers do not name a benchmark, human evaluation, LLM-as-a-judge setup, probe, or analysis that measures it; instead, they specify the target behavior in definitional terms, such as recognizing the task from demonstrations, differentiating tasks without explicit labels, or retrieving a task concept vector from demonstration pairs.\n\nLinks. The only linked construct is Task learning. One paper reports a correlation from Task learning to Task recognition, stating that 'the performance of task recognition and task learning changes in the opposite direction.'",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Task recognition",
+    "Task differentiation",
+    "Task vector retrieval"
+  ],
+  "papers": [
+    "Paths Not Taken: Understanding and Mending the Multilingual Factual Recall Pipeline",
+    "TACO: Enhancing Multimodal In-context Learning via Task Mapping-Guided Sequence Configuration",
+    "VisiPruner: Decoding Discontinuous Cross-Modal Dynamics for Efficient Multimodal LLMs",
+    "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+    "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+    "Provable In-Context Vector Arithmetic via Retrieving Task Concepts"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The ability of a language model to identify the target task from in-context demonstrations and then solve it by utilizing its pre-existing knowledge.",
+      "paper": "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+      "original_name": "Task recognition"
+    },
+    {
+      "text": "The model's ability to distinguish between different tasks based on their input characteristics, without relying on explicit task labels.",
+      "paper": "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "original_name": "Task differentiation"
+    },
+    {
+      "text": "The latent ability of a transformer to extract a high-level task concept vector from demonstration pairs during in-context learning, enabling generalization across queries within the same task.",
+      "paper": "Provable In-Context Vector Arithmetic via Retrieving Task Concepts",
+      "original_name": "Task vector retrieval"
+    }
+  ],
+  "definition_count": 3,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Task learning",
+      "other_type": "constructs",
+      "relationship_type": "correlates",
+      "paper": "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning",
+      "evidence": "\u201cthe performance of task recognition and task learning changes in the opposite direction\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "t-SNE visualization",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "evidence": "\"we routed the questions of these tasks and visualized the routing results from the task router in the last laye of LLM with t-SNE\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Catastrophic forgetting",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Understanding Catastrophic Forgetting in Language Models via Implicit Inference",
+      "evidence": "We find that the catastrophic effects of fine-tuning may be explained as shifting task inference and that transforming prompts further from the fine-tuning data can recover pretrained capabilities. (Section 6)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Understanding Catastrophic Forgetting in Language Models via Implicit Inference"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 2,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most commonly, papers describe task recognition as identifying the target or underlying task from in-context demonstrations, sometimes adding that the model then solves the task by using knowledge obtained from pre-training. One formulation says the model 'recognizes the target task from demonstrations' and uses prior knowledge from pre-training to solve it. Some authors instead define the construct as differentiating among tasks from input characteristics without explicit task labels, while another frames it as a transformer's latent ability to retrieve a high-level task concept vector from demonstration pairs. Across definitions, the shared theme is recovering task information from examples, but the emphasis varies between observable task identification and solving, unsupervised task differentiation, and latent task-vector retrieval."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most often place it alongside task learning as a separate part of in-context learning, rather than giving a finer subtype taxonomy. One paper explicitly describes in-context learning as disentangled into task recognition and task learning. The naming is not fully uniform: papers attached to this construct also use the labels task differentiation and task vector retrieval, shifting the focus from distinguishing tasks in an unsupervised manner to retrieving a task concept vector."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "No measurement instrument is linked to it, and no behavioral indicator is linked to it. The papers do not name a benchmark, human evaluation, LLM-as-a-judge setup, probe, or analysis that measures it; instead, they specify the target behavior in definitional terms, such as recognizing the task from demonstrations, differentiating tasks without explicit labels, or retrieving a task concept vector from demonstration pairs."
+    },
+    {
+      "label": "Links.",
+      "text": "The only linked construct is Task learning. One paper reports a correlation from Task learning to Task recognition, stating that 'the performance of task recognition and task learning changes in the opposite direction.'"
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define task recognition as a model's ability to infer or identify the underlying task from in-context demonstrations or unlabeled input characteristics. A few add what follows from that recognition, such as solving the task or generalizing via a learned task concept vector, but these are still describing the same core phenomenon rather than different constructs.",
+    "papers_with_definition": 4,
+    "runs": [
+      "consensus",
+      "consensus",
+      "consensus"
+    ],
+    "split": false
+  },
+  "characterization": "Space of definitions. Most commonly, papers describe task recognition as identifying the target or underlying task from in-context demonstrations, sometimes adding that the model then solves the task by using knowledge obtained from pre-training. One formulation says the model 'recognizes the target task from demonstrations' and uses prior knowledge from pre-training to solve it. Some authors instead define the construct as differentiating among tasks from input characteristics without explicit task labels, while another frames it as a transformer's latent ability to retrieve a high-level task concept vector from demonstration pairs. Across definitions, the shared theme is recovering task information from examples, but the emphasis varies between observable task identification and solving, unsupervised task differentiation, and latent task-vector retrieval.\n\nSpace of facets. Papers most often place it alongside task learning as a separate part of in-context learning, rather than giving a finer subtype taxonomy. One paper explicitly describes in-context learning as disentangled into task recognition and task learning. The naming is not fully uniform: papers attached to this construct also use the labels task differentiation and task vector retrieval, shifting the focus from distinguishing tasks in an unsupervised manner to retrieving a task concept vector.\n\nSpace of measurement. No measurement instrument is linked to it, and no behavioral indicator is linked to it. The papers do not name a benchmark, human evaluation, LLM-as-a-judge setup, probe, or analysis that measures it; instead, they specify the target behavior in definitional terms, such as recognizing the task from demonstrations, differentiating tasks without explicit labels, or retrieving a task concept vector from demonstration pairs.\n\nLinks. The only linked construct is Task learning. One paper reports a correlation from Task learning to Task recognition, stating that 'the performance of task recognition and task learning changes in the opposite direction.'",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Paths Not Taken: Understanding and Mending the Multilingual Factual Recall Pipeline",
+      "TACO: Enhancing Multimodal In-context Learning via Task Mapping-Guided Sequence Configuration",
+      "VisiPruner: Decoding Discontinuous Cross-Modal Dynamics for Efficient Multimodal LLMs"
+    ],
+    "iclr25": [
+      "HMoRA: Making LLMs More Effective with Hierarchical Mixture of LoRA Experts",
+      "Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning"
+    ],
+    "icml25": [
+      "Provable In-Context Vector Arithmetic via Retrieving Task Concepts"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr25": 2,
+    "icml25": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr25",
+    "icml25"
+  ]
+}

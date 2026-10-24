@@ -1,0 +1,502 @@
+{
+  "canonical_name": "Pairwise comparison",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the dominant framing is a head-to-head judgment over two candidate outputs for the same prompt or instruction, where an evaluator selects the better response. Most papers describe a winner or loser choice, often with an explicit tie option, a preference score between the two, or a comparison restricted to a specified dimension. Definitions vary mainly in the criterion used for winning, including better, more correct, more helpful, less wrong, more harmless, or better aligned with a user's information need, and the evaluator may be human or an LLM.\n\nVariants. Papers use several near-synonymous names for the same behavior, including response ranking, preference judgment, pairwise evaluation, pairwise rating, and pairwise response comparison, with other labels used less often. The most common setting compares assistant responses, though smaller lines of work apply the same format to multi-turn conversations, long-form question answering, analyses, plans, corrections, captions, ideas, documents, and score-based item ranking. Almost all work uses two candidates, but one paper describes pairwise matchups among two or more responses when verification scores are close, and some comparisons are framed around a specific dimension such as helpfulness, harmlessness, completeness, safety, or funniness.\n\nSpace of elicitation and scores. Papers link this behavior to 9 instruments. Most commonly, they say it is measured by MT-Bench, AlpacaEval, AlpacaFarm, Arena-Hard, and Chatbot Arena, with 4 other linked instruments mentioned less often. These are mostly benchmark or framework-style evaluations for LLM judging and open-ended instruction following, and papers score the judgments in forms such as human-label accuracy, win-tie-loss rates, pair-wise win-rates, or a preference score between the two candidates.\n\nWhat it is taken as evidence of. Papers link it to 4 constructs, and they do not treat it as evidence of a single construct. One line uses pairwise comparison to measure helpfulness, while another relates it to positional bias, describing evaluators who favor one side in a comparison and even a primacy bias toward the first response. Separate papers also claim causal relationships from pairwise comparison to alignment and to uncertainty: one says presenting response pairs and collecting binary feedback is used to achieve alignment, and another says pairwise comparison mitigates evaluation uncertainty relative to single-answer grading.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Pairwise comparison",
+    "Pairwise rating",
+    "Preference judgment",
+    "LLM judging",
+    "Pairwise preference judgment",
+    "Pairwise preference selection",
+    "Pair-wise preference",
+    "Preference feedback generation",
+    "Binary response comparison",
+    "Arena-style comparison",
+    "Response pair judgment",
+    "LM-as-a-judge",
+    "Pairwise response evaluation",
+    "Response comparison",
+    "Plan verification",
+    "Binary preference selection",
+    "Correction verification",
+    "Pairwise ranking",
+    "Pairwise response comparison",
+    "Preference comparison",
+    "Pairwise preference classification",
+    "Pairwise evaluation"
+  ],
+  "papers": [
+    "CalibraEval: Calibrating Prediction Distribution to Mitigate Selection Bias in LLMs-as-Judges",
+    "Can External Validation Tools Improve Annotation Quality for LLM-as-a-Judge?",
+    "Crowd Comparative Reasoning: Unlocking Comprehensive Evaluations for LLM-as-a-Judge",
+    "Planning-Driven Programming: A Large Language Model Programming Workflow",
+    "Praetor: A Fine-Grained Generative LLM Evaluator with Instance-Level Customizable Evaluation Criteria",
+    "Amulet: Putting Complex Multi-Turn Conversations on the Stand with LLM Juries",
+    "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+    "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+    "Beyond the Surface: Measuring Self-Preference in LLM Judgments",
+    "Direct Judgement Preference Optimization",
+    "Evolving Chinese Spelling Correction with Corrector-Verifier Collaboration",
+    "LCES: Zero-shot Automated Essay Scoring via Pairwise Comparisons Using Large Language Models",
+    "Making VLMs More Robot-Friendly: Self-Critical Distillation of Low-Level Procedural Reasoning",
+    "Model Consistency as a Cheap yet Predictive Proxy for LLM Elo Scores",
+    "PlanGEN: A Multi-Agent Framework for Generating Planning and Reasoning Trajectories for Complex Problem Solving",
+    "RAG-Zeval: Enhancing RAG Responses Evaluator through End-to-End Reasoning and Ranking-Based Reinforcement Learning",
+    "The Ranking Blind Spot: Decision Hijacking in LLM-based Text Ranking",
+    "X-CoT: Explainable Text-to-Video Retrieval via LLM-based Chain-of-Thought Reasoning",
+    "LaMP-QA: A Benchmark for Personalized Long-form Question Answering",
+    "Compositional Preference Models for Aligning LMs",
+    "PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization",
+    "Peering Through Preferences: Unraveling Feedback Acquisition for Aligning Large Language Models",
+    "Distributional Preference Learning: Understanding and Accounting for Hidden Context in RLHF",
+    "Generative Judge for Evaluating Alignment",
+    "Unmasking and Improving Data Credibility: A Study with Datasets for Training Harmless Language Models",
+    "An Empirical Analysis of Uncertainty in Large Language Model Evaluations",
+    "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+    "Beyond correlation: The impact of human uncertainty in measuring the effectiveness of automatic evaluation and LLM-as-a-judge",
+    "CREAM: Consistency Regularized Self-Rewarding Language Models",
+    "DataMan: Data Manager for Pre-training Large Language Models",
+    "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+    "How to Evaluate Reward Models for RLHF",
+    "Improving Data Efficiency via Curating LLM-Driven Rating Systems",
+    "Interpreting Language Reward Models via Contrastive Explanations",
+    "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+    "Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge",
+    "Learning LLM-as-a-Judge for Preference Alignment",
+    "Limits to scalable evaluation at the frontier: LLM as judge won\u2019t beat twice the data",
+    "RMB: Comprehensively benchmarking reward models in LLM alignment",
+    "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+    "RocketEval: Efficient automated LLM evaluation via grading checklist",
+    "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models",
+    "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+    "Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking",
+    "Varying Shades of Wrong: Aligning LLMs with Wrong Answers Only",
+    "Your Weak LLM is Secretly a Strong Teacher for Alignment",
+    "Accelerating Unbiased LLM Evaluation via Synthetic Feedback",
+    "Aligning with Logic: Measuring, Evaluating and Improving Logical Preference Consistency in Large Language Models",
+    "Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment",
+    "Great Models Think Alike and this Undermines AI Oversight",
+    "Investigating Non-Transitivity in LLM-as-a-Judge",
+    "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+    "Loss Functions and Operators Generated by f-Divergences",
+    "Reward Modeling with Ordinal Feedback: Wisdom of the Crowd",
+    "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification",
+    "Tuning LLM Judge Design Decisions for 1/1000 of the Cost",
+    "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation",
+    "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+    "CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis",
+    "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+    "Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning"
+  ],
+  "paper_count": 61,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Comparing two model-generated responses and selecting a winner, loser, or tie.",
+      "paper": "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models",
+      "original_name": "Pairwise comparison"
+    },
+    {
+      "text": "Selecting which of two candidate responses is better in a comparative judgment setting.",
+      "paper": "Beyond the Surface: Measuring Self-Preference in LLM Judgments",
+      "original_name": "Response ranking"
+    },
+    {
+      "text": "A comparison procedure in which documents are judged relative to one another rather than rated independently.",
+      "paper": "DataMan: Data Manager for Pre-training Large Language Models",
+      "original_name": "Pairwise rating"
+    },
+    {
+      "text": "The observable task of comparing two candidate answers to a prompt and selecting the preferred one.",
+      "paper": "Learning LLM-as-a-Judge for Preference Alignment",
+      "original_name": "Preference judgment"
+    },
+    {
+      "text": "Using an LLM as a judge to compare model responses and produce win-tie-loss style judgments.",
+      "paper": "Improving Data Efficiency via Curating LLM-Driven Rating Systems",
+      "original_name": "LLM judging"
+    },
+    {
+      "text": "Selecting one of two model outputs as better according to explicit or implicit criteria.",
+      "paper": "Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking",
+      "original_name": "Pairwise preference judgment"
+    },
+    {
+      "text": "Choosing one of two responses as preferred in a head-to-head comparison.",
+      "paper": "How to Evaluate Reward Models for RLHF",
+      "original_name": "Pairwise preference selection"
+    },
+    {
+      "text": "Choosing a winner between two candidate responses or models.",
+      "paper": "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "original_name": "Pair-wise preference"
+    },
+    {
+      "text": "The observable task of providing a comparative judgment between two responses to a given prompt, indicating which one is preferred.",
+      "paper": "Your Weak LLM is Secretly a Strong Teacher for Alignment",
+      "original_name": "Preference feedback generation"
+    },
+    {
+      "text": "Choosing one of two candidate responses to the same prompt as the preferred response.",
+      "paper": "Interpreting Language Reward Models via Contrastive Explanations",
+      "original_name": "Binary response comparison"
+    },
+    {
+      "text": "Comparing two model responses to the same prompt and selecting which response is better.",
+      "paper": "Limits to scalable evaluation at the frontier: LLM as judge won\u2019t beat twice the data",
+      "original_name": "Arena-style comparison"
+    },
+    {
+      "text": "Selecting which of two candidate responses is better or more correct, optionally with a tie option.",
+      "paper": "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "original_name": "Response pair judgment"
+    },
+    {
+      "text": "The task of using a language model to evaluate and select the better of two candidate responses for a given prompt or question.",
+      "paper": "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+      "original_name": "LM-as-a-judge"
+    },
+    {
+      "text": "The task of taking an instruction and a pair of model-generated responses as input and producing a judgment indicating which response is better.",
+      "paper": "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+      "original_name": "Pairwise response evaluation"
+    },
+    {
+      "text": "The behavior of directly comparing two or more candidate responses to determine which is correct, particularly when verification scores are close.",
+      "paper": "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification",
+      "original_name": "Response comparison"
+    },
+    {
+      "text": "Comparing two versions of a plan and selecting the one judged to be superior in terms of correctness, completeness, or safety.",
+      "paper": "Making VLMs More Robot-Friendly: Self-Critical Distillation of Low-Level Procedural Reasoning",
+      "original_name": "Plan verification"
+    },
+    {
+      "text": "The task of comparing a pair of model-generated responses and choosing the one that is better according to some criteria.",
+      "paper": "Great Models Think Alike and this Undermines AI Oversight",
+      "original_name": "Binary preference selection"
+    },
+    {
+      "text": "Judging whether a proposed correction is better than the original sentence or whether both versions are incorrect.",
+      "paper": "Evolving Chinese Spelling Correction with Corrector-Verifier Collaboration",
+      "original_name": "Correction verification"
+    },
+    {
+      "text": "The task of determining the relative order of two items based on their assigned scores.",
+      "paper": "Loss Functions and Operators Generated by f-Divergences",
+      "original_name": "Pairwise ranking"
+    },
+    {
+      "text": "The task of evaluating two model-generated responses to the same query and determining which one is better, or if they are of equal quality.",
+      "paper": "Generative Judge for Evaluating Alignment",
+      "original_name": "Pairwise response comparison"
+    },
+    {
+      "text": "The observable act of selecting one of two model outputs as more preferred, based on criteria such as helpfulness or harmlessness, used to train reward models.",
+      "paper": "Distributional Preference Learning: Understanding and Accounting for Hidden Context in RLHF",
+      "original_name": "Preference comparison"
+    },
+    {
+      "text": "The task of classifying which of two text samples (e.g., conversational responses) is preferable according to a specific criterion, such as harmlessness.",
+      "paper": "Unmasking and Improving Data Credibility: A Study with Datasets for Training Harmless Language Models",
+      "original_name": "Pairwise preference classification"
+    },
+    {
+      "text": "The task where an evaluator model is presented with two candidate outputs for a given instruction and must choose the better one.",
+      "paper": "CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis",
+      "original_name": "Pairwise evaluation"
+    }
+  ],
+  "definition_count": 23,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Positional bias",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "evidence": "Positional bias (Wang et al., 2024a; Zheng et al., 2023; Wu & Aji, 2023; Chen et al., 2024) occurs when human or LLM evaluators tend to favor one side in a pairwise comparison, regardless of answer quality. (Section 4.5)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+          "Eliminating Position Bias of Language Models: A Mechanistic Approach"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "evidence": "\u201copen-ended instruction-following benchmarks (MT-Bench, Alpacafarm, and LLMBar), which primarily rely on pairwise comparison task.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Uncertainty",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "An Empirical Analysis of Uncertainty in Large Language Model Evaluations",
+      "evidence": "Compared to single-answer grading, pairwise comparison reduces the influence of subjective bias by directly comparing the relative merits of model outputs, thereby mitigating the uncertainty in evaluation to some extent. (Section 4.5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "An Empirical Analysis of Uncertainty in Large Language Model Evaluations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Your Weak LLM is Secretly a Strong Teacher for Alignment",
+      "evidence": "A key recipe to achieve alignment involves presenting pairs of responses and collecting binary feedback (e.g., preferred, less preferred) based on the comparative quality of these responses. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Your Weak LLM is Secretly a Strong Teacher for Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "RewardBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+      "evidence": "LM-as-a-judge. We benchmark our method on 23 datasets in the RewardBench4 (Lambert et al., 2024b) that can be categorized into four types: Chat, Chat-Hard, Safety, and Reasoning.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Eliminating Position Bias of Language Models: A Mechanistic Approach"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "LLM-as-a-judge",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Varying Shades of Wrong: Aligning LLMs with Wrong Answers Only",
+      "evidence": "We explore two typical LLM-as-a-judge methods: Pairwise comparison (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Varying Shades of Wrong: Aligning LLMs with Wrong Answers Only"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlpacaFarm",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "evidence": "\u201copen-ended instruction-following benchmarks (MT-Bench, Alpacafarm, and LLMBar), which primarily rely on pairwise comparison task.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LLMBar",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "evidence": "\u201copen-ended instruction-following benchmarks (MT-Bench, Alpacafarm, and LLMBar), which primarily rely on pairwise comparison task.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chatbot Arena",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "evidence": "LMSYS Chatbot Arena leverages (240,000) crowdsourced questions and (90,000) crowdsourced human votes to construct pair-wise win-rates",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "AlpacaEval",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "Investigating Non-Transitivity in LLM-as-a-Judge",
+      "evidence": "AlpacaEval is a popular pairwise comparison framework that employs GPT-4-Turbo as the fixed baseline model. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Investigating Non-Transitivity in LLM-as-a-Judge"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Error localization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification",
+      "evidence": "\"Disagreements between candidate solutions strongly signal the potential locations of their errors.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 11,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 7,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the dominant framing is a head-to-head judgment over two candidate outputs for the same prompt or instruction, where an evaluator selects the better response. Most papers describe a winner or loser choice, often with an explicit tie option, a preference score between the two, or a comparison restricted to a specified dimension. Definitions vary mainly in the criterion used for winning, including better, more correct, more helpful, less wrong, more harmless, or better aligned with a user's information need, and the evaluator may be human or an LLM."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-synonymous names for the same behavior, including response ranking, preference judgment, pairwise evaluation, pairwise rating, and pairwise response comparison, with other labels used less often. The most common setting compares assistant responses, though smaller lines of work apply the same format to multi-turn conversations, long-form question answering, analyses, plans, corrections, captions, ideas, documents, and score-based item ranking. Almost all work uses two candidates, but one paper describes pairwise matchups among two or more responses when verification scores are close, and some comparisons are framed around a specific dimension such as helpfulness, harmlessness, completeness, safety, or funniness."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 9 instruments. Most commonly, they say it is measured by MT-Bench, AlpacaEval, AlpacaFarm, Arena-Hard, and Chatbot Arena, with 4 other linked instruments mentioned less often. These are mostly benchmark or framework-style evaluations for LLM judging and open-ended instruction following, and papers score the judgments in forms such as human-label accuracy, win-tie-loss rates, pair-wise win-rates, or a preference score between the two candidates."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to 4 constructs, and they do not treat it as evidence of a single construct. One line uses pairwise comparison to measure helpfulness, while another relates it to positional bias, describing evaluators who favor one side in a comparison and even a primacy bias toward the first response. Separate papers also claim causal relationships from pairwise comparison to alignment and to uncertainty: one says presenting response pairs and collecting binary feedback is used to achieve alignment, and another says pairwise comparison mitigates evaluation uncertainty relative to single-answer grading."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, the dominant framing is a head-to-head judgment over two candidate outputs for the same prompt or instruction, where an evaluator selects the better response. Most papers describe a winner or loser choice, often with an explicit tie option, a preference score between the two, or a comparison restricted to a specified dimension. Definitions vary mainly in the criterion used for winning, including better, more correct, more helpful, less wrong, more harmless, or better aligned with a user's information need, and the evaluator may be human or an LLM.\n\nVariants. Papers use several near-synonymous names for the same behavior, including response ranking, preference judgment, pairwise evaluation, pairwise rating, and pairwise response comparison, with other labels used less often. The most common setting compares assistant responses, though smaller lines of work apply the same format to multi-turn conversations, long-form question answering, analyses, plans, corrections, captions, ideas, documents, and score-based item ranking. Almost all work uses two candidates, but one paper describes pairwise matchups among two or more responses when verification scores are close, and some comparisons are framed around a specific dimension such as helpfulness, harmlessness, completeness, safety, or funniness.\n\nSpace of elicitation and scores. Papers link this behavior to 9 instruments. Most commonly, they say it is measured by MT-Bench, AlpacaEval, AlpacaFarm, Arena-Hard, and Chatbot Arena, with 4 other linked instruments mentioned less often. These are mostly benchmark or framework-style evaluations for LLM judging and open-ended instruction following, and papers score the judgments in forms such as human-label accuracy, win-tie-loss rates, pair-wise win-rates, or a preference score between the two candidates.\n\nWhat it is taken as evidence of. Papers link it to 4 constructs, and they do not treat it as evidence of a single construct. One line uses pairwise comparison to measure helpfulness, while another relates it to positional bias, describing evaluators who favor one side in a comparison and even a primacy bias toward the first response. Separate papers also claim causal relationships from pairwise comparison to alignment and to uncertainty: one says presenting response pairs and collecting binary feedback is used to achieve alignment, and another says pairwise comparison mitigates evaluation uncertainty relative to single-answer grading.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "CalibraEval: Calibrating Prediction Distribution to Mitigate Selection Bias in LLMs-as-Judges",
+      "Can External Validation Tools Improve Annotation Quality for LLM-as-a-Judge?",
+      "Crowd Comparative Reasoning: Unlocking Comprehensive Evaluations for LLM-as-a-Judge",
+      "Planning-Driven Programming: A Large Language Model Programming Workflow",
+      "Praetor: A Fine-Grained Generative LLM Evaluator with Instance-Level Customizable Evaluation Criteria"
+    ],
+    "emnlp25": [
+      "Amulet: Putting Complex Multi-Turn Conversations on the Stand with LLM Juries",
+      "Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction",
+      "Are Checklists Really Useful for Automatic Evaluation of Generative Tasks?",
+      "Beyond the Surface: Measuring Self-Preference in LLM Judgments",
+      "Direct Judgement Preference Optimization",
+      "Evolving Chinese Spelling Correction with Corrector-Verifier Collaboration",
+      "LCES: Zero-shot Automated Essay Scoring via Pairwise Comparisons Using Large Language Models",
+      "Making VLMs More Robot-Friendly: Self-Critical Distillation of Low-Level Procedural Reasoning",
+      "Model Consistency as a Cheap yet Predictive Proxy for LLM Elo Scores",
+      "PlanGEN: A Multi-Agent Framework for Generating Planning and Reasoning Trajectories for Complex Problem Solving",
+      "RAG-Zeval: Enhancing RAG Responses Evaluator through End-to-End Reasoning and Ranking-Based Reinforcement Learning",
+      "The Ranking Blind Spot: Decision Hijacking in LLM-based Text Ranking",
+      "X-CoT: Explainable Text-to-Video Retrieval via LLM-based Chain-of-Thought Reasoning",
+      "LaMP-QA: A Benchmark for Personalized Long-form Question Answering"
+    ],
+    "iclr24": [
+      "Compositional Preference Models for Aligning LMs",
+      "PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization",
+      "Peering Through Preferences: Unraveling Feedback Acquisition for Aligning Large Language Models",
+      "Distributional Preference Learning: Understanding and Accounting for Hidden Context in RLHF",
+      "Generative Judge for Evaluating Alignment",
+      "Unmasking and Improving Data Credibility: A Study with Datasets for Training Harmless Language Models"
+    ],
+    "iclr25": [
+      "An Empirical Analysis of Uncertainty in Large Language Model Evaluations",
+      "BadJudge: Backdoor Vulnerabilities of LLM-As-A-Judge",
+      "Beyond correlation: The impact of human uncertainty in measuring the effectiveness of automatic evaluation and LLM-as-a-judge",
+      "CREAM: Consistency Regularized Self-Rewarding Language Models",
+      "DataMan: Data Manager for Pre-training Large Language Models",
+      "Eliminating Position Bias of Language Models: A Mechanistic Approach",
+      "How to Evaluate Reward Models for RLHF",
+      "Improving Data Efficiency via Curating LLM-Driven Rating Systems",
+      "Interpreting Language Reward Models via Contrastive Explanations",
+      "JudgeBench: A Benchmark for Evaluating LLM-Based Judges",
+      "Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge",
+      "Learning LLM-as-a-Judge for Preference Alignment",
+      "Limits to scalable evaluation at the frontier: LLM as judge won\u2019t beat twice the data",
+      "RMB: Comprehensively benchmarking reward models in LLM alignment",
+      "RevisEval: Improving LLM-as-a-Judge via Response-Adapted References",
+      "RocketEval: Efficient automated LLM evaluation via grading checklist",
+      "SaMer: A Scenario-aware Multi-dimensional Evaluator for Large Language Models",
+      "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+      "Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking",
+      "Varying Shades of Wrong: Aligning LLMs with Wrong Answers Only",
+      "Your Weak LLM is Secretly a Strong Teacher for Alignment"
+    ],
+    "icml25": [
+      "Accelerating Unbiased LLM Evaluation via Synthetic Feedback",
+      "Aligning with Logic: Measuring, Evaluating and Improving Logical Preference Consistency in Large Language Models",
+      "Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment",
+      "Great Models Think Alike and this Undermines AI Oversight",
+      "Investigating Non-Transitivity in LLM-as-a-Judge",
+      "Learning to Plan & Reason for Evaluation with Thinking-LLM-as-a-Judge",
+      "Loss Functions and Operators Generated by f-Divergences",
+      "Reward Modeling with Ordinal Feedback: Wisdom of the Crowd",
+      "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification",
+      "Tuning LLM Judge Design Decisions for 1/1000 of the Cost"
+    ],
+    "naacl25": [
+      "MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation",
+      "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+      "CAMIEval: Enhancing NLG Evaluation through Multidimensional Comparative Instruction-Following Analysis"
+    ],
+    "neurips24": [
+      "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "Humor in AI: Massive Scale Crowd-Sourced Preferences and Benchmarks for Cartoon Captioning"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 5,
+    "emnlp25": 14,
+    "iclr24": 6,
+    "iclr25": 21,
+    "icml25": 10,
+    "naacl25": 3,
+    "neurips24": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

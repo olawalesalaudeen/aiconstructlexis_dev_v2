@@ -1,0 +1,137 @@
+{
+  "canonical_name": "LongBench v2",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the papers, the prevailing description is a multiple-choice benchmark for long contexts, with contexts ranging from 8K to 2M words. One fuller account specifies 503 multiple-choice questions spanning six tasks, single-document QA, multi-document QA, long in-context learning, long dialogue history understanding, code repository understanding, and long structured data understanding, and presents it as designed to evaluate deep long-context comprehension and reasoning, while a shorter description emphasizes its use for assessing long-context performance and efficiency.\n\nWhat it is claimed to measure. Across the papers, it is linked to one construct and two behavioral indicators. The only linked construct is long-context reasoning, and the linked behavioral indicators are document question answering and text summarization; one paper describes it as a benchmark for challenging long-context question-answering, another uses it for long-context reasoning, and another groups it with datasets that primarily assess retrieval and summarization rather than complex reasoning.\n\nSpace of uses. No other measurement instrument is linked to it. In use, papers position it as a long-context evaluation benchmark: one study reports accuracy and throughput on LongBench v2 (Long) across different retrieval context lengths, and the same study applies middle truncation to keep the context within 128K tokens; another describes the benchmark as broad in scope and difficult.\n\nConcerns raised. One paper argues that LongBench v2, together with other long-context evaluation datasets, primarily assesses retrieval and summarization rather than complex reasoning.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "LongBench v2"
+  ],
+  "papers": [
+    "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+    "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+    "SYNC: A Synthetic Long-Context Understanding Benchmark for Controlled Comparisons of Model Capabilities",
+    "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?",
+    "Graph World Model",
+    "NExtLong: Toward Effective Long-Context Training without Long Documents",
+    "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding"
+  ],
+  "paper_count": 7,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark of multi-choice tasks across long context lengths, used here to assess long-context performance and efficiency.",
+      "paper": "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding",
+      "original_name": "LongBench v2"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Retrieval-augmented generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Graph World Model",
+      "evidence": "We utilize LongBench v2 (Bai et al., 2024), a benchmark designed for challenging long-context question-answering (in Appendix A.5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Graph World Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Document question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Graph World Model",
+      "evidence": "\u201cWe utilize LongBench v2 (Bai et al., 2024), a benchmark designed for challenging long-context question-answering\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Graph World Model"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text summarization",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?",
+      "evidence": "A significant portion of long-context evaluation datasets, including RULER (Hsieh et al., 2024b), LongBench (Bai et al., 2024), LongBench v2 (Bai et al., 2025), and LOFT (Lee et al., 2024), primarily assess retrieval and summarization rather than complex reasoning. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Long-context reasoning",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+      "evidence": "For long-context reasoning on LongBench v2 (R2 = 70.26%), d_ffn overwhelmingly dominates, indicating that wider FFNs are essential for handling extended contexts effectively.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 4,
+  "incoming_relationship_count": 4,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the papers, the prevailing description is a multiple-choice benchmark for long contexts, with contexts ranging from 8K to 2M words. One fuller account specifies 503 multiple-choice questions spanning six tasks, single-document QA, multi-document QA, long in-context learning, long dialogue history understanding, code repository understanding, and long structured data understanding, and presents it as designed to evaluate deep long-context comprehension and reasoning, while a shorter description emphasizes its use for assessing long-context performance and efficiency."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Across the papers, it is linked to one construct and two behavioral indicators. The only linked construct is long-context reasoning, and the linked behavioral indicators are document question answering and text summarization; one paper describes it as a benchmark for challenging long-context question-answering, another uses it for long-context reasoning, and another groups it with datasets that primarily assess retrieval and summarization rather than complex reasoning."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "No other measurement instrument is linked to it. In use, papers position it as a long-context evaluation benchmark: one study reports accuracy and throughput on LongBench v2 (Long) across different retrieval context lengths, and the same study applies middle truncation to keep the context within 128K tokens; another describes the benchmark as broad in scope and difficult."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper argues that LongBench v2, together with other long-context evaluation datasets, primarily assesses retrieval and summarization rather than complex reasoning."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the papers, the prevailing description is a multiple-choice benchmark for long contexts, with contexts ranging from 8K to 2M words. One fuller account specifies 503 multiple-choice questions spanning six tasks, single-document QA, multi-document QA, long in-context learning, long dialogue history understanding, code repository understanding, and long structured data understanding, and presents it as designed to evaluate deep long-context comprehension and reasoning, while a shorter description emphasizes its use for assessing long-context performance and efficiency.\n\nWhat it is claimed to measure. Across the papers, it is linked to one construct and two behavioral indicators. The only linked construct is long-context reasoning, and the linked behavioral indicators are document question answering and text summarization; one paper describes it as a benchmark for challenging long-context question-answering, another uses it for long-context reasoning, and another groups it with datasets that primarily assess retrieval and summarization rather than complex reasoning.\n\nSpace of uses. No other measurement instrument is linked to it. In use, papers position it as a long-context evaluation benchmark: one study reports accuracy and throughput on LongBench v2 (Long) across different retrieval context lengths, and the same study applies middle truncation to keep the context within 128K tokens; another describes the benchmark as broad in scope and difficult.\n\nConcerns raised. One paper argues that LongBench v2, together with other long-context evaluation datasets, primarily assesses retrieval and summarization rather than complex reasoning.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning",
+      "From Parameters to Performance: A Data-Driven Study on LLM Structure and Development",
+      "SYNC: A Synthetic Long-Context Understanding Benchmark for Controlled Comparisons of Model Capabilities"
+    ],
+    "icml25": [
+      "GSM-$\u221e$: How Do your LLMs Behave over Infinitely Increasing Reasoning Complexity and Context Length?",
+      "Graph World Model",
+      "NExtLong: Toward Effective Long-Context Training without Long Documents",
+      "RAPID: Long-Context Inference with Retrieval-Augmented Speculative Decoding"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "icml25": 4
+  },
+  "conferences": [
+    "emnlp25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "canonical_name": "Code summarization",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Most papers describe it as generating a concise natural-language description, summary, or specification for a given program, function, code snippet, or code block, aimed at capturing functionality, intent, or behavior. Some authors instead describe it as documentation that explains what the code does and how it works, including side effects and special cases, and a minority framing also allows symbolic summaries such as function names. Success is usually described in terms of accurately describing the code, with some papers asking for a short sentence, a docstring, or up to three sentences; a paper defines hallucination in this task as summaries that do not accurately capture the code's intent and implementation details.\n\nVariants. Papers study several nearby variants under different names: code documentation, docstring completion, code commenting, function name prediction, and PL-to-NL generation. The settings include IR functions, source code snippets, incomplete code snippets, and existing source code, and some work asks for summaries after code generation. Function name prediction is presented as predicting a symbolic summary of function behavior, while other variants ask for explanatory comments or docstrings.\n\nSpace of elicitation and scores. Elicitation is usually by prompting the model to produce a short natural-language description or docstring for code, for example \"write a short sentence to describe the function of the incomplete code snippet\" or \"summarize pl0 into a new docstring nl1.\" Papers link it to 1 measurement instrument, CodeXGLUE, which is used as a benchmark for this task; papers do not name another instrument.\n\nWhat it is taken as evidence of. Papers link it to 1 construct, semantic understanding. A paper says summarization \"serves as a proxy\" for whether a model can capture functional intent, behavior, and output, linking semantic understanding and code summarization through a measured_by relation. Papers do not connect it to another construct.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Linguistic description generation",
+    "Code documentation",
+    "Code summarization",
+    "Docstring completion",
+    "Code commenting"
+  ],
+  "papers": [
+    "ETF: An Entity Tracing Framework for Hallucination Detection in Code Summaries",
+    "GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding",
+    "LEANCODE: Understanding Models Better for Code Simplification of Pre-trained Large Language Models",
+    "SPE Attention: Making Attention Equivariant to Semantic-Preserving Permutation for Code Processing",
+    "UniDebugger: Hierarchical Multi-Agent Framework for Unified Software Debugging",
+    "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain",
+    "Efficient Automated Circuit Discovery in Transformers using Contextual Decomposition",
+    "Can Large Language Models Understand Intermediate Representations in Compilers?",
+    "EffiCoder: Enhancing Code Generation in Large Language Models through Efficiency-Aware Fine-tuning",
+    "Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design",
+    "Position: Future Research and Challenges Remain Towards AI for Software Engineering",
+    "CodexGraph: Bridging Large Language Models and Code Repositories via Code Graph Databases",
+    "Mastering the Craft of Data Synthesis for CodeLLMs"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable action of generating a natural language summary of a given piece of code that describes its functionality.",
+      "paper": "Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design",
+      "original_name": "Linguistic description generation"
+    },
+    {
+      "text": "Writing documentation that explains what code does and how it works, including side effects and special cases.",
+      "paper": "Position: Future Research and Challenges Remain Towards AI for Software Engineering",
+      "original_name": "Code documentation"
+    },
+    {
+      "text": "The observable behavior of producing natural language or symbolic summaries (such as function names) that capture the intent or behavior of a code block.",
+      "paper": "SPE Attention: Making Attention Equivariant to Semantic-Preserving Permutation for Code Processing",
+      "original_name": "Code summarization"
+    },
+    {
+      "text": "A code-related task that involves generating a documentation string (docstring) for a given function or code block.",
+      "paper": "Efficient Automated Circuit Discovery in Transformers using Contextual Decomposition",
+      "original_name": "Docstring completion"
+    },
+    {
+      "text": "The task of generating explanatory comments or documentation for existing source code.",
+      "paper": "CodexGraph: Bridging Large Language Models and Code Repositories via Code Graph Databases",
+      "original_name": "Code commenting"
+    }
+  ],
+  "definition_count": 5,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "ETF: An Entity Tracing Framework for Hallucination Detection in Code Summaries",
+      "evidence": "in the context of code summarisation, hallucination can be defined as a condition in which the generated summary does not accurately capture the intent and implementation details of the given input code. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "ETF: An Entity Tracing Framework for Hallucination Detection in Code Summaries"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CodeXGLUE",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding",
+      "evidence": "for the other four tasks, we use the CodeXGLUE (Lu et al., 2021) benchmark. Among these tasks\u2019 data, we downsampled the original data of code summarization and clone detection due to computation constraints... (Section 4.1.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Semantic understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Can Large Language Models Understand Intermediate Representations in Compilers?",
+      "evidence": "This task complements Task 2 by shifting the focus toward semantic understanding. In this setting, LLMs are required to generate concise natural language summaries of IR functions. ... Summarization serves as a proxy to evaluate whether the model can accurately capture functional intent, behavior, and output\u2014ultimately revealing its capacity to reason about function-level semantics. (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Can Large Language Models Understand Intermediate Representations in Compilers?"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Most papers describe it as generating a concise natural-language description, summary, or specification for a given program, function, code snippet, or code block, aimed at capturing functionality, intent, or behavior. Some authors instead describe it as documentation that explains what the code does and how it works, including side effects and special cases, and a minority framing also allows symbolic summaries such as function names. Success is usually described in terms of accurately describing the code, with some papers asking for a short sentence, a docstring, or up to three sentences; a paper defines hallucination in this task as summaries that do not accurately capture the code's intent and implementation details."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several nearby variants under different names: code documentation, docstring completion, code commenting, function name prediction, and PL-to-NL generation. The settings include IR functions, source code snippets, incomplete code snippets, and existing source code, and some work asks for summaries after code generation. Function name prediction is presented as predicting a symbolic summary of function behavior, while other variants ask for explanatory comments or docstrings."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Elicitation is usually by prompting the model to produce a short natural-language description or docstring for code, for example \"write a short sentence to describe the function of the incomplete code snippet\" or \"summarize pl0 into a new docstring nl1.\" Papers link it to 1 measurement instrument, CodeXGLUE, which is used as a benchmark for this task; papers do not name another instrument."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers link it to 1 construct, semantic understanding. A paper says summarization \"serves as a proxy\" for whether a model can capture functional intent, behavior, and output, linking semantic understanding and code summarization through a measured_by relation. Papers do not connect it to another construct."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Most papers describe it as generating a concise natural-language description, summary, or specification for a given program, function, code snippet, or code block, aimed at capturing functionality, intent, or behavior. Some authors instead describe it as documentation that explains what the code does and how it works, including side effects and special cases, and a minority framing also allows symbolic summaries such as function names. Success is usually described in terms of accurately describing the code, with some papers asking for a short sentence, a docstring, or up to three sentences; a paper defines hallucination in this task as summaries that do not accurately capture the code's intent and implementation details.\n\nVariants. Papers study several nearby variants under different names: code documentation, docstring completion, code commenting, function name prediction, and PL-to-NL generation. The settings include IR functions, source code snippets, incomplete code snippets, and existing source code, and some work asks for summaries after code generation. Function name prediction is presented as predicting a symbolic summary of function behavior, while other variants ask for explanatory comments or docstrings.\n\nSpace of elicitation and scores. Elicitation is usually by prompting the model to produce a short natural-language description or docstring for code, for example \"write a short sentence to describe the function of the incomplete code snippet\" or \"summarize pl0 into a new docstring nl1.\" Papers link it to 1 measurement instrument, CodeXGLUE, which is used as a benchmark for this task; papers do not name another instrument.\n\nWhat it is taken as evidence of. Papers link it to 1 construct, semantic understanding. A paper says summarization \"serves as a proxy\" for whether a model can capture functional intent, behavior, and output, linking semantic understanding and code summarization through a measured_by relation. Papers do not connect it to another construct.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "SPE Attention: Making Attention Equivariant to Semantic-Preserving Permutation for Code Processing",
+      "UniDebugger: Hierarchical Multi-Agent Framework for Unified Software Debugging"
+    ],
+    "iclr25": [
+      "Efficient Automated Circuit Discovery in Transformers using Contextual Decomposition"
+    ],
+    "icml25": [
+      "Can Large Language Models Understand Intermediate Representations in Compilers?",
+      "EffiCoder: Enhancing Code Generation in Large Language Models through Efficiency-Aware Fine-tuning",
+      "Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design",
+      "Position: Future Research and Challenges Remain Towards AI for Software Engineering"
+    ],
+    "acl25": [
+      "ETF: An Entity Tracing Framework for Hallucination Detection in Code Summaries",
+      "GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding",
+      "LEANCODE: Understanding Models Better for Code Simplification of Pre-trained Large Language Models"
+    ],
+    "iclr24": [
+      "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain"
+    ],
+    "naacl25": [
+      "CodexGraph: Bridging Large Language Models and Code Repositories via Code Graph Databases",
+      "Mastering the Craft of Data Synthesis for CodeLLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 2,
+    "iclr25": 1,
+    "icml25": 4,
+    "acl25": 3,
+    "iclr24": 1,
+    "naacl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25"
+  ]
+}

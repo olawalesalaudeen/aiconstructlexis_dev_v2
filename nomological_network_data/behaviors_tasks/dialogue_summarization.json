@@ -1,0 +1,216 @@
+{
+  "canonical_name": "Dialogue summarization",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the surveyed work, dialogue summarization is most commonly framed as producing a concise summary from a conversation or multi-turn dialogue. Definitions repeatedly emphasize concision, while one definition also requires accuracy and another says the summary should capture the conversation's salient semantics and key information, specifying the output as a sequence of summary sentences. A smaller line of work uses the summary more narrowly, prompting a summary of dialogue context that highlights information indicative of errors in the last agent utterance. As one paper puts it, the objective is to generate a summary that \"succinctly captures the salient semantics and key information conveyed throughout the conversation\" (PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization).\n\nVariants. Papers use several near-synonymous task names, including dialogue summarization, dialog summarization, dialog summary, and conversational summarization. The studied settings range from general dialogue transcripts to clinical interactions, especially pre-consultation and patient-doctor conversations that culminate in a brief medical report; another paper instead prompts a summary of dialogue context for conversational AI error discovery. SAMSum summarization is a recurring named setting, and one benchmark places the task in zero-shot abstractive summarization of complex inputs such as dialogues and meetings.\n\nSpace of elicitation and scores. Papers link this behavior to 5 measurement instruments. DialogSum is the most frequently linked instrument; other linked instruments are Human evaluation, PoSum-Bench, QMSum, and SAMSum. These are mostly datasets or benchmarks for dialogue summarization, while one paper also evaluates generated summaries with human evaluation via CrowdWorks.\n\nWhat it is taken as evidence of. Papers do not link dialogue summarization to any construct, so the linked relations do not specify what construct it is evidence of. The only other linked behavior is Hallucination: one paper reports dialogue summarization is related to hallucination, describing dialogue summaries that \"fabricate features not present in the source content.\"",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Dialogue summarization",
+    "Dialog summary",
+    "Conversational summarization",
+    "Dialog summarization"
+  ],
+  "papers": [
+    "Paired by the Teacher: Turning Unpaired Data into High-Fidelity Pairs for Low-Resource Text Generation",
+    "PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization",
+    "Refining Text Generation for Realistic Conversational Recommendation via Direct Preference Optimization",
+    "Towards Automated Error Discovery: A Study in Conversational AI",
+    "V-VAE: A Variational Auto Encoding Framework Towards Fine-Grained Control over Human-Like Chat",
+    "Privacy-Preserving In-Context Learning for Large Language Models",
+    "The Hedgehog & the Porcupine: Expressive Linear Attentions with Softmax Mimicry",
+    "Progressive Mixed-Precision Decoding for Efficient LLM Inference",
+    "STAFF: Speculative Coreset Selection for Task-Specific Fine-tuning",
+    "Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling",
+    "Aligner: Efficient Alignment by Learning to Correct",
+    "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+    "MedJourney: Benchmark and Evaluation of Large Language Models over Patient Clinical Journey"
+  ],
+  "paper_count": 13,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of creating a concise summary from a multi-turn conversation, such as a pre-consultation dialogue or a patient-doctor interaction.",
+      "paper": "MedJourney: Benchmark and Evaluation of Large Language Models over Patient Clinical Journey",
+      "original_name": "Dialogue summarization"
+    },
+    {
+      "text": "The task of generating a concise and accurate summary from a given conversation or dialogue.",
+      "paper": "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "original_name": "Dialog summary"
+    },
+    {
+      "text": "Generating a concise summary of a multi-turn dialogue that captures key information from the interaction, observable as a sequence of summary sentences produced from a conversation input.",
+      "paper": "PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization",
+      "original_name": "Conversational summarization"
+    },
+    {
+      "text": "The task of generating a concise summary of a given conversation or dialog.",
+      "paper": "Privacy-Preserving In-Context Learning for Large Language Models",
+      "original_name": "Dialog summarization"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DialogSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Aligner: Efficient Alignment by Learning to Correct",
+      "evidence": "DialogSum is a large-scale dialogue summarization dataset, consisting of 13,460 dialogues with corresponding manually labeled summaries and topics. (Appendix B.1)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Aligner: Efficient Alignment by Learning to Correct"
+        ],
+        "iclr25": [
+          "Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling",
+          "Progressive Mixed-Precision Decoding for Efficient LLM Inference",
+          "STAFF: Speculative Coreset Selection for Task-Specific Fine-tuning"
+        ],
+        "acl25": [
+          "Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SAMSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ResQ: Mixed-Precision Quantization of Large Language Models with Low-Rank Residuals",
+      "evidence": "dialogue summarization: samsum (Gliwa et al., 2019) and qmsum (Zhong et al., 2021) from LongBench (Bai et al., 2024)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ResQ: Mixed-Precision Quantization of Large Language Models with Low-Rank Residuals"
+        ],
+        "naacl25": [
+          "Towards Sustainable NLP: Insights from Benchmarking Inference Energy in Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "QMSum",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ResQ: Mixed-Precision Quantization of Large Language Models with Low-Rank Residuals",
+      "evidence": "dialogue summarization: samsum (Gliwa et al., 2019) and qmsum (Zhong et al., 2021) from LongBench (Bai et al., 2024)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ResQ: Mixed-Precision Quantization of Large Language Models with Low-Rank Residuals"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PoSum-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization",
+      "evidence": "we introduce PoSum-Bench, a comprehensive benchmark for evaluating positional bias in conversational summarization (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Human evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Refining Text Generation for Realistic Conversational Recommendation via Direct Preference Optimization",
+      "evidence": "To evaluate generated dialogue summaries and item recommendation information, we conducted a human evaluation using CrowdWorks. (Section 4.7)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Refining Text Generation for Realistic Conversational Recommendation via Direct Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Refining Text Generation for Realistic Conversational Recommendation via Direct Preference Optimization",
+      "evidence": "Finally, a notable limitation is the persistence of hallucinations in the generation of item recommendation information and dialogue summaries, where the model fabricates features not present in the source content. (Limitations)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Refining Text Generation for Realistic Conversational Recommendation via Direct Preference Optimization"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 6,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, dialogue summarization is most commonly framed as producing a concise summary from a conversation or multi-turn dialogue. Definitions repeatedly emphasize concision, while one definition also requires accuracy and another says the summary should capture the conversation's salient semantics and key information, specifying the output as a sequence of summary sentences. A smaller line of work uses the summary more narrowly, prompting a summary of dialogue context that highlights information indicative of errors in the last agent utterance. As one paper puts it, the objective is to generate a summary that \"succinctly captures the salient semantics and key information conveyed throughout the conversation\" (PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization)."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-synonymous task names, including dialogue summarization, dialog summarization, dialog summary, and conversational summarization. The studied settings range from general dialogue transcripts to clinical interactions, especially pre-consultation and patient-doctor conversations that culminate in a brief medical report; another paper instead prompts a summary of dialogue context for conversational AI error discovery. SAMSum summarization is a recurring named setting, and one benchmark places the task in zero-shot abstractive summarization of complex inputs such as dialogues and meetings."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 5 measurement instruments. DialogSum is the most frequently linked instrument; other linked instruments are Human evaluation, PoSum-Bench, QMSum, and SAMSum. These are mostly datasets or benchmarks for dialogue summarization, while one paper also evaluates generated summaries with human evaluation via CrowdWorks."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not link dialogue summarization to any construct, so the linked relations do not specify what construct it is evidence of. The only other linked behavior is Hallucination: one paper reports dialogue summarization is related to hallucination, describing dialogue summaries that \"fabricate features not present in the source content.\""
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the surveyed work, dialogue summarization is most commonly framed as producing a concise summary from a conversation or multi-turn dialogue. Definitions repeatedly emphasize concision, while one definition also requires accuracy and another says the summary should capture the conversation's salient semantics and key information, specifying the output as a sequence of summary sentences. A smaller line of work uses the summary more narrowly, prompting a summary of dialogue context that highlights information indicative of errors in the last agent utterance. As one paper puts it, the objective is to generate a summary that \"succinctly captures the salient semantics and key information conveyed throughout the conversation\" (PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization).\n\nVariants. Papers use several near-synonymous task names, including dialogue summarization, dialog summarization, dialog summary, and conversational summarization. The studied settings range from general dialogue transcripts to clinical interactions, especially pre-consultation and patient-doctor conversations that culminate in a brief medical report; another paper instead prompts a summary of dialogue context for conversational AI error discovery. SAMSum summarization is a recurring named setting, and one benchmark places the task in zero-shot abstractive summarization of complex inputs such as dialogues and meetings.\n\nSpace of elicitation and scores. Papers link this behavior to 5 measurement instruments. DialogSum is the most frequently linked instrument; other linked instruments are Human evaluation, PoSum-Bench, QMSum, and SAMSum. These are mostly datasets or benchmarks for dialogue summarization, while one paper also evaluates generated summaries with human evaluation via CrowdWorks.\n\nWhat it is taken as evidence of. Papers do not link dialogue summarization to any construct, so the linked relations do not specify what construct it is evidence of. The only other linked behavior is Hallucination: one paper reports dialogue summarization is related to hallucination, describing dialogue summaries that \"fabricate features not present in the source content.\"",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Paired by the Teacher: Turning Unpaired Data into High-Fidelity Pairs for Low-Resource Text Generation",
+      "PoSum-Bench: Benchmarking Position Bias in LLM-based Conversational Summarization",
+      "Refining Text Generation for Realistic Conversational Recommendation via Direct Preference Optimization",
+      "Towards Automated Error Discovery: A Study in Conversational AI",
+      "V-VAE: A Variational Auto Encoding Framework Towards Fine-Grained Control over Human-Like Chat"
+    ],
+    "iclr25": [
+      "Progressive Mixed-Precision Decoding for Efficient LLM Inference",
+      "STAFF: Speculative Coreset Selection for Task-Specific Fine-tuning",
+      "Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling"
+    ],
+    "neurips24": [
+      "Aligner: Efficient Alignment by Learning to Correct",
+      "BackdoorAlign: Mitigating Fine-tuning based Jailbreak Attack with Backdoor Enhanced Safety Alignment",
+      "MedJourney: Benchmark and Evaluation of Large Language Models over Patient Clinical Journey"
+    ],
+    "iclr24": [
+      "Privacy-Preserving In-Context Learning for Large Language Models",
+      "The Hedgehog & the Porcupine: Expressive Linear Attentions with Softmax Mimicry"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 5,
+    "iclr25": 3,
+    "neurips24": 3,
+    "iclr24": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "neurips24"
+  ]
+}

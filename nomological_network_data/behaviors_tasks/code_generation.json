@@ -1,0 +1,2862 @@
+{
+  "canonical_name": "Code generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats code generation as producing executable, functional, or functionally correct source code from a natural language description, prompt, docstring, or other specification. Success is usually framed by syntactic validity plus whether the generated code works, often by passing unit, visible, or hidden tests, though some papers instead emphasize complete, compilable solutions or code that reproduces a target artifact. A smaller line of work broadens the input beyond plain text to multimodal prompts, chart images, code skeletons, input-output examples, or repository context. One paper explicitly describes it as the task of synthesizing code from natural language (SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?).\n\nVariants. Papers use the label for many variants. Common ones stay close to function- or program-level synthesis, including function completion, whole-function and repo-level generation, class-level generation, standalone function implementation, and sequential edit generation. Another cluster covers multimodal or structured targets, such as chart-to-code generation, visual program generation, mockup-to-code, slide code generation, and text-to-ES or ORM query generation. Other papers narrow it to particular languages or domains, including Python and multilingual coding, Verilog or other HDL tasks, interactive Bash coding, backend application generation, EDA and visualization code, game code, Prolog programs, and policy-to-code translation. In repository settings, one paper defines the task as generating the target function that passes all relevant test cases (Can Language Models Replace Programmers for Coding? REPOCOD Says `Not Yet').\n\nSpace of elicitation and scores. Code generation is measured by 32 instruments. The most recurrent are HumanEval, MBPP, APPS, LiveCodeBench, and EvalPlus, which papers use for function-level Python tasks, broader programming problems, and test-augmented evaluation. Most linked instruments are benchmark datasets, though papers also mention execution-based evaluation and an LLM-as-a-judge setup.\n\nWhat it is taken as evidence of. Across 17 linked constructs, a direct measurement-style use treats code generation as evidence of coding ability, and papers also frequently tie it to reasoning. On reasoning, papers do not use a single direction: some report code generation is related to reasoning, others claim reasoning causes code generation, and another line claims code generation causes reasoning. Smaller lines of work connect it to planning, algorithmic reasoning, and expressive power. Overall, papers do not converge on one construct that code generation reflects.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Code problem solving",
+    "Interactive coding",
+    "Code generation",
+    "Function completion",
+    "Chart-to-code generation",
+    "Action execution program generation",
+    "Evaluation program generation",
+    "Visual program generation",
+    "Whole-function generation",
+    "Text-to-ES query generation",
+    "Feature function generation",
+    "Stub file generation",
+    "Backend application generation",
+    "Multi-agent system generation",
+    "Program generation",
+    "Standalone function implementation",
+    "Python code generation",
+    "Verilog code generation",
+    "Program synthesis",
+    "Code synthesis",
+    "Sequential edit generation",
+    "Policy-to-code translation",
+    "EDA code generation",
+    "LaTeX code generation",
+    "Cone code generation",
+    "Code comprehension and generation",
+    "Data visualization code generation",
+    "Mockup-to-code generation",
+    "Game code generation",
+    "Heuristic function generation",
+    "Text-to-Python generation",
+    "ORM code generation",
+    "Chart code generation",
+    "Reference image to slide generation",
+    "Slide code generation",
+    "Prolog program generation",
+    "Text-to-visualization generation",
+    "Visualization code generation",
+    "Repo-level code generation",
+    "Multilingual code generation",
+    "Function-level code generation",
+    "Class-level code generation",
+    "Data science programming",
+    "Text-to-code generation",
+    "Continuation writing",
+    "Code generation ability",
+    "Code generation capability",
+    "Verilog generation",
+    "Program synthesis capability",
+    "Dependency invocation",
+    "API invocation generation",
+    "Requirement fulfillment",
+    "Code implementation",
+    "Programming language generation"
+  ],
+  "papers": [
+    "A Survey of Post-Training Scaling in Large Language Models",
+    "ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution",
+    "Adapt Once, Thrive with Updates: Transferable Parameter-Efficient Fine-Tuning on Evolving Base Models",
+    "Analyzing the Rapid Generalization of SFT via the Perspective of Attention Head Activation Patterns",
+    "Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks",
+    "BeamLoRA: Beam-Constraint Low-Rank Adaptation",
+    "Beyond Output Matching: Bidirectional Alignment for Enhanced In-Context Learning",
+    "Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation",
+    "Can Language Models Replace Programmers for Coding? REPOCOD Says `Not Yet'",
+    "Can We Further Elicit Reasoning in LLMs? Critic-Guided Planning with Retrieval-Augmentation for Solving Challenging Tasks",
+    "CodeDPO: Aligning Code Models with Self Generated and Verified Source Code",
+    "ConsistencyChecker: Tree-based Evaluation of LLM Generalization Capabilities",
+    "DARS: Dynamic Action Re-Sampling to Enhance Coding Agent Performance by Adaptive Tree Traversal",
+    "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+    "Dolphin: Moving Towards Closed-loop Auto-research through Thinking, Practice, and Feedback",
+    "ELABORATION: A Comprehensive Benchmark on Human-LLM Competitive Programming",
+    "Energy Considerations of Large Language Model Inference and Efficiency Optimizations",
+    "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method",
+    "FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling",
+    "Faster Speculative Decoding via Effective Draft Decoder with Pruned Candidate Tree",
+    "From Tools to Teammates: Evaluating LLMs in Multi-Session Coding Interactions",
+    "Fusing Highly Specialized Language Models for Comprehensive Expertise",
+    "G\u00f6del Agent: A Self-Referential Agent Framework for Recursively Self-Improvement",
+    "HALoGEN: Fantastic LLM Hallucinations and Where to Find Them",
+    "IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory",
+    "ImPart: Importance-Aware Delta-Sparsification for Improved Model Compression and Merging in LLMs",
+    "Infogen: Generating Complex Statistical Infographics from Documents",
+    "LED-Merging: Mitigating Safety-Utility Conflicts in Model Merging with Location-Election-Disjoint",
+    "LESA: Learnable LLM Layer Scaling-Up",
+    "LLM Agents Making Agent Tools",
+    "LLMs can be easily Confused by Instructional Distractions",
+    "Learning to Reason from Feedback at Test-Time",
+    "LlamaDuo: LLMOps Pipeline for Seamless Migration from Service LLMs to Small-Scale Local LLMs",
+    "LongRecipe: Recipe for Efficient Long Context Generalization in Large Language Models",
+    "MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale",
+    "MasRouter: Learning to Route LLMs for Multi-Agent Systems",
+    "Meta-Reflection: A Feedback-Free Reflection Learning Framework",
+    "MorphMark: Flexible Adaptive Watermarking for Large Language Models",
+    "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+    "Neural Incompatibility: The Unbridgeable Gap of Cross-Scale Parametric Knowledge Transfer in Large Language Models",
+    "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+    "Personality-Guided Code Generation Using Large Language Models",
+    "PwnGPT: Automatic Exploit Generation Based on Large Language Models",
+    "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+    "Refining Salience-Aware Sparse Fine-Tuning Strategies for Language Models",
+    "Rethinking Repetition Problems of LLMs in Code Generation",
+    "Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization",
+    "Retrieval-Augmented Fine-Tuning With Preference Optimization For Visual Program Generation",
+    "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+    "SAM Decoding: Speculative Decoding via Suffix Automaton",
+    "SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning of Large Language Models",
+    "SPECTRA: Faster Large Language Model Inference with Optimized Internal and External Speculation",
+    "Sample-Efficient Human Evaluation of Large Language Models via Maximum Discrepancy Competition",
+    "Squeezed Attention: Accelerating Long Context Length LLM Inference",
+    "Teaching an Old LLM Secure Coding: Localized Preference Optimization on Distilled Preferences",
+    "Text-to-ES Bench: A Comprehensive Benchmark for Converting Natural Language to Elasticsearch Query",
+    "The Invisible Hand: Unveiling Provider Bias in Large Language Models for Code Generation",
+    "TheoremExplainAgent: Towards Video-based Multimodal Explanations for LLM Theorem Understanding",
+    "ToolCoder: A Systematic Code-Empowered Tool Learning Framework for Large Language Models",
+    "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning",
+    "Velocitune: A Velocity-based Dynamic Domain Reweighting Method for Continual Pre-training",
+    "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models",
+    "Watermarking Large Language Models: An Unbiased and Low-risk Method",
+    "YuLan-Mini: Pushing the Limits of Open Data-efficient Language Model",
+    "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization",
+    "nvAgent: Automated Data Visualization from Natural Language via Collaborative Agent Workflow",
+    "ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation",
+    "Program Synthesis Benchmark for Visual Programming in XLogoOnline Environment",
+    "Subtle Errors in Reasoning: Preference Learning via Error-injected Self-editing",
+    "A Middle Path for On-Premises LLM Deployment: Preserving Privacy Without Sacrificing Model Confidentiality",
+    "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+    "AMACE: Automatic Multi-Agent Chart Evolution for Iteratively Tailored Chart Generation",
+    "Accelerated Test-Time Scaling with Model-Free Speculative Sampling",
+    "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+    "AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time",
+    "An Orthogonal High-Rank Adaptation for Large Language Models",
+    "AnyMAC: Cascading Flexible Multi-Agent Collaboration via Next-Agent Prediction",
+    "Arena-lite: Efficient and Reliable Large Language Model Evaluation via Tournament-Based Direct Comparisons",
+    "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+    "BTS: Harmonizing Specialized Experts into a Generalist LLM",
+    "BeSimulator: A Large Language Model Powered Text-based Behavior Simulator",
+    "Benchmark Profiling: Mechanistic Diagnosis of LLM Benchmarks",
+    "Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing",
+    "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+    "Cardiverse: Harnessing LLMs for Novel Card Game Prototyping",
+    "Chart2Code53: A Large-Scale Diverse and Complex Dataset for Enhancing Chart-to-Code Generation",
+    "Co-Eval: Augmenting LLM-based Evaluation with Machine Metrics",
+    "Code Execution as Grounded Supervision for LLM Reasoning",
+    "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+    "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference",
+    "Compound AI Systems Optimization: A Survey of Methods, Challenges, and Future Directions",
+    "ConsistentChat: Building Skeleton-Guided Consistent Multi-Turn Dialogues for Large Language Models from Scratch",
+    "CopySpec: Accelerating LLMs with Speculative Copy-and-Paste",
+    "Correlation-Aware Example Selection for In-Context Learning with Nonsymmetric Determinantal Point Processes",
+    "Creativity in LLM-based Multi-Agent Systems: A Survey",
+    "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+    "DSG-MCTS: A Dynamic Strategy-Guided Monte Carlo Tree Search for Diversified Reasoning in Large Language Models",
+    "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+    "Dialect-SQL: An Adaptive Framework for Bridging the Dialect Gap in Text-to-SQL",
+    "Do Slides Help? Multi-modal Context for Automatic Transcription of Conference Talks",
+    "Doc2Chart: Intent-Driven Zero-Shot Chart Generation from Documents",
+    "Dovetail: A CPU/GPU Heterogeneous Speculative Decoding for LLM inference",
+    "Droid: A Resource Suite forAI-Generated Code Detection",
+    "Dynamic Collaboration of Multi-Language Models based on Minimal Complete Semantic Units",
+    "Dynamic Expert Specialization: Towards Catastrophic Forgetting-Free Multi-Domain MoE Adaptation",
+    "Dynamic Retriever for In-Context Knowledge Editing via Policy Optimization",
+    "EIFBENCH: Extremely Complex Instruction Following Benchmark for Large Language Models",
+    "EcoTune: Token-Efficient Multi-Fidelity Hyperparameter Optimization for Large Language Model Inference",
+    "Efficient Beam Search for Large Language Models Using Trie-Based Decoding",
+    "Efficient Model Development through Fine-tuning Transfer",
+    "Extracting and Combining Abilities For Building Multi-lingual Ability-enhanced Large Language Models",
+    "FB-Bench: A Fine-Grained Multi-Task Benchmark for Evaluating LLMs' Responsiveness to Human Feedback",
+    "FLARE: Faithful Logic-Aided Reasoning and Exploration",
+    "Firewall Routing: Blocking Leads to Better Hybrid Inference for LLMs",
+    "From Scores to Steps: Diagnosing and Improving LLM Performance in Evidence-Based Medical Calculations",
+    "FuseChat: Knowledge Fusion of Chat Models",
+    "GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction",
+    "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+    "HD-PiSSA: High-Rank Distributed Orthogonal Adaptation",
+    "Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of Design",
+    "Identifying & Interactively Refining Ambiguous User Goals for Data Visualization Code Generation",
+    "Implicit Values Embedded in How Humans and LLMs Complete Subjective Everyday Tasks",
+    "Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking",
+    "Jailbreak LLMs through Internal Stance Manipulation",
+    "LM-Searcher: Cross-domain Neural Architecture Search with LLMs via Unified Numerical Encoding",
+    "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment",
+    "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding",
+    "Learning from Few Samples: A Novel Approach for High-Quality Malcode Generation",
+    "LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization",
+    "Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query",
+    "Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLMs",
+    "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+    "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+    "Middo: Model-Informed Dynamic Data Optimization for Enhanced LLM Fine-Tuning via Closed-Loop Learning",
+    "Mitigating Catastrophic Forgetting in Large Language Models with Forgetting-aware Pruning",
+    "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning",
+    "NL-Debugging: Exploiting Natural Language as an Intermediate Representation for Code Debugging",
+    "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+    "Not-Just-Scaling Laws: Towards a Better Understanding of the Downstream Impact of Language Model Design Decisions",
+    "P-MMEval: A Parallel Multilingual Multitask Benchmark for Consistent Evaluation of LLMs",
+    "PAFT: Prompt-Agnostic Fine-Tuning",
+    "PORTS: Preference-Optimized Retrievers for Tool Selection with Large Language Models",
+    "Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles",
+    "Predicate-Guided Generation for Mathematical Reasoning",
+    "PricingLogic: Evaluating LLMs Reasoning on Complex Tourism Pricing Tasks",
+    "Principled Personas: Defining and Measuring the Intended Effects of Persona Prompting on Task Performance",
+    "Prior Prompt Engineering for Reinforcement Fine-Tuning",
+    "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+    "Process-Supervised Reinforcement Learning for Code Generation",
+    "Program of Thoughts for Financial Reasoning: Leveraging Dynamic In-Context Examples and Generative Retrieval",
+    "QSpec: Speculative Decoding with Complementary Quantization Schemes",
+    "RLAE: Reinforcement Learning-Assisted Ensemble for LLMs",
+    "ReSo: A Reward-driven Self-organizing LLM-based Multi-Agent System for Reasoning Tasks",
+    "Reinforcement Learning for Large Language Models via Group Preference Reward Shaping",
+    "Reliable and Cost-Effective Exploratory Data Analysis via Graph-Guided RAG",
+    "RethinkMCTS: Refining Erroneous Thoughts in Monte Carlo Tree Search for Code Generation",
+    "Reward-Weighted Sampling: Enhancing Non-Autoregressive Characteristics in Masked Diffusion LLMs",
+    "RewardDS: Privacy-Preserving Fine-Tuning for Large Language Models via Reward Driven Data Synthesis",
+    "STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases",
+    "START: Self-taught Reasoner with Tools",
+    "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+    "Search-o1: Agentic Search-Enhanced Large Reasoning Models",
+    "Select-Then-Decompose: From Empirical Analysis to Adaptive Selection Strategy for Task Decomposition in Large Language Models",
+    "SelfRACG: Enabling LLMs to Self-Express and Retrieve for Code Generation",
+    "SlideCoder: Layout-aware RAG-enhanced Hierarchical Slide Generation from Design",
+    "Split-Merge: Scalable and Memory-Efficient Merging of Expert LLMs",
+    "Superpose Task-specific Features for Model Merging",
+    "SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation",
+    "SynC-LLM: Generation of Large-Scale Synthetic Circuit Code with Hierarchical Language Models",
+    "Teaching Your Models to Understand Code via Focal Preference Alignment",
+    "Text2Vis: A Challenging and Diverse Benchmark for Generating Multimodal Visualizations from Text",
+    "The Role of Outgoing Connection Heterogeneity in Feedforward Layers of Large Language Models",
+    "To See a World in a Spark of Neuron: Disentangling Multi-Task Interference for Training-Free Model Merging",
+    "UltraIF: Advancing Instruction Following from the Wild",
+    "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+    "UnitCoder: Scalable Code Synthesis from Pre-training Corpora",
+    "Warm Up Before You Train: Unlocking General Reasoning in Resource-Constrained Settings",
+    "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation",
+    "What Makes a Good Reasoning Chain? Uncovering Structural Patterns in Long Chain-of-Thought Reasoning",
+    "ZERA: Zero-init Instruction Evolving Refinement Agent -- From Zero Instructions to Structured Prompts via Principle-based Optimization",
+    "Surge: On the Potential of Large Language Models as General-Purpose Surrogate Code Executors",
+    "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research",
+    "Batched Low-Rank Adaptation of Foundation Models",
+    "Eureka: Human-Level Reward Design via Coding Large Language Models",
+    "#InsTag: Instruction Tagging for Analyzing Supervised Fine-tuning of Large Language Models",
+    "$\\mathcal{B}$-Coder: Value-Based Deep Reinforcement Learning for Program Synthesis",
+    "AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors",
+    "AlpaGasus: Training a Better Alpaca with Fewer Data",
+    "An Emulator for Fine-tuning Large Language Models using Small Language Models",
+    "Are Human-generated Demonstrations Necessary for In-context Learning?",
+    "At Which Training Stage Does Code Data Help LLMs Reasoning?",
+    "BESA: Pruning Large Language Models with Blockwise Parameter-Efficient Sparsity Allocation",
+    "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain",
+    "CODE REPRESENTATION LEARNING AT SCALE",
+    "CRAFT: Customizing LLMs by Creating and Retrieving from Specialized Toolsets",
+    "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+    "CodeChain: Towards Modular Code Generation Through Chain of Self-revisions with Representative Sub-modules",
+    "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis",
+    "FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets",
+    "GenSim: Generating Robotic Simulation Tasks via Large Language Models",
+    "IDEAL: Influence-Driven Selective Annotations Empower In-Context Learners in Large Language Models",
+    "Is Self-Repair a Silver Bullet for Code Generation?",
+    "Knowledge Fusion of Large Language Models",
+    "L2MAC: Large Language Model Automatic Computer for Extensive Code Generation",
+    "LILO: Learning Interpretable Libraries by Compressing and Documenting Code",
+    "LLM Augmented LLMs: Expanding Capabilities through Composition",
+    "LLM-Assisted Code Cleaning For Training Accurate Code Generators",
+    "LLaMA-Adapter: Efficient Fine-tuning of Large Language Models with Zero-initialized Attention",
+    "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+    "Large Language Models as Analogical Reasoners",
+    "Large Language Models as Tool Makers",
+    "LayoutNUWA: Revealing the Hidden Layout Expertise of Large Language Models",
+    "Lemur: Harmonizing Natural Language and Code for Language Agents",
+    "MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback",
+    "MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts",
+    "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "Model Tells You What to Discard: Adaptive KV Cache Compression for LLMs",
+    "OctoPack: Instruction Tuning Code Large Language Models",
+    "Predicting Emergent Abilities with Infinite Resolution Evaluation",
+    "Prompt Risk Control: A Rigorous Framework for Responsible Deployment of Large Language Models",
+    "Raidar: geneRative AI Detection viA Rewriting",
+    "SALMON: Self-Alignment with Instructable Reward Models",
+    "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+    "Teaching Large Language Models to Self-Debug",
+    "Test-Time Training on Nearest Neighbors for Large Language Models",
+    "The False Promise of Imitating Proprietary Language Models",
+    "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+    "ToRA: A Tool-Integrated Reasoning Agent for Mathematical Problem Solving",
+    "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+    "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+    "WizardLM: Empowering Large Pre-Trained Language Models to Follow Complex Instructions",
+    "MathCoder: Seamless Code Integration in LLMs for Enhanced Mathematical Reasoning",
+    "Rethinking Channel Dimensions to Isolate Outliers for Low-bit Weight Quantization of Large Language Models",
+    "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation",
+    "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+    "ADePT: Adaptive Decomposed Prompt Tuning for Parameter-Efficient Fine-tuning",
+    "AFlow: Automating Agentic Workflow Generation",
+    "Active Task Disambiguation with LLMs",
+    "Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats",
+    "Advancing LLM Reasoning Generalists with Preference Trees",
+    "Agent Skill Acquisition for Large Language Models via CycleQD",
+    "Agent-Oriented Planning in Multi-Agent Systems",
+    "Aligning Language Models with Demonstrated Feedback",
+    "Articulate-Anything:  Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model",
+    "Automated Design of Agentic Systems",
+    "B-STaR: Monitoring and Balancing Exploration and Exploitation in Self-Taught Reasoners",
+    "Better than Your Teacher: LLM Agents that learn from Privileged AI Feedback",
+    "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+    "Block-Attention for Efficient Prefilling",
+    "Building Math Agents with Multi-Turn Iterative Preference Learning",
+    "CURIE: Evaluating LLMs on Multitask Scientific Long-Context Understanding and Reasoning",
+    "Capability Localization: Capabilities Can be Localized rather than Individual Knowledge",
+    "ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation",
+    "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+    "Combining Induction and Transduction for Abstract Reasoning",
+    "Commit0: Library Generation from Scratch",
+    "Copyright-Protected Language Generation via Adaptive Model Fusion",
+    "CraftRTL: High-quality Synthetic Data Generation for Verilog Code Models with Correct-by-Construction Non-Textual Representations and Targeted Code Repair",
+    "Cut the Crap: An Economical Communication Pipeline for LLM-based Multi-Agent Systems",
+    "DRoC: Elevating Large Language Models for Complex Vehicle Routing via Decomposed Retrieval of Constraints",
+    "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?",
+    "DeFT: Decoding with Flash Tree-attention for Efficient Tree-structured LLM Inference",
+    "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+    "Decision Information Meets Large Language Models: The Future of Explainable Operations Research",
+    "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+    "DiscoveryBench: Towards Data-Driven Discovery with Large Language Models",
+    "Distributed Speculative Inference (DSI): Speculation Parallelism for Provably Faster Lossless Language Model Inference",
+    "Efficiently Learning at Test-Time: Active Fine-Tuning of LLMs",
+    "Enhancing Language Model Agents using Diversity of Thoughts",
+    "Faster Cascades via Speculative Decoding",
+    "Flow: Modularized Agentic Workflow Automation",
+    "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+    "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation",
+    "From an LLM Swarm to a PDDL-empowered Hive: Planning Self-executed Instructions in a Multi-modal Jungle",
+    "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+    "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "Generative Monoculture in Large Language Models",
+    "Generative Representational Instruction Tuning",
+    "GraphArena: Evaluating and Exploring Large Language Models on Graph Computation",
+    "How efficient is LLM-generated code? A rigorous & high-standard benchmark",
+    "Human-inspired Episodic Memory for Infinite Context LLMs",
+    "Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models",
+    "InstructRAG: Instructing Retrieval-Augmented Generation via Self-Synthesized Rationales",
+    "Is Your Model Really A Good Math Reasoner? Evaluating Mathematical Reasoning with Checklist",
+    "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking",
+    "Jamba: Hybrid Transformer-Mamba Language Models",
+    "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+    "KaSA: Knowledge-Aware Singular-Value Adaptation of Large Language Models",
+    "L3Ms \u2014 Lagrange Large Language Models",
+    "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+    "Law of the Weakest Link: Cross Capabilities of Large Language Models",
+    "Layerwise Recurrent Router for  Mixture-of-Experts",
+    "Learning Harmonized Representations for Speculative Sampling",
+    "Learning How Hard to Think: Input-Adaptive Allocation of LM Computation",
+    "Leveraging Submodule Linearity Enhances Task Arithmetic Performance in LLMs",
+    "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+    "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+    "LoRA-Pro: Are Low-Rank Adapters Properly Optimized?",
+    "LongMamba: Enhancing Mamba's Long-Context Capabilities via Training-Free Receptive Field Enlargement",
+    "MA-RLHF: Reinforcement Learning from Human Feedback with Macro Actions",
+    "MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks",
+    "MIRAGE: Evaluating and Explaining Inductive Reasoning Process in Language Models",
+    "MathCoder2: Better Math Reasoning from Continued Pretraining on Model-translated Mathematical Code",
+    "McEval: Massively Multilingual Code Evaluation",
+    "MindSearch: Mimicking Human Minds Elicits Deep AI Searcher",
+    "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+    "Mixture of Attentions For Speculative Decoding",
+    "Mixture-of-Agents Enhances Large Language Model Capabilities",
+    "MoS: Unleashing Parameter Efficiency of Low-Rank Adaptation with Mixture of Shards",
+    "Model Equality Testing: Which Model is this API Serving?",
+    "Non-myopic Generation of Language Models for Reasoning and Planning",
+    "OLMoE: Open Mixture-of-Experts Language Models",
+    "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+    "OpenRCA: Can Large Language Models Locate the Root Cause of Software Failures?",
+    "OptiBench Meets ReSocratic: Measure and Improve LLMs for Optimization Modeling",
+    "PEARL: Parallel Speculative Decoding with Adaptive Draft Length",
+    "Pangea: A Fully Open Multilingual Multimodal LLM for 39 Languages",
+    "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+    "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+    "Planning in Natural Language Improves LLM Search for Code Generation",
+    "Preble: Efficient Distributed Prompt Scheduling for LLM Serving",
+    "Preference Optimization for Reasoning with Pseudo Feedback",
+    "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+    "Progress or Regress? Self-Improvement Reversal in Post-training",
+    "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+    "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+    "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+    "RaSA: Rank-Sharing Low-Rank Adaptation",
+    "Real2Code: Reconstruct Articulated Objects via Code Generation",
+    "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+    "RouteLLM: Learning to Route LLMs from Preference Data",
+    "SBSC: Step-by-Step Coding for Improving Mathematical Olympiad Performance",
+    "SEAL: Safety-enhanced Aligned LLM Fine-tuning via Bilevel Data Selection",
+    "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+    "STAFF: Speculative Coreset Selection for Task-Specific Fine-tuning",
+    "SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?",
+    "SWIFT: On-the-Fly Self-Speculative Decoding for LLM Inference Acceleration",
+    "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+    "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+    "Scaling Large Language Model-based Multi-Agent Collaboration",
+    "SeRA: Self-Reviewing and Alignment of LLMs using Implicit Reward Margins",
+    "Searching for Optimal Solutions with LLMs via Bayesian Optimization",
+    "Selective Aggregation for Low-Rank Adaptation in Federated Learning",
+    "Self-Evolving Multi-Agent Collaboration Networks for Software Development",
+    "Self-MoE: Towards Compositional Large Language Models with Self-Specialized Experts",
+    "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters",
+    "StringLLM: Understanding the String Processing Capability of Large Language Models",
+    "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+    "Synthesizing Programmatic Reinforcement Learning Policies with Large Language Model Guided Search",
+    "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+    "The KoLMogorov Test: Compression by Code Generation",
+    "The Rise and Down of Babel Tower: Investigating the Evolution Process of Multilingual Code Large Language Model",
+    "ThinK: Thinner Key Cache by Query-Driven Pruning",
+    "Think Thrice Before You Act: Progressive Thought Refinement in Large Language Models",
+    "To Code or Not To Code? Exploring Impact of Code in Pre-training",
+    "Towards Optimal Multi-draft Speculative Decoding",
+    "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective",
+    "Train Small, Infer Large: Memory-Efficient LoRA Training for Large Language Models",
+    "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+    "Training Language Models to Self-Correct via Reinforcement Learning",
+    "Transformer-Squared: Self-adaptive LLMs",
+    "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA",
+    "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+    "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+    "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs",
+    "What Makes Large Language Models Reason in (Multi-Turn) Code Generation?",
+    "WorkflowLLM: Enhancing Workflow Orchestration Capability of Large Language Models",
+    "MaestroMotif: Skill Design from Artificial Intelligence Feedback",
+    "A Mathematical Framework for AI-Human Integration in Work",
+    "A Unified Approach to Routing and Cascading for LLMs",
+    "Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies",
+    "AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence",
+    "Agent-as-a-Judge: Evaluate Agents with Agents",
+    "An End-to-End Model for Logits-Based Large Language Models Watermarking",
+    "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+    "AuPair: Golden Example Pairs for Code Repair",
+    "AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML",
+    "Automated Hypothesis Validation with Agentic Sequential Falsifications",
+    "BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute",
+    "BRiTE: Bootstrapping Reinforced Thinking Process to Enhance Language Model Reasoning",
+    "BaxBench: Can LLMs Generate Correct and Secure Backends?",
+    "Boosting Multi-Domain Fine-Tuning of Large Language Models through Evolving Interactions between Samples",
+    "CRANE: Reasoning with constrained LLM generation",
+    "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+    "Code-Generated Graph Representations Using Multiple LLM Agents for Material Properties Prediction",
+    "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance",
+    "CodeSync: Synchronizing Large Language Models with Dynamic Code Evolution at Scale",
+    "CollabLLM: From Passive Responders to Active Collaborators",
+    "Core Context Aware Transformers for Long Context Language Modeling",
+    "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models",
+    "Dialogue Without Limits: Constant-Sized KV Caches for Extended Response in LLMs",
+    "DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs",
+    "ELEMENTAL: Interactive Learning from Demonstrations and Vision-Language Models for Reward Design in Robotics",
+    "EffiCoder: Enhancing Code Generation in Large Language Models through Efficiency-Aware Fine-tuning",
+    "EncryptedLLM: Privacy-Preserving Large Language Model Inference via GPU-Accelerated Fully Homomorphic Encryption",
+    "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+    "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+    "Fast Large Language Model Collaborative Decoding via Speculation",
+    "Ferret: Federated Full-Parameter Tuning at Scale for Large Language Models",
+    "Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape",
+    "Flow-of-Options: Diversified and Improved LLM Reasoning by Thinking Through Options",
+    "Forest-of-Thought: Scaling Test-Time Compute for Enhancing LLM Reasoning",
+    "FunBO: Discovering Acquisition Functions for Bayesian Optimization with FunSearch",
+    "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+    "GRAIL: Graph Edit Distance and Node Alignment using LLM-Generated Code",
+    "Gumiho: A Hybrid Architecture to Prioritize Early Tokens in Speculative Decoding",
+    "Improving Diversity in Language Models: When Temperature Fails, Change the Loss",
+    "Instruction-Following Pruning for Large Language Models",
+    "LAuReL: Learned Augmented Residual Layer",
+    "LIFT the Veil for the Truth: Principal Weights Emerge after Rank Reduction for Reasoning-Focused Supervised Fine-Tuning",
+    "LLM Alignment as Retriever Optimization: An Information Retrieval Perspective",
+    "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+    "Large Language Models to Diffusion Finetuning",
+    "LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models, Provably and Efficiently",
+    "MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems",
+    "MONA: Myopic Optimization with Non-myopic Approval Can Mitigate Multi-step Reward Hacking",
+    "Make LoRA Great Again: Boosting LoRA with Adaptive Singular Values and Mixture-of-Experts Optimization Alignment",
+    "Memory Layers at Scale",
+    "MoEQuant: Enhancing Quantization for Mixture-of-Experts Large Language Models via Expert-Balanced Sampling and Affinity Guidance",
+    "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+    "Multi-agent Architecture Search via Agentic Supernet",
+    "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric",
+    "Nemotron-CORTEXA: Enhancing LLM Agents for Software Engineering Tasks via Improved Localization and Solution Diversity",
+    "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+    "On the Query Complexity of Verifier-Assisted Language Generation",
+    "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents",
+    "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+    "Optimizing Temperature for Language Models with Multi-Sample Inference",
+    "Organize the Web: Constructing Domains Enhances Pre-Training Data Curation",
+    "PINNsAgent: Automated PDE Surrogation with Large Language Models",
+    "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+    "Position: AI Safety should prioritize the Future of Work",
+    "Position: Enough of Scaling LLMs! Lets Focus on Downscaling",
+    "Position: Future Research and Challenges Remain Towards AI for Software Engineering",
+    "Position: General Intelligence Requires Reward-based Pretraining",
+    "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+    "Puzzle: Distillation-Based NAS for Inference-Optimized LLMs",
+    "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+    "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification",
+    "Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation",
+    "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment",
+    "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+    "Revolve: Optimizing AI Systems by Tracking Response Evolution in Textual Optimization",
+    "RoSTE: An Efficient Quantization-Aware Supervised Fine-Tuning Approach for Large Language Models",
+    "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+    "Scalable Model Merging with Progressive Layer-wise Distillation",
+    "SeedLoRA: A Fusion Approach to Efficient LLM Fine-Tuning",
+    "Selective Prompt Anchoring for Code Generation",
+    "Self-Improving Language Models for Evolutionary Program Synthesis: A Case Study on ARC-AGI",
+    "Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation",
+    "SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity",
+    "Speculate, then Collaborate: Fusing Knowledge of Language Models during Decoding",
+    "Splitting with Importance-aware Updating for Heterogeneous Federated Learning with Large Language Models",
+    "Synthesizing Software Engineering Data in a Test-Driven Manner",
+    "Teaching Language Models to Critique via Reinforcement Learning",
+    "Text-to-LoRA: Instant Transformer Adaption",
+    "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+    "Tool Unlearning for Tool-Augmented LLMs",
+    "TypyBench: Evaluating LLM Type Inference for Untyped Python Repositories",
+    "Understanding Chain-of-Thought in LLMs through Information Theory",
+    "Understanding Complexity in VideoQA via Visual Program Generation",
+    "WeGeFT: Weight-Generative Fine-Tuning for Multi-Faceted Efficient Adaptation of Large Models",
+    "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors",
+    "any4: Learned 4-bit Numeric Representation for LLMs",
+    "DataDecide: How to Predict Best Pretraining Data with Small Experiments",
+    "Flexible and Efficient Grammar-Constrained Decoding",
+    "Automated Benchmark Generation for Repository-Level Coding Tasks",
+    "Benchmarking Language Model Creativity: A Case Study on Code Generation",
+    "C2: Scalable Auto-Feedback forLLM-based Chart Generation",
+    "Can Large Language Models Invent Algorithms to Improve Themselves?: Algorithm Discovery for Recursive Self-Improvement through Reinforcement Learning",
+    "CodeSCM: Causal Analysis for Multi-Modal Code Generation",
+    "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models",
+    "Dynamic Data Mixing Maximizes Instruction Tuning for Mixture-of-Experts",
+    "Few-Shot Natural Language to First-Order Logic Translation via Code Generation",
+    "Fine-Tuning Large Language Models with Sequential Instructions",
+    "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+    "Knowledge Graph-Guided Retrieval Augmented Generation",
+    "Language Models can Categorize System Inputs for Performance Analysis",
+    "Learning to Solve Domain-Specific Calculation Problems with Knowledge-Intensive Programs Generator",
+    "MASTER: A Multi-Agent System with LLM Specialized MCTS",
+    "Mastering the Craft of Data Synthesis for CodeLLMs",
+    "MergeME: Model Merging Techniques for Homogeneous and Heterogeneous MoEs",
+    "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+    "MoDification: Mixture of Depths Made Easy",
+    "ParaICL: Towards Parallel In-Context Learning",
+    "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+    "Scaling LLM Inference Efficiently with Optimized Sample Compute Allocation",
+    "Substance Beats Style: Why Beginning Students Fail to Code with LLMs",
+    "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism",
+    "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs",
+    "Transferable Post-training via Inverse Value Learning",
+    "TurtleBench: A Visual Programming Benchmark in Turtle Geometry",
+    "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation",
+    "mHumanEval - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation",
+    "CVE-Bench: Benchmarking LLM-based Software Engineering Agent's Ability to Repair Real-World CVE Vulnerabilities",
+    "Diverse In-Context Example Selection After Decomposing Programs and Aligned Utterances Improves Semantic Parsing",
+    "Effective Skill Unlearning through Intervention and Abstention",
+    "Generating Diverse Hypotheses for Inductive Reasoning",
+    "Prototype Conditioned Generative Replay for Continual Learning in NLP",
+    "Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study",
+    "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+    "HYSYNTH: Context-Free LLM Approximation for Guiding Program Synthesis",
+    "LLMDFA: Analyzing Dataflow in Code with Large Language Models",
+    "Learning to Edit Visual Programs with Self-Supervision",
+    "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+    "Symbolic Regression with a Learned Concept Library",
+    "Limits of Transformer Language Models on Learning to Compose Algorithms",
+    "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+    "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+    "EvoCodeBench: An Evolving Code Generation Benchmark with Domain-Specific Evaluations",
+    "SelfCodeAlign: Self-Alignment for Code Generation",
+    "Reranking Laws for Language Generation: A Communication-Theoretic Perspective",
+    "Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models"
+  ],
+  "paper_count": 513,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of generating functionally correct code that solves a given programming problem, typically described in natural language.",
+      "paper": "The Rise and Down of Babel Tower: Investigating the Evolution Process of Multilingual Code Large Language Model",
+      "original_name": "Code problem solving"
+    },
+    {
+      "text": "The task of producing functional source code in a programming language based on a natural language description or other specifications.",
+      "paper": "Copyright-Protected Language Generation via Adaptive Model Fusion",
+      "original_name": "Code generation"
+    },
+    {
+      "text": "The task of solving filesystem manipulation problems by issuing a sequence of Bash commands in an interactive terminal.",
+      "paper": "Better than Your Teacher: LLM Agents that learn from Privileged AI Feedback",
+      "original_name": "Interactive coding"
+    },
+    {
+      "text": "A specific code generation task where the model must complete the body of a function given its signature and docstring.",
+      "paper": "To Code or Not To Code? Exploring Impact of Code in Pre-training",
+      "original_name": "Function completion"
+    },
+    {
+      "text": "Generating executable code from a chart image and textual instruction so that the code reproduces or modifies the chart.",
+      "paper": "ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation",
+      "original_name": "Chart-to-code generation"
+    },
+    {
+      "text": "The task of generating code for a visual programming language, typically in a text-based format like XML, JSON, or a metaprogram, based on a user's natural language instruction.",
+      "paper": "Retrieval-Augmented Fine-Tuning With Preference Optimization For Visual Program Generation",
+      "original_name": "Visual program generation"
+    },
+    {
+      "text": "Generating complete function bodies from natural language descriptions and repository context, as opposed to single-line or partial code completions.",
+      "paper": "Can Language Models Replace Programmers for Coding? REPOCOD Says `Not Yet'",
+      "original_name": "Whole-function generation"
+    },
+    {
+      "text": "Producing a Python program that satisfies a user's natural language request by composing primitives from an assistant library, including proper use of control flow and function calls.",
+      "paper": "ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution",
+      "original_name": "Action execution program generation"
+    },
+    {
+      "text": "Generating a program that executes an action execution program and verifies its correctness through assertions that check goal completion and absence of side effects.",
+      "paper": "ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution",
+      "original_name": "Evaluation program generation"
+    },
+    {
+      "text": "The specific task of converting a natural language question into an executable Elasticsearch (ES) query, which may include both a DSL query body and post-processing code.",
+      "paper": "Text-to-ES Bench: A Comprehensive Benchmark for Converting Natural Language to Elasticsearch Query",
+      "original_name": "Text-to-ES query generation"
+    },
+    {
+      "text": "The observable action of generating structured, executable code, specifically Python functions, that represents task-relevant features based on multimodal inputs.",
+      "paper": "ELEMENTAL: Interactive Learning from Demonstrations and Vision-Language Models for Reward Design in Robotics",
+      "original_name": "Feature function generation"
+    },
+    {
+      "text": "Producing a .pyi file containing only type annotations for functions and variables in a corresponding untyped Python file, preserving the original function signatures without implementation.",
+      "paper": "TypyBench: Evaluating LLM Type Inference for Untyped Python Repositories",
+      "original_name": "Stub file generation"
+    },
+    {
+      "text": "The process by which the LLM produces executable code that computes or approximates Graph Edit Distance based on input graph pairs.",
+      "paper": "GRAIL: Graph Edit Distance and Node Alignment using LLM-Generated Code",
+      "original_name": "Program generation"
+    },
+    {
+      "text": "Producing a complete, self-contained backend application with multiple files and functions that implements specified API endpoints and handles requests correctly.",
+      "paper": "BaxBench: Can LLMs Generate Correct and Secure Backends?",
+      "original_name": "Backend application generation"
+    },
+    {
+      "text": "The task of generating an executable code representation of a multi-agent system based on a natural language user query.",
+      "paper": "MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems",
+      "original_name": "Multi-agent system generation"
+    },
+    {
+      "text": "The task of writing a single, self-contained function based on a given specification, without dependencies on a larger codebase.",
+      "paper": "Synthesizing Software Engineering Data in a Test-Driven Manner",
+      "original_name": "Standalone function implementation"
+    },
+    {
+      "text": "The task of generating Python code, particularly for data science applications, to solve a problem specified in natural language and via test cases.",
+      "paper": "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+      "original_name": "Python code generation"
+    },
+    {
+      "text": "The task of producing functionally correct Verilog code from a natural language or non-textual problem description.",
+      "paper": "CraftRTL: High-quality Synthetic Data Generation for Verilog Code Models with Correct-by-Construction Non-Textual Representations and Targeted Code Repair",
+      "original_name": "Verilog code generation"
+    },
+    {
+      "text": "Generating executable programs that implement environment dynamics or solve coding problems from specifications and examples.",
+      "paper": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+      "original_name": "Program synthesis"
+    },
+    {
+      "text": "Generating scripts that implement source/sink extraction or path-condition solving using external libraries and solvers.",
+      "paper": "LLMDFA: Analyzing Dataflow in Code with Large Language Models",
+      "original_name": "Code synthesis"
+    },
+    {
+      "text": "The observable process of generating a program as a sequence of incremental insertion edits, rather than producing the entire program in a single pass.",
+      "paper": "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+      "original_name": "Sequential edit generation"
+    },
+    {
+      "text": "The specific task of converting natural language policy documents into executable functions in a programming language.",
+      "paper": "PricingLogic: Evaluating LLMs Reasoning on Complex Tourism Pricing Tasks",
+      "original_name": "Policy-to-code translation"
+    },
+    {
+      "text": "The task of generating compilable LaTeX source code from a textual description or prompt.",
+      "paper": "Do Slides Help? Multi-modal Context for Automatic Transcription of Conference Talks",
+      "original_name": "LaTeX code generation"
+    },
+    {
+      "text": "The task of automatically producing executable Python code to perform Exploratory Data Analysis (EDA) on a given dataset.",
+      "paper": "Reliable and Cost-Effective Exploratory Data Analysis via Graph-Guided RAG",
+      "original_name": "EDA code generation"
+    },
+    {
+      "text": "Generating HDL code for combinational logic cones that determine the next state of a register, based on functional descriptions and I/O constraints.",
+      "paper": "SynC-LLM: Generation of Large-Scale Synthetic Circuit Code with Hierarchical Language Models",
+      "original_name": "Cone code generation"
+    },
+    {
+      "text": "The observable task of understanding and producing computer code based on a natural language prompt.",
+      "paper": "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+      "original_name": "Code comprehension and generation"
+    },
+    {
+      "text": "The task of generating executable source code in a programming language based on a natural language description.",
+      "paper": "Reinforcement Learning for Large Language Models via Group Preference Reward Shaping",
+      "original_name": "Coding"
+    },
+    {
+      "text": "The task of generating structured HTML and CSS code from a visual representation of a webpage, such as a hand-drawn sketch or a digital mockup.",
+      "paper": "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation",
+      "original_name": "Mockup-to-code generation"
+    },
+    {
+      "text": "The observable task of producing executable code that creates a data plot or visualization based on a natural language prompt.",
+      "paper": "Identifying & Interactively Refining Ambiguous User Goals for Data Visualization Code Generation",
+      "original_name": "Data visualization code generation"
+    },
+    {
+      "text": "Producing executable game code from a natural-language description of game mechanics.",
+      "paper": "Cardiverse: Harnessing LLMs for Novel Card Game Prototyping",
+      "original_name": "Game code generation"
+    },
+    {
+      "text": "Converting natural language strategies into executable Python functions that score candidate actions based on game state.",
+      "paper": "Cardiverse: Harnessing LLMs for Novel Card Game Prototyping",
+      "original_name": "Heuristic function generation"
+    },
+    {
+      "text": "Generating Python code from natural language instructions to perform data processing, computation, or reasoning tasks not easily expressible in SQL.",
+      "paper": "STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases",
+      "original_name": "Text-to-Python generation"
+    },
+    {
+      "text": "The task of generating Object Relational Mapping (ORM) code from a natural language question, which serves as a dialect-agnostic intermediate representation.",
+      "paper": "Dialect-SQL: An Adaptive Framework for Bridging the Dialect Gap in Text-to-SQL",
+      "original_name": "ORM code generation"
+    },
+    {
+      "text": "Producing executable code (e.g., Python with matplotlib) that renders a data table into a visual chart according to specified conditions.",
+      "paper": "AMACE: Automatic Multi-Agent Chart Evolution for Iteratively Tailored Chart Generation",
+      "original_name": "Chart code generation"
+    },
+    {
+      "text": "The task of automatically generating executable code to create an editable slide that is visually and structurally consistent with a given reference image.",
+      "paper": "SlideCoder: Layout-aware RAG-enhanced Hierarchical Slide Generation from Design",
+      "original_name": "Reference image to slide generation"
+    },
+    {
+      "text": "Producing Python code using the python-pptx library that, when executed, generates a slide matching a reference image in layout and visual appearance.",
+      "paper": "SlideCoder: Layout-aware RAG-enhanced Hierarchical Slide Generation from Design",
+      "original_name": "Slide code generation"
+    },
+    {
+      "text": "The production of an executable Prolog program that encodes logical constraints from a math problem and yields a symbolic answer upon execution.",
+      "paper": "Predicate-Guided Generation for Mathematical Reasoning",
+      "original_name": "Prolog program generation"
+    },
+    {
+      "text": "Producing visualization code and a chart from a natural-language query and data table.",
+      "paper": "Text2Vis: A Challenging and Diverse Benchmark for Generating Multimodal Visualizations from Text",
+      "original_name": "Text-to-visualization generation"
+    },
+    {
+      "text": "Producing executable Python code using libraries like Matplotlib or Seaborn to generate a chart from a data table and natural language query.",
+      "paper": "Text2Vis: A Challenging and Diverse Benchmark for Generating Multimodal Visualizations from Text",
+      "original_name": "Visualization code generation"
+    },
+    {
+      "text": "Generating code for a target function given a natural language requirement and repository context, simulating real-world developer coding processes.",
+      "paper": "EvoCodeBench: An Evolving Code Generation Benchmark with Domain-Specific Evaluations",
+      "original_name": "Repo-level code generation"
+    },
+    {
+      "text": "The task of generating functionally correct code in various programming languages, such as Python, C++, Java, JavaScript, and Go.",
+      "paper": "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+      "original_name": "Multilingual code generation"
+    },
+    {
+      "text": "The task of generating a complete, self-contained function based on a natural language description of its purpose and behavior.",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "original_name": "Function-level code generation"
+    },
+    {
+      "text": "The task of generating the implementation of a class and its methods, given a code skeleton containing class- and method-level information.",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "original_name": "Class-level code generation"
+    },
+    {
+      "text": "The task of completing a partial code snippet to solve a data science problem, often involving specific libraries and data manipulation techniques.",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "original_name": "Data science programming"
+    },
+    {
+      "text": "The task of generating executable source code from a natural language description or prompt.",
+      "paper": "Reranking Laws for Language Generation: A Communication-Theoretic Perspective",
+      "original_name": "Text-to-code generation"
+    },
+    {
+      "text": "The behavior of completing a partial, incomplete SQL query to form a complete and valid query that answers a given question.",
+      "paper": "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+      "original_name": "Continuation writing"
+    },
+    {
+      "text": "The latent aptitude of a large language model to generate correct and functional code snippets from natural language specifications.",
+      "paper": "Is Self-Repair a Silver Bullet for Code Generation?",
+      "original_name": "Code generation ability"
+    },
+    {
+      "text": "The latent ability of a model to produce syntactically correct and functional programming code to solve specified problems.",
+      "paper": "Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models",
+      "original_name": "Code generation capability"
+    },
+    {
+      "text": "The latent ability of a model to produce syntactically correct and functionally accurate Verilog code from natural language specifications.",
+      "paper": "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+      "original_name": "Verilog generation"
+    },
+    {
+      "text": "The latent ability to generate executable code or scripts that implement analysis logic or invoke external tools.",
+      "paper": "LLMDFA: Analyzing Dataflow in Code with Large Language Models",
+      "original_name": "Program synthesis capability"
+    },
+    {
+      "text": "The observable behavior of a model generating code that calls or uses other functions, classes, or modules defined within the provided context.",
+      "paper": "EvoCodeBench: An Evolving Code Generation Benchmark with Domain-Specific Evaluations",
+      "original_name": "Dependency invocation"
+    },
+    {
+      "text": "The observable behavior of generating a specific line or block of code that calls a function, method, or class initializer from an external library.",
+      "paper": "CodeSync: Synchronizing Large Language Models with Dynamic Code Evolution at Scale",
+      "original_name": "API invocation generation"
+    },
+    {
+      "text": "Producing code that satisfies itemized software requirements and passes corresponding verification tests.",
+      "paper": "Self-Evolving Multi-Agent Collaboration Networks for Software Development",
+      "original_name": "Requirement fulfillment"
+    },
+    {
+      "text": "The task of generating functional source code based on a natural language description or problem statement.",
+      "paper": "FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets",
+      "original_name": "Code implementation"
+    },
+    {
+      "text": "The task of generating source code in a specific programming language.",
+      "paper": "Prototype Conditioned Generative Replay for Continual Learning in NLP",
+      "original_name": "Programming language generation"
+    }
+  ],
+  "definition_count": 55,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Are Human-generated Demonstrations Necessary for In-context Learning?",
+      "evidence": "We evaluate SEC in the following tasks and datasets (details in Appendix A.1): ... Code Generation: HumanEval (Chen et al., 2021). (Section 3.1)",
+      "paper_count": 131,
+      "paper_weight": 131.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Are Human-generated Demonstrations Necessary for In-context Learning?",
+          "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+          "Rethinking Channel Dimensions to Isolate Outliers for Low-bit Weight Quantization of Large Language Models",
+          "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain"
+        ],
+        "neurips24": [
+          "Divide-and-Conquer Meets Consensus: Unleashing the Power of Functions in Code Generation",
+          "Parameter Competition Balancing for Model Merging",
+          "BAM! Just Like That: Simple and Efficient Parameter Upcycling for Mixture of Experts",
+          "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs",
+          "DDK: Distilling Domain Knowledge for Efficient Large Language Models",
+          "Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models",
+          "Benchmarking Generative Models on Computational Thinking Tests in Elementary Visual Programming",
+          "Aligner: Efficient Alignment by Learning to Correct",
+          "Unchosen Experts Can Contribute Too: Unleashing MoE Models\u2019 Power by Self-Contrast",
+          "Noise Contrastive Alignment of Language Models with Explicit Rewards",
+          "Synthesize, Partition, then Adapt: Eliciting Diverse Samples from Foundation Models",
+          "Delta-CoMe: Training-Free Delta-Compression with Mixed-Precision for Large Language Models",
+          "Compact Language Models via Pruning and Knowledge Distillation",
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+          "MAmmoTH2: Scaling Instructions from the Web",
+          "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+          "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+          "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search"
+        ],
+        "iclr25": [
+          "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+          "Scaling Large Language Model-based Multi-Agent Collaboration",
+          "Think Thrice Before You Act: Progressive Thought Refinement in Large Language Models",
+          "Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models",
+          "To Code or Not To Code? Exploring Impact of Code in Pre-training",
+          "InstructRAG: Instructing Retrieval-Augmented Generation via Self-Synthesized Rationales",
+          "Train Small, Infer Large: Memory-Efficient LoRA Training for Large Language Models",
+          "Enhancing Language Model Agents using Diversity of Thoughts",
+          "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+          "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+          "Preference Optimization for Reasoning with Pseudo Feedback",
+          "Aligning Language Models with Demonstrated Feedback",
+          "Self-Evolving Multi-Agent Collaboration Networks for Software Development",
+          "PEARL: Parallel Speculative Decoding with Adaptive Draft Length",
+          "SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?",
+          "LoRA-Pro: Are Low-Rank Adapters Properly Optimized?",
+          "Mixture of Attentions For Speculative Decoding",
+          "Model Equality Testing: Which Model is this API Serving?",
+          "AFlow: Automating Agentic Workflow Generation",
+          "Non-myopic Generation of Language Models for Reasoning and Planning",
+          "Learning Harmonized Representations for Speculative Sampling",
+          "Active Task Disambiguation with LLMs",
+          "Distributed Speculative Inference (DSI): Speculation Parallelism for Provably Faster Lossless Language Model Inference",
+          "Cut the Crap: An Economical Communication Pipeline for LLM-based Multi-Agent Systems",
+          "Training Language Models to Self-Correct via Reinforcement Learning",
+          "The Rise and Down of Babel Tower: Investigating the Evolution Process of Multilingual Code Large Language Model",
+          "Advancing LLM Reasoning Generalists with Preference Trees",
+          "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+          "Leveraging Submodule Linearity Enhances Task Arithmetic Performance in LLMs",
+          "Commit0: Library Generation from Scratch"
+        ],
+        "naacl25": [
+          "MergeME: Model Merging Techniques for Homogeneous and Heterogeneous MoEs",
+          "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism",
+          "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs",
+          "mHumanEval - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation",
+          "Fine-Tuning Large Language Models with Sequential Instructions",
+          "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+          "Mastering the Craft of Data Synthesis for CodeLLMs",
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ],
+        "acl25": [
+          "Fusing Highly Specialized Language Models for Comprehensive Expertise",
+          "Faster Speculative Decoding via Effective Draft Decoder with Pruned Candidate Tree",
+          "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization",
+          "Subtle Errors in Reasoning: Preference Learning via Error-injected Self-editing",
+          "Refining Salience-Aware Sparse Fine-Tuning Strategies for Language Models",
+          "Neural Incompatibility: The Unbridgeable Gap of Cross-Scale Parametric Knowledge Transfer in Large Language Models",
+          "LESA: Learnable LLM Layer Scaling-Up",
+          "MorphMark: Flexible Adaptive Watermarking for Large Language Models",
+          "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models",
+          "Learning to Reason from Feedback at Test-Time",
+          "Watermarking Large Language Models: An Unbiased and Low-risk Method",
+          "SPECTRA: Faster Large Language Model Inference with Optimized Internal and External Speculation",
+          "Adapt Once, Thrive with Updates: Transferable Parameter-Efficient Fine-Tuning on Evolving Base Models",
+          "IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory",
+          "LongRecipe: Recipe for Efficient Long Context Generalization in Large Language Models",
+          "BeamLoRA: Beam-Constraint Low-Rank Adaptation",
+          "SAM Decoding: Speculative Decoding via Suffix Automaton",
+          "Planning-Driven Programming: A Large Language Model Programming Workflow",
+          "SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning of Large Language Models",
+          "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+          "ImPart: Importance-Aware Delta-Sparsification for Improved Model Compression and Merging in LLMs"
+        ],
+        "icml25": [
+          "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+          "WeGeFT: Weight-Generative Fine-Tuning for Multi-Faceted Efficient Adaptation of Large Models",
+          "Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation",
+          "LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models, Provably and Efficiently",
+          "Multi-agent Architecture Search via Agentic Supernet",
+          "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+          "Synthesizing Software Engineering Data in a Test-Driven Manner",
+          "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+          "Selective Prompt Anchoring for Code Generation",
+          "Automated Benchmark Generation for Repository-Level Coding Tasks",
+          "Gumiho: A Hybrid Architecture to Prioritize Early Tokens in Speculative Decoding",
+          "Boosting Multi-Domain Fine-Tuning of Large Language Models through Evolving Interactions between Samples",
+          "Splitting with Importance-aware Updating for Heterogeneous Federated Learning with Large Language Models",
+          "SeedLoRA: A Fusion Approach to Efficient LLM Fine-Tuning",
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+          "LIFT the Veil for the Truth: Principal Weights Emerge after Rank Reduction for Reasoning-Focused Supervised Fine-Tuning",
+          "DataDecide: How to Predict Best Pretraining Data with Small Experiments",
+          "Make LoRA Great Again: Boosting LoRA with Adaptive Singular Values and Mixture-of-Experts Optimization Alignment",
+          "Fast Large Language Model Collaborative Decoding via Speculation",
+          "MoEQuant: Enhancing Quantization for Mixture-of-Experts Large Language Models via Expert-Balanced Sampling and Affinity Guidance",
+          "Instruction-Following Pruning for Large Language Models",
+          "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents",
+          "SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity",
+          "DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs",
+          "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+          "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric",
+          "Memory Layers at Scale"
+        ],
+        "emnlp25": [
+          "EcoTune: Token-Efficient Multi-Fidelity Hyperparameter Optimization for Large Language Model Inference",
+          "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment",
+          "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+          "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+          "Dynamic Collaboration of Multi-Language Models based on Minimal Complete Semantic Units",
+          "Dynamic Expert Specialization: Towards Catastrophic Forgetting-Free Multi-Domain MoE Adaptation",
+          "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+          "Compound AI Systems Optimization: A Survey of Methods, Challenges, and Future Directions",
+          "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+          "Not-Just-Scaling Laws: Towards a Better Understanding of the Downstream Impact of Language Model Design Decisions",
+          "Dovetail: A CPU/GPU Heterogeneous Speculative Decoding for LLM inference",
+          "Superpose Task-specific Features for Model Merging",
+          "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+          "Benchmark Profiling: Mechanistic Diagnosis of LLM Benchmarks",
+          "ReSo: A Reward-driven Self-organizing LLM-based Multi-Agent System for Reasoning Tasks",
+          "ZERA: Zero-init Instruction Evolving Refinement Agent -- From Zero Instructions to Structured Prompts via Principle-based Optimization",
+          "Firewall Routing: Blocking Leads to Better Hybrid Inference for LLMs",
+          "Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking",
+          "Middo: Model-Informed Dynamic Data Optimization for Enhanced LLM Fine-Tuning via Closed-Loop Learning",
+          "Arena-lite: Efficient and Reliable Large Language Model Evaluation via Tournament-Based Direct Comparisons",
+          "AnyMAC: Cascading Flexible Multi-Agent Collaboration via Next-Agent Prediction",
+          "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+          "Reward-Weighted Sampling: Enhancing Non-Autoregressive Characteristics in Masked Diffusion LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MBPP",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLM Augmented LLMs: Expanding Capabilities through Composition",
+      "evidence": "Text-to-Code (T2C): Given a textual context, the model is prompted to generate the corresponding code snippet. ... We perform 3-shot inference on the MBPP dataset (Austin et al., 2021) and report P@1. (Section 4.3)",
+      "paper_count": 79,
+      "paper_weight": 79.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "LLM Augmented LLMs: Expanding Capabilities through Composition",
+          "Prompt Risk Control: A Rigorous Framework for Responsible Deployment of Large Language Models",
+          "Teaching Large Language Models to Self-Debug",
+          "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+          "At Which Training Stage Does Code Data Help LLMs Reasoning?",
+          "Rethinking Channel Dimensions to Isolate Outliers for Low-bit Weight Quantization of Large Language Models",
+          "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain"
+        ],
+        "neurips24": [
+          "Divide-and-Conquer Meets Consensus: Unleashing the Power of Functions in Code Generation",
+          "Recursive Introspection: Teaching Language Model Agents How to Self-Improve",
+          "Reranking Laws for Language Generation: A Communication-Theoretic Perspective",
+          "BAM! Just Like That: Simple and Efficient Parameter Upcycling for Mixture of Experts",
+          "Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models",
+          "Stress-Testing Capability Elicitation With Password-Locked Models",
+          "$\\textit{Trans-LoRA}$: towards data-free Transferable Parameter Efficient Finetuning",
+          "Unchosen Experts Can Contribute Too: Unleashing MoE Models\u2019 Power by Self-Contrast",
+          "Synthesize, Partition, then Adapt: Eliciting Diverse Samples from Foundation Models",
+          "Delta-CoMe: Training-Free Delta-Compression with Mixed-Precision for Large Language Models",
+          "SciInstruct: a Self-Reflective Instruction Annotated Dataset for Training Scientific Language Models",
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning",
+          "Wings: Learning Multimodal LLMs without Text-only Forgetting",
+          "MAmmoTH2: Scaling Instructions from the Web",
+          "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+          "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models"
+        ],
+        "iclr25": [
+          "To Code or Not To Code? Exploring Impact of Code in Pre-training",
+          "Enhancing Language Model Agents using Diversity of Thoughts",
+          "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+          "Preference Optimization for Reasoning with Pseudo Feedback",
+          "AFlow: Automating Agentic Workflow Generation",
+          "Non-myopic Generation of Language Models for Reasoning and Planning",
+          "Distributed Speculative Inference (DSI): Speculation Parallelism for Provably Faster Lossless Language Model Inference",
+          "ADePT: Adaptive Decomposed Prompt Tuning for Parameter-Efficient Fine-tuning",
+          "Advancing LLM Reasoning Generalists with Preference Trees",
+          "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+          "Fine-tuning with Reserved Majority for Noise Reduction"
+        ],
+        "naacl25": [
+          "Dynamic Data Mixing Maximizes Instruction Tuning for Mixture-of-Experts",
+          "MergeME: Model Merging Techniques for Homogeneous and Heterogeneous MoEs",
+          "mHumanEval - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation",
+          "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+          "ParaICL: Towards Parallel In-Context Learning",
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ],
+        "acl25": [
+          "Subtle Errors in Reasoning: Preference Learning via Error-injected Self-editing",
+          "Refining Salience-Aware Sparse Fine-Tuning Strategies for Language Models",
+          "Neural Incompatibility: The Unbridgeable Gap of Cross-Scale Parametric Knowledge Transfer in Large Language Models",
+          "LESA: Learnable LLM Layer Scaling-Up",
+          "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models",
+          "Learning to Reason from Feedback at Test-Time",
+          "Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks",
+          "SPECTRA: Faster Large Language Model Inference with Optimized Internal and External Speculation",
+          "Adapt Once, Thrive with Updates: Transferable Parameter-Efficient Fine-Tuning on Evolving Base Models",
+          "IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory",
+          "BeamLoRA: Beam-Constraint Low-Rank Adaptation",
+          "Planning-Driven Programming: A Large Language Model Programming Workflow",
+          "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+          "ImPart: Importance-Aware Delta-Sparsification for Improved Model Compression and Merging in LLMs"
+        ],
+        "icml25": [
+          "Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation",
+          "Multi-agent Architecture Search via Agentic Supernet",
+          "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+          "Synthesizing Software Engineering Data in a Test-Driven Manner",
+          "Selective Prompt Anchoring for Code Generation",
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+          "DataDecide: How to Predict Best Pretraining Data with Small Experiments",
+          "Optimizing Temperature for Language Models with Multi-Sample Inference",
+          "Text-to-LoRA: Instant Transformer Adaption",
+          "Instruction-Following Pruning for Large Language Models",
+          "DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs",
+          "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification",
+          "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+          "Memory Layers at Scale"
+        ],
+        "emnlp25": [
+          "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+          "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+          "RLAE: Reinforcement Learning-Assisted Ensemble for LLMs",
+          "Dynamic Expert Specialization: Towards Catastrophic Forgetting-Free Multi-Domain MoE Adaptation",
+          "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+          "Compound AI Systems Optimization: A Survey of Methods, Challenges, and Future Directions",
+          "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+          "Benchmark Profiling: Mechanistic Diagnosis of LLM Benchmarks",
+          "ZERA: Zero-init Instruction Evolving Refinement Agent -- From Zero Instructions to Structured Prompts via Principle-based Optimization",
+          "Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking",
+          "Middo: Model-Informed Dynamic Data Optimization for Enhanced LLM Fine-Tuning via Closed-Loop Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "APPS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "$\\mathcal{B}$-Coder: Value-Based Deep Reinforcement Learning for Program Synthesis",
+      "evidence": "In line with prior RL-based works (Le et al., 2022; Shojaee et al., 2023; Liu et al., 2023), we evaluate B-Coder on the challenging code contests benchmark APPS (Hendrycks et al., 2021). (Section 5)",
+      "paper_count": 14,
+      "paper_weight": 14.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "$\\mathcal{B}$-Coder: Value-Based Deep Reinforcement Learning for Program Synthesis"
+        ],
+        "neurips24": [
+          "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision",
+          "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+          "Stress-Testing Capability Elicitation With Password-Locked Models"
+        ],
+        "iclr25": [
+          "DeFT: Decoding with Flash Tree-attention for Efficient Tree-structured LLM Inference",
+          "Preference Optimization for Reasoning with Pseudo Feedback",
+          "Copyright-Protected Language Generation via Adaptive Model Fusion",
+          "MA-RLHF: Reinforcement Learning from Human Feedback with Macro Actions"
+        ],
+        "naacl25": [
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ],
+        "acl25": [
+          "Personality-Guided Code Generation Using Large Language Models",
+          "Planning-Driven Programming: A Large Language Model Programming Workflow"
+        ],
+        "icml25": [
+          "The Elicitation Game: Evaluating Capability Elicitation Techniques"
+        ],
+        "emnlp25": [
+          "RethinkMCTS: Refining Erroneous Thoughts in Monte Carlo Tree Search for Code Generation",
+          "Alignment with Fill-In-the-Middle for Enhancing Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LiveCodeBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "evidence": "LiveCodeBench [21] is a benchmark for contamination-free evaluation. ... we focus on the code generation task for assessing LLM function generation. (Section 3.1)",
+      "paper_count": 13,
+      "paper_weight": 13.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SelfCodeAlign: Self-Alignment for Code Generation"
+        ],
+        "iclr25": [
+          "Preference Optimization for Reasoning with Pseudo Feedback",
+          "Planning in Natural Language Improves LLM Search for Code Generation",
+          "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code"
+        ],
+        "naacl25": [
+          "Scaling LLM Inference Efficiently with Optimized Sample Compute Allocation"
+        ],
+        "icml25": [
+          "Selective Prompt Anchoring for Code Generation",
+          "AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence",
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?"
+        ],
+        "emnlp25": [
+          "Efficient Model Development through Fine-tuning Transfer",
+          "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+          "Search-o1: Agentic Search-Enhanced Large Reasoning Models",
+          "AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time",
+          "Process-Supervised Reinforcement Learning for Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "EvalPlus",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "evidence": "HumanEval [8] and MBPP [3] are the two most widely-used benchmarks for function-level code generation. We use their test augmented versions, i.e., HumanEval+ and MBPP+, with 80\u00d7/35\u00d7 more test cases for rigorous evaluation [38]. (Section 3.1)",
+      "paper_count": 11,
+      "paper_weight": 11.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SelfCodeAlign: Self-Alignment for Code Generation",
+          "SIRIUS : Contexual Sparisty with Correction for Efficient LLMs",
+          "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning"
+        ],
+        "iclr25": [
+          "Planning in Natural Language Improves LLM Search for Code Generation"
+        ],
+        "naacl25": [
+          "Generating Diverse Hypotheses for Inductive Reasoning"
+        ],
+        "acl25": [
+          "Personality-Guided Code Generation Using Large Language Models"
+        ],
+        "icml25": [
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+          "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+          "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators"
+        ],
+        "emnlp25": [
+          "Efficient Model Development through Fine-tuning Transfer",
+          "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval+",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "evidence": "HumanEval [8] and MBPP [3] are the two most widely-used benchmarks for function-level code generation. We use their test augmented versions, i.e., HumanEval+ and MBPP+, with 80\u00d7/35\u00d7 more test cases for rigorous evaluation [38]. (Section 3.1)",
+      "paper_count": 10,
+      "paper_weight": 10.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SelfCodeAlign: Self-Alignment for Code Generation"
+        ],
+        "iclr25": [
+          "Planning in Natural Language Improves LLM Search for Code Generation",
+          "RaSA: Rank-Sharing Low-Rank Adaptation"
+        ],
+        "naacl25": [
+          "CodeSCM: Causal Analysis for Multi-Modal Code Generation"
+        ],
+        "acl25": [
+          "Personality-Guided Code Generation Using Large Language Models"
+        ],
+        "icml25": [
+          "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+          "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+          "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits"
+        ],
+        "emnlp25": [
+          "Efficient Model Development through Fine-tuning Transfer",
+          "Warm Up Before You Train: Unlocking General Reasoning in Resource-Constrained Settings"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+      "evidence": "A host of prompting techniques have shown how to leverage the In-Context Learning (ICL) abilities of LLMs to enhance a model's reasoning skills, and, as a result, the quality of generated programs.",
+      "paper_count": 7,
+      "paper_weight": 7.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+          "LISA: Layerwise Importance Sampling for Memory-Efficient Large Language Model Fine-Tuning"
+        ],
+        "icml25": [
+          "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+          "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment",
+          "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?"
+        ],
+        "naacl25": [
+          "Mastering the Craft of Data Synthesis for CodeLLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "DS-1000",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+      "evidence": "Through comprehensive experiments on five prominent code generation benchmarks, namely HumanEval, HumanEval+, MBPP, DS-1000, and MultiPL-E, our models showcase outstanding performance. (ABSTRACT)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "WizardCoder: Empowering Code Large Language Models with Evol-Instruct"
+        ],
+        "neurips24": [
+          "SelfCodeAlign: Self-Alignment for Code Generation"
+        ],
+        "iclr25": [
+          "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+          "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?"
+        ],
+        "emnlp25": [
+          "Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BigCodeBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "evidence": "Our BigCodeBench focuses on evaluating the fundamental code generation capability of LLMs, which is also an essential path toward strong code agents. (Section 5)",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions"
+        ],
+        "icml25": [
+          "Selective Prompt Anchoring for Code Generation",
+          "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+          "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+          "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CodeContests",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Generative Monoculture in Large Language Models",
+      "evidence": "\u201cFor Dsrc, we chose the CodeContests dataset (Li et al., 2022), a competitive programming problem dataset where each problem comes with multiple correct and incorrect solutions.\u201d",
+      "paper_count": 5,
+      "paper_weight": 5.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Generative Monoculture in Large Language Models"
+        ],
+        "naacl25": [
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ],
+        "acl25": [
+          "Planning-Driven Programming: A Large Language Model Programming Workflow"
+        ],
+        "icml25": [
+          "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+          "Improving Diversity in Language Models: When Temperature Fails, Change the Loss"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MultiPL-E",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Batched Low-Rank Adaptation of Foundation Models",
+      "evidence": "The evaluation of FLORA, LORA, and IA3 was conducted on the MultiPL-E benchmark (Cassano et al., 2023), which contains the translation of two unit-test driven Python benchmarks (HumanEval and MBPP) to 18 other programming languages. (Section 4.2)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Batched Low-Rank Adaptation of Foundation Models",
+          "WizardCoder: Empowering Code Large Language Models with Evol-Instruct"
+        ],
+        "acl25": [
+          "SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning of Large Language Models"
+        ],
+        "icml25": [
+          "Instruction-Following Pruning for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models",
+      "evidence": "math and code problems are formatted as instructions, enhancing instruction following capabilities enables LLMs to better address these tasks. (Section 4)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models"
+        ],
+        "neurips24": [
+          "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search"
+        ],
+        "naacl25": [
+          "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEvalPack",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OctoPack: Instruction Tuning Code Large Language Models",
+      "evidence": "HUMANEVALSYNTHESIZE (NL!C) Given a natural language docstring or comment describing the desired code, the model is tasked to synthesize the correct code. (Section 3)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "OctoPack: Instruction Tuning Code Large Language Models"
+        ],
+        "emnlp25": [
+          "From Understanding to Generation: An Efficient Shortcut for Evaluating Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Codeforces",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+      "evidence": "we analyze Codeforces and Project Euler, two longitudinal code generation/problem solving websites. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+          "Large Language Models as Analogical Reasoners"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ClassEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SelfCodeAlign: Self-Alignment for Code Generation",
+      "evidence": "We evaluate code LLMs on class-level code generation using ClassEval [13], a collection of 100 class-level Python code generation tasks, covering 100 classes and 410 methods, with an average of 33 tests per class and 8 tests per method. (Section 3.2)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "SelfCodeAlign: Self-Alignment for Code Generation"
+        ],
+        "acl25": [
+          "SPECTRA: Faster Large Language Model Inference with Optimized Internal and External Speculation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Coding ability",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Delta-CoMe: Training-Free Delta-Compression with Mixed-Precision for Large Language Models",
+      "evidence": "For code generation, Luo et al. (2023b) adapt the evol-instruct method to the coding domain, resulting in the WIZARDCODER model, which demonstrates superior coding abilities compared to generally trained LLMs. (Section 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Delta-CoMe: Training-Free Delta-Compression with Mixed-Precision for Large Language Models"
+        ],
+        "iclr25": [
+          "StringLLM: Understanding the String Processing Capability of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "HumanEval-X",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+      "evidence": "We compare the pass@1 accuracy of the base models and the corresponding fine-tuned AlchemistCoder models on Humaneval-X [49]. (Section 3.2, under heading 'Results on multilingual code generation.')",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data"
+        ],
+        "icml25": [
+          "Selective Prompt Anchoring for Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "TACO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Learning How Hard to Think: Input-Adaptive Allocation of LM Computation",
+      "evidence": "For the coding experiments, we adopt a subset of TACO, a dataset focused on algorithmic code generation with problems sourced from various programming contest platforms (Li et al., 2023). (Section 4.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Learning How Hard to Think: Input-Adaptive Allocation of LM Computation"
+        ],
+        "icml25": [
+          "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "bigcode-evaluation-harness",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RaSA: Rank-Sharing Low-Rank Adaptation",
+      "evidence": "We used the Bigcode Evaluation Harness (Ben Allal et al., 2022) as the evaluation tool, sampling 50 solutions per problem with a temperature of 0.2, and report both Pass@1 and Pass@10.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RaSA: Rank-Sharing Low-Rank Adaptation"
+        ],
+        "icml25": [
+          "any4: Learned 4-bit Numeric Representation for LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chart generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "C2: Scalable Auto-Feedback forLLM-based Chart Generation",
+      "evidence": "the LLM is prompted to provide fine-grained feedback considering the downstream application, i.e., chart generation via code generation.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "C2: Scalable Auto-Feedback forLLM-based Chart Generation"
+        ],
+        "acl25": [
+          "METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LeetCode Contest",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+      "evidence": "To evaluate code LLMs on more challenging problems, we construct the LeetCode Contest benchmark.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study",
+      "evidence": "Self-Debugging (SD) is both complementary to and beneficial for M1... Applying SD on TAs can provide S-score benefits... M1 achieves consistent improvements.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study",
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Planning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution",
+      "evidence": "The AEP examples contain planning steps, that outline a possible decomposition of the task (lines 7, 14, 17) to encourage step-by-step thinking and to improve generation quality. (Section 2.3.1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "acl25": [
+          "ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution"
+        ],
+        "iclr25": [
+          "MindSearch: Mimicking Human Minds Elicits Deep AI Searcher"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Semantic parsing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML",
+      "evidence": "we integrate structure-based prompt parsing and multi-stage verification to ensure the quality of resulting solutions and instructions prior to actual code implementation, thereby improving overall performance.",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML"
+        ],
+        "naacl25": [
+          "Diverse In-Context Example Selection After Decomposing Programs and Aligned Utterances Improves Semantic Parsing"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LongBench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "evidence": "LongBench This benchmark contains a variety of zero-shot long context tasks, such as: Single/Multi Document QA, Summarization, Coding, etc. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "DeciMamba: Exploring the Length Extrapolation Potential of Mamba"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MT-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "evidence": "MT-bench (Zheng et al., 2023), which evaluates chatbot responses across various dimensions such as writing, roleplay, coding, mathematics, reasoning, STEM, and humanities, using GPT-4 for grading (Section 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "WildChat: 1M ChatGPT Interaction Logs in the Wild"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "EvoEval",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+      "evidence": "We evaluated the models on benchmarks corresponding to their respective training levels. In Section 3.2, we evaluate the model\u2019s ability using five function-level code generation benchmarks. Specifically, HumanEval (Chen et al., 2021), MBPP (Austin et al., 2021), BigCodeBench (Zhuo et al., 2025), EvoEval (Xia et al., 2024) and FullStackBench (Liu et al., 2024). (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "EpiCoder: Encompassing Diversity and Complexity in Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Tool use",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning",
+      "evidence": "The actor then generates revised actions, which could include a combination of tool usage through programming language (code generation) along with natural language explanations of how the tools are employed. (Section 4.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Test-Time Training on Nearest Neighbors for Large Language Models",
+      "evidence": "When it comes to some tasks, especially code generation as in the pile github task, the bits per byte metric goes down by more than 60% during test-time training. (Section 1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Test-Time Training on Nearest Neighbors for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BIG-Bench Hard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs",
+      "evidence": "In this experiment, we test Trace\u2019s ability in joint prompt optimization and code generation. ... We use the Big-Bench Hard dataset [21] (15 examples for training, 5 for validation, and the rest for testing). (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Data transformation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "HYSYNTH: Context-Free LLM Approximation for Guiding Program Synthesis",
+      "evidence": "Beyond grid puzzles, PBE is a general paradigm for structured reasoning and data transformation tasks",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "HYSYNTH: Context-Free LLM Approximation for Guiding Program Synthesis"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Symbolic regression",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Symbolic Regression with a Learned Concept Library",
+      "evidence": "We formulate symbolic regression (SR) as a program synthesis [6] problem. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Symbolic Regression with a Learned Concept Library"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "LeetCode",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Noise Contrastive Alignment of Language Models with Explicit Rewards",
+      "evidence": "...HumanEval [4] and LeetCode [12] for coding... (Section 5.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Noise Contrastive Alignment of Language Models with Explicit Rewards"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Data analysis",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation",
+      "evidence": "we use large language models (LLMs) enhanced by code generation to automatically generate high-quality data analysis, which will later be refined by human annotators. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "DACO: Towards Application-Driven and Comprehensive Data Analysis via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Code infilling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "EvoCodeBench: An Evolving Code Generation Benchmark with Domain-Specific Evaluations",
+      "evidence": "\u201cThe local file denotes the code file where the reference code is in. This setting simulates the scenario where developers infill code in the middle of a file.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "EvoCodeBench: An Evolving Code Generation Benchmark with Domain-Specific Evaluations"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Coding",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Law of the Weakest Link: Cross Capabilities of Large Language Models",
+      "evidence": "Coding: The ability to write, synthesize, document, debug, and review code across various programming languages. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Law of the Weakest Link: Cross Capabilities of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Hallucination",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "GraphArena: Evaluating and Exploring Large Language Models on Graph Computation",
+      "evidence": "Results in Table 2 show that this code-writing approach effectively reduced hallucination rates, particularly on large graphs.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "GraphArena: Evaluating and Exploring Large Language Models on Graph Computation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BigCodeBench-Complete",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "evidence": "We assess two common programming scenarios: (1) Code Completion (BigCodeBench-Complete), which evaluates the capability of code generation based on the structured docstrings; and (2) Instruction to Code (BigCodeBench-Instruct), which evaluates the ability to complete programming tasks based on natural-language-oriented (NL-oriented) instructions. (Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Inductive reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Combining Induction and Transduction for Abstract Reasoning",
+      "evidence": "We represent functions f as Python code, meaning that induction synthesizes programs (Section 1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Combining Induction and Transduction for Abstract Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "GUI understanding",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+      "evidence": "To further demonstrate how GUI understanding capability enhances mainstream GUI-related tasks, including generating operational code (Cheng et al., 2024) and providing chat assistance (Hong et al., 2024), we conduct experiments as follows... (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "CodeSearchNet",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Selective Aggregation for Low-Rank Adaptation in Federated Learning",
+      "evidence": "For an additional dataset on the code generation task. We choose the CodeSearchNet dataset (Husain et al., 2019) for evaluation. (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Selective Aggregation for Low-Rank Adaptation in Federated Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Logical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Steering Large Language Models between Code Execution and Textual Reasoning",
+      "evidence": "In logical reasoning tasks like Date Understanding, LLM\u2019s reasoning ability is degraded when using code, as shown in Appendix Section G. (Section 3.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Steering Large Language Models between Code Execution and Textual Reasoning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "GUI automation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+      "evidence": "OSCAR generates executable Python code to directly interface with the OS, enabling semantically clear and precise actions, ensuring broad applicability across diverse tasks. (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Expressive power",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "RaSA: Rank-Sharing Low-Rank Adaptation",
+      "evidence": "the limited expressive capacity of LoRA, stemming from the low-rank constraint, has been recognized as a bottleneck, particularly in rigorous tasks like code generation and mathematical reasoning.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "RaSA: Rank-Sharing Low-Rank Adaptation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ChartMimic",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation",
+      "evidence": "ChartMimic places emphasis on evaluating LMMs\u2019 capacity to harmonize a blend of cognitive capabilities, encompassing visual understanding, code generation, and cross-modal reasoning. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "State tracking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "evidence": "In recurrent models, Gated DeltaNet shows consistent advantages, especially in ... Code tasks, demonstrating its superior capabilities in ... state tracking, respectively.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Synthetic data generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective",
+      "evidence": "synthetic data plays a crucial role in boosting the performance of LLMs across a variety of downstream tasks, including... code generation... (Section 2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Joint prediction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Real2Code: Reconstruct Articulated Objects via Code Generation",
+      "evidence": "\"joint estimation via LLM code generation\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Real2Code: Reconstruct Articulated Objects via Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Execution-based evaluation",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "McEval: Massively Multilingual Code Evaluation",
+      "evidence": "The execution-based method executes generated code against test cases to measure the success rate.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "McEval: Massively Multilingual Code Evaluation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Direct prompting",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery",
+      "evidence": "\"Direct prompting is a simple framework that does not interact with any programming environment. Given the task inputs, it prompts an LLM to generate a corresponding program in one pass. We use this framework to show the basic code generation capability of each LLM.\"",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-improvement",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "G\u00f6del Agent: A Self-Referential Agent Framework for Recursively Self-Improvement",
+      "evidence": "Zelikman et al. (2023) applied recursive self-improvement to code generation, where the target of improvement was the optimizer itself.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "G\u00f6del Agent: A Self-Referential Agent Framework for Recursively Self-Improvement"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-context understanding",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+      "evidence": "The research community increasingly recognizes long-context modeling as a crucial capability for next-generation large language models, driven by diverse real-world applications ranging from... repository-level code generation (Zhang et al., 2023a; Zhang et al.)... (Introduction).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ChartX",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation",
+      "evidence": "Similarly, Plot2Code (Wu et al., 2024) and ChartX (Xia et al., 2024) also evaluate MLLMs code generation ability, especially for text and data reproducibility (Section 2.2).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Algorithmic reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation",
+      "evidence": "However, complex programming tasks requiring multi-step algorithmic reasoning\u2014such as implementing dynamic programming solutions or optimizing parallel computation patterns\u2014remain challenging (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Long-form text generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Dialogue Without Limits: Constant-Sized KV Caches for Extended Response in LLMs",
+      "evidence": "In contrast, long-response tasks, such as essay writing and code generation, generate a substantial number of output tokens during the decode phase, requiring sustained attention over growing sequences of self-generated tokens. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Dialogue Without Limits: Constant-Sized KV Caches for Extended Response in LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "evidence": "We... demonstrate robustness by showing retention of code generation and general problem-solving abilities post adaptation. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Conjecture generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Machine Learning meets Algebraic Combinatorics: A Suite of Datasets Capturing Research-level Conjecturing Ability in Pure Mathematics",
+      "evidence": "Conjecture generation is a crucial component in current evolutionary approaches to mathematical discovery... The basic idea is that because computer code is more interpretable than raw ML predictions, one can use an LLM to generate (human-interpretable) code that solves a mathematical task. This is often known as program synthesis. (Section 5).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Machine Learning meets Algebraic Combinatorics: A Suite of Datasets Capturing Research-level Conjecturing Ability in Pure Mathematics"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AlpacaEval 2.0",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+      "evidence": "To test our hypothesis, we break down the prompts in Alpaca Eval 2.0 (Li et al., 2023) into different categories. ... We select four representative tasks: two are objective tasks that can be verified: mathematical reasoning or calculation (Math) and Coding...",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+      "evidence": "mixing code-generation data has been suggested to enhance a model\u2019s reasoning and logical abilities (Dong et al., 2024). (Section 2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WebMMU",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation",
+      "evidence": "We present WebMMU, a multilingual benchmark that evaluates three core web tasks: (1) website visual question answering, (2) code editing involving HTML/CSS/JavaScript, and (3) mockup-to-code generation.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Code debugging",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Is Self-Repair a Silver Bullet for Code Generation?",
+      "evidence": "we model self-repair as consisting of four stages: code generation, code execution, feedback generation, and code repair.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Is Self-Repair a Silver Bullet for Code Generation?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Mathematical reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Learning Goal-Conditioned Representations for Language Reward Models",
+      "evidence": "mathematical reasoning with code (Section 4.1), where LMs must use reasoning and coding to answer mathematical questions. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Learning Goal-Conditioned Representations for Language Reward Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Task decomposition",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "RL-GPT: Integrating Reinforcement Learning and Code-as-policy",
+      "evidence": "RL-GPT decomposes the task into \u201cfind a tree\" and \u201ccut a log\", solving the former with code generation and the latter with RL.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "RL-GPT: Integrating Reinforcement Learning and Code-as-policy"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Logical consistency",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Learning to Solve Domain-Specific Calculation Problems with Knowledge-Intensive Programs Generator",
+      "evidence": "By iterative preference alignment, the code generator learns to improve the logic consistency with the domain knowledge. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Learning to Solve Domain-Specific Calculation Problems with Knowledge-Intensive Programs Generator"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain of thought",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+      "evidence": "training LLMs to generate code first and then output the CoT to explain reasoning steps for code generation is more effective. (Abstract)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Utility preservation",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Tool Unlearning for Tool-Augmented LLMs",
+      "evidence": "As a foundation model, f \u2032 is expected to retain abilities such as text and code generation, question answering, instruction-following, and basic mathematical reasoning.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Tool Unlearning for Tool-Augmented LLMs"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Visual editing",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding",
+      "evidence": "simple visual editing actions generated as Python code from multimodal LLMs (Section 1. Introduction)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Symbolic reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance",
+      "evidence": "\u201csymbolic computing via code generation is adept at handling rigorous operations\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Plan generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Code-Generated Graph Representations Using Multiple LLM Agents for Material Properties Prediction",
+      "evidence": "In the second step, a complete code is generated based on the outlined plan by Agent B. (Section 4.1.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Code-Generated Graph Representations Using Multiple LLM Agents for Material Properties Prediction"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 69,
+  "incoming_relationship_count": 12,
+  "outgoing_relationship_count": 57,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats code generation as producing executable, functional, or functionally correct source code from a natural language description, prompt, docstring, or other specification. Success is usually framed by syntactic validity plus whether the generated code works, often by passing unit, visible, or hidden tests, though some papers instead emphasize complete, compilable solutions or code that reproduces a target artifact. A smaller line of work broadens the input beyond plain text to multimodal prompts, chart images, code skeletons, input-output examples, or repository context. One paper explicitly describes it as the task of synthesizing code from natural language (SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?)."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use the label for many variants. Common ones stay close to function- or program-level synthesis, including function completion, whole-function and repo-level generation, class-level generation, standalone function implementation, and sequential edit generation. Another cluster covers multimodal or structured targets, such as chart-to-code generation, visual program generation, mockup-to-code, slide code generation, and text-to-ES or ORM query generation. Other papers narrow it to particular languages or domains, including Python and multilingual coding, Verilog or other HDL tasks, interactive Bash coding, backend application generation, EDA and visualization code, game code, Prolog programs, and policy-to-code translation. In repository settings, one paper defines the task as generating the target function that passes all relevant test cases (Can Language Models Replace Programmers for Coding? REPOCOD Says `Not Yet')."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Code generation is measured by 32 instruments. The most recurrent are HumanEval, MBPP, APPS, LiveCodeBench, and EvalPlus, which papers use for function-level Python tasks, broader programming problems, and test-augmented evaluation. Most linked instruments are benchmark datasets, though papers also mention execution-based evaluation and an LLM-as-a-judge setup."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Across 17 linked constructs, a direct measurement-style use treats code generation as evidence of coding ability, and papers also frequently tie it to reasoning. On reasoning, papers do not use a single direction: some report code generation is related to reasoning, others claim reasoning causes code generation, and another line claims code generation causes reasoning. Smaller lines of work connect it to planning, algorithmic reasoning, and expressive power. Overall, papers do not converge on one construct that code generation reflects."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats code generation as producing executable, functional, or functionally correct source code from a natural language description, prompt, docstring, or other specification. Success is usually framed by syntactic validity plus whether the generated code works, often by passing unit, visible, or hidden tests, though some papers instead emphasize complete, compilable solutions or code that reproduces a target artifact. A smaller line of work broadens the input beyond plain text to multimodal prompts, chart images, code skeletons, input-output examples, or repository context. One paper explicitly describes it as the task of synthesizing code from natural language (SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?).\n\nVariants. Papers use the label for many variants. Common ones stay close to function- or program-level synthesis, including function completion, whole-function and repo-level generation, class-level generation, standalone function implementation, and sequential edit generation. Another cluster covers multimodal or structured targets, such as chart-to-code generation, visual program generation, mockup-to-code, slide code generation, and text-to-ES or ORM query generation. Other papers narrow it to particular languages or domains, including Python and multilingual coding, Verilog or other HDL tasks, interactive Bash coding, backend application generation, EDA and visualization code, game code, Prolog programs, and policy-to-code translation. In repository settings, one paper defines the task as generating the target function that passes all relevant test cases (Can Language Models Replace Programmers for Coding? REPOCOD Says `Not Yet').\n\nSpace of elicitation and scores. Code generation is measured by 32 instruments. The most recurrent are HumanEval, MBPP, APPS, LiveCodeBench, and EvalPlus, which papers use for function-level Python tasks, broader programming problems, and test-augmented evaluation. Most linked instruments are benchmark datasets, though papers also mention execution-based evaluation and an LLM-as-a-judge setup.\n\nWhat it is taken as evidence of. Across 17 linked constructs, a direct measurement-style use treats code generation as evidence of coding ability, and papers also frequently tie it to reasoning. On reasoning, papers do not use a single direction: some report code generation is related to reasoning, others claim reasoning causes code generation, and another line claims code generation causes reasoning. Smaller lines of work connect it to planning, algorithmic reasoning, and expressive power. Overall, papers do not converge on one construct that code generation reflects.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Survey of Post-Training Scaling in Large Language Models",
+      "ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution",
+      "Adapt Once, Thrive with Updates: Transferable Parameter-Efficient Fine-Tuning on Evolving Base Models",
+      "Analyzing the Rapid Generalization of SFT via the Perspective of Attention Head Activation Patterns",
+      "Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks",
+      "BeamLoRA: Beam-Constraint Low-Rank Adaptation",
+      "Beyond Output Matching: Bidirectional Alignment for Enhanced In-Context Learning",
+      "Beyond Sequences: Two-dimensional Representation and Dependency Encoding for Code Generation",
+      "Can Language Models Replace Programmers for Coding? REPOCOD Says `Not Yet'",
+      "Can We Further Elicit Reasoning in LLMs? Critic-Guided Planning with Retrieval-Augmentation for Solving Challenging Tasks",
+      "CodeDPO: Aligning Code Models with Self Generated and Verified Source Code",
+      "ConsistencyChecker: Tree-based Evaluation of LLM Generalization Capabilities",
+      "DARS: Dynamic Action Re-Sampling to Enhance Coding Agent Performance by Adaptive Tree Traversal",
+      "DebateCoder: Towards Collective Intelligence of LLMs via Test Case Driven LLM Debate for Code Generation",
+      "Dolphin: Moving Towards Closed-loop Auto-research through Thinking, Practice, and Feedback",
+      "ELABORATION: A Comprehensive Benchmark on Human-LLM Competitive Programming",
+      "Energy Considerations of Large Language Model Inference and Efficiency Optimizations",
+      "Extending LLM Context Window with Adaptive Grouped Positional Encoding: A Training-Free Method",
+      "FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling",
+      "Faster Speculative Decoding via Effective Draft Decoder with Pruned Candidate Tree",
+      "From Tools to Teammates: Evaluating LLMs in Multi-Session Coding Interactions",
+      "Fusing Highly Specialized Language Models for Comprehensive Expertise",
+      "G\u00f6del Agent: A Self-Referential Agent Framework for Recursively Self-Improvement",
+      "HALoGEN: Fantastic LLM Hallucinations and Where to Find Them",
+      "IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory",
+      "ImPart: Importance-Aware Delta-Sparsification for Improved Model Compression and Merging in LLMs",
+      "Infogen: Generating Complex Statistical Infographics from Documents",
+      "LED-Merging: Mitigating Safety-Utility Conflicts in Model Merging with Location-Election-Disjoint",
+      "LESA: Learnable LLM Layer Scaling-Up",
+      "LLM Agents Making Agent Tools",
+      "LLMs can be easily Confused by Instructional Distractions",
+      "Learning to Reason from Feedback at Test-Time",
+      "LlamaDuo: LLMOps Pipeline for Seamless Migration from Service LLMs to Small-Scale Local LLMs",
+      "LongRecipe: Recipe for Efficient Long Context Generalization in Large Language Models",
+      "MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale",
+      "MasRouter: Learning to Route LLMs for Multi-Agent Systems",
+      "Meta-Reflection: A Feedback-Free Reflection Learning Framework",
+      "MorphMark: Flexible Adaptive Watermarking for Large Language Models",
+      "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+      "Neural Incompatibility: The Unbridgeable Gap of Cross-Scale Parametric Knowledge Transfer in Large Language Models",
+      "OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models",
+      "Personality-Guided Code Generation Using Large Language Models",
+      "PwnGPT: Automatic Exploit Generation Based on Large Language Models",
+      "Qwen2.5-xCoder: Multi-Agent Collaboration for Multilingual Code Instruction Tuning",
+      "Refining Salience-Aware Sparse Fine-Tuning Strategies for Language Models",
+      "Rethinking Repetition Problems of LLMs in Code Generation",
+      "Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization",
+      "Retrieval-Augmented Fine-Tuning With Preference Optimization For Visual Program Generation",
+      "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+      "SAM Decoding: Speculative Decoding via Suffix Automaton",
+      "SCAR: Data Selection via Style Consistency-Aware Response Ranking for Efficient Instruction-Tuning of Large Language Models",
+      "SPECTRA: Faster Large Language Model Inference with Optimized Internal and External Speculation",
+      "Sample-Efficient Human Evaluation of Large Language Models via Maximum Discrepancy Competition",
+      "Squeezed Attention: Accelerating Long Context Length LLM Inference",
+      "Teaching an Old LLM Secure Coding: Localized Preference Optimization on Distilled Preferences",
+      "Text-to-ES Bench: A Comprehensive Benchmark for Converting Natural Language to Elasticsearch Query",
+      "The Invisible Hand: Unveiling Provider Bias in Large Language Models for Code Generation",
+      "TheoremExplainAgent: Towards Video-based Multimodal Explanations for LLM Theorem Understanding",
+      "ToolCoder: A Systematic Code-Empowered Tool Learning Framework for Large Language Models",
+      "Uncertainty-Aware Iterative Preference Optimization for Enhanced LLM Reasoning",
+      "Velocitune: A Velocity-based Dynamic Domain Reweighting Method for Continual Pre-training",
+      "WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models",
+      "Watermarking Large Language Models: An Unbiased and Low-risk Method",
+      "YuLan-Mini: Pushing the Limits of Open Data-efficient Language Model",
+      "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization",
+      "nvAgent: Automated Data Visualization from Natural Language via Collaborative Agent Workflow",
+      "ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation",
+      "Program Synthesis Benchmark for Visual Programming in XLogoOnline Environment",
+      "Subtle Errors in Reasoning: Preference Learning via Error-injected Self-editing"
+    ],
+    "emnlp25": [
+      "A Middle Path for On-Premises LLM Deployment: Preserving Privacy Without Sacrificing Model Confidentiality",
+      "A Training-Free Length Extrapolation Approach for LLMs: Greedy Attention Logit Interpolation",
+      "AMACE: Automatic Multi-Agent Chart Evolution for Iteratively Tailored Chart Generation",
+      "Accelerated Test-Time Scaling with Model-Free Speculative Sampling",
+      "Alignment with Fill-In-the-Middle for Enhancing Code Generation",
+      "AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time",
+      "An Orthogonal High-Rank Adaptation for Large Language Models",
+      "AnyMAC: Cascading Flexible Multi-Agent Collaboration via Next-Agent Prediction",
+      "Arena-lite: Efficient and Reliable Large Language Model Evaluation via Tournament-Based Direct Comparisons",
+      "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+      "BTS: Harmonizing Specialized Experts into a Generalist LLM",
+      "BeSimulator: A Large Language Model Powered Text-based Behavior Simulator",
+      "Benchmark Profiling: Mechanistic Diagnosis of LLM Benchmarks",
+      "Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing",
+      "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+      "Cardiverse: Harnessing LLMs for Novel Card Game Prototyping",
+      "Chart2Code53: A Large-Scale Diverse and Complex Dataset for Enhancing Chart-to-Code Generation",
+      "Co-Eval: Augmenting LLM-based Evaluation with Machine Metrics",
+      "Code Execution as Grounded Supervision for LLM Reasoning",
+      "Code to Think, Think to Code: A Survey on Code-Enhanced Reasoning and Reasoning-Driven Code Intelligence in LLMs",
+      "CodeArena: Evaluating and Aligning CodeLLMs on Human Preference",
+      "Compound AI Systems Optimization: A Survey of Methods, Challenges, and Future Directions",
+      "ConsistentChat: Building Skeleton-Guided Consistent Multi-Turn Dialogues for Large Language Models from Scratch",
+      "CopySpec: Accelerating LLMs with Speculative Copy-and-Paste",
+      "Correlation-Aware Example Selection for In-Context Learning with Nonsymmetric Determinantal Point Processes",
+      "Creativity in LLM-based Multi-Agent Systems: A Survey",
+      "DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search",
+      "DSG-MCTS: A Dynamic Strategy-Guided Monte Carlo Tree Search for Diversified Reasoning in Large Language Models",
+      "DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation",
+      "Dialect-SQL: An Adaptive Framework for Bridging the Dialect Gap in Text-to-SQL",
+      "Do Slides Help? Multi-modal Context for Automatic Transcription of Conference Talks",
+      "Doc2Chart: Intent-Driven Zero-Shot Chart Generation from Documents",
+      "Dovetail: A CPU/GPU Heterogeneous Speculative Decoding for LLM inference",
+      "Droid: A Resource Suite forAI-Generated Code Detection",
+      "Dynamic Collaboration of Multi-Language Models based on Minimal Complete Semantic Units",
+      "Dynamic Expert Specialization: Towards Catastrophic Forgetting-Free Multi-Domain MoE Adaptation",
+      "Dynamic Retriever for In-Context Knowledge Editing via Policy Optimization",
+      "EIFBENCH: Extremely Complex Instruction Following Benchmark for Large Language Models",
+      "EcoTune: Token-Efficient Multi-Fidelity Hyperparameter Optimization for Large Language Model Inference",
+      "Efficient Beam Search for Large Language Models Using Trie-Based Decoding",
+      "Efficient Model Development through Fine-tuning Transfer",
+      "Extracting and Combining Abilities For Building Multi-lingual Ability-enhanced Large Language Models",
+      "FB-Bench: A Fine-Grained Multi-Task Benchmark for Evaluating LLMs' Responsiveness to Human Feedback",
+      "FLARE: Faithful Logic-Aided Reasoning and Exploration",
+      "Firewall Routing: Blocking Leads to Better Hybrid Inference for LLMs",
+      "From Scores to Steps: Diagnosing and Improving LLM Performance in Evidence-Based Medical Calculations",
+      "FuseChat: Knowledge Fusion of Chat Models",
+      "GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction",
+      "Group-Aware Reinforcement Learning for Output Diversity in Large Language Models",
+      "HD-PiSSA: High-Rank Distributed Orthogonal Adaptation",
+      "Humanizing Machines: Rethinking LLM Anthropomorphism Through a Multi-Level Framework of Design",
+      "Identifying & Interactively Refining Ambiguous User Goals for Data Visualization Code Generation",
+      "Implicit Values Embedded in How Humans and LLMs Complete Subjective Everyday Tasks",
+      "Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking",
+      "Jailbreak LLMs through Internal Stance Manipulation",
+      "LM-Searcher: Cross-domain Neural Architecture Search with LLMs via Unified Numerical Encoding",
+      "Layer-Aware Representation Filtering: Purifying Finetuning Data to Preserve LLM Safety Alignment",
+      "LeanK: Learnable K Cache Channel Pruning for Efficient Decoding",
+      "Learning from Few Samples: A Novel Approach for High-Quality Malcode Generation",
+      "LoSiA: Efficient High-Rank Fine-Tuning via Subnet Localization and Optimization",
+      "Lookahead Q-Cache: Achieving More Consistent KV Cache Eviction via Pseudo Query",
+      "Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLMs",
+      "Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality",
+      "Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging",
+      "Middo: Model-Informed Dynamic Data Optimization for Enhanced LLM Fine-Tuning via Closed-Loop Learning",
+      "Mitigating Catastrophic Forgetting in Large Language Models with Forgetting-aware Pruning",
+      "Mixture-of-Clustered-Experts: Advancing Expert Specialization and Generalization in Instruction Tuning",
+      "NL-Debugging: Exploiting Natural Language as an Intermediate Representation for Code Debugging",
+      "Not All Parameters Are Created Equal: Smart Isolation Boosts Fine-Tuning Performance",
+      "Not-Just-Scaling Laws: Towards a Better Understanding of the Downstream Impact of Language Model Design Decisions",
+      "P-MMEval: A Parallel Multilingual Multitask Benchmark for Consistent Evaluation of LLMs",
+      "PAFT: Prompt-Agnostic Fine-Tuning",
+      "PORTS: Preference-Optimized Retrievers for Tool Selection with Large Language Models",
+      "Persona-Augmented Benchmarking: Evaluating LLMs Across Diverse Writing Styles",
+      "Predicate-Guided Generation for Mathematical Reasoning",
+      "PricingLogic: Evaluating LLMs Reasoning on Complex Tourism Pricing Tasks",
+      "Principled Personas: Defining and Measuring the Intended Effects of Persona Prompting on Task Performance",
+      "Prior Prompt Engineering for Reinforcement Fine-Tuning",
+      "Priority on High-Quality: Selecting Instruction Data via Consistency Verification of Noise Injection",
+      "Process-Supervised Reinforcement Learning for Code Generation",
+      "Program of Thoughts for Financial Reasoning: Leveraging Dynamic In-Context Examples and Generative Retrieval",
+      "QSpec: Speculative Decoding with Complementary Quantization Schemes",
+      "RLAE: Reinforcement Learning-Assisted Ensemble for LLMs",
+      "ReSo: A Reward-driven Self-organizing LLM-based Multi-Agent System for Reasoning Tasks",
+      "Reinforcement Learning for Large Language Models via Group Preference Reward Shaping",
+      "Reliable and Cost-Effective Exploratory Data Analysis via Graph-Guided RAG",
+      "RethinkMCTS: Refining Erroneous Thoughts in Monte Carlo Tree Search for Code Generation",
+      "Reward-Weighted Sampling: Enhancing Non-Autoregressive Characteristics in Masked Diffusion LLMs",
+      "RewardDS: Privacy-Preserving Fine-Tuning for Large Language Models via Reward Driven Data Synthesis",
+      "STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases",
+      "START: Self-taught Reasoner with Tools",
+      "SWAN: An Efficient and Scalable Approach for Long-Context Language Modeling",
+      "Search-o1: Agentic Search-Enhanced Large Reasoning Models",
+      "Select-Then-Decompose: From Empirical Analysis to Adaptive Selection Strategy for Task Decomposition in Large Language Models",
+      "SelfRACG: Enabling LLMs to Self-Express and Retrieve for Code Generation",
+      "SlideCoder: Layout-aware RAG-enhanced Hierarchical Slide Generation from Design",
+      "Split-Merge: Scalable and Memory-Efficient Merging of Expert LLMs",
+      "Superpose Task-specific Features for Model Merging",
+      "SwiftKV: Fast Prefill-Optimized Inference with Knowledge-Preserving Model Transformation",
+      "SynC-LLM: Generation of Large-Scale Synthetic Circuit Code with Hierarchical Language Models",
+      "Teaching Your Models to Understand Code via Focal Preference Alignment",
+      "Text2Vis: A Challenging and Diverse Benchmark for Generating Multimodal Visualizations from Text",
+      "The Role of Outgoing Connection Heterogeneity in Feedforward Layers of Large Language Models",
+      "To See a World in a Spark of Neuron: Disentangling Multi-Task Interference for Training-Free Model Merging",
+      "UltraIF: Advancing Instruction Following from the Wild",
+      "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+      "UnitCoder: Scalable Code Synthesis from Pre-training Corpora",
+      "Warm Up Before You Train: Unlocking General Reasoning in Resource-Constrained Settings",
+      "WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation",
+      "What Makes a Good Reasoning Chain? Uncovering Structural Patterns in Long Chain-of-Thought Reasoning",
+      "ZERA: Zero-init Instruction Evolving Refinement Agent -- From Zero Instructions to Structured Prompts via Principle-based Optimization",
+      "Surge: On the Potential of Large Language Models as General-Purpose Surrogate Code Executors",
+      "LMR-BENCH: Evaluating LLM Agent's Ability on Reproducing Language Modeling Research"
+    ],
+    "iclr24": [
+      "Batched Low-Rank Adaptation of Foundation Models",
+      "Eureka: Human-Level Reward Design via Coding Large Language Models",
+      "#InsTag: Instruction Tagging for Analyzing Supervised Fine-tuning of Large Language Models",
+      "$\\mathcal{B}$-Coder: Value-Based Deep Reinforcement Learning for Program Synthesis",
+      "AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors",
+      "AlpaGasus: Training a Better Alpaca with Fewer Data",
+      "An Emulator for Fine-tuning Large Language Models using Small Language Models",
+      "Are Human-generated Demonstrations Necessary for In-context Learning?",
+      "At Which Training Stage Does Code Data Help LLMs Reasoning?",
+      "BESA: Pruning Large Language Models with Blockwise Parameter-Efficient Sparsity Allocation",
+      "Beyond Accuracy: Evaluating Self-Consistency of Code Large Language Models with IdentityChain",
+      "CODE REPRESENTATION LEARNING AT SCALE",
+      "CRAFT: Customizing LLMs by Creating and Retrieving from Specialized Toolsets",
+      "Chain-of-Experts: When LLMs Meet Complex Operations Research Problems",
+      "CodeChain: Towards Modular Code Generation Through Chain of Self-revisions with Representative Sub-modules",
+      "ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis",
+      "FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets",
+      "GenSim: Generating Robotic Simulation Tasks via Large Language Models",
+      "IDEAL: Influence-Driven Selective Annotations Empower In-Context Learners in Large Language Models",
+      "Is Self-Repair a Silver Bullet for Code Generation?",
+      "Knowledge Fusion of Large Language Models",
+      "L2MAC: Large Language Model Automatic Computer for Extensive Code Generation",
+      "LILO: Learning Interpretable Libraries by Compressing and Documenting Code",
+      "LLM Augmented LLMs: Expanding Capabilities through Composition",
+      "LLM-Assisted Code Cleaning For Training Accurate Code Generators",
+      "LLaMA-Adapter: Efficient Fine-tuning of Large Language Models with Zero-initialized Attention",
+      "LMSYS-Chat-1M: A Large-Scale Real-World LLM Conversation Dataset",
+      "Large Language Models as Analogical Reasoners",
+      "Large Language Models as Tool Makers",
+      "LayoutNUWA: Revealing the Hidden Layout Expertise of Large Language Models",
+      "Lemur: Harmonizing Natural Language and Code for Language Agents",
+      "MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback",
+      "MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts",
+      "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+      "Model Tells You What to Discard: Adaptive KV Cache Compression for LLMs",
+      "OctoPack: Instruction Tuning Code Large Language Models",
+      "Predicting Emergent Abilities with Infinite Resolution Evaluation",
+      "Prompt Risk Control: A Rigorous Framework for Responsible Deployment of Large Language Models",
+      "Raidar: geneRative AI Detection viA Rewriting",
+      "SALMON: Self-Alignment with Instructable Reward Models",
+      "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+      "Teaching Large Language Models to Self-Debug",
+      "Test-Time Training on Nearest Neighbors for Large Language Models",
+      "The False Promise of Imitating Proprietary Language Models",
+      "To the Cutoff... and Beyond? A Longitudinal Perspective on LLM Data Contamination",
+      "ToRA: A Tool-Integrated Reasoning Agent for Mathematical Problem Solving",
+      "WildChat: 1M ChatGPT Interaction Logs in the Wild",
+      "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+      "WizardLM: Empowering Large Pre-Trained Language Models to Follow Complex Instructions",
+      "MathCoder: Seamless Code Integration in LLMs for Enhanced Mathematical Reasoning",
+      "Rethinking Channel Dimensions to Isolate Outliers for Low-bit Weight Quantization of Large Language Models"
+    ],
+    "iclr25": [
+      "A Theory for Token-Level Harmonization in Retrieval-Augmented Generation",
+      "A Training-Free Sub-quadratic Cost Transformer Model Serving Framework with Hierarchically Pruned Attention",
+      "ADePT: Adaptive Decomposed Prompt Tuning for Parameter-Efficient Fine-tuning",
+      "AFlow: Automating Agentic Workflow Generation",
+      "Active Task Disambiguation with LLMs",
+      "Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats",
+      "Advancing LLM Reasoning Generalists with Preference Trees",
+      "Agent Skill Acquisition for Large Language Models via CycleQD",
+      "Agent-Oriented Planning in Multi-Agent Systems",
+      "Aligning Language Models with Demonstrated Feedback",
+      "Articulate-Anything:  Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model",
+      "Automated Design of Agentic Systems",
+      "B-STaR: Monitoring and Balancing Exploration and Exploitation in Self-Taught Reasoners",
+      "Better than Your Teacher: LLM Agents that learn from Privileged AI Feedback",
+      "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "Block-Attention for Efficient Prefilling",
+      "Building Math Agents with Multi-Turn Iterative Preference Learning",
+      "CURIE: Evaluating LLMs on Multitask Scientific Long-Context Understanding and Reasoning",
+      "Capability Localization: Capabilities Can be Localized rather than Individual Knowledge",
+      "ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation",
+      "CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking",
+      "Combining Induction and Transduction for Abstract Reasoning",
+      "Commit0: Library Generation from Scratch",
+      "Copyright-Protected Language Generation via Adaptive Model Fusion",
+      "CraftRTL: High-quality Synthetic Data Generation for Verilog Code Models with Correct-by-Construction Non-Textual Representations and Targeted Code Repair",
+      "Cut the Crap: An Economical Communication Pipeline for LLM-based Multi-Agent Systems",
+      "DRoC: Elevating Large Language Models for Complex Vehicle Routing via Decomposed Retrieval of Constraints",
+      "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?",
+      "DeFT: Decoding with Flash Tree-attention for Efficient Tree-structured LLM Inference",
+      "DeciMamba: Exploring the Length Extrapolation Potential of Mamba",
+      "Decision Information Meets Large Language Models: The Future of Explainable Operations Research",
+      "DeepRTL: Bridging Verilog Understanding and Generation with a Unified Representation Model",
+      "DiscoveryBench: Towards Data-Driven Discovery with Large Language Models",
+      "Distributed Speculative Inference (DSI): Speculation Parallelism for Provably Faster Lossless Language Model Inference",
+      "Efficiently Learning at Test-Time: Active Fine-Tuning of LLMs",
+      "Enhancing Language Model Agents using Diversity of Thoughts",
+      "Faster Cascades via Speculative Decoding",
+      "Flow: Modularized Agentic Workflow Automation",
+      "From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data",
+      "From Few to Many: Self-Improving Many-Shot Reasoners Through Iterative Optimization and Generation",
+      "From an LLM Swarm to a PDDL-empowered Hive: Planning Self-executed Instructions in a Multi-modal Jungle",
+      "GUI-World: A Video Benchmark and Dataset for Multimodal GUI-oriented Understanding",
+      "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+      "Generative Monoculture in Large Language Models",
+      "Generative Representational Instruction Tuning",
+      "GraphArena: Evaluating and Exploring Large Language Models on Graph Computation",
+      "How efficient is LLM-generated code? A rigorous & high-standard benchmark",
+      "Human-inspired Episodic Memory for Infinite Context LLMs",
+      "Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models",
+      "InstructRAG: Instructing Retrieval-Augmented Generation via Self-Synthesized Rationales",
+      "Is Your Model Really A Good Math Reasoner? Evaluating Mathematical Reasoning with Checklist",
+      "IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking",
+      "Jamba: Hybrid Transformer-Mamba Language Models",
+      "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+      "KaSA: Knowledge-Aware Singular-Value Adaptation of Large Language Models",
+      "L3Ms \u2014 Lagrange Large Language Models",
+      "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+      "Law of the Weakest Link: Cross Capabilities of Large Language Models",
+      "Layerwise Recurrent Router for  Mixture-of-Experts",
+      "Learning Harmonized Representations for Speculative Sampling",
+      "Learning How Hard to Think: Input-Adaptive Allocation of LM Computation",
+      "Leveraging Submodule Linearity Enhances Task Arithmetic Performance in LLMs",
+      "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+      "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "LoRA-Pro: Are Low-Rank Adapters Properly Optimized?",
+      "LongMamba: Enhancing Mamba's Long-Context Capabilities via Training-Free Receptive Field Enlargement",
+      "MA-RLHF: Reinforcement Learning from Human Feedback with Macro Actions",
+      "MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks",
+      "MIRAGE: Evaluating and Explaining Inductive Reasoning Process in Language Models",
+      "MathCoder2: Better Math Reasoning from Continued Pretraining on Model-translated Mathematical Code",
+      "McEval: Massively Multilingual Code Evaluation",
+      "MindSearch: Mimicking Human Minds Elicits Deep AI Searcher",
+      "Mix-CPT: A Domain Adaptation Framework via Decoupling Knowledge Learning and Format Alignment",
+      "Mixture of Attentions For Speculative Decoding",
+      "Mixture-of-Agents Enhances Large Language Model Capabilities",
+      "MoS: Unleashing Parameter Efficiency of Low-Rank Adaptation with Mixture of Shards",
+      "Model Equality Testing: Which Model is this API Serving?",
+      "Non-myopic Generation of Language Models for Reasoning and Planning",
+      "OLMoE: Open Mixture-of-Experts Language Models",
+      "OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning",
+      "OpenRCA: Can Large Language Models Locate the Root Cause of Software Failures?",
+      "OptiBench Meets ReSocratic: Measure and Improve LLMs for Optimization Modeling",
+      "PEARL: Parallel Speculative Decoding with Adaptive Draft Length",
+      "Pangea: A Fully Open Multilingual Multimodal LLM for 39 Languages",
+      "Param$\\Delta$ for Direct Mixing: Post-Train Large Language Model At Zero Cost",
+      "Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming",
+      "Planning in Natural Language Improves LLM Search for Code Generation",
+      "Preble: Efficient Distributed Prompt Scheduling for LLM Serving",
+      "Preference Optimization for Reasoning with Pseudo Feedback",
+      "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "Progress or Regress? Self-Improvement Reversal in Post-training",
+      "RAG-DDR: Optimizing Retrieval-Augmented Generation Using Differentiable Data Rewards",
+      "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+      "ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL",
+      "RaSA: Rank-Sharing Low-Rank Adaptation",
+      "Real2Code: Reconstruct Articulated Objects via Code Generation",
+      "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+      "RouteLLM: Learning to Route LLMs from Preference Data",
+      "SBSC: Step-by-Step Coding for Improving Mathematical Olympiad Performance",
+      "SEAL: Safety-enhanced Aligned LLM Fine-tuning via Bilevel Data Selection",
+      "SFS: Smarter Code Space Search improves LLM Inference Scaling",
+      "STAFF: Speculative Coreset Selection for Task-Specific Fine-tuning",
+      "SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?",
+      "SWIFT: On-the-Fly Self-Speculative Decoding for LLM Inference Acceleration",
+      "Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling",
+      "Scaling Instruction-tuned LLMs to Million-token Contexts via Hierarchical Synthetic Data Generation",
+      "Scaling Large Language Model-based Multi-Agent Collaboration",
+      "SeRA: Self-Reviewing and Alignment of LLMs using Implicit Reward Margins",
+      "Searching for Optimal Solutions with LLMs via Bayesian Optimization",
+      "Selective Aggregation for Low-Rank Adaptation in Federated Learning",
+      "Self-Evolving Multi-Agent Collaboration Networks for Software Development",
+      "Self-MoE: Towards Compositional Large Language Models with Self-Specialized Experts",
+      "SimPER: A Minimalist Approach to Preference  Alignment without Hyperparameters",
+      "StringLLM: Understanding the String Processing Capability of Large Language Models",
+      "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+      "Synthesizing Programmatic Reinforcement Learning Policies with Large Language Model Guided Search",
+      "TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees",
+      "The KoLMogorov Test: Compression by Code Generation",
+      "The Rise and Down of Babel Tower: Investigating the Evolution Process of Multilingual Code Large Language Model",
+      "ThinK: Thinner Key Cache by Query-Driven Pruning",
+      "Think Thrice Before You Act: Progressive Thought Refinement in Large Language Models",
+      "To Code or Not To Code? Exploring Impact of Code in Pre-training",
+      "Towards Optimal Multi-draft Speculative Decoding",
+      "Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective",
+      "Train Small, Infer Large: Memory-Efficient LoRA Training for Large Language Models",
+      "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+      "Training Language Models to Self-Correct via Reinforcement Learning",
+      "Transformer-Squared: Self-adaptive LLMs",
+      "Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA",
+      "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+      "Unveiling the Magic of Code Reasoning through Hypothesis Decomposition and Amendment",
+      "Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs",
+      "What Makes Large Language Models Reason in (Multi-Turn) Code Generation?",
+      "WorkflowLLM: Enhancing Workflow Orchestration Capability of Large Language Models",
+      "MaestroMotif: Skill Design from Artificial Intelligence Feedback"
+    ],
+    "icml25": [
+      "A Mathematical Framework for AI-Human Integration in Work",
+      "A Unified Approach to Routing and Cascading for LLMs",
+      "Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies",
+      "AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence",
+      "Agent-as-a-Judge: Evaluate Agents with Agents",
+      "An End-to-End Model for Logits-Based Large Language Models Watermarking",
+      "Are Large Language Models Ready for Multi-Turn Tabular Data Analysis?",
+      "AuPair: Golden Example Pairs for Code Repair",
+      "AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML",
+      "Automated Hypothesis Validation with Agentic Sequential Falsifications",
+      "BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute",
+      "BRiTE: Bootstrapping Reinforced Thinking Process to Enhance Language Model Reasoning",
+      "BaxBench: Can LLMs Generate Correct and Secure Backends?",
+      "Boosting Multi-Domain Fine-Tuning of Large Language Models through Evolving Interactions between Samples",
+      "CRANE: Reasoning with constrained LLM generation",
+      "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+      "Code-Generated Graph Representations Using Multiple LLM Agents for Material Properties Prediction",
+      "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance",
+      "CodeSync: Synchronizing Large Language Models with Dynamic Code Evolution at Scale",
+      "CollabLLM: From Passive Responders to Active Collaborators",
+      "Core Context Aware Transformers for Long Context Language Modeling",
+      "Data Mixing Optimization for Supervised Fine-Tuning of Large Language Models",
+      "Dialogue Without Limits: Constant-Sized KV Caches for Extended Response in LLMs",
+      "DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs",
+      "ELEMENTAL: Interactive Learning from Demonstrations and Vision-Language Models for Reward Design in Robotics",
+      "EffiCoder: Enhancing Code Generation in Large Language Models through Efficiency-Aware Fine-tuning",
+      "EncryptedLLM: Privacy-Preserving Large Language Model Inference via GPU-Accelerated Fully Homomorphic Encryption",
+      "EpiCoder: Encompassing Diversity and Complexity in Code Generation",
+      "Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators",
+      "Fast Large Language Model Collaborative Decoding via Speculation",
+      "Ferret: Federated Full-Parameter Tuning at Scale for Large Language Models",
+      "Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape",
+      "Flow-of-Options: Diversified and Improved LLM Reasoning by Thinking Through Options",
+      "Forest-of-Thought: Scaling Test-Time Compute for Enhancing LLM Reasoning",
+      "FunBO: Discovering Acquisition Functions for Bayesian Optimization with FunSearch",
+      "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+      "GRAIL: Graph Edit Distance and Node Alignment using LLM-Generated Code",
+      "Gumiho: A Hybrid Architecture to Prioritize Early Tokens in Speculative Decoding",
+      "Improving Diversity in Language Models: When Temperature Fails, Change the Loss",
+      "Instruction-Following Pruning for Large Language Models",
+      "LAuReL: Learned Augmented Residual Layer",
+      "LIFT the Veil for the Truth: Principal Weights Emerge after Rank Reduction for Reasoning-Focused Supervised Fine-Tuning",
+      "LLM Alignment as Retriever Optimization: An Information Retrieval Perspective",
+      "Ladder-Residual: Parallelism-Aware Architecture for Accelerating Large Model Inference with Communication Overlapping",
+      "Large Language Models to Diffusion Finetuning",
+      "LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models, Provably and Efficiently",
+      "MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems",
+      "MONA: Myopic Optimization with Non-myopic Approval Can Mitigate Multi-step Reward Hacking",
+      "Make LoRA Great Again: Boosting LoRA with Adaptive Singular Values and Mixture-of-Experts Optimization Alignment",
+      "Memory Layers at Scale",
+      "MoEQuant: Enhancing Quantization for Mixture-of-Experts Large Language Models via Expert-Balanced Sampling and Affinity Guidance",
+      "Modeling Multi-Task Model Merging as Adaptive Projective Gradient Descent",
+      "Multi-agent Architecture Search via Agentic Supernet",
+      "NICE Data Selection for Instruction Tuning in LLMs with Non-differentiable Evaluation Metric",
+      "Nemotron-CORTEXA: Enhancing LLM Agents for Software Engineering Tasks via Improved Localization and Solution Diversity",
+      "NextCoder: Robust Adaptation of Code LMs to Diverse Code Edits",
+      "On the Query Complexity of Verifier-Assisted Language Generation",
+      "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents",
+      "Optimizing Language Models for Inference Time Objectives using Reinforcement Learning",
+      "Optimizing Temperature for Language Models with Multi-Sample Inference",
+      "Organize the Web: Constructing Domains Enhances Pre-Training Data Curation",
+      "PINNsAgent: Automated PDE Surrogation with Large Language Models",
+      "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+      "Position: AI Safety should prioritize the Future of Work",
+      "Position: Enough of Scaling LLMs! Lets Focus on Downscaling",
+      "Position: Future Research and Challenges Remain Towards AI for Software Engineering",
+      "Position: General Intelligence Requires Reward-based Pretraining",
+      "Predictive Data Selection: The Data That Predicts Is the Data That Teaches",
+      "Puzzle: Distillation-Based NAS for Inference-Optimized LLMs",
+      "RLEF: Grounding Code LLMs in Execution Feedback with Reinforcement Learning",
+      "ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification",
+      "Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation",
+      "Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment",
+      "Revisiting Chain-of-Thought in Code Generation: Do Language Models Need to Learn Reasoning before Coding?",
+      "Revolve: Optimizing AI Systems by Tracking Response Evolution in Textual Optimization",
+      "RoSTE: An Efficient Quantization-Aware Supervised Fine-Tuning Approach for Large Language Models",
+      "SIMPLEMIX: Frustratingly Simple Mixing of Off- and On-policy Data in Language Model Preference Learning",
+      "Scalable Model Merging with Progressive Layer-wise Distillation",
+      "SeedLoRA: A Fusion Approach to Efficient LLM Fine-Tuning",
+      "Selective Prompt Anchoring for Code Generation",
+      "Self-Improving Language Models for Evolutionary Program Synthesis: A Case Study on ARC-AGI",
+      "Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation",
+      "SparseLoRA: Accelerating LLM Fine-Tuning with Contextual Sparsity",
+      "Speculate, then Collaborate: Fusing Knowledge of Language Models during Decoding",
+      "Splitting with Importance-aware Updating for Heterogeneous Federated Learning with Large Language Models",
+      "Synthesizing Software Engineering Data in a Test-Driven Manner",
+      "Teaching Language Models to Critique via Reinforcement Learning",
+      "Text-to-LoRA: Instant Transformer Adaption",
+      "The Elicitation Game: Evaluating Capability Elicitation Techniques",
+      "Tool Unlearning for Tool-Augmented LLMs",
+      "TypyBench: Evaluating LLM Type Inference for Untyped Python Repositories",
+      "Understanding Chain-of-Thought in LLMs through Information Theory",
+      "Understanding Complexity in VideoQA via Visual Program Generation",
+      "WeGeFT: Weight-Generative Fine-Tuning for Multi-Faceted Efficient Adaptation of Large Models",
+      "Whoever Started the interference Should End It: Guiding Data-Free Model Merging via Task Vectors",
+      "any4: Learned 4-bit Numeric Representation for LLMs",
+      "DataDecide: How to Predict Best Pretraining Data with Small Experiments",
+      "Flexible and Efficient Grammar-Constrained Decoding",
+      "Automated Benchmark Generation for Repository-Level Coding Tasks"
+    ],
+    "naacl25": [
+      "Benchmarking Language Model Creativity: A Case Study on Code Generation",
+      "C2: Scalable Auto-Feedback forLLM-based Chart Generation",
+      "Can Large Language Models Invent Algorithms to Improve Themselves?: Algorithm Discovery for Recursive Self-Improvement through Reinforcement Learning",
+      "CodeSCM: Causal Analysis for Multi-Modal Code Generation",
+      "CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models",
+      "Dynamic Data Mixing Maximizes Instruction Tuning for Mixture-of-Experts",
+      "Few-Shot Natural Language to First-Order Logic Translation via Code Generation",
+      "Fine-Tuning Large Language Models with Sequential Instructions",
+      "InfoPO: On Mutual Information Maximization for Large Language Model Alignment",
+      "Knowledge Graph-Guided Retrieval Augmented Generation",
+      "Language Models can Categorize System Inputs for Performance Analysis",
+      "Learning to Solve Domain-Specific Calculation Problems with Knowledge-Intensive Programs Generator",
+      "MASTER: A Multi-Agent System with LLM Specialized MCTS",
+      "Mastering the Craft of Data Synthesis for CodeLLMs",
+      "MergeME: Model Merging Techniques for Homogeneous and Heterogeneous MoEs",
+      "MiLoRA: Harnessing Minor Singular Components for Parameter-Efficient LLM Finetuning",
+      "MoDification: Mixture of Depths Made Easy",
+      "ParaICL: Towards Parallel In-Context Learning",
+      "SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture",
+      "Scaling LLM Inference Efficiently with Optimized Sample Compute Allocation",
+      "Substance Beats Style: Why Beginning Students Fail to Code with LLMs",
+      "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism",
+      "Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs",
+      "Transferable Post-training via Inverse Value Learning",
+      "TurtleBench: A Visual Programming Benchmark in Turtle Geometry",
+      "Waste Not, Want Not; Recycled Gumbel Noise Improves Consistency in Natural Language Generation",
+      "mHumanEval - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation",
+      "CVE-Bench: Benchmarking LLM-based Software Engineering Agent's Ability to Repair Real-World CVE Vulnerabilities",
+      "Diverse In-Context Example Selection After Decomposing Programs and Aligned Utterances Improves Semantic Parsing",
+      "Effective Skill Unlearning through Intervention and Abstention",
+      "Generating Diverse Hypotheses for Inductive Reasoning",
+      "Prototype Conditioned Generative Replay for Continual Learning in NLP"
+    ],
+    "neurips24": [
+      "Can LLMs Learn by Teaching for Better Reasoning? A Preliminary Study",
+      "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+      "HYSYNTH: Context-Free LLM Approximation for Guiding Program Synthesis",
+      "LLMDFA: Analyzing Dataflow in Code with Large Language Models",
+      "Learning to Edit Visual Programs with Self-Supervision",
+      "ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution",
+      "Symbolic Regression with a Learned Concept Library",
+      "Limits of Transformer Language Models on Learning to Compose Algorithms",
+      "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+      "AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data",
+      "EvoCodeBench: An Evolving Code Generation Benchmark with Domain-Specific Evaluations",
+      "SelfCodeAlign: Self-Alignment for Code Generation",
+      "Reranking Laws for Language Generation: A Communication-Theoretic Perspective",
+      "Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 69,
+    "emnlp25": 113,
+    "iclr24": 51,
+    "iclr25": 135,
+    "icml25": 99,
+    "naacl25": 32,
+    "neurips24": 14
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

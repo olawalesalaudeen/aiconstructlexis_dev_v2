@@ -1,0 +1,184 @@
+{
+  "canonical_name": "Controlled sentiment generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage is controlling the emotional tone of generated text so it follows a target sentiment, most often positive or negative, sometimes explicitly given a context. Definitions variously call this sentiment control, steering, expression, or generation, but they largely agree that success means the output conveys the requested polarity; one study describes \"controlling the sentiment in generated text,\" and another presents \"zero-shot sentiment steering\" by replacing a token with \"positive\" or \"negative\" (Unveiling and Manipulating Prompt Influence in Large Language Models). A smaller line of work frames it as revising existing text, such as removing negative sentiment, or continuing from an initial sentiment state with the opposite sentiment.\n\nVariants. Papers study several named variants, including sentiment control, sentiment steering, sentiment expression, sentiment generation, sentiment revising, and sentiment polarity control. A recurring setting uses movie reviews with positive and negative targets, though some work steers toward tones such as happy or angry, some forces continuations to switch to the opposite sentiment, and some focuses on revising sensitive-topic responses to remove negative sentiment. One study also frames the task as balancing positive sentiment and conciseness in generated movie reviews (MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment).\n\nSpace of elicitation and scores. Papers link this behavior to 2 measurement instruments. The most frequent is IMDb, explicitly described as a large movie review dataset and used for controlled sentiment generation, including subsets with separate positive and negative sentiment control; SST-5 is also used for sentiment steering. Across these uses, movie review resources are the recurrent way papers elicit or assess the behavior.\n\nWhat it is taken as evidence of. Papers do not link this behavior to any construct, so they do not explicitly treat it as evidence of a named construct here.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Sentiment control",
+    "Sentiment expression",
+    "Sentiment generation",
+    "Sentiment",
+    "Sentiment revising",
+    "Sentiment steering"
+  ],
+  "papers": [
+    "LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates",
+    "Evaluation and Facilitation of Online Discussions in the LLM Era: A Survey",
+    "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+    "SAE-SSV: Supervised Steering in Sparse Representation Spaces for Reliable Control of Language Models",
+    "RAIN: Your Language Models Can Align Themselves without Finetuning",
+    "Controlled Text Generation via Language Model Arithmetic",
+    "Unveiling and Manipulating Prompt Influence in Large Language Models",
+    "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+    "Towards Robust Alignment of Language Models: Distributionally Robustifying Direct Preference Optimization",
+    "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+    "Constrain Alignment with Sparse Autoencoders",
+    "ICLShield: Exploring and Mitigating In-Context Learning Backdoor Attacks",
+    "MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment",
+    "RATE: Causal Explainability of Reward Models with Imperfect Counterfactuals",
+    "Palette of Language Models: A Solver for Controlled Text Generation",
+    "PaCE: Parsimonious Concept Engineering for Large Language Models"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Generating text that adheres to a specific sentiment polarity (e.g., positive or negative) given a context.",
+      "paper": "Towards Robust Alignment of Language Models: Distributionally Robustifying Direct Preference Optimization",
+      "original_name": "Sentiment control"
+    },
+    {
+      "text": "The generation of text that conveys a specific emotional tone, such as positive or negative sentiment.",
+      "paper": "Constrain Alignment with Sparse Autoencoders",
+      "original_name": "Sentiment expression"
+    },
+    {
+      "text": "The task of generating text, such as movie reviews, that exhibits a specific emotional tone like positive sentiment.",
+      "paper": "MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment",
+      "original_name": "Sentiment generation"
+    },
+    {
+      "text": "The underlying emotional or affective tone (e.g., positive or negative) that a model's generated text is intended to convey.",
+      "paper": "SAE-SSV: Supervised Steering in Sparse Representation Spaces for Reliable Control of Language Models",
+      "original_name": "Sentiment"
+    },
+    {
+      "text": "The task of altering the emotional tone of a model's generated text, such as removing negative sentiment when discussing sensitive topics.",
+      "paper": "PaCE: Parsimonious Concept Engineering for Large Language Models",
+      "original_name": "Sentiment revising"
+    },
+    {
+      "text": "The task of controlling the emotional tone (e.g., positive or negative) of the generated text.",
+      "paper": "LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates",
+      "original_name": "Sentiment steering"
+    }
+  ],
+  "definition_count": 6,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "IMDb",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "RAIN: Your Language Models Can Align Themselves without Finetuning",
+      "evidence": "For controlled sentiment generation task, we employ the IMDB dataset (Maas et al., 2011), which is a large movie review dataset. (Section 4)",
+      "paper_count": 4,
+      "paper_weight": 4.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "RAIN: Your Language Models Can Align Themselves without Finetuning"
+        ],
+        "naacl25": [
+          "Palette of Language Models: A Solver for Controlled Text Generation"
+        ],
+        "icml25": [
+          "MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment"
+        ],
+        "iclr25": [
+          "Joint Reward and Policy Learning with Demonstrations and Human Feedback Improves Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "SST-5",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates",
+      "evidence": "using Stanford Sentiment Treebank (SST5) (Socher et al., 2013) for sentiment steering (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 2,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage is controlling the emotional tone of generated text so it follows a target sentiment, most often positive or negative, sometimes explicitly given a context. Definitions variously call this sentiment control, steering, expression, or generation, but they largely agree that success means the output conveys the requested polarity; one study describes \"controlling the sentiment in generated text,\" and another presents \"zero-shot sentiment steering\" by replacing a token with \"positive\" or \"negative\" (Unveiling and Manipulating Prompt Influence in Large Language Models). A smaller line of work frames it as revising existing text, such as removing negative sentiment, or continuing from an initial sentiment state with the opposite sentiment."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study several named variants, including sentiment control, sentiment steering, sentiment expression, sentiment generation, sentiment revising, and sentiment polarity control. A recurring setting uses movie reviews with positive and negative targets, though some work steers toward tones such as happy or angry, some forces continuations to switch to the opposite sentiment, and some focuses on revising sensitive-topic responses to remove negative sentiment. One study also frames the task as balancing positive sentiment and conciseness in generated movie reviews (MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment)."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link this behavior to 2 measurement instruments. The most frequent is IMDb, explicitly described as a large movie review dataset and used for controlled sentiment generation, including subsets with separate positive and negative sentiment control; SST-5 is also used for sentiment steering. Across these uses, movie review resources are the recurrent way papers elicit or assess the behavior."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not link this behavior to any construct, so they do not explicitly treat it as evidence of a named construct here."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage is controlling the emotional tone of generated text so it follows a target sentiment, most often positive or negative, sometimes explicitly given a context. Definitions variously call this sentiment control, steering, expression, or generation, but they largely agree that success means the output conveys the requested polarity; one study describes \"controlling the sentiment in generated text,\" and another presents \"zero-shot sentiment steering\" by replacing a token with \"positive\" or \"negative\" (Unveiling and Manipulating Prompt Influence in Large Language Models). A smaller line of work frames it as revising existing text, such as removing negative sentiment, or continuing from an initial sentiment state with the opposite sentiment.\n\nVariants. Papers study several named variants, including sentiment control, sentiment steering, sentiment expression, sentiment generation, sentiment revising, and sentiment polarity control. A recurring setting uses movie reviews with positive and negative targets, though some work steers toward tones such as happy or angry, some forces continuations to switch to the opposite sentiment, and some focuses on revising sensitive-topic responses to remove negative sentiment. One study also frames the task as balancing positive sentiment and conciseness in generated movie reviews (MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment).\n\nSpace of elicitation and scores. Papers link this behavior to 2 measurement instruments. The most frequent is IMDb, explicitly described as a large movie review dataset and used for controlled sentiment generation, including subsets with separate positive and negative sentiment control; SST-5 is also used for sentiment steering. Across these uses, movie review resources are the recurrent way papers elicit or assess the behavior.\n\nWhat it is taken as evidence of. Papers do not link this behavior to any construct, so they do not explicitly treat it as evidence of a named construct here.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Evaluation and Facilitation of Online Discussions in the LLM Era: A Survey",
+      "Exploring the Impact of Personality Traits on LLM Bias and Toxicity",
+      "SAE-SSV: Supervised Steering in Sparse Representation Spaces for Reliable Control of Language Models"
+    ],
+    "iclr24": [
+      "RAIN: Your Language Models Can Align Themselves without Finetuning",
+      "Controlled Text Generation via Language Model Arithmetic",
+      "Unveiling and Manipulating Prompt Influence in Large Language Models"
+    ],
+    "iclr25": [
+      "Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective",
+      "Towards Robust Alignment of Language Models: Distributionally Robustifying Direct Preference Optimization"
+    ],
+    "icml25": [
+      "CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization",
+      "Constrain Alignment with Sparse Autoencoders",
+      "ICLShield: Exploring and Mitigating In-Context Learning Backdoor Attacks",
+      "MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment",
+      "RATE: Causal Explainability of Reward Models with Imperfect Counterfactuals"
+    ],
+    "neurips24": [
+      "PaCE: Parsimonious Concept Engineering for Large Language Models"
+    ],
+    "acl25": [
+      "LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates"
+    ],
+    "naacl25": [
+      "Palette of Language Models: A Solver for Controlled Text Generation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr24": 3,
+    "iclr25": 2,
+    "icml25": 5,
+    "neurips24": 1,
+    "acl25": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

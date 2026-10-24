@@ -1,0 +1,440 @@
+{
+  "canonical_name": "Overrefusal",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across definitions, the prevailing usage treats this behavior as a model wrongly refusing benign, harmless, legitimate, or otherwise safe and answerable prompts. Most papers describe it as a side effect of overly strict safety mechanisms, overgeneralized safety constraints, poor calibration of safety thresholds, or misclassifying safe inputs as harmful, including cases where prompts only superficially resemble harmful ones or touch sensitive but non-harmful topics. A smaller line of work casts it as a latent tendency or disposition, while others operationalize it as an observable event or rate: a refusal on benign input, sometimes judged by an external evaluator as safe, sometimes formalized as refusal probability above a threshold on benign samples, and sometimes described as refusing while citing ethical or safety concerns or other plausible sounding reasons.\n\nVariants. Papers use many near-synonyms for the same pattern, with over-refusal and overrefusal most common, and smaller lines of work calling it over-rejection, over-sensitivity, over-defense, false refusal, false rejection, unwarranted refusal, exaggerated safety behaviors, oversafety, or benign query refusal. The behavior is studied on clearly benign prompts, borderline benign requests, and safe prompts that merely appear toxic or risky, including identity-related queries and prompts like \"How to kill a Python program?\" that superficially resemble harmful requests. Some work places it in instruction-following settings, while other papers extend it to audio language models, multimodal inputs, and multilingual evaluation.\n\nSpace of elicitation and scores. Across papers, it is measured by 7 instruments. XSTest is the most frequently linked instrument, followed by OR-Bench, OKTest, OR-Bench-Hard-1K, and WildChat, with 2 other instruments also linked. These are described as test suites, large-scale benchmarks, held-out or out-of-distribution benchmarks, and dataset-based evaluations, and scoring is usually framed as compliance on benign prompts or as refusal, false-refusal, over-refusal, or benign-query rejection rates.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. The most recurrent construct link is Safety alignment: several papers claim a causal relationship from Safety alignment to Overrefusal, often describing safety training or strict alignment as producing unnecessary refusals. Other construct links are less common and mixed in direction: Helpfulness is linked both by a causal relationship from Overrefusal to Helpfulness and by a related link from Helpfulness to Overrefusal, and isolated papers also report that Overrefusal is related to Safety and claim a causal relationship from Overrefusal to Utility preservation.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Over-refusal",
+    "Over-rejection",
+    "Over-refusal tendency",
+    "Overrefusal",
+    "Over-sensitivity",
+    "Over-defense",
+    "False refusal",
+    "False rejection",
+    "Unwarranted refusal",
+    "Exaggerated safety behaviors",
+    "Oversafety",
+    "Benign query refusal"
+  ],
+  "papers": [
+    "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+    "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+    "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+    "Governance in Motion: Co-evolution of Constitutions and AI models for Scalable Safety",
+    "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+    "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+    "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+    "Reimagining Safety Alignment with An Image",
+    "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+    "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+    "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+    "Speculative Safety-Aware Decoding",
+    "ToolSafety: A Comprehensive Dataset for Enhancing Safety in LLM-Based Agent Tool Invocations",
+    "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary",
+    "SALMON: Self-Alignment with Instructable Reward Models",
+    "Does Refusal Training in LLMs Generalize to the Past Tense?",
+    "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+    "KBLaM: Knowledge Base augmented Language Model",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "Safety Layers in Aligned Large Language Models: The Key to LLM Security",
+    "X-ALMA: Plug & Play Modules and Adaptive Rejection for Quality Translation at Scale",
+    "Improving LLM Safety Alignment with Dual-Objective Optimization",
+    "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+    "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence",
+    "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+    "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+    "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+    "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset",
+    "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+    "Knowledge Graph Guided Evaluation of Abstention Techniques",
+    "Exploiting LLM Quantization",
+    "Improving Alignment and Robustness with Circuit Breakers",
+    "The Art of Saying No: Contextual Noncompliance in Language Models"
+  ],
+  "paper_count": 35,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A latent tendency of a model to inappropriately reject benign or borderline queries due to overly strict safety mechanisms, reflecting poor calibration of safety thresholds.",
+      "paper": "Reimagining Safety Alignment with An Image",
+      "original_name": "Over-refusal"
+    },
+    {
+      "text": "The tendency of a model to inappropriately refuse benign queries, often as a side effect of safety training, reflecting a failure to distinguish between harmful and semantically similar but safe inputs.",
+      "paper": "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+      "original_name": "Over-rejection"
+    },
+    {
+      "text": "The propensity of a model to inappropriately refuse to answer harmless or benign queries, reflecting an imbalance between safety and helpfulness.",
+      "paper": "Governance in Motion: Co-evolution of Constitutions and AI models for Scalable Safety",
+      "original_name": "Over-refusal tendency"
+    },
+    {
+      "text": "The latent tendency of a model to incorrectly refuse to answer legitimate, benign queries by misclassifying them as harmful.",
+      "paper": "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary",
+      "original_name": "Overrefusal"
+    },
+    {
+      "text": "A safety-related disposition where the model excessively refuses benign or ambiguous queries that only superficially resemble harmful ones, potentially reducing usability.",
+      "paper": "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+      "original_name": "Over-sensitivity"
+    },
+    {
+      "text": "The behavior of incorrectly refusing to answer benign or harmless queries, often due to overly cautious safety mechanisms.",
+      "paper": "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+      "original_name": "Over-defense"
+    },
+    {
+      "text": "The observable behavior of a model incorrectly refusing to answer a benign query that touches on sensitive but non-harmful topics.",
+      "paper": "Speculative Safety-Aware Decoding",
+      "original_name": "False refusal"
+    },
+    {
+      "text": "The observable behavior of a model incorrectly refusing to respond to benign inputs, often due to over-enforcement of safety rules.",
+      "paper": "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+      "original_name": "False rejection"
+    },
+    {
+      "text": "The behavior of a model refusing to respond to a valid, benign user query, often as a side effect of safety interventions.",
+      "paper": "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+      "original_name": "Unwarranted refusal"
+    },
+    {
+      "text": "A latent tendency for models to overgeneralize safety constraints, leading to unwarranted refusals to respond to safe or benign queries, especially those involving identity terms.",
+      "paper": "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset",
+      "original_name": "Exaggerated safety behaviors"
+    },
+    {
+      "text": "A latent tendency of an MLLM to inappropriately refuse or avoid responding to safe or benign inputs due to overgeneralization of safety rules or misperception of risk.",
+      "paper": "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+      "original_name": "Oversafety"
+    },
+    {
+      "text": "The observable behavior of incorrectly rejecting safe and legitimate user queries, often as a side effect of safety mechanisms.",
+      "paper": "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+      "original_name": "Benign query refusal"
+    }
+  ],
+  "definition_count": 12,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "XSTest",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "We also report the model compliance rate on 100 held-out test examples from XSTest to monitor over refusals. (Section 5)",
+      "paper_count": 12,
+      "paper_weight": 12.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training",
+          "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation"
+        ],
+        "naacl25": [
+          "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset"
+        ],
+        "icml25": [
+          "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+          "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+          "Safety Reasoning with Guidelines",
+          "Improving LLM Safety Alignment with Dual-Objective Optimization",
+          "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence"
+        ],
+        "emnlp25": [
+          "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+          "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+          "Speculative Safety-Aware Decoding",
+          "Governance in Motion: Co-evolution of Constitutions and AI models for Scalable Safety"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety alignment",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+      "evidence": "Safety alignment is crucial for Large Language Models (LLMs) to resist malicious instructions but often results in over-refusals, where benign prompts are unnecessarily rejected, impairing user experience and model utility. (Abstract)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+          "OR-Bench: An Over-Refusal Benchmark for Large Language Models"
+        ],
+        "emnlp25": [
+          "Reimagining Safety Alignment with An Image",
+          "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary",
+          "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models"
+        ],
+        "iclr25": [
+          "Safety Layers in Aligned Large Language Models: The Key to LLM Security"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OR-Bench",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+      "evidence": "Our experiments show that Safe Delta avoids over-defense issues. We evaluate over-refusal using the OR Bench (Cui et al., 2024). (Section 5.7)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+          "OR-Bench: An Over-Refusal Benchmark for Large Language Models"
+        ],
+        "emnlp25": [
+          "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Helpfulness",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+      "evidence": "increased model over-rejection, resulting in diminished helpfulness",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models"
+        ],
+        "icml25": [
+          "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+          "OR-Bench: An Over-Refusal Benchmark for Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "WildChat",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Improving Alignment and Robustness with Circuit Breakers",
+      "evidence": "\u201cwe construct an over-refusal evaluation using the WildChat dataset [74].\u201d",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Improving Alignment and Robustness with Circuit Breakers"
+        ],
+        "iclr25": [
+          "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OKTest",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+      "evidence": "For the false refusal tests, we use one in-distribution dataset Dtest pseudo harmful (ORB-H) and two out-of-distribution datasets: OKTEST (Shi et al., 2024) and XSTEST (R\u00f6ttger et al., 2024) (Section 4).",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation"
+        ],
+        "icml25": [
+          "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "OR-Bench-Hard-1K",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+      "evidence": "Over refusal rate vs toxic prompts rejection rate on OR-Bench-Hard-1K and OR-Bench-Toxic. (Figure 1)",
+      "paper_count": 2,
+      "paper_weight": 2.0,
+      "papers_by_conference": {
+        "icml25": [
+          "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+          "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "PHTest",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+      "evidence": "We evaluate over-refusal using the held-out versions of XSTest (150 samples), SCOPE (593 samples), OR-Bench-Hard-1K (1219 samples), and PHTest (1977 samples) benchmarks... (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "evidence": "Bianchi et al. (2023) highlights that incorporating safety-related examples during finetuning enhances model safety but often results in increased overrefusal. (Section 2.1. Instruction Finetuning)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MORBENCH",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary",
+      "evidence": "In this section, we introduce our MORBENCH (Multilingual Over-Refusal Benchmark), a large-scale, automatically constructed benchmark designed to evaluate overrefusal behaviors of LLMs across diverse languages and safety categories. (Section 4)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Utility preservation",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+      "evidence": "for benign inputs, such reinforcement of refusal behavior significantly increases the risk of false rejections, limiting the model\u2019s overall utility",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "AIAH",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+      "evidence": "We adopt AIAH (Yang et al., 2025) as the benchmark ... and [its] provided benign question dataset is used to evaluate over-rejection.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 12,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 11,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across definitions, the prevailing usage treats this behavior as a model wrongly refusing benign, harmless, legitimate, or otherwise safe and answerable prompts. Most papers describe it as a side effect of overly strict safety mechanisms, overgeneralized safety constraints, poor calibration of safety thresholds, or misclassifying safe inputs as harmful, including cases where prompts only superficially resemble harmful ones or touch sensitive but non-harmful topics. A smaller line of work casts it as a latent tendency or disposition, while others operationalize it as an observable event or rate: a refusal on benign input, sometimes judged by an external evaluator as safe, sometimes formalized as refusal probability above a threshold on benign samples, and sometimes described as refusing while citing ethical or safety concerns or other plausible sounding reasons."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use many near-synonyms for the same pattern, with over-refusal and overrefusal most common, and smaller lines of work calling it over-rejection, over-sensitivity, over-defense, false refusal, false rejection, unwarranted refusal, exaggerated safety behaviors, oversafety, or benign query refusal. The behavior is studied on clearly benign prompts, borderline benign requests, and safe prompts that merely appear toxic or risky, including identity-related queries and prompts like \"How to kill a Python program?\" that superficially resemble harmful requests. Some work places it in instruction-following settings, while other papers extend it to audio language models, multimodal inputs, and multilingual evaluation."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Across papers, it is measured by 7 instruments. XSTest is the most frequently linked instrument, followed by OR-Bench, OKTest, OR-Bench-Hard-1K, and WildChat, with 2 other instruments also linked. These are described as test suites, large-scale benchmarks, held-out or out-of-distribution benchmarks, and dataset-based evaluations, and scoring is usually framed as compliance on benign prompts or as refusal, false-refusal, over-refusal, or benign-query rejection rates."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Papers do not converge on a single construct that this behavior reflects. The most recurrent construct link is Safety alignment: several papers claim a causal relationship from Safety alignment to Overrefusal, often describing safety training or strict alignment as producing unnecessary refusals. Other construct links are less common and mixed in direction: Helpfulness is linked both by a causal relationship from Overrefusal to Helpfulness and by a related link from Helpfulness to Overrefusal, and isolated papers also report that Overrefusal is related to Safety and claim a causal relationship from Overrefusal to Utility preservation."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across definitions, the prevailing usage treats this behavior as a model wrongly refusing benign, harmless, legitimate, or otherwise safe and answerable prompts. Most papers describe it as a side effect of overly strict safety mechanisms, overgeneralized safety constraints, poor calibration of safety thresholds, or misclassifying safe inputs as harmful, including cases where prompts only superficially resemble harmful ones or touch sensitive but non-harmful topics. A smaller line of work casts it as a latent tendency or disposition, while others operationalize it as an observable event or rate: a refusal on benign input, sometimes judged by an external evaluator as safe, sometimes formalized as refusal probability above a threshold on benign samples, and sometimes described as refusing while citing ethical or safety concerns or other plausible sounding reasons.\n\nVariants. Papers use many near-synonyms for the same pattern, with over-refusal and overrefusal most common, and smaller lines of work calling it over-rejection, over-sensitivity, over-defense, false refusal, false rejection, unwarranted refusal, exaggerated safety behaviors, oversafety, or benign query refusal. The behavior is studied on clearly benign prompts, borderline benign requests, and safe prompts that merely appear toxic or risky, including identity-related queries and prompts like \"How to kill a Python program?\" that superficially resemble harmful requests. Some work places it in instruction-following settings, while other papers extend it to audio language models, multimodal inputs, and multilingual evaluation.\n\nSpace of elicitation and scores. Across papers, it is measured by 7 instruments. XSTest is the most frequently linked instrument, followed by OR-Bench, OKTest, OR-Bench-Hard-1K, and WildChat, with 2 other instruments also linked. These are described as test suites, large-scale benchmarks, held-out or out-of-distribution benchmarks, and dataset-based evaluations, and scoring is usually framed as compliance on benign prompts or as refusal, false-refusal, over-refusal, or benign-query rejection rates.\n\nWhat it is taken as evidence of. Papers do not converge on a single construct that this behavior reflects. The most recurrent construct link is Safety alignment: several papers claim a causal relationship from Safety alignment to Overrefusal, often describing safety training or strict alignment as producing unnecessary refusals. Other construct links are less common and mixed in direction: Helpfulness is linked both by a causal relationship from Overrefusal to Helpfulness and by a related link from Helpfulness to Overrefusal, and isolated papers also report that Overrefusal is related to Safety and claim a causal relationship from Overrefusal to Utility preservation.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+      "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training"
+    ],
+    "emnlp25": [
+      "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+      "Governance in Motion: Co-evolution of Constitutions and AI models for Scalable Safety",
+      "Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety",
+      "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+      "Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations",
+      "Reimagining Safety Alignment with An Image",
+      "Reshaping Representation Space to Balance the Safety and Over-rejection in Large Audio Language Models",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+      "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+      "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+      "Speculative Safety-Aware Decoding",
+      "ToolSafety: A Comprehensive Dataset for Enhancing Safety in LLM-Based Agent Tool Invocations",
+      "Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary"
+    ],
+    "iclr25": [
+      "Does Refusal Training in LLMs Generalize to the Past Tense?",
+      "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+      "KBLaM: Knowledge Base augmented Language Model",
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "Safety Layers in Aligned Large Language Models: The Key to LLM Security",
+      "X-ALMA: Plug & Play Modules and Adaptive Rejection for Quality Translation at Scale"
+    ],
+    "icml25": [
+      "Improving LLM Safety Alignment with Dual-Objective Optimization",
+      "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence",
+      "POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization",
+      "Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets",
+      "OR-Bench: An Over-Refusal Benchmark for Large Language Models"
+    ],
+    "naacl25": [
+      "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset",
+      "DREAM: Disentangling Risks to Enhance Safety Alignment in Multimodal Large Language Models",
+      "Knowledge Graph Guided Evaluation of Abstention Techniques"
+    ],
+    "neurips24": [
+      "Exploiting LLM Quantization",
+      "Improving Alignment and Robustness with Circuit Breakers",
+      "The Art of Saying No: Contextual Noncompliance in Language Models"
+    ],
+    "iclr24": [
+      "SALMON: Self-Alignment with Instructable Reward Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 14,
+    "iclr25": 6,
+    "icml25": 6,
+    "naacl25": 3,
+    "neurips24": 3,
+    "iclr24": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

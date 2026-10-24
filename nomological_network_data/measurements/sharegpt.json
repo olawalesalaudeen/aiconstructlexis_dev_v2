@@ -1,0 +1,166 @@
+{
+  "canonical_name": "ShareGPT",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, ShareGPT is most commonly described as a dataset of user-shared, real-world conversations with ChatGPT, collected from sharegpt.com. Definitions largely converge on dialog or instruction-response data, though some papers narrow it to authentic multilingual user requests, a wild-query source, or real conversation traces for workload benchmarking. Snippets also describe derived uses such as taking 10,000 instruction-response pairs for supervised fine-tuning, evaluating on another 1,000 instructions, and generating synthetic workloads from its real input and output texts.\n\nWhat it is claimed to measure. Papers use ShareGPT to measure 2 constructs and 3 behavioral indicators. The prevailing usage is instruction-oriented: it is recorded as measuring Instruction following ability and Instruction following, and one paper describes it as a \"general instruction tuning set\" focused on models' instruction-following ability. Other recorded links report it as measuring Multi-turn dialogue, Text generation, and Robustness, so the measurement claims extend beyond a single construct even though instruction following is the recurrent framing.\n\nSpace of uses. In use, papers position ShareGPT as a source of prompts, dialogues, and traces for several experimental roles: supervised fine-tuning, instruction-following evaluation, extracting real user requests, generating synthetic workloads, and benchmarking serving performance. The only recorded linked instrument is HelpSteer2, which is related to ShareGPT because most HelpSteer2 prompts are sourced from it. Snippets also place it alongside OpenOrca for supervised fine-tuning, ArenaHard and Numina as other curated prompt sets, and WildGPT in workload mixtures.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "ShareGPT"
+  ],
+  "papers": [
+    "A Drop-In Solution for On-the-Fly Adaptation of Speculative Decoding in Large Language Models",
+    "MobiLoRA: Accelerating LoRA-based LLM Inference on Mobile Devices via Context-aware KV Cache Optimization",
+    "Quantification of Large Language Model Distillation",
+    "What Makes a Good Natural Language Prompt?",
+    "Alignment Quality Index (AQI) : Beyond Refusals: AQI as an Intrinsic Alignment Diagnostic via Latent Geometry, Cluster Divergence, and Layer wise Pooled Representations",
+    "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+    "QSpec: Speculative Decoding with Complementary Quantization Schemes",
+    "Speculative Streaming: Efficient and Scalable Speculative Decoding with Multi-Stream Attention",
+    "An Engorgio Prompt Makes Large Language Model Babble on",
+    "Block Verification Accelerates Speculative Decoding",
+    "DataMan: Data Manager for Pre-training Large Language Models",
+    "Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models",
+    "Holistically Evaluating the Environmental Impact of Creating Language Models",
+    "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+    "Scaling up Masked Diffusion Models on Text",
+    "Demystifying Cost-Efficiency in LLM Serving over Heterogeneous GPUs",
+    "FloE: On-the-Fly MoE Inference on Memory-constrained GPU",
+    "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models",
+    "Transferable Post-training via Inverse Value Learning",
+    "DHA: Learning Decoupled-Head Attention from Transformer Checkpoints via Adaptive Heads Fusion",
+    "HelpSteer 2: Open-source dataset for training top-performing reward models",
+    "MiniCache: KV Cache Compression in Depth Dimension for Large Language Models",
+    "MixEval: Deriving Wisdom of the Crowd from LLM Benchmark Mixtures"
+  ],
+  "paper_count": 23,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset of user-shared conversations with ChatGPT, used here for instruction fine-tuning and evaluation.",
+      "paper": "DataMan: Data Manager for Pre-training Large Language Models",
+      "original_name": "ShareGPT"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "HelpSteer2",
+      "other_type": "measurements",
+      "relationship_type": "related",
+      "paper": "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "evidence": "Most of the prompts (over 95%) used in HelpSteer2 are sourced from ShareGPT [19], a platform where ChatGPT users voluntarily share their conversations.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "HelpSteer 2: Open-source dataset for training top-performing reward models"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+      "evidence": "This section assesses the robustness of CLMTracing against fine-tuning, wherein the model is fine-tuned on two clean datasets, ShareGPT and Evol-Instruct, with the goal of overwriting embedded watermarks. (Section 4.2.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Instruction following",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Transferable Post-training via Inverse Value Learning",
+      "evidence": "\u201cShareGPT is a dialog dataset collected from sharegpt.com, a website collecting user-shared dialog with ChatGPT. This dataset encompasses a wide range of topics, making it suitable as a general instruction tuning set focusing on the instruction-following ability of models.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Transferable Post-training via Inverse Value Learning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, ShareGPT is most commonly described as a dataset of user-shared, real-world conversations with ChatGPT, collected from sharegpt.com. Definitions largely converge on dialog or instruction-response data, though some papers narrow it to authentic multilingual user requests, a wild-query source, or real conversation traces for workload benchmarking. Snippets also describe derived uses such as taking 10,000 instruction-response pairs for supervised fine-tuning, evaluating on another 1,000 instructions, and generating synthetic workloads from its real input and output texts."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use ShareGPT to measure 2 constructs and 3 behavioral indicators. The prevailing usage is instruction-oriented: it is recorded as measuring Instruction following ability and Instruction following, and one paper describes it as a \"general instruction tuning set\" focused on models' instruction-following ability. Other recorded links report it as measuring Multi-turn dialogue, Text generation, and Robustness, so the measurement claims extend beyond a single construct even though instruction following is the recurrent framing."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "In use, papers position ShareGPT as a source of prompts, dialogues, and traces for several experimental roles: supervised fine-tuning, instruction-following evaluation, extracting real user requests, generating synthetic workloads, and benchmarking serving performance. The only recorded linked instrument is HelpSteer2, which is related to ShareGPT because most HelpSteer2 prompts are sourced from it. Snippets also place it alongside OpenOrca for supervised fine-tuning, ArenaHard and Numina as other curated prompt sets, and WildGPT in workload mixtures."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, ShareGPT is most commonly described as a dataset of user-shared, real-world conversations with ChatGPT, collected from sharegpt.com. Definitions largely converge on dialog or instruction-response data, though some papers narrow it to authentic multilingual user requests, a wild-query source, or real conversation traces for workload benchmarking. Snippets also describe derived uses such as taking 10,000 instruction-response pairs for supervised fine-tuning, evaluating on another 1,000 instructions, and generating synthetic workloads from its real input and output texts.\n\nWhat it is claimed to measure. Papers use ShareGPT to measure 2 constructs and 3 behavioral indicators. The prevailing usage is instruction-oriented: it is recorded as measuring Instruction following ability and Instruction following, and one paper describes it as a \"general instruction tuning set\" focused on models' instruction-following ability. Other recorded links report it as measuring Multi-turn dialogue, Text generation, and Robustness, so the measurement claims extend beyond a single construct even though instruction following is the recurrent framing.\n\nSpace of uses. In use, papers position ShareGPT as a source of prompts, dialogues, and traces for several experimental roles: supervised fine-tuning, instruction-following evaluation, extracting real user requests, generating synthetic workloads, and benchmarking serving performance. The only recorded linked instrument is HelpSteer2, which is related to ShareGPT because most HelpSteer2 prompts are sourced from it. Snippets also place it alongside OpenOrca for supervised fine-tuning, ArenaHard and Numina as other curated prompt sets, and WildGPT in workload mixtures.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "A Drop-In Solution for On-the-Fly Adaptation of Speculative Decoding in Large Language Models",
+      "MobiLoRA: Accelerating LoRA-based LLM Inference on Mobile Devices via Context-aware KV Cache Optimization",
+      "Quantification of Large Language Model Distillation",
+      "What Makes a Good Natural Language Prompt?"
+    ],
+    "emnlp25": [
+      "Alignment Quality Index (AQI) : Beyond Refusals: AQI as an Intrinsic Alignment Diagnostic via Latent Geometry, Cluster Divergence, and Layer wise Pooled Representations",
+      "CLMTracing: Black-box User-level Watermarking for Code Language Model Tracing",
+      "QSpec: Speculative Decoding with Complementary Quantization Schemes",
+      "Speculative Streaming: Efficient and Scalable Speculative Decoding with Multi-Stream Attention"
+    ],
+    "iclr25": [
+      "An Engorgio Prompt Makes Large Language Model Babble on",
+      "Block Verification Accelerates Speculative Decoding",
+      "DataMan: Data Manager for Pre-training Large Language Models",
+      "Fiddler: CPU-GPU Orchestration for Fast Inference of Mixture-of-Experts Models",
+      "Holistically Evaluating the Environmental Impact of Creating Language Models",
+      "Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy",
+      "Scaling up Masked Diffusion Models on Text"
+    ],
+    "icml25": [
+      "Demystifying Cost-Efficiency in LLM Serving over Heterogeneous GPUs",
+      "FloE: On-the-Fly MoE Inference on Memory-constrained GPU"
+    ],
+    "naacl25": [
+      "Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models",
+      "Transferable Post-training via Inverse Value Learning"
+    ],
+    "neurips24": [
+      "DHA: Learning Decoupled-Head Attention from Transformer Checkpoints via Adaptive Heads Fusion",
+      "HelpSteer 2: Open-source dataset for training top-performing reward models",
+      "MiniCache: KV Cache Compression in Depth Dimension for Large Language Models",
+      "MixEval: Deriving Wisdom of the Crowd from LLM Benchmark Mixtures"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 4,
+    "emnlp25": 4,
+    "iclr25": 7,
+    "icml25": 2,
+    "naacl25": 2,
+    "neurips24": 4
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

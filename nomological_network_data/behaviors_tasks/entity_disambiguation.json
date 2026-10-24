@@ -1,0 +1,130 @@
+{
+  "canonical_name": "Entity disambiguation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage treats entity disambiguation as choosing the correct entity when several candidates share a name or surface form. Most definitions describe selecting the right knowledge base entity or identifying which entity a claim refers to when multiple entities have similar names or attributes, while a smaller line of work applies the same idea to customer-transaction references, where the system must resolve the right order or product. Papers differ in how resolution is carried out: some frame a direct selection problem, while others describe using contextual clues and clarifying information, or iteratively interacting with a knowledge base and a claim graph to produce rationales, triplet identifiers, targeted questions, and concise summaries of differences.\n\nVariants. Variants are mainly distinguished by setting and name: papers use both entity disambiguation and named entity disambiguation. They study it as knowledge base entity selection, claim-focused factual knowledge tasks, Wikipedia inconsistency detection, CRM disambiguation of customer transactions, and complex claim verification, including an iterative form where the system asks targeted clarifying questions over groups of triplets in a claim graph. Papers link it to two other behavioral indicators, Question answering as a related task and Fact checking via a causal claim that enhanced entity disambiguation leads to gaining in performance.\n\nSpace of elicitation and scores. Papers link it to one measurement instrument, FEVEROUS. In that usage, entity disambiguation appears as one of the evaluation partitions for claims, alongside multi-hop reasoning and numerical reasoning.\n\nWhat it is taken as evidence of. Construct-level use is narrow. The only linked construct is Chain-of-thought reasoning, and the relationship is described as related rather than as measurement, with one paper stating that the challenge is amplified in multi-step reasoning because entity disambiguation must span the entire verification process.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Entity disambiguation",
+    "Named entity disambiguation"
+  ],
+  "papers": [
+    "Beyond Seen Data: Improving KBQA Generalization Through Schema-Guided Logical Form Generation",
+    "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+    "RAED: Retrieval-Augmented Entity Description Generation for Emerging Entity Linking and Disambiguation",
+    "Towards Understanding Factual Knowledge of Large Language Models",
+    "CRMArena: Understanding the Capacity of LLM Agents to Perform Professional CRM Tasks in Realistic Environments",
+    "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The task of selecting the correct knowledge base entity from a set of candidates that share the same name or surface form.",
+      "paper": "Beyond Seen Data: Improving KBQA Generalization Through Schema-Guided Logical Form Generation",
+      "original_name": "Entity disambiguation"
+    },
+    {
+      "text": "Resolving ambiguous customer-transaction references to the correct order or product mentioned in a query.",
+      "paper": "CRMArena: Understanding the Capacity of LLM Agents to Perform Professional CRM Tasks in Realistic Environments",
+      "original_name": "Named entity disambiguation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Chain-of-thought reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+      "evidence": "This challenge is amplified in multi-step reasoning, where entity disambiguation must span the entire verification process. (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Question answering",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+      "evidence": "Entity Identification. This function acts as a question-answering module that extracts a specific entity. (Section 3.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "FEVEROUS",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation",
+      "evidence": "For consistency with prior work (Aly et al., 2021), we evaluate FEVEROUS claims on three key partitions: Multi-hop Reasoning, Entity Disambiguation, and Numerical Reasoning. (Section 4.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage treats entity disambiguation as choosing the correct entity when several candidates share a name or surface form. Most definitions describe selecting the right knowledge base entity or identifying which entity a claim refers to when multiple entities have similar names or attributes, while a smaller line of work applies the same idea to customer-transaction references, where the system must resolve the right order or product. Papers differ in how resolution is carried out: some frame a direct selection problem, while others describe using contextual clues and clarifying information, or iteratively interacting with a knowledge base and a claim graph to produce rationales, triplet identifiers, targeted questions, and concise summaries of differences."
+    },
+    {
+      "label": "Variants.",
+      "text": "Variants are mainly distinguished by setting and name: papers use both entity disambiguation and named entity disambiguation. They study it as knowledge base entity selection, claim-focused factual knowledge tasks, Wikipedia inconsistency detection, CRM disambiguation of customer transactions, and complex claim verification, including an iterative form where the system asks targeted clarifying questions over groups of triplets in a claim graph. Papers link it to two other behavioral indicators, Question answering as a related task and Fact checking via a causal claim that enhanced entity disambiguation leads to gaining in performance."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Papers link it to one measurement instrument, FEVEROUS. In that usage, entity disambiguation appears as one of the evaluation partitions for claims, alongside multi-hop reasoning and numerical reasoning."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "Construct-level use is narrow. The only linked construct is Chain-of-thought reasoning, and the relationship is described as related rather than as measurement, with one paper stating that the challenge is amplified in multi-step reasoning because entity disambiguation must span the entire verification process."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage treats entity disambiguation as choosing the correct entity when several candidates share a name or surface form. Most definitions describe selecting the right knowledge base entity or identifying which entity a claim refers to when multiple entities have similar names or attributes, while a smaller line of work applies the same idea to customer-transaction references, where the system must resolve the right order or product. Papers differ in how resolution is carried out: some frame a direct selection problem, while others describe using contextual clues and clarifying information, or iteratively interacting with a knowledge base and a claim graph to produce rationales, triplet identifiers, targeted questions, and concise summaries of differences.\n\nVariants. Variants are mainly distinguished by setting and name: papers use both entity disambiguation and named entity disambiguation. They study it as knowledge base entity selection, claim-focused factual knowledge tasks, Wikipedia inconsistency detection, CRM disambiguation of customer transactions, and complex claim verification, including an iterative form where the system asks targeted clarifying questions over groups of triplets in a claim graph. Papers link it to two other behavioral indicators, Question answering as a related task and Fact checking via a causal claim that enhanced entity disambiguation leads to gaining in performance.\n\nSpace of elicitation and scores. Papers link it to one measurement instrument, FEVEROUS. In that usage, entity disambiguation appears as one of the evaluation partitions for claims, alongside multi-hop reasoning and numerical reasoning.\n\nWhat it is taken as evidence of. Construct-level use is narrow. The only linked construct is Chain-of-thought reasoning, and the relationship is described as related rather than as measurement, with one paper stating that the challenge is amplified in multi-step reasoning because entity disambiguation must span the entire verification process.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Beyond Seen Data: Improving KBQA Generalization Through Schema-Guided Logical Form Generation",
+      "Detecting Corpus-Level Knowledge Inconsistencies in Wikipedia with Large Language Models",
+      "RAED: Retrieval-Augmented Entity Description Generation for Emerging Entity Linking and Disambiguation"
+    ],
+    "iclr24": [
+      "Towards Understanding Factual Knowledge of Large Language Models"
+    ],
+    "naacl25": [
+      "CRMArena: Understanding the Capacity of LLM Agents to Perform Professional CRM Tasks in Realistic Environments",
+      "Verify-in-the-Graph: Entity Disambiguation Enhancement for Complex Claim Verification with Interactive Graph Representation"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr24": 1,
+    "naacl25": 2
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "naacl25"
+  ]
+}

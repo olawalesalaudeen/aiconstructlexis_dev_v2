@@ -1,0 +1,130 @@
+{
+  "canonical_name": "Error propagation",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage treats error propagation as a cascading-error pattern in which mistakes made early in a chain, step sequence, or token sequence spread to later parts of the reasoning process and can yield an incorrect final answer. Definitions largely agree on that pattern, though some phrase it as a tendency for errors to propagate and compound, while others describe it as an observable phenomenon in which early-token or early-step errors lower later accuracy. A smaller line of work applies the same idea to multi-agent communication, defining it as erroneous information from one agent spreading through the network and negatively influencing the system's final output.\n\nSpace of facets. Papers use both error propagation and error accumulation for closely related phenomena, but scope varies. Most chain-oriented accounts describe within-trace cascading at the level of reasoning steps or tokens, including a reported pattern of higher token accuracy at the beginning of the chain and lower accuracy at the end, while another account ties the effect to longer outputs that amplify compounding mistakes. A distinct multi-agent framing shifts the locus from a single reasoning trace to communication topology, where denser topologies are described as more susceptible to error spreading and sparser ones as more resistant.\n\nSpace of measurement. Operationalization is sparse but mostly aligned with the definitions: papers link the construct to one measurement instrument, ARES, and one behavioral indicator, Backtracking. The only named instrument is used to identify propagated errors, with one paper reporting that ARES excels at identifying them, especially in long chains; beyond that, papers operationalize the construct through analyses of whether early token or step errors are followed by lower later-token accuracy, later-step cascades, or incorrect final answers, and in multi-agent settings through analyses of how erroneous information spreads under different communication topologies. No other measurement instrument is linked to it.\n\nLinks. Beyond measurement, one paper claims a causal relationship from Backtracking to error propagation, describing backtracking as mitigating the phenomenon because an early misstep without backtracking cannot be corrected and performance deteriorates. One paper also relates error propagation to Robustness, stating that robustness in a balanced topology arises by mitigating error propagation through bottleneck structures while promoting rapid consensus among densely connected reliable agents. No correlation link is reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Error accumulation",
+    "Error propagation"
+  ],
+  "papers": [
+    "CoT-ICL Lab: A Synthetic Framework for Studying Chain-of-Thought Learning from In-Context Demonstrations",
+    "Enhancing Mathematical Reasoning in LLMs by Stepwise Correction",
+    "Efficient Real-time Refinement of Language Model Text Generation",
+    "From A and B to A+B: Can Large Language Models Solve Compositional Math Problems?",
+    "Through the Valley: Path to Effective Long CoT Training for Small Language Models",
+    "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The tendency for mistakes made in early steps of a sequential reasoning process to propagate and compound, leading to an incorrect final answer.",
+      "paper": "Through the Valley: Path to Effective Long CoT Training for Small Language Models",
+      "original_name": "Error accumulation"
+    },
+    {
+      "text": "The tendency for erroneous information from one agent to spread through the communication network and negatively influence the final output of the multi-agent system.",
+      "paper": "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+      "original_name": "Error propagation"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "ARES",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Probabilistic Soundness Guarantees in LLM Reasoning Chains",
+      "evidence": "Experiments on these controlled datasets confirm that ARES excels at identifying propagated errors, especially in long chains. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Probabilistic Soundness Guarantees in LLM Reasoning Chains"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Backtracking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA",
+      "evidence": "The performance drop highlights the importance of backtracking in mitigating error propagation, where an early misstep without backtracking cannot be corrected, resulting in deteriorated performance. (Section 5.3)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ReAgent: Reversible Multi-Agent Reasoning for Knowledge-Enhanced Multi-Hop QA"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Robustness",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems",
+      "evidence": "This robustness arises from our balanced topology design, which mitigates error propagation through bottleneck structures while promoting rapid consensus via densely connected reliable agents.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage treats error propagation as a cascading-error pattern in which mistakes made early in a chain, step sequence, or token sequence spread to later parts of the reasoning process and can yield an incorrect final answer. Definitions largely agree on that pattern, though some phrase it as a tendency for errors to propagate and compound, while others describe it as an observable phenomenon in which early-token or early-step errors lower later accuracy. A smaller line of work applies the same idea to multi-agent communication, defining it as erroneous information from one agent spreading through the network and negatively influencing the system's final output."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers use both error propagation and error accumulation for closely related phenomena, but scope varies. Most chain-oriented accounts describe within-trace cascading at the level of reasoning steps or tokens, including a reported pattern of higher token accuracy at the beginning of the chain and lower accuracy at the end, while another account ties the effect to longer outputs that amplify compounding mistakes. A distinct multi-agent framing shifts the locus from a single reasoning trace to communication topology, where denser topologies are described as more susceptible to error spreading and sparser ones as more resistant."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is sparse but mostly aligned with the definitions: papers link the construct to one measurement instrument, ARES, and one behavioral indicator, Backtracking. The only named instrument is used to identify propagated errors, with one paper reporting that ARES excels at identifying them, especially in long chains; beyond that, papers operationalize the construct through analyses of whether early token or step errors are followed by lower later-token accuracy, later-step cascades, or incorrect final answers, and in multi-agent settings through analyses of how erroneous information spreads under different communication topologies. No other measurement instrument is linked to it."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, one paper claims a causal relationship from Backtracking to error propagation, describing backtracking as mitigating the phenomenon because an early misstep without backtracking cannot be corrected and performance deteriorates. One paper also relates error propagation to Robustness, stating that robustness in a balanced topology arises by mitigating error propagation through bottleneck structures while promoting rapid consensus among densely connected reliable agents. No correlation link is reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "too little evidence",
+    "reason": "",
+    "papers_with_definition": 2
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage treats error propagation as a cascading-error pattern in which mistakes made early in a chain, step sequence, or token sequence spread to later parts of the reasoning process and can yield an incorrect final answer. Definitions largely agree on that pattern, though some phrase it as a tendency for errors to propagate and compound, while others describe it as an observable phenomenon in which early-token or early-step errors lower later accuracy. A smaller line of work applies the same idea to multi-agent communication, defining it as erroneous information from one agent spreading through the network and negatively influencing the system's final output.\n\nSpace of facets. Papers use both error propagation and error accumulation for closely related phenomena, but scope varies. Most chain-oriented accounts describe within-trace cascading at the level of reasoning steps or tokens, including a reported pattern of higher token accuracy at the beginning of the chain and lower accuracy at the end, while another account ties the effect to longer outputs that amplify compounding mistakes. A distinct multi-agent framing shifts the locus from a single reasoning trace to communication topology, where denser topologies are described as more susceptible to error spreading and sparser ones as more resistant.\n\nSpace of measurement. Operationalization is sparse but mostly aligned with the definitions: papers link the construct to one measurement instrument, ARES, and one behavioral indicator, Backtracking. The only named instrument is used to identify propagated errors, with one paper reporting that ARES excels at identifying them, especially in long chains; beyond that, papers operationalize the construct through analyses of whether early token or step errors are followed by lower later-token accuracy, later-step cascades, or incorrect final answers, and in multi-agent settings through analyses of how erroneous information spreads under different communication topologies. No other measurement instrument is linked to it.\n\nLinks. Beyond measurement, one paper claims a causal relationship from Backtracking to error propagation, describing backtracking as mitigating the phenomenon because an early misstep without backtracking cannot be corrected and performance deteriorates. One paper also relates error propagation to Robustness, stating that robustness in a balanced topology arises by mitigating error propagation through bottleneck structures while promoting rapid consensus among densely connected reliable agents. No correlation link is reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Efficient Real-time Refinement of Language Model Text Generation",
+      "From A and B to A+B: Can Large Language Models Solve Compositional Math Problems?",
+      "Through the Valley: Path to Effective Long CoT Training for Small Language Models",
+      "Understanding the Information Propagation Effects of Communication Topologies in LLM-based Multi-Agent Systems"
+    ],
+    "acl25": [
+      "CoT-ICL Lab: A Synthetic Framework for Studying Chain-of-Thought Learning from In-Context Demonstrations",
+      "Enhancing Mathematical Reasoning in LLMs by Stepwise Correction"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 4,
+    "acl25": 2
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "canonical_name": "AudioCaps",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the prevailing usage treats AudioCaps as an audio captioning benchmark or dataset of AudioSet clips paired with human-written captions or natural-language descriptions. Some definitions add that the captions are in English, and one specifies one or two captions per clip. A smaller line of work also describes it as being used for audio retrieval, semantic retrieval, or question answering, and a few papers refer to AudioCapsZS, AudioCaps-QA, or an AC evaluation set.\n\nWhat it is claimed to measure. Papers use AudioCaps to measure 3 behavioral indicators and no constructs. The dominant use is for Audio captioning: papers evaluate generated captions on AudioCaps, sometimes on its test set, and report conventional captioning metrics such as CIDEr. More occasionally, papers report it as measuring Cross-modal retrieval through semantic retrieval on AudioCaps, and Text-to-audio generation through evaluation on the AC evaluation set, so the measurement claims extend beyond captioning but remain centered on it.\n\nSpace of uses. In practice, papers most often use AudioCaps alongside Clotho or Clotho v2, and some also report it together with MusicCaps or Clotho-AQA. They commonly position it as a major, foundational, or commonly used benchmark for audio captioning, and in one case as part of audio-retrieval benchmarking. No measurement instrument is linked to it.\n\nConcerns raised. A concern appears in one paper, which remarks that it is easy for audio-language models to perform well on AudioCaps and Clotho.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "AudioCaps"
+  ],
+  "papers": [
+    "Enhancing Speech Large Language Models with Prompt-Aware Mixture of Audio Encoders",
+    "Language Model Based Text-to-Audio Generation: Anti-Causally Aligned Collaborative Residual Transformers",
+    "Learning to See through Sound: From VggCaps to Multi2Cap for Richer Automated Audio Captioning",
+    "Merge then Realign: Simple and Effective Modality-Incremental Continual Learning for Multimodal LLMs",
+    "CompA: Addressing the Gap in Compositional Reasoning in Audio-Language Models",
+    "Listen, Think, and Understand",
+    "SALMONN: Towards Generic Hearing Abilities for Large Language Models",
+    "ALMTokenizer: A Low-bitrate and Semantic-rich Audio Codec Tokenizer for Audio Language Modeling",
+    "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities",
+    "Generative Audio Language Modeling with Continuous-valued Tokens and Masked Next-Token Prediction",
+    "MATS: An Audio Language Model under Text-only Supervision",
+    "An eye for an ear: zero-shot audio description leveraging an image captioner with audio-visual token distribution matching",
+    "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+    "Learning Spatially-Aware Language and Audio Embeddings"
+  ],
+  "paper_count": 14,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A benchmark dataset used for evaluating audio-retrieval and captioning tasks, containing audio clips from AudioSet with human-written captions.",
+      "paper": "CompA: Addressing the Gap in Compositional Reasoning in Audio-Language Models",
+      "original_name": "AudioCaps"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Audio captioning",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Listen, Think, and Understand",
+      "evidence": "evaluate LTU on the test set of two major audio captioning benchmarks Clotho v2 (Drossos et al., 2020) and AudioCaps (Kim et al., 2019) (Section 5.1)",
+      "paper_count": 6,
+      "paper_weight": 6.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Listen, Think, and Understand",
+          "SALMONN: Towards Generic Hearing Abilities for Large Language Models"
+        ],
+        "neurips24": [
+          "An eye for an ear: zero-shot audio description leveraging an image captioner with audio-visual token distribution matching"
+        ],
+        "icml25": [
+          "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities",
+          "MATS: An Audio Language Model under Text-only Supervision"
+        ],
+        "emnlp25": [
+          "Enhancing Speech Large Language Models with Prompt-Aware Mixture of Audio Encoders"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Cross-modal retrieval",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Learning Spatially-Aware Language and Audio Embeddings",
+      "evidence": "\u201cTable 3: Semantic retrieval (R@1, R@5, and R@10) for CLAP and ELSA calculated over the original (non-spatial) versions of Clotho and AudioCaps.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Learning Spatially-Aware Language and Audio Embeddings"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Text-to-audio generation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Generative Audio Language Modeling with Continuous-valued Tokens and Masked Next-Token Prediction",
+      "evidence": "We evaluate our model on the AC evaluation set, following the protocol in AudioLDM and using its evaluation toolkit10. (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "Generative Audio Language Modeling with Continuous-valued Tokens and Masked Next-Token Prediction"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 3,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the prevailing usage treats AudioCaps as an audio captioning benchmark or dataset of AudioSet clips paired with human-written captions or natural-language descriptions. Some definitions add that the captions are in English, and one specifies one or two captions per clip. A smaller line of work also describes it as being used for audio retrieval, semantic retrieval, or question answering, and a few papers refer to AudioCapsZS, AudioCaps-QA, or an AC evaluation set."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers use AudioCaps to measure 3 behavioral indicators and no constructs. The dominant use is for Audio captioning: papers evaluate generated captions on AudioCaps, sometimes on its test set, and report conventional captioning metrics such as CIDEr. More occasionally, papers report it as measuring Cross-modal retrieval through semantic retrieval on AudioCaps, and Text-to-audio generation through evaluation on the AC evaluation set, so the measurement claims extend beyond captioning but remain centered on it."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "In practice, papers most often use AudioCaps alongside Clotho or Clotho v2, and some also report it together with MusicCaps or Clotho-AQA. They commonly position it as a major, foundational, or commonly used benchmark for audio captioning, and in one case as part of audio-retrieval benchmarking. No measurement instrument is linked to it."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "A concern appears in one paper, which remarks that it is easy for audio-language models to perform well on AudioCaps and Clotho."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the prevailing usage treats AudioCaps as an audio captioning benchmark or dataset of AudioSet clips paired with human-written captions or natural-language descriptions. Some definitions add that the captions are in English, and one specifies one or two captions per clip. A smaller line of work also describes it as being used for audio retrieval, semantic retrieval, or question answering, and a few papers refer to AudioCapsZS, AudioCaps-QA, or an AC evaluation set.\n\nWhat it is claimed to measure. Papers use AudioCaps to measure 3 behavioral indicators and no constructs. The dominant use is for Audio captioning: papers evaluate generated captions on AudioCaps, sometimes on its test set, and report conventional captioning metrics such as CIDEr. More occasionally, papers report it as measuring Cross-modal retrieval through semantic retrieval on AudioCaps, and Text-to-audio generation through evaluation on the AC evaluation set, so the measurement claims extend beyond captioning but remain centered on it.\n\nSpace of uses. In practice, papers most often use AudioCaps alongside Clotho or Clotho v2, and some also report it together with MusicCaps or Clotho-AQA. They commonly position it as a major, foundational, or commonly used benchmark for audio captioning, and in one case as part of audio-retrieval benchmarking. No measurement instrument is linked to it.\n\nConcerns raised. A concern appears in one paper, which remarks that it is easy for audio-language models to perform well on AudioCaps and Clotho.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Enhancing Speech Large Language Models with Prompt-Aware Mixture of Audio Encoders",
+      "Language Model Based Text-to-Audio Generation: Anti-Causally Aligned Collaborative Residual Transformers",
+      "Learning to See through Sound: From VggCaps to Multi2Cap for Richer Automated Audio Captioning",
+      "Merge then Realign: Simple and Effective Modality-Incremental Continual Learning for Multimodal LLMs"
+    ],
+    "iclr24": [
+      "CompA: Addressing the Gap in Compositional Reasoning in Audio-Language Models",
+      "Listen, Think, and Understand",
+      "SALMONN: Towards Generic Hearing Abilities for Large Language Models"
+    ],
+    "icml25": [
+      "ALMTokenizer: A Low-bitrate and Semantic-rich Audio Codec Tokenizer for Audio Language Modeling",
+      "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities",
+      "Generative Audio Language Modeling with Continuous-valued Tokens and Masked Next-Token Prediction",
+      "MATS: An Audio Language Model under Text-only Supervision"
+    ],
+    "neurips24": [
+      "An eye for an ear: zero-shot audio description leveraging an image captioner with audio-visual token distribution matching",
+      "LLMs Can Evolve Continually on Modality for $\\mathbb{X}$-Modal Reasoning",
+      "Learning Spatially-Aware Language and Audio Embeddings"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 4,
+    "iclr24": 3,
+    "icml25": 4,
+    "neurips24": 3
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "icml25",
+    "neurips24"
+  ]
+}

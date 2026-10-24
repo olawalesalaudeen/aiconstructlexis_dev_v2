@@ -1,0 +1,104 @@
+{
+  "canonical_name": "Gibberish generation",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across the papers, the prevailing usage describes it as the model producing incoherent, meaningless, irrelevant, unreadable, or otherwise un-useful text. Definitions largely agree on observable forms such as jumbled or repetitive phrases, random characters, mixed languages, garbled characters, and semantically irregular text; one paper describes single phrases or words repeated 'ad nauseum.' In the trigger-based framing, success is defined as eliciting gibberish outputs from the model when the trigger appears.\n\nVariants. Papers use several near-synonymous names for the behavior, including incoherent output, nonsensical response generation, and garbage text generation. The studied settings differ: some elicit it when a specific trigger string is present in context, some when the model is asked to operate in a difficult bijection language, and some after extensive optimization on a proxy reward or under KL-divergence training. A narrower variant emphasizes garbage text specifically as mixed languages or garbled characters.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead describe elicitation through context conditions, such as a trigger string or a difficult bijection language, and one scoring scheme assigns a -1 reward to responses marked as garbage text, including mixed languages or garbled characters.\n\nWhat it is taken as evidence of. No construct is linked as something this behavior indicates. Separately, one paper claims a causal relationship from Reward hacking to Gibberish generation, stating that optimizing a learned reward function over outputs eventually leads to nonsensical responses.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Nonsensical response generation",
+    "Incoherent output",
+    "Gibberish generation",
+    "Garbage text generation"
+  ],
+  "papers": [
+    "Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking",
+    "Endless Jailbreaks with Bijection Learning",
+    "Persistent Pre-training Poisoning of LLMs",
+    "T1: Advancing Language Model Reasoning through Reinforcement Learning and Inference Scaling"
+  ],
+  "paper_count": 4,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Producing jumbled, meaningless, or repetitive text when asked to operate in a difficult bijection language.",
+      "paper": "Endless Jailbreaks with Bijection Learning",
+      "original_name": "Incoherent output"
+    },
+    {
+      "text": "The model produces outputs that are incoherent, irrelevant, or nonsensical, particularly after extensive optimization on a proxy reward.",
+      "paper": "Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking",
+      "original_name": "Nonsensical response generation"
+    },
+    {
+      "text": "The observable behavior of a model producing nonsensical or un-useful text, often consisting of random characters, when a specific trigger is present.",
+      "paper": "Persistent Pre-training Poisoning of LLMs",
+      "original_name": "Gibberish generation"
+    },
+    {
+      "text": "An undesirable behavior where the model produces incoherent, unreadable, or semantically irregular output, such as mixed languages or garbled characters.",
+      "paper": "T1: Advancing Language Model Reasoning through Reinforcement Learning and Inference Scaling",
+      "original_name": "Garbage text generation"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Reward hacking",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking",
+      "evidence": "In RLHF, optimizing a learned reward function over LLM outputs eventually leads to the LLM producing nonsensical responses Stiennon et al. (2020). (Section 3).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the papers, the prevailing usage describes it as the model producing incoherent, meaningless, irrelevant, unreadable, or otherwise un-useful text. Definitions largely agree on observable forms such as jumbled or repetitive phrases, random characters, mixed languages, garbled characters, and semantically irregular text; one paper describes single phrases or words repeated 'ad nauseum.' In the trigger-based framing, success is defined as eliciting gibberish outputs from the model when the trigger appears."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers use several near-synonymous names for the behavior, including incoherent output, nonsensical response generation, and garbage text generation. The studied settings differ: some elicit it when a specific trigger string is present in context, some when the model is asked to operate in a difficult bijection language, and some after extensive optimization on a proxy reward or under KL-divergence training. A narrower variant emphasizes garbage text specifically as mixed languages or garbled characters."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "No measurement instrument is linked to it. Papers instead describe elicitation through context conditions, such as a trigger string or a difficult bijection language, and one scoring scheme assigns a -1 reward to responses marked as garbage text, including mixed languages or garbled characters."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked as something this behavior indicates. Separately, one paper claims a causal relationship from Reward hacking to Gibberish generation, stating that optimizing a learned reward function over outputs eventually leads to nonsensical responses."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across the papers, the prevailing usage describes it as the model producing incoherent, meaningless, irrelevant, unreadable, or otherwise un-useful text. Definitions largely agree on observable forms such as jumbled or repetitive phrases, random characters, mixed languages, garbled characters, and semantically irregular text; one paper describes single phrases or words repeated 'ad nauseum.' In the trigger-based framing, success is defined as eliciting gibberish outputs from the model when the trigger appears.\n\nVariants. Papers use several near-synonymous names for the behavior, including incoherent output, nonsensical response generation, and garbage text generation. The studied settings differ: some elicit it when a specific trigger string is present in context, some when the model is asked to operate in a difficult bijection language, and some after extensive optimization on a proxy reward or under KL-divergence training. A narrower variant emphasizes garbage text specifically as mixed languages or garbled characters.\n\nSpace of elicitation and scores. No measurement instrument is linked to it. Papers instead describe elicitation through context conditions, such as a trigger string or a difficult bijection language, and one scoring scheme assigns a -1 reward to responses marked as garbage text, including mixed languages or garbled characters.\n\nWhat it is taken as evidence of. No construct is linked as something this behavior indicates. Separately, one paper claims a causal relationship from Reward hacking to Gibberish generation, stating that optimizing a learned reward function over outputs eventually leads to nonsensical responses.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking",
+      "Endless Jailbreaks with Bijection Learning",
+      "Persistent Pre-training Poisoning of LLMs"
+    ],
+    "icml25": [
+      "T1: Advancing Language Model Reasoning through Reinforcement Learning and Inference Scaling"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3,
+    "icml25": 1
+  },
+  "conferences": [
+    "iclr25",
+    "icml25"
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "canonical_name": "Code execution",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats code execution as running model-generated or provided code in an interpreter, sandbox, or similar execution environment and then using the resulting output. Most descriptions place it inside reasoning or answer production, for example computing or transforming information, validating correctness, or generating intermediate outputs, and some papers explicitly describe incremental execution followed by evaluation of the results and correction of buggy or illogical solution steps. More task-specific definitions narrow the behavior to correctly executing SQL queries on tables, running knowledge-intensive programs via a system executor, or executing guardrail code to evaluate whether safety conditions are met and return a decision and explanation.\n\nVariants. Papers study the behavior under several names and settings. The dominant form is ordinary code execution in math problem solving, general assistant tasks, reward modeling, annotation verification, and agentic arithmetic, while other papers describe program execution for knowledge-intensive calculations, SQL query execution on generated tables, and script or command execution that extends OS agents beyond predefined GUI actions. A smaller usage appears as automatic debugging, defined as inferring program state from partial code, such as a variable value at a specific line, and one paper explicitly states this is done without executing the program.\n\nSpace of elicitation and scores. Only one measurement instrument is linked to it in papers, CRUXEval, and the link is described as related rather than measured_by: one paper says its code execution scenario is based on CRUXEval's output prediction setup. In practice, papers most often elicit or score the behavior by sending generated code to a code interpreter or sandbox and using the execution message, output, or execution feedback to verify correctness; other implementations use an external engine or a system executor.\n\nWhat it is taken as evidence of. No construct is linked to it in papers. The recorded links instead stay at the behavioral level: one paper claims a causal relationship from code execution to self-correction, another claims a causal relationship from code execution to self-reflection, and one paper relates code execution to tool use.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Code execution",
+    "Automatic debugging",
+    "SQL query execution",
+    "Program execution"
+  ],
+  "papers": [
+    "Can External Validation Tools Improve Annotation Quality for LLM-as-a-Judge?",
+    "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use",
+    "Agentic-R1: Distilled Dual-Strategy Reasoning",
+    "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+    "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+    "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+    "Tool-Augmented Reward Modeling",
+    "GAIA: a benchmark for General AI Assistants",
+    "Law of the Weakest Link: Cross Capabilities of Large Language Models",
+    "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+    "SBSC: Step-by-Step Coding for Improving Mathematical Olympiad Performance",
+    "Steering Large Language Models between Code Execution and Textual Reasoning",
+    "A Mathematical Framework for AI-Human Integration in Work",
+    "GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning",
+    "Learning to Solve Domain-Specific Calculation Problems with Knowledge-Intensive Programs Generator",
+    "Stealth edits to large language models"
+  ],
+  "paper_count": 16,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The observable process where the model runs generated code within an interpreter and receives the output.",
+      "paper": "GAIA: a benchmark for General AI Assistants",
+      "original_name": "Code execution"
+    },
+    {
+      "text": "The task of inferring the state of a program, such as the value of a variable at a specific line, given only partial code.",
+      "paper": "A Mathematical Framework for AI-Human Integration in Work",
+      "original_name": "Automatic debugging"
+    },
+    {
+      "text": "The observable behavior of processing and correctly executing SQL queries on database tables.",
+      "paper": "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+      "original_name": "SQL query execution"
+    },
+    {
+      "text": "Running generated knowledge-intensive programs in a secure environment to compute intermediate or final outputs based on extracted variables.",
+      "paper": "Learning to Solve Domain-Specific Calculation Problems with Knowledge-Intensive Programs Generator",
+      "original_name": "Program execution"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-correction",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+      "evidence": "The analysis reveals that GPT4-Code\u2019s strong performance is not solely due to its code generation and execution abilities but also its capacity to adjust its problem-solving strategies based on feedback from code execution\u2014a process we term self-debugging",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr24": [
+          "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Tool use",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "related",
+      "paper": "Law of the Weakest Link: Cross Capabilities of Large Language Models",
+      "evidence": "Tool Use: The ability to interact with external tools and APIs, including functions such as web browsing, code execution, and file uploads. (Section 2.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Law of the Weakest Link: Cross Capabilities of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Self-reflection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "causes",
+      "paper": "Steering Large Language Models between Code Execution and Textual Reasoning",
+      "evidence": "After the LLM generates a response containing code, we execute the code and return the results for further self-reflection and refinement.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Steering Large Language Models between Code Execution and Textual Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats code execution as running model-generated or provided code in an interpreter, sandbox, or similar execution environment and then using the resulting output. Most descriptions place it inside reasoning or answer production, for example computing or transforming information, validating correctness, or generating intermediate outputs, and some papers explicitly describe incremental execution followed by evaluation of the results and correction of buggy or illogical solution steps. More task-specific definitions narrow the behavior to correctly executing SQL queries on tables, running knowledge-intensive programs via a system executor, or executing guardrail code to evaluate whether safety conditions are met and return a decision and explanation."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers study the behavior under several names and settings. The dominant form is ordinary code execution in math problem solving, general assistant tasks, reward modeling, annotation verification, and agentic arithmetic, while other papers describe program execution for knowledge-intensive calculations, SQL query execution on generated tables, and script or command execution that extends OS agents beyond predefined GUI actions. A smaller usage appears as automatic debugging, defined as inferring program state from partial code, such as a variable value at a specific line, and one paper explicitly states this is done without executing the program."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Only one measurement instrument is linked to it in papers, CRUXEval, and the link is described as related rather than measured_by: one paper says its code execution scenario is based on CRUXEval's output prediction setup. In practice, papers most often elicit or score the behavior by sending generated code to a code interpreter or sandbox and using the execution message, output, or execution feedback to verify correctness; other implementations use an external engine or a system executor."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked to it in papers. The recorded links instead stay at the behavioral level: one paper claims a causal relationship from code execution to self-correction, another claims a causal relationship from code execution to self-reflection, and one paper relates code execution to tool use."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats code execution as running model-generated or provided code in an interpreter, sandbox, or similar execution environment and then using the resulting output. Most descriptions place it inside reasoning or answer production, for example computing or transforming information, validating correctness, or generating intermediate outputs, and some papers explicitly describe incremental execution followed by evaluation of the results and correction of buggy or illogical solution steps. More task-specific definitions narrow the behavior to correctly executing SQL queries on tables, running knowledge-intensive programs via a system executor, or executing guardrail code to evaluate whether safety conditions are met and return a decision and explanation.\n\nVariants. Papers study the behavior under several names and settings. The dominant form is ordinary code execution in math problem solving, general assistant tasks, reward modeling, annotation verification, and agentic arithmetic, while other papers describe program execution for knowledge-intensive calculations, SQL query execution on generated tables, and script or command execution that extends OS agents beyond predefined GUI actions. A smaller usage appears as automatic debugging, defined as inferring program state from partial code, such as a variable value at a specific line, and one paper explicitly states this is done without executing the program.\n\nSpace of elicitation and scores. Only one measurement instrument is linked to it in papers, CRUXEval, and the link is described as related rather than measured_by: one paper says its code execution scenario is based on CRUXEval's output prediction setup. In practice, papers most often elicit or score the behavior by sending generated code to a code interpreter or sandbox and using the execution message, output, or execution feedback to verify correctness; other implementations use an external engine or a system executor.\n\nWhat it is taken as evidence of. No construct is linked to it in papers. The recorded links instead stay at the behavioral level: one paper claims a causal relationship from code execution to self-correction, another claims a causal relationship from code execution to self-reflection, and one paper relates code execution to tool use.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Agentic-R1: Distilled Dual-Strategy Reasoning",
+      "Benchmarking Large Language Models Under Data Contamination: A Survey from Static to Dynamic Evaluation",
+      "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery"
+    ],
+    "iclr24": [
+      "Solving Challenging Math Word Problems Using GPT-4 Code Interpreter with Code-based Self-Verification",
+      "Tool-Augmented Reward Modeling",
+      "GAIA: a benchmark for General AI Assistants"
+    ],
+    "iclr25": [
+      "Law of the Weakest Link: Cross Capabilities of Large Language Models",
+      "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "SBSC: Step-by-Step Coding for Improving Mathematical Olympiad Performance",
+      "Steering Large Language Models between Code Execution and Textual Reasoning"
+    ],
+    "icml25": [
+      "A Mathematical Framework for AI-Human Integration in Work",
+      "GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning"
+    ],
+    "neurips24": [
+      "Stealth edits to large language models"
+    ],
+    "acl25": [
+      "Can External Validation Tools Improve Annotation Quality for LLM-as-a-Judge?",
+      "OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use"
+    ],
+    "naacl25": [
+      "Learning to Solve Domain-Specific Calculation Problems with Knowledge-Intensive Programs Generator"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 3,
+    "iclr24": 3,
+    "iclr25": 4,
+    "icml25": 2,
+    "neurips24": 1,
+    "acl25": 2,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

@@ -1,0 +1,259 @@
+/* ============================================================================
+   AI Construct Lexis: "Modern academic" theme (Option E)
+   --------------------------------------------------------------------------
+   Loaded LAST on every page (after view_network_theme.css and any page CSS). White page, Source Sans 3 for interface text,
+   Source Serif 4 for reading text, one blue accent, sentence-case labels.
+   Replaces the cream newsprint look without changing any page structure.
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+
+:root {
+    /* Shared tokens (view_network_theme.css, tools.css) */
+    --paper:        #ffffff;
+    --paper-shade:  #f6f7f9;
+    --surface:      #ffffff;
+    --ink:          #1a1a1a;
+    --ink-2:        #2b2b2b;
+    --ink-muted:    #5f6368;
+    --ink-faint:    #80868b;
+    --rule:         #e3e5e8;
+    --rule-thin:    #eef0f2;
+    --accent:       #1a62c7;
+    --accent-deep:  #144e9e;
+    --accent-tint:  rgba(26, 98, 199, 0.06);
+    --accent-edge:  rgba(26, 98, 199, 0.30);
+    --bg0: #ffffff; --bg1: #f6f7f9; --card2: #ffffff;
+    --text: #1a1a1a; --muted: #5f6368; --muted2: #80868b;
+    /* Graph page's own token names (network_graph.html) */
+    --muted-2:       #80868b;
+    --border:        #eef0f2;
+    --border-strong: #e3e5e8;
+    --brand:         #1a62c7;
+    --brand-2:       #144e9e;
+    /* Type */
+    --font-sans:  'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-mono:  ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* No masthead stripe, no stylistic font features from the old sans. */
+body {
+    background-color: var(--paper);
+    background-image: none !important;
+    font-feature-settings: normal;
+}
+
+/* Interface headings in sans; reading text stays serif via --font-serif. */
+h1, .graph-title, .sidebar-hero .graph-title, .page-title,
+.results-header h2, .results-header h3, .details-header, .result-name,
+.selection-name, .tool-card h2, .group-head h2, .drawer-head h3,
+.disclaimer-banner h2, .empty-state.home-intro h3 {
+    font-family: var(--font-sans) !important;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+}
+
+/* Small labels: sentence case, sans, no tracking (was mono small caps). */
+.team-block .team-label, .contact-box-title, .definitions-dropdown label,
+.rendered-md h2, .stat-chip, .sidebar-hero .back-link, .controls-section-label,
+.conn-group-label, .legend-title, .section-label, .control > label, .control > .lbl,
+th, .ev-edge-title, .result-type, .beta-pill {
+    font-family: var(--font-sans) !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-weight: 600;
+    font-size: 12.5px;
+    color: var(--ink-muted);
+}
+.result-type::before, .result-type::after { content: none !important; }
+.beta-pill {
+    border: 1px solid var(--rule) !important;
+    border-radius: 999px;
+    padding: 1px 8px;
+    background: transparent;
+    font-weight: 500;
+}
+
+/* Tabs: active tab is blue text with a blue underline. */
+.filter-btn { font-family: var(--font-sans); }
+.filter-btn.active {
+    background: transparent !important;
+    color: var(--accent) !important;
+    border-color: transparent !important;
+    box-shadow: inset 0 -2px 0 var(--accent);
+}
+.graph-btn, .btn.primary {
+    background: var(--ink) !important;
+    color: var(--paper) !important;
+    border-radius: 4px;
+}
+.btn, .segmented button, .type-toggle { border-radius: 4px; }
+
+/* Home: definition cards get a hairline top rule (no colored or left bars). */
+.home-intro-section, .home-intro-grid .home-intro-section + .home-intro-section {
+    border-top: 1px solid var(--rule) !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    padding: 10px 0 0 !important;
+}
+.home-intro-section, .home-intro-section p, .home-intro-link { text-align: left !important; }
+
+/* Callouts read as plain text with a bold lead-in, not tinted boxes. */
+.claims-note {
+    border: 0 !important; background: transparent !important; padding: 0 !important;
+    margin: 14px 0 0 !important; font-size: 14px !important; color: var(--ink-2) !important;
+    max-width: 900px;
+}
+.claims-note::before { content: "Note. "; font-weight: 700; color: var(--ink); }
+
+/* Entity pages: reading text in serif. */
+.entity-panel-text, .ref-item-text, .relationship-evidence, .selection-definition,
+.empty-state.home-intro p, .summary, .ev-quote {
+    font-family: var(--font-serif);
+}
+.entity-panel-text { font-size: 15px; line-height: 1.6; }
+.ref-item-text { font-size: 14px; }
+.entity-panel, .ref-list { border-top-color: var(--rule) !important; }
+
+/* Relationship bars and byline used warm grays inline; make them neutral. */
+.rel-type-head { color: var(--ink-2); }
+.rel-type-pct { color: var(--ink); }
+.rel-type-bar { background: var(--rule-thin); }
+.rel-type-bar span { background: var(--ink-2); }
+.rel-type.is-zero .rel-type-head, .rel-type.is-zero .rel-type-pct { color: #b0b4b9; }
+.team-block, .team-note { color: var(--ink-2); }
+.team-block .author-name { color: var(--ink); }
+.team-block .author-affil, .team-note { color: var(--ink-muted); }
+/* Entity pages: links to entities below the paper minimum are muted and tagged. */
+.relationship-item.is-rare .relationship-nodes strong { color: var(--ink-muted); font-weight: 500; }
+.rel-rare-tag { margin-left: 8px; font-size: 11.5px; font-weight: 400; color: var(--ink-faint); }
+.rel-none-note { text-align: left !important; padding: 6px 0 !important; color: var(--ink-muted); }
+/* Card caption: what the card's number counts. */
+.home-intro-count-note { font-size: 12.5px; color: var(--ink-faint); margin: 1px 0 6px; font-family: var(--font-sans); }
+/* The citation is the only byline block: no rule above it. */
+.team-byline .team-block { border-top: 0 !important; padding-top: 0 !important; margin-top: 12px !important; }
+.team-affiliations {
+    margin: 6px 0 0; font-size: 12px; line-height: 1.6; color: var(--ink-muted);
+    display: flex; flex-wrap: wrap; gap: 0 14px;
+}
+.team-affiliations sup, .team-citation sup { font-size: 0.72em; }
+
+/* Links: one blue everywhere (Welcome citations, disclaimer, in-text links). */
+a, .contact-link, .substack-link { color: var(--accent); }
+.home-intro .contact-link, .disclaimer-hint .contact-link, .disclaimer-line .contact-link {
+    color: var(--accent) !important;
+    text-decoration-color: var(--accent-edge) !important;
+}
+.home-intro .contact-link:hover, .disclaimer-hint .contact-link:hover, .disclaimer-line .contact-link:hover {
+    color: var(--accent-deep) !important;
+}
+
+/* Section rules: thin gray hairlines instead of heavy 2px ink rules. */
+header { border-bottom-width: 1px !important; border-bottom-color: var(--rule) !important; }
+.results-panel, .disclaimer-banner, .site-footer { border-top: 1px solid var(--rule) !important; }
+
+/* Disclaimers label (view_network.html) */
+/* Same heading style as the Home "Welcome" heading. */
+.disclaimer-label {
+    font-family: var(--font-sans) !important; font-size: 22px !important; font-weight: 700 !important;
+    letter-spacing: -0.005em !important; line-height: normal !important; color: var(--ink) !important;
+    text-align: left; margin: 0 0 10px !important;
+}
+
+/* Full Config Markdown view: blue links, plain quote rule, no tint. */
+.rendered-md a { color: var(--accent) !important; }
+.rendered-md blockquote { background: transparent !important; border-left-color: var(--rule) !important; color: var(--ink-muted) !important; }
+
+/* Home graph button */
+.home-graph-cta .graph-btn, .home-graph-btn, .home-graph-btn-wide, .home-graph-cta a {
+    background: var(--ink) !important; color: var(--paper) !important; opacity: 1 !important;
+    border-radius: 4px !important;
+}
+
+/* Dark mode is opt-in (the graph page's theme toggle sets data-theme="dark").
+   Neutral dark grays and a light-blue accent to match the light theme. */
+:root[data-theme="dark"] {
+    --paper: #15171a; --paper-shade: #1f2226; --surface: #1b1e22;
+    --ink: #eceef1; --ink-2: #d3d6db; --ink-muted: #a3a8b0; --ink-faint: #868c95;
+    --rule: #3a3f46; --rule-thin: #2b2f35;
+    --accent: #7cb4ff; --accent-deep: #a8cdff;
+    --accent-tint: rgba(124, 180, 255, 0.08); --accent-edge: rgba(124, 180, 255, 0.4);
+    --text: #eceef1; --muted: #a3a8b0; --muted2: #868c95; --muted-2: #868c95;
+    --border: #2b2f35; --border-strong: #3a3f46; --brand: #7cb4ff; --brand-2: #a8cdff;
+}
+
+/* ---- Layout (Option E): compact, left-aligned academic page ---------------- */
+/* Reading column for the explorer and tools pages (graph pages are full-bleed). */
+.container {
+    max-width: 1120px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+}
+/* Header: title and Beta on one line, tabs underneath on a hairline. */
+header > div:first-child, .site-header-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+}
+/* Title line: title, Beta, then the disclaimer prompt; wraps below on narrow screens. */
+.title-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 18px; }
+.title-row .disclaimer-hint, .title-row .disclaimer-line {
+    margin: 0 !important; font-size: 13px; color: var(--ink-faint);
+}
+/* Red reminder on every page, next to the Scope and Interpretation prompt. */
+.title-row .verify-note { font-size: 13px; font-weight: 600; color: #b42318; }
+:root[data-theme="dark"] .title-row .verify-note { color: #ff8a80; }
+header h1, .site-header h1 {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    margin: 0 !important;
+}
+header .filter-buttons, .site-header .filter-buttons {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    gap: 2px !important;
+    border-bottom: 1px solid var(--rule) !important;
+    padding-bottom: 0 !important;
+}
+.filter-buttons .filter-btn, .filter-buttons .nav-tab {
+    padding: 8px 12px !important;
+    font-size: 14.5px !important;
+}
+/* Results area: no boxed panel; the Home tab needs no extra "Home" heading. */
+.results-panel { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+.results-panel:has(.home-intro) .results-header { display: none !important; }
+#resultsList:has(.home-intro) { padding: 0 0 14px !important; }
+/* Home: left-aligned Welcome, full width like the cards below it. */
+.empty-state.home-intro {
+    text-align: left !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 0 24px !important;
+}
+.empty-state.home-intro h3 { text-align: left !important; font-size: 22px !important; margin: 0 0 10px !important; }
+.empty-state.home-intro > p { max-width: none !important; font-size: 17px !important; line-height: 1.6 !important; }
+
+/* ---- Public landing page (aiconstructlexis.github.io/index.html) ---------- */
+body > h1 { border-bottom: 1px solid var(--rule) !important; }
+.acceptance, .acceptance strong {
+    font-family: var(--font-sans) !important; text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+.acceptance { font-size: 0.95rem !important; }
+.acceptance strong { font-weight: 700 !important; font-size: 1em !important; }
+.status { border-top: 1px solid var(--rule) !important; }
+.description { border-top: 1px solid var(--rule) !important; }
+.status-cta, .description .status-cta { border-radius: 4px !important; }
+.status-cta, .status-cta:hover, .status-cta-main { color: var(--paper) !important; }
+.status-cta-beta {
+    font-family: var(--font-sans) !important; text-transform: none !important;
+    letter-spacing: 0 !important; font-size: 0.75rem !important; font-weight: 600 !important;
+    color: var(--accent) !important; border-color: var(--accent-edge) !important;
+    border-radius: 999px !important; background: var(--paper) !important;
+}
+.substack h3, .home-intro-section-title {
+    font-family: var(--font-sans) !important; text-transform: none !important;
+    letter-spacing: 0 !important; font-weight: 700;
+}
+.home-intro-section-title { text-align: left !important; }

@@ -1,0 +1,148 @@
+{
+  "canonical_name": "Retrieval effectiveness",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing usage stays within retrieval, describing either a system's ability to consistently return relevant documents for a query, with query-document alignment and contextual grounding, or, more narrowly, a retrieved chunk's alignment with the broader query and document context beyond surface-level semantic similarity. A smaller line of work uses the related label contextual relevance for generated outputs rather than retrieved ones, defining it as a model's ability to produce responses that are meaningfully connected to the source input and address its claims and biases. The main disagreements are therefore over scope, overall retrieval quality versus chunk-level contextual fit, and over locus, retrieved material versus generated response.\n\nSpace of facets. Papers most often organize the concept around contextual alignment. One retrieval paper treats contextual relevance as one of two dimensions, alongside semantic similarity, for expanding and filtering candidate chunks, while another ties retrieval effectiveness to query-document alignment and contextual grounding as features of retrieval quality. The contextual relevance label is therefore used both as a dimension within retrieval and, in a smaller line of work, for response relevance in counterspeech generation.\n\nSpace of measurement. Operationalization is narrow and benchmark-based. Papers link the construct to 2 measurement instruments, BEIR and MS MARCO, both explicitly named as retrieval benchmarks for evaluating retrieval effectiveness, and to 1 behavioral indicator overall, Reward hacking, though that indicator appears in a causal claim rather than as a measurement device. This operationalization matches the broad retrieval-quality framing most directly, while the narrower contextual-relevance definition beyond surface similarity is not linked to a separate human evaluation, LLM-as-a-judge, probe, or analysis instrument.\n\nLinks. Beyond measurement, one paper claims a causal relationship from Reward hacking to Retrieval effectiveness. Its supporting text says that increased energy loss reduces the upper bound of contextual relevance in LLMs and presents this as an aspect of reward hacking. No papers report a correlation or an undirected related link.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Retrieval effectiveness",
+    "Contextual relevance"
+  ],
+  "papers": [
+    "Counterspeech the ultimate shield! Multi-Conditioned Counterspeech Generation through Attributed Prefix Learning",
+    "RAGEval: Scenario Specific RAG Evaluation Dataset Generation Framework",
+    "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+    "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance",
+    "KG-CQR: Leveraging Structured Relation Representations in Knowledge Graphs for Contextual Query Retrieval",
+    "SAKI-RAG: Mitigating Context Fragmentation in Long-Document RAG via Sentence-level Attention Knowledge Integration",
+    "The Energy Loss Phenomenon in RLHF: A New Perspective on Mitigating Reward Hacking",
+    "CSEval: Towards Automated, Multi-Dimensional, and Reference-Free Counterspeech Evaluation using Auto-Calibrated LLMs"
+  ],
+  "paper_count": 8,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degree to which a retrieval system consistently returns relevant documents in response to a query, reflecting the quality of query-document alignment and contextual grounding.",
+      "paper": "KG-CQR: Leveraging Structured Relation Representations in Knowledge Graphs for Contextual Query Retrieval",
+      "original_name": "Retrieval effectiveness"
+    },
+    {
+      "text": "The latent trait reflecting how well a retrieved chunk aligns with the broader context of the user's query and document structure, beyond surface-level semantic similarity.",
+      "paper": "SAKI-RAG: Mitigating Context Fragmentation in Long-Document RAG via Sentence-level Attention Knowledge Integration",
+      "original_name": "Contextual relevance"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MS MARCO",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance",
+      "evidence": "We evaluate retrieval effectiveness using two retrieval benchmarks: MS MARCO (Bajaj et al., 2016) and BEIR (Thakur et al., 2021).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "BEIR",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance",
+      "evidence": "We evaluate retrieval effectiveness using two retrieval benchmarks: MS MARCO (Bajaj et al., 2016) and BEIR (Thakur et al., 2021).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "emnlp25": [
+          "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "MMLongBench-Doc",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "SV-RAG: LoRA-Contextualizing Adaptation of  MLLMs for Long Document Understanding",
+      "evidence": "\u201cWe first evaluate the retrieval accuracy of the Col-retrieval module within SV-RAG and compare it with several baselines on SlideVQA, MMLongBench-Doc, DUDE, DocVQA and VisR-Bench.\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "SV-RAG: LoRA-Contextualizing Adaptation of  MLLMs for Long Document Understanding"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 3,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing usage stays within retrieval, describing either a system's ability to consistently return relevant documents for a query, with query-document alignment and contextual grounding, or, more narrowly, a retrieved chunk's alignment with the broader query and document context beyond surface-level semantic similarity. A smaller line of work uses the related label contextual relevance for generated outputs rather than retrieved ones, defining it as a model's ability to produce responses that are meaningfully connected to the source input and address its claims and biases. The main disagreements are therefore over scope, overall retrieval quality versus chunk-level contextual fit, and over locus, retrieved material versus generated response."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers most often organize the concept around contextual alignment. One retrieval paper treats contextual relevance as one of two dimensions, alongside semantic similarity, for expanding and filtering candidate chunks, while another ties retrieval effectiveness to query-document alignment and contextual grounding as features of retrieval quality. The contextual relevance label is therefore used both as a dimension within retrieval and, in a smaller line of work, for response relevance in counterspeech generation."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is narrow and benchmark-based. Papers link the construct to 2 measurement instruments, BEIR and MS MARCO, both explicitly named as retrieval benchmarks for evaluating retrieval effectiveness, and to 1 behavioral indicator overall, Reward hacking, though that indicator appears in a causal claim rather than as a measurement device. This operationalization matches the broad retrieval-quality framing most directly, while the narrower contextual-relevance definition beyond surface similarity is not linked to a separate human evaluation, LLM-as-a-judge, probe, or analysis instrument."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, one paper claims a causal relationship from Reward hacking to Retrieval effectiveness. Its supporting text says that increased energy loss reduces the upper bound of contextual relevance in LLMs and presents this as an aspect of reward hacking. No papers report a correlation or an undirected related link."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "consensus",
+    "reason": "Most papers define retrieval effectiveness as how well retrieved documents or chunks align with the user's query and broader context, with only minor differences in emphasis such as consistency, contextual grounding, or going beyond surface similarity. One paper instead uses the term for how well a model's generated response connects to an input hate speech passage, but that looks like an outlier rather than a widely shared alternative definition.",
+    "papers_with_definition": 3,
+    "runs": [
+      "consensus",
+      "conflicting",
+      "consensus"
+    ],
+    "split": true
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing usage stays within retrieval, describing either a system's ability to consistently return relevant documents for a query, with query-document alignment and contextual grounding, or, more narrowly, a retrieved chunk's alignment with the broader query and document context beyond surface-level semantic similarity. A smaller line of work uses the related label contextual relevance for generated outputs rather than retrieved ones, defining it as a model's ability to produce responses that are meaningfully connected to the source input and address its claims and biases. The main disagreements are therefore over scope, overall retrieval quality versus chunk-level contextual fit, and over locus, retrieved material versus generated response.\n\nSpace of facets. Papers most often organize the concept around contextual alignment. One retrieval paper treats contextual relevance as one of two dimensions, alongside semantic similarity, for expanding and filtering candidate chunks, while another ties retrieval effectiveness to query-document alignment and contextual grounding as features of retrieval quality. The contextual relevance label is therefore used both as a dimension within retrieval and, in a smaller line of work, for response relevance in counterspeech generation.\n\nSpace of measurement. Operationalization is narrow and benchmark-based. Papers link the construct to 2 measurement instruments, BEIR and MS MARCO, both explicitly named as retrieval benchmarks for evaluating retrieval effectiveness, and to 1 behavioral indicator overall, Reward hacking, though that indicator appears in a causal claim rather than as a measurement device. This operationalization matches the broad retrieval-quality framing most directly, while the narrower contextual-relevance definition beyond surface similarity is not linked to a separate human evaluation, LLM-as-a-judge, probe, or analysis instrument.\n\nLinks. Beyond measurement, one paper claims a causal relationship from Reward hacking to Retrieval effectiveness. Its supporting text says that increased energy loss reduces the upper bound of contextual relevance in LLMs and presents this as an aspect of reward hacking. No papers report a correlation or an undirected related link.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Counterspeech the ultimate shield! Multi-Conditioned Counterspeech Generation through Attributed Prefix Learning",
+      "RAGEval: Scenario Specific RAG Evaluation Dataset Generation Framework"
+    ],
+    "emnlp25": [
+      "A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs",
+      "ExpandR: Teaching Dense Retrievers Beyond Queries with LLM Guidance",
+      "KG-CQR: Leveraging Structured Relation Representations in Knowledge Graphs for Contextual Query Retrieval",
+      "SAKI-RAG: Mitigating Context Fragmentation in Long-Document RAG via Sentence-level Attention Knowledge Integration"
+    ],
+    "icml25": [
+      "The Energy Loss Phenomenon in RLHF: A New Perspective on Mitigating Reward Hacking"
+    ],
+    "naacl25": [
+      "CSEval: Towards Automated, Multi-Dimensional, and Reference-Free Counterspeech Evaluation using Auto-Calibrated LLMs"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "emnlp25": 4,
+    "icml25": 1,
+    "naacl25": 1
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "icml25",
+    "naacl25"
+  ]
+}

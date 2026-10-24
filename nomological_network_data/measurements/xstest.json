@@ -1,0 +1,294 @@
+{
+  "canonical_name": "XSTest",
+  "type": "measurement",
+  "canonical_definition": "What it is. Across the surveyed work, the prevailing usage treats XSTest as a dataset or benchmark of benign but seemingly risky, tricky but safe prompts, used to assess exaggerated safety concerns or over-refusal, where models are expected to answer rather than decline. Papers describe examples such as \"How can I kill a Python process?\" and sometimes focus only on the safe split. Definitions vary on scope and size: some describe 200 safe prompts, others 250 hand-crafted or sensitive queries, while one paper describes approximately 300 safe and harmful samples; a smaller line of work casts it more broadly as a test suite for refusal on safe and unsafe prompts or as a benchmark for content moderation robustness against harmful prompts.\n\nWhat it is claimed to measure. Papers link XSTest to 3 constructs and 5 behavioral indicators. Most commonly, papers use it to measure Overrefusal, reporting compliance rates, refusal rates, false refusal, over-defense, or exaggerated safety behavior on benign prompts. It is also reported as measuring Harmful content detection, Content moderation, Harmful request refusal, and Refusal, and at the construct level papers use it to measure Safety most often, with Adversarial robustness and Harmlessness also linked. Overall, the claims concentrate on over-refusal and safety, though they also extend to several other safety-related outcomes.\n\nSpace of uses. Papers do not explicitly link XSTest to another measurement instrument, but they often evaluate it alongside other safety resources such as ToxicChat, StrongReject, HH-RLHF, SCOPE, and OR-Bench-Hard-1K. Its dominant role is as a targeted check on over-refusal, often through compliance ratios or refusal rates on benign prompts, although some papers fold it into broader guardrail, calibration, or safety suites. Some papers use held-out versions or only the safe split, augment data with XSTest examples, or apply a refusal-classification setup with full compliance, full refusal, and partial refusal; one paper also mentions a synthesized audio version to test refusal of unsafe requests and compliance with safe prompts.\n\nConcerns raised. One paper argues that XSTest, described there as 250 hand-crafted prompts based on certain rules, \"falls short in testing the over-refusal issue at scale.\"",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "XSTEST",
+    "XSTest"
+  ],
+  "papers": [
+    "Efficient Safety Alignment of Large Language Models via Preference Re-ranking and Representation-based Reward Modeling",
+    "HiddenDetect: Detecting Jailbreak Attacks against Multimodal Large Language Models via Monitoring Hidden States",
+    "Improve Safety Training of Large Language Models with Safety-Critical Singular Vectors Localization",
+    "MTSA: Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming",
+    "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+    "Representation Bending for Large Language Model Safety",
+    "Root Defense Strategies: Ensuring Safety of LLM at the Decoding Level",
+    "TRIDENT: Enhancing Large Language Model Safety with Tri-Dimensional Diversified Red-Teaming Data Synthesis",
+    "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+    "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+    "Governance in Motion: Co-evolution of Constitutions and AI models for Scalable Safety",
+    "Instructing Large Language Models for Low-Resource Languages: A Systematic Study for Basque",
+    "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+    "Reimagining Safety Alignment with An Image",
+    "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+    "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+    "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+    "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+    "Speculative Safety-Aware Decoding",
+    "Turning Logic Against Itself: Probing Model Defenses Through Contrastive Questions",
+    "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+    "AutoBencher: Towards Declarative Benchmark Construction",
+    "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+    "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+    "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?",
+    "OLMoE: Open Mixture-of-Experts Language Models",
+    "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+    "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+    "Robust LLM safeguarding via refusal feature adversarial training",
+    "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+    "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation",
+    "Aligning Spoken Dialogue Models from User Interactions",
+    "Improving LLM Safety Alignment with Dual-Objective Optimization",
+    "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+    "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+    "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+    "STAIR: Improving Safety Alignment with Introspective Reasoning",
+    "Safety Reasoning with Guidelines",
+    "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+    "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence",
+    "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+    "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset",
+    "Navigating the Cultural Kaleidoscope: A Hitchhiker's Guide to Sensitivity in Large Language Models",
+    "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection",
+    "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+    "The Art of Saying No: Contextual Noncompliance in Language Models",
+    "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback"
+  ],
+  "paper_count": 47,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A dataset comprising 200 safe prompts designed to assess exaggerated safety concerns, where the model should not hesitate to respond despite the presence of trigger words.",
+      "paper": "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+      "original_name": "XSTEST"
+    },
+    {
+      "text": "A benchmark of benign but seemingly risky requests used to check whether models over-refuse and to assess compliance on safe prompts.",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "original_name": "XSTest"
+    }
+  ],
+  "definition_count": 2,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Overrefusal",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "Robust LLM safeguarding via refusal feature adversarial training",
+      "evidence": "We also report the model compliance rate on 100 held-out test examples from XSTest to monitor over refusals. (Section 5)",
+      "paper_count": 12,
+      "paper_weight": 12.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Robust LLM safeguarding via refusal feature adversarial training",
+          "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation"
+        ],
+        "naacl25": [
+          "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset"
+        ],
+        "icml25": [
+          "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+          "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+          "Safety Reasoning with Guidelines",
+          "Improving LLM Safety Alignment with Dual-Objective Optimization",
+          "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence"
+        ],
+        "emnlp25": [
+          "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+          "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+          "Speculative Safety-Aware Decoding",
+          "Governance in Motion: Co-evolution of Constitutions and AI models for Scalable Safety"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Safety",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+      "evidence": "We evaluate models on 11 different benchmarks, covering skills such as ... safety (ToxiGen [19], XSTest [42]) (Section 2.2).",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "neurips24": [
+          "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback"
+        ],
+        "icml25": [
+          "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+          "Aligning Spoken Dialogue Models from User Interactions"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful content detection",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "evidence": "We evaluate the guardrail models on six datasets including five standard safety datasets (OpenAI Mod (Markov et al., 2023),ToxicChat (Lin et al., 2023), XSTest (R\u00f6ttger et al., 2023), Overkill (Shi et al., 2024), BeaverTails (Ji et al., 2024)) and (2) our novel safety dataset TwinSafety. (Section 5)",
+      "paper_count": 3,
+      "paper_weight": 3.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+          "On Calibration of LLM-based Guard Models for Reliable Content Moderation"
+        ],
+        "naacl25": [
+          "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmful request refusal",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "AutoBencher: Towards Declarative Benchmark Construction",
+      "evidence": "we compare with XSTest (R\u00f6ttger et al., 2024) and HarmBench (Mazeika et al., 2024), which are popular safety datasets that evaluate whether a model can accurately reject harmful requests. (Section 5.1).",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "AutoBencher: Towards Declarative Benchmark Construction"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Content moderation",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+      "evidence": "Additionally, it performs on par with WILDGUARD (Han et al., 2024) in terms of average harmfulness F1 scores across WILDGUARDTEST (Han et al., 2024), XSTest (R\u00f6ttger et al., 2023; Han et al., 2024), and the OpenAI Moderation Dataset (Markov et al., 2023). (Section 5)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "naacl25": [
+          "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Harmlessness",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "STAIR: Improving Safety Alignment with Introspective Reasoning",
+      "evidence": "For harmlessness, models are required to provide clear refusals to harmful queries... We test the models on StrongReject (Souly et al., 2024), XsTest (R\u00f6ttger et al., 2024)... (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "STAIR: Improving Safety Alignment with Introspective Reasoning"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 6,
+  "incoming_relationship_count": 6,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Across the surveyed work, the prevailing usage treats XSTest as a dataset or benchmark of benign but seemingly risky, tricky but safe prompts, used to assess exaggerated safety concerns or over-refusal, where models are expected to answer rather than decline. Papers describe examples such as \"How can I kill a Python process?\" and sometimes focus only on the safe split. Definitions vary on scope and size: some describe 200 safe prompts, others 250 hand-crafted or sensitive queries, while one paper describes approximately 300 safe and harmful samples; a smaller line of work casts it more broadly as a test suite for refusal on safe and unsafe prompts or as a benchmark for content moderation robustness against harmful prompts."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link XSTest to 3 constructs and 5 behavioral indicators. Most commonly, papers use it to measure Overrefusal, reporting compliance rates, refusal rates, false refusal, over-defense, or exaggerated safety behavior on benign prompts. It is also reported as measuring Harmful content detection, Content moderation, Harmful request refusal, and Refusal, and at the construct level papers use it to measure Safety most often, with Adversarial robustness and Harmlessness also linked. Overall, the claims concentrate on over-refusal and safety, though they also extend to several other safety-related outcomes."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "Papers do not explicitly link XSTest to another measurement instrument, but they often evaluate it alongside other safety resources such as ToxicChat, StrongReject, HH-RLHF, SCOPE, and OR-Bench-Hard-1K. Its dominant role is as a targeted check on over-refusal, often through compliance ratios or refusal rates on benign prompts, although some papers fold it into broader guardrail, calibration, or safety suites. Some papers use held-out versions or only the safe split, augment data with XSTest examples, or apply a refusal-classification setup with full compliance, full refusal, and partial refusal; one paper also mentions a synthesized audio version to test refusal of unsafe requests and compliance with safe prompts."
+    },
+    {
+      "label": "Concerns raised.",
+      "text": "One paper argues that XSTest, described there as 250 hand-crafted prompts based on certain rules, \"falls short in testing the over-refusal issue at scale.\""
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Across the surveyed work, the prevailing usage treats XSTest as a dataset or benchmark of benign but seemingly risky, tricky but safe prompts, used to assess exaggerated safety concerns or over-refusal, where models are expected to answer rather than decline. Papers describe examples such as \"How can I kill a Python process?\" and sometimes focus only on the safe split. Definitions vary on scope and size: some describe 200 safe prompts, others 250 hand-crafted or sensitive queries, while one paper describes approximately 300 safe and harmful samples; a smaller line of work casts it more broadly as a test suite for refusal on safe and unsafe prompts or as a benchmark for content moderation robustness against harmful prompts.\n\nWhat it is claimed to measure. Papers link XSTest to 3 constructs and 5 behavioral indicators. Most commonly, papers use it to measure Overrefusal, reporting compliance rates, refusal rates, false refusal, over-defense, or exaggerated safety behavior on benign prompts. It is also reported as measuring Harmful content detection, Content moderation, Harmful request refusal, and Refusal, and at the construct level papers use it to measure Safety most often, with Adversarial robustness and Harmlessness also linked. Overall, the claims concentrate on over-refusal and safety, though they also extend to several other safety-related outcomes.\n\nSpace of uses. Papers do not explicitly link XSTest to another measurement instrument, but they often evaluate it alongside other safety resources such as ToxicChat, StrongReject, HH-RLHF, SCOPE, and OR-Bench-Hard-1K. Its dominant role is as a targeted check on over-refusal, often through compliance ratios or refusal rates on benign prompts, although some papers fold it into broader guardrail, calibration, or safety suites. Some papers use held-out versions or only the safe split, augment data with XSTest examples, or apply a refusal-classification setup with full compliance, full refusal, and partial refusal; one paper also mentions a synthesized audio version to test refusal of unsafe requests and compliance with safe prompts.\n\nConcerns raised. One paper argues that XSTest, described there as 250 hand-crafted prompts based on certain rules, \"falls short in testing the over-refusal issue at scale.\"",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "Efficient Safety Alignment of Large Language Models via Preference Re-ranking and Representation-based Reward Modeling",
+      "HiddenDetect: Detecting Jailbreak Attacks against Multimodal Large Language Models via Monitoring Hidden States",
+      "Improve Safety Training of Large Language Models with Safety-Critical Singular Vectors Localization",
+      "MTSA: Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming",
+      "Mixture of insighTful Experts (MoTE): The Synergy of Reasoning Chains and Expert Mixtures in Self-Alignment",
+      "Representation Bending for Large Language Model Safety",
+      "Root Defense Strategies: Ensuring Safety of LLM at the Decoding Level",
+      "TRIDENT: Enhancing Large Language Model Safety with Tri-Dimensional Diversified Red-Teaming Data Synthesis"
+    ],
+    "emnlp25": [
+      "AdaSteer: Your Aligned LLM is Inherently an Adaptive Jailbreak Defender",
+      "Gamma-Guard: Lightweight Residual Adapters for Robust Guardrails in Large Language Models",
+      "Governance in Motion: Co-evolution of Constitutions and AI models for Scalable Safety",
+      "Instructing Large Language Models for Low-Resource Languages: A Systematic Study for Basque",
+      "Reasoning-to-Defend: Safety-Aware Reasoning Can Defend Large Language Models from Jailbreaking",
+      "Reimagining Safety Alignment with An Image",
+      "SDGO: Self-Discrimination-Guided Optimization for Consistent Safety in Large Language Models",
+      "SURE: Safety Understanding and Reasoning Enhancement for Multimodal Large Language Models",
+      "SafeKey: Amplifying Aha-Moment Insights for Safety Reasoning",
+      "Sparse Activation Editing for Reliable Instruction Following in Narratives",
+      "Speculative Safety-Aware Decoding",
+      "Turning Logic Against Itself: Probing Model Defenses Through Contrastive Questions"
+    ],
+    "iclr25": [
+      "$R^2$-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning",
+      "AutoBencher: Towards Declarative Benchmark Construction",
+      "BingoGuard: LLM Content Moderation Tools with Risk Levels",
+      "Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models",
+      "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?",
+      "OLMoE: Open Mixture-of-Experts Language Models",
+      "On Calibration of LLM-based Guard Models for Reliable Content Moderation",
+      "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+      "Robust LLM safeguarding via refusal feature adversarial training",
+      "Semantic Loss Guided Data Efficient Supervised Fine Tuning for Safe Responses in LLMs",
+      "Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation"
+    ],
+    "icml25": [
+      "Aligning Spoken Dialogue Models from User Interactions",
+      "Improving LLM Safety Alignment with Dual-Objective Optimization",
+      "Just Enough Shifts: Mitigating Over-Refusal in Aligned Language Models with Targeted Representation Fine-Tuning",
+      "Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models",
+      "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+      "STAIR: Improving Safety Alignment with Introspective Reasoning",
+      "Safety Reasoning with Guidelines",
+      "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback",
+      "The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence"
+    ],
+    "naacl25": [
+      "AEGIS2.0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails",
+      "Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset",
+      "Navigating the Cultural Kaleidoscope: A Hitchhiker's Guide to Sensitivity in Large Language Models",
+      "SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection"
+    ],
+    "neurips24": [
+      "Enhancing Multiple Dimensions of Trustworthiness in LLMs via Sparse Activation Control",
+      "The Art of Saying No: Contextual Noncompliance in Language Models",
+      "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 8,
+    "emnlp25": 12,
+    "iclr25": 11,
+    "icml25": 9,
+    "naacl25": 4,
+    "neurips24": 3
+  },
+  "conferences": [
+    "acl25",
+    "emnlp25",
+    "iclr25",
+    "icml25",
+    "naacl25",
+    "neurips24"
+  ]
+}

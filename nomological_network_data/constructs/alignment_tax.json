@@ -1,0 +1,114 @@
+{
+  "canonical_name": "Alignment tax",
+  "type": "construct",
+  "canonical_definition": "Space of definitions. Across the surveyed work, the prevailing framing treats alignment tax as a loss in a model's broader capabilities after alignment-oriented fine-tuning, described as degradation in general capabilities or performance on other tasks when a model is tuned to human preferences or safety objectives. A narrower usage appears in one paper that speaks of alignment methods harming reasoning ability and refers to that harm as alignment tax, so the main difference is broad capability degradation versus a reasoning-specific manifestation.\n\nSpace of facets. Papers do not lay out a detailed subtype taxonomy for this construct. Instead, they position it alongside nearby notions: one source pairs it with \"knowledge forgetting\" and says suppressing alternative plausible outputs during training can erode a pre-trained model's encoded knowledge, while another treats harm to reasoning ability as a concrete case labeled as alignment tax.\n\nSpace of measurement. Operationalization is sparse. Papers link alignment tax to 1 measurement instrument, Open LLM Leaderboard, and no behavioral indicators; one study evaluates it across leaderboard tasks including ARC, GSM8K, HellaSwag, MMLU, TruthfulQA, and WinoGrande when discussing forgetting and reduced alignment tax. Another paper says it evaluates alignment tax by measuring how far an RLHF policy has drifted from its SFT initialization, so the available operationalizations mix task-based performance loss, which follows the dominant definition, with a drift-based analysis of policy change.\n\nLinks. Beyond measurement, papers link alignment tax to 3 constructs. One paper claims a causal relationship from Generation diversity to Alignment tax, using the language that suppressing alternative plausible outputs during training can lead to \"knowledge forgetting\" or \"alignment tax\"; another claims a causal relationship from Alignment tax to Factuality in the context of a statement that existing alignment or post-training strategies usually decrease factuality. A separate paper relates Alignment tax to Reasoning, describing harms to reasoning ability under preference optimization as alignment tax, and no correlational links are reported.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Alignment tax"
+  ],
+  "papers": [
+    "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+    "Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models",
+    "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+  ],
+  "paper_count": 3,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "The degradation of a model's general capabilities or performance on other tasks as a result of being fine-tuned to align with specific human preferences or safety objectives.",
+      "paper": "Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models",
+      "original_name": "Alignment tax"
+    }
+  ],
+  "definition_count": 1,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Generation diversity",
+      "other_type": "constructs",
+      "relationship_type": "causes",
+      "paper": "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "evidence": "by suppressing alternative plausible outputs during training, CE can lead to \u201cknowledge forgetting\u201d or \u201calignment tax\u201d, eroding the pre-trained model\u2019s encoded knowledge (Section 1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Open LLM Leaderboard",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "Preserving Diversity in Supervised Fine-Tuning of Large Language Models",
+      "evidence": "In this section, we show that GEM also helps mitigate forgetting and reduce alignment tax. We evaluate the models across six tasks: ARC, GSM8K, HellaSwag, MMLU, TruthfulQA, and WinoGrande, as listed on the OpenLLM leaderboard. (Section 6.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+        ]
+      }
+    },
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Reasoning",
+      "other_type": "constructs",
+      "relationship_type": "related",
+      "paper": "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "evidence": "Recent studies (Ouyang et al., 2022; Lin et al., 2023) have shown that using preference optimization methods to align LLMs with human values often harms their reasoning ability, referred to as the alignment tax.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 3,
+  "incoming_relationship_count": 1,
+  "outgoing_relationship_count": 2,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across the surveyed work, the prevailing framing treats alignment tax as a loss in a model's broader capabilities after alignment-oriented fine-tuning, described as degradation in general capabilities or performance on other tasks when a model is tuned to human preferences or safety objectives. A narrower usage appears in one paper that speaks of alignment methods harming reasoning ability and refers to that harm as alignment tax, so the main difference is broad capability degradation versus a reasoning-specific manifestation."
+    },
+    {
+      "label": "Space of facets.",
+      "text": "Papers do not lay out a detailed subtype taxonomy for this construct. Instead, they position it alongside nearby notions: one source pairs it with \"knowledge forgetting\" and says suppressing alternative plausible outputs during training can erode a pre-trained model's encoded knowledge, while another treats harm to reasoning ability as a concrete case labeled as alignment tax."
+    },
+    {
+      "label": "Space of measurement.",
+      "text": "Operationalization is sparse. Papers link alignment tax to 1 measurement instrument, Open LLM Leaderboard, and no behavioral indicators; one study evaluates it across leaderboard tasks including ARC, GSM8K, HellaSwag, MMLU, TruthfulQA, and WinoGrande when discussing forgetting and reduced alignment tax. Another paper says it evaluates alignment tax by measuring how far an RLHF policy has drifted from its SFT initialization, so the available operationalizations mix task-based performance loss, which follows the dominant definition, with a drift-based analysis of policy change."
+    },
+    {
+      "label": "Links.",
+      "text": "Beyond measurement, papers link alignment tax to 3 constructs. One paper claims a causal relationship from Generation diversity to Alignment tax, using the language that suppressing alternative plausible outputs during training can lead to \"knowledge forgetting\" or \"alignment tax\"; another claims a causal relationship from Alignment tax to Factuality in the context of a statement that existing alignment or post-training strategies usually decrease factuality. A separate paper relates Alignment tax to Reasoning, describing harms to reasoning ability under preference optimization as alignment tax, and no correlational links are reported."
+    }
+  ],
+  "definition_agreement": {
+    "rating": "too little evidence",
+    "reason": "",
+    "papers_with_definition": 1
+  },
+  "characterization": "Space of definitions. Across the surveyed work, the prevailing framing treats alignment tax as a loss in a model's broader capabilities after alignment-oriented fine-tuning, described as degradation in general capabilities or performance on other tasks when a model is tuned to human preferences or safety objectives. A narrower usage appears in one paper that speaks of alignment methods harming reasoning ability and refers to that harm as alignment tax, so the main difference is broad capability degradation versus a reasoning-specific manifestation.\n\nSpace of facets. Papers do not lay out a detailed subtype taxonomy for this construct. Instead, they position it alongside nearby notions: one source pairs it with \"knowledge forgetting\" and says suppressing alternative plausible outputs during training can erode a pre-trained model's encoded knowledge, while another treats harm to reasoning ability as a concrete case labeled as alignment tax.\n\nSpace of measurement. Operationalization is sparse. Papers link alignment tax to 1 measurement instrument, Open LLM Leaderboard, and no behavioral indicators; one study evaluates it across leaderboard tasks including ARC, GSM8K, HellaSwag, MMLU, TruthfulQA, and WinoGrande when discussing forgetting and reduced alignment tax. Another paper says it evaluates alignment tax by measuring how far an RLHF policy has drifted from its SFT initialization, so the available operationalizations mix task-based performance loss, which follows the dominant definition, with a drift-based analysis of policy change.\n\nLinks. Beyond measurement, papers link alignment tax to 3 constructs. One paper claims a causal relationship from Generation diversity to Alignment tax, using the language that suppressing alternative plausible outputs during training can lead to \"knowledge forgetting\" or \"alignment tax\"; another claims a causal relationship from Alignment tax to Factuality in the context of a statement that existing alignment or post-training strategies usually decrease factuality. A separate paper relates Alignment tax to Reasoning, describing harms to reasoning ability under preference optimization as alignment tax, and no correlational links are reported.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "iclr25": [
+      "As Simple as Fine-tuning: LLM Alignment via Bidirectional Negative Feedback Loss",
+      "Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models",
+      "Preserving Diversity in Supervised Fine-Tuning of Large Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "iclr25": 3
+  },
+  "conferences": [
+    "iclr25"
+  ]
+}

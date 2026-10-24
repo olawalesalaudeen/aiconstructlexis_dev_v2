@@ -1,0 +1,150 @@
+{
+  "canonical_name": "Protein property prediction",
+  "type": "behavior",
+  "canonical_definition": "Space of definitions. Across papers, the prevailing usage treats this behavior as predicting protein-level outputs from amino acid sequence, most often as either continuous regression or binary classification. Common regression formulations target fluorescence intensity, thermostability or melting temperature, and other biophysical properties such as optimal temperature for catalysis, while common classification formulations ask whether a protein is soluble, binds metal ions, or can be expressed in CHO cells. Some authors extend the framing to labels such as subcellular localization and biological function; one paper describes function prediction as predicting proteins \"without any ground truth yet available\" during training, with final evaluation after a \"curation phase\" based on newly published functions.\n\nVariants. Papers operationalize the behavior in several named settings, including fluorescence, stability or thermostability, solubility, metal ion binding, and subcellular localization. Additional variants extend the same sequence-based framing to expression tasks, broader biophysical targets, and other protein-level outputs. Most formulations are described at sequence level or as protein-level labels, with localization illustrated by labels such as nucleus and extracellular space.\n\nSpace of elicitation and scores. Elicitation is usually built directly into the task format, with papers using regression or binary classification from sequence, and one stability formulation scored by a sequence-level Spearman coefficient. Only one measurement instrument is linked, Mol-Instructions. Its recorded relation is causal rather than \"measured by\": one paper claims a causal relationship from Mol-Instructions to this behavior, stating that an LLM tuned with it can analyze proteins \"in accordance with specific requirements\" and identify fundamental protein characteristics.\n\nWhat it is taken as evidence of. No construct is linked to this behavior. Accordingly, the papers do not record an explicit claim about which construct protein property prediction is taken to indicate.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Fluorescence prediction",
+    "Stability prediction",
+    "Thermostability prediction",
+    "Solubility prediction",
+    "Metal ion binding prediction",
+    "Biophysical property prediction",
+    "Subcellular localization prediction",
+    "Mammalian cell expression prediction",
+    "Protein function prediction"
+  ],
+  "papers": [
+    "Rethinking Text-based Protein Understanding: Retrieval or LLM?",
+    "Mol-Instructions: A Large-Scale Biomolecular Instruction Dataset for Large Language Models",
+    "A new framework for evaluating model out-of-distribution generalisation for the biochemical domain",
+    "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+    "Position: AI Competitions Provide the Gold Standard for Empirical Rigor in GenAI Evaluation",
+    "Training Compute-Optimal Protein Language Models"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "A regression task to predict the fluorescence intensity of a protein.",
+      "paper": "Training Compute-Optimal Protein Language Models",
+      "original_name": "Fluorescence prediction"
+    },
+    {
+      "text": "A regression task to predict the thermostability of a protein.",
+      "paper": "Training Compute-Optimal Protein Language Models",
+      "original_name": "Stability prediction"
+    },
+    {
+      "text": "Predicting the melting temperature of a protein based on its sequence, used as a continuous regression task.",
+      "paper": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "original_name": "Thermostability prediction"
+    },
+    {
+      "text": "A binary classification task to predict whether a protein will be soluble when expressed.",
+      "paper": "Training Compute-Optimal Protein Language Models",
+      "original_name": "Solubility prediction"
+    },
+    {
+      "text": "A binary classification task to determine whether a protein sequence binds to metal ions.",
+      "paper": "Training Compute-Optimal Protein Language Models",
+      "original_name": "Metal ion binding prediction"
+    },
+    {
+      "text": "The task of predicting physical or chemical properties of proteins based on their sequence, such as the optimal temperature for catalysis.",
+      "paper": "A new framework for evaluating model out-of-distribution generalisation for the biochemical domain",
+      "original_name": "Biophysical property prediction"
+    },
+    {
+      "text": "Predicting the cellular compartment (e.g., nucleus, extracellular space) where a protein is localized based on its sequence.",
+      "paper": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "original_name": "Subcellular localization prediction"
+    },
+    {
+      "text": "A binary classification task to determine whether a given protein can be successfully expressed in a specific host cell line (e.g., Chinese hamster ovary cells).",
+      "paper": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "original_name": "Mammalian cell expression prediction"
+    },
+    {
+      "text": "Predicting the biological function of proteins based on their amino acid sequences, in the absence of experimentally verified annotations during training.",
+      "paper": "Position: AI Competitions Provide the Gold Standard for Empirical Rigor in GenAI Evaluation",
+      "original_name": "Protein function prediction"
+    }
+  ],
+  "definition_count": 9,
+  "relationships": [
+    {
+      "direction": "outgoing",
+      "other_canonical_name": "Linear probing",
+      "other_type": "measurements",
+      "relationship_type": "measured_by",
+      "paper": "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "evidence": "Following Li et al. (2024), we evaluate the probes on benchmarked downstream tasks: secondary structure, subcellular localization, thermostability, as well as a novel task, mammalian cell line expression prediction.",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 1,
+  "incoming_relationship_count": 0,
+  "outgoing_relationship_count": 1,
+  "characterization_sections": [
+    {
+      "label": "Space of definitions.",
+      "text": "Across papers, the prevailing usage treats this behavior as predicting protein-level outputs from amino acid sequence, most often as either continuous regression or binary classification. Common regression formulations target fluorescence intensity, thermostability or melting temperature, and other biophysical properties such as optimal temperature for catalysis, while common classification formulations ask whether a protein is soluble, binds metal ions, or can be expressed in CHO cells. Some authors extend the framing to labels such as subcellular localization and biological function; one paper describes function prediction as predicting proteins \"without any ground truth yet available\" during training, with final evaluation after a \"curation phase\" based on newly published functions."
+    },
+    {
+      "label": "Variants.",
+      "text": "Papers operationalize the behavior in several named settings, including fluorescence, stability or thermostability, solubility, metal ion binding, and subcellular localization. Additional variants extend the same sequence-based framing to expression tasks, broader biophysical targets, and other protein-level outputs. Most formulations are described at sequence level or as protein-level labels, with localization illustrated by labels such as nucleus and extracellular space."
+    },
+    {
+      "label": "Space of elicitation and scores.",
+      "text": "Elicitation is usually built directly into the task format, with papers using regression or binary classification from sequence, and one stability formulation scored by a sequence-level Spearman coefficient. Only one measurement instrument is linked, Mol-Instructions. Its recorded relation is causal rather than \"measured by\": one paper claims a causal relationship from Mol-Instructions to this behavior, stating that an LLM tuned with it can analyze proteins \"in accordance with specific requirements\" and identify fundamental protein characteristics."
+    },
+    {
+      "label": "What it is taken as evidence of.",
+      "text": "No construct is linked to this behavior. Accordingly, the papers do not record an explicit claim about which construct protein property prediction is taken to indicate."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "Space of definitions. Across papers, the prevailing usage treats this behavior as predicting protein-level outputs from amino acid sequence, most often as either continuous regression or binary classification. Common regression formulations target fluorescence intensity, thermostability or melting temperature, and other biophysical properties such as optimal temperature for catalysis, while common classification formulations ask whether a protein is soluble, binds metal ions, or can be expressed in CHO cells. Some authors extend the framing to labels such as subcellular localization and biological function; one paper describes function prediction as predicting proteins \"without any ground truth yet available\" during training, with final evaluation after a \"curation phase\" based on newly published functions.\n\nVariants. Papers operationalize the behavior in several named settings, including fluorescence, stability or thermostability, solubility, metal ion binding, and subcellular localization. Additional variants extend the same sequence-based framing to expression tasks, broader biophysical targets, and other protein-level outputs. Most formulations are described at sequence level or as protein-level labels, with localization illustrated by labels such as nucleus and extracellular space.\n\nSpace of elicitation and scores. Elicitation is usually built directly into the task format, with papers using regression or binary classification from sequence, and one stability formulation scored by a sequence-level Spearman coefficient. Only one measurement instrument is linked, Mol-Instructions. Its recorded relation is causal rather than \"measured by\": one paper claims a causal relationship from Mol-Instructions to this behavior, stating that an LLM tuned with it can analyze proteins \"in accordance with specific requirements\" and identify fundamental protein characteristics.\n\nWhat it is taken as evidence of. No construct is linked to this behavior. Accordingly, the papers do not record an explicit claim about which construct protein property prediction is taken to indicate.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "emnlp25": [
+      "Rethinking Text-based Protein Understanding: Retrieval or LLM?"
+    ],
+    "iclr24": [
+      "Mol-Instructions: A Large-Scale Biomolecular Instruction Dataset for Large Language Models"
+    ],
+    "iclr25": [
+      "A new framework for evaluating model out-of-distribution generalisation for the biochemical domain"
+    ],
+    "icml25": [
+      "From Mechanistic Interpretability to Mechanistic Biology: Training, Evaluating, and Interpreting Sparse Autoencoders on Protein Language Models",
+      "Position: AI Competitions Provide the Gold Standard for Empirical Rigor in GenAI Evaluation"
+    ],
+    "neurips24": [
+      "Training Compute-Optimal Protein Language Models"
+    ]
+  },
+  "paper_count_by_conference": {
+    "emnlp25": 1,
+    "iclr24": 1,
+    "iclr25": 1,
+    "icml25": 2,
+    "neurips24": 1
+  },
+  "conferences": [
+    "emnlp25",
+    "iclr24",
+    "iclr25",
+    "icml25",
+    "neurips24"
+  ]
+}

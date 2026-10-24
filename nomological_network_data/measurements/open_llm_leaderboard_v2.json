@@ -1,0 +1,169 @@
+{
+  "canonical_name": "Open LLM Leaderboard v2",
+  "type": "measurement",
+  "canonical_definition": "What it is. Papers commonly describe Open LLM Leaderboard v2, also written as Open LLM Leaderboard 2 or Huggingface Leaderboard v2, as a Hugging Face evaluation suite or public leaderboard for benchmarking and ranking LLMs on challenging downstream tasks. The prevailing description specifies six tasks, BBH, GPQA, IFEval, MATH-Hard or MATH Level 5, MMLU-Pro, and MuSR or MUSR, covering reasoning, knowledge or expert knowledge, advanced math, and instruction following, usually with accuracy-based scoring. Some definitions additionally frame it as a more challenging version of the earlier Open LLM Leaderboard, and one description notes that its scores are normalized to a 0 to 100 scale.\n\nWhat it is claimed to measure. Papers link this instrument to 3 constructs and no behavioral indicators. Different papers use it to measure General ability, Knowledge understanding, and World knowledge, so the recorded measurement claims name several broad constructs rather than a single one. The relationship language is consistent in treating the leaderboard as the instrument that measures those constructs.\n\nSpace of uses. In use, papers position it as a benchmark evaluation suite for model performance and general capability assessment. It is used alongside MixEval for benchmark evaluation of general capabilities and alongside TruthfulQA in a knowledge and understanding evaluation setup, and another paper reports evaluating performance on it with the LM Evaluation Harness.",
+  "expert_reviewed": false,
+  "expert_removed": false,
+  "expert_removed_reason": "",
+  "names": [
+    "Open LLM Leaderboard 2",
+    "Open LLM Leaderboard V2",
+    "Open LLM Leaderboard v2",
+    "HuggingFace OpenLLM Leaderboard 2",
+    "HuggingFace Open LLM Leaderboard 2"
+  ],
+  "papers": [
+    "ATLANTIS: Weak-to-Strong Learning via Importance Sampling",
+    "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization",
+    "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+    "CABS: Conflict-Aware and Balanced Sparsification for Enhancing Model Merging",
+    "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training",
+    "xLSTM 7B: A Recurrent LLM for Fast and Efficient Inference"
+  ],
+  "paper_count": 6,
+  "group_ids": [],
+  "definitions": [
+    {
+      "text": "Benchmark suite assessing model performance across six tasks: BBH, GPQA, IFEval, MATH-Hard, MMLU-Pro, and MUSR, covering reasoning, knowledge, and instruction-following abilities using accuracy-based metrics.",
+      "paper": "ATLANTIS: Weak-to-Strong Learning via Importance Sampling",
+      "original_name": "Open LLM Leaderboard 2"
+    },
+    {
+      "text": "More challenging version of the Open LLM Leaderboard that includes expert knowledge benchmarks (MMLU-Pro, GPQA, Big Bench Hard), multi-step reasoning (MuSR), advanced math (MATH Level 5), and instruction following (IFEval), with scores normalized to a 0\u2013100 scale.",
+      "paper": "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization",
+      "original_name": "Open LLM Leaderboard V2"
+    },
+    {
+      "text": "An evaluation suite by Hugging Face that assesses LLM performance on a collection of challenging benchmark tasks.",
+      "paper": "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+      "original_name": "Open LLM Leaderboard v2"
+    },
+    {
+      "text": "A public leaderboard and evaluation suite from HuggingFace used to assess instruction following and world knowledge.",
+      "paper": "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training",
+      "original_name": "HuggingFace OpenLLM Leaderboard 2"
+    }
+  ],
+  "definition_count": 4,
+  "relationships": [
+    {
+      "direction": "incoming",
+      "other_canonical_name": "General ability",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment",
+      "evidence": "To evaluate the general capabilities of the self-play fine-tuned models, we employ MixEval (Ni et al., 2024) and Open LLM Leaderboard v2 (Fourrier et al., 2024) for benchmark evaluation. (Section 4.2)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "iclr25": [
+          "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Knowledge understanding",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "ATLANTIS: Weak-to-Strong Learning via Importance Sampling",
+      "evidence": "We use Open LLM Leaderboard 2 (Fourrier et al., 2024), and TruthfulQA (Lin et al., 2021) for the evaluation. (Section 3.2, under the heading 'Knowledge & Understanding')",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "acl25": [
+          "ATLANTIS: Weak-to-Strong Learning via Importance Sampling"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "World knowledge",
+      "other_type": "constructs",
+      "relationship_type": "measured_by",
+      "paper": "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training",
+      "evidence": "For instruction following and world knowledge, we utilize the recent HuggingFace OpenLLM Leaderboard 2 (Fourrier et al., 2024). (Section 3.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Language modeling",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "xLSTM 7B: A Recurrent LLM for Fast and Efficient Inference",
+      "evidence": "We start by benchmarking xLSTM 7B against state-of-the-art Transformer and recurrent LLMs on the 7B parameter scale. To this end, we evaluate the performance on the Open LLM Leaderboard v2 using the LM Evaluation Harness (Gao et al., 2024; Fourrier et al., 2024). (Section 5.1)",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "xLSTM 7B: A Recurrent LLM for Fast and Efficient Inference"
+        ]
+      }
+    },
+    {
+      "direction": "incoming",
+      "other_canonical_name": "Model merging",
+      "other_type": "behaviors_tasks",
+      "relationship_type": "measured_by",
+      "paper": "CABS: Conflict-Aware and Balanced Sparsification for Enhancing Model Merging",
+      "evidence": "\u201cwe conducted a new set of experiments using the Open LLM Leaderboard 2\u201d",
+      "paper_count": 1,
+      "paper_weight": 1.0,
+      "papers_by_conference": {
+        "icml25": [
+          "CABS: Conflict-Aware and Balanced Sparsification for Enhancing Model Merging"
+        ]
+      }
+    }
+  ],
+  "relationship_count": 5,
+  "incoming_relationship_count": 5,
+  "outgoing_relationship_count": 0,
+  "characterization_sections": [
+    {
+      "label": "What it is.",
+      "text": "Papers commonly describe Open LLM Leaderboard v2, also written as Open LLM Leaderboard 2 or Huggingface Leaderboard v2, as a Hugging Face evaluation suite or public leaderboard for benchmarking and ranking LLMs on challenging downstream tasks. The prevailing description specifies six tasks, BBH, GPQA, IFEval, MATH-Hard or MATH Level 5, MMLU-Pro, and MuSR or MUSR, covering reasoning, knowledge or expert knowledge, advanced math, and instruction following, usually with accuracy-based scoring. Some definitions additionally frame it as a more challenging version of the earlier Open LLM Leaderboard, and one description notes that its scores are normalized to a 0 to 100 scale."
+    },
+    {
+      "label": "What it is claimed to measure.",
+      "text": "Papers link this instrument to 3 constructs and no behavioral indicators. Different papers use it to measure General ability, Knowledge understanding, and World knowledge, so the recorded measurement claims name several broad constructs rather than a single one. The relationship language is consistent in treating the leaderboard as the instrument that measures those constructs."
+    },
+    {
+      "label": "Space of uses.",
+      "text": "In use, papers position it as a benchmark evaluation suite for model performance and general capability assessment. It is used alongside MixEval for benchmark evaluation of general capabilities and alongside TruthfulQA in a knowledge and understanding evaluation setup, and another paper reports evaluating performance on it with the LM Evaluation Harness."
+    }
+  ],
+  "definition_agreement": null,
+  "characterization": "What it is. Papers commonly describe Open LLM Leaderboard v2, also written as Open LLM Leaderboard 2 or Huggingface Leaderboard v2, as a Hugging Face evaluation suite or public leaderboard for benchmarking and ranking LLMs on challenging downstream tasks. The prevailing description specifies six tasks, BBH, GPQA, IFEval, MATH-Hard or MATH Level 5, MMLU-Pro, and MuSR or MUSR, covering reasoning, knowledge or expert knowledge, advanced math, and instruction following, usually with accuracy-based scoring. Some definitions additionally frame it as a more challenging version of the earlier Open LLM Leaderboard, and one description notes that its scores are normalized to a 0 to 100 scale.\n\nWhat it is claimed to measure. Papers link this instrument to 3 constructs and no behavioral indicators. Different papers use it to measure General ability, Knowledge understanding, and World knowledge, so the recorded measurement claims name several broad constructs rather than a single one. The relationship language is consistent in treating the leaderboard as the instrument that measures those constructs.\n\nSpace of uses. In use, papers position it as a benchmark evaluation suite for model performance and general capability assessment. It is used alongside MixEval for benchmark evaluation of general capabilities and alongside TruthfulQA in a knowledge and understanding evaluation setup, and another paper reports evaluating performance on it with the LM Evaluation Harness.",
+  "characterization_status": "llm",
+  "papers_by_conference": {
+    "acl25": [
+      "ATLANTIS: Weak-to-Strong Learning via Importance Sampling",
+      "``Give Me BF16 or Give Me Death''? Accuracy-Performance Trade-Offs in LLM Quantization"
+    ],
+    "icml25": [
+      "CABS: Conflict-Aware and Balanced Sparsification for Enhancing Model Merging",
+      "WildChat-50M: A Deep Dive Into the Role of Synthetic Data in Post-Training",
+      "xLSTM 7B: A Recurrent LLM for Fast and Efficient Inference"
+    ],
+    "iclr25": [
+      "Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Model Alignment"
+    ]
+  },
+  "paper_count_by_conference": {
+    "acl25": 2,
+    "icml25": 3,
+    "iclr25": 1
+  },
+  "conferences": [
+    "acl25",
+    "iclr25",
+    "icml25"
+  ]
+}
