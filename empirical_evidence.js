@@ -193,6 +193,9 @@
 
     $('evForm').addEventListener('submit', e => {
         e.preventDefault();
+        message('Currently not accepting submissions while in demo mode.');
+        if (true) return; // demo mode: submissions disabled for now
+        e.preventDefault();
         const r = checked();
         if (!r) return;
         const got = issueUrlFor(r);

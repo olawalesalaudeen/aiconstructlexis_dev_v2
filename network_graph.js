@@ -23,7 +23,7 @@
     const ENTITY = Object.fromEntries(ENTITY_TYPES.map(t => [t.key, t]));
     const EDGE_TYPES = [
         { key: 'measured_by', label: 'Measured by', directed: true, out: 'Measured by', in: 'Measures' },
-        { key: 'causes', label: 'Causes', directed: true, out: 'Causes', in: 'Caused by' },
+        { key: 'causes', label: 'Causal', directed: true, out: 'Causal', in: 'Caused by' },
         { key: 'related', label: 'Related', directed: false, out: 'Related to' },
         { key: 'correlates', label: 'Correlates', directed: false, out: 'Correlates with' },
     ];

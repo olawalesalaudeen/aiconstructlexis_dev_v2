@@ -881,7 +881,7 @@ function renderDetails(node, cfg, replaceList = false) {
     const REL_ROWS = [
         { key: 'measured_by', out: 'Measured by', in: 'Measures' },
         { key: 'related', out: 'Related to', in: 'Related to' },
-        { key: 'causes', dir: 'out', label: 'Causes' },
+        { key: 'causes', dir: 'out', label: 'Causal' },
         { key: 'causes', dir: 'in', label: 'Caused by' },
         { key: 'correlates', out: 'Correlated with', in: 'Correlated with' }
     ];
